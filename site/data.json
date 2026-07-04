@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-03T11:42:00-07:00",
-  "market_note": "Market closed — July 4th observed. Next session Mon 7/6, 6:30am PT. Pipe tests passed; first real entries Monday.",
+  "generated_at": "2026-07-03T19:10:00-07:00",
+  "market_note": "Market closed — July 4th weekend. Next session Mon 7/6, 6:30am PT. First real entries Monday.",
   "paper": {
-    "equity": 5000.0, "equity_note": "sleeve, autonomous",
+    "equity": 5000.0, "equity_note": "autonomous testbed (reset to $5K for 1:1 tracking)",
     "total_pnl": 0.0, "day_pnl": 0.0,
     "positions": [],
     "equity_curve": [{"date": "Jul 2", "value": 5000.0}, {"date": "Jul 3", "value": 5000.0}]
@@ -14,8 +14,11 @@
     "equity_curve": [{"date": "Jul 2", "value": 1000.0}, {"date": "Jul 3", "value": 1000.0}]
   },
   "pending_tickets": [],
-  "recent_trades": [
-    {"ts": "2026-07-03T11:27:00-07:00", "account": "live", "side": "buy", "symbol": "NVDA", "qty": "$10 notional", "price": 0, "tag": "live-pipe-test-0703", "thesis": "System pipe test approved by Luca — queued for Monday 9:30 ET open. Proves the real-money order path.", "result": null}
+  "feed": [
+    {"type": "watch", "account": "paper", "ts": "2026-07-03T11:40:00-07:00", "symbol": "NVDA", "text": "Ran the plumbing test today — placed a 1-share NVDA bracket order, watched Alpaca accept it with the stop and target attached, then pulled it. Everything works. Monday's the real thing."},
+    {"type": "memory", "account": "paper", "ts": "2026-07-02T16:45:00-07:00", "symbol": "RKLB", "text": "Changed my mind on Rocket Lab. It's not the simple launch-momentum story I first pegged — they're **buying Iridium for ~$8B**, so now it's an M&A/integration play with financing overhang after a 16% pop. Moving it to watch-only until the deal digests. Not chasing it Monday."},
+    {"type": "memory", "account": "paper", "ts": "2026-07-02T16:40:00-07:00", "symbol": "SPCX", "text": "Filed away: **SpaceX is public now** (IPO'd June 12, ~$2T valuation). You cleared it to trade, but I'm treating it like the young IPO it is — three weeks of price history, lockup date unknown. Watching, not touching, till I know more."},
+    {"type": "memory", "account": "paper", "ts": "2026-07-02T16:38:00-07:00", "symbol": "TSLA", "text": "Tesla's the one I keep circling for Monday. Crushed Q2 deliveries (480K vs 406K expected) and *still* dropped 7.5% — classic sell-the-news after a big run-up. Tempting mean-reversion, but there's a real EV tax-credit overhang, so if I take it, it's small and on a tight leash."}
   ],
-  "latest_recap": "Fri 7/3 — Market closed (July 4th observed). Trade-readiness verified end to end: paper bracket order placed, accepted with both protective legs, then canceled clean (round-trip test). Live $10 NVDA pipe-test order approved by Luca and queued for Monday's open.\n\nMonday plan: semi pullback entries (NVDA/AVGO/TSM) if pre-market stabilizes; TSLA mean-reversion after the -7.5% sell-the-news drop on a 480K delivery beat (needs confirmation + tight stop); RKLB on watch after the $8B Iridium acquisition; AI-power names (VRT/CEG/BE) on sympathy weakness. SPCX tradeable per Luca, young-IPO caution."
+  "latest_recap": "Fri 7/3 — Market closed (July 4th). Trade-readiness verified end to end: paper bracket order placed, accepted with protective legs, canceled clean; your $10 live NVDA test approved and queued for Monday's open. Dashboard live.\n\nMonday plan: semi pullback entries (NVDA/AVGO/TSM) if pre-market stabilizes; TSLA mean-reversion with a tight stop; RKLB on watch after the $8B Iridium deal; AI-power names (VRT/CEG/BE) on sympathy weakness. SPCX watch-only."
 }

@@ -15,7 +15,7 @@
                 radial-gradient(ellipse 60% 50% at 90% 10%, #2a1a3d 0%, transparent 50%),
                 radial-gradient(ellipse 70% 60% at 50% 110%, #0e2a24 0%, transparent 55%),
                 #07090f;
-    min-height: 100vh; color: #e8eaf2; padding: 24px clamp(14px, 4vw, 48px) 48px;
+    min-height: 100vh; color: #e8eaf2; padding: 24px clamp(14px, 4vw, 48px) 64px;
     -webkit-font-smoothing: antialiased;
   }
   .glass {
@@ -38,21 +38,42 @@
   .stat .sub { font-size: 11.5px; color: #8a90a6; margin-top: 4px; }
   .pos { color: #6ee7b7; } .neg { color: #fca5a5; } .flat { color: #cbd0e0; }
   .panel { padding: 20px 22px; margin-bottom: 16px; }
-  .panel h2 { font-size: 13.5px; font-weight: 650; color: #c9cede; margin-bottom: 13px; display: flex; align-items: center; gap: 8px; }
+  .panel h2 { font-size: 13.5px; font-weight: 650; color: #c9cede; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
   .panel h2 .dot { width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, #7dd3fc, #a78bfa); box-shadow: 0 0 8px rgba(125,211,252,0.6); }
-  .chart-wrap { position: relative; height: 220px; }
+  .panel h2 .count { margin-left: auto; font-size: 11px; font-weight: 600; color: #7c8299; }
+
+  /* ---- Feed (friend-voice cards) ---- */
+  .feed { display: flex; flex-direction: column; gap: 12px; }
+  .card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 15px 17px;
+    animation: rise .4s ease both;
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .card-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 9px; }
+  .pill { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; padding: 4px 13px; border-radius: 999px; white-space: nowrap; }
+  .pill-buy { background: rgba(110,231,183,0.15); color: #6ee7b7; border: 1px solid rgba(110,231,183,0.35); }
+  .pill-sell { background: rgba(252,165,165,0.15); color: #fca5a5; border: 1px solid rgba(252,165,165,0.35); }
+  .pill-mem { background: rgba(167,139,250,0.15); color: #c4b5fd; border: 1px solid rgba(167,139,250,0.35); }
+  .pill-watch { background: rgba(125,211,252,0.13); color: #7dd3fc; border: 1px solid rgba(125,211,252,0.30); }
+  .pill-size { background: rgba(255,255,255,0.07); color: #dfe3ef; border: 1px solid rgba(255,255,255,0.12); font-variant-numeric: tabular-nums; }
+  .card-sym { font-weight: 800; font-size: 14px; letter-spacing: 0.03em; }
+  .card-time { margin-left: auto; font-size: 11px; color: #6b7188; }
+  .card-text { font-size: 13.5px; line-height: 1.62; color: #c4c9db; }
+  .card-text b { color: #e8eaf2; font-weight: 650; }
+
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th { text-align: left; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em; color: #7c8299; font-weight: 600; padding: 5px 8px 9px; border-bottom: 1px solid rgba(255,255,255,0.07); }
   td { padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.045); font-variant-numeric: tabular-nums; vertical-align: top; }
   tr:last-child td { border-bottom: none; }
   td.sym { font-weight: 700; }
-  .thesis { font-size: 12px; color: #9aa0b5; line-height: 1.45; max-width: 480px; }
-  .tag { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 2px 9px; border-radius: 999px; background: rgba(167,139,250,0.13); border: 1px solid rgba(167,139,250,0.25); color: #c4b5fd; }
-  .side-buy { color: #6ee7b7; font-weight: 600; } .side-sell { color: #fca5a5; font-weight: 600; }
+  .thesis { font-size: 12px; color: #9aa0b5; line-height: 1.45; max-width: 420px; }
+  .chart-wrap { position: relative; height: 220px; }
   .empty { padding: 26px 10px; text-align: center; color: #7c8299; font-size: 13px; line-height: 1.6; }
   .recap { font-size: 13.5px; line-height: 1.65; color: #b8bdd0; white-space: pre-wrap; }
-  .footer { margin-top: 8px; font-size: 11px; color: #6b7188; text-align: center; line-height: 1.7; }
   .scroll-x { overflow-x: auto; }
+  .side-buy { color: #6ee7b7; font-weight: 600; } .side-sell { color: #fca5a5; font-weight: 600; }
+  .footer { margin-top: 10px; font-size: 11px; color: #6b7188; text-align: center; line-height: 1.7; }
 </style>
 </head>
 <body>
@@ -75,15 +96,19 @@
     <div class="stat glass"><div class="label">Positions</div><div class="value" id="s-pos">—</div><div class="sub" id="s-pos-sub"></div></div>
   </div>
 
+  <div class="panel glass">
+    <h2><span class="dot"></span>Signals &amp; Moves<span class="count" id="feed-count"></span></h2>
+    <div class="feed" id="feed"></div>
+  </div>
+
   <div class="panel glass"><h2><span class="dot"></span>Equity Curve</h2><div class="chart-wrap"><canvas id="chart"></canvas></div></div>
-  <div class="panel glass"><h2><span class="dot"></span>Open Positions & Theses</h2><div class="scroll-x" id="positions"></div></div>
+  <div class="panel glass"><h2><span class="dot"></span>Open Positions</h2><div class="scroll-x" id="positions"></div></div>
   <div class="panel glass" id="tickets-panel" style="display:none"><h2><span class="dot"></span>Pending Real-Money Tickets (awaiting Luca)</h2><div class="scroll-x" id="tickets"></div></div>
-  <div class="panel glass"><h2><span class="dot"></span>Recent Trades</h2><div class="scroll-x" id="trades"></div></div>
   <div class="panel glass"><h2><span class="dot"></span>Latest Engine Recap</h2><div class="recap" id="recap">—</div></div>
 
   <div class="footer">
     Data regenerated by the engine each cycle; page redeploys automatically · Read-only — no trades can be made here ·
-    Paper account trades autonomously; real money requires Luca's per-ticket approval · Experimental system, not financial advice
+    Paper trades autonomously; real money requires Luca's per-ticket approval · Experimental system, not financial advice
   </div>
 </div>
 <div class="empty" id="loaderr" style="display:none">Couldn't load data.json — the first engine cycle may not have published yet.</div>
@@ -91,16 +116,33 @@
 <script>
 let account = localStorage.getItem('at-account') || 'paper';
 let DATA = null, chart = null;
-const fmt$ = v => (v < 0 ? '-$' : '$') + Math.abs(v).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const fmt$ = v => (v < 0 ? '-$' : '$') + Math.abs(Number(v)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 const fmtPct = v => (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%';
 const cls = v => v > 0.004 ? 'pos' : v < -0.004 ? 'neg' : 'flat';
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const rich = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); // **bold** in friend-voice text
+const ago = ts => { const m = Math.floor((Date.now() - new Date(ts)) / 60000); if (isNaN(m)) return ''; if (m < 1) return 'just now'; if (m < 60) return m + 'm ago'; const h = Math.floor(m/60); if (h < 24) return h + 'h ago'; return Math.floor(h/24) + 'd ago'; };
 
 function setAccount(a) {
   account = a; localStorage.setItem('at-account', a);
   document.getElementById('btn-paper').classList.toggle('active', a === 'paper');
   document.getElementById('btn-live').classList.toggle('active', a === 'live');
   if (DATA) render();
+}
+
+function feedCard(item) {
+  let pills = '';
+  if (item.type === 'trade') {
+    const side = (item.side || '').toLowerCase();
+    pills = `<span class="pill pill-${side === 'sell' ? 'sell' : 'buy'}">${side === 'sell' ? 'SELL' : 'BUY'}</span>` +
+            (item.size ? `<span class="pill pill-size">${esc(item.size)}</span>` : '');
+  } else if (item.type === 'memory') {
+    pills = `<span class="pill pill-mem">🧠 Memory</span>`;
+  } else if (item.type === 'watch') {
+    pills = `<span class="pill pill-watch">👀 Watching</span>`;
+  }
+  const sym = item.symbol ? `<span class="card-sym">${esc(item.symbol)}</span>` : '';
+  return `<div class="card"><div class="card-top">${pills}${sym}<span class="card-time">${ago(item.ts)}</span></div><div class="card-text">${rich(item.text)}</div></div>`;
 }
 
 function render() {
@@ -120,25 +162,29 @@ function render() {
   const poss = d.positions || [];
   set('s-pos', String(poss.length), 'flat', 's-pos-sub', poss.map(p => p.symbol).join(' · ') || 'flat');
 
+  // Feed — account-filtered, newest first, max 8
+  const feed = (DATA.feed || []).filter(f => !f.account || f.account === account).slice(0, 8);
+  document.getElementById('feed-count').textContent = feed.length ? feed.length + ' shown' : '';
+  document.getElementById('feed').innerHTML = feed.length
+    ? feed.map(feedCard).join('')
+    : '<div class="empty">No signals yet. When the engine trades or forms a view on a company, it\'ll post the move and its reasoning here — like a text from a friend who watches the market all day.</div>';
+
+  // Positions
   document.getElementById('positions').innerHTML = poss.length
     ? '<table><tr><th>Symbol</th><th>Qty</th><th>Entry</th><th>Now</th><th>P&L</th><th>Thesis</th></tr>' + poss.map(p =>
         `<tr><td class="sym">${esc(p.symbol)}</td><td>${esc(p.qty)}</td><td>${fmt$(p.entry)}</td><td>${fmt$(p.current)}</td><td class="${cls(p.pl)}">${fmt$(p.pl)} (${fmtPct(p.plpc)})</td><td class="thesis">${esc(p.thesis)}</td></tr>`).join('') + '</table>'
     : '<div class="empty">No open positions — engine is waiting for setups that clear the charter bar.</div>';
 
+  // Pending tickets
   const tix = DATA.pending_tickets || [];
   document.getElementById('tickets-panel').style.display = tix.length ? 'block' : 'none';
   if (tix.length) document.getElementById('tickets').innerHTML =
     '<table><tr><th>Side</th><th>Symbol</th><th>Size</th><th>Bracket</th><th>Thesis</th></tr>' + tix.map(t =>
       `<tr><td class="side-${esc(t.side)}">${esc((t.side||'').toUpperCase())}</td><td class="sym">${esc(t.symbol)}</td><td>${esc(t.size)}</td><td>${esc(t.bracket)}</td><td class="thesis">${esc(t.thesis)}</td></tr>`).join('') + '</table>';
 
-  const trades = (DATA.recent_trades || []).filter(t => t.account === account);
-  document.getElementById('trades').innerHTML = trades.length
-    ? '<table><tr><th>Time</th><th>Side</th><th>Symbol</th><th>Qty</th><th>Price</th><th>Tag</th><th>Thesis / Result</th></tr>' + trades.map(t =>
-        `<tr><td>${new Date(t.ts).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</td><td class="side-${esc(t.side)}">${esc((t.side||'').toUpperCase())}</td><td class="sym">${esc(t.symbol)}</td><td>${esc(t.qty)}</td><td>${fmt$(t.price)}</td><td>${t.tag ? '<span class="tag">'+esc(t.tag)+'</span>' : '—'}</td><td class="thesis">${esc(t.thesis)}${t.result ? ' → <b>' + esc(t.result) + '</b>' : ''}</td></tr>`).join('') + '</table>'
-    : '<div class="empty">No trades yet on this account.</div>';
-
   document.getElementById('recap').textContent = DATA.latest_recap || '—';
 
+  // Equity curve
   const curve = d.equity_curve || [];
   if (chart) chart.destroy();
   const ctx = document.getElementById('chart').getContext('2d');
