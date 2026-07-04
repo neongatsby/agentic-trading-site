@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Agentic Trading — Luca's Sleeve</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<style>
+  :root { color-scheme: dark; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+    background: radial-gradient(ellipse 80% 60% at 20% -10%, #1a2340 0%, transparent 55%),
+                radial-gradient(ellipse 60% 50% at 90% 10%, #2a1a3d 0%, transparent 50%),
+                radial-gradient(ellipse 70% 60% at 50% 110%, #0e2a24 0%, transparent 55%),
+                #07090f;
+    min-height: 100vh; color: #e8eaf2; padding: 24px clamp(14px, 4vw, 48px) 48px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .glass {
+    background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.025) 100%);
+    backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.09); border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 22px; }
+  .brand h1 { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; }
+  .brand h1 span { background: linear-gradient(90deg, #7dd3fc, #a78bfa 55%, #6ee7b7); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .brand p { font-size: 12px; color: #8a90a6; margin-top: 3px; }
+  .toggle { display: flex; padding: 4px; gap: 4px; }
+  .toggle button { border: none; background: transparent; color: #9aa0b5; font: inherit; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 14px; cursor: pointer; transition: all .25s ease; }
+  .toggle button.active { background: linear-gradient(135deg, rgba(125,211,252,0.22), rgba(167,139,250,0.18)); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 12px rgba(125,211,252,0.15); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .stat { padding: 16px 18px; }
+  .stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: #8a90a6; margin-bottom: 7px; }
+  .stat .value { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .stat .sub { font-size: 11.5px; color: #8a90a6; margin-top: 4px; }
+  .pos { color: #6ee7b7; } .neg { color: #fca5a5; } .flat { color: #cbd0e0; }
+  .panel { padding: 20px 22px; margin-bottom: 16px; }
+  .panel h2 { font-size: 13.5px; font-weight: 650; color: #c9cede; margin-bottom: 13px; display: flex; align-items: center; gap: 8px; }
+  .panel h2 .dot { width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, #7dd3fc, #a78bfa); box-shadow: 0 0 8px rgba(125,211,252,0.6); }
+  .chart-wrap { position: relative; height: 220px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em; color: #7c8299; font-weight: 600; padding: 5px 8px 9px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  td { padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.045); font-variant-numeric: tabular-nums; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td.sym { font-weight: 700; }
+  .thesis { font-size: 12px; color: #9aa0b5; line-height: 1.45; max-width: 480px; }
+  .tag { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 2px 9px; border-radius: 999px; background: rgba(167,139,250,0.13); border: 1px solid rgba(167,139,250,0.25); color: #c4b5fd; }
+  .side-buy { color: #6ee7b7; font-weight: 600; } .side-sell { color: #fca5a5; font-weight: 600; }
+  .empty { padding: 26px 10px; text-align: center; color: #7c8299; font-size: 13px; line-height: 1.6; }
+  .recap { font-size: 13.5px; line-height: 1.65; color: #b8bdd0; white-space: pre-wrap; }
+  .footer { margin-top: 8px; font-size: 11px; color: #6b7188; text-align: center; line-height: 1.7; }
+  .scroll-x { overflow-x: auto; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1><span>Agentic Trading</span> — Luca's Sleeve</h1>
+    <p id="asof">Loading…</p>
+  </div>
+  <div class="toggle glass">
+    <button id="btn-paper" onclick="setAccount('paper')">Paper · Autonomous</button>
+    <button id="btn-live" onclick="setAccount('live')">Live · Approval-gated</button>
+  </div>
+</header>
+
+<div id="app" style="display:none">
+  <div class="stats">
+    <div class="stat glass"><div class="label">Equity</div><div class="value" id="s-equity">—</div><div class="sub" id="s-equity-sub"></div></div>
+    <div class="stat glass"><div class="label">Total P&L</div><div class="value" id="s-pnl">—</div><div class="sub" id="s-pnl-sub"></div></div>
+    <div class="stat glass"><div class="label">Day P&L</div><div class="value" id="s-day">—</div><div class="sub">vs prior close</div></div>
+    <div class="stat glass"><div class="label">Positions</div><div class="value" id="s-pos">—</div><div class="sub" id="s-pos-sub"></div></div>
+  </div>
+
+  <div class="panel glass"><h2><span class="dot"></span>Equity Curve</h2><div class="chart-wrap"><canvas id="chart"></canvas></div></div>
+  <div class="panel glass"><h2><span class="dot"></span>Open Positions & Theses</h2><div class="scroll-x" id="positions"></div></div>
+  <div class="panel glass" id="tickets-panel" style="display:none"><h2><span class="dot"></span>Pending Real-Money Tickets (awaiting Luca)</h2><div class="scroll-x" id="tickets"></div></div>
+  <div class="panel glass"><h2><span class="dot"></span>Recent Trades</h2><div class="scroll-x" id="trades"></div></div>
+  <div class="panel glass"><h2><span class="dot"></span>Latest Engine Recap</h2><div class="recap" id="recap">—</div></div>
+
+  <div class="footer">
+    Data regenerated by the engine each cycle; page redeploys automatically · Read-only — no trades can be made here ·
+    Paper account trades autonomously; real money requires Luca's per-ticket approval · Experimental system, not financial advice
+  </div>
+</div>
+<div class="empty" id="loaderr" style="display:none">Couldn't load data.json — the first engine cycle may not have published yet.</div>
+
+<script>
+let account = localStorage.getItem('at-account') || 'paper';
+let DATA = null, chart = null;
+const fmt$ = v => (v < 0 ? '-$' : '$') + Math.abs(v).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const fmtPct = v => (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%';
+const cls = v => v > 0.004 ? 'pos' : v < -0.004 ? 'neg' : 'flat';
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function setAccount(a) {
+  account = a; localStorage.setItem('at-account', a);
+  document.getElementById('btn-paper').classList.toggle('active', a === 'paper');
+  document.getElementById('btn-live').classList.toggle('active', a === 'live');
+  if (DATA) render();
+}
+
+function render() {
+  const d = DATA[account] || {};
+  document.getElementById('asof').textContent =
+    (account === 'paper' ? 'Paper (autonomous testbed)' : 'Live (approval-gated)') +
+    ' · engine data as of ' + new Date(DATA.generated_at).toLocaleString() +
+    (DATA.market_note ? ' · ' + DATA.market_note : '');
+
+  const set = (id, val, klass, subId, sub) => {
+    const el = document.getElementById(id); el.textContent = val; el.className = 'value ' + (klass || 'flat');
+    if (subId) document.getElementById(subId).textContent = sub || '';
+  };
+  set('s-equity', fmt$(d.equity ?? 0), 'flat', 's-equity-sub', d.equity_note || '');
+  set('s-pnl', fmt$(d.total_pnl ?? 0), cls(d.total_pnl ?? 0), 's-pnl-sub', 'since inception');
+  set('s-day', fmt$(d.day_pnl ?? 0), cls(d.day_pnl ?? 0));
+  const poss = d.positions || [];
+  set('s-pos', String(poss.length), 'flat', 's-pos-sub', poss.map(p => p.symbol).join(' · ') || 'flat');
+
+  document.getElementById('positions').innerHTML = poss.length
+    ? '<table><tr><th>Symbol</th><th>Qty</th><th>Entry</th><th>Now</th><th>P&L</th><th>Thesis</th></tr>' + poss.map(p =>
+        `<tr><td class="sym">${esc(p.symbol)}</td><td>${esc(p.qty)}</td><td>${fmt$(p.entry)}</td><td>${fmt$(p.current)}</td><td class="${cls(p.pl)}">${fmt$(p.pl)} (${fmtPct(p.plpc)})</td><td class="thesis">${esc(p.thesis)}</td></tr>`).join('') + '</table>'
+    : '<div class="empty">No open positions — engine is waiting for setups that clear the charter bar.</div>';
+
+  const tix = DATA.pending_tickets || [];
+  document.getElementById('tickets-panel').style.display = tix.length ? 'block' : 'none';
+  if (tix.length) document.getElementById('tickets').innerHTML =
+    '<table><tr><th>Side</th><th>Symbol</th><th>Size</th><th>Bracket</th><th>Thesis</th></tr>' + tix.map(t =>
+      `<tr><td class="side-${esc(t.side)}">${esc((t.side||'').toUpperCase())}</td><td class="sym">${esc(t.symbol)}</td><td>${esc(t.size)}</td><td>${esc(t.bracket)}</td><td class="thesis">${esc(t.thesis)}</td></tr>`).join('') + '</table>';
+
+  const trades = (DATA.recent_trades || []).filter(t => t.account === account);
+  document.getElementById('trades').innerHTML = trades.length
+    ? '<table><tr><th>Time</th><th>Side</th><th>Symbol</th><th>Qty</th><th>Price</th><th>Tag</th><th>Thesis / Result</th></tr>' + trades.map(t =>
+        `<tr><td>${new Date(t.ts).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</td><td class="side-${esc(t.side)}">${esc((t.side||'').toUpperCase())}</td><td class="sym">${esc(t.symbol)}</td><td>${esc(t.qty)}</td><td>${fmt$(t.price)}</td><td>${t.tag ? '<span class="tag">'+esc(t.tag)+'</span>' : '—'}</td><td class="thesis">${esc(t.thesis)}${t.result ? ' → <b>' + esc(t.result) + '</b>' : ''}</td></tr>`).join('') + '</table>'
+    : '<div class="empty">No trades yet on this account.</div>';
+
+  document.getElementById('recap').textContent = DATA.latest_recap || '—';
+
+  const curve = d.equity_curve || [];
+  if (chart) chart.destroy();
+  const ctx = document.getElementById('chart').getContext('2d');
+  const grad = ctx.createLinearGradient(0, 0, 0, 220);
+  grad.addColorStop(0, 'rgba(125,211,252,0.28)'); grad.addColorStop(1, 'rgba(125,211,252,0)');
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: { labels: curve.map(p => p.date), datasets: [{ data: curve.map(p => p.value), borderColor: '#7dd3fc', borderWidth: 2.5, pointRadius: curve.length < 15 ? 4 : 0, pointBackgroundColor: '#a78bfa', fill: true, backgroundColor: grad, tension: 0.35 }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: {display: false}, tooltip: { callbacks: { label: c => fmt$(c.parsed.y) } } },
+      scales: { x: { grid: {color: 'rgba(255,255,255,0.04)'}, ticks: {color: '#7c8299', maxTicksLimit: 7} },
+                y: { grid: {color: 'rgba(255,255,255,0.05)'}, ticks: {color: '#7c8299', callback: v => '$' + v.toLocaleString()} } } }
+  });
+}
+
+fetch('./data.json?t=' + Date.now()).then(r => r.json()).then(j => {
+  DATA = j; document.getElementById('app').style.display = 'block'; setAccount(account);
+}).catch(() => { document.getElementById('loaderr').style.display = 'block'; });
+</script>
+</body>
+</html>
