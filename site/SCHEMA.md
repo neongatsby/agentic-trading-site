@@ -14,6 +14,9 @@ PRIVACY: never include account numbers, API keys, or admin config. Paper equity 
   },
   "live": { "same shape": "equity = real live account equity" },
   "pending_tickets": [{"side":"buy","symbol":"NVDA","size":"$250","bracket":"-10% / +25%","thesis":"..."}],
+  "coverage": [
+    {"ticker":"BE","name":"Bloom Energy","theme":"Energy-for-AI","verdict":"wait","verdict_label":"Great biz · buy pullbacks","thesis":"one-line, **bold** the punch words","card":"/research/be.html","updated":"Jul 5"}
+  ],
   "feed": [
     {"type":"trade","account":"paper","ts":"ISO","side":"buy|sell","symbol":"NVDA","size":"$250 · 1.6 sh","text":"friend-voice reasoning for the move"},
     {"type":"memory","account":"paper","ts":"ISO","symbol":"OKLO","text":"a durable view formed about a company, friend voice"},
@@ -29,5 +32,12 @@ PRIVACY: never include account numbers, API keys, or admin config. Paper equity 
 - `size` for trades: dollars and shares, e.g. "$250 · 1.6 sh".
 - `text`: VOICE MATTERS. Write like texting a smart friend who watches the market all day. Contractions, plain language, a point of view. No corporate filler, no "as an AI". 1–3 sentences. Use **double asterisks** around the few words that carry the punch (they render bold). Every trade card's text must say WHY, not just what.
 - Append a feed entry for: every executed trade (trade), every time a thesis is formed or materially changes (memory), and notable setups worth flagging (watch). Don't spam — a quiet cycle adds nothing.
+
+## coverage (the intelligence-card index the dashboard renders)
+- One entry per company on the coverage list. The engine writes/refreshes the full card at `site/research/<ticker-lowercase>.html` (accessible published path — NOT the Documents project) and updates this array.
+- `verdict`: keyword that drives the badge color — "buy"/"accumulate" (green), "wait"/"extended" (amber), "avoid"/"sell" (red), else blue "watch".
+- `verdict_label`: short human label shown on the badge (e.g. "Great biz · buy pullbacks").
+- `thesis`: one-line current read, **bold** the punch words. `card`: "/research/<ticker>.html". `updated`: e.g. "Jul 5".
+- Card HTML style: match `site/research/be.html` / `oklo.html` (verdict badge header, thesis, KPI numbers, bull, bear, trade frame, invalidation triggers, catalysts, sources).
 
 Keep equity_curve append-only per trading day (last ~90 points). The push agent redeploys site/ within ~5 min of any change.

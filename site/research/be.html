@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom Energy (BE) — Intelligence Card</title>
+<style>
+  :root { color-scheme: dark; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif; color:#e8eaf2; line-height:1.55; padding:24px clamp(16px,4vw,44px) 70px;
+    background:radial-gradient(ellipse 80% 60% at 15% -10%,#1a2340 0%,transparent 55%),radial-gradient(ellipse 60% 50% at 95% 5%,#2a1a3d 0%,transparent 50%),radial-gradient(ellipse 70% 60% at 50% 115%,#0e2a24 0%,transparent 55%),#07090f; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:900px; margin:0 auto; }
+  .glass { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.025)); border:1px solid rgba(255,255,255,.09); border-radius:18px; box-shadow:0 8px 32px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.07); }
+  header { display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:18px; padding:24px 26px; margin-bottom:16px; }
+  .tkr { font-size:13px; font-weight:700; letter-spacing:.1em; color:#7dd3fc; }
+  h1 { font-size:clamp(26px,4vw,36px); font-weight:800; letter-spacing:-.02em; margin:4px 0 8px; }
+  .sub { font-size:14px; color:#9aa0b5; }
+  .px { text-align:right; }
+  .px .now { font-size:30px; font-weight:800; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+  .px .meta { font-size:12.5px; color:#8a90a6; margin-top:3px; }
+  .verdict { display:inline-flex; align-items:center; gap:8px; margin-top:12px; padding:7px 15px; border-radius:999px; font-size:13.5px; font-weight:700; background:rgba(251,191,36,.13); color:#fcd34d; border:1px solid rgba(251,191,36,.32); }
+  section { padding:22px 26px; margin-bottom:16px; }
+  h2 { font-size:14px; font-weight:750; letter-spacing:.02em; color:#c9cede; margin-bottom:14px; display:flex; align-items:center; gap:9px; text-transform:uppercase; letter-spacing:.06em; }
+  h2 .dot { width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7dd3fc,#a78bfa);box-shadow:0 0 8px rgba(125,211,252,.6); }
+  p { color:#c0c5d6; font-size:15px; margin-bottom:12px; }
+  b { color:#fff; font-weight:650; }
+  ul { list-style:none; }
+  li { position:relative; padding-left:24px; margin-bottom:11px; font-size:14.5px; color:#c0c5d6; }
+  li::before { content:""; position:absolute; left:3px; top:8px; width:7px; height:7px; border-radius:2px; background:linear-gradient(135deg,#7dd3fc,#a78bfa); }
+  li.no::before{background:#fca5a5;} li.yes::before{background:#6ee7b7;}
+  .kpi { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; }
+  .kpi div { padding:15px 17px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); }
+  .kpi .n { font-size:21px; font-weight:750; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+  .kpi .n.g{color:#6ee7b7;} .kpi .n.r{color:#fca5a5;} .kpi .n.a{color:#fcd34d;}
+  .kpi .l { font-size:11.5px; color:#8a90a6; margin-top:5px; line-height:1.4; }
+  .trade { display:grid; gap:12px; grid-template-columns:1fr; } @media(min-width:640px){ .trade{grid-template-columns:1fr 1fr;} }
+  .trade div { padding:16px 18px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); }
+  .trade h3 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:#7dd3fc; margin-bottom:7px; }
+  .trade p { font-size:14px; margin:0; color:#cdd2e2; }
+  .flag { font-size:12px; color:#8a90a6; font-style:italic; margin-top:4px; }
+  a { color:#7dd3fc; text-decoration:none; } a:hover{text-decoration:underline;}
+  .foot { font-size:11.5px; color:#6b7188; text-align:center; padding:26px 10px 0; line-height:1.7; }
+  .src { font-size:11.5px; color:#7c8299; margin-top:12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="glass">
+    <div>
+      <div class="tkr">BE · NYSE · Bloom Energy</div>
+      <h1>The grid can't keep up. Bloom sells the workaround.</h1>
+      <div class="sub">Solid-oxide fuel cells delivering on-site power to AI data centers — fast, when the grid is years away.</div>
+      <div class="verdict">⚠️ Great business · extended stock — don't chase, wait for a pullback</div>
+    </div>
+    <div class="px">
+      <div class="now">~$271</div>
+      <div class="meta">Jul 2, 2026 close · 52-wk $22–$351<br>mkt cap ~$77B · beta ~3.7–5.9</div>
+    </div>
+  </header>
+
+  <section class="glass">
+    <h2><span class="dot"></span>The thesis in one breath</h2>
+    <p>AI data centers need gigawatts of power <b>now</b>, but grid interconnection runs <b>4–12 years</b> and gas turbines are sold out through ~2027–2029. Bloom's fuel cells install in <b>weeks</b> (55 days for an Oracle site vs a 90-day target), run on natural gas today, and are modular from 20 MW to 500 MW+. That speed-to-power is the real edge — and hyperscalers are signing up for it.</p>
+  </section>
+
+  <section class="glass">
+    <h2><span class="dot"></span>The numbers</h2>
+    <div class="kpi">
+      <div><div class="n g">+130%</div><div class="l">Q1'26 revenue YoY ($751M)</div></div>
+      <div><div class="n g">$3.4–3.8B</div><div class="l">FY26 rev guidance (~80% growth)</div></div>
+      <div><div class="n">~30%</div><div class="l">gross margin, improving</div></div>
+      <div><div class="n a">~$6M</div><div class="l">TTM GAAP net income (razor-thin)</div></div>
+      <div><div class="n r">~112x</div><div class="l">forward P/E — priced for perfection</div></div>
+      <div><div class="n r">+~1,100%</div><div class="l">stock, trailing 12 months</div></div>
+      <div><div class="n a">$2.5B</div><div class="l">0% converts due 2030 (Nov'25)</div></div>
+      <div><div class="n r">+15%</div><div class="l">shares outstanding YoY (dilution)</div></div>
+    </div>
+    <p class="flag">Cash $2.49B vs debt $2.95B (net cash −$0.46B) · FCF positive ~$230M TTM · 284M shares.</p>
+  </section>
+
+  <section class="glass">
+    <h2><span class="dot"></span>Why it wins right now (the moat)</h2>
+    <ul>
+      <li class="yes"><b>Speed.</b> Weeks-to-power vs years for grid or turbines — the single biggest reason deals are landing.</li>
+      <li class="yes"><b>Real backlog.</b> Reported <b>$20B+</b>, and over half the data-center backlog is <i>non-Oracle</i> — demand is broadening.</li>
+      <li class="yes"><b>Marquee customers.</b> Oracle MSA up to <b>2.8 GW</b> (1.2 GW contracted); AEP 1 GW; Nebius $2.6B; Brookfield partnership.</li>
+      <li class="yes"><b>Scaled leader.</b> ~5 GW/yr capacity — far ahead of fuel-cell rivals (FuelCell Energy, Plug, Doosan).</li>
+    </ul>
+  </section>
+
+  <section class="glass">
+    <h2><span class="dot"></span>The bear case (read this twice)</h2>
+    <ul>
+      <li class="no"><b>Priced for perfection.</b> ~112x forward earnings, ~31x sales, after +1,100% in a year. Analyst avg target (~$279) is basically <i>at</i> the price — no upside to consensus.</li>
+      <li class="no"><b>Not actually clean.</b> Runs mostly on natural gas (~680–960 lb CO₂/MWh); emissions scrutiny + gas-price exposure undercut the green label.</li>
+      <li class="no"><b>Subsidy-dependent.</b> Economics lean on the 30% fuel-cell ITC (§48E). A repeal or curtailment is a direct hit to pricing.</li>
+      <li class="no"><b>"Bubble" risk.</b> Short-seller Jim Chanos argues AI-power scarcity is a <i>temporary bottleneck</i>; faster grid interconnects (FERC) could erase the scarcity premium.</li>
+      <li class="no"><b>History &amp; dilution.</b> 24 years without sustainable profit, ~$4B accumulated deficit, chronic share issuance, and a 2019 short report alleging aggressive accounting.</li>
+    </ul>
+  </section>
+
+  <section class="glass">
+    <h2><span class="dot"></span>Trade frame — trend-follower, weeks to 6 months</h2>
+    <div class="trade">
+      <div><h3>Stance</h3><p>Trend is up, but the stock is <b>parabolic and extended</b>. Initiating here is chasing. Build on weakness, not strength.</p></div>
+      <div><h3>Accumulation zone</h3><p>Prefer pullbacks toward the <b>50-day (~$275)</b>, better near the <b>~$250</b> consolidation, or a post-earnings reset. Deep support: 200-day ~$185.</p></div>
+      <div><h3>Stop logic (key insight)</h3><p>This name swings <b>~16%/week</b>. A tight 10% stop gets whipsawed instantly. Use a <b>wider stop + smaller position</b> — e.g. a weekly close below ~$230, or below the 200-day for a wider position trade.</p></div>
+      <div><h3>Exit (let winners run)</h3><p><b>No fixed take-profit.</b> Trail beneath the rising 50-day, or exit on <i>thesis-invalidation</i> (below) rather than a price target.</p></div>
+    </div>
+  </section>
+
+  <section class="glass">
+    <h2><span class="dot"></span>What would kill the thesis (exit triggers)</h2>
+    <ul>
+      <li class="no">FY26 <b>guidance cut</b> or gross margin reversal below ~30%.</li>
+      <li class="no">A <b>marquee deal slips</b> — Oracle ramp stalls or Brookfield framework fails to convert to orders.</li>
+      <li class="no"><b>ITC / §48E repeal</b> or curtailment for fuel cells.</li>
+      <li class="no">A <b>dilutive equity raise</b> near current levels, or an accounting/warranty red flag.</li>
+      <li class="no">Broad <b>AI-capex slowdown</b>, or FERC-driven faster grid interconnects erasing the scarcity premium.</li>
+    </ul>
+  </section>
+
+  <section class="glass">
+    <h2><span class="dot"></span>Watch these dates &amp; signals</h2>
+    <ul>
+      <li><b>July 30, 2026 — Q2 earnings (after close).</b> The next big catalyst; a beat-and-raise vs a miss defines the next leg.</li>
+      <li>Oracle 2.8 GW ramp confirmations · Brookfield framework converting to firm orders · Nebius/AEP progress.</li>
+      <li>ITC / energy-policy headlines · possible <b>S&amp;P 500 inclusion</b> chatter (a mechanical demand catalyst).</li>
+    </ul>
+  </section>
+
+  <div class="src">
+    Sources: Bloom Energy investor relations (Oracle 2.8 GW MSA, Apr 2026; Brookfield, Oct 2025); Q1 2026 earnings (Motley Fool transcript, SEC 8-K); stockanalysis.com (valuation/balance sheet, Jul 2026); Utility Dive (AEP); Reuters (Brookfield $25B, Jun 30 2026); Wood Mackenzie / Bloomberg (gas-turbine shortage); RMI (interconnection queues); 24/7 Wall St. &amp; Hindenburg (bear case). Several headline deal $-values (Brookfield $25B, AEP $2.65B) are financing frameworks / offtake structures, not booked equipment orders — read as pipeline, not revenue.
+  </div>
+  <div class="foot">
+    Bloom Energy intelligence card · researched by Claude, Jul 5 2026 · prototype of the curated coverage UI.<br>
+    Analysis for a self-directed investor, not personalized financial advice. High-beta, high-risk name — it can move 15%+ in a day.
+  </div>
+</div>
+</body>
+</html>
