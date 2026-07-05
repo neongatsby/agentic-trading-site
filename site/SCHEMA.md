@@ -15,7 +15,7 @@ PRIVACY: never include account numbers, API keys, or admin config. Paper equity 
   "live": { "same shape": "equity = real live account equity" },
   "pending_tickets": [{"side":"buy","symbol":"NVDA","size":"$250","bracket":"-10% / +25%","thesis":"..."}],
   "coverage": [
-    {"ticker":"BE","name":"Bloom Energy","theme":"Energy-for-AI","verdict":"wait","verdict_label":"Great biz · buy pullbacks","thesis":"one-line, **bold** the punch words","card":"/research/be.html","updated":"Jul 5"}
+    {"ticker":"BE","name":"Bloom Energy","theme":"Energy-for-AI","verdict":"wait","verdict_label":"Great biz · buy pullbacks","thesis":"one-line, **bold** the punch words","size":"$0","size_pct":0,"size_note":"planned $600 (12%) on pullback","card":"/research/be.html","updated":"Jul 5"}
   ],
   "feed": [
     {"type":"trade","account":"paper","ts":"ISO","side":"buy|sell","symbol":"NVDA","size":"$250 · 1.6 sh","text":"friend-voice reasoning for the move"},
@@ -35,9 +35,10 @@ PRIVACY: never include account numbers, API keys, or admin config. Paper equity 
 
 ## coverage (the intelligence-card index the dashboard renders)
 - One entry per company on the coverage list. The engine writes/refreshes the full card at `site/research/<ticker-lowercase>.html` (accessible published path — NOT the Documents project) and updates this array.
-- `verdict`: keyword that drives the badge color — "buy"/"accumulate" (green), "wait"/"extended" (amber), "avoid"/"sell" (red), else blue "watch".
+- `verdict`: keyword that drives the badge color AND the emoji symbol — "buy"/"accumulate" → 🟢 green, "wait"/"extended" → ⏳ amber, "avoid"/"sell" → ⛔ red, else 👀 blue "watch".
 - `verdict_label`: short human label shown on the badge (e.g. "Great biz · buy pullbacks").
 - `thesis`: one-line current read, **bold** the punch words. `card`: "/research/<ticker>.html". `updated`: e.g. "Jul 5".
+- `size`: the ACTUAL dollars currently in this name in the sleeve — "$0" if no position, else e.g. "$750". `size_pct`: number (0 if no position) = % of the $5K sleeve (drives green vs grey styling). `size_note`: context line — for a live position "of $5K sleeve"; for a wait/avoid, the PLANNED size on trigger, e.g. "planned $750 (15%) on trigger" or "not touching".
 - Card HTML style: match `site/research/be.html` / `oklo.html` (verdict badge header, thesis, KPI numbers, bull, bear, trade frame, invalidation triggers, catalysts, sources).
 
 Keep equity_curve append-only per trading day (last ~90 points). The push agent redeploys site/ within ~5 min of any change.

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Agentic Trading — Luca's Sleeve</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
 <style>
   :root { color-scheme: dark; }
@@ -74,19 +75,33 @@
   .scroll-x { overflow-x: auto; }
   .side-buy { color: #6ee7b7; font-weight: 600; } .side-sell { color: #fca5a5; font-weight: 600; }
   /* ---- Coverage tiles ---- */
-  .cov { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px; }
-  .cov a { text-decoration:none; color:inherit; display:block; padding:15px 16px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); transition:transform .15s ease, border-color .15s ease, background .15s ease; }
+  .cov-hint { font-size:12.5px; color:#8a90a6; margin:-6px 0 14px; }
+  .cov { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; }
+  .cov a { text-decoration:none; color:inherit; display:block; padding:16px 17px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); transition:transform .15s ease, border-color .15s ease, background .15s ease; }
+  .cov a:active { transform:scale(.99); }
   .cov a:hover { transform:translateY(-2px); border-color:rgba(125,211,252,.4); background:rgba(255,255,255,.06); }
-  .cov .top { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; }
-  .cov .tk { font-weight:800; font-size:15px; letter-spacing:.03em; }
-  .cov .badge { font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:999px; white-space:nowrap; }
-  .cov .b-buy{background:rgba(110,231,183,.14);color:#6ee7b7;border:1px solid rgba(110,231,183,.3);}
-  .cov .b-wait{background:rgba(251,191,36,.13);color:#fcd34d;border:1px solid rgba(251,191,36,.3);}
-  .cov .b-avoid{background:rgba(252,165,165,.13);color:#fca5a5;border:1px solid rgba(252,165,165,.3);}
-  .cov .b-watch{background:rgba(125,211,252,.12);color:#7dd3fc;border:1px solid rgba(125,211,252,.28);}
-  .cov .nm { font-size:12px; color:#8a90a6; margin-bottom:8px; }
-  .cov .th { font-size:13px; color:#c0c5d6; line-height:1.5; }
-  .cov .meta { font-size:11px; color:#6b7188; margin-top:10px; display:flex; justify-content:space-between; }
+  .cov .top { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .cov .sym { font-size:22px; line-height:1; }
+  .cov .tk { font-weight:800; font-size:16px; letter-spacing:.03em; }
+  .cov .badge { margin-left:auto; font-size:10.5px; font-weight:700; padding:4px 10px; border-radius:999px; white-space:nowrap; }
+  .cov .b-buy{background:rgba(110,231,183,.16);color:#6ee7b7;border:1px solid rgba(110,231,183,.35);}
+  .cov .b-wait{background:rgba(251,191,36,.14);color:#fcd34d;border:1px solid rgba(251,191,36,.32);}
+  .cov .b-avoid{background:rgba(252,165,165,.14);color:#fca5a5;border:1px solid rgba(252,165,165,.32);}
+  .cov .b-watch{background:rgba(125,211,252,.13);color:#7dd3fc;border:1px solid rgba(125,211,252,.3);}
+  .cov .nm { font-size:12px; color:#8a90a6; margin-bottom:9px; }
+  .cov .th { font-size:13.5px; color:#c0c5d6; line-height:1.5; }
+  .cov .size { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:12px; padding-top:11px; border-top:1px solid rgba(255,255,255,.07); }
+  .cov .size .amt { font-size:14px; font-weight:750; font-variant-numeric:tabular-nums; }
+  .cov .size .amt.g{color:#6ee7b7;} .cov .size .amt.d{color:#8a90a6;}
+  .cov .size .lbl { font-size:11px; color:#7c8299; }
+  .cov .open { font-size:11px; color:#7dd3fc; }
+  @media(max-width:480px){
+    body{ padding:18px 12px 56px; }
+    .cov{ grid-template-columns:1fr; }
+    .stats{ grid-template-columns:1fr 1fr; }
+    header .brand h1{ font-size:18px; }
+    .toggle button{ padding:8px 12px; font-size:12px; }
+  }
   .footer { margin-top: 10px; font-size: 11px; color: #6b7188; text-align: center; line-height: 1.7; }
 </style>
 </head>
@@ -111,13 +126,14 @@
   </div>
 
   <div class="panel glass">
-    <h2><span class="dot"></span>Signals &amp; Moves<span class="count" id="feed-count"></span></h2>
-    <div class="feed" id="feed"></div>
+    <h2><span class="dot"></span>Coverage — Company Intelligence<span class="count" id="cov-count"></span></h2>
+    <p class="cov-hint">Tap any company to open the full deep-dive. Symbol = the call · $ = planned size in the $5K sleeve.</p>
+    <div class="cov" id="coverage"></div>
   </div>
 
   <div class="panel glass">
-    <h2><span class="dot"></span>Coverage — Company Intelligence<span class="count" id="cov-count"></span></h2>
-    <div class="cov" id="coverage"></div>
+    <h2><span class="dot"></span>Signals &amp; Moves<span class="count" id="feed-count"></span></h2>
+    <div class="feed" id="feed"></div>
   </div>
 
   <div class="panel glass"><h2><span class="dot"></span>Equity Curve</h2><div class="chart-wrap"><canvas id="chart"></canvas></div></div>
@@ -184,9 +200,16 @@ function render() {
   // Coverage — company intelligence cards (account-independent)
   const cov = DATA.coverage || [];
   document.getElementById('cov-count').textContent = cov.length ? cov.length + ' tracked' : '';
-  const badgeClass = v => { v=(v||'').toLowerCase(); if(v.includes('buy')||v.includes('accumulate'))return 'b-buy'; if(v.includes('avoid')||v.includes('sell'))return 'b-avoid'; if(v.includes('wait')||v.includes('extended'))return 'b-wait'; return 'b-watch'; };
+  const act = v => { v=(v||'').toLowerCase(); if(v.includes('buy')||v.includes('accumulate'))return {cls:'b-buy',sym:'🟢'}; if(v.includes('avoid')||v.includes('sell'))return {cls:'b-avoid',sym:'⛔'}; if(v.includes('wait')||v.includes('extended'))return {cls:'b-wait',sym:'⏳'}; return {cls:'b-watch',sym:'👀'}; };
   document.getElementById('coverage').innerHTML = cov.length
-    ? cov.map(c => `<a href="${esc(c.card)}" target="_blank" rel="noopener"><div class="top"><span class="tk">${esc(c.ticker)}</span><span class="badge ${badgeClass(c.verdict)}">${esc(c.verdict_label || c.verdict)}</span></div><div class="nm">${esc(c.name)}${c.theme?' · '+esc(c.theme):''}</div><div class="th">${rich(c.thesis||'')}</div><div class="meta"><span>${c.updated?'updated '+esc(c.updated):''}</span><span>open card ↗</span></div></a>`).join('')
+    ? cov.map(c => { const a=act(c.verdict); const hasSize = c.size && Number(c.size_pct)>0;
+        return `<a href="${esc(c.card)}" target="_blank" rel="noopener">`
+        + `<div class="top"><span class="sym">${a.sym}</span><span class="tk">${esc(c.ticker)}</span><span class="badge ${a.cls}">${esc(c.verdict_label||c.verdict)}</span></div>`
+        + `<div class="nm">${esc(c.name)}${c.theme?' · '+esc(c.theme):''}</div>`
+        + `<div class="th">${rich(c.thesis||'')}</div>`
+        + `<div class="size"><span class="amt ${hasSize?'g':'d'}">${esc(c.size||'$0')}</span><span class="lbl">${esc(c.size_note|| (hasSize?'of $5K sleeve':'no position'))}</span></div>`
+        + `<div class="size" style="border:0;padding-top:8px;margin-top:4px"><span class="lbl">${c.updated?'updated '+esc(c.updated):''}</span><span class="open">open card ↗</span></div>`
+        + `</a>`; }).join('')
     : '<div class="empty">No coverage cards yet. The engine builds a deep-research intelligence card per company on a daily rotation — they\'ll appear here.</div>';
 
   // Feed — account-filtered, newest first, max 8
