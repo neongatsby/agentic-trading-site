@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-06T14:42:49.258Z",
-  "market_note": "Market OPEN — Mon 7/6. Manual refresh (daily research engine hasn't run yet — see note).",
+  "generated_at": "2026-07-06T14:44:52.924Z",
+  "market_note": "Market OPEN — live.",
   "paper": {
     "equity": 5000,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
@@ -23,18 +23,18 @@
     ]
   },
   "live": {
-    "equity": 1000.09,
+    "equity": 1000.1,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
     "total_pnl": 0.09,
-    "day_pnl": 0.09,
+    "day_pnl": 0.1,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 196.34,
-        "pl": 0.1,
-        "plpc": 0.95,
+        "current": 196.64,
+        "pl": 0.11,
+        "plpc": 1.11,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       }
     ],
@@ -66,7 +66,9 @@
       "size_pct": 0,
       "size_note": "planned $750 (15%) on trigger",
       "card": "/research/ceg.html",
-      "updated": "Jul 5"
+      "updated": "Jul 5",
+      "price": 242.78,
+      "chg_pct": 1.49
     },
     {
       "ticker": "BE",
@@ -79,7 +81,9 @@
       "size_pct": 0,
       "size_note": "planned $600 (12%) on pullback",
       "card": "/research/be.html",
-      "updated": "Jul 5"
+      "updated": "Jul 5",
+      "price": 299.33,
+      "chg_pct": 10.45
     },
     {
       "ticker": "OKLO",
@@ -92,7 +96,9 @@
       "size_pct": 0,
       "size_note": "not touching",
       "card": "/research/oklo.html",
-      "updated": "Jul 5"
+      "updated": "Jul 5",
+      "price": 51.77,
+      "chg_pct": -1.26
     }
   ],
   "feed": [
