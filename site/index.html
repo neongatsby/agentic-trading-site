@@ -66,10 +66,16 @@
   .eq-daypct { color:#8a90a6; font-weight:600; }
   .eq-daylbl { color:#6b7188; font-weight:500; font-size:13px; }
   .hero-asof { font-size:11.5px; color:#7c8299; margin-top:10px; line-height:1.5; }
-  .hero-chart { position:relative; height:190px; margin:6px 0 0; }
+  .hero-chart { position:relative; height:200px; margin:6px 0 0; }
   /* fade the chart's top edge into the page so it looks boundless, not boxed */
-  .hero-chart::before { content:""; position:absolute; inset:0 0 auto 0; height:46px; z-index:2; pointer-events:none;
-    background:linear-gradient(#07090f 4%, rgba(7,9,15,0.55) 55%, transparent); }
+  .hero-chart::before { content:""; position:absolute; inset:0 0 auto 0; height:54px; z-index:2; pointer-events:none;
+    background:linear-gradient(#07090f 2%, rgba(7,9,15,0.5) 50%, transparent); }
+  #chart-dot { position:absolute; width:11px; height:11px; border-radius:50%; transform:translate(-50%,-50%); pointer-events:none; opacity:0; z-index:3; background:#7dd3fc; }
+  #chart-dot.on { opacity:1; }
+  #chart-dot.up { background:#6ee7b7; } #chart-dot.down { background:#fca5a5; }
+  #chart-dot.on.up { animation:dotU 2s infinite; } #chart-dot.on.down { animation:dotD 2s infinite; }
+  @keyframes dotU { 0%{ box-shadow:0 0 0 0 rgba(110,231,183,.55);} 70%{ box-shadow:0 0 0 13px rgba(110,231,183,0);} 100%{ box-shadow:0 0 0 0 rgba(110,231,183,0);} }
+  @keyframes dotD { 0%{ box-shadow:0 0 0 0 rgba(252,165,165,.55);} 70%{ box-shadow:0 0 0 13px rgba(252,165,165,0);} 100%{ box-shadow:0 0 0 0 rgba(252,165,165,0);} }
   /* ---- Trade-approval status strip ---- */
   .approval { display:flex; align-items:center; gap:12px; padding:13px 16px; border-radius:16px; margin-bottom:16px;
     border:1px solid rgba(255,255,255,.09); background:rgba(255,255,255,.04); animation: rise .5s ease both; }
@@ -270,7 +276,7 @@
     <div class="eq-day"><span class="value" id="s-day">—</span><span class="eq-daypct" id="s-day-pct"></span><span class="eq-daylbl">today</span></div>
     <p id="asof" class="hero-asof">Loading…</p>
   </div>
-  <div class="hero-chart"><canvas id="chart"></canvas></div>
+  <div class="hero-chart"><canvas id="chart"></canvas><span id="chart-dot"></span></div>
 </div>
 
 <div id="app" style="display:none">
@@ -580,8 +586,24 @@ function buildTickets(){
     '<table><tr><th>Side</th><th>Symbol</th><th>Size</th><th>Bracket</th><th>Thesis</th></tr>' + tix.map(t =>
       `<tr><td class="side-${esc(t.side)}">${esc((t.side||'').toUpperCase())}</td><td class="sym">${esc(t.symbol)}</td><td>${esc(t.size)}</td><td>${esc(t.bracket)}</td><td class="thesis">${esc(t.thesis)}</td></tr>`).join('') + '</table>';
 }
+// gradient helpers — evaluated per-draw so they upgrade once the chart area exists
+let _chartUp = true;
+const UP_COLS = ['#7dd3fc','#a78bfa','#6ee7b7'], DOWN_COLS = ['#fb7185','#a78bfa','#fca5a5'];
+function gStroke(c){ const cols=_chartUp?UP_COLS:DOWN_COLS; const {ctx,chartArea}=c.chart; if(!chartArea) return cols[0];
+  const g=ctx.createLinearGradient(chartArea.left,0,chartArea.right,0); g.addColorStop(0,cols[0]); g.addColorStop(.5,cols[1]); g.addColorStop(1,cols[2]); return g; }
+function gFill(c){ const {ctx,chartArea}=c.chart; if(!chartArea) return 'rgba(125,211,252,0.06)';
+  const g=ctx.createLinearGradient(0,chartArea.top,0,chartArea.bottom);
+  g.addColorStop(0, _chartUp?'rgba(125,211,252,0.34)':'rgba(251,113,133,0.30)');
+  g.addColorStop(.42, _chartUp?'rgba(167,139,250,0.14)':'rgba(167,139,250,0.12)');
+  g.addColorStop(1, 'rgba(125,211,252,0)'); return g; }
+const endDot = { id:'endDot', afterDraw(chart){
+  const dot=document.getElementById('chart-dot'); if(!dot) return;
+  const pts=(chart.getDatasetMeta(0)||{}).data; if(!pts||!pts.length){ dot.classList.remove('on'); return; }
+  const p=pts[pts.length-1]; dot.style.left=p.x+'px'; dot.style.top=p.y+'px';
+  dot.classList.remove(_chartUp?'down':'up'); dot.classList.add('on', _chartUp?'up':'down'); } };
 function syncChart(){                                  // create once; thereafter chart.update() animates the transition (no destroy/replay)
   const d = DATA[account] || {};
+  _chartUp = (d.day_pnl ?? 0) >= 0;
   const useIntra = d.intraday && d.intraday.length > 2;
   const curve = useIntra
     ? d.intraday.map(p => ({ date: new Date(p.t).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}), value: p.v }))
@@ -589,20 +611,19 @@ function syncChart(){                                  // create once; thereafte
   const labels = curve.map(p => p.date), values = curve.map(p => p.value);
   if (!chart) {
     const ctx = document.getElementById('chart').getContext('2d');
-    const grad = ctx.createLinearGradient(0, 0, 0, 190);
-    grad.addColorStop(0, 'rgba(125,211,252,0.30)'); grad.addColorStop(1, 'rgba(125,211,252,0)');
     chart = new Chart(ctx, {
       type: 'line',
-      data: { labels, datasets: [{ data: values, borderColor: '#7dd3fc', borderWidth: 2.5, pointRadius: values.length < 15 ? 3 : 0, pointBackgroundColor: '#a78bfa', fill: true, backgroundColor: grad, tension: 0.35 }] },
-      options: { responsive: true, maintainAspectRatio: false, animation: { duration: 700 },
-        layout: { padding: { top: 8 } },
+      data: { labels, datasets: [{ data: values, borderColor: gStroke, borderWidth: 2.75, pointRadius: 0, pointHoverRadius: 5, pointHoverBackgroundColor:'#fff', fill: true, backgroundColor: gFill, tension: 0.38, cubicInterpolationMode:'monotone' }] },
+      options: { responsive: true, maintainAspectRatio: false, animation: { duration: 750 },
+        layout: { padding: { top: 10, bottom: 2 } },
+        interaction: { intersect:false, mode:'index' },
         plugins: { legend: {display: false}, tooltip: { displayColors:false, callbacks: { title: items => items[0]?.label||'', label: c => fmt$(c.parsed.y) } } },
-        scales: { x: { display:false }, y: { display:false, grace:'6%' } } }   // boundless: no axes/grid
+        scales: { x: { display:false }, y: { display:false, grace:'12%' } } },   // boundless: no axes/grid
+      plugins: [endDot]
     });
   } else {
     chart.data.labels = labels;
     chart.data.datasets[0].data = values;
-    chart.data.datasets[0].pointRadius = values.length < 15 ? 4 : 0;
     chart.update();
   }
 }
