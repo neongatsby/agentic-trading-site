@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
 <meta name="robots" content="noindex">
-<title>Agentic Trading — Luca's Sleeve</title>
+<title>Agentic Trading — Adam's Experiment</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -191,24 +191,25 @@
 </style>
 </head>
 <body>
-<header>
-  <div class="brand">
-    <h1><span>Agentic Trading</span> — Luca's Sleeve</h1>
-    <p id="asof">Loading…</p>
+<div id="hero">
+  <div class="hero-head">
+    <h1><span>Agentic Trading</span> — Adam's Experiment</h1>
     <div id="live-pill" class="live-pill" style="display:none"><span class="live-dot"></span><span id="live-txt">live</span></div>
   </div>
-  <div class="toggle glass">
-    <button id="btn-paper" onclick="setAccount('paper')"><b>Paper</b><small>autonomous</small></button>
-    <button id="btn-live" onclick="setAccount('live')"><b>Live</b><small>approval-gated</small></button>
+  <div class="hero-eq">
+    <div class="eq-label">Live portfolio value</div>
+    <div class="eq-big value" id="s-equity">—</div>
+    <div class="eq-day"><span class="value" id="s-day">—</span><span class="eq-daypct" id="s-day-pct"></span><span class="eq-daylbl">today</span></div>
+    <p id="asof" class="hero-asof">Loading…</p>
   </div>
-</header>
+  <div class="hero-chart"><canvas id="chart"></canvas></div>
+</div>
 
 <div id="app" style="display:none">
+  <div id="approval" class="approval"></div>
   <div class="stats">
-    <div class="stat glass"><div class="label">Equity</div><div class="value" id="s-equity">—</div><div class="sub" id="s-equity-sub"></div></div>
-    <div class="stat glass"><div class="label">Total P&L</div><div class="value" id="s-pnl">—</div><div class="sub" id="s-pnl-sub"></div></div>
-    <div class="stat glass"><div class="label">Day P&L</div><div class="value" id="s-day">—</div><div class="sub">vs prior close</div></div>
-    <div class="stat glass"><div class="label">Positions</div><div class="value" id="s-pos">—</div><div class="sub" id="s-pos-sub"></div></div>
+    <div class="stat glass"><div class="label">Total P&L</div><div class="value" id="s-pnl">—</div><div class="sub" id="s-pnl-sub">since inception</div></div>
+    <div class="stat glass"><div class="label">Open Positions</div><div class="value" id="s-pos">—</div><div class="sub" id="s-pos-sub"></div></div>
   </div>
 
   <div class="panel glass" id="alloc-panel">
