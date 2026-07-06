@@ -97,6 +97,9 @@
   .tl-item .td { font-size:13px; color:#aeb4c6; line-height:1.55; }
   .alloc-row { animation:rise .5s ease both; }
   @keyframes fadein { from{opacity:0;} to{opacity:1;} }
+  /* subtle "it ticked" highlight when a live number updates in place (YouTube/Twitter-style) */
+  @keyframes bump { 0%{ background:rgba(125,211,252,.30); } 100%{ background:transparent; } }
+  .bump { animation:bump .6s ease; border-radius:6px; padding:0 2px; margin:0 -2px; }
   .toggle { display: flex; padding: 4px; gap: 4px; }
   .toggle button { border: none; background: transparent; color: #9aa0b5; font: inherit; padding: 6px 15px; border-radius: 14px; cursor: pointer; transition: all .25s ease; white-space:nowrap; line-height:1.15; text-align:center; }
   .toggle button b { display:block; font-weight:800; font-size:13px; letter-spacing:.01em; }
@@ -170,6 +173,7 @@
   .cov .size .amt.g{color:#6ee7b7;} .cov .size .amt.d{color:#8a90a6;}
   .cov .size .lbl { font-size:11px; color:#7c8299; }
   .cov .open { font-size:11px; color:#7dd3fc; }
+  .cov .spk { display:contents; }
   .cov .spark { width:100%; height:34px; margin-top:12px; display:block; }
   .swipe-hint { display:none; font-size:11px; color:#6b7188; text-align:center; margin-top:10px; }
   @media(max-width:560px){
@@ -324,9 +328,10 @@ function allocModel(){
     price:p.current, chg:p.plpc, sub:`${p.qty} sh @ ${fmt$(p.entry)}` }));
   const planned = (DATA.coverage||[]).filter(c=>+c.plan_usd>0).map(c=>{
     const buy = /buy|accumulate/i.test(c.verdict||'');
+    const trig = (c.size_note||'').replace(/^.*?\)\s*/, '').trim();   // keep the "on pullback" tail, drop the redundant $/% prefix
     return { key:c.ticker, kind:'plan', label:c.ticker, name:c.name||'', usd:+c.plan_usd,
       chip:buy?'BUYING':'WAITING', chipCls:buy?'c-buy':'c-wait', color:buy?'#6ee7b7':'#fcd34d', planned:true,
-      why:c.thesis||'', card:c.card, price:c.price, chg:c.chg_pct, sub:c.size_note||'planned on trigger' }; });
+      why:c.thesis||'', card:c.card, price:c.price, chg:c.chg_pct, sub:(trig && trig.length<24 ? trig : 'earmarked') }; });
   const deployed = holds.reduce((s,h)=>s+h.usd,0);
   const earmarked = planned.reduce((s,h)=>s+h.usd,0);
   const free = Math.max(0, pool - deployed - earmarked);
@@ -366,7 +371,7 @@ function updateAlloc(){                              // amounts/widths move with
   m.rows.forEach(r=>{
     const w=(r.usd/m.pool*100), pct=Math.round(w);
     const seg=bar.querySelector(`span[data-k="${cssq(r.key)}"]`); if(seg) seg.style.width=w.toFixed(2)+'%';
-    const amt=document.querySelector(`.amt[data-amt="${cssq(r.key)}"]`); if(amt) amt.innerHTML=`${usd0(r.usd)}<small>${pct}% · ${esc(r.sub)}</small>`;
+    const amt=document.querySelector(`.amt[data-amt="${cssq(r.key)}"]`); if(amt){ const h=`${usd0(r.usd)}<small>${pct}% · ${esc(r.sub)}</small>`; if(amt.innerHTML!==h){ amt.innerHTML=h; bump(amt); } }
     const mini=document.querySelector(`i[data-mini="${cssq(r.key)}"]`); if(mini) mini.style.width=pct+'%';
   });
 }
@@ -380,79 +385,98 @@ function renderActivity(){
     : '<div class="empty">The engine will log its research cycles here.</div>';
 }
 
+function verdictBadge(v){ v=(v||'').toLowerCase(); if(v.includes('buy')||v.includes('accumulate'))return {cls:'b-buy',sym:'🟢'}; if(v.includes('avoid')||v.includes('sell'))return {cls:'b-avoid',sym:'⛔'}; if(v.includes('wait')||v.includes('extended'))return {cls:'b-wait',sym:'⏳'}; return {cls:'b-watch',sym:'👀'}; }
+const covPx = c => c.price!=null ? `$${c.price}${c.chg_pct!=null?` <span class="${c.chg_pct>=0?'up':'down'}">${c.chg_pct>=0?'+':''}${c.chg_pct}%</span>`:''}` : '';
+function buildCoverage(){
+  const cov = DATA.coverage || [];
+  document.getElementById('cov-count').textContent = cov.length ? cov.length + ' tracked' : '';
+  document.getElementById('coverage').innerHTML = cov.length
+    ? cov.map(c => { const a=verdictBadge(c.verdict); const hasSize = c.size && Number(c.size_pct)>0;
+        return `<a href="${esc(c.card)}" target="_blank" rel="noopener">`
+        + `<div class="top"><span class="sym">${a.sym}</span><span class="tk">${esc(c.ticker)}</span><span class="cpx" data-cpx="${esc(c.ticker)}">${covPx(c)}</span><span class="badge ${a.cls}">${esc(c.verdict_label||c.verdict)}</span></div>`
+        + `<div class="nm">${esc(c.name)}${c.theme?' · '+esc(c.theme):''}</div>`
+        + `<span class="spk" data-spk="${esc(c.ticker)}">${spark(c.spark, c.chg_pct)}</span>`
+        + `<div class="th">${rich(c.thesis||'')}</div>`
+        + `<div class="size"><span class="amt ${hasSize?'g':'d'}">${esc(c.size||'$0')}</span><span class="lbl">${esc(c.size_note|| (hasSize?'of $5K sleeve':'no position'))}</span></div>`
+        + `<div class="size" style="border:0;padding-top:8px;margin-top:4px"><span class="lbl">${c.updated?'updated '+esc(c.updated):''}</span><span class="open">open card ↗</span></div>`
+        + `</a>`; }).join('')
+    : '<div class="empty">No coverage cards yet. The engine builds a deep-research intelligence card per company on a daily rotation — they\'ll appear here.</div>';
+}
+function bump(el){ if(!el) return; el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); } // brief highlight on a live tick
+function updateCoverPrices(){                          // stamp fresh price + sparkline in place; carousel scroll stays put
+  for(const c of (DATA.coverage||[])){
+    const px=document.querySelector(`[data-cpx="${cssq(c.ticker)}"]`);
+    if(px){ const h=covPx(c); if(px.innerHTML!==h){ px.innerHTML=h; bump(px); } }
+    const sp=document.querySelector(`[data-spk="${cssq(c.ticker)}"]`); if(sp) sp.innerHTML=spark(c.spark, c.chg_pct);
+  }
+}
+function buildFeed(){
+  const feed = (DATA.feed || []).filter(f => !f.account || f.account === account).slice(0, 8);
+  document.getElementById('feed-count').textContent = feed.length ? feed.length + ' shown' : '';
+  document.getElementById('feed').innerHTML = feed.length
+    ? feed.map(feedCard).join('')
+    : '<div class="empty">No signals yet. When the engine trades or forms a view on a company, it\'ll post the move and its reasoning here — like a text from a friend who watches the market all day.</div>';
+}
+function buildPositions(){
+  const poss = (DATA[account]||{}).positions || [];
+  document.getElementById('positions').innerHTML = poss.length
+    ? '<table><tr><th>Symbol</th><th>Qty</th><th>Entry</th><th>Now</th><th>P&L</th><th>Thesis</th></tr>' + poss.map(p =>
+        `<tr><td class="sym">${esc(p.symbol)}</td><td>${esc(p.qty)}</td><td>${fmt$(p.entry)}</td><td>${fmt$(p.current)}</td><td class="${cls(p.pl)}">${fmt$(p.pl)} (${fmtPct(p.plpc)})</td><td class="thesis">${esc(p.thesis)}</td></tr>`).join('') + '</table>'
+    : '<div class="empty">No open positions — engine is waiting for setups that clear the charter bar.</div>';
+}
+function buildTickets(){
+  const tix = DATA.pending_tickets || [];
+  document.getElementById('tickets-panel').style.display = tix.length ? 'block' : 'none';
+  if (tix.length) document.getElementById('tickets').innerHTML =
+    '<table><tr><th>Side</th><th>Symbol</th><th>Size</th><th>Bracket</th><th>Thesis</th></tr>' + tix.map(t =>
+      `<tr><td class="side-${esc(t.side)}">${esc((t.side||'').toUpperCase())}</td><td class="sym">${esc(t.symbol)}</td><td>${esc(t.size)}</td><td>${esc(t.bracket)}</td><td class="thesis">${esc(t.thesis)}</td></tr>`).join('') + '</table>';
+}
+function syncChart(){                                  // create once; thereafter chart.update() animates the transition (no destroy/replay)
+  const d = DATA[account] || {};
+  const useIntra = d.intraday && d.intraday.length > 2;
+  const curve = useIntra
+    ? d.intraday.map(p => ({ date: new Date(p.t).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}), value: p.v }))
+    : (d.equity_curve || []);
+  const labels = curve.map(p => p.date), values = curve.map(p => p.value);
+  if (!chart) {
+    const ctx = document.getElementById('chart').getContext('2d');
+    const grad = ctx.createLinearGradient(0, 0, 0, 220);
+    grad.addColorStop(0, 'rgba(125,211,252,0.28)'); grad.addColorStop(1, 'rgba(125,211,252,0)');
+    chart = new Chart(ctx, {
+      type: 'line',
+      data: { labels, datasets: [{ data: values, borderColor: '#7dd3fc', borderWidth: 2.5, pointRadius: values.length < 15 ? 4 : 0, pointBackgroundColor: '#a78bfa', fill: true, backgroundColor: grad, tension: 0.35 }] },
+      options: { responsive: true, maintainAspectRatio: false, animation: { duration: 700 }, plugins: { legend: {display: false}, tooltip: { callbacks: { label: c => fmt$(c.parsed.y) } } },
+        scales: { x: { grid: {color: 'rgba(255,255,255,0.04)'}, ticks: {color: '#7c8299', maxTicksLimit: 7} },
+                  y: { grid: {color: 'rgba(255,255,255,0.05)'}, ticks: {color: '#7c8299', callback: v => '$' + v.toLocaleString()} } } }
+    });
+  } else {
+    chart.data.labels = labels;
+    chart.data.datasets[0].data = values;
+    chart.data.datasets[0].pointRadius = values.length < 15 ? 4 : 0;
+    chart.update();
+  }
+}
 function render() {
   const d = DATA[account] || {};
   document.getElementById('asof').textContent =
     (account === 'paper' ? 'Paper (autonomous testbed)' : 'Live (approval-gated)') +
     ' · engine data as of ' + new Date(DATA.generated_at).toLocaleString() +
     (DATA.market_note ? ' · ' + DATA.market_note : '');
-
-  const set = (id, val, klass, subId, sub) => {
-    const el = document.getElementById(id); el.textContent = val; el.className = 'value ' + (klass || 'flat');
-    if (subId) document.getElementById(subId).textContent = sub || '';
-  };
+  // live headline numbers — smooth count/flash, only when they actually change
   setAnimated('s-equity', d.equity ?? 0, fmt$, 'flat', 's-equity-sub', d.equity_note || '');
   setAnimated('s-pnl', d.total_pnl ?? 0, fmt$, cls(d.total_pnl ?? 0), 's-pnl-sub', 'since inception');
   setAnimated('s-day', d.day_pnl ?? 0, fmt$, cls(d.day_pnl ?? 0));
-  renderMap(); renderActivity();
   const poss = d.positions || [];
-  set('s-pos', String(poss.length), 'flat', 's-pos-sub', poss.map(p => p.symbol).join(' · ') || 'flat');
-
-  // Coverage — company intelligence cards (account-independent)
-  const cov = DATA.coverage || [];
-  document.getElementById('cov-count').textContent = cov.length ? cov.length + ' tracked' : '';
-  const act = v => { v=(v||'').toLowerCase(); if(v.includes('buy')||v.includes('accumulate'))return {cls:'b-buy',sym:'🟢'}; if(v.includes('avoid')||v.includes('sell'))return {cls:'b-avoid',sym:'⛔'}; if(v.includes('wait')||v.includes('extended'))return {cls:'b-wait',sym:'⏳'}; return {cls:'b-watch',sym:'👀'}; };
-  document.getElementById('coverage').innerHTML = cov.length
-    ? cov.map(c => { const a=act(c.verdict); const hasSize = c.size && Number(c.size_pct)>0;
-        const px = c.price!=null ? `<span class="cpx">$${c.price}${c.chg_pct!=null?` <span class="${c.chg_pct>=0?'up':'down'}">${c.chg_pct>=0?'+':''}${c.chg_pct}%</span>`:''}</span>` : '';
-        return `<a href="${esc(c.card)}" target="_blank" rel="noopener">`
-        + `<div class="top"><span class="sym">${a.sym}</span><span class="tk">${esc(c.ticker)}</span>${px}<span class="badge ${a.cls}">${esc(c.verdict_label||c.verdict)}</span></div>`
-        + `<div class="nm">${esc(c.name)}${c.theme?' · '+esc(c.theme):''}</div>`
-        + spark(c.spark, c.chg_pct)
-        + `<div class="th">${rich(c.thesis||'')}</div>`
-        + `<div class="size"><span class="amt ${hasSize?'g':'d'}">${esc(c.size||'$0')}</span><span class="lbl">${esc(c.size_note|| (hasSize?'of $5K sleeve':'no position'))}</span></div>`
-        + `<div class="size" style="border:0;padding-top:8px;margin-top:4px"><span class="lbl">${c.updated?'updated '+esc(c.updated):''}</span><span class="open">open card ↗</span></div>`
-        + `</a>`; }).join('')
-    : '<div class="empty">No coverage cards yet. The engine builds a deep-research intelligence card per company on a daily rotation — they\'ll appear here.</div>';
-
-  // Feed — account-filtered, newest first, max 8
-  const feed = (DATA.feed || []).filter(f => !f.account || f.account === account).slice(0, 8);
-  document.getElementById('feed-count').textContent = feed.length ? feed.length + ' shown' : '';
-  document.getElementById('feed').innerHTML = feed.length
-    ? feed.map(feedCard).join('')
-    : '<div class="empty">No signals yet. When the engine trades or forms a view on a company, it\'ll post the move and its reasoning here — like a text from a friend who watches the market all day.</div>';
-
-  // Positions
-  document.getElementById('positions').innerHTML = poss.length
-    ? '<table><tr><th>Symbol</th><th>Qty</th><th>Entry</th><th>Now</th><th>P&L</th><th>Thesis</th></tr>' + poss.map(p =>
-        `<tr><td class="sym">${esc(p.symbol)}</td><td>${esc(p.qty)}</td><td>${fmt$(p.entry)}</td><td>${fmt$(p.current)}</td><td class="${cls(p.pl)}">${fmt$(p.pl)} (${fmtPct(p.plpc)})</td><td class="thesis">${esc(p.thesis)}</td></tr>`).join('') + '</table>'
-    : '<div class="empty">No open positions — engine is waiting for setups that clear the charter bar.</div>';
-
-  // Pending tickets
-  const tix = DATA.pending_tickets || [];
-  document.getElementById('tickets-panel').style.display = tix.length ? 'block' : 'none';
-  if (tix.length) document.getElementById('tickets').innerHTML =
-    '<table><tr><th>Side</th><th>Symbol</th><th>Size</th><th>Bracket</th><th>Thesis</th></tr>' + tix.map(t =>
-      `<tr><td class="side-${esc(t.side)}">${esc((t.side||'').toUpperCase())}</td><td class="sym">${esc(t.symbol)}</td><td>${esc(t.size)}</td><td>${esc(t.bracket)}</td><td class="thesis">${esc(t.thesis)}</td></tr>`).join('') + '</table>';
-
+  const posEl = document.getElementById('s-pos'); posEl.textContent = String(poss.length); posEl.className = 'value flat';
+  document.getElementById('s-pos-sub').textContent = poss.map(p => p.symbol).join(' · ') || 'flat';
+  // sections — rebuild (and replay entrance) ONLY when their data changed; otherwise roll numbers in place
+  sync('cover', sig(DATA.coverage, c=>[c.ticker,c.verdict,c.verdict_label,c.thesis,c.size,c.size_note,c.name,c.card,c.updated]), buildCoverage, updateCoverPrices);
+  sync('alloc', allocSig(), renderAlloc, updateAlloc);
+  sync('feed', JSON.stringify((DATA.feed||[]).filter(f=>!f.account||f.account===account).slice(0,8)), buildFeed, null);
+  sync('act', JSON.stringify(DATA.activity||[]), renderActivity, null);
+  buildPositions(); buildTickets();
   document.getElementById('recap').textContent = DATA.latest_recap || '—';
-
-  // Equity curve — intraday (Robinhood-style) when available, else daily
-  const useIntra = d.intraday && d.intraday.length > 2;
-  const curve = useIntra
-    ? d.intraday.map(p => ({ date: new Date(p.t).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}), value: p.v }))
-    : (d.equity_curve || []);
-  if (chart) chart.destroy();
-  const ctx = document.getElementById('chart').getContext('2d');
-  const grad = ctx.createLinearGradient(0, 0, 0, 220);
-  grad.addColorStop(0, 'rgba(125,211,252,0.28)'); grad.addColorStop(1, 'rgba(125,211,252,0)');
-  chart = new Chart(ctx, {
-    type: 'line',
-    data: { labels: curve.map(p => p.date), datasets: [{ data: curve.map(p => p.value), borderColor: '#7dd3fc', borderWidth: 2.5, pointRadius: curve.length < 15 ? 4 : 0, pointBackgroundColor: '#a78bfa', fill: true, backgroundColor: grad, tension: 0.35 }] },
-    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: {display: false}, tooltip: { callbacks: { label: c => fmt$(c.parsed.y) } } },
-      scales: { x: { grid: {color: 'rgba(255,255,255,0.04)'}, ticks: {color: '#7c8299', maxTicksLimit: 7} },
-                y: { grid: {color: 'rgba(255,255,255,0.05)'}, ticks: {color: '#7c8299', callback: v => '$' + v.toLocaleString()} } } }
-  });
+  syncChart();
 }
 
 // Pull live data from GitHub raw (updated by the Mac poller every ~2 min,
