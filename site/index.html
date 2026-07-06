@@ -30,6 +30,10 @@
   .brand h1 { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; }
   .brand h1 span { background: linear-gradient(90deg, #7dd3fc, #a78bfa 55%, #6ee7b7); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .brand p { font-size: 12px; color: #8a90a6; margin-top: 3px; }
+  .live-pill { display:inline-flex; align-items:center; gap:7px; margin-top:8px; font-size:11.5px; font-weight:700; letter-spacing:.04em; color:#6ee7b7; }
+  .live-dot { width:8px; height:8px; border-radius:50%; background:#6ee7b7; box-shadow:0 0 0 0 rgba(110,231,183,.6); animation:pulse 2s infinite; }
+  .live-pill.stale { color:#fcd34d; } .live-pill.stale .live-dot{ background:#fcd34d; animation:none; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(110,231,183,.5);} 70%{box-shadow:0 0 0 7px rgba(110,231,183,0);} 100%{box-shadow:0 0 0 0 rgba(110,231,183,0);} }
   .toggle { display: flex; padding: 4px; gap: 4px; }
   .toggle button { border: none; background: transparent; color: #9aa0b5; font: inherit; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 14px; cursor: pointer; transition: all .25s ease; }
   .toggle button.active { background: linear-gradient(135deg, rgba(125,211,252,0.22), rgba(167,139,250,0.18)); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 12px rgba(125,211,252,0.15); }
@@ -86,6 +90,8 @@
   .cov .top { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
   .cov .sym { font-size:22px; line-height:1; }
   .cov .tk { font-weight:800; font-size:16px; letter-spacing:.03em; }
+  .cov .cpx { margin-left:9px; font-size:13px; font-weight:700; font-variant-numeric:tabular-nums; color:#cdd2e2; }
+  .cov .cpx .up{color:#6ee7b7;} .cov .cpx .down{color:#fca5a5;}
   .cov .badge { margin-left:auto; font-size:10.5px; font-weight:700; padding:4px 10px; border-radius:999px; white-space:nowrap; }
   .cov .b-buy{background:rgba(110,231,183,.16);color:#6ee7b7;border:1px solid rgba(110,231,183,.35);}
   .cov .b-wait{background:rgba(251,191,36,.14);color:#fcd34d;border:1px solid rgba(251,191,36,.32);}
@@ -113,6 +119,7 @@
   <div class="brand">
     <h1><span>Agentic Trading</span> — Luca's Sleeve</h1>
     <p id="asof">Loading…</p>
+    <div id="live-pill" class="live-pill" style="display:none"><span class="live-dot"></span><span id="live-txt">live</span></div>
   </div>
   <div class="toggle glass">
     <button id="btn-paper" onclick="setAccount('paper')">Paper · Autonomous</button>
@@ -206,8 +213,9 @@ function render() {
   const act = v => { v=(v||'').toLowerCase(); if(v.includes('buy')||v.includes('accumulate'))return {cls:'b-buy',sym:'🟢'}; if(v.includes('avoid')||v.includes('sell'))return {cls:'b-avoid',sym:'⛔'}; if(v.includes('wait')||v.includes('extended'))return {cls:'b-wait',sym:'⏳'}; return {cls:'b-watch',sym:'👀'}; };
   document.getElementById('coverage').innerHTML = cov.length
     ? cov.map(c => { const a=act(c.verdict); const hasSize = c.size && Number(c.size_pct)>0;
+        const px = c.price!=null ? `<span class="cpx">$${c.price}${c.chg_pct!=null?` <span class="${c.chg_pct>=0?'up':'down'}">${c.chg_pct>=0?'+':''}${c.chg_pct}%</span>`:''}</span>` : '';
         return `<a href="${esc(c.card)}" target="_blank" rel="noopener">`
-        + `<div class="top"><span class="sym">${a.sym}</span><span class="tk">${esc(c.ticker)}</span><span class="badge ${a.cls}">${esc(c.verdict_label||c.verdict)}</span></div>`
+        + `<div class="top"><span class="sym">${a.sym}</span><span class="tk">${esc(c.ticker)}</span>${px}<span class="badge ${a.cls}">${esc(c.verdict_label||c.verdict)}</span></div>`
         + `<div class="nm">${esc(c.name)}${c.theme?' · '+esc(c.theme):''}</div>`
         + `<div class="th">${rich(c.thesis||'')}</div>`
         + `<div class="size"><span class="amt ${hasSize?'g':'d'}">${esc(c.size||'$0')}</span><span class="lbl">${esc(c.size_note|| (hasSize?'of $5K sleeve':'no position'))}</span></div>`
@@ -262,7 +270,19 @@ function load() {
     .catch(() => { if(!DATA) document.getElementById('loaderr').style.display = 'block'; });
 }
 load();
-setInterval(load, 45000);   // auto-refresh numbers every 45s
+setInterval(load, 20000);   // auto-refresh numbers every 20s
+
+// Live freshness indicator — ticks every second off the poller's timestamp.
+function updateLivePill(){
+  if(!DATA || !DATA.generated_at) return;
+  const pill=document.getElementById('live-pill'), txt=document.getElementById('live-txt');
+  const secs=Math.max(0, Math.floor((Date.now()-new Date(DATA.generated_at))/1000));
+  const stale = secs > 240;   // poller runs ~1-2 min; >4 min = something's off
+  pill.style.display='inline-flex'; pill.classList.toggle('stale', stale);
+  txt.textContent = stale ? `paused · ${secs<3600?Math.floor(secs/60)+'m':Math.floor(secs/3600)+'h'} ago`
+    : (secs<5?'LIVE · just now':`LIVE · updated ${secs<60?secs+'s':Math.floor(secs/60)+'m'} ago`);
+}
+setInterval(updateLivePill, 1000);
 </script>
 </body>
 </html>
