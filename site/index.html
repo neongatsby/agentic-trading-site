@@ -156,7 +156,8 @@
   .cov a { text-decoration:none; color:inherit; display:block; padding:16px 17px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); transition:transform .15s ease, border-color .15s ease, background .15s ease; }
   .cov a:active { transform:scale(.99); }
   .cov a:hover { transform:translateY(-2px); border-color:rgba(125,211,252,.4); background:rgba(255,255,255,.06); }
-  .cov .top { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .cov .top { display:flex; align-items:center; gap:9px; margin-bottom:10px; flex-wrap:wrap; row-gap:7px; }
+  .cov .cpx { white-space:nowrap; }
   .cov .sym { font-size:22px; line-height:1; }
   .cov .tk { font-weight:800; font-size:16px; letter-spacing:.03em; }
   .cov .cpx { margin-left:9px; font-size:13px; font-weight:700; font-variant-numeric:tabular-nums; color:#cdd2e2; }
@@ -319,27 +320,29 @@ function setAnimated(id, to, fmt, klass, subId, sub) {
 
 // --- Allocation: the $5K plan as a stacked bar + tappable rows (mobile-first) ---
 const usd0 = v => (v < 0 ? '-$' : '$') + Math.round(Math.abs(v)).toLocaleString('en-US');
+const pctOf = (u,pool) => { const p=u/pool*100; return u>0 && p<1 ? '<1%' : Math.round(p)+'%'; };
+const qtyStr = q => (+q).toFixed(4).replace(/\.?0+$/,'');
 function allocModel(){
   const pool = 5000, d = DATA[account] || {};
   const holds = (d.positions||[]).map(p=>({
-    key:p.symbol, kind:'hold', label:p.symbol, name:'', usd:Math.max(0,(+p.current||0)*(+p.qty||0)),
+    key:p.symbol, kind:'hold', label:p.symbol, usd:Math.max(0,(+p.current||0)*(+p.qty||0)),
     chip:'HELD', chipCls:'c-hold', color:'#7dd3fc', planned:false,
     why:(p.thesis||'Open position — running with a structural stop, no fixed take-profit.'),
-    price:p.current, chg:p.plpc, sub:`${p.qty} sh @ ${fmt$(p.entry)}` }));
+    note:`${qtyStr(p.qty)} sh @ ${fmt$(p.entry)}` }));
   const planned = (DATA.coverage||[]).filter(c=>+c.plan_usd>0).map(c=>{
     const buy = /buy|accumulate/i.test(c.verdict||'');
     const trig = (c.size_note||'').replace(/^.*?\)\s*/, '').trim();   // keep the "on pullback" tail, drop the redundant $/% prefix
-    return { key:c.ticker, kind:'plan', label:c.ticker, name:c.name||'', usd:+c.plan_usd,
+    return { key:c.ticker, kind:'plan', label:c.ticker, usd:+c.plan_usd,
       chip:buy?'BUYING':'WAITING', chipCls:buy?'c-buy':'c-wait', color:buy?'#6ee7b7':'#fcd34d', planned:true,
-      why:c.thesis||'', card:c.card, price:c.price, chg:c.chg_pct, sub:(trig && trig.length<24 ? trig : 'earmarked') }; });
+      why:c.thesis||'', card:c.card, note:[c.name, (trig && trig.length<24 ? trig : 'earmarked on trigger')].filter(Boolean).join(' · ') }; });
   const deployed = holds.reduce((s,h)=>s+h.usd,0);
   const earmarked = planned.reduce((s,h)=>s+h.usd,0);
   const free = Math.max(0, pool - deployed - earmarked);
-  const cash = { key:'cash', kind:'cash', label:'Free cash', name:'', usd:free, chip:'READY', chipCls:'c-cash', color:'#8a90a6', planned:false,
-    why:'Idle capital waiting for a setup that clears **both** the business gate and the stock gate. When an earmark below triggers, this pool funds it.', sub:'unallocated' };
+  const cash = { key:'cash', kind:'cash', label:'Free cash', usd:free, chip:'READY', chipCls:'c-cash', color:'#8a90a6', planned:false,
+    why:'Idle capital waiting for a setup that clears **both** the business gate and the stock gate. When an earmark below triggers, this pool funds it.', note:'ready to deploy on a qualifying setup' };
   return { pool, rows:[...holds, ...planned, cash] };
 }
-const allocSig = () => JSON.stringify(allocModel().rows.map(r=>[r.key,r.chip,r.planned,r.card||'',r.name]));
+const allocSig = () => JSON.stringify(allocModel().rows.map(r=>[r.key,r.chip,r.planned,r.card||'',r.note]));
 function renderAlloc(){
   const m = allocModel();
   document.getElementById('alloc-bar').innerHTML = m.rows.map(r=>{
@@ -350,14 +353,13 @@ function renderAlloc(){
   }).join('');
   document.getElementById('alloc-rows').innerHTML = m.rows.map((r,i)=>{
     const pct = Math.round(r.usd/m.pool*100);
-    const px = (r.price!=null) ? `<div class="nm2">$${r.price}${r.chg!=null?` · <span class="${r.chg>=0?'up':'down'}">${r.chg>=0?'+':''}${r.chg}%</span>`:''}${r.name?' · '+esc(r.name):''}</div>` : (r.name?`<div class="nm2">${esc(r.name)}</div>`:'');
     const cta = r.card ? ` <a class="cta" href="${esc(r.card)}" target="_blank" rel="noopener">open the deep-dive ↗</a>` : '';
     return `<div class="alloc-row ${r.planned?'planned':''}" data-i="${i}" style="color:${r.color};animation-delay:${(i*.05).toFixed(2)}s">`
       + `<div class="r1"><span class="swatch" style="background:${r.color}"></span><span class="tk">${esc(r.label)}</span>`
       + `<span class="chip ${r.chipCls}">${esc(r.chip)}</span>`
-      + `<span class="amt" data-amt="${esc(r.key)}">${usd0(r.usd)}<small>${pct}% · ${esc(r.sub)}</small></span>`
+      + `<span class="amt" data-amt="${esc(r.key)}">${usd0(r.usd)}<small>${pctOf(r.usd,m.pool)}</small></span>`
       + `<span class="caret">▾</span></div>`
-      + px
+      + (r.note?`<div class="nm2">${esc(r.note)}</div>`:'')
       + `<div class="mini"><i data-mini="${esc(r.key)}" style="width:${pct}%;background:${r.color}"></i></div>`
       + `<div class="why">${rich(r.why||'')}${cta}</div></div>`;
   }).join('');
@@ -366,12 +368,12 @@ function renderAlloc(){
     el.classList.toggle('open');
   }));
 }
-function updateAlloc(){                              // amounts/widths move with live prices — no rebuild, no scroll reset
+function updateAlloc(){                              // amounts/widths follow live prices — no rebuild, no scroll reset
   const m = allocModel(), bar = document.getElementById('alloc-bar');
   m.rows.forEach(r=>{
     const w=(r.usd/m.pool*100), pct=Math.round(w);
     const seg=bar.querySelector(`span[data-k="${cssq(r.key)}"]`); if(seg) seg.style.width=w.toFixed(2)+'%';
-    const amt=document.querySelector(`.amt[data-amt="${cssq(r.key)}"]`); if(amt){ const h=`${usd0(r.usd)}<small>${pct}% · ${esc(r.sub)}</small>`; if(amt.innerHTML!==h){ amt.innerHTML=h; bump(amt); } }
+    const amt=document.querySelector(`.amt[data-amt="${cssq(r.key)}"]`); if(amt){ const h=`${usd0(r.usd)}<small>${pctOf(r.usd,m.pool)}</small>`; if(amt.innerHTML!==h){ amt.innerHTML=h; bump(amt); } }
     const mini=document.querySelector(`i[data-mini="${cssq(r.key)}"]`); if(mini) mini.style.width=pct+'%';
   });
 }
