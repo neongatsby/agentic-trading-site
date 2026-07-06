@@ -56,20 +56,30 @@
   .toggle button { transition: color .3s ease, background .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; }
   #app { transition: opacity .25s ease; }
   #app.switching { opacity: .35; }
-  /* ---- Money Map ---- */
-  .mapsvg { width:100%; height:340px; display:block; touch-action:manipulation; }
-  .mapsvg .bub { cursor:pointer; transition:opacity .2s; }
-  .mapsvg .lbl { font-family:inherit; font-weight:700; fill:#e8eaf2; pointer-events:none; }
-  .mapsvg .sub { font-family:inherit; fill:#aab0c5; pointer-events:none; }
-  .map-legend { display:flex; flex-wrap:wrap; gap:14px; margin-top:4px; font-size:11.5px; color:#8a90a6; }
-  .map-legend span { display:inline-flex; align-items:center; gap:6px; }
-  .map-legend i { width:11px;height:11px;border-radius:50%; display:inline-block; }
-  .map-legend i.dash { background:transparent; border:2px dashed #7c8299; }
-  .map-detail { margin-top:14px; padding:15px 17px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); font-size:13.5px; color:#c4c9db; line-height:1.55; transition:opacity .25s ease, transform .25s ease; }
-  .map-detail b { color:#fff; }
-  .map-detail .mh { display:flex; align-items:center; gap:9px; margin-bottom:6px; }
-  .map-detail .mh .mt { font-weight:800; font-size:16px; letter-spacing:.03em; }
-  .map-detail .mh .ma { margin-left:auto; font-weight:800; font-variant-numeric:tabular-nums; }
+  /* ---- Allocation (mobile-first, replaces the flow chart) ---- */
+  .alloc-bar { display:flex; height:15px; border-radius:8px; overflow:hidden; margin:4px 0 18px; background:rgba(255,255,255,.05); box-shadow:inset 0 0 0 1px rgba(255,255,255,.05); }
+  .alloc-bar > span { height:100%; min-width:2px; transition:width .7s cubic-bezier(.2,.7,.3,1); }
+  .alloc-bar > span.planned { background-image:repeating-linear-gradient(45deg, currentColor 0 5px, transparent 5px 10px); background-color:transparent; box-shadow:inset 0 0 0 1px currentColor; }
+  .alloc-rows { display:flex; flex-direction:column; gap:9px; }
+  .alloc-row { padding:13px 15px; border-radius:15px; background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.07); cursor:pointer; transition:background .2s ease, border-color .2s ease, transform .12s ease; -webkit-tap-highlight-color:transparent; }
+  .alloc-row:active { transform:scale(.985); }
+  .alloc-row.open { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.13); }
+  .alloc-row .r1 { display:flex; align-items:center; gap:9px; }
+  .alloc-row .swatch { width:11px; height:11px; border-radius:50%; flex:none; }
+  .alloc-row.planned .swatch { background:transparent!important; border:2px dashed currentColor; }
+  .alloc-row .tk { font-weight:800; letter-spacing:.02em; font-size:14.5px; color:#eef0f7; }
+  .alloc-row .chip { font-size:10px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; padding:3px 8px; border-radius:999px; white-space:nowrap; }
+  .alloc-row .amt { margin-left:auto; text-align:right; font-weight:800; font-variant-numeric:tabular-nums; font-size:15px; color:#fff; white-space:nowrap; }
+  .alloc-row .amt small { display:block; font-size:10.5px; font-weight:600; color:#8a90a6; letter-spacing:.02em; }
+  .alloc-row .nm2 { font-size:12px; color:#9096ab; margin:6px 0 0; }
+  .alloc-row .mini { height:6px; border-radius:4px; margin:9px 0 0; background:rgba(255,255,255,.06); overflow:hidden; }
+  .alloc-row .mini > i { display:block; height:100%; border-radius:4px; transition:width .7s cubic-bezier(.2,.7,.3,1); }
+  .alloc-row .why { font-size:12.5px; color:#aeb4c6; line-height:1.55; max-height:0; overflow:hidden; opacity:0; transition:max-height .38s ease, opacity .3s ease, margin .3s ease; }
+  .alloc-row .why b { color:#fff; }
+  .alloc-row .why .cta { display:inline-block; margin-top:8px; font-size:11.5px; font-weight:700; color:#7dd3fc; }
+  .alloc-row.open .why { max-height:220px; opacity:1; margin-top:11px; }
+  .alloc-row .caret { margin-left:8px; color:#6a7088; font-size:11px; transition:transform .3s ease; flex:none; }
+  .alloc-row.open .caret { transform:rotate(180deg); }
   /* ---- Research Log timeline ---- */
   .tl { position:relative; padding-left:24px; }
   .tl::before { content:""; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:linear-gradient(#7dd3fc,#a78bfa,rgba(167,139,250,0)); opacity:.45; }
@@ -194,11 +204,11 @@
     <div class="stat glass"><div class="label">Positions</div><div class="value" id="s-pos">—</div><div class="sub" id="s-pos-sub"></div></div>
   </div>
 
-  <div class="panel glass" id="map-panel">
-    <h2><span class="dot"></span>The Money Map — the $5K plan &amp; the why</h2>
-    <div id="map-wrap"><svg class="mapsvg" id="mapsvg" viewBox="0 0 400 340" preserveAspectRatio="xMidYMid meet" aria-label="allocation map"></svg></div>
-    <div class="map-legend" id="map-legend"></div>
-    <div class="map-detail" id="map-detail">Tap a bubble to see the plan and the reasoning behind it.</div>
+  <div class="panel glass" id="alloc-panel">
+    <h2><span class="dot"></span>Allocation — the $5K plan &amp; the why</h2>
+    <div class="alloc-bar" id="alloc-bar"></div>
+    <div class="alloc-rows" id="alloc-rows"></div>
+    <p class="cov-hint" style="margin:12px 0 0">Tap a row for the reasoning. Dashed = planned (earmarked for when its trigger hits).</p>
   </div>
 
   <div class="panel glass">
