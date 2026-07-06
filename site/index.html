@@ -252,9 +252,17 @@ function render() {
   });
 }
 
-fetch('./data.json?t=' + Date.now()).then(r => r.json()).then(j => {
-  DATA = j; document.getElementById('app').style.display = 'block'; setAccount(account);
-}).catch(() => { document.getElementById('loaderr').style.display = 'block'; });
+// Pull live data from GitHub raw (updated by the Mac poller every ~2 min,
+// no Netlify rebuild needed); fall back to the deployed copy.
+const RAW = 'https://raw.githubusercontent.com/neongatsby/agentic-trading-site/main/site/data.json';
+function load() {
+  fetch(RAW + '?t=' + Date.now()).then(r => { if(!r.ok) throw 0; return r.json(); })
+    .catch(() => fetch('./data.json?t=' + Date.now()).then(r => r.json()))
+    .then(j => { DATA = j; document.getElementById('app').style.display = 'block'; document.getElementById('loaderr').style.display='none'; setAccount(account); })
+    .catch(() => { if(!DATA) document.getElementById('loaderr').style.display = 'block'; });
+}
+load();
+setInterval(load, 45000);   // auto-refresh numbers every 45s
 </script>
 </body>
 </html>
