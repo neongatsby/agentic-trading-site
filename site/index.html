@@ -45,6 +45,49 @@
   .live-dot { width:8px; height:8px; border-radius:50%; background:#6ee7b7; box-shadow:0 0 0 0 rgba(110,231,183,.6); animation:pulse 2s infinite; }
   .live-pill.stale { color:#fcd34d; } .live-pill.stale .live-dot{ background:#fcd34d; animation:none; }
   @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(110,231,183,.5);} 70%{box-shadow:0 0 0 7px rgba(110,231,183,0);} 100%{box-shadow:0 0 0 0 rgba(110,231,183,0);} }
+  /* ---- Full-bleed equity hero (boundless, edge-to-edge, fades up to the top) ---- */
+  #hero {
+    position: relative; width: 100vw; margin-left: 50%; transform: translateX(-50%);
+    margin-top: calc(-24px - env(safe-area-inset-top)); margin-bottom: 20px;
+    padding: calc(20px + env(safe-area-inset-top)) clamp(14px,4vw,48px) 0;
+    background:
+      radial-gradient(120% 130% at 50% -30%, rgba(125,211,252,0.16) 0%, rgba(167,139,250,0.08) 34%, transparent 66%);
+    animation: heroIn .7s cubic-bezier(.2,.75,.3,1) both;
+  }
+  @keyframes heroIn { from{opacity:0;} to{opacity:1;} }
+  .hero-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .hero-head h1 { font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#c8cde0; }
+  .hero-head h1 span { background:linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero-head .live-pill { margin-top:0; }
+  .hero-eq { margin-top:16px; }
+  .eq-label { font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:#8a90a6; margin-bottom:4px; }
+  .eq-big { font-size:clamp(38px,11vw,54px); font-weight:800; letter-spacing:-0.03em; line-height:1; font-variant-numeric:tabular-nums; }
+  .eq-day { display:flex; align-items:baseline; gap:7px; margin-top:9px; font-size:15px; font-weight:700; font-variant-numeric:tabular-nums; }
+  .eq-daypct { color:#8a90a6; font-weight:600; }
+  .eq-daylbl { color:#6b7188; font-weight:500; font-size:13px; }
+  .hero-asof { font-size:11.5px; color:#7c8299; margin-top:10px; line-height:1.5; }
+  .hero-chart { position:relative; height:190px; margin:6px 0 0; }
+  /* fade the chart's top edge into the page so it looks boundless, not boxed */
+  .hero-chart::before { content:""; position:absolute; inset:0 0 auto 0; height:46px; z-index:2; pointer-events:none;
+    background:linear-gradient(#07090f 4%, rgba(7,9,15,0.55) 55%, transparent); }
+  /* ---- Trade-approval status strip ---- */
+  .approval { display:flex; align-items:center; gap:12px; padding:13px 16px; border-radius:16px; margin-bottom:16px;
+    border:1px solid rgba(255,255,255,.09); background:rgba(255,255,255,.04); animation: rise .5s ease both; }
+  .approval .ap-ic { font-size:20px; line-height:1; flex:none; }
+  .approval .ap-body { flex:1; min-width:0; }
+  .approval .ap-title { font-size:13.5px; font-weight:750; color:#eef0f7; }
+  .approval .ap-sub { font-size:12px; color:#9096ab; margin-top:2px; line-height:1.45; }
+  .approval .ap-sub b { color:#cdd2e2; font-weight:700; }
+  .approval.ap-wait { border-color:rgba(252,211,77,.4); background:linear-gradient(135deg, rgba(252,211,77,.12), rgba(252,211,77,.03)); box-shadow:0 0 0 1px rgba(252,211,77,.12), 0 6px 22px rgba(252,211,77,.08); }
+  .approval.ap-wait .ap-title { color:#fde68a; }
+  .approval.ap-wait .ap-ic { animation: pulse2 1.8s infinite; }
+  @keyframes pulse2 { 0%,100%{ transform:scale(1); opacity:1;} 50%{ transform:scale(1.12); opacity:.75;} }
+  .approval.ap-done { border-color:rgba(110,231,183,.3); }
+  .approval.ap-done .ap-ic { color:#6ee7b7; }
+  .approval .ap-chip { margin-left:auto; flex:none; font-size:10.5px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; padding:5px 11px; border-radius:999px; white-space:nowrap; }
+  .approval.ap-wait .ap-chip { background:rgba(252,211,77,.2); color:#fde68a; }
+  .approval.ap-done .ap-chip { background:rgba(110,231,183,.16); color:#6ee7b7; }
+  .approval.ap-idle .ap-chip { background:rgba(255,255,255,.07); color:#9096ab; }
   /* ---- entrance motion ---- */
   #app > .stats > .stat, #app > .panel { animation: rise .55s cubic-bezier(.2,.75,.3,1) both; animation-delay: calc(var(--i,0) * .05s); }
   @keyframes rise { from{opacity:0; transform:translateY(16px) scale(.995);} to{opacity:1; transform:none;} }
@@ -59,14 +102,14 @@
   /* ---- Allocation (mobile-first, replaces the flow chart) ---- */
   .alloc-bar { display:flex; height:15px; border-radius:8px; overflow:hidden; margin:4px 0 18px; background:rgba(255,255,255,.05); box-shadow:inset 0 0 0 1px rgba(255,255,255,.05); }
   .alloc-bar > span { height:100%; min-width:2px; transition:width .7s cubic-bezier(.2,.7,.3,1); }
-  .alloc-bar > span.planned { background-image:repeating-linear-gradient(45deg, currentColor 0 5px, transparent 5px 10px); background-color:transparent; box-shadow:inset 0 0 0 1px currentColor; }
+  .alloc-bar > span.planned { background-color:currentColor; opacity:.34; }
   .alloc-rows { display:flex; flex-direction:column; gap:9px; }
   .alloc-row { padding:13px 15px; border-radius:15px; background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.07); cursor:pointer; transition:background .2s ease, border-color .2s ease, transform .12s ease; -webkit-tap-highlight-color:transparent; }
   .alloc-row:active { transform:scale(.985); }
   .alloc-row.open { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.13); }
   .alloc-row .r1 { display:flex; align-items:center; gap:9px; }
   .alloc-row .swatch { width:11px; height:11px; border-radius:50%; flex:none; }
-  .alloc-row.planned .swatch { background:transparent!important; border:2px dashed currentColor; }
+  .alloc-row.planned .swatch { background:transparent!important; box-shadow:inset 0 0 0 2px currentColor; }
   .alloc-row .tk { font-weight:800; letter-spacing:.02em; font-size:14.5px; color:#eef0f7; }
   .alloc-row .chip { font-size:10px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; padding:3px 8px; border-radius:999px; white-space:nowrap; }
   .alloc-row .amt { margin-left:auto; text-align:right; font-weight:800; font-variant-numeric:tabular-nums; font-size:15px; color:#fff; white-space:nowrap; }
@@ -216,7 +259,7 @@
     <h2><span class="dot"></span>Allocation — the $5K plan &amp; the why</h2>
     <div class="alloc-bar" id="alloc-bar"></div>
     <div class="alloc-rows" id="alloc-rows"></div>
-    <p class="cov-hint" style="margin:12px 0 0">Tap a row for the reasoning. Dashed = planned (earmarked for when its trigger hits).</p>
+    <p class="cov-hint" style="margin:12px 0 0">Tap a row for the reasoning. Lighter / ringed = planned (earmarked for when its trigger hits).</p>
   </div>
 
   <div class="panel glass">
@@ -236,20 +279,19 @@
     <div class="tl" id="timeline"></div>
   </div>
 
-  <div class="panel glass"><h2><span class="dot"></span>Equity Curve</h2><div class="chart-wrap"><canvas id="chart"></canvas></div></div>
   <div class="panel glass"><h2><span class="dot"></span>Open Positions</h2><div class="scroll-x" id="positions"></div></div>
-  <div class="panel glass" id="tickets-panel" style="display:none"><h2><span class="dot"></span>Pending Real-Money Tickets (awaiting Luca)</h2><div class="scroll-x" id="tickets"></div></div>
+  <div class="panel glass" id="tickets-panel" style="display:none"><h2><span class="dot"></span>Pending Real-Money Tickets (awaiting your approval)</h2><div class="scroll-x" id="tickets"></div></div>
   <div class="panel glass"><h2><span class="dot"></span>Latest Engine Recap</h2><div class="recap" id="recap">—</div></div>
 
   <div class="footer">
     Data regenerated by the engine each cycle; page redeploys automatically · Read-only — no trades can be made here ·
-    Paper trades autonomously; real money requires Luca's per-ticket approval · Experimental system, not financial advice
+    Every real-money trade requires your per-ticket approval · Experimental system, not financial advice
   </div>
 </div>
 <div class="empty" id="loaderr" style="display:none">Couldn't load data.json — the first engine cycle may not have published yet.</div>
 
 <script>
-let account = localStorage.getItem('at-account') || 'paper';
+const account = 'live';   // live-only dashboard
 let DATA = null, chart = null;
 const fmt$ = v => (v < 0 ? '-$' : '$') + Math.abs(Number(v)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 const fmtPct = v => (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%';
@@ -258,19 +300,6 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const rich = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); // **bold** in friend-voice text
 const ago = ts => { const m = Math.floor((Date.now() - new Date(ts)) / 60000); if (isNaN(m)) return ''; if (m < 1) return 'just now'; if (m < 60) return m + 'm ago'; const h = Math.floor(m/60); if (h < 24) return h + 'h ago'; return Math.floor(h/24) + 'd ago'; };
 
-function setAccount(a) {
-  const changed = a !== account;
-  account = a; localStorage.setItem('at-account', a);
-  document.getElementById('btn-paper').classList.toggle('active', a === 'paper');
-  document.getElementById('btn-live').classList.toggle('active', a === 'live');
-  ['s-equity','s-pnl','s-day'].forEach(k=>delete _prev[k]); // no misleading flash across accounts
-  if (changed) { _sig = {}; if (chart) { chart.destroy(); chart = null; } } // force a clean rebuild for the new account
-  const app = document.getElementById('app');
-  if (DATA) {
-    if (changed) { app.classList.add('switching'); setTimeout(()=>{ render(); app.classList.remove('switching'); }, 150); }
-    else render();
-  }
-}
 // section-diffing: only rebuild a section (and replay its entrance animation) when its
 // underlying data actually changed; otherwise just roll the live numbers in place.
 let _sig = {};
@@ -443,14 +472,15 @@ function syncChart(){                                  // create once; thereafte
   const labels = curve.map(p => p.date), values = curve.map(p => p.value);
   if (!chart) {
     const ctx = document.getElementById('chart').getContext('2d');
-    const grad = ctx.createLinearGradient(0, 0, 0, 220);
-    grad.addColorStop(0, 'rgba(125,211,252,0.28)'); grad.addColorStop(1, 'rgba(125,211,252,0)');
+    const grad = ctx.createLinearGradient(0, 0, 0, 190);
+    grad.addColorStop(0, 'rgba(125,211,252,0.30)'); grad.addColorStop(1, 'rgba(125,211,252,0)');
     chart = new Chart(ctx, {
       type: 'line',
-      data: { labels, datasets: [{ data: values, borderColor: '#7dd3fc', borderWidth: 2.5, pointRadius: values.length < 15 ? 4 : 0, pointBackgroundColor: '#a78bfa', fill: true, backgroundColor: grad, tension: 0.35 }] },
-      options: { responsive: true, maintainAspectRatio: false, animation: { duration: 700 }, plugins: { legend: {display: false}, tooltip: { callbacks: { label: c => fmt$(c.parsed.y) } } },
-        scales: { x: { grid: {color: 'rgba(255,255,255,0.04)'}, ticks: {color: '#7c8299', maxTicksLimit: 7} },
-                  y: { grid: {color: 'rgba(255,255,255,0.05)'}, ticks: {color: '#7c8299', callback: v => '$' + v.toLocaleString()} } } }
+      data: { labels, datasets: [{ data: values, borderColor: '#7dd3fc', borderWidth: 2.5, pointRadius: values.length < 15 ? 3 : 0, pointBackgroundColor: '#a78bfa', fill: true, backgroundColor: grad, tension: 0.35 }] },
+      options: { responsive: true, maintainAspectRatio: false, animation: { duration: 700 },
+        layout: { padding: { top: 8 } },
+        plugins: { legend: {display: false}, tooltip: { displayColors:false, callbacks: { title: items => items[0]?.label||'', label: c => fmt$(c.parsed.y) } } },
+        scales: { x: { display:false }, y: { display:false, grace:'6%' } } }   // boundless: no axes/grid
     });
   } else {
     chart.data.labels = labels;
@@ -459,20 +489,44 @@ function syncChart(){                                  // create once; thereafte
     chart.update();
   }
 }
+// --- Trade-approval status strip ---
+function approvalState(){
+  const tix = DATA.pending_tickets || [];
+  if (tix.length) {
+    const t = tix[0];
+    return { cls:'ap-wait', ic:'⏳', chip:'Action needed',
+      title: tix.length>1 ? `${tix.length} trades waiting for your approval` : 'A trade is waiting for your approval',
+      sub: `<b>${esc((t.side||'').toUpperCase())} ${esc(t.symbol||'')}</b>${t.size?' · '+esc(t.size):''}${t.bracket?' · '+esc(t.bracket):''} — tap Approve or Skip in Telegram.` };
+  }
+  const last = (DATA.feed||[]).find(f=>f.type==='trade' && (!f.account||f.account===account));
+  if (last) {
+    return { cls:'ap-done', ic:'✅', chip:'Approved',
+      title:'Approved &amp; filled', sub:`<b>${esc((last.side||'').toUpperCase())} ${esc(last.symbol||'')}</b>${last.size?' · '+esc(last.size):''} · ${ago(last.ts)}` };
+  }
+  return { cls:'ap-idle', ic:'🟢', chip:'All clear',
+    title:'No trades awaiting approval', sub:'The engine will ping you here and on Telegram the moment it wants to act.' };
+}
+function renderApproval(){
+  const s = approvalState(), el = document.getElementById('approval');
+  el.className = 'approval ' + s.cls;
+  el.innerHTML = `<span class="ap-ic">${s.ic}</span><div class="ap-body"><div class="ap-title">${s.title}</div><div class="ap-sub">${s.sub}</div></div><span class="ap-chip">${esc(s.chip)}</span>`;
+}
 function render() {
   const d = DATA[account] || {};
   document.getElementById('asof').textContent =
-    (account === 'paper' ? 'Paper (autonomous testbed)' : 'Live (approval-gated)') +
-    ' · engine data as of ' + new Date(DATA.generated_at).toLocaleString() +
+    (d.equity_note ? d.equity_note + ' · ' : '') + 'as of ' + new Date(DATA.generated_at).toLocaleString() +
     (DATA.market_note ? ' · ' + DATA.market_note : '');
   // live headline numbers — smooth count/flash, only when they actually change
-  setAnimated('s-equity', d.equity ?? 0, fmt$, 'flat', 's-equity-sub', d.equity_note || '');
-  setAnimated('s-pnl', d.total_pnl ?? 0, fmt$, cls(d.total_pnl ?? 0), 's-pnl-sub', 'since inception');
+  setAnimated('s-equity', d.equity ?? 0, fmt$, 'flat');
   setAnimated('s-day', d.day_pnl ?? 0, fmt$, cls(d.day_pnl ?? 0));
+  const dpct = (d.day_pnl!=null && d.equity) ? (d.day_pnl/((d.equity - d.day_pnl)||d.equity))*100 : null;
+  const dp = document.getElementById('s-day-pct'); if(dp) dp.textContent = (dpct!=null && isFinite(dpct)) ? `(${dpct>=0?'+':''}${dpct.toFixed(2)}%)` : '';
+  setAnimated('s-pnl', d.total_pnl ?? 0, fmt$, cls(d.total_pnl ?? 0), 's-pnl-sub', 'since inception');
   const poss = d.positions || [];
   const posEl = document.getElementById('s-pos'); posEl.textContent = String(poss.length); posEl.className = 'value flat';
   document.getElementById('s-pos-sub').textContent = poss.map(p => p.symbol).join(' · ') || 'flat';
   // sections — rebuild (and replay entrance) ONLY when their data changed; otherwise roll numbers in place
+  sync('appr', JSON.stringify([DATA.pending_tickets||[], ((DATA.feed||[]).find(f=>f.type==='trade')||{}).ts||'']), renderApproval, null);
   sync('cover', sig(DATA.coverage, c=>[c.ticker,c.verdict,c.verdict_label,c.thesis,c.size,c.size_note,c.name,c.card,c.updated]), buildCoverage, updateCoverPrices);
   sync('alloc', allocSig(), renderAlloc, updateAlloc);
   sync('feed', JSON.stringify((DATA.feed||[]).filter(f=>!f.account||f.account===account).slice(0,8)), buildFeed, null);
@@ -490,7 +544,7 @@ function load() {
     .catch(() => fetch('./data.json?t=' + Date.now()).then(r => r.json()))
     .then(j => { DATA = j; const app=document.getElementById('app'); app.style.display = 'block'; document.getElementById('loaderr').style.display='none';
       app.querySelectorAll(':scope > .panel').forEach((p,i)=>p.style.setProperty('--i', i+1)); // stagger entrances
-      setAccount(account); })
+      render(); })
     .catch(() => { if(!DATA) document.getElementById('loaderr').style.display = 'block'; });
 }
 load();
@@ -511,17 +565,6 @@ setInterval(updateLivePill, 1000);
 // Tap the LIVE pill to force a refresh.
 document.getElementById('live-pill').addEventListener('click', () => { const t=document.getElementById('live-txt'); t.textContent='refreshing…'; load(); });
 
-// Swipe the stat cards left/right to flip Paper ⇄ Live.
-(function(){
-  const stats = document.querySelector('.stats'); if(!stats) return;
-  let x0=null, y0=null;
-  stats.addEventListener('touchstart', e => { x0=e.touches[0].clientX; y0=e.touches[0].clientY; }, {passive:true});
-  stats.addEventListener('touchend', e => {
-    if(x0==null) return; const dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0;
-    if(Math.abs(dx)>45 && Math.abs(dx)>Math.abs(dy)*1.5){ setAccount(account==='paper'?'live':'paper'); if(navigator.vibrate) navigator.vibrate(8); }
-    x0=y0=null;
-  }, {passive:true});
-})();
 </script>
 </body>
 </html>
