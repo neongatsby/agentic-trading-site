@@ -1,32 +1,152 @@
 {
-  "generated_at": "2026-07-06T06:58:00-07:00",
+  "generated_at": "2026-07-06T14:16:08.061Z",
   "market_note": "Market OPEN — Mon 7/6. Manual refresh (daily research engine hasn't run yet — see note).",
   "paper": {
-    "equity": 5000.0, "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 0.0, "day_pnl": 0.0,
+    "equity": 5000,
+    "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
+    "total_pnl": 0,
+    "day_pnl": 0,
     "positions": [],
-    "equity_curve": [{"date": "Jul 2", "value": 5000.0}, {"date": "Jul 3", "value": 5000.0}, {"date": "Jul 6", "value": 5000.0}]
+    "equity_curve": [
+      {
+        "date": "Jul 2",
+        "value": 5000
+      },
+      {
+        "date": "Jul 3",
+        "value": 5000
+      },
+      {
+        "date": "Jul 6",
+        "value": 5000
+      }
+    ]
   },
   "live": {
-    "equity": 1000.09, "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 0.09, "day_pnl": 0.09,
-    "positions": [{"symbol": "NVDA", "qty": "0.0514", "entry": 194.48, "current": 196.33, "pl": 0.10, "plpc": 0.95, "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."}],
-    "equity_curve": [{"date": "Jul 2", "value": 1000.0}, {"date": "Jul 3", "value": 1000.0}, {"date": "Jul 6", "value": 1000.09}]
+    "equity": 1000.09,
+    "equity_note": "funded $1K · NVDA pipe-test filled at the open",
+    "total_pnl": 0.09,
+    "day_pnl": 0.09,
+    "positions": [
+      {
+        "symbol": "NVDA",
+        "qty": "0.0514",
+        "entry": 194.48,
+        "current": 196.51,
+        "pl": 0.1,
+        "plpc": 1.04,
+        "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "Jul 2",
+        "value": 1000
+      },
+      {
+        "date": "Jul 3",
+        "value": 1000
+      },
+      {
+        "date": "Jul 6",
+        "value": 1000.09
+      }
+    ]
   },
   "pending_tickets": [],
   "coverage": [
-    {"ticker": "CEG", "name": "Constellation Energy", "theme": "Energy-for-AI", "verdict": "wait", "verdict_label": "Best biz · wait for base", "thesis": "Largest US nuclear fleet, real Microsoft + Meta 20-yr PPAs, **actually profitable** — but the chart is **down ~42%** and falling. Buy when ~$230 holds and it reclaims the 50-day.", "size": "$0", "size_pct": 0, "size_note": "planned $750 (15%) on trigger", "card": "/research/ceg.html", "updated": "Jul 5"},
-    {"ticker": "BE", "name": "Bloom Energy", "theme": "Energy-for-AI", "verdict": "wait", "verdict_label": "Great biz · buy pullbacks", "thesis": "Fuel cells solve the AI data-center power bottleneck — real $20B+ backlog, but the stock is **up ~1,100%** and extended. Wait for a pullback.", "size": "$0", "size_pct": 0, "size_note": "planned $600 (12%) on pullback", "card": "/research/be.html", "updated": "Jul 5"},
-    {"ticker": "OKLO", "name": "Oklo", "theme": "Energy-for-AI", "verdict": "avoid", "verdict_label": "Avoid · broken chart", "thesis": "Pre-revenue microreactor story, **down ~73%** from its peak, active short thesis + fraud probe. Binary regulatory bets, not a trend trade. Watch only.", "size": "$0", "size_pct": 0, "size_note": "not touching", "card": "/research/oklo.html", "updated": "Jul 5"}
+    {
+      "ticker": "CEG",
+      "name": "Constellation Energy",
+      "theme": "Energy-for-AI",
+      "verdict": "wait",
+      "verdict_label": "Best biz · wait for base",
+      "thesis": "Largest US nuclear fleet, real Microsoft + Meta 20-yr PPAs, **actually profitable** — but the chart is **down ~42%** and falling. Buy when ~$230 holds and it reclaims the 50-day.",
+      "size": "$0",
+      "size_pct": 0,
+      "size_note": "planned $750 (15%) on trigger",
+      "card": "/research/ceg.html",
+      "updated": "Jul 5"
+    },
+    {
+      "ticker": "BE",
+      "name": "Bloom Energy",
+      "theme": "Energy-for-AI",
+      "verdict": "wait",
+      "verdict_label": "Great biz · buy pullbacks",
+      "thesis": "Fuel cells solve the AI data-center power bottleneck — real $20B+ backlog, but the stock is **up ~1,100%** and extended. Wait for a pullback.",
+      "size": "$0",
+      "size_pct": 0,
+      "size_note": "planned $600 (12%) on pullback",
+      "card": "/research/be.html",
+      "updated": "Jul 5"
+    },
+    {
+      "ticker": "OKLO",
+      "name": "Oklo",
+      "theme": "Energy-for-AI",
+      "verdict": "avoid",
+      "verdict_label": "Avoid · broken chart",
+      "thesis": "Pre-revenue microreactor story, **down ~73%** from its peak, active short thesis + fraud probe. Binary regulatory bets, not a trend trade. Watch only.",
+      "size": "$0",
+      "size_pct": 0,
+      "size_note": "not touching",
+      "card": "/research/oklo.html",
+      "updated": "Jul 5"
+    }
   ],
   "feed": [
-    {"type": "trade", "account": "live", "ts": "2026-07-06T06:30:00-07:00", "symbol": "NVDA", "side": "buy", "size": "$10 · 0.05 sh", "text": "The **$10 NVDA pipe test** you approved Friday **filled at the open** ($194.48). That's the Alpaca email — the live order path officially works end to end. It's not a real thesis trade, just $10 proving the plumbing."},
-    {"type": "watch", "account": "paper", "ts": "2026-07-03T22:10:00-07:00", "symbol": "SOXX", "text": "Dug into Thursday's chip rout tonight — it's not just profit-taking. Zuckerberg said Meta's AI bets **haven't come to fruition yet**, the memory/smartphone demand picture looks ugly, and SOXX just had its **worst 2-day drop in over a year**. My Monday buy-the-dip-in-semis plan now needs real stabilization first — I'm not catching this knife on the open."},
-    {"type": "watch", "account": "paper", "ts": "2026-07-03T22:08:00-07:00", "symbol": "TSLA", "text": "The Tesla bounce case got a little stronger while the market slept: Ark bought **$38M of the dip**, and the 3-row Model Y L just launched in the US with free FSD for a year. Tax-credit overhang's still real though — if I take this Monday, it's small with a tight stop. FOMC minutes Wednesday keep everything on a short leash."},
-    {"type": "watch", "account": "paper", "ts": "2026-07-03T11:40:00-07:00", "symbol": "NVDA", "text": "Ran the plumbing test today — placed a 1-share NVDA bracket order, watched Alpaca accept it with the stop and target attached, then pulled it. Everything works. Monday's the real thing."},
-    {"type": "memory", "account": "paper", "ts": "2026-07-02T16:45:00-07:00", "symbol": "RKLB", "text": "Changed my mind on Rocket Lab. It's not the simple launch-momentum story I first pegged — they're **buying Iridium for ~$8B**, so now it's an M&A/integration play with financing overhang after a 16% pop. Moving it to watch-only until the deal digests. Not chasing it Monday."},
-    {"type": "memory", "account": "paper", "ts": "2026-07-02T16:40:00-07:00", "symbol": "SPCX", "text": "Filed away: **SpaceX is public now** (IPO'd June 12, ~$2T valuation). You cleared it to trade, but I'm treating it like the young IPO it is — three weeks of price history, lockup date unknown. Watching, not touching, till I know more."},
-    {"type": "memory", "account": "paper", "ts": "2026-07-02T16:38:00-07:00", "symbol": "TSLA", "text": "Tesla's the one I keep circling for Monday. Crushed Q2 deliveries (480K vs 406K expected) and *still* dropped 7.5% — classic sell-the-news after a big run-up. Tempting mean-reversion, but there's a real EV tax-credit overhang, so if I take it, it's small and on a tight leash."}
+    {
+      "type": "trade",
+      "account": "live",
+      "ts": "2026-07-06T06:30:00-07:00",
+      "symbol": "NVDA",
+      "side": "buy",
+      "size": "$10 · 0.05 sh",
+      "text": "The **$10 NVDA pipe test** you approved Friday **filled at the open** ($194.48). That's the Alpaca email — the live order path officially works end to end. It's not a real thesis trade, just $10 proving the plumbing."
+    },
+    {
+      "type": "watch",
+      "account": "paper",
+      "ts": "2026-07-03T22:10:00-07:00",
+      "symbol": "SOXX",
+      "text": "Dug into Thursday's chip rout tonight — it's not just profit-taking. Zuckerberg said Meta's AI bets **haven't come to fruition yet**, the memory/smartphone demand picture looks ugly, and SOXX just had its **worst 2-day drop in over a year**. My Monday buy-the-dip-in-semis plan now needs real stabilization first — I'm not catching this knife on the open."
+    },
+    {
+      "type": "watch",
+      "account": "paper",
+      "ts": "2026-07-03T22:08:00-07:00",
+      "symbol": "TSLA",
+      "text": "The Tesla bounce case got a little stronger while the market slept: Ark bought **$38M of the dip**, and the 3-row Model Y L just launched in the US with free FSD for a year. Tax-credit overhang's still real though — if I take this Monday, it's small with a tight stop. FOMC minutes Wednesday keep everything on a short leash."
+    },
+    {
+      "type": "watch",
+      "account": "paper",
+      "ts": "2026-07-03T11:40:00-07:00",
+      "symbol": "NVDA",
+      "text": "Ran the plumbing test today — placed a 1-share NVDA bracket order, watched Alpaca accept it with the stop and target attached, then pulled it. Everything works. Monday's the real thing."
+    },
+    {
+      "type": "memory",
+      "account": "paper",
+      "ts": "2026-07-02T16:45:00-07:00",
+      "symbol": "RKLB",
+      "text": "Changed my mind on Rocket Lab. It's not the simple launch-momentum story I first pegged — they're **buying Iridium for ~$8B**, so now it's an M&A/integration play with financing overhang after a 16% pop. Moving it to watch-only until the deal digests. Not chasing it Monday."
+    },
+    {
+      "type": "memory",
+      "account": "paper",
+      "ts": "2026-07-02T16:40:00-07:00",
+      "symbol": "SPCX",
+      "text": "Filed away: **SpaceX is public now** (IPO'd June 12, ~$2T valuation). You cleared it to trade, but I'm treating it like the young IPO it is — three weeks of price history, lockup date unknown. Watching, not touching, till I know more."
+    },
+    {
+      "type": "memory",
+      "account": "paper",
+      "ts": "2026-07-02T16:38:00-07:00",
+      "symbol": "TSLA",
+      "text": "Tesla's the one I keep circling for Monday. Crushed Q2 deliveries (480K vs 406K expected) and *still* dropped 7.5% — classic sell-the-news after a big run-up. Tempting mean-reversion, but there's a real EV tax-credit overhang, so if I take it, it's small and on a tight leash."
+    }
   ],
   "latest_recap": "Mon 7/6, 7am PT — manual refresh by Claude. Your $10 NVDA pipe test filled at the open ($194.48) — the live order path works. Live account $1,000.09.\n\nNote: this update was done by hand. The autonomous daily research engine has NOT run a cycle since Friday night — so the dashboard had been stale and no new trade tickets went out. Most likely the 5:05am run hit the Fable-5 usage limit (needs switching to Opus) or the app was closed at run time. Claude is investigating and will get the daily engine running so updates flow on their own. Per the long-horizon strategy, no new trade is warranted this morning anyway — the three energy names are all wait/avoid until their setups trigger."
 }
