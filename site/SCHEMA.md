@@ -39,6 +39,10 @@ PRIVACY: never include account numbers, API keys, or admin config. Paper equity 
 - `verdict_label`: short human label shown on the badge (e.g. "Great biz · buy pullbacks").
 - `thesis`: one-line current read, **bold** the punch words. `card`: "/research/<ticker>.html". `updated`: e.g. "Jul 5".
 - `size`: the ACTUAL dollars currently in this name in the sleeve — "$0" if no position, else e.g. "$750". `size_pct`: number (0 if no position) = % of the $5K sleeve (drives green vs grey styling). `size_note`: context line — for a live position "of $5K sleeve"; for a wait/avoid, the PLANNED size on trigger, e.g. "planned $750 (15%) on trigger" or "not touching".
+- `plan_usd`: NUMBER — the dollars that would go into this name when its trigger hits (0 for avoid). Drives the Money Map bubble size. E.g. CEG 750, BE 600, OKLO 0.
+
+## activity (Research Log — the timeline the dashboard shows)
+Append the newest cycle's headline to the FRONT of an `activity` array (keep ~12). Each: `{ ts: ISO, kind: "engine"|"digest"|"research"|"pivot"|"system", title: short, detail: one-two sentences, friend-voice }`. This is how Luca sees "how the plan is being thought about" over time — log deep-dives, notable developments, thesis changes, and each monitoring pass's key takeaway (even "scanned, no setups").
 - Card HTML style: match `site/research/be.html` / `oklo.html` (verdict badge header, thesis, KPI numbers, bull, bear, trade frame, invalidation triggers, catalysts, sources).
 
 Keep equity_curve append-only per trading day (last ~90 points). The push agent redeploys site/ within ~5 min of any change.

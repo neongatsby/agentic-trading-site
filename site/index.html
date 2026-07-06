@@ -244,7 +244,9 @@ function setAccount(a) {
   account = a; localStorage.setItem('at-account', a);
   document.getElementById('btn-paper').classList.toggle('active', a === 'paper');
   document.getElementById('btn-live').classList.toggle('active', a === 'live');
-  if (DATA) render();
+  ['s-equity','s-pnl','s-day'].forEach(k=>delete _prev[k]); // no misleading flash across accounts
+  const app = document.getElementById('app');
+  if (DATA) { app.classList.add('switching'); setTimeout(()=>{ render(); app.classList.remove('switching'); }, 150); }
 }
 
 // inline sparkline SVG from a small price series
@@ -275,6 +277,74 @@ function feedCard(item) {
   return `<div class="card"><div class="card-top">${pills}${sym}<span class="card-time">${ago(item.ts)}</span></div><div class="card-text">${rich(item.text)}</div></div>`;
 }
 
+// --- animated / flashing numbers (Robinhood-style) ---
+const _prev = {};
+function setAnimated(id, to, fmt, klass, subId, sub) {
+  const el = document.getElementById(id); if(!el) return;
+  if (subId && document.getElementById(subId)) document.getElementById(subId).textContent = sub || '';
+  el.className = 'value ' + (klass || 'flat');
+  const from = _prev[id]==null ? to : _prev[id];
+  if (_prev[id]!=null && Math.abs(to-from) > 1e-9) { el.classList.remove('flash-up','flash-down'); void el.offsetWidth; el.classList.add(to>=from ? 'flash-up' : 'flash-down'); }
+  const dur=650, t0=performance.now();
+  (function step(t){ const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3), v=from+(to-from)*e; el.textContent=fmt(v); if(p<1) requestAnimationFrame(step); else el.textContent=fmt(to); })(performance.now());
+  _prev[id]=to;
+}
+
+// --- The Money Map: flow of the $5K sleeve, sized by $, tap for the why ---
+const COLOR = { cash:'#8a90a6', hold:'#7dd3fc', buy:'#6ee7b7', wait:'#fcd34d' };
+let _mapNodes = [];
+function renderMap() {
+  const svg = document.getElementById('mapsvg'); if(!svg) return;
+  const W=400, H=340, pool=5000;
+  const holds = ((DATA.paper||{}).positions||[]).map(p=>({key:p.symbol,label:p.symbol,usd:Math.max(1,(+p.current||0)*(+p.qty||0)),kind:'hold',detail:p.thesis||'Open position.',sub:'held'}));
+  const planned = (DATA.coverage||[]).filter(c=>+c.plan_usd>0).map(c=>({key:c.ticker,label:c.ticker,usd:+c.plan_usd,kind:(c.verdict==='buy'?'buy':'wait'),detail:c.thesis||'',sub:c.size_note||'planned',dashed:true,price:c.price,chg:c.chg_pct}));
+  const deployed = holds.reduce((s,h)=>s+h.usd,0);
+  const cash = Math.max(0, pool - deployed);
+  const nodes = [{key:'cash',label:'Cash',usd:cash,kind:'cash',detail:'Idle capital — waiting for a setup that clears both the business gate and the stock gate.',sub:'ready'}, ...holds, ...planned];
+  _mapNodes = nodes;
+  const maxUsd = Math.max(...nodes.map(n=>n.usd), 1);
+  const R = u => 15 + 33*Math.sqrt(u/maxUsd);
+  const rootX=66, rootY=H/2, bx=286;
+  const n=nodes.length, gap=(H-40)/Math.max(n,1);
+  let s = '';
+  nodes.forEach((nd,i)=>{
+    const y = 24 + gap*i + gap/2, r=R(nd.usd), col=COLOR[nd.kind]||'#7dd3fc';
+    const mx=(rootX+bx)/2;
+    s += `<path class="link" d="M ${rootX+30} ${rootY} C ${mx} ${rootY}, ${mx} ${y}, ${bx-r-3} ${y}" fill="none" stroke="${col}" stroke-width="1.6" opacity="0.5" style="animation-delay:${.15+i*.06}s"/>`;
+    s += `<g style="color:${col}"><circle class="bub" data-i="${i}" cx="${bx}" cy="${y}" r="${r}" fill="${nd.dashed?'rgba(255,255,255,0.02)':col+'22'}" stroke="${col}" stroke-width="${nd.dashed?'2':'2.5'}" ${nd.dashed?'stroke-dasharray="5 4"':''} style="animation-delay:${.2+i*.06}s; color:${col}"/>`;
+    s += `<text class="lbl" x="${bx}" y="${y-1}" text-anchor="middle" font-size="${Math.min(15,r*.6)}" style="animation-delay:${.35+i*.06}s">${nd.label}</text>`;
+    s += `<text class="sub" x="${bx}" y="${y+13}" text-anchor="middle" font-size="10" style="animation-delay:${.4+i*.06}s">$${Math.round(nd.usd).toLocaleString()}</text></g>`;
+  });
+  // root
+  s += `<circle cx="${rootX}" cy="${rootY}" r="30" fill="rgba(125,211,252,0.10)" stroke="#7dd3fc" stroke-width="2.5" class="bub" style="animation-delay:0s"/>`;
+  s += `<text class="rootlbl lbl" x="${rootX}" y="${rootY-2}" text-anchor="middle" font-size="12">Sleeve</text>`;
+  s += `<text class="rootlbl sub" x="${rootX}" y="${rootY+12}" text-anchor="middle" font-size="10">$5,000</text>`;
+  svg.innerHTML = s;
+  svg.querySelectorAll('circle.bub[data-i]').forEach(c=>c.addEventListener('click',()=>showMapDetail(+c.getAttribute('data-i'), c)));
+  document.getElementById('map-legend').innerHTML =
+    '<span><i style="background:#8a90a6"></i>cash</span><span><i style="background:#7dd3fc"></i>held</span><span><i style="background:#6ee7b7"></i>buying</span><span><i style="background:#fcd34d"></i>waiting</span><span><i class="dash"></i>planned</span>';
+}
+function showMapDetail(i, el){
+  const n=_mapNodes[i]; if(!n) return;
+  document.querySelectorAll('.mapsvg .bub.sel').forEach(x=>x.classList.remove('sel'));
+  if(el) el.classList.add('sel');
+  const col=COLOR[n.kind]||'#7dd3fc';
+  const pct = Math.round(n.usd/5000*100);
+  const px = n.price!=null ? ` · $${n.price}${n.chg!=null?` (${n.chg>=0?'+':''}${n.chg}%)`:''}` : '';
+  const md=document.getElementById('map-detail');
+  md.style.opacity=0;
+  setTimeout(()=>{ md.innerHTML = `<div class="mh"><span class="mt" style="color:${col}">${esc(n.label)}</span><span class="sub" style="color:#8a90a6">${esc(n.sub)}${px}</span><span class="ma" style="color:${col}">$${Math.round(n.usd).toLocaleString()} · ${pct}%</span></div>${rich(n.detail||'')}`; md.style.opacity=1; }, 120);
+}
+
+// --- Research Log timeline ---
+function renderActivity(){
+  const el=document.getElementById('timeline'); if(!el) return;
+  const act=DATA.activity||[];
+  const c=document.getElementById('tl-count'); if(c) c.textContent = act.length? act.length+' updates':'';
+  el.innerHTML = act.length ? act.map((a,i)=>`<div class="tl-item k-${esc(a.kind||'digest')}" style="animation-delay:${(i*.05).toFixed(2)}s"><div class="tt">${new Date(a.ts).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</div><div class="th2">${esc(a.title||'')}</div><div class="td">${rich(a.detail||'')}</div></div>`).join('')
+    : '<div class="empty">The engine will log its research cycles here.</div>';
+}
+
 function render() {
   const d = DATA[account] || {};
   document.getElementById('asof').textContent =
@@ -286,9 +356,10 @@ function render() {
     const el = document.getElementById(id); el.textContent = val; el.className = 'value ' + (klass || 'flat');
     if (subId) document.getElementById(subId).textContent = sub || '';
   };
-  set('s-equity', fmt$(d.equity ?? 0), 'flat', 's-equity-sub', d.equity_note || '');
-  set('s-pnl', fmt$(d.total_pnl ?? 0), cls(d.total_pnl ?? 0), 's-pnl-sub', 'since inception');
-  set('s-day', fmt$(d.day_pnl ?? 0), cls(d.day_pnl ?? 0));
+  setAnimated('s-equity', d.equity ?? 0, fmt$, 'flat', 's-equity-sub', d.equity_note || '');
+  setAnimated('s-pnl', d.total_pnl ?? 0, fmt$, cls(d.total_pnl ?? 0), 's-pnl-sub', 'since inception');
+  setAnimated('s-day', d.day_pnl ?? 0, fmt$, cls(d.day_pnl ?? 0));
+  renderMap(); renderActivity();
   const poss = d.positions || [];
   set('s-pos', String(poss.length), 'flat', 's-pos-sub', poss.map(p => p.symbol).join(' · ') || 'flat');
 
@@ -331,8 +402,11 @@ function render() {
 
   document.getElementById('recap').textContent = DATA.latest_recap || '—';
 
-  // Equity curve
-  const curve = d.equity_curve || [];
+  // Equity curve — intraday (Robinhood-style) when available, else daily
+  const useIntra = d.intraday && d.intraday.length > 2;
+  const curve = useIntra
+    ? d.intraday.map(p => ({ date: new Date(p.t).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}), value: p.v }))
+    : (d.equity_curve || []);
   if (chart) chart.destroy();
   const ctx = document.getElementById('chart').getContext('2d');
   const grad = ctx.createLinearGradient(0, 0, 0, 220);
@@ -352,7 +426,9 @@ const RAW = 'https://raw.githubusercontent.com/neongatsby/agentic-trading-site/m
 function load() {
   fetch(RAW + '?t=' + Date.now()).then(r => { if(!r.ok) throw 0; return r.json(); })
     .catch(() => fetch('./data.json?t=' + Date.now()).then(r => r.json()))
-    .then(j => { DATA = j; document.getElementById('app').style.display = 'block'; document.getElementById('loaderr').style.display='none'; setAccount(account); })
+    .then(j => { DATA = j; const app=document.getElementById('app'); app.style.display = 'block'; document.getElementById('loaderr').style.display='none';
+      app.querySelectorAll(':scope > .panel').forEach((p,i)=>p.style.setProperty('--i', i+1)); // stagger entrances
+      setAccount(account); })
     .catch(() => { if(!DATA) document.getElementById('loaderr').style.display = 'block'; });
 }
 load();
