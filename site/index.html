@@ -80,6 +80,11 @@
   .alloc-row.open .why { max-height:220px; opacity:1; margin-top:11px; }
   .alloc-row .caret { margin-left:8px; color:#6a7088; font-size:11px; transition:transform .3s ease; flex:none; }
   .alloc-row.open .caret { transform:rotate(180deg); }
+  .chip.c-buy { background:rgba(110,231,183,.18); color:#6ee7b7; }
+  .chip.c-wait { background:rgba(252,211,77,.15); color:#fcd34d; }
+  .chip.c-hold { background:rgba(125,211,252,.16); color:#7dd3fc; }
+  .chip.c-cash { background:rgba(138,144,166,.2); color:#aab0c5; }
+  .alloc-row .nm2 .up { color:#6ee7b7; } .alloc-row .nm2 .down { color:#fca5a5; }
   /* ---- Research Log timeline ---- */
   .tl { position:relative; padding-left:24px; }
   .tl::before { content:""; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:linear-gradient(#7dd3fc,#a78bfa,rgba(167,139,250,0)); opacity:.45; }
@@ -90,17 +95,14 @@
   .tl-item .tt { font-size:11px; color:#7c8299; font-variant-numeric:tabular-nums; }
   .tl-item .th2 { font-size:14.5px; font-weight:700; color:#e8eaf2; margin:2px 0 3px; }
   .tl-item .td { font-size:13px; color:#aeb4c6; line-height:1.55; }
-  .mapsvg .bub { transform-box:fill-box; transform-origin:center; animation:pop .55s cubic-bezier(.2,1.5,.45,1) both; }
-  .mapsvg .bub.sel { filter:drop-shadow(0 0 10px currentColor); }
-  @keyframes pop { from{opacity:0; transform:scale(.15);} to{opacity:1; transform:scale(1);} }
-  .mapsvg .link { stroke-dasharray:260; stroke-dashoffset:260; animation:draw .8s ease forwards; }
-  @keyframes draw { to{stroke-dashoffset:0;} }
-  .mapsvg .lbl,.mapsvg .sub,.mapsvg .rootlbl { animation:fadein .7s ease both; }
+  .alloc-row { animation:rise .5s ease both; }
   @keyframes fadein { from{opacity:0;} to{opacity:1;} }
-  @keyframes floaty { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-3px);} }
   .toggle { display: flex; padding: 4px; gap: 4px; }
-  .toggle button { border: none; background: transparent; color: #9aa0b5; font: inherit; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 14px; cursor: pointer; transition: all .25s ease; }
+  .toggle button { border: none; background: transparent; color: #9aa0b5; font: inherit; padding: 6px 15px; border-radius: 14px; cursor: pointer; transition: all .25s ease; white-space:nowrap; line-height:1.15; text-align:center; }
+  .toggle button b { display:block; font-weight:800; font-size:13px; letter-spacing:.01em; }
+  .toggle button small { display:block; font-size:9px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; opacity:.65; margin-top:1px; }
   .toggle button.active { background: linear-gradient(135deg, rgba(125,211,252,0.22), rgba(167,139,250,0.18)); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 12px rgba(125,211,252,0.15); }
+  .toggle button.active small { opacity:.85; }
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
   .stat { padding: 16px 18px; }
   .stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: #8a90a6; margin-bottom: 7px; }
@@ -191,8 +193,8 @@
     <div id="live-pill" class="live-pill" style="display:none"><span class="live-dot"></span><span id="live-txt">live</span></div>
   </div>
   <div class="toggle glass">
-    <button id="btn-paper" onclick="setAccount('paper')">Paper · Autonomous</button>
-    <button id="btn-live" onclick="setAccount('live')">Live · Approval-gated</button>
+    <button id="btn-paper" onclick="setAccount('paper')"><b>Paper</b><small>autonomous</small></button>
+    <button id="btn-live" onclick="setAccount('live')"><b>Live</b><small>approval-gated</small></button>
   </div>
 </header>
 
@@ -251,13 +253,24 @@ const rich = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); // **bold** in 
 const ago = ts => { const m = Math.floor((Date.now() - new Date(ts)) / 60000); if (isNaN(m)) return ''; if (m < 1) return 'just now'; if (m < 60) return m + 'm ago'; const h = Math.floor(m/60); if (h < 24) return h + 'h ago'; return Math.floor(h/24) + 'd ago'; };
 
 function setAccount(a) {
+  const changed = a !== account;
   account = a; localStorage.setItem('at-account', a);
   document.getElementById('btn-paper').classList.toggle('active', a === 'paper');
   document.getElementById('btn-live').classList.toggle('active', a === 'live');
   ['s-equity','s-pnl','s-day'].forEach(k=>delete _prev[k]); // no misleading flash across accounts
+  if (changed) { _sig = {}; if (chart) { chart.destroy(); chart = null; } } // force a clean rebuild for the new account
   const app = document.getElementById('app');
-  if (DATA) { app.classList.add('switching'); setTimeout(()=>{ render(); app.classList.remove('switching'); }, 150); }
+  if (DATA) {
+    if (changed) { app.classList.add('switching'); setTimeout(()=>{ render(); app.classList.remove('switching'); }, 150); }
+    else render();
+  }
 }
+// section-diffing: only rebuild a section (and replay its entrance animation) when its
+// underlying data actually changed; otherwise just roll the live numbers in place.
+let _sig = {};
+const sig = (arr, pick) => JSON.stringify((arr||[]).map(pick));
+const cssq = s => String(s).replace(/["\\]/g, '\\$&');
+function sync(name, s, build, update){ if (_sig[name] !== s) { _sig[name] = s; build(); } else if (update) update(); }
 
 // inline sparkline SVG from a small price series
 function spark(series, chg) {
@@ -300,50 +313,62 @@ function setAnimated(id, to, fmt, klass, subId, sub) {
   _prev[id]=to;
 }
 
-// --- The Money Map: flow of the $5K sleeve, sized by $, tap for the why ---
-const COLOR = { cash:'#8a90a6', hold:'#7dd3fc', buy:'#6ee7b7', wait:'#fcd34d' };
-let _mapNodes = [];
-function renderMap() {
-  const svg = document.getElementById('mapsvg'); if(!svg) return;
-  const W=400, H=340, pool=5000;
-  const holds = ((DATA.paper||{}).positions||[]).map(p=>({key:p.symbol,label:p.symbol,usd:Math.max(1,(+p.current||0)*(+p.qty||0)),kind:'hold',detail:p.thesis||'Open position.',sub:'held'}));
-  const planned = (DATA.coverage||[]).filter(c=>+c.plan_usd>0).map(c=>({key:c.ticker,label:c.ticker,usd:+c.plan_usd,kind:(c.verdict==='buy'?'buy':'wait'),detail:c.thesis||'',sub:c.size_note||'planned',dashed:true,price:c.price,chg:c.chg_pct}));
+// --- Allocation: the $5K plan as a stacked bar + tappable rows (mobile-first) ---
+const usd0 = v => (v < 0 ? '-$' : '$') + Math.round(Math.abs(v)).toLocaleString('en-US');
+function allocModel(){
+  const pool = 5000, d = DATA[account] || {};
+  const holds = (d.positions||[]).map(p=>({
+    key:p.symbol, kind:'hold', label:p.symbol, name:'', usd:Math.max(0,(+p.current||0)*(+p.qty||0)),
+    chip:'HELD', chipCls:'c-hold', color:'#7dd3fc', planned:false,
+    why:(p.thesis||'Open position — running with a structural stop, no fixed take-profit.'),
+    price:p.current, chg:p.plpc, sub:`${p.qty} sh @ ${fmt$(p.entry)}` }));
+  const planned = (DATA.coverage||[]).filter(c=>+c.plan_usd>0).map(c=>{
+    const buy = /buy|accumulate/i.test(c.verdict||'');
+    return { key:c.ticker, kind:'plan', label:c.ticker, name:c.name||'', usd:+c.plan_usd,
+      chip:buy?'BUYING':'WAITING', chipCls:buy?'c-buy':'c-wait', color:buy?'#6ee7b7':'#fcd34d', planned:true,
+      why:c.thesis||'', card:c.card, price:c.price, chg:c.chg_pct, sub:c.size_note||'planned on trigger' }; });
   const deployed = holds.reduce((s,h)=>s+h.usd,0);
-  const cash = Math.max(0, pool - deployed);
-  const nodes = [{key:'cash',label:'Cash',usd:cash,kind:'cash',detail:'Idle capital — waiting for a setup that clears both the business gate and the stock gate.',sub:'ready'}, ...holds, ...planned];
-  _mapNodes = nodes;
-  const maxUsd = Math.max(...nodes.map(n=>n.usd), 1);
-  const R = u => 15 + 33*Math.sqrt(u/maxUsd);
-  const rootX=66, rootY=H/2, bx=286;
-  const n=nodes.length, gap=(H-40)/Math.max(n,1);
-  let s = '';
-  nodes.forEach((nd,i)=>{
-    const y = 24 + gap*i + gap/2, r=R(nd.usd), col=COLOR[nd.kind]||'#7dd3fc';
-    const mx=(rootX+bx)/2;
-    s += `<path class="link" d="M ${rootX+30} ${rootY} C ${mx} ${rootY}, ${mx} ${y}, ${bx-r-3} ${y}" fill="none" stroke="${col}" stroke-width="1.6" opacity="0.5" style="animation-delay:${.15+i*.06}s"/>`;
-    s += `<g style="color:${col}"><circle class="bub" data-i="${i}" cx="${bx}" cy="${y}" r="${r}" fill="${nd.dashed?'rgba(255,255,255,0.02)':col+'22'}" stroke="${col}" stroke-width="${nd.dashed?'2':'2.5'}" ${nd.dashed?'stroke-dasharray="5 4"':''} style="animation-delay:${.2+i*.06}s; color:${col}"/>`;
-    s += `<text class="lbl" x="${bx}" y="${y-1}" text-anchor="middle" font-size="${Math.min(15,r*.6)}" style="animation-delay:${.35+i*.06}s">${nd.label}</text>`;
-    s += `<text class="sub" x="${bx}" y="${y+13}" text-anchor="middle" font-size="10" style="animation-delay:${.4+i*.06}s">$${Math.round(nd.usd).toLocaleString()}</text></g>`;
-  });
-  // root
-  s += `<circle cx="${rootX}" cy="${rootY}" r="30" fill="rgba(125,211,252,0.10)" stroke="#7dd3fc" stroke-width="2.5" class="bub" style="animation-delay:0s"/>`;
-  s += `<text class="rootlbl lbl" x="${rootX}" y="${rootY-2}" text-anchor="middle" font-size="12">Sleeve</text>`;
-  s += `<text class="rootlbl sub" x="${rootX}" y="${rootY+12}" text-anchor="middle" font-size="10">$5,000</text>`;
-  svg.innerHTML = s;
-  svg.querySelectorAll('circle.bub[data-i]').forEach(c=>c.addEventListener('click',()=>showMapDetail(+c.getAttribute('data-i'), c)));
-  document.getElementById('map-legend').innerHTML =
-    '<span><i style="background:#8a90a6"></i>cash</span><span><i style="background:#7dd3fc"></i>held</span><span><i style="background:#6ee7b7"></i>buying</span><span><i style="background:#fcd34d"></i>waiting</span><span><i class="dash"></i>planned</span>';
+  const earmarked = planned.reduce((s,h)=>s+h.usd,0);
+  const free = Math.max(0, pool - deployed - earmarked);
+  const cash = { key:'cash', kind:'cash', label:'Free cash', name:'', usd:free, chip:'READY', chipCls:'c-cash', color:'#8a90a6', planned:false,
+    why:'Idle capital waiting for a setup that clears **both** the business gate and the stock gate. When an earmark below triggers, this pool funds it.', sub:'unallocated' };
+  return { pool, rows:[...holds, ...planned, cash] };
 }
-function showMapDetail(i, el){
-  const n=_mapNodes[i]; if(!n) return;
-  document.querySelectorAll('.mapsvg .bub.sel').forEach(x=>x.classList.remove('sel'));
-  if(el) el.classList.add('sel');
-  const col=COLOR[n.kind]||'#7dd3fc';
-  const pct = Math.round(n.usd/5000*100);
-  const px = n.price!=null ? ` · $${n.price}${n.chg!=null?` (${n.chg>=0?'+':''}${n.chg}%)`:''}` : '';
-  const md=document.getElementById('map-detail');
-  md.style.opacity=0;
-  setTimeout(()=>{ md.innerHTML = `<div class="mh"><span class="mt" style="color:${col}">${esc(n.label)}</span><span class="sub" style="color:#8a90a6">${esc(n.sub)}${px}</span><span class="ma" style="color:${col}">$${Math.round(n.usd).toLocaleString()} · ${pct}%</span></div>${rich(n.detail||'')}`; md.style.opacity=1; }, 120);
+const allocSig = () => JSON.stringify(allocModel().rows.map(r=>[r.key,r.chip,r.planned,r.card||'',r.name]));
+function renderAlloc(){
+  const m = allocModel();
+  document.getElementById('alloc-bar').innerHTML = m.rows.map(r=>{
+    const w=(r.usd/m.pool*100).toFixed(2);
+    return r.planned
+      ? `<span class="planned" data-k="${esc(r.key)}" style="width:${w}%;color:${r.color}" title="${esc(r.label)}"></span>`
+      : `<span data-k="${esc(r.key)}" style="width:${w}%;background:${r.color}" title="${esc(r.label)}"></span>`;
+  }).join('');
+  document.getElementById('alloc-rows').innerHTML = m.rows.map((r,i)=>{
+    const pct = Math.round(r.usd/m.pool*100);
+    const px = (r.price!=null) ? `<div class="nm2">$${r.price}${r.chg!=null?` · <span class="${r.chg>=0?'up':'down'}">${r.chg>=0?'+':''}${r.chg}%</span>`:''}${r.name?' · '+esc(r.name):''}</div>` : (r.name?`<div class="nm2">${esc(r.name)}</div>`:'');
+    const cta = r.card ? ` <a class="cta" href="${esc(r.card)}" target="_blank" rel="noopener">open the deep-dive ↗</a>` : '';
+    return `<div class="alloc-row ${r.planned?'planned':''}" data-i="${i}" style="color:${r.color};animation-delay:${(i*.05).toFixed(2)}s">`
+      + `<div class="r1"><span class="swatch" style="background:${r.color}"></span><span class="tk">${esc(r.label)}</span>`
+      + `<span class="chip ${r.chipCls}">${esc(r.chip)}</span>`
+      + `<span class="amt" data-amt="${esc(r.key)}">${usd0(r.usd)}<small>${pct}% · ${esc(r.sub)}</small></span>`
+      + `<span class="caret">▾</span></div>`
+      + px
+      + `<div class="mini"><i data-mini="${esc(r.key)}" style="width:${pct}%;background:${r.color}"></i></div>`
+      + `<div class="why">${rich(r.why||'')}${cta}</div></div>`;
+  }).join('');
+  document.querySelectorAll('#alloc-rows .alloc-row').forEach(el=>el.addEventListener('click', e=>{
+    if (e.target.closest('a')) return;              // don't toggle when tapping the deep-dive link
+    el.classList.toggle('open');
+  }));
+}
+function updateAlloc(){                              // amounts/widths move with live prices — no rebuild, no scroll reset
+  const m = allocModel(), bar = document.getElementById('alloc-bar');
+  m.rows.forEach(r=>{
+    const w=(r.usd/m.pool*100), pct=Math.round(w);
+    const seg=bar.querySelector(`span[data-k="${cssq(r.key)}"]`); if(seg) seg.style.width=w.toFixed(2)+'%';
+    const amt=document.querySelector(`.amt[data-amt="${cssq(r.key)}"]`); if(amt) amt.innerHTML=`${usd0(r.usd)}<small>${pct}% · ${esc(r.sub)}</small>`;
+    const mini=document.querySelector(`i[data-mini="${cssq(r.key)}"]`); if(mini) mini.style.width=pct+'%';
+  });
 }
 
 // --- Research Log timeline ---
