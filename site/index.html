@@ -55,6 +55,8 @@
     animation: heroIn .7s cubic-bezier(.2,.75,.3,1) both;
   }
   @keyframes heroIn { from{opacity:0;} to{opacity:1;} }
+  .creed { font-size:12.5px; line-height:1.55; color:#9aa0b5; font-style:italic; margin:0 0 15px; padding-left:12px; border-left:2px solid rgba(125,211,252,.5); max-width:640px; }
+  .creed em { font-style:italic; font-weight:700; background:linear-gradient(90deg,#7dd3fc,#a78bfa 60%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .hero-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
   .hero-head h1 { font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#c8cde0; }
   .hero-head h1 span { background:linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
@@ -266,6 +268,7 @@
 </head>
 <body>
 <div id="hero">
+  <div class="creed">"If we ask <em>how is that possible?</em> instead of saying it's not — we usually find the answer."</div>
   <div class="hero-head">
     <h1><span>Agentic Trading</span> — Adam's Experiment</h1>
     <div id="live-pill" class="live-pill" style="display:none"><span class="live-dot"></span><span id="live-txt">live</span></div>
@@ -294,7 +297,7 @@
   </div>
 
   <div class="panel glass" id="alloc-panel">
-    <h2><span class="dot"></span>Allocation — the $5K plan &amp; the why</h2>
+    <h2><span class="dot"></span>Allocation — the plan &amp; the why</h2>
     <div class="alloc-bar" id="alloc-bar"></div>
     <div class="alloc-rows" id="alloc-rows"></div>
     <p class="cov-hint" style="margin:12px 0 0">Tap a row for the reasoning. Lighter / ringed = planned (earmarked for when its trigger hits).</p>
@@ -302,7 +305,7 @@
 
   <div class="panel glass">
     <h2><span class="dot"></span>Coverage — Company Intelligence<span class="count" id="cov-count"></span></h2>
-    <p class="cov-hint">Tap any company to open the full deep-dive. Symbol = the call · $ = planned size in the $5K sleeve.</p>
+    <p class="cov-hint">Tap any company to open the full deep-dive. Symbol = the call · $ = planned size in the sleeve.</p>
     <div class="cov" id="coverage"></div>
     <div class="swipe-hint">← swipe to browse →</div>
   </div>
@@ -552,7 +555,7 @@ function buildCoverage(){
         + `<div class="nm">${esc(c.name)}${c.theme?' · '+esc(c.theme):''}</div>`
         + `<span class="spk" data-spk="${esc(c.ticker)}">${spark(c.spark, c.chg_pct)}</span>`
         + `<div class="th">${rich(c.thesis||'')}</div>`
-        + `<div class="size"><span class="amt ${hasSize?'g':'d'}">${esc(c.size||'$0')}</span><span class="lbl">${esc(c.size_note|| (hasSize?'of $5K sleeve':'no position'))}</span></div>`
+        + `<div class="size"><span class="amt ${hasSize?'g':'d'}">${esc(c.size||'$0')}</span><span class="lbl">${esc(c.size_note|| (hasSize?'of the sleeve':'no position'))}</span></div>`
         + `<div class="size" style="border:0;padding-top:8px;margin-top:4px"><span class="lbl">${c.updated?'updated '+esc(c.updated):''}</span><span class="open">open card ↗</span></div>`
         + `</a>`; }).join('')
     : '<div class="empty">No coverage cards yet. The engine builds a deep-research intelligence card per company on a daily rotation — they\'ll appear here.</div>';
