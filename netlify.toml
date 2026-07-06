@@ -1,7 +1,12 @@
 [build]
   publish = "site"
-  # Skip a Netlify rebuild when a commit only touched site/data.json — the
-  # live poller updates that file every ~2 min and the page reads it from
-  # GitHub raw, so rebuilding for data would blow the free build minutes.
+  # Skip a Netlify rebuild when NOTHING but site/data.json changed since the
+  # last DEPLOYED commit — the live poller updates data.json every ~60s and the
+  # page reads it from GitHub raw, so rebuilding for data would blow the free
+  # build minutes. Comparing against CACHED_COMMIT_REF (last deployed commit)
+  # instead of HEAD^ makes real changes deploy reliably: even when a data-only
+  # poller commit is at HEAD, if index.html/research/etc changed since the last
+  # deploy, this returns non-zero and the build proceeds. That keeps rapid
+  # poller commits from cancelling/skipping a genuine UI or research update.
   # `ignore` returning 0 = skip build; non-zero = build.
-  ignore = "git diff --quiet HEAD^ HEAD -- . ':(exclude)site/data.json'"
+  ignore = "git diff --quiet ${CACHED_COMMIT_REF:-HEAD~1} ${COMMIT_REF:-HEAD} -- . ':(exclude)site/data.json'"
