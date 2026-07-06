@@ -14,7 +14,8 @@
       "card": "/research/ceg.html",
       "updated": "Jul 5",
       "price": 243.21,
-      "chg_pct": 1.67
+      "chg_pct": 1.67,
+      "plan_usd": 750
     },
     {
       "ticker": "BE",
@@ -29,7 +30,8 @@
       "card": "/research/be.html",
       "updated": "Jul 5",
       "price": 302.72,
-      "chg_pct": 11.7
+      "chg_pct": 11.7,
+      "plan_usd": 600
     },
     {
       "ticker": "OKLO",
@@ -44,7 +46,8 @@
       "card": "/research/oklo.html",
       "updated": "Jul 5",
       "price": 51.99,
-      "chg_pct": -0.83
+      "chg_pct": -0.83,
+      "plan_usd": 0
     }
   ],
   "feed": [
@@ -133,5 +136,43 @@
         "value": 1000.09
       }
     ]
-  }
+  },
+  "activity": [
+    {
+      "ts": "2026-07-06T08:30:00-07:00",
+      "kind": "engine",
+      "title": "Research engine live on Opus",
+      "detail": "Now monitoring the coverage list 3× each weekday for real developments — usually no trade, by design."
+    },
+    {
+      "ts": "2026-07-06T07:00:00-07:00",
+      "kind": "digest",
+      "title": "Morning scan — energy-for-AI",
+      "detail": "All three energy names still wait/avoid. CEG best business but chart's broken; BE ripping (+9%) so no chase; Oklo untouchable. No setups cleared both gates."
+    },
+    {
+      "ts": "2026-07-05T16:00:00-07:00",
+      "kind": "research",
+      "title": "Constellation Energy (CEG) deep-dive",
+      "detail": "Added the third energy-for-AI card. Verdict: highest quality of the group, but wait for a base near $230 before buying."
+    },
+    {
+      "ts": "2026-07-05T12:00:00-07:00",
+      "kind": "pivot",
+      "title": "Strategy pivot → research-first, long-horizon",
+      "detail": "Moved off day-trading to weeks-to-6-month positions: two-gate test, wide vol-based stops, let winners run, benchmark vs QQQ."
+    },
+    {
+      "ts": "2026-07-05T10:00:00-07:00",
+      "kind": "research",
+      "title": "Bloom & Oklo deep-dives",
+      "detail": "Two energy names researched from scratch — same theme, opposite calls. Proved the research is the edge."
+    },
+    {
+      "ts": "2026-07-02T16:00:00-07:00",
+      "kind": "system",
+      "title": "System go-live",
+      "detail": "Alpaca connected (paper + live), order pipeline pipe-tested, dashboard + Telegram approvals wired."
+    }
+  ]
 }

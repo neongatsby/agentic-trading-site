@@ -45,6 +45,49 @@
   .live-dot { width:8px; height:8px; border-radius:50%; background:#6ee7b7; box-shadow:0 0 0 0 rgba(110,231,183,.6); animation:pulse 2s infinite; }
   .live-pill.stale { color:#fcd34d; } .live-pill.stale .live-dot{ background:#fcd34d; animation:none; }
   @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(110,231,183,.5);} 70%{box-shadow:0 0 0 7px rgba(110,231,183,0);} 100%{box-shadow:0 0 0 0 rgba(110,231,183,0);} }
+  /* ---- entrance motion ---- */
+  #app > .stats > .stat, #app > .panel { animation: rise .55s cubic-bezier(.2,.75,.3,1) both; animation-delay: calc(var(--i,0) * .05s); }
+  @keyframes rise { from{opacity:0; transform:translateY(16px) scale(.995);} to{opacity:1; transform:none;} }
+  .value { transition: color .3s ease; }
+  .value.flash-up { animation: flashUp .9s ease; } .value.flash-down { animation: flashDown .9s ease; }
+  @keyframes flashUp { 0%{color:#6ee7b7; text-shadow:0 0 20px rgba(110,231,183,.55);} 100%{text-shadow:none;} }
+  @keyframes flashDown { 0%{color:#fca5a5; text-shadow:0 0 20px rgba(252,165,165,.55);} 100%{text-shadow:none;} }
+  /* smooth account-toggle */
+  .toggle button { transition: color .3s ease, background .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; }
+  #app { transition: opacity .25s ease; }
+  #app.switching { opacity: .35; }
+  /* ---- Money Map ---- */
+  .mapsvg { width:100%; height:340px; display:block; touch-action:manipulation; }
+  .mapsvg .bub { cursor:pointer; transition:opacity .2s; }
+  .mapsvg .lbl { font-family:inherit; font-weight:700; fill:#e8eaf2; pointer-events:none; }
+  .mapsvg .sub { font-family:inherit; fill:#aab0c5; pointer-events:none; }
+  .map-legend { display:flex; flex-wrap:wrap; gap:14px; margin-top:4px; font-size:11.5px; color:#8a90a6; }
+  .map-legend span { display:inline-flex; align-items:center; gap:6px; }
+  .map-legend i { width:11px;height:11px;border-radius:50%; display:inline-block; }
+  .map-legend i.dash { background:transparent; border:2px dashed #7c8299; }
+  .map-detail { margin-top:14px; padding:15px 17px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); font-size:13.5px; color:#c4c9db; line-height:1.55; transition:opacity .25s ease, transform .25s ease; }
+  .map-detail b { color:#fff; }
+  .map-detail .mh { display:flex; align-items:center; gap:9px; margin-bottom:6px; }
+  .map-detail .mh .mt { font-weight:800; font-size:16px; letter-spacing:.03em; }
+  .map-detail .mh .ma { margin-left:auto; font-weight:800; font-variant-numeric:tabular-nums; }
+  /* ---- Research Log timeline ---- */
+  .tl { position:relative; padding-left:24px; }
+  .tl::before { content:""; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:linear-gradient(#7dd3fc,#a78bfa,rgba(167,139,250,0)); opacity:.45; }
+  .tl-item { position:relative; margin-bottom:17px; animation: rise .5s ease both; }
+  .tl-item:last-child { margin-bottom:2px; }
+  .tl-item::before { content:""; position:absolute; left:-24px; top:3px; width:13px;height:13px;border-radius:50%; background:#0b0f1a; border:2px solid #7dd3fc; box-shadow:0 0 9px rgba(125,211,252,.5); }
+  .tl-item.k-research::before{border-color:#6ee7b7;box-shadow:0 0 9px rgba(110,231,183,.5);} .tl-item.k-pivot::before{border-color:#a78bfa;box-shadow:0 0 9px rgba(167,139,250,.5);} .tl-item.k-system::before{border-color:#fcd34d;box-shadow:0 0 9px rgba(251,191,36,.5);}
+  .tl-item .tt { font-size:11px; color:#7c8299; font-variant-numeric:tabular-nums; }
+  .tl-item .th2 { font-size:14.5px; font-weight:700; color:#e8eaf2; margin:2px 0 3px; }
+  .tl-item .td { font-size:13px; color:#aeb4c6; line-height:1.55; }
+  .mapsvg .bub { transform-box:fill-box; transform-origin:center; animation:pop .55s cubic-bezier(.2,1.5,.45,1) both; }
+  .mapsvg .bub.sel { filter:drop-shadow(0 0 10px currentColor); }
+  @keyframes pop { from{opacity:0; transform:scale(.15);} to{opacity:1; transform:scale(1);} }
+  .mapsvg .link { stroke-dasharray:260; stroke-dashoffset:260; animation:draw .8s ease forwards; }
+  @keyframes draw { to{stroke-dashoffset:0;} }
+  .mapsvg .lbl,.mapsvg .sub,.mapsvg .rootlbl { animation:fadein .7s ease both; }
+  @keyframes fadein { from{opacity:0;} to{opacity:1;} }
+  @keyframes floaty { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-3px);} }
   .toggle { display: flex; padding: 4px; gap: 4px; }
   .toggle button { border: none; background: transparent; color: #9aa0b5; font: inherit; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 14px; cursor: pointer; transition: all .25s ease; }
   .toggle button.active { background: linear-gradient(135deg, rgba(125,211,252,0.22), rgba(167,139,250,0.18)); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 12px rgba(125,211,252,0.15); }
@@ -151,6 +194,13 @@
     <div class="stat glass"><div class="label">Positions</div><div class="value" id="s-pos">—</div><div class="sub" id="s-pos-sub"></div></div>
   </div>
 
+  <div class="panel glass" id="map-panel">
+    <h2><span class="dot"></span>The Money Map — the $5K plan &amp; the why</h2>
+    <div id="map-wrap"><svg class="mapsvg" id="mapsvg" viewBox="0 0 400 340" preserveAspectRatio="xMidYMid meet" aria-label="allocation map"></svg></div>
+    <div class="map-legend" id="map-legend"></div>
+    <div class="map-detail" id="map-detail">Tap a bubble to see the plan and the reasoning behind it.</div>
+  </div>
+
   <div class="panel glass">
     <h2><span class="dot"></span>Coverage — Company Intelligence<span class="count" id="cov-count"></span></h2>
     <p class="cov-hint">Tap any company to open the full deep-dive. Symbol = the call · $ = planned size in the $5K sleeve.</p>
@@ -161,6 +211,11 @@
   <div class="panel glass">
     <h2><span class="dot"></span>Signals &amp; Moves<span class="count" id="feed-count"></span></h2>
     <div class="feed" id="feed"></div>
+  </div>
+
+  <div class="panel glass">
+    <h2><span class="dot"></span>Research Log — how the plan is evolving<span class="count" id="tl-count"></span></h2>
+    <div class="tl" id="timeline"></div>
   </div>
 
   <div class="panel glass"><h2><span class="dot"></span>Equity Curve</h2><div class="chart-wrap"><canvas id="chart"></canvas></div></div>
