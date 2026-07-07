@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T13:49:19.981Z",
+  "generated_at": "2026-07-07T13:50:25.643Z",
   "market_note": "Market OPEN — live.",
   "paper": {
     "equity": 5000,
@@ -23,18 +23,18 @@
     ]
   },
   "live": {
-    "equity": 999.86,
+    "equity": 999.87,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
     "total_pnl": 0.09,
-    "day_pnl": -0.18,
+    "day_pnl": -0.17,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 192.04,
-        "pl": -0.13,
-        "plpc": -1.25,
+        "current": 192.1,
+        "pl": -0.12,
+        "plpc": -1.22,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       }
     ],
@@ -332,6 +332,10 @@
       {
         "t": 1783431900000,
         "v": 999.89
+      },
+      {
+        "t": 1783432200000,
+        "v": 999.86
       }
     ]
   },
@@ -349,8 +353,8 @@
       "size_note": "planned $750 (15%) on trigger",
       "card": "/research/ceg.html",
       "updated": "Jul 5",
-      "price": 244.26,
-      "chg_pct": -0.66,
+      "price": 243.89,
+      "chg_pct": -0.82,
       "plan_usd": 750,
       "spark": [
         303.03,
@@ -382,7 +386,7 @@
         268.05,
         267.26,
         274.09,
-        244.26
+        243.89
       ]
     },
     {
@@ -397,8 +401,8 @@
       "size_note": "planned $600 (12%) on pullback",
       "card": "/research/be.html",
       "updated": "Jul 5",
-      "price": 281.38,
-      "chg_pct": -4.61,
+      "price": 280.06,
+      "chg_pct": -5.05,
       "plan_usd": 600,
       "spark": [
         261.1,
@@ -430,7 +434,7 @@
         281.3,
         285.13,
         328.78,
-        281.38
+        280.06
       ]
     },
     {
@@ -445,8 +449,8 @@
       "size_note": "not touching",
       "card": "/research/oklo.html",
       "updated": "Jul 5",
-      "price": 49.76,
-      "chg_pct": -4.03,
+      "price": 49.29,
+      "chg_pct": -4.94,
       "plan_usd": 0,
       "spark": [
         72.52,
@@ -478,7 +482,7 @@
         57.34,
         58.87,
         61.28,
-        49.76
+        49.29
       ]
     }
   ],
