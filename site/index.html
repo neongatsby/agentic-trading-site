@@ -63,6 +63,8 @@
   .title-moment { margin:2px 0 20px; }
   .title-moment h1 { font-size:20px; font-weight:800; letter-spacing:-0.02em; margin-bottom:10px; }
   .title-moment h1 span { background:linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .info-btn { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; border:1.5px solid #7dd3fc; color:#7dd3fc; font-style:italic; font-weight:800; font-size:12px; font-family:Georgia,'Times New Roman',serif; text-decoration:none; vertical-align:middle; margin-left:7px; transition:background .2s ease; -webkit-tap-highlight-color:transparent; }
+  .info-btn:hover { background:rgba(125,211,252,.15); }
   .title-moment .tm-pnl { margin-top:13px; font-size:12.5px; color:#8a90a6; }
   .title-moment .tm-pnl b { font-size:15px; font-weight:800; font-variant-numeric:tabular-nums; margin:0 6px 0 4px; }
   /* recent trades — tappable cards, expand for the why */
@@ -100,6 +102,12 @@
   .msg-b b { color:#fff; font-weight:700; }
   .msg-t { font-size:10.5px; color:#7c8299; margin:5px 0 0 8px; font-variant-numeric:tabular-nums; }
   .msg:first-child .msg-b { background:rgba(125,211,252,.16); border-color:rgba(125,211,252,.32); }
+  /* track-record scorecard */
+  .score { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; }
+  .sc { background:rgba(255,255,255,.04); border-radius:12px; padding:12px 14px; }
+  .sc-l { font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:#8a90a6; }
+  .sc-v { font-size:20px; font-weight:800; font-variant-numeric:tabular-nums; margin-top:5px; letter-spacing:-.01em; }
+  .sc-s { font-size:11px; color:#7c8299; margin-top:3px; line-height:1.4; }
   .hero-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
   .hero-head h1 { font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#c8cde0; }
   .hero-head h1 span { background:linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
@@ -322,7 +330,7 @@
 
 <div id="app" style="display:none">
   <div class="title-moment">
-    <h1><span>Agentic Trading</span> — Adam's Experiment</h1>
+    <h1><span>Agentic Trading</span> — Adam's Experiment <a class="info-btn" href="how-it-works.html" aria-label="How this works">i</a></h1>
     <div class="creed">"If we ask <em>how is that possible?</em> instead of saying it's not — we usually find the answer."</div>
     <div class="tm-pnl">Total P&amp;L <b class="value" id="s-pnl">—</b><span id="s-pnl-sub">since inception</span></div>
   </div>
@@ -340,6 +348,12 @@
   <div class="panel glass" id="positions-panel">
     <h2><span class="dot"></span>Open Positions<span class="count" id="pos-count"></span></h2>
     <div class="scroll-x" id="positions"></div>
+  </div>
+
+  <div class="panel glass" id="score-panel">
+    <h2><span class="dot"></span>Track Record<span class="count" id="score-since"></span></h2>
+    <div class="score" id="score"></div>
+    <p class="cov-hint" style="margin:12px 0 0">The honest scoreboard: are we beating "just buy 3× Nasdaq and hold"? Not-losing in a falling market counts.</p>
   </div>
 
   <div class="panel glass" id="alloc-panel">
@@ -598,6 +612,23 @@ function renderPulse(){
     ? items.map(p=>`<div class="msg"><div class="msg-b">${rich(p.text||'')}</div><div class="msg-t">${msgTime(p.ts)}</div></div>`).join('')
     : '<div class="empty">The engine texts its read here every run — including why it\'s not trading.</div>';
 }
+// --- Track Record scorecard: return, alpha vs buy-and-hold TQQQ, drawdown ---
+function renderScore(){
+  const el=document.getElementById('score'); if(!el) return;
+  const d=DATA[account]||{}, curve=d.equity_curve||[];
+  const base = curve.length ? curve[0].value : ((d.equity||0)-(d.total_pnl||0));
+  const now = d.equity||0, ret = base ? (now/base-1)*100 : 0;
+  let peak=-Infinity, dd=0; curve.forEach(p=>{ if(p.value>peak)peak=p.value; if(peak>0){ const c=(p.value-peak)/peak; if(c<dd)dd=c; } });
+  const ddPct=dd*100, bench=DATA.benchmark||{}, bp=bench.tqqq_pct!=null?+bench.tqqq_pct:null, alpha=bp!=null?ret-bp:null;
+  const trades=(DATA.feed||[]).filter(f=>f.type==='trade').length;
+  const sc=document.getElementById('score-since'); if(sc) sc.textContent = bench.since?('since '+bench.since):(curve[0]?('since '+curve[0].date):'');
+  const cell=(l,v,k,s)=>`<div class="sc"><div class="sc-l">${l}</div><div class="sc-v ${k||'flat'}">${v}</div>${s?`<div class="sc-s">${s}</div>`:''}</div>`;
+  el.innerHTML =
+      cell('Return', (ret>=0?'+':'')+ret.toFixed(2)+'%', cls(ret))
+    + cell('vs buy-&-hold TQQQ', alpha!=null?((alpha>=0?'+':'')+alpha.toFixed(1)+'%'):'—', alpha!=null?cls(alpha):'flat', bp!=null?('TQQQ '+(bp>=0?'+':'')+bp.toFixed(1)+'% — you\'re '+(alpha>=0?'ahead':'behind')):'')
+    + cell('Max drawdown', ddPct.toFixed(1)+'%', ddPct<-0.05?'neg':'flat')
+    + cell('Trades taken', String(trades), 'flat');
+}
 // --- Research Log timeline ---
 function renderActivity(){
   const el=document.getElementById('timeline'); if(!el) return;
@@ -726,6 +757,7 @@ function render() {
   sync('feed', JSON.stringify((DATA.feed||[]).filter(f=>f.type!=='trade').slice(0,8)), buildFeed, null);
   sync('act', JSON.stringify(DATA.activity||[]), renderActivity, null);
   buildPositions();
+  renderScore();
   sync('pulse', JSON.stringify(pulseItems()), renderPulse, null);
   const lp = pulseItems()[0];
   const lastRun = lp ? new Date(lp.ts) : null;

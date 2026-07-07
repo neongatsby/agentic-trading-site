@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>How it works — Agentic Trading</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+<style>
+  :root{ color-scheme:dark; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif; color:#e8eaf2;
+    background:
+      radial-gradient(ellipse 80% 60% at 15% -10%, #1a2340 0%, transparent 55%),
+      radial-gradient(ellipse 60% 50% at 90% 5%, #2a1a3d 0%, transparent 50%),
+      radial-gradient(ellipse 70% 60% at 50% 115%, #0e2a24 0%, transparent 55%),
+      #07090f;
+    min-height:100vh; padding:32px clamp(16px,5vw,40px) 80px; -webkit-font-smoothing:antialiased; line-height:1.6;
+  }
+  .wrap{ max-width:720px; margin:0 auto; }
+  .back{ display:inline-block; font-size:13px; color:#7dd3fc; text-decoration:none; margin-bottom:22px; }
+  .back:hover{ text-decoration:underline; }
+  h1{ font-size:clamp(24px,5vw,34px); font-weight:800; letter-spacing:-0.02em; line-height:1.15; }
+  h1 span{ background:linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .lede{ color:#aab0c5; font-size:16px; margin-top:14px; }
+  .creed{ font-style:italic; color:#9aa0b5; font-size:13.5px; margin:16px 0 0; padding-left:13px; border-left:2px solid rgba(125,211,252,.5); }
+  .creed b{ font-style:italic; background:linear-gradient(90deg,#7dd3fc,#a78bfa 60%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  section{ margin-top:26px; background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:22px 22px 24px; box-shadow:0 8px 30px rgba(0,0,0,.3); }
+  h2{ font-size:19px; font-weight:800; letter-spacing:-.01em; display:flex; align-items:center; gap:10px; }
+  h2 .n{ font-size:12px; font-weight:800; color:#07090f; background:linear-gradient(135deg,#7dd3fc,#a78bfa); width:24px; height:24px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; flex:none; }
+  section p{ color:#c4c9db; font-size:14.5px; margin-top:11px; }
+  section p b{ color:#fff; }
+  .step{ display:flex; gap:12px; margin-top:15px; }
+  .step .d{ flex:none; width:9px; height:9px; border-radius:50%; margin-top:7px; background:#7dd3fc; box-shadow:0 0 9px rgba(125,211,252,.5); }
+  .step .t{ font-size:14px; color:#c8cddc; }
+  .step .t b{ color:#fff; }
+  .loop{ counter-reset:step; margin-top:6px; }
+  .loop .li{ display:flex; gap:13px; margin-top:14px; }
+  .loop .li::before{ counter-increment:step; content:counter(step); flex:none; width:26px; height:26px; border-radius:50%; background:rgba(110,231,183,.14); border:1px solid rgba(110,231,183,.4); color:#6ee7b7; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; }
+  .loop .li .t{ font-size:14px; color:#c8cddc; padding-top:2px; }
+  .loop .li .t b{ color:#fff; }
+  .tag{ display:inline-block; font-size:11px; font-weight:700; padding:4px 11px; border-radius:999px; margin:2px 6px 2px 0; }
+  .t-buy{ background:rgba(110,231,183,.15); color:#6ee7b7; } .t-cash{ background:rgba(138,144,166,.18); color:#aab0c5; } .t-warn{ background:rgba(252,211,77,.14); color:#fcd34d; }
+  .callout{ margin-top:16px; background:rgba(252,211,77,.08); border:1px solid rgba(252,211,77,.28); border-radius:14px; padding:15px 17px; font-size:13.5px; color:#d8dae6; }
+  .callout b{ color:#fde68a; }
+  .foot{ margin-top:26px; font-size:12px; color:#6b7188; text-align:center; line-height:1.7; }
+  a.cta{ color:#7dd3fc; text-decoration:none; font-weight:700; } a.cta:hover{ text-decoration:underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← back to the dashboard</a>
+  <h1><span>Agentic Trading</span><br>— how it actually works</h1>
+  <p class="lede">A friend sent you this. Here's the whole thing in plain English: it's a real, live experiment where an AI runs a small, high-risk trading account — and you're watching it think.</p>
+  <p class="creed">"If we ask <b>how is that possible?</b> instead of saying it's not — we usually find the answer."</p>
+
+  <section>
+    <h2><span class="n">1</span>What this is</h2>
+    <p>A real brokerage account with <b>about $1,000</b> in it — money the owner has decided he can afford to lose entirely. An AI engine manages it, trying to grow it aggressively toward a wildly ambitious target (~$100,000). Think of it as a science experiment with real money, run out in the open. It is <b>not</b> investment advice, and the honest expectation is a small chance of a huge outcome and a large chance of losing the stake. That trade-off is the point, on purpose.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>What it's aiming for</h2>
+    <p>Maximum growth, not safety. It buys <b>leveraged ETFs</b> — funds that move 2–3× as much as the market — to swing for big gains. That amplification cuts both ways, which is exactly why the rules below exist. The goal isn't to be right every day; it's to give a moonshot its best honest shot while never letting a single bad bet wipe out the whole account.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>How it thinks — every few hours</h2>
+    <p>Four times a trading day, the engine wakes up and runs the same loop:</p>
+    <div class="step"><div class="d"></div><div class="t"><b>Reads the market.</b> Prices, momentum, the news driving them.</div></div>
+    <div class="step"><div class="d"></div><div class="t"><b>Checks the "regime."</b> Is the overall market trending <b>up</b> or <b>down</b>? Leverage only works with the trend — in a falling market these funds bleed value fast, so the honest move is to step aside.</div></div>
+    <div class="step"><div class="d"></div><div class="t"><b>Hunts for a setup.</b> If the trend is up, it looks for the strongest names breaking out.</div></div>
+    <div class="step"><div class="d"></div><div class="t"><b>Applies survival rules</b> (see below) and either proposes a trade or explains why it's sitting out.</div></div>
+    <p style="margin-top:15px">So on any given day you'll see one of these:</p>
+    <span class="tag t-buy">a trade proposal → your phone</span>
+    <span class="tag t-cash">"nothing worth it — holding cash, here's why"</span>
+    <span class="tag t-warn">"armed a trigger — waiting for the level"</span>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>How it stays out of trouble</h2>
+    <p><b>You approve every real trade.</b> The engine never spends real money on its own — it sends the idea to the owner's phone with an Approve / Skip button. Nothing happens without a human tap.</p>
+    <p><b>Every position has a hard stop.</b> A pre-set exit that caps the loss on any one bet to a small slice of the account — so a single wrong call can't end the experiment.</p>
+    <p><b>Cash is a real position.</b> When the market's ugly, doing nothing is the correct move, and the engine will happily do nothing and tell you why.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span>How it learns from itself over time</h2>
+    <p>This is the part that makes it more than a bot following rules. There's a genuine feedback loop:</p>
+    <div class="loop">
+      <div class="li"><div class="t"><b>Records</b> — every decision goes into a detailed dated journal; every trade logs its reasoning, stop, and a pre-mortem of what could go wrong.</div></div>
+      <div class="li"><div class="t"><b>Scores</b> — the account is measured against a dumb benchmark ("what if I'd just bought and held 3× the Nasdaq?"). If it can't beat that, the strategy isn't adding value.</div></div>
+      <div class="li"><div class="t"><b>Reviews</b> — once a week it grades itself: which trades worked, which didn't, and what pattern keeps repeating.</div></div>
+      <div class="li"><div class="t"><b>Writes the lesson down</b> — each real, evidence-backed takeaway is added to its own playbook, dated. (No made-up lessons — only things the data actually showed.)</div></div>
+      <div class="li"><div class="t"><b>Acts on it</b> — and here's the key: the engine <b>re-reads that playbook at the start of every single run</b>. So a lesson learned on a Sunday changes how it trades on Monday. Outcomes → lessons → behavior. The loop closes.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span>What you're looking at on the dashboard</h2>
+    <p><b>The big number + chart</b> — the live account value, like a stock app.</p>
+    <p><b>"What the engine's thinking"</b> — short texts, like messages from a friend who watches the market all day, with timestamps. Even on days it does nothing, it tells you why.</p>
+    <p><b>Track Record</b> — the honest scoreboard: is it beating buy-and-hold?</p>
+    <p><b>The Map</b> — a little solar system of the names it's watching; the closer a planet orbits, the sooner its setup, and its size is how big a bet it would be.</p>
+    <p><b>Recent Trades / Open Positions</b> — tap any of them to read the actual reasoning behind it.</p>
+  </section>
+
+  <div class="callout"><b>The honest disclaimer:</b> this is a personal, experimental account using money that can be fully lost. Leveraged trading is high-risk and most attempts to grow a small stake this fast end in a loss. Nothing here is financial advice — it's a real-money experiment shared in the open.</div>
+
+  <p class="foot"><a class="cta" href="./">← back to the live dashboard</a><br>Built as an experiment · not financial advice</p>
+</div>
+</body>
+</html>
