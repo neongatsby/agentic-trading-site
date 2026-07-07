@@ -82,6 +82,17 @@
   .tc-why b { color:#fff; }
   .trade-card.open .tc-why, .trade-card.pending .tc-why { max-height:240px; opacity:1; margin-top:10px; }
   .tc-meta { font-size:11.5px; color:#8a90a6; margin-top:7px; font-variant-numeric:tabular-nums; }
+  .pos-card { padding:12px 15px; border-radius:14px; background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.07); margin-bottom:9px; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:background .2s ease, border-color .2s ease, transform .12s ease; }
+  .pos-card:last-child { margin-bottom:0; }
+  .pos-card:active { transform:scale(.99); }
+  .pos-card.open { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.13); }
+  .pos-card .pc-top { display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
+  .pos-card .pc-qty { font-size:11.5px; color:#8a90a6; font-variant-numeric:tabular-nums; }
+  .pos-card .pc-pl { margin-left:auto; font-weight:800; font-variant-numeric:tabular-nums; font-size:14px; white-space:nowrap; }
+  .pos-card .pc-pl small { font-weight:600; font-size:11px; opacity:.85; }
+  .pos-card .caret { margin-left:2px; color:#6a7088; font-size:11px; transition:transform .3s ease; }
+  .pos-card.open .caret { transform:rotate(180deg); }
+  .pos-card.open .tc-why { max-height:200px; opacity:1; margin-top:9px; }
   .hero-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
   .hero-head h1 { font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#c8cde0; }
   .hero-head h1 span { background:linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
@@ -597,7 +608,7 @@ function updateCoverPrices(){                          // stamp fresh price + sp
   }
 }
 function buildFeed(){
-  const feed = (DATA.feed || []).filter(f => (!f.account || f.account === account) && f.type!=='trade').slice(0, 8);
+  const feed = (DATA.feed || []).filter(f => f.type!=='trade').slice(0, 8);   // signals = market views, account-agnostic; trades live under Recent Trades
   document.getElementById('feed-count').textContent = feed.length ? feed.length + ' shown' : '';
   document.getElementById('feed').innerHTML = feed.length
     ? feed.map(feedCard).join('')
@@ -605,10 +616,12 @@ function buildFeed(){
 }
 function buildPositions(){
   const poss = (DATA[account]||{}).positions || [];
-  document.getElementById('positions').innerHTML = poss.length
-    ? '<table><tr><th>Symbol</th><th>Qty</th><th>Entry</th><th>Now</th><th>P&L</th><th>Thesis</th></tr>' + poss.map(p =>
-        `<tr><td class="sym">${esc(p.symbol)}</td><td>${esc(p.qty)}</td><td>${fmt$(p.entry)}</td><td>${fmt$(p.current)}</td><td class="${cls(p.pl)}">${fmt$(p.pl)} (${fmtPct(p.plpc)})</td><td class="thesis">${esc(p.thesis)}</td></tr>`).join('') + '</table>'
-    : '<div class="empty">No open positions — engine is waiting for setups that clear the charter bar.</div>';
+  const el = document.getElementById('positions');
+  if(!poss.length){ el.innerHTML = '<div class="empty">No open positions yet — when the engine takes a trade it shows here with live P&L. Tap for the thesis.</div>'; return; }
+  el.innerHTML = poss.map(p=>{ const plc=cls(p.pl);
+    return `<div class="pos-card"><div class="pc-top"><span class="tc-sym">${esc(p.symbol)}</span><span class="pc-qty">${esc(p.qty)} sh @ ${fmt$(p.entry)} → ${fmt$(p.current)}</span><span class="pc-pl ${plc}">${fmt$(p.pl)}<small> (${fmtPct(p.plpc)})</small></span><span class="caret">▾</span></div>`
+      + `<div class="tc-why">${esc(p.thesis||'No thesis recorded for this position.')}</div></div>`; }).join('');
+  el.querySelectorAll('.pos-card').forEach(c=>c.addEventListener('click', ()=>c.classList.toggle('open')));
 }
 // gradient helpers — evaluated per-draw so they upgrade once the chart area exists
 let _chartUp = true;
@@ -685,7 +698,7 @@ function render() {
   sync('cover', sig(DATA.coverage, c=>[c.ticker,c.verdict,c.verdict_label,c.thesis,c.size,c.size_note,c.name,c.card,c.updated]), buildCoverage, updateCoverPrices);
   sync('orbit', orbitSig(), renderOrbit, null);
   sync('alloc', allocSig(), renderAlloc, updateAlloc);
-  sync('feed', JSON.stringify((DATA.feed||[]).filter(f=>(!f.account||f.account===account)&&f.type!=='trade').slice(0,8)), buildFeed, null);
+  sync('feed', JSON.stringify((DATA.feed||[]).filter(f=>f.type!=='trade').slice(0,8)), buildFeed, null);
   sync('act', JSON.stringify(DATA.activity||[]), renderActivity, null);
   buildPositions();
   document.getElementById('recap').textContent = DATA.latest_recap || '—';
