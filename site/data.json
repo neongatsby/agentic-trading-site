@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T14:59:25.459Z",
+  "generated_at": "2026-07-07T15:00:31.082Z",
   "market_note": "Market OPEN — live.",
   "paper": {
     "equity": 5000,
@@ -23,18 +23,18 @@
     ]
   },
   "live": {
-    "equity": 999.9,
+    "equity": 999.89,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
     "total_pnl": 0.09,
-    "day_pnl": -0.14,
+    "day_pnl": -0.15,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 192.71,
-        "pl": -0.09,
-        "plpc": -0.91,
+        "current": 192.5,
+        "pl": -0.1,
+        "plpc": -1.02,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       }
     ],
@@ -388,6 +388,10 @@
       {
         "t": 1783436100000,
         "v": 999.89
+      },
+      {
+        "t": 1783436400000,
+        "v": 999.89
       }
     ]
   },
@@ -453,8 +457,8 @@
       "size_note": "planned $600 (12%) on pullback",
       "card": "/research/be.html",
       "updated": "Jul 5",
-      "price": 267.13,
-      "chg_pct": -9.44,
+      "price": 265.78,
+      "chg_pct": -9.9,
       "plan_usd": 600,
       "spark": [
         261.1,
@@ -486,7 +490,7 @@
         281.3,
         285.13,
         328.78,
-        267.13
+        265.78
       ]
     },
     {
@@ -501,8 +505,8 @@
       "size_note": "not touching",
       "card": "/research/oklo.html",
       "updated": "Jul 5",
-      "price": 47.86,
-      "chg_pct": -7.7,
+      "price": 47.7,
+      "chg_pct": -8,
       "plan_usd": 0,
       "spark": [
         72.52,
@@ -534,7 +538,7 @@
         57.34,
         58.87,
         61.28,
-        47.86
+        47.7
       ]
     }
   ],
