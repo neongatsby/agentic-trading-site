@@ -55,8 +55,33 @@
     animation: heroIn .7s cubic-bezier(.2,.75,.3,1) both;
   }
   @keyframes heroIn { from{opacity:0;} to{opacity:1;} }
-  .creed { font-size:12.5px; line-height:1.55; color:#9aa0b5; font-style:italic; margin:0 0 15px; padding-left:12px; border-left:2px solid rgba(125,211,252,.5); max-width:640px; }
+  .creed { font-size:12.5px; line-height:1.55; color:#9aa0b5; font-style:italic; margin:0; padding-left:12px; border-left:2px solid rgba(125,211,252,.5); max-width:640px; }
   .creed em { font-style:italic; font-weight:700; background:linear-gradient(90deg,#7dd3fc,#a78bfa 60%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .eq-toprow { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:4px; }
+  .eq-toprow .live-pill { margin-top:0; }
+  /* title moment — the brand + creed live BELOW the chart now (Robinhood-style: only value above the chart) */
+  .title-moment { margin:2px 0 20px; }
+  .title-moment h1 { font-size:20px; font-weight:800; letter-spacing:-0.02em; margin-bottom:10px; }
+  .title-moment h1 span { background:linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .title-moment .tm-pnl { margin-top:13px; font-size:12.5px; color:#8a90a6; }
+  .title-moment .tm-pnl b { font-size:15px; font-weight:800; font-variant-numeric:tabular-nums; margin:0 6px 0 4px; }
+  /* recent trades — tappable cards, expand for the why */
+  #trades-panel .empty { padding:6px 2px; }
+  .trade-card { padding:12px 15px; border-radius:14px; background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.07); margin-bottom:9px; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:background .2s ease, border-color .2s ease, transform .12s ease; }
+  .trade-card:last-child { margin-bottom:0; }
+  .trade-card:active { transform:scale(.99); }
+  .trade-card.open { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.13); }
+  .trade-card.pending { cursor:default; border-color:rgba(252,211,77,.4); background:linear-gradient(135deg, rgba(252,211,77,.12), rgba(252,211,77,.03)); box-shadow:0 0 0 1px rgba(252,211,77,.1); }
+  .tc-top { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .tc-sym { font-weight:800; font-size:15px; letter-spacing:.02em; color:#eef0f7; }
+  .tc-time { margin-left:auto; font-size:11px; color:#7c8299; font-variant-numeric:tabular-nums; }
+  .tc-chip { margin-left:auto; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:#fde68a; background:rgba(252,211,77,.2); padding:4px 10px; border-radius:999px; white-space:nowrap; }
+  .trade-card .caret { margin-left:4px; color:#6a7088; font-size:11px; transition:transform .3s ease; }
+  .trade-card.open .caret { transform:rotate(180deg); }
+  .tc-why { font-size:13px; color:#aeb4c6; line-height:1.55; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; }
+  .tc-why b { color:#fff; }
+  .trade-card.open .tc-why, .trade-card.pending .tc-why { max-height:240px; opacity:1; margin-top:10px; }
+  .tc-meta { font-size:11.5px; color:#8a90a6; margin-top:7px; font-variant-numeric:tabular-nums; }
   .hero-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
   .hero-head h1 { font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#c8cde0; }
   .hero-head h1 span { background:linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
@@ -268,13 +293,8 @@
 </head>
 <body>
 <div id="hero">
-  <div class="creed">"If we ask <em>how is that possible?</em> instead of saying it's not — we usually find the answer."</div>
-  <div class="hero-head">
-    <h1><span>Agentic Trading</span> — Adam's Experiment</h1>
-    <div id="live-pill" class="live-pill" style="display:none"><span class="live-dot"></span><span id="live-txt">live</span></div>
-  </div>
   <div class="hero-eq">
-    <div class="eq-label">Live portfolio value</div>
+    <div class="eq-toprow"><span class="eq-label">Live portfolio value</span><div id="live-pill" class="live-pill" style="display:none"><span class="live-dot"></span><span id="live-txt">live</span></div></div>
     <div class="eq-big value" id="s-equity">—</div>
     <div class="eq-day"><span class="value" id="s-day">—</span><span class="eq-daypct" id="s-day-pct"></span><span class="eq-daylbl">today</span></div>
     <p id="asof" class="hero-asof">Loading…</p>
@@ -283,17 +303,20 @@
 </div>
 
 <div id="app" style="display:none">
-  <div id="approval" class="approval"></div>
-  <div class="stats">
-    <div class="stat glass"><div class="label">Total P&L</div><div class="value" id="s-pnl">—</div><div class="sub" id="s-pnl-sub">since inception</div></div>
-    <div class="stat glass"><div class="label">Open Positions</div><div class="value" id="s-pos">—</div><div class="sub" id="s-pos-sub"></div></div>
+  <div class="title-moment">
+    <h1><span>Agentic Trading</span> — Adam's Experiment</h1>
+    <div class="creed">"If we ask <em>how is that possible?</em> instead of saying it's not — we usually find the answer."</div>
+    <div class="tm-pnl">Total P&amp;L <b class="value" id="s-pnl">—</b><span id="s-pnl-sub">since inception</span></div>
   </div>
 
-  <div class="panel glass" id="orbit-panel">
-    <h2><span class="dot"></span>The Map — when each name wins &amp; its edge</h2>
-    <div id="orbit-wrap"><svg id="orbitsvg" viewBox="0 0 440 340" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Company timing and edge map"></svg></div>
-    <div class="orbit-legend" id="orbit-legend"></div>
-    <div class="orbit-detail" id="orbit-detail">Tap a planet — the closer it orbits, the sooner its setup; the bigger it is, the bigger the planned bet.</div>
+  <div class="panel glass" id="trades-panel">
+    <h2><span class="dot"></span>Recent Trades<span class="count" id="trades-count"></span></h2>
+    <div id="trades"></div>
+  </div>
+
+  <div class="panel glass" id="positions-panel">
+    <h2><span class="dot"></span>Open Positions<span class="count" id="pos-count"></span></h2>
+    <div class="scroll-x" id="positions"></div>
   </div>
 
   <div class="panel glass" id="alloc-panel">
@@ -301,13 +324,6 @@
     <div class="alloc-bar" id="alloc-bar"></div>
     <div class="alloc-rows" id="alloc-rows"></div>
     <p class="cov-hint" style="margin:12px 0 0">Tap a row for the reasoning. Lighter / ringed = planned (earmarked for when its trigger hits).</p>
-  </div>
-
-  <div class="panel glass">
-    <h2><span class="dot"></span>Coverage — Company Intelligence<span class="count" id="cov-count"></span></h2>
-    <p class="cov-hint">Tap any company to open the full deep-dive. Symbol = the call · $ = planned size in the sleeve.</p>
-    <div class="cov" id="coverage"></div>
-    <div class="swipe-hint">← swipe to browse →</div>
   </div>
 
   <div class="panel glass">
@@ -320,8 +336,20 @@
     <div class="tl" id="timeline"></div>
   </div>
 
-  <div class="panel glass"><h2><span class="dot"></span>Open Positions</h2><div class="scroll-x" id="positions"></div></div>
-  <div class="panel glass" id="tickets-panel" style="display:none"><h2><span class="dot"></span>Pending Real-Money Tickets (awaiting your approval)</h2><div class="scroll-x" id="tickets"></div></div>
+  <div class="panel glass" id="orbit-panel">
+    <h2><span class="dot"></span>The Map — when each name wins &amp; its edge</h2>
+    <div id="orbit-wrap"><svg id="orbitsvg" viewBox="0 0 440 340" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Company timing and edge map"></svg></div>
+    <div class="orbit-legend" id="orbit-legend"></div>
+    <div class="orbit-detail" id="orbit-detail">Tap a planet — the closer it orbits, the sooner its setup; the bigger it is, the bigger the planned bet.</div>
+  </div>
+
+  <div class="panel glass">
+    <h2><span class="dot"></span>Coverage — Company Intelligence<span class="count" id="cov-count"></span></h2>
+    <p class="cov-hint">Tap any company to open the full deep-dive. Symbol = the call · $ = planned size in the sleeve.</p>
+    <div class="cov" id="coverage"></div>
+    <div class="swipe-hint">← swipe to browse →</div>
+  </div>
+
   <div class="panel glass"><h2><span class="dot"></span>Latest Engine Recap</h2><div class="recap" id="recap">—</div></div>
 
   <div class="footer">
