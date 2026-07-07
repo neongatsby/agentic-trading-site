@@ -93,6 +93,13 @@
   .pos-card .caret { margin-left:2px; color:#6a7088; font-size:11px; transition:transform .3s ease; }
   .pos-card.open .caret { transform:rotate(180deg); }
   .pos-card.open .tc-why { max-height:200px; opacity:1; margin-top:9px; }
+  /* engine pulse — text-message bubbles */
+  .pulse { display:flex; flex-direction:column; gap:11px; }
+  .msg { max-width:94%; animation:rise .4s ease both; }
+  .msg-b { display:inline-block; background:rgba(125,211,252,.11); border:1px solid rgba(125,211,252,.18); border-radius:16px 16px 16px 5px; padding:10px 14px; font-size:13.5px; line-height:1.5; color:#e6eaf5; }
+  .msg-b b { color:#fff; font-weight:700; }
+  .msg-t { font-size:10.5px; color:#7c8299; margin:5px 0 0 8px; font-variant-numeric:tabular-nums; }
+  .msg:first-child .msg-b { background:rgba(125,211,252,.16); border-color:rgba(125,211,252,.32); }
   .hero-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
   .hero-head h1 { font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#c8cde0; }
   .hero-head h1 span { background:linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
@@ -322,7 +329,7 @@
 
   <div class="panel glass" id="read-panel">
     <h2><span class="dot"></span>What the engine's thinking<span class="count" id="read-when"></span></h2>
-    <div class="recap" id="recap">The engine posts its read here every run (~4× a weekday) — including why it's <em>not</em> trading.</div>
+    <div class="pulse" id="pulse"><div class="empty">The engine texts its read here every run — including why it's <em>not</em> trading.</div></div>
   </div>
 
   <div class="panel glass" id="trades-panel">
@@ -575,6 +582,22 @@ function showOrbitDetail(i, el){
     md.style.opacity=1; }, 120);
 }
 
+// --- Engine pulse: short "text from a friend" reads, newest first, timestamped ---
+function pulseItems(){
+  if (Array.isArray(DATA.pulse) && DATA.pulse.length) return DATA.pulse.slice(0,12);
+  return (DATA.activity||[]).filter(a=>a.kind==='engine'||a.kind==='digest').slice(0,12).map(a=>({ts:a.ts, text:a.title}));
+}
+const msgTime = ts => { const d=new Date(ts); if(isNaN(d)) return '';
+  const now=new Date(), sameDay=d.toDateString()===now.toDateString();
+  return sameDay ? d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})
+                 : d.toLocaleString('en-US',{weekday:'short',hour:'numeric',minute:'2-digit'}); };
+function renderPulse(){
+  const el=document.getElementById('pulse'); if(!el) return;
+  const items=pulseItems();
+  el.innerHTML = items.length
+    ? items.map(p=>`<div class="msg"><div class="msg-b">${rich(p.text||'')}</div><div class="msg-t">${msgTime(p.ts)}</div></div>`).join('')
+    : '<div class="empty">The engine texts its read here every run — including why it\'s not trading.</div>';
+}
 // --- Research Log timeline ---
 function renderActivity(){
   const el=document.getElementById('timeline'); if(!el) return;
@@ -703,9 +726,9 @@ function render() {
   sync('feed', JSON.stringify((DATA.feed||[]).filter(f=>f.type!=='trade').slice(0,8)), buildFeed, null);
   sync('act', JSON.stringify(DATA.activity||[]), renderActivity, null);
   buildPositions();
-  if (DATA.latest_recap) document.getElementById('recap').textContent = DATA.latest_recap;
-  const runs = (DATA.activity||[]).filter(a=>a.kind==='engine'||a.kind==='digest');
-  const lastRun = runs[0] ? new Date(runs[0].ts) : null;
+  sync('pulse', JSON.stringify(pulseItems()), renderPulse, null);
+  const lp = pulseItems()[0];
+  const lastRun = lp ? new Date(lp.ts) : null;
   const rw = document.getElementById('read-when');
   if (rw) rw.textContent = lastRun && !isNaN(lastRun) ? 'updated ' + lastRun.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}) : '';
   syncChart();
