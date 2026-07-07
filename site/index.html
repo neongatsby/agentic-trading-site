@@ -597,11 +597,11 @@ function updateCoverPrices(){                          // stamp fresh price + sp
   }
 }
 function buildFeed(){
-  const feed = (DATA.feed || []).filter(f => !f.account || f.account === account).slice(0, 8);
+  const feed = (DATA.feed || []).filter(f => (!f.account || f.account === account) && f.type!=='trade').slice(0, 8);
   document.getElementById('feed-count').textContent = feed.length ? feed.length + ' shown' : '';
   document.getElementById('feed').innerHTML = feed.length
     ? feed.map(feedCard).join('')
-    : '<div class="empty">No signals yet. When the engine trades or forms a view on a company, it\'ll post the move and its reasoning here — like a text from a friend who watches the market all day.</div>';
+    : '<div class="empty">No signals yet. When the engine forms or changes a view on a company, it\'ll post the take and its reasoning here — like a text from a friend who watches the market all day. Executed trades show up under Recent Trades above.</div>';
 }
 function buildPositions(){
   const poss = (DATA[account]||{}).positions || [];
@@ -609,13 +609,6 @@ function buildPositions(){
     ? '<table><tr><th>Symbol</th><th>Qty</th><th>Entry</th><th>Now</th><th>P&L</th><th>Thesis</th></tr>' + poss.map(p =>
         `<tr><td class="sym">${esc(p.symbol)}</td><td>${esc(p.qty)}</td><td>${fmt$(p.entry)}</td><td>${fmt$(p.current)}</td><td class="${cls(p.pl)}">${fmt$(p.pl)} (${fmtPct(p.plpc)})</td><td class="thesis">${esc(p.thesis)}</td></tr>`).join('') + '</table>'
     : '<div class="empty">No open positions — engine is waiting for setups that clear the charter bar.</div>';
-}
-function buildTickets(){
-  const tix = DATA.pending_tickets || [];
-  document.getElementById('tickets-panel').style.display = tix.length ? 'block' : 'none';
-  if (tix.length) document.getElementById('tickets').innerHTML =
-    '<table><tr><th>Side</th><th>Symbol</th><th>Size</th><th>Bracket</th><th>Thesis</th></tr>' + tix.map(t =>
-      `<tr><td class="side-${esc(t.side)}">${esc((t.side||'').toUpperCase())}</td><td class="sym">${esc(t.symbol)}</td><td>${esc(t.size)}</td><td>${esc(t.bracket)}</td><td class="thesis">${esc(t.thesis)}</td></tr>`).join('') + '</table>';
 }
 // gradient helpers — evaluated per-draw so they upgrade once the chart area exists
 let _chartUp = true;
@@ -658,27 +651,21 @@ function syncChart(){                                  // create once; thereafte
     chart.update();
   }
 }
-// --- Trade-approval status strip ---
-function approvalState(){
-  const tix = DATA.pending_tickets || [];
-  if (tix.length) {
-    const t = tix[0];
-    return { cls:'ap-wait', ic:'⏳', chip:'Action needed',
-      title: tix.length>1 ? `${tix.length} trades waiting for your approval` : 'A trade is waiting for your approval',
-      sub: `<b>${esc((t.side||'').toUpperCase())} ${esc(t.symbol||'')}</b>${t.size?' · '+esc(t.size):''}${t.bracket?' · '+esc(t.bracket):''} — tap Approve or Skip in Telegram.` };
-  }
-  const last = (DATA.feed||[]).find(f=>f.type==='trade' && (!f.account||f.account===account));
-  if (last) {
-    return { cls:'ap-done', ic:'✅', chip:'Approved',
-      title:'Approved &amp; filled', sub:`<b>${esc((last.side||'').toUpperCase())} ${esc(last.symbol||'')}</b>${last.size?' · '+esc(last.size):''} · ${ago(last.ts)}` };
-  }
-  return { cls:'ap-idle', ic:'🟢', chip:'All clear',
-    title:'No trades awaiting approval', sub:'The engine will ping you here and on Telegram the moment it wants to act.' };
-}
-function renderApproval(){
-  const s = approvalState(), el = document.getElementById('approval');
-  el.className = 'approval ' + s.cls;
-  el.innerHTML = `<span class="ap-ic">${s.ic}</span><div class="ap-body"><div class="ap-title">${s.title}</div><div class="ap-sub">${s.sub}</div></div><span class="ap-chip">${esc(s.chip)}</span>`;
+// --- Recent Trades — pending approvals on top, then executed history; tap for the why ---
+function renderTrades(){
+  const el = document.getElementById('trades'); if(!el) return;
+  const pending = DATA.pending_tickets || [];
+  const trades = (DATA.feed||[]).filter(f => f.type==='trade' && (!f.account||f.account===account));
+  const cnt = document.getElementById('trades-count'); if(cnt) cnt.textContent = trades.length ? trades.length + ' filled' : '';
+  const pill = s => `<span class="pill pill-${s==='sell'?'sell':'buy'}">${s==='sell'?'SELL':'BUY'}</span>`;
+  let html = pending.map(t=>{ const side=(t.side||'').toLowerCase();
+    return `<div class="trade-card pending"><div class="tc-top">${pill(side)}<span class="tc-sym">${esc(t.symbol||'')}</span>${t.size?`<span class="pill pill-size">${esc(t.size)}</span>`:''}<span class="tc-chip">Awaiting you</span></div>`
+      + `<div class="tc-why">${rich(t.thesis||'Pending your approval — tap Approve or Skip in Telegram.')}${t.bracket?`<div class="tc-meta">${esc(t.bracket)}</div>`:''}</div></div>`; }).join('');
+  html += trades.map(f=>{ const side=(f.side||'').toLowerCase();
+    return `<div class="trade-card"><div class="tc-top">${pill(side)}<span class="tc-sym">${esc(f.symbol||'')}</span>${f.size?`<span class="pill pill-size">${esc(f.size)}</span>`:''}<span class="tc-time">${ago(f.ts)}</span><span class="caret">▾</span></div>`
+      + `<div class="tc-why">${rich(f.text||'No note recorded for this trade.')}</div></div>`; }).join('');
+  el.innerHTML = html || '<div class="empty">No trades yet — the moment the engine acts it posts here, and you approve live ones from your phone. Tap any trade for the why.</div>';
+  el.querySelectorAll('.trade-card:not(.pending)').forEach(c=>c.addEventListener('click', ()=>c.classList.toggle('open')));
 }
 function render() {
   const d = DATA[account] || {};
@@ -690,18 +677,17 @@ function render() {
   setAnimated('s-day', d.day_pnl ?? 0, fmt$, cls(d.day_pnl ?? 0));
   const dpct = (d.day_pnl!=null && d.equity) ? (d.day_pnl/((d.equity - d.day_pnl)||d.equity))*100 : null;
   const dp = document.getElementById('s-day-pct'); if(dp) dp.textContent = (dpct!=null && isFinite(dpct)) ? `(${dpct>=0?'+':''}${dpct.toFixed(2)}%)` : '';
-  setAnimated('s-pnl', d.total_pnl ?? 0, fmt$, cls(d.total_pnl ?? 0), 's-pnl-sub', 'since inception');
+  setAnimated('s-pnl', d.total_pnl ?? 0, fmt$, cls(d.total_pnl ?? 0), 's-pnl-sub', ' since inception');
   const poss = d.positions || [];
-  const posEl = document.getElementById('s-pos'); posEl.textContent = String(poss.length); posEl.className = 'value flat';
-  document.getElementById('s-pos-sub').textContent = poss.map(p => p.symbol).join(' · ') || 'flat';
+  const pc = document.getElementById('pos-count'); if(pc) pc.textContent = poss.length ? String(poss.length) : '';
   // sections — rebuild (and replay entrance) ONLY when their data changed; otherwise roll numbers in place
-  sync('appr', JSON.stringify([DATA.pending_tickets||[], ((DATA.feed||[]).find(f=>f.type==='trade')||{}).ts||'']), renderApproval, null);
+  sync('trades', JSON.stringify([DATA.pending_tickets||[], (DATA.feed||[]).filter(f=>f.type==='trade'&&(!f.account||f.account===account)).map(f=>[f.ts,f.symbol,f.side,f.size,f.text])]), renderTrades, null);
   sync('cover', sig(DATA.coverage, c=>[c.ticker,c.verdict,c.verdict_label,c.thesis,c.size,c.size_note,c.name,c.card,c.updated]), buildCoverage, updateCoverPrices);
   sync('orbit', orbitSig(), renderOrbit, null);
   sync('alloc', allocSig(), renderAlloc, updateAlloc);
-  sync('feed', JSON.stringify((DATA.feed||[]).filter(f=>!f.account||f.account===account).slice(0,8)), buildFeed, null);
+  sync('feed', JSON.stringify((DATA.feed||[]).filter(f=>(!f.account||f.account===account)&&f.type!=='trade').slice(0,8)), buildFeed, null);
   sync('act', JSON.stringify(DATA.activity||[]), renderActivity, null);
-  buildPositions(); buildTickets();
+  buildPositions();
   document.getElementById('recap').textContent = DATA.latest_recap || '—';
   syncChart();
 }
