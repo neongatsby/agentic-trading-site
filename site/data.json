@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T16:09:41.514Z",
+  "generated_at": "2026-07-08T16:10:49.139Z",
   "market_note": "Market OPEN — live.",
   "paper": {
     "equity": 5000,
@@ -27,18 +27,18 @@
     ]
   },
   "live": {
-    "equity": 1000.16,
+    "equity": 1000.18,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
     "total_pnl": 0.09,
-    "day_pnl": 0.04,
+    "day_pnl": 0.06,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 197.83,
-        "pl": 0.17,
-        "plpc": 1.72,
+        "current": 198.16,
+        "pl": 0.19,
+        "plpc": 1.89,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       }
     ],
@@ -452,6 +452,10 @@
       {
         "t": 1783526700000,
         "v": 1000.16
+      },
+      {
+        "t": 1783527000000,
+        "v": 1000.16
       }
     ]
   },
@@ -470,8 +474,8 @@
       "plan_usd": 800,
       "horizon": 0.3,
       "updated": "Jul 8",
-      "price": 163.91,
-      "chg_pct": -0.93,
+      "price": 166.03,
+      "chg_pct": 0.35,
       "spark": [
         190.36,
         172.54,
@@ -502,7 +506,7 @@
         233.61,
         279.32,
         301.42,
-        163.91
+        166.03
       ]
     },
     {
@@ -518,8 +522,8 @@
       "plan_usd": 800,
       "horizon": 0.4,
       "updated": "Jul 8",
-      "price": 70.41,
-      "chg_pct": -2.45,
+      "price": 70.75,
+      "chg_pct": -1.98,
       "spark": [
         76.79,
         74.76,
@@ -550,7 +554,7 @@
         77.41,
         82.78,
         82.48,
-        70.41
+        70.75
       ]
     },
     {
@@ -566,8 +570,8 @@
       "plan_usd": 400,
       "horizon": 0.35,
       "updated": "Jul 7",
-      "price": 29.15,
-      "chg_pct": 0.8,
+      "price": 29.25,
+      "chg_pct": 1.14,
       "spark": [
         37.33,
         37.8,
@@ -598,7 +602,7 @@
         31.55,
         33.28,
         32.71,
-        29.15
+        29.25
       ]
     },
     {
@@ -614,8 +618,8 @@
       "plan_usd": 250,
       "horizon": 0.3,
       "updated": "Jul 7",
-      "price": 129.19,
-      "chg_pct": -3.86,
+      "price": 129.12,
+      "chg_pct": -3.91,
       "spark": [
         136.9,
         136.02,
@@ -646,7 +650,7 @@
         130.68,
         128.44,
         119.46,
-        129.19
+        129.12
       ]
     },
     {
@@ -758,8 +762,8 @@
       "plan_usd": 0,
       "horizon": 0.35,
       "updated": "Jul 7",
-      "price": 197.79,
-      "chg_pct": 0.42,
+      "price": 198.16,
+      "chg_pct": 0.6,
       "spark": [
         219.19,
         220.62,
@@ -790,7 +794,7 @@
         204.7,
         210.38,
         208.59,
-        197.79
+        198.16
       ]
     },
     {
@@ -855,8 +859,8 @@
       "plan_usd": 0,
       "horizon": 0.8,
       "updated": "Jul 7",
-      "price": 394.1,
-      "chg_pct": -2.21,
+      "price": 394.21,
+      "chg_pct": -2.18,
       "spark": [
         445.04,
         433.45,
@@ -887,7 +891,7 @@
         396.52,
         400.49,
         405.05,
-        394.1
+        394.21
       ]
     },
     {
@@ -904,8 +908,8 @@
       "card": "/research/be.html",
       "horizon": 0.9,
       "updated": "Jul 7",
-      "price": 247.86,
-      "chg_pct": -8.03,
+      "price": 249.6,
+      "chg_pct": -7.38,
       "spark": [
         284.37,
         280.91,
@@ -936,7 +940,7 @@
         285.13,
         328.78,
         345.98,
-        247.86
+        249.6
       ]
     },
     {
@@ -952,8 +956,8 @@
       "plan_usd": 0,
       "horizon": 0.85,
       "updated": "Jul 7",
-      "price": 81.76,
-      "chg_pct": -1.97,
+      "price": 82.06,
+      "chg_pct": -1.61,
       "spark": [
         117.29,
         117.55,
@@ -984,7 +988,7 @@
         107.97,
         107.33,
         100.28,
-        81.76
+        82.06
       ]
     },
     {
@@ -1274,7 +1278,7 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 70.41,
-    "tqqq_pct": -8.44
+    "tqqq": 70.75,
+    "tqqq_pct": -8
   }
 }
