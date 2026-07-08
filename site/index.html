@@ -763,7 +763,7 @@ function syncChart(){                                  // create once; thereafte
 // --- Recent Trades — pending approvals on top, then executed history; tap for the why ---
 function renderTrades(){
   const el = document.getElementById('trades'); if(!el) return;
-  const pending = DATA.pending_tickets || [];
+  const pending = account==='live' ? (DATA.pending_tickets || []) : [];   // paper auto-executes — nothing awaits you there
   const trades = (DATA.feed||[]).filter(f => f.type==='trade' && (!f.account||f.account===account));
   const cnt = document.getElementById('trades-count'); if(cnt) cnt.textContent = trades.length ? trades.length + ' filled' : '';
   const pill = s => `<span class="pill pill-${s==='sell'?'sell':'buy'}">${s==='sell'?'SELL':'BUY'}</span>`;
