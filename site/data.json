@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T16:19:49.304Z",
+  "generated_at": "2026-07-08T16:20:56.602Z",
   "market_note": "Market OPEN — live.",
   "paper": {
     "equity": 5000,
@@ -27,18 +27,18 @@
     ]
   },
   "live": {
-    "equity": 1000.24,
+    "equity": 1000.26,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
     "total_pnl": 0.09,
-    "day_pnl": 0.12,
+    "day_pnl": 0.14,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 199.26,
-        "pl": 0.25,
-        "plpc": 2.46,
+        "current": 199.68,
+        "pl": 0.27,
+        "plpc": 2.67,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       }
     ],
@@ -460,6 +460,10 @@
       {
         "t": 1783527300000,
         "v": 1000.21
+      },
+      {
+        "t": 1783527600000,
+        "v": 1000.24
       }
     ]
   },
@@ -470,16 +474,16 @@
       "name": "Direxion 3x Semis",
       "theme": "Leveraged core",
       "verdict": "wait",
-      "verdict_label": "Primary weapon · 536 must hold",
-      "thesis": "The 3x amplifier on the AI/semi supercycle. Yesterday's hammer (536 low held; close back above the 50-day) walks into a nasty morning: **Iran headlines have semis indicated ~−4% pre-market** with Fed minutes at 2pm. Trigger unchanged — SOXX reclaims the 20-day (~$597) on a higher low. **536 has to hold first.**",
+      "verdict_label": "Primary weapon · higher low building",
+      "thesis": "The 3x amplifier on the AI/semi supercycle. Midday 7/8: **semis are green on a red Iran/Fed tape** and today's dip stopped at 543.9 — well above the 536 pivot. The higher low is two days old and building. Trigger unchanged: SOXX reclaims the 20-day (~$597), still ~8% away.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "planned $800 on SOXX 20d reclaim",
       "plan_usd": 800,
-      "horizon": 0.3,
+      "horizon": 0.25,
       "updated": "Jul 8",
-      "price": 167.52,
-      "chg_pct": 1.25,
+      "price": 168.63,
+      "chg_pct": 1.92,
       "spark": [
         190.36,
         172.54,
@@ -510,55 +514,7 @@
         233.61,
         279.32,
         301.42,
-        167.52
-      ]
-    },
-    {
-      "ticker": "TQQQ",
-      "name": "ProShares 3x Nasdaq-100",
-      "theme": "Leveraged core",
-      "verdict": "wait",
-      "verdict_label": "Alt core · below both MAs",
-      "thesis": "QQQ indicated **~705 pre-market on the Iran headlines** — below both the 20-day (~720) and 50-day (~712), back at yesterday's low. The alternative core if the Nasdaq leads the repair instead of semis. Trigger unchanged: QQQ back above ~720–722 with semis participating.",
-      "size": "$0",
-      "size_pct": 0,
-      "size_note": "planned $800 on QQQ >720 reclaim",
-      "plan_usd": 800,
-      "horizon": 0.4,
-      "updated": "Jul 8",
-      "price": 71.04,
-      "chg_pct": -1.58,
-      "spark": [
-        76.79,
-        74.76,
-        77.09,
-        78.76,
-        75.17,
-        74.11,
-        72.78,
-        76.32,
-        76.72,
-        77.62,
-        81.77,
-        81.51,
-        83.5,
-        84.35,
-        85.85,
-        87.07,
-        86.35,
-        85.01,
-        72.81,
-        76.1,
-        73.52,
-        69.17,
-        75.92,
-        77.33,
-        84.51,
-        79.82,
-        77.41,
-        82.78,
-        82.48,
-        71.04
+        168.63
       ]
     },
     {
@@ -566,16 +522,16 @@
       "name": "GraniteShares 2x NVDA",
       "theme": "Leveraged core",
       "verdict": "watch",
-      "verdict_label": "Cleaner blade if NVDA leads",
-      "thesis": "**Green +1.4% at the close** while SOXX fell 5% — NVDA never went red through the entire rout. If semis base and NVDA leads out, the 2x single-stock fund beats SOXL for cleanliness.",
+      "verdict_label": "Most likely first trigger",
+      "thesis": "NVDA is now the undisputed leader of the whole tape — **third straight green day, tagged $199.86 midday** while the Nasdaq fell. If semis base out, this trigger (base + NVDA leadership) likely fires **before** SOXL's index-level reclaim. Watching closest of anything on the board.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "planned $400 on semis base + NVDA leadership",
       "plan_usd": 400,
-      "horizon": 0.35,
-      "updated": "Jul 7",
-      "price": 29.55,
-      "chg_pct": 2.18,
+      "horizon": 0.2,
+      "updated": "Jul 8",
+      "price": 29.68,
+      "chg_pct": 2.65,
       "spark": [
         37.33,
         37.8,
@@ -606,7 +562,103 @@
         31.55,
         33.28,
         32.71,
-        29.55
+        29.68
+      ]
+    },
+    {
+      "ticker": "TQQQ",
+      "name": "ProShares 3x Nasdaq-100",
+      "theme": "Leveraged core",
+      "verdict": "wait",
+      "verdict_label": "Alt core · below both MAs",
+      "thesis": "QQQ ~705 midday, below both the 20-day (~720) and 50-day (~712) — and today it's the **laggard** while semis hold green. The alternative core only if the Nasdaq leads the repair. Trigger unchanged: QQQ back above ~720–722 with semis participating.",
+      "size": "$0",
+      "size_pct": 0,
+      "size_note": "planned $800 on QQQ >720 reclaim",
+      "plan_usd": 800,
+      "horizon": 0.45,
+      "updated": "Jul 8",
+      "price": 71.2,
+      "chg_pct": -1.36,
+      "spark": [
+        76.79,
+        74.76,
+        77.09,
+        78.76,
+        75.17,
+        74.11,
+        72.78,
+        76.32,
+        76.72,
+        77.62,
+        81.77,
+        81.51,
+        83.5,
+        84.35,
+        85.85,
+        87.07,
+        86.35,
+        85.01,
+        72.81,
+        76.1,
+        73.52,
+        69.17,
+        75.92,
+        77.33,
+        84.51,
+        79.82,
+        77.41,
+        82.78,
+        82.48,
+        71.2
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "name": "Nvidia",
+      "theme": "AI / semis",
+      "verdict": "watch",
+      "verdict_label": "The RS leader · knocking on $200",
+      "thesis": "**+0.8% midday, high $199.86 — third straight green day through the entire rout.** The strongest chart on the board, period. Expressed via NVDL when it fires; holds the $10 pipe-test artifact in live (+2.1%).",
+      "size": "$10",
+      "size_pct": 1,
+      "size_note": "$10 pipe-test artifact (live)",
+      "plan_usd": 0,
+      "horizon": 0.2,
+      "updated": "Jul 8",
+      "price": 199.65,
+      "chg_pct": 1.36,
+      "spark": [
+        219.19,
+        220.62,
+        225.65,
+        235.51,
+        225.04,
+        222.09,
+        220.39,
+        223.22,
+        219.21,
+        215.09,
+        214.53,
+        212.33,
+        214.02,
+        210.91,
+        224.16,
+        222.56,
+        214.61,
+        218.64,
+        205.17,
+        208.66,
+        208.2,
+        200.41,
+        204.86,
+        205.17,
+        212.46,
+        207.37,
+        204.7,
+        210.38,
+        208.59,
+        199.65
       ]
     },
     {
@@ -614,16 +666,16 @@
       "name": "Palantir",
       "theme": "High-beta bench",
       "verdict": "watch",
-      "verdict_label": "Best RS on the board",
-      "thesis": "**Second straight green close (+1.4%) against a red tape.** Held its gain through the afternoon fade. This is exactly what leadership looks like before a turn — needs the regime flip plus a breakout to become a trade.",
+      "verdict_label": "Streak broken — demoted",
+      "thesis": "**−3.8% midday — the two-day RS streak is over.** The macro test came this morning and it failed it. Off the top of the bench (NVDA/NVDL takes the slot); the breakout trigger is suspended until the chart repairs.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "planned $250 on regime flip + breakout",
-      "plan_usd": 250,
-      "horizon": 0.3,
-      "updated": "Jul 7",
-      "price": 129.04,
-      "chg_pct": -3.97,
+      "size_note": "trigger suspended — needs repair",
+      "plan_usd": 0,
+      "horizon": 0.6,
+      "updated": "Jul 8",
+      "price": 129.11,
+      "chg_pct": -3.91,
       "spark": [
         136.9,
         136.02,
@@ -654,7 +706,7 @@
         130.68,
         128.44,
         119.46,
-        129.04
+        129.11
       ]
     },
     {
@@ -662,16 +714,16 @@
       "name": "MicroSectors 3x FANG+",
       "theme": "Leveraged core",
       "verdict": "watch",
-      "verdict_label": "FANG+ holding up",
-      "thesis": "Flat on a −1.8% QQQ day — FANG+ mega caps are **absorbing the semi rout**, not joining it. Secondary instrument; would need the regime flip first.",
+      "verdict_label": "FANG+ soft today",
+      "thesis": "−2.1% midday — mega caps are the drag today while semis hold green. Secondary instrument; needs the regime flip first.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "secondary — behind SOXL/TQQQ",
+      "size_note": "secondary — behind SOXL/NVDL",
       "plan_usd": 0,
       "horizon": 0.55,
-      "updated": "Jul 7",
-      "price": 26.85,
-      "chg_pct": -1.88,
+      "updated": "Jul 8",
+      "price": 26.9,
+      "chg_pct": -1.7,
       "spark": [
         29.43,
         28.81,
@@ -702,7 +754,7 @@
         27.02,
         29.34,
         27.07,
-        26.85
+        26.9
       ]
     },
     {
@@ -711,13 +763,13 @@
       "theme": "Leveraged core",
       "verdict": "watch",
       "verdict_label": "Lowest octane",
-      "thesis": "−1.7% — SPY is the strong index (rotation, not panic), but 3x S&P is the lowest-octane weapon in the rack. Only if breadth leads tech out.",
+      "thesis": "−2.3% midday — breadth is not leading. Lowest-octane weapon in the rack; only if breadth leads tech out.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "only if breadth leads",
       "plan_usd": 0,
       "horizon": 0.65,
-      "updated": "Jul 7",
+      "updated": "Jul 8",
       "price": 138.71,
       "chg_pct": -2.3,
       "spark": [
@@ -754,67 +806,19 @@
       ]
     },
     {
-      "ticker": "NVDA",
-      "name": "Nvidia",
-      "theme": "AI / semis",
-      "verdict": "watch",
-      "verdict_label": "RS leader · trade via NVDL",
-      "thesis": "Closed **+0.7% near day highs** — green through the DeepSeek-chip scare both days. The RS leader of the whole tape. Expressed via NVDL when it fires; holds the $10 pipe-test artifact in live (+1.2%).",
-      "size": "$10",
-      "size_pct": 1,
-      "size_note": "$10 pipe-test artifact (live)",
-      "plan_usd": 0,
-      "horizon": 0.35,
-      "updated": "Jul 7",
-      "price": 199.25,
-      "chg_pct": 1.16,
-      "spark": [
-        219.19,
-        220.62,
-        225.65,
-        235.51,
-        225.04,
-        222.09,
-        220.39,
-        223.22,
-        219.21,
-        215.09,
-        214.53,
-        212.33,
-        214.02,
-        210.91,
-        224.16,
-        222.56,
-        214.61,
-        218.64,
-        205.17,
-        208.66,
-        208.2,
-        200.41,
-        204.86,
-        205.17,
-        212.46,
-        207.37,
-        204.7,
-        210.38,
-        208.59,
-        199.25
-      ]
-    },
-    {
       "ticker": "CEG",
       "name": "Constellation Energy",
       "theme": "Energy-for-AI",
       "verdict": "wait",
-      "verdict_label": "~4% above the trigger",
-      "thesis": "Closed $239.62 (−2.6%) — **~4% above the $230 trigger**, arriving as a falling knife. Rule unchanged: $230 has to HOLD and the 50-day reclaimed before a dollar goes in. Watching every run now.",
+      "verdict_label": "Holding above the trigger",
+      "thesis": "$240.2 midday, **green on a red tape** and holding ~4% above the $230 trigger. Rule unchanged: $230 has to HOLD and the 50-day reclaimed before a dollar goes in. Watching every run.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "planned $200 on $230 hold + 50d reclaim",
       "plan_usd": 200,
       "card": "/research/ceg.html",
       "horizon": 0.4,
-      "updated": "Jul 7",
+      "updated": "Jul 8",
       "price": 240.66,
       "chg_pct": 0.44,
       "spark": [
@@ -856,15 +860,15 @@
       "theme": "High-beta bench",
       "verdict": "watch",
       "verdict_label": "Bounce case fading",
-      "thesis": "−4.0% at the close — the mean-reversion case **keeps weakening**. No relative strength, no setup.",
+      "thesis": "−2.3% more midday 7/8 — the mean-reversion case **keeps weakening**. No relative strength, no setup.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "horizon": 0.8,
-      "updated": "Jul 7",
-      "price": 394.21,
-      "chg_pct": -2.18,
+      "updated": "Jul 8",
+      "price": 394.5,
+      "chg_pct": -2.11,
       "spark": [
         445.04,
         433.45,
@@ -895,7 +899,7 @@
         396.52,
         400.49,
         405.05,
-        394.21
+        394.5
       ]
     },
     {
@@ -904,16 +908,16 @@
       "theme": "Energy-for-AI",
       "verdict": "avoid",
       "verdict_label": "Breakdown continues",
-      "thesis": "−8.6% more — the unwind of the +1,100% run is **not done**. Extended-name breakdowns don't get bought.",
+      "thesis": "**−7.7% more midday** — the unwind of the +1,100% run is still not done. Extended-name breakdowns don't get bought.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/be.html",
       "horizon": 0.9,
-      "updated": "Jul 7",
-      "price": 248.81,
-      "chg_pct": -7.68,
+      "updated": "Jul 8",
+      "price": 248.85,
+      "chg_pct": -7.66,
       "spark": [
         284.37,
         280.91,
@@ -944,7 +948,7 @@
         285.13,
         328.78,
         345.98,
-        248.81
+        248.85
       ]
     },
     {
@@ -952,16 +956,16 @@
       "name": "Rocket Lab",
       "theme": "Space",
       "verdict": "watch",
-      "verdict_label": "Deal digestion, ugly",
-      "thesis": "−10.5% — the Iridium-deal digestion keeps getting worse. Was a leader; needs weeks of repair before it's tradeable again.",
+      "verdict_label": "Bounce faded",
+      "thesis": "Opened +3.5% and **gave it all back** — now red at ~$82. Deal digestion isn't done; needs weeks of repair before it's tradeable.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "horizon": 0.85,
-      "updated": "Jul 7",
-      "price": 81.75,
-      "chg_pct": -1.99,
+      "updated": "Jul 8",
+      "price": 81.91,
+      "chg_pct": -1.8,
       "spark": [
         117.29,
         117.55,
@@ -992,7 +996,7 @@
         107.97,
         107.33,
         100.28,
-        81.75
+        81.91
       ]
     },
     {
@@ -1001,14 +1005,14 @@
       "theme": "Energy-for-AI",
       "verdict": "avoid",
       "verdict_label": "Broken chart",
-      "thesis": "−7.6% — the short thesis from the deep-dive keeps paying (for someone else; we don't short). **Avoid.**",
+      "thesis": "−3.1% more — the short thesis from the deep-dive keeps paying (for someone else; we don't short). **Avoid.**",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/oklo.html",
       "horizon": 0.95,
-      "updated": "Jul 7",
+      "updated": "Jul 8",
       "price": 46.28,
       "chg_pct": -3.35,
       "spark": [
@@ -1046,6 +1050,27 @@
     }
   ],
   "feed": [
+    {
+      "type": "watch",
+      "account": "live",
+      "ts": "2026-07-08T12:20:00-04:00",
+      "symbol": "SOXX",
+      "text": "Midday on Fed-minutes day and the tape handed me a surprise: **chips are the only green on the board** — SOXX +0.3%, SMH +0.5% — while the Nasdaq and S&P sag on the Iran headlines. Better still, this morning's dip stopped at **543.9, well above yesterday's 536 low**. That's a higher low forming, two days running. Trigger's still the 20-day reclaim ~8% up at 597, so I'm **cash through the 2pm minutes** — but this is the most constructive tape since the rout started."
+    },
+    {
+      "type": "watch",
+      "account": "live",
+      "ts": "2026-07-08T12:18:00-04:00",
+      "symbol": "NVDA",
+      "text": "NVDA tagged **$199.86** this morning — third straight green day, knocking on $200 while everything around it bleeds. It's now the undisputed leader of this tape, which moves **NVDL to the top of my trigger list**: if semis base out and NVDA leads, that fires before SOXL's index trigger does."
+    },
+    {
+      "type": "watch",
+      "account": "live",
+      "ts": "2026-07-08T12:16:00-04:00",
+      "symbol": "PLTR",
+      "text": "The Palantir streak is **over** — down 3.8% after two green days against the rout. The macro test came this morning and it failed. Off the top of the bench, trigger suspended; NVDA owns the leadership story now."
+    },
     {
       "type": "watch",
       "account": "live",
@@ -1182,8 +1207,14 @@
       "text": "Tesla's the one I keep circling for Monday. Crushed Q2 deliveries (480K vs 406K expected) and *still* dropped 7.5% — classic sell-the-news after a big run-up. Tempting mean-reversion, but there's a real EV tax-credit overhang, so if I take it, it's small and on a tight leash."
     }
   ],
-  "latest_recap": "Wed 7/8 pre-market — RISK-OFF stands and the overnight news made it easy: Trump declared the Iran ceasefire 'over,' futures are red (QQQ indicated ~705, right back at yesterday's low), oil is up, and semis are indicated lower again (SOXL ~−4% pre). FOMC minutes at 2pm ET (Warsh's first) are the day's main event, with the SK Hynix US debut looming over semi sentiment this week. The setup question is unchanged and singular: does yesterday's SOXX 536.12 low hold through the minutes and keep the higher-low candidate alive — hold and the base keeps building toward the 597 reclaim trigger; break and the clock resets. Either way there is nothing to buy today: no new leverage on an Iran-headline morning inside a broken-trend regime. Book: the $10 NVDA pipe-test artifact (+0.6%) plus ~$990 cash; equity $1,000.05 vs the $1,000.11 high-water mark. Benchmark: buy-and-hold TQQQ is ~−8% from the 7/2 start vs the sleeve at 0.0% — the gate keeps earning its keep. Side note to watch: PLTR gets its macro test today after two straight green closes against the rout; a third would be leadership screaming.",
+  "latest_recap": "Wed 7/8 midday — RISK-OFF stands (QQQ 704.9, below both MAs; SOXX still ~8% under the 597 reclaim trigger), so cash remains the position into the 2pm FOMC minutes. But this is the most constructive tape since the rout began: semis are GREEN on a red Iran/Fed morning (SOXX +0.3%, SMH +0.5% vs QQQ −0.6%), and today's SOXX low of 543.87 sits well above yesterday's 536.12 pivot — the higher low is two days old and building. Leadership clarified today: NVDA tagged $199.86 on its third straight green day and is the tape's undisputed RS leader, which promotes NVDL to the most likely first trigger (semis base + NVDA leadership fires before SOXL's index-level reclaim). PLTR failed its macro test (−3.8%, streak over, trigger suspended). CEG holds green above the $230 line. Book: $10 NVDA artifact +2.1%, equity $1,000.20 — a fresh intraday high-water mark. Benchmark: buy-and-hold TQQQ −7.9% since 7/2 vs sleeve +0.0% — the gate is ~8 points ahead in four sessions. Afternoon test: does 543.9 hold through the minutes.",
   "activity": [
+    {
+      "ts": "2026-07-08T12:20:00-04:00",
+      "kind": "engine",
+      "title": "Midday run — RISK-OFF holds, but semis are green and the higher low is building",
+      "detail": "QQQ 704.9 below both MAs (20d 720.4 / 50d ~711.7) — gate stays closed. Divergence: SOXX +0.3% / SMH +0.5% on a red tape; SOXX low 543.87 > 536.12 pivot. NVDA the RS leader (+0.8%, high 199.86, 3rd green day) → NVDL promoted to most likely first trigger. PLTR streak broke (−3.8%, trigger suspended). Book: NVDA artifact +2.1%, equity $1,000.20 (intraday HWM), queue clean. Benchmark: TQQQ −7.9% vs sleeve +0.0% since 7/2. FOMC minutes 2pm."
+    },
     {
       "ts": "2026-07-08T09:20:00-04:00",
       "kind": "engine",
@@ -1249,15 +1280,13 @@
       "kind": "research",
       "title": "Bloom & Oklo deep-dives",
       "detail": "Two energy names researched from scratch — same theme, opposite calls. Proved the research is the edge."
-    },
-    {
-      "ts": "2026-07-02T16:00:00-07:00",
-      "kind": "system",
-      "title": "System go-live",
-      "detail": "Alpaca connected (paper + live), order pipeline pipe-tested, dashboard + Telegram approvals wired."
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-08T12:20:00-04:00",
+      "text": "Chips are the one thing **green** today and their leader just kissed $200 — getting closer to a buy, but I'm staying in **cash** until the Fed's 2pm notes pass."
+    },
     {
       "ts": "2026-07-08T09:20:00-04:00",
       "text": "Iran headlines knocked the market down overnight and the Fed's meeting notes land at 2pm — staying in **cash** and letting the day show its hand."
@@ -1282,7 +1311,7 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 71.04,
-    "tqqq_pct": -7.62
+    "tqqq": 71.2,
+    "tqqq_pct": -7.41
   }
 }
