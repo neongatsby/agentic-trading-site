@@ -95,6 +95,14 @@
   .pos-card .caret { margin-left:2px; color:#6a7088; font-size:11px; transition:transform .3s ease; }
   .pos-card.open .caret { transform:rotate(180deg); }
   .pos-card.open .tc-why { max-height:200px; opacity:1; margin-top:9px; }
+  /* stop-vs-price gauge */
+  .riskbar { margin-top:11px; }
+  .rb-track { position:relative; height:8px; border-radius:5px; background:linear-gradient(90deg, rgba(252,165,165,.3), rgba(255,255,255,.07) 45%, rgba(110,231,183,.22)); }
+  .rb-stopzone { position:absolute; left:0; top:0; bottom:0; background:rgba(252,165,165,.45); border-radius:5px 0 0 5px; }
+  .rb-now { position:absolute; top:50%; width:12px; height:12px; border-radius:50%; background:#fff; box-shadow:0 0 8px rgba(255,255,255,.6); transform:translate(-50%,-50%); }
+  .rb-tick { position:absolute; top:-3px; bottom:-3px; width:2px; background:#a78bfa; transform:translateX(-50%); }
+  .rb-labels { display:flex; justify-content:space-between; gap:8px; margin-top:7px; font-size:10.5px; }
+  .rb-l.stop { color:#fca5a5; } .rb-l.now { color:#c4c9db; } .rb-l.mid { color:#c4b5fd; }
   /* engine pulse — text-message bubbles */
   .pulse { display:flex; flex-direction:column; gap:11px; }
   .msg { max-width:94%; animation:rise .4s ease both; }
@@ -453,6 +461,21 @@ function setAnimated(id, to, fmt, klass, subId, sub) {
   _prev[id]=to;
 }
 
+// --- Stop-vs-price gauge: shows where the stop sits relative to current price + entry/trigger ---
+function stopGauge(stop, cur, mark, markLabel){
+  stop=+stop; cur=+cur; if(!isFinite(stop)||!isFinite(cur)||stop<=0||cur<=0) return '';
+  const m = (mark!=null&&isFinite(+mark))?+mark:null;
+  const hi = Math.max(cur, m!=null?m:cur) * 1.04, lo = stop * 0.985, span=(hi-lo)||1;
+  const pos = v => Math.max(1, Math.min(99, ((v-lo)/span)*100));
+  const cushion = ((cur-stop)/cur*100);
+  return `<div class="riskbar">`
+    + `<div class="rb-track"><i class="rb-stopzone" style="width:${pos(stop).toFixed(0)}%"></i>`
+    + (m!=null?`<span class="rb-tick" style="left:${pos(m).toFixed(0)}%"></span>`:'')
+    + `<span class="rb-now" style="left:${pos(cur).toFixed(0)}%"></span></div>`
+    + `<div class="rb-labels"><span class="rb-l stop">🛑 $${stop} stop</span>`
+    + (m!=null?`<span class="rb-l mid">${esc(markLabel||'entry')} $${m}</span>`:'')
+    + `<span class="rb-l now">now $${cur.toFixed(2)} · ${cushion>=0?cushion.toFixed(0)+'% to stop':'under stop'}</span></div></div>`;
+}
 // --- Allocation: the $5K plan as a stacked bar + tappable rows (mobile-first) ---
 const usd0 = v => (v < 0 ? '-$' : '$') + Math.round(Math.abs(v)).toLocaleString('en-US');
 const pctOf = (u,pool) => { const p=u/pool*100; return u>0 && p<1 ? '<1%' : Math.round(p)+'%'; };
@@ -676,6 +699,7 @@ function buildPositions(){
   if(!poss.length){ el.innerHTML = '<div class="empty">No open positions yet — when the engine takes a trade it shows here with live P&L. Tap for the thesis.</div>'; return; }
   el.innerHTML = poss.map(p=>{ const plc=cls(p.pl);
     return `<div class="pos-card"><div class="pc-top"><span class="tc-sym">${esc(p.symbol)}</span><span class="pc-qty">${esc(p.qty)} sh @ ${fmt$(p.entry)} → ${fmt$(p.current)}</span><span class="pc-pl ${plc}">${fmt$(p.pl)}<small> (${fmtPct(p.plpc)})</small></span><span class="caret">▾</span></div>`
+      + (p.stop?stopGauge(p.stop,p.current,p.entry,'entry'):'')
       + `<div class="tc-why">${esc(p.thesis||'No thesis recorded for this position.')}</div></div>`; }).join('');
   el.querySelectorAll('.pos-card').forEach(c=>c.addEventListener('click', ()=>c.classList.toggle('open')));
 }
