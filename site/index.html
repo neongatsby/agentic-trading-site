@@ -635,10 +635,15 @@ function showOrbitDetail(i, el){
     md.style.opacity=1; }, 120);
 }
 
-// --- Engine pulse: short "text from a friend" reads, newest first, timestamped ---
+// --- Engine pulse: short "text from a friend" reads. Merge pulse + activity headlines
+// by timestamp so the FRESHEST tick always shows even if a run only wrote one of them. ---
 function pulseItems(){
-  if (Array.isArray(DATA.pulse) && DATA.pulse.length) return DATA.pulse.slice(0,12);
-  return (DATA.activity||[]).filter(a=>a.kind==='engine'||a.kind==='digest').slice(0,12).map(a=>({ts:a.ts, text:a.title}));
+  const a = (Array.isArray(DATA.pulse)?DATA.pulse:[]).map(p=>({ts:p.ts, text:p.text}));
+  const b = (DATA.activity||[]).filter(x=>x.kind==='engine'||x.kind==='digest').map(x=>({ts:x.ts, text:x.title}));
+  const seen=new Set();
+  const all=[...a,...b].filter(x=>{ const k=x.ts+'|'+String(x.text||'').slice(0,24); if(seen.has(k)) return false; seen.add(k); return !!x.text; });
+  all.sort((x,y)=> new Date(y.ts)-new Date(x.ts));
+  return all.slice(0,15);
 }
 const msgTime = ts => { const d=new Date(ts); if(isNaN(d)) return '';
   const now=new Date(), sameDay=d.toDateString()===now.toDateString();
@@ -648,8 +653,8 @@ function renderPulse(){
   const el=document.getElementById('pulse'); if(!el) return;
   const items=pulseItems();
   el.innerHTML = items.length
-    ? items.map(p=>`<div class="msg"><div class="msg-b">${rich(p.text||'')}</div><div class="msg-t">${msgTime(p.ts)}</div></div>`).join('')
-    : '<div class="empty">The engine texts its read here every run — including why it\'s not trading.</div>';
+    ? items.map((p,i)=>`<div class="tick${i===0?' now':''}"><div class="tick-t">${i===0?'<span class="tick-live"></span>':''}${msgTime(p.ts)}</div><div class="tick-x">${rich(p.text||'')}</div></div>`).join('')
+    : '<div class="empty">The engine texts its read here every tick — slide ← to see past ones.</div>';
 }
 // --- Track Record scorecard: return, alpha vs buy-and-hold TQQQ, drawdown ---
 function renderScore(){
