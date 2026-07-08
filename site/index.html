@@ -57,7 +57,17 @@
   @keyframes heroIn { from{opacity:0;} to{opacity:1;} }
   .creed { font-size:12.5px; line-height:1.55; color:#9aa0b5; font-style:italic; margin:0; padding-left:12px; border-left:2px solid rgba(125,211,252,.5); max-width:640px; }
   .creed em { font-style:italic; font-weight:700; background:linear-gradient(90deg,#7dd3fc,#a78bfa 60%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .acct-toggle { display:flex; justify-content:flex-end; margin-bottom:8px; }
+  .hero-topbar { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; }
+  .live-clock { display:flex; align-items:center; gap:8px; font-variant-numeric:tabular-nums; font-size:12.5px; color:#aab0c5; font-weight:600; letter-spacing:.01em; white-space:nowrap; }
+  .live-clock .clk-dot { width:7px; height:7px; border-radius:50%; background:#6ee7b7; box-shadow:0 0 8px rgba(110,231,183,.7); animation:clkpulse 2s ease-in-out infinite; flex:none; }
+  .live-clock .clk-time { color:#f0f2f8; font-weight:800; }
+  @keyframes clkpulse { 0%,100%{opacity:1} 50%{opacity:.32} }
+  .statusrow { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:14px; }
+  .statuschip { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:600; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); color:#c4c9db; }
+  .statuschip .sc-k { font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#7c8299; }
+  .statuschip.on { background:rgba(110,231,183,.10); border-color:rgba(110,231,183,.30); color:#e8f6ef; }
+  .statuschip.on .sc-k { color:#6ee7b7; }
+  .acct-toggle { display:flex; justify-content:flex-end; margin-bottom:0; }
   .acct-toggle button { font:inherit; font-size:12px; font-weight:700; padding:5px 15px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03); color:#9aa0b5; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:all .2s ease; }
   .acct-toggle button:first-child { border-radius:999px 0 0 999px; }
   .acct-toggle button:last-child { border-radius:0 999px 999px 0; border-left:0; }
@@ -109,12 +119,16 @@
   .rb-labels { display:flex; justify-content:space-between; gap:8px; margin-top:7px; font-size:10.5px; }
   .rb-l.stop { color:#fca5a5; } .rb-l.now { color:#c4c9db; } .rb-l.mid { color:#c4b5fd; }
   /* engine pulse — text-message bubbles */
-  .pulse { display:flex; flex-direction:column; gap:11px; }
-  .msg { max-width:94%; animation:rise .4s ease both; }
-  .msg-b { display:inline-block; background:rgba(125,211,252,.11); border:1px solid rgba(125,211,252,.18); border-radius:16px 16px 16px 5px; padding:10px 14px; font-size:13.5px; line-height:1.5; color:#e6eaf5; }
-  .msg-b b { color:#fff; font-weight:700; }
-  .msg-t { font-size:10.5px; color:#7c8299; margin:5px 0 0 8px; font-variant-numeric:tabular-nums; }
-  .msg:first-child .msg-b { background:rgba(125,211,252,.16); border-color:rgba(125,211,252,.32); }
+  /* Horizontal, magnetically-snapping tick ticker — newest at the left, slide right for history */
+  .pulse { display:flex; flex-direction:row; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; padding:2px 2px 14px; margin:0 -2px; scrollbar-width:none; }
+  .pulse::-webkit-scrollbar { height:0; display:none; }
+  .tick { flex:0 0 82%; max-width:82%; scroll-snap-align:start; background:rgba(125,211,252,.09); border:1px solid rgba(125,211,252,.16); border-radius:16px; padding:13px 15px; animation:rise .4s ease both; }
+  .tick.now { background:rgba(125,211,252,.16); border-color:rgba(125,211,252,.34); }
+  .tick-t { font-size:10.5px; color:#7c8299; font-variant-numeric:tabular-nums; margin-bottom:7px; display:flex; align-items:center; gap:6px; }
+  .tick-live { width:6px; height:6px; border-radius:50%; background:#6ee7b7; box-shadow:0 0 7px rgba(110,231,183,.7); animation:clkpulse 1.6s ease-in-out infinite; }
+  .tick-x { font-size:13.5px; line-height:1.5; color:#e6eaf5; }
+  .tick-x b { color:#fff; font-weight:700; }
+  @media(min-width:620px){ .tick { flex-basis:46%; max-width:46%; } }
   /* track-record scorecard */
   .score { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; }
   .sc { background:rgba(255,255,255,.04); border-radius:12px; padding:12px 14px; }
@@ -127,12 +141,12 @@
   .hero-head .live-pill { margin-top:0; }
   .hero-eq { margin-top:16px; }
   .eq-label { font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:#8a90a6; margin-bottom:4px; }
-  .eq-big { font-size:clamp(38px,11vw,54px); font-weight:800; letter-spacing:-0.03em; line-height:1; font-variant-numeric:tabular-nums; }
+  .eq-big { font-size:clamp(46px,12vw,92px); font-weight:800; letter-spacing:-0.035em; line-height:1; font-variant-numeric:tabular-nums; }
   .eq-day { display:flex; align-items:baseline; gap:7px; margin-top:9px; font-size:15px; font-weight:700; font-variant-numeric:tabular-nums; }
   .eq-daypct { color:#8a90a6; font-weight:600; }
   .eq-daylbl { color:#6b7188; font-weight:500; font-size:13px; }
   .hero-asof { font-size:11.5px; color:#7c8299; margin-top:10px; line-height:1.5; }
-  .hero-chart { position:relative; height:200px; margin:6px 0 0; }
+  .hero-chart { position:relative; height:clamp(250px,42vh,460px); margin:10px 0 0; }
   /* fade the chart's top edge into the page so it looks boundless, not boxed */
   .hero-chart::before { content:""; position:absolute; inset:0 0 auto 0; height:54px; z-index:2; pointer-events:none;
     background:linear-gradient(#07090f 2%, rgba(7,9,15,0.5) 50%, transparent); }
@@ -332,7 +346,11 @@
 </head>
 <body>
 <div id="hero">
-  <div class="acct-toggle"><button id="btn-live" class="active" onclick="setAccount('live')">Live</button><button id="btn-paper" onclick="setAccount('paper')">Paper</button></div>
+  <div class="hero-topbar">
+    <div class="live-clock"><span class="clk-dot"></span><span id="clk-date">—</span><span id="clk-time" class="clk-time">—</span></div>
+    <div class="acct-toggle"><button id="btn-live" class="active" onclick="setAccount('live')">Live</button><button id="btn-paper" onclick="setAccount('paper')">Paper</button></div>
+  </div>
+  <div id="statusrow" class="statusrow"></div>
   <div class="hero-eq">
     <div class="eq-toprow"><span class="eq-label" id="eq-label">Live portfolio value</span><div id="live-pill" class="live-pill" style="display:none"><span class="live-dot"></span><span id="live-txt">live</span></div></div>
     <div class="eq-big value" id="s-equity">—</div>
@@ -808,8 +826,40 @@ function render() {
   const lastRun = lp ? new Date(lp.ts) : null;
   const rw = document.getElementById('read-when');
   if (rw) rw.textContent = lastRun && !isNaN(lastRun) ? 'updated ' + lastRun.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}) : '';
+  renderStatus();
   syncChart();
 }
+
+// --- Session status chips (Morning / Afternoon / Evening) near the top ---
+const sessionOf = ts => { const h=new Date(ts).getHours(); return h<12?'Morning':h<16?'Afternoon':'Evening'; };
+function statusItems(){
+  // prefer engine-written session statuses if present
+  if (Array.isArray(DATA.status) && DATA.status.length)
+    return DATA.status.slice(0,3).map(s=>({k:s.session||s.k||'', text:s.text||s.status||''}));
+  // fallback: derive a terse status from the freshest tick in each session
+  const items = pulseItems(); if(!items.length) return [];
+  const short = t => String(t||'').replace(/<[^>]+>/g,'').split(/[.—:]/)[0].trim().split(/\s+/).slice(0,6).join(' ');
+  const out=[], seen=new Set();
+  for(const it of items){ const k=sessionOf(it.ts); if(seen.has(k)) continue; seen.add(k); out.push({k, text:short(it.text)}); if(out.length>=3) break; }
+  const order={Morning:0,Afternoon:1,Evening:2};
+  return out.sort((a,b)=>order[a.k]-order[b.k]);
+}
+function renderStatus(){
+  const el=document.getElementById('statusrow'); if(!el) return;
+  const items=statusItems();
+  if(!items.length){ el.innerHTML=''; return; }
+  const now=sessionOf(Date.now());
+  el.innerHTML = items.map(s=>`<span class="statuschip${s.k===now?' on':''}"><span class="sc-k">${esc(s.k)}</span>${esc(s.text||'—')}</span>`).join('');
+}
+
+// --- The ticking clock (top-left) — updates every second, independent of data ---
+function tickClock(){
+  const d=new Date();
+  const dEl=document.getElementById('clk-date'), tEl=document.getElementById('clk-time');
+  if(dEl) dEl.textContent = d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+  if(tEl) tEl.textContent = d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',second:'2-digit'});
+}
+tickClock(); setInterval(tickClock, 1000);
 
 // Pull live data from GitHub raw (updated by the Mac poller every ~2 min,
 // no Netlify rebuild needed); fall back to the deployed copy.
