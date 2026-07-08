@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T17:46:15.913Z",
+  "generated_at": "2026-07-08T17:47:23.872Z",
   "market_note": "Market OPEN — live.",
   "paper": {
     "equity": 5000,
@@ -27,18 +27,18 @@
     ]
   },
   "live": {
-    "equity": 1000.39,
+    "equity": 1000.4,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
     "total_pnl": 0.09,
-    "day_pnl": 0.27,
+    "day_pnl": 0.28,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 202.29,
-        "pl": 0.4,
-        "plpc": 4.02,
+        "current": 202.4,
+        "pl": 0.41,
+        "plpc": 4.07,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       }
     ],
@@ -535,7 +535,18 @@
       }
     ]
   },
-  "pending_tickets": [],
+  "pending_tickets": [
+    {
+      "id": "2026-07-08-1",
+      "symbol": "NVDL",
+      "side": "buy",
+      "size": "16 sh ≈ $490",
+      "entry": "marketable limit ≤ $31.00",
+      "stop": "$27.00 (below 7/7 low $27.24, −11.6%)",
+      "status": "AWAITING APPROVAL — approve after the 2pm minutes; skip if NVDA < $197",
+      "expires": "2026-07-08T16:00:00-04:00"
+    }
+  ],
   "coverage": [
     {
       "ticker": "SOXL",
@@ -543,15 +554,15 @@
       "theme": "Leveraged core",
       "verdict": "wait",
       "verdict_label": "Primary weapon · 50d reclaimed intraday",
-      "thesis": "The 3x amplifier on the AI/semi supercycle. 1:30pm 7/8: **semis went vertical into the minutes** — SOXX +2.3% to 563, reclaimed its 50-day intraday; today's low 545.1 keeps the higher low intact above the 536 pivot. Trigger unchanged: SOXX reclaims the 20-day (~$597), now ~6% away.",
+      "thesis": "The 3x amplifier on the AI/semi supercycle. 1:45pm 7/8: **semis holding the whole gain into the minutes** — SOXX 562 (+2%), above the reclaimed 50-day, higher low intact (545 > 536). Trigger unchanged: SOXX reclaims the 20-day (~$597), ~6% away. The reserved ~$500 of the sleeve is earmarked for this reclaim.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "planned $800 on SOXX 20d reclaim",
-      "plan_usd": 800,
+      "size_note": "planned ~$500 on SOXX 20d reclaim (rest of sleeve after NVDL ticket)",
+      "plan_usd": 500,
       "horizon": 0.2,
       "updated": "Jul 8",
-      "price": 172.55,
-      "chg_pct": 4.29,
+      "price": 173.1,
+      "chg_pct": 4.62,
       "spark": [
         190.36,
         172.54,
@@ -582,24 +593,26 @@
         233.61,
         279.32,
         301.42,
-        172.55
+        173.1
       ]
     },
     {
       "ticker": "NVDL",
       "name": "GraniteShares 2x NVDA",
       "theme": "Leveraged core",
-      "verdict": "watch",
-      "verdict_label": "Closest trigger · NVDA through $200",
-      "thesis": "NVDA is the undisputed leader of the tape — **broke $200 (202.6), fourth straight green day**, NVDL +5.7%. The trigger (semis base + NVDA leadership) is the closest thing on the board to firing; only the regime gate and the 2pm minutes stand between here and the first leveraged entry.",
+      "verdict": "buy",
+      "verdict_label": "TICKET STAGED · approve after 2pm minutes",
+      "thesis": "NVDA is the confirmed leader out of the rout — **double bottom at ~$191, reclaimed $200** on a 4th straight green day, with NVIDIA's denial of the Kyber-delay report as catalyst. Ticket 2026-07-08-1: ~$490 at ≤$31.00, hard stop $27.00 (below the 7/7 low, −11.6%). Approve only after the minutes; skip if NVDA loses $197.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "planned $400 on semis base + NVDA leadership",
-      "plan_usd": 400,
+      "size_note": "ticket staged: 16 sh ≈ $490, stop $27.00 — awaiting Adam's tap",
+      "plan_usd": 490,
       "horizon": 0.15,
       "updated": "Jul 8",
-      "price": 30.48,
-      "chg_pct": 5.39,
+      "trigger": 30.56,
+      "stop": 27,
+      "price": 30.5,
+      "chg_pct": 5.46,
       "spark": [
         37.33,
         37.8,
@@ -630,7 +643,7 @@
         31.55,
         33.28,
         32.71,
-        30.48
+        30.5
       ]
     },
     {
@@ -646,8 +659,8 @@
       "plan_usd": 800,
       "horizon": 0.3,
       "updated": "Jul 8",
-      "price": 71.97,
-      "chg_pct": -0.29,
+      "price": 72.05,
+      "chg_pct": -0.18,
       "spark": [
         76.79,
         74.76,
@@ -678,7 +691,7 @@
         77.41,
         82.78,
         82.48,
-        71.97
+        72.05
       ]
     },
     {
@@ -687,15 +700,15 @@
       "theme": "AI / semis",
       "verdict": "watch",
       "verdict_label": "The RS leader · knocking on $200",
-      "thesis": "The underlying and the tape's RS leader: **through $200 (202.6), 4th green day running** while software and story names bleed. Trade it via NVDL when the gate opens. Holds the $10 pipe-test artifact in live (+4.2%).",
+      "thesis": "The leader, full stop: **$200 reclaimed, 4th straight green day** (202.6), double bottom at ~$191 behind it, and the Kyber NVL144 delay report was denied by the company. Expressed via NVDL (ticket staged); live account also holds the $10 pipe-test artifact.",
       "size": "$10",
       "size_pct": 1,
       "size_note": "$10 pipe-test artifact (live)",
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "Jul 8",
-      "price": 202.29,
-      "chg_pct": 2.7,
+      "price": 202.41,
+      "chg_pct": 2.76,
       "spark": [
         219.19,
         220.62,
@@ -726,7 +739,7 @@
         204.7,
         210.38,
         208.59,
-        202.29
+        202.41
       ]
     },
     {
@@ -735,15 +748,15 @@
       "theme": "High-beta bench",
       "verdict": "wait",
       "verdict_label": "Trigger suspended · streak broken",
-      "thesis": "Breakdown extending: **−3.5% to 129.7 on a green-semis day** — money is rotating out of it and into chips. Demoted 7/8; trigger suspended pending repair.",
+      "thesis": "Second straight breakdown day — **−3.5% to ~129.6 while chips ripped**; rotation has left it. Trigger suspended pending repair.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "trigger suspended — needs repair",
       "plan_usd": 0,
       "horizon": 0.6,
       "updated": "Jul 8",
-      "price": 129.54,
-      "chg_pct": -3.59,
+      "price": 129.61,
+      "chg_pct": -3.54,
       "spark": [
         136.9,
         136.02,
@@ -774,7 +787,7 @@
         130.68,
         128.44,
         119.46,
-        129.54
+        129.61
       ]
     },
     {
@@ -790,8 +803,8 @@
       "plan_usd": 0,
       "horizon": 0.55,
       "updated": "Jul 8",
-      "price": 27.21,
-      "chg_pct": -0.57,
+      "price": 27.23,
+      "chg_pct": -0.49,
       "spark": [
         29.43,
         28.81,
@@ -822,7 +835,7 @@
         27.02,
         29.34,
         27.07,
-        27.21
+        27.23
       ]
     },
     {
@@ -879,7 +892,7 @@
       "theme": "Energy-for-AI",
       "verdict": "wait",
       "verdict_label": "Holding above the trigger",
-      "thesis": "Energy-for-AI holdover. $241.7 (+0.9%) — comfortably above the $230 line. Trigger unchanged: $230 holds + 50-day reclaim.",
+      "thesis": "Energy-for-AI holdover, quietly constructive: **241 (+0.7%) on a red tape**, comfortably above the $230 line. Trigger unchanged: $230 holds + 50-day reclaim.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "planned $200 on $230 hold + 50d reclaim",
@@ -887,8 +900,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.4,
       "updated": "Jul 8",
-      "price": 241.25,
-      "chg_pct": 0.68,
+      "price": 241.06,
+      "chg_pct": 0.6,
       "spark": [
         299.42,
         293.02,
@@ -919,7 +932,7 @@
         267.26,
         274.09,
         275.65,
-        241.25
+        241.06
       ]
     },
     {
@@ -935,8 +948,8 @@
       "plan_usd": 0,
       "horizon": 0.8,
       "updated": "Jul 8",
-      "price": 392.52,
-      "chg_pct": -2.6,
+      "price": 392.95,
+      "chg_pct": -2.49,
       "spark": [
         445.04,
         433.45,
@@ -967,7 +980,7 @@
         396.52,
         400.49,
         405.05,
-        392.52
+        392.95
       ]
     },
     {
@@ -976,7 +989,7 @@
       "theme": "Energy-for-AI",
       "verdict": "avoid",
       "verdict_label": "Breakdown continues",
-      "thesis": "The unwind of the +1,100% run keeps going: **−10% to ~243** after −11% and −9%. No entry; extended-name post-blowoff breakdowns don't get knife-catches.",
+      "thesis": "Post-blowoff unwind, third ugly day: **−9.6% to ~244** after −9% and −11%. No knife-catch; the ~$230 June floor is the next real test.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
@@ -984,8 +997,8 @@
       "card": "/research/be.html",
       "horizon": 0.9,
       "updated": "Jul 8",
-      "price": 242.05,
-      "chg_pct": -10.19,
+      "price": 243.37,
+      "chg_pct": -9.7,
       "spark": [
         284.37,
         280.91,
@@ -1016,7 +1029,7 @@
         285.13,
         328.78,
         345.98,
-        242.05
+        243.37
       ]
     },
     {
@@ -1032,8 +1045,8 @@
       "plan_usd": 0,
       "horizon": 0.85,
       "updated": "Jul 8",
-      "price": 82,
-      "chg_pct": -1.68,
+      "price": 82.06,
+      "chg_pct": -1.61,
       "spark": [
         117.29,
         117.55,
@@ -1064,7 +1077,7 @@
         107.97,
         107.33,
         100.28,
-        82
+        82.06
       ]
     },
     {
@@ -1081,8 +1094,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.95,
       "updated": "Jul 8",
-      "price": 46.49,
-      "chg_pct": -2.91,
+      "price": 46.47,
+      "chg_pct": -2.95,
       "spark": [
         78.13,
         73.64,
@@ -1113,11 +1126,18 @@
         58.87,
         61.28,
         58.35,
-        46.49
+        46.47
       ]
     }
   ],
   "feed": [
+    {
+      "type": "trade",
+      "account": "live",
+      "ts": "2026-07-08T13:45:00-04:00",
+      "symbol": "NVDL",
+      "text": "First real-money ticket of the experiment is in the queue: **~$490 of NVDL (2x NVIDIA), hard stop at $27** — that's just under last week's low, so I'm risking about $57 to ride the one stock actually leading this tape. NVIDIA held a $191 floor twice, took back $200 today, and the company shot down the chip-delay rumor. One catch, on purpose: **Adam approves it only after the Fed's 2pm minutes** — if the print is ugly and NVDA slips under $197, the play is dead and he skips."
+    },
     {
       "type": "watch",
       "account": "live",
@@ -1282,8 +1302,14 @@
       "text": "Tesla's the one I keep circling for Monday. Crushed Q2 deliveries (480K vs 406K expected) and *still* dropped 7.5% — classic sell-the-news after a big run-up. Tempting mean-reversion, but there's a real EV tax-credit overhang, so if I take it, it's small and on a tight leash."
     }
   ],
-  "latest_recap": "Wed 7/8 ~1:30pm ET — Semis went vertical an hour before the FOMC minutes: SOXX +2.3% to 563 (reclaimed its 50-day intraday, higher low intact at 545 > 536), SOXL +6%, SMH +2%, and NVDA broke $200 (202.6, fourth straight green day; NVDL +5.7%). QQQ turned green (710) but sits below both MAs, so the regime gate stays RISK-OFF: no new leverage, and no front-running a Fed release with a 3x fund regardless. The rotation is real — PLTR −3.5%, BE −10%, TSLA −2.1% while chips rip. The SOXX 20-day trigger (597) is now ~6% away, down from 8% at midday; if today's move survives the minutes, the first leveraged entry could arm quickly. Book: NVDA pipe-test artifact +4.2% ($10.41); live equity $1,000.41 — a new high-water mark. Paper flat. Benchmark since 7/2: buy-and-hold TQQQ −5.9% vs sleeve +0.04% — the gate is still ~6 points ahead of the dumb-aggressive baseline.",
+  "latest_recap": "Wed 7/8 ~1:45pm ET — First real-money ticket of the experiment staged 15 minutes before the FOMC minutes: ~$490 of NVDL (2x NVDA), hard stop $27 (below last week's low), to be approved only after the 2pm print — skip if NVDA loses $197. Why now: NVDA reclaimed $200 on its 4th straight green day off a $191 double bottom, the company denied the Kyber-delay report, and SOXX is holding its reclaimed 50-day on a higher low. Charter v4 (full-send) took effect this morning — the regime gate now shapes size and instrument instead of blocking entries. ~$500 stays reserved for SOXL if SOXX retakes 597. Equity $1,000.44 — new high-water mark.",
   "activity": [
+    {
+      "ts": "2026-07-08T13:45:00-04:00",
+      "kind": "engine",
+      "title": "1:45pm run — TICKET 2026-07-08-1 staged: ~$490 NVDL, stop $27, approve post-minutes",
+      "detail": "Charter v4 (full-send) in effect. Setup: NVDA support-reclaim confirmed — double bottom ~$191 (6/26 + 7/7), $200 reclaimed on the 4th green day, Kyber-delay report denied; SOXX 562 holding the reclaimed 50d, higher low 545 > 536. Ticket: 16 sh NVDL ≈ $489 at ≤$31.00, stop $27.00 (below 7/7 low 27.24, −11.6%), risk ≈ $57 ≈ 5.7% of sleeve; ~$500 reserved for SOXL on the 597 reclaim. Conditions: approve only after the 2pm minutes; skip if NVDA < $197 or SOXX < 551. Expires 4pm. Old-gate read: still RISK-OFF (QQQ 709.7 < 20d 720.4 / 50d 711.7) — under v4 it informs size/instrument, no longer blocks. Book: equity $1,000.44 = new HWM; NVDA artifact +4.5%. Benchmark since 7/2: TQQQ −6.0% vs sleeve +0.04%."
+    },
     {
       "ts": "2026-07-08T13:30:00-04:00",
       "kind": "engine",
@@ -1349,15 +1375,13 @@
       "kind": "research",
       "title": "Constellation Energy (CEG) deep-dive",
       "detail": "Added the third energy-for-AI card. Verdict: highest quality of the group, but wait for a base near $230 before buying."
-    },
-    {
-      "ts": "2026-07-05T12:00:00-07:00",
-      "kind": "pivot",
-      "title": "Strategy pivot → research-first, long-horizon",
-      "detail": "Moved off day-trading to weeks-to-6-month positions: two-gate test, wide vol-based stops, let winners run, benchmark vs QQQ."
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-08T13:45:00-04:00",
+      "text": "I just **queued my first real buy** — about $490 of a double-strength NVIDIA fund with a hard exit at $27 — for Adam to approve only **after** the Fed's 2pm notes hit."
+    },
     {
       "ts": "2026-07-08T13:30:00-04:00",
       "text": "Chip stocks just went from flat to **flying** — NVIDIA broke $200 — but the Fed's notes land in half an hour, so I'm staying in **cash** until they pass."
@@ -1390,7 +1414,7 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 71.97,
-    "tqqq_pct": -6.41
+    "tqqq": 72.05,
+    "tqqq_pct": -6.31
   }
 }
