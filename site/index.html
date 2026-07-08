@@ -57,6 +57,11 @@
   @keyframes heroIn { from{opacity:0;} to{opacity:1;} }
   .creed { font-size:12.5px; line-height:1.55; color:#9aa0b5; font-style:italic; margin:0; padding-left:12px; border-left:2px solid rgba(125,211,252,.5); max-width:640px; }
   .creed em { font-style:italic; font-weight:700; background:linear-gradient(90deg,#7dd3fc,#a78bfa 60%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .acct-toggle { display:flex; justify-content:flex-end; margin-bottom:8px; }
+  .acct-toggle button { font:inherit; font-size:12px; font-weight:700; padding:5px 15px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03); color:#9aa0b5; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:all .2s ease; }
+  .acct-toggle button:first-child { border-radius:999px 0 0 999px; }
+  .acct-toggle button:last-child { border-radius:0 999px 999px 0; border-left:0; }
+  .acct-toggle button.active { background:linear-gradient(135deg, rgba(125,211,252,.22), rgba(167,139,250,.18)); color:#fff; border-color:rgba(125,211,252,.45); }
   .eq-toprow { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:4px; }
   .eq-toprow .live-pill { margin-top:0; }
   /* title moment — the brand + creed live BELOW the chart now (Robinhood-style: only value above the chart) */
@@ -327,8 +332,9 @@
 </head>
 <body>
 <div id="hero">
+  <div class="acct-toggle"><button id="btn-live" class="active" onclick="setAccount('live')">Live</button><button id="btn-paper" onclick="setAccount('paper')">Paper</button></div>
   <div class="hero-eq">
-    <div class="eq-toprow"><span class="eq-label">Live portfolio value</span><div id="live-pill" class="live-pill" style="display:none"><span class="live-dot"></span><span id="live-txt">live</span></div></div>
+    <div class="eq-toprow"><span class="eq-label" id="eq-label">Live portfolio value</span><div id="live-pill" class="live-pill" style="display:none"><span class="live-dot"></span><span id="live-txt">live</span></div></div>
     <div class="eq-big value" id="s-equity">—</div>
     <div class="eq-day"><span class="value" id="s-day">—</span><span class="eq-daypct" id="s-day-pct"></span><span class="eq-daylbl">today</span></div>
     <p id="asof" class="hero-asof">Loading…</p>
@@ -404,8 +410,18 @@
 <div class="empty" id="loaderr" style="display:none">Couldn't load data.json — the first engine cycle may not have published yet.</div>
 
 <script>
-const account = 'live';   // live-only dashboard
+let account = localStorage.getItem('at-account') || 'live';
 let DATA = null, chart = null;
+function setAccount(a){
+  const changed = a !== account;
+  account = a; try{ localStorage.setItem('at-account', a); }catch{}
+  const bl=document.getElementById('btn-live'), bp=document.getElementById('btn-paper');
+  if(bl) bl.classList.toggle('active', a==='live'); if(bp) bp.classList.toggle('active', a==='paper');
+  const el=document.getElementById('eq-label'); if(el) el.textContent = a==='paper' ? 'Paper value · autonomous testbed' : 'Live portfolio value';
+  ['s-equity','s-pnl','s-day'].forEach(k=>delete _prev[k]);   // no misleading flash across accounts
+  if(changed){ _sig={}; if(chart){ chart.destroy(); chart=null; } }
+  if(DATA) render();
+}
 const fmt$ = v => (v < 0 ? '-$' : '$') + Math.abs(Number(v)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 const fmtPct = v => (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%';
 const cls = v => v > 0.004 ? 'pos' : v < -0.004 ? 'neg' : 'flat';
@@ -798,7 +814,7 @@ function load() {
     .catch(() => fetch('./data.json?t=' + Date.now()).then(r => r.json()))
     .then(j => { DATA = j; const app=document.getElementById('app'); app.style.display = 'block'; document.getElementById('loaderr').style.display='none';
       app.querySelectorAll(':scope > .panel').forEach((p,i)=>p.style.setProperty('--i', i+1)); // stagger entrances
-      render(); })
+      setAccount(account); })
     .catch(() => { if(!DATA) document.getElementById('loaderr').style.display = 'block'; });
 }
 load();
