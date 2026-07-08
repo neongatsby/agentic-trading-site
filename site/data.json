@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T12:56:06.874Z",
+  "generated_at": "2026-07-08T12:57:13.081Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
     "equity": 5000,
@@ -27,18 +27,18 @@
     ]
   },
   "live": {
-    "equity": 1000.03,
+    "equity": 1000.02,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
     "total_pnl": 0.09,
-    "day_pnl": -0.09,
+    "day_pnl": -0.1,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 195.35,
-        "pl": 0.04,
-        "plpc": 0.45,
+        "current": 195.07,
+        "pl": 0.03,
+        "plpc": 0.3,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       }
     ],
@@ -318,8 +318,8 @@
       "plan_usd": 800,
       "horizon": 0.3,
       "updated": "Jul 7",
-      "price": 160.43,
-      "chg_pct": -17.45,
+      "price": 159.03,
+      "chg_pct": -18.17,
       "spark": [
         190.36,
         172.54,
@@ -350,7 +350,7 @@
         233.61,
         279.32,
         301.42,
-        160.43
+        159.03
       ]
     },
     {
@@ -366,8 +366,8 @@
       "plan_usd": 800,
       "horizon": 0.4,
       "updated": "Jul 7",
-      "price": 70.24,
-      "chg_pct": -7.89,
+      "price": 70.68,
+      "chg_pct": -7.31,
       "spark": [
         76.79,
         74.76,
@@ -398,7 +398,7 @@
         77.41,
         82.78,
         82.48,
-        70.24
+        70.68
       ]
     },
     {
@@ -1105,7 +1105,7 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 70.24,
-    "tqqq_pct": -8.66
+    "tqqq": 70.68,
+    "tqqq_pct": -8.09
   }
 }
