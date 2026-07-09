@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-09T14:30:40.670Z",
+  "generated_at": "2026-07-09T14:31:47.780Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99933.46,
+    "equity": 99918.26,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98933.46,
-    "day_pnl": -66.54,
+    "total_pnl": 98918.26,
+    "day_pnl": -81.74,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 29.79,
-        "pl": -66.54,
-        "plpc": -2.72,
+        "current": 29.6,
+        "pl": -81.74,
+        "plpc": -3.34,
         "thesis": ""
       }
     ],
@@ -41,27 +41,27 @@
     ]
   },
   "live": {
-    "equity": 999.47,
+    "equity": 999.25,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -0.53,
-    "day_pnl": -1.41,
+    "total_pnl": -0.75,
+    "day_pnl": -1.63,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 200.17,
-        "pl": 0.29,
-        "plpc": 2.93,
+        "current": 199.54,
+        "pl": 0.26,
+        "plpc": 2.6,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 29.79,
-        "pl": -0.8,
-        "plpc": -2.6,
+        "current": 29.6,
+        "pl": -0.98,
+        "plpc": -3.21,
         "thesis": ""
       }
     ],
@@ -432,8 +432,8 @@
       "horizon": 0.2,
       "updated": "Jul 8 close",
       "trigger": "SOXX > 597 on a higher low",
-      "price": 197.62,
-      "chg_pct": 13.01,
+      "price": 195.62,
+      "chg_pct": 11.86,
       "spark": [
         172.54,
         184.35,
@@ -464,7 +464,7 @@
         279.32,
         301.42,
         230.82,
-        197.62
+        195.62
       ]
     },
     {
@@ -482,8 +482,8 @@
       "updated": "Jul 8 close",
       "trigger": 30.56,
       "stop": 27,
-      "price": 29.67,
-      "chg_pct": -4.29,
+      "price": 29.58,
+      "chg_pct": -4.58,
       "spark": [
         37.8,
         39.55,
@@ -514,7 +514,7 @@
         33.28,
         32.71,
         30.03,
-        29.67
+        29.58
       ]
     },
     {
@@ -531,8 +531,8 @@
       "horizon": 0.3,
       "updated": "Jul 8 close",
       "trigger": "QQQ > 720–722",
-      "price": 74.92,
-      "chg_pct": 3.02,
+      "price": 74.54,
+      "chg_pct": 2.5,
       "spark": [
         74.76,
         77.09,
@@ -563,7 +563,7 @@
         82.78,
         82.48,
         74.21,
-        74.92
+        74.54
       ]
     },
     {
@@ -579,8 +579,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "Jul 8 close",
-      "price": 200.17,
-      "chg_pct": -1.91,
+      "price": 199.54,
+      "chg_pct": -2.22,
       "spark": [
         220.62,
         225.65,
@@ -611,7 +611,7 @@
         210.38,
         208.59,
         200.07,
-        200.17
+        199.54
       ]
     },
     {
@@ -627,8 +627,8 @@
       "plan_usd": 0,
       "horizon": 0.6,
       "updated": "Jul 8 close",
-      "price": 125.61,
-      "chg_pct": -4.99,
+      "price": 125.54,
+      "chg_pct": -5.05,
       "spark": [
         136.02,
         130.07,
@@ -659,7 +659,7 @@
         128.44,
         119.46,
         116.72,
-        125.61
+        125.54
       ]
     },
     {
@@ -820,8 +820,8 @@
       "plan_usd": 0,
       "horizon": 0.8,
       "updated": "Jul 8 close",
-      "price": 394.24,
-      "chg_pct": 0.1,
+      "price": 393.54,
+      "chg_pct": -0.08,
       "spark": [
         433.45,
         445.32,
@@ -852,7 +852,7 @@
         400.49,
         405.05,
         381.54,
-        394.24
+        393.54
       ]
     },
     {
@@ -917,8 +917,8 @@
       "plan_usd": 0,
       "horizon": 0.85,
       "updated": "Jul 8 close",
-      "price": 83.51,
-      "chg_pct": 0.2,
+      "price": 83.26,
+      "chg_pct": -0.1,
       "spark": [
         117.55,
         124.16,
@@ -949,7 +949,7 @@
         107.33,
         100.28,
         95.09,
-        83.51
+        83.26
       ]
     },
     {
@@ -1324,7 +1324,7 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 74.92,
-    "tqqq_pct": -2.57
+    "tqqq": 74.54,
+    "tqqq_pct": -3.07
   }
 }
