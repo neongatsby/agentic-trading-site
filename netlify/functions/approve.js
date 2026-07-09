@@ -30,10 +30,10 @@ exports.handler = async (event) => {
 
   const PIN = process.env.APPROVE_PIN;
   const TOKEN = process.env.GH_TOKEN;
-  const REPO = process.env.GH_REPO;
+  const REPO = process.env.GH_REPO || 'neongatsby/agentic-trading-site';
   const BRANCH = process.env.GH_BRANCH || 'main';
-  if (!PIN || !TOKEN || !REPO)
-    return J(503, { error: 'approval endpoint not configured', need: ['APPROVE_PIN', 'GH_TOKEN', 'GH_REPO'] });
+  if (!PIN || !TOKEN)
+    return J(503, { error: 'approval endpoint not configured', need: ['APPROVE_PIN', 'GH_TOKEN'] });
 
   let b;
   try { b = JSON.parse(event.body || '{}'); } catch { return J(400, { error: 'bad json' }); }
