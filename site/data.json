@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-09T15:54:49.021Z",
+  "generated_at": "2026-07-09T15:55:55.511Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99976.66,
+    "equity": 99976.26,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98976.66,
-    "day_pnl": -23.34,
+    "total_pnl": 98976.26,
+    "day_pnl": -23.74,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 30.33,
-        "pl": -23.34,
-        "plpc": -0.95,
+        "current": 30.32,
+        "pl": -23.74,
+        "plpc": -0.97,
         "thesis": ""
       }
     ],
@@ -50,18 +50,18 @@
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 201.96,
+        "current": 201.88,
         "pl": 0.38,
-        "plpc": 3.85,
+        "plpc": 3.81,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 30.33,
+        "current": 30.32,
         "pl": -0.26,
-        "plpc": -0.84,
+        "plpc": -0.85,
         "thesis": ""
       }
     ],
@@ -467,6 +467,10 @@
       {
         "t": 1783612200000,
         "v": 1000.03
+      },
+      {
+        "t": 1783612500000,
+        "v": 1000.12
       }
     ]
   },
@@ -496,8 +500,8 @@
       "horizon": 0.2,
       "updated": "Jul 8 close",
       "trigger": "SOXX > 597 on a higher low",
-      "price": 201.38,
-      "chg_pct": 15.16,
+      "price": 200.64,
+      "chg_pct": 14.73,
       "spark": [
         172.54,
         184.35,
@@ -528,7 +532,7 @@
         279.32,
         301.42,
         230.82,
-        201.38
+        200.64
       ]
     },
     {
@@ -595,8 +599,8 @@
       "horizon": 0.3,
       "updated": "Jul 8 close",
       "trigger": "QQQ > 720–722",
-      "price": 75.94,
-      "chg_pct": 4.43,
+      "price": 75.93,
+      "chg_pct": 4.41,
       "spark": [
         74.76,
         77.09,
@@ -627,7 +631,7 @@
         82.78,
         82.48,
         74.21,
-        75.94
+        75.93
       ]
     },
     {
@@ -643,8 +647,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "Jul 8 close",
-      "price": 201.92,
-      "chg_pct": -1.05,
+      "price": 201.88,
+      "chg_pct": -1.07,
       "spark": [
         220.62,
         225.65,
@@ -675,7 +679,7 @@
         210.38,
         208.59,
         200.07,
-        201.92
+        201.88
       ]
     },
     {
@@ -739,8 +743,8 @@
       "plan_usd": 0,
       "horizon": 0.55,
       "updated": "Jul 8 close",
-      "price": 27.48,
-      "chg_pct": -0.16,
+      "price": 27.49,
+      "chg_pct": -0.11,
       "spark": [
         28.81,
         30,
@@ -771,7 +775,7 @@
         29.34,
         27.07,
         25.07,
-        27.48
+        27.49
       ]
     },
     {
@@ -836,8 +840,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.4,
       "updated": "Jul 8 close",
-      "price": 248.38,
-      "chg_pct": 1.53,
+      "price": 248.36,
+      "chg_pct": 1.52,
       "spark": [
         293.02,
         274.38,
@@ -868,7 +872,7 @@
         274.09,
         275.65,
         270.31,
-        248.38
+        248.36
       ]
     },
     {
@@ -884,8 +888,8 @@
       "plan_usd": 0,
       "horizon": 0.8,
       "updated": "Jul 8 close",
-      "price": 398.92,
-      "chg_pct": 1.28,
+      "price": 399.48,
+      "chg_pct": 1.43,
       "spark": [
         433.45,
         445.32,
@@ -916,7 +920,7 @@
         400.49,
         405.05,
         381.54,
-        398.92
+        399.48
       ]
     },
     {
@@ -1388,7 +1392,7 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 75.94,
-    "tqqq_pct": -1.25
+    "tqqq": 75.93,
+    "tqqq_pct": -1.26
   }
 }
