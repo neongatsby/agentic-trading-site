@@ -1,11 +1,5 @@
 [build]
   publish = "site"
-
-[functions]
-  # PIN-gated in-app approval endpoint (netlify/functions/approve.js). Zero npm deps.
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
-
   # Skip a Netlify rebuild when NOTHING but site/data.json changed since the
   # last DEPLOYED commit — the live poller updates data.json every ~60s and the
   # page reads it from GitHub raw, so rebuilding for data would blow the free
@@ -16,3 +10,8 @@
   # poller commits from cancelling/skipping a genuine UI or research update.
   # `ignore` returning 0 = skip build; non-zero = build.
   ignore = "git diff --quiet ${CACHED_COMMIT_REF:-HEAD~1} ${COMMIT_REF:-HEAD} -- . ':(exclude)site/data.json'"
+
+# PIN-gated in-app approval endpoint (netlify/functions/approve.js). Zero npm deps.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
