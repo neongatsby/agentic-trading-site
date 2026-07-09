@@ -174,6 +174,20 @@
   .approval.ap-wait .ap-chip { background:rgba(252,211,77,.2); color:#fde68a; }
   .approval.ap-done .ap-chip { background:rgba(110,231,183,.16); color:#6ee7b7; }
   .approval.ap-idle .ap-chip { background:rgba(255,255,255,.07); color:#9096ab; }
+  /* ---- in-UI approval buttons (approve / pre-arm / skip, right on the pending card) ---- */
+  .tc-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:13px; }
+  .ta { font:inherit; font-size:12.5px; font-weight:750; padding:9px 14px; border-radius:11px; border:1px solid transparent; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:transform .1s ease, opacity .2s ease; }
+  .ta:active { transform:scale(.97); }
+  .ta:disabled { opacity:.5; cursor:default; }
+  .ta-approve { background:linear-gradient(135deg,#6ee7b7,#34d399); color:#04120c; }
+  .ta-arm { background:rgba(125,211,252,.14); border-color:rgba(125,211,252,.4); color:#bfe6ff; }
+  .ta-skip { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.12); color:#9aa0b5; }
+  .ta-status { font-size:12px; margin-top:9px; color:#9aa0b5; }
+  .ta-status.ta-ok { color:#6ee7b7; font-weight:650; }
+  .ta-status.ta-warn { color:#fcd34d; }
+  .ta-note { font-size:12px; color:#8a90a6; margin-top:10px; font-style:italic; }
+  .trade-card.approved { border-color:rgba(110,231,183,.35); }
+  .trade-card.skipped { opacity:.55; }
   /* ---- entrance motion ---- */
   #app > .stats > .stat, #app > .panel { animation: rise .55s cubic-bezier(.2,.75,.3,1) both; animation-delay: calc(var(--i,0) * .05s); }
   @keyframes rise { from{opacity:0; transform:translateY(16px) scale(.995);} to{opacity:1; transform:none;} }
@@ -790,14 +804,48 @@ function renderTrades(){
   const trades = (DATA.feed||[]).filter(f => f.type==='trade' && (!f.account||f.account===account));
   const cnt = document.getElementById('trades-count'); if(cnt) cnt.textContent = trades.length ? trades.length + ' filled' : '';
   const pill = s => `<span class="pill pill-${s==='sell'?'sell':'buy'}">${s==='sell'?'SELL':'BUY'}</span>`;
-  let html = pending.map(t=>{ const side=(t.side||'').toLowerCase();
-    return `<div class="trade-card pending"><div class="tc-top">${pill(side)}<span class="tc-sym">${esc(t.symbol||'')}</span>${t.size?`<span class="pill pill-size">${esc(t.size)}</span>`:''}<span class="tc-chip">Awaiting you</span></div>`
-      + `<div class="tc-why">${rich(t.thesis||'Pending your approval — tap Approve or Skip in Telegram.')}${t.bracket?`<div class="tc-meta">${esc(t.bracket)}</div>`:''}</div></div>`; }).join('');
+  const trigOf = t => (t.trigger!=null&&+t.trigger>0)?+t.trigger:((t.entry!=null&&+t.entry>0)?+t.entry:null);
+  let html = pending.map(t=>{ const side=(t.side||'').toLowerCase(); const tg=trigOf(t); const hasId=!!t.id;
+    return `<div class="trade-card pending" data-id="${esc(t.id||'')}" data-sym="${esc(t.symbol||'')}"><div class="tc-top">${pill(side)}<span class="tc-sym">${esc(t.symbol||'')}</span>${t.size?`<span class="pill pill-size">${esc(t.size)}</span>`:''}<span class="tc-chip">Awaiting you</span></div>`
+      + `<div class="tc-why">${rich(t.thesis||'Ready to fire on your approval.')}${t.bracket?`<div class="tc-meta">${esc(t.bracket)}</div>`:''}</div>`
+      + (hasId
+          ? `<div class="tc-actions"><button class="ta ta-approve" onclick="doApprove(this,'approve','now')">Approve → buy now</button>`
+             + (tg?`<button class="ta ta-arm" onclick="doApprove(this,'approve','prearm')">Pre-arm → auto @ $${(+tg).toFixed(2)}</button>`:'')
+             + `<button class="ta ta-skip" onclick="doApprove(this,'skip','now')">Skip</button></div><div class="ta-status"></div>`
+          : `<div class="ta-note">Approve this one from the Telegram message — it predates in-app approval.</div>`)
+      + `</div>`; }).join('');
   html += trades.map(f=>{ const side=(f.side||'').toLowerCase();
     return `<div class="trade-card"><div class="tc-top">${pill(side)}<span class="tc-sym">${esc(f.symbol||'')}</span>${f.size?`<span class="pill pill-size">${esc(f.size)}</span>`:''}<span class="tc-time">${ago(f.ts)}</span><span class="caret">▾</span></div>`
       + `<div class="tc-why">${rich(f.text||'No note recorded for this trade.')}</div></div>`; }).join('');
   el.innerHTML = html || '<div class="empty">No trades yet — the moment the engine acts it posts here, and you approve live ones from your phone. Tap any trade for the why.</div>';
   el.querySelectorAll('.trade-card:not(.pending)').forEach(c=>c.addEventListener('click', ()=>c.classList.toggle('open')));
+}
+
+// --- In-UI approval: approve now / pre-arm a resting buy-stop / skip — no Telegram needed ---
+// PIN-gated by the Netlify function; the Mac poller relays it into the same fast-lane as Telegram.
+const APPROVE_ENDPOINT = '/.netlify/functions/approve';
+async function doApprove(btn, action, mode){
+  const card = btn.closest('.trade-card'); if(!card) return;
+  const id = card.getAttribute('data-id'), sym = card.getAttribute('data-sym')||'';
+  if(!id) return;
+  let pin = localStorage.getItem('at-pin');
+  if(!pin){ pin = prompt('Enter your approval PIN (set once):'); if(!pin) return; localStorage.setItem('at-pin', pin.trim()); pin=pin.trim(); }
+  const acts = card.querySelector('.tc-actions'), status = card.querySelector('.ta-status');
+  const reenable = () => card.querySelectorAll('.ta').forEach(b=>b.disabled=false);
+  card.querySelectorAll('.ta').forEach(b=>b.disabled=true);
+  if(status){ status.className='ta-status'; status.textContent = mode==='prearm'?'Pre-arming…':(action==='skip'?'Skipping…':'Approving…'); }
+  try{
+    const r = await fetch(APPROVE_ENDPOINT, { method:'POST', headers:{'content-type':'application/json'},
+      body: JSON.stringify({ id, action, mode, symbol:sym, pin }) });
+    if(r.status===401){ localStorage.removeItem('at-pin'); if(status){status.className='ta-status ta-warn';status.textContent='Wrong PIN — tap again to re-enter.';} reenable(); return; }
+    if(r.status===503){ if(acts) acts.style.display='none'; if(status){status.className='ta-status ta-warn';status.textContent='In-app approval isn’t switched on yet — approve this one from the Telegram message.';} return; }
+    if(!r.ok){ if(status){status.className='ta-status ta-warn';status.textContent='Hiccup sending — try again.';} reenable(); return; }
+    if(acts) acts.style.display='none';
+    card.classList.add(action==='skip'?'skipped':'approved');
+    if(status){ status.className='ta-status ta-ok';
+      status.textContent = action==='skip' ? 'Skipped.'
+        : (mode==='prearm' ? 'Pre-armed — resting buy-stop goes in within ~60s.' : 'Approved — filling within ~60s.'); }
+  }catch(e){ if(status){status.className='ta-status ta-warn';status.textContent='Network hiccup — try again.';} reenable(); }
 }
 function render() {
   const d = DATA[account] || {};

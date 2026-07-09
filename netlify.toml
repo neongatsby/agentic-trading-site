@@ -1,5 +1,11 @@
 [build]
   publish = "site"
+
+[functions]
+  # PIN-gated in-app approval endpoint (netlify/functions/approve.js). Zero npm deps.
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
   # Skip a Netlify rebuild when NOTHING but site/data.json changed since the
   # last DEPLOYED commit — the live poller updates data.json every ~60s and the
   # page reads it from GitHub raw, so rebuilding for data would blow the free
