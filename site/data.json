@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-09T23:14:19.794Z",
+  "generated_at": "2026-07-09T23:15:27.209Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99995.7,
+    "equity": 99988.18,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98995.7,
-    "day_pnl": -4.3,
+    "total_pnl": 98988.18,
+    "day_pnl": -11.82,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 30.56,
-        "pl": -4.94,
-        "plpc": -0.2,
+        "current": 30.47,
+        "pl": -12.14,
+        "plpc": -0.5,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 76.31,
-        "pl": 0.64,
-        "plpc": 0.03,
+        "current": 76.3,
+        "pl": 0.32,
+        "plpc": 0.01,
         "thesis": ""
       }
     ],
@@ -54,36 +54,36 @@
     ]
   },
   "live": {
-    "equity": 1000.56,
+    "equity": 1000.37,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 0.56,
-    "day_pnl": -0.32,
+    "total_pnl": 0.37,
+    "day_pnl": -0.51,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 202.61,
+        "current": 202.65,
         "pl": 0.42,
-        "plpc": 4.18,
+        "plpc": 4.2,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 30.56,
-        "pl": -0.03,
-        "plpc": -0.08,
+        "current": 30.47,
+        "pl": -0.12,
+        "plpc": -0.38,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.31,
-        "pl": 0.2,
-        "plpc": 0.03,
+        "current": 76.3,
+        "pl": 0.1,
+        "plpc": 0.01,
         "thesis": ""
       }
     ],
@@ -845,6 +845,10 @@
       {
         "t": 1783638600000,
         "v": 1000.31
+      },
+      {
+        "t": 1783638900000,
+        "v": 1000.66
       }
     ]
   },
