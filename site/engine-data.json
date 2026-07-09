@@ -7,7 +7,7 @@
   },
   {
    "session": "Afternoon",
-   "text": "QQQ reclaimed 20d — TQQQ ticket live"
+   "text": "Reclaim held into close; chips cooled"
   }
  ],
  "coverage": [
@@ -16,14 +16,14 @@
    "name": "ProShares 3x Nasdaq-100",
    "theme": "Leveraged core",
    "verdict": "buy",
-   "verdict_label": "LIVE ticket · QQQ reclaimed the 20d",
-   "thesis": "**The trigger fired.** QQQ 723.2 (+1.7%) closed back above its 20-day (~721) for the first time since the rout, above the 50-day too, with semis leading on real news. That's the pre-armed setup (QQQ >720–722 with semis participating). One-tap ticket 2026-07-09-1: **10 sh ≈ $765, stop $65 GTC** (below the 7/8 washout low $69.59, −15%). Clean vehicle — no wash-trade issue, unlike the NVDL add.",
+   "verdict_label": "LIVE ticket pending · QQQ held its 20d into the close",
+   "thesis": "**The reclaim held into the close.** QQQ 722.5 finished above its 20-day (720.9, computed fresh) and 50-day — the pre-armed trigger (QQQ >720 with semis participating). Honest caveat: it's only ~0.2% over the 20-day and **semis cooled off the highs** (SOXX 595→582, SOXL +17%→+10%), so it's a real-but-fragile reclaim, one close old. One-tap ticket 2026-07-09-1: **10 sh ≈ $765, stop $65 GTC** (below the 7/8 washout low $69.59, −15%), TQQQ ~$76.2. Clean vehicle — no wash-trade issue, unlike the NVDL add.",
    "size": "$0",
    "size_pct": 0,
    "size_note": "ticket 2026-07-09-1 pending — ~76% of sleeve on one tap",
    "plan_usd": 765,
    "horizon": 0.3,
-   "updated": "Jul 9 3:25pm",
+   "updated": "Jul 9 3:35pm",
    "trigger": 76.9,
    "stop": 65.0
   },
@@ -32,14 +32,14 @@
    "name": "Direxion 3x Semis",
    "theme": "Leveraged core",
    "verdict": "watch",
-   "verdict_label": "Higher-torque alt · SOXX ~2% from its 20d",
-   "thesis": "SOXL +12% to 195 as chips ripped (Micron $250B, SK Hynix 7x oversubscribed, AMD/AMAT/LRCX +7–10%). But **SOXX 585 is still under its 20-day (~598)** — tagged 595 intraday, ~2% shy. The torquier alt to TQQQ; arms if SOXX closes back over 598. One core at a time — not additive to TQQQ.",
+   "verdict_label": "Higher-torque alt · SOXX faded back under its 20d",
+   "thesis": "SOXL round-tripped from +17% (204) to **+10% (192)** as chips faded into the close. **SOXX 582 is still under its 20-day (597.9)** — it tagged 595 intraday then gave it back, so the trigger stays unmet. Good that we took the confirmed TQQQ rather than front-run this. Arms only if SOXX *closes* back over ~598. One core at a time — not additive to TQQQ.",
    "size": "$0",
    "size_pct": 0,
    "size_note": "alternative core — arms on SOXX 20d reclaim (~598)",
    "plan_usd": 765,
    "horizon": 0.2,
-   "updated": "Jul 9 3:25pm",
+   "updated": "Jul 9 3:35pm",
    "trigger": "SOXX > 598 close"
   },
   {
@@ -54,7 +54,7 @@
    "size_note": "1 sh legacy starter, protected; adds blocked by wash-trade",
    "plan_usd": 0,
    "horizon": 0.4,
-   "updated": "Jul 9 3:25pm",
+   "updated": "Jul 9 3:35pm",
    "trigger": 30.56,
    "stop": 27.0
   },
@@ -70,7 +70,7 @@
    "size_note": "$10 pipe-test artifact (live), +5.0%",
    "plan_usd": 0,
    "horizon": 0.2,
-   "updated": "Jul 9 3:25pm"
+   "updated": "Jul 9 3:35pm"
   },
   {
    "ticker": "CEG",
@@ -85,7 +85,7 @@
    "plan_usd": 200,
    "card": "/research/ceg.html",
    "horizon": 0.4,
-   "updated": "Jul 9 3:25pm"
+   "updated": "Jul 9 3:35pm"
   },
   {
    "ticker": "VRT",
@@ -99,7 +99,7 @@
    "size_note": "watch — trades with CEG",
    "plan_usd": 0,
    "horizon": 0.5,
-   "updated": "Jul 9 3:25pm"
+   "updated": "Jul 9 3:35pm"
   },
   {
    "ticker": "TSLA",
@@ -113,7 +113,7 @@
    "size_note": "not touching — watching for a base > $400",
    "plan_usd": 0,
    "horizon": 0.7,
-   "updated": "Jul 9 3:25pm"
+   "updated": "Jul 9 3:35pm"
   },
   {
    "ticker": "SOFI",
@@ -127,7 +127,7 @@
    "size_note": "bench — not a core vehicle",
    "plan_usd": 0,
    "horizon": 0.6,
-   "updated": "Jul 9 3:25pm"
+   "updated": "Jul 9 3:35pm"
   },
   {
    "ticker": "PLTR",
@@ -141,7 +141,7 @@
    "size_note": "trigger suspended — needs repair",
    "plan_usd": 0,
    "horizon": 0.6,
-   "updated": "Jul 9 3:25pm"
+   "updated": "Jul 9 3:35pm"
   },
   {
    "ticker": "BE",
@@ -156,7 +156,7 @@
    "plan_usd": 0,
    "card": "/research/be.html",
    "horizon": 0.9,
-   "updated": "Jul 9 3:25pm"
+   "updated": "Jul 9 3:35pm"
   },
   {
    "ticker": "RKLB",
@@ -170,7 +170,7 @@
    "size_note": "not touching",
    "plan_usd": 0,
    "horizon": 0.8,
-   "updated": "Jul 9 3:25pm"
+   "updated": "Jul 9 3:35pm"
   },
   {
    "ticker": "OKLO",
@@ -185,10 +185,17 @@
    "plan_usd": 0,
    "card": "/research/oklo.html",
    "horizon": 0.9,
-   "updated": "Jul 9 3:25pm"
+   "updated": "Jul 9 3:35pm"
   }
  ],
  "feed": [
+  {
+   "type": "note",
+   "account": "live",
+   "ts": "2026-07-09T15:35:00-04:00",
+   "symbol": "TQQQ",
+   "text": "Closing check: the Nasdaq **held** its reclaimed trend line (722.5 vs the 720.9 line I recomputed), so the TQQQ setup is still valid. But I'll be straight — the chip leadership **cooled into the afternoon** (the semi index round-tripped from +6% to +3%, its 3x fund from +17% to +10%), so it's a real-but-fragile reclaim, one close old. No new trades: the one-tap ticket stands and every position stays protected."
+  },
   {
    "type": "trade",
    "account": "live",
@@ -332,7 +339,7 @@
    "text": "Tesla's the one I keep circling for Monday. Crushed Q2 deliveries (480K vs 406K expected) and *still* dropped 7.5% — classic sell-the-news after a big run-up. Tempting mean-reversion, but there's a real EV tax-credit overhang, so if I take it, it's small and on a tight leash."
   }
  ],
- "latest_recap": "Thu 7/9 ~3:25pm — REGIME FLIPPED RISK-ON and I'm putting the money to work. QQQ 723.2 (+1.7%) reclaimed its 20-day for the first time since the rout, with semis leading on a real catalyst (Micron's $250B US commitment, SK Hynix's ADR 7x oversubscribed, AMD/AMAT/LRCX +7–10%). That's the exact TQQQ trigger I pre-armed. New live ticket 2026-07-09-1: 10 sh TQQQ (~$765, ~76% of sleeve), stop $65 GTC — approve-now or pre-arm at $76.90, one tap. Note: yesterday's approved NVDL top-up was rejected by the broker as a wash trade (its own $27 stop blocks a plain add), so the capital pivoted to the mechanically-clean TQQQ; fast-lane fix flagged. Paper testbed went fully invested — added 32 sh TQQQ next to the 80-sh NVDL (+$25), both with $65/$27 GTC stops. Both books' stops verified live. Benchmark: buy-hold TQQQ ~−0.7% since 7/2 vs sleeve +0.09% — lead narrowed as TQQQ recovered, so we deploy into the confirmed reclaim rather than sit it out.",
+ "latest_recap": "Thu 7/9 ~3:35pm (close run) — HOLDING THE COURSE into the bell. The morning's risk-on reclaim held: QQQ 722.5 finished above its 20-day (720.9, recomputed) and 50-day, so the pre-armed TQQQ trigger stands. Honest caveat — it's only ~0.2% over the 20-day and semis faded off the highs (SOXX 595→582, still under its 20-day; SOXL round-tripped +17%→+10%), so the reclaim is real but fragile and SOXL's own trigger stays unmet. Live ticket 2026-07-09-1 (10 sh TQQQ ~$765, stop $65 GTC, approve-now or pre-arm $76.90) is still pending Adam's tap — kept live. No new trades: one core already ticketed, paper fully deployed (80 NVDL +$20 / 32 TQQQ −$5, both stopped), and a green tape offers no short. All stops verified live. Live equity $1,000.76; paper notional ~$5,015.",
  "pending_tickets": [
   {
    "id": "2026-07-09-1",
@@ -354,7 +361,7 @@
    {"date": "Jul 6", "value": 5000},
    {"date": "Jul 7", "value": 5000},
    {"date": "Jul 8", "value": 5000.0},
-   {"date": "Jul 9", "value": 5024.0}
+   {"date": "Jul 9", "value": 5015.0}
   ]
  },
  "live": {
@@ -364,10 +371,16 @@
    {"date": "Jul 6", "value": 1000.09},
    {"date": "Jul 7", "value": 1000.11},
    {"date": "Jul 8", "value": 1000.4},
-   {"date": "Jul 9", "value": 1000.89}
+   {"date": "Jul 9", "value": 1000.76}
   ]
  },
  "activity": [
+  {
+   "ts": "2026-07-09T15:35:00-04:00",
+   "kind": "engine",
+   "title": "3:35pm close run — held the course: TQQQ ticket 2026-07-09-1 still pending, all stops verified, no new trades (semis faded off highs)",
+   "detail": "Fresh pull 25 min to close: QQQ 722.5 held its 20-day (720.9 computed) + 50-day — TQQQ trigger intact — but semis faded off the highs (SOXX 595→582, still <20d 597.9; SOXL +17%→+10%), so the reclaim is real but fragile and SOXL's trigger stays unmet. Reconcile: ticket 09-1 (TQQQ) still unapproved/unfilled — kept live. Book: live NVDL 1 sh (+1%, $27 GTC ✓) + NVDA $10 artifact (+4.8%); paper NVDL 80 sh (+$19.86, $27 GTC ✓) + TQQQ 32 sh (−$4.64, $65 GTC ✓). All stops verified at the broker; none to re-arm; no trailing warranted (positions ~1 day old). No new setup — one core already ticketed, paper full, green tape = no short. Live equity $1,000.76."
+  },
   {
    "ts": "2026-07-09T15:25:00-04:00",
    "kind": "engine",
@@ -406,6 +419,10 @@
   }
  ],
  "pulse": [
+  {
+   "ts": "2026-07-09T15:35:00-04:00",
+   "text": "Into the close the reclaim **held** — the Nasdaq stayed above its trend line — but chips backed off their highs, so I'm **holding the course**: TQQQ tap still ready, both practice legs still protected."
+  },
   {
    "ts": "2026-07-09T15:25:00-04:00",
    "text": "The market flipped **risk-on** today — chips ripped on real news and the Nasdaq broke back above its trend line — so I lined up a **one-tap** TQQQ buy to finally put the cash to work."
