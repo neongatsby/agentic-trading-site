@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-09T20:14:57.456Z",
+  "generated_at": "2026-07-09T20:16:04.568Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 100005.78,
+    "equity": 100005.18,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 99005.78,
-    "day_pnl": 5.78,
+    "total_pnl": 99005.18,
+    "day_pnl": 5.18,
     "positions": [
       {
         "symbol": "NVDL",
@@ -20,9 +20,9 @@
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 76.5,
-        "pl": 6.72,
-        "plpc": 0.27,
+        "current": 76.48,
+        "pl": 6.12,
+        "plpc": 0.25,
         "thesis": ""
       }
     ],
@@ -49,23 +49,23 @@
       },
       {
         "date": "Jul 9",
-        "value": 5015
+        "value": 5002
       }
     ]
   },
   "live": {
-    "equity": 1002.52,
+    "equity": 1002.33,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 2.52,
-    "day_pnl": 1.64,
+    "total_pnl": 2.33,
+    "day_pnl": 1.45,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 202.9,
+        "current": 202.86,
         "pl": 0.43,
-        "plpc": 4.33,
+        "plpc": 4.31,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
@@ -81,9 +81,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.5,
-        "pl": 2.1,
-        "plpc": 0.27,
+        "current": 76.48,
+        "pl": 1.91,
+        "plpc": 0.25,
         "thesis": ""
       }
     ],
@@ -110,7 +110,7 @@
       },
       {
         "date": "Jul 9",
-        "value": 1000.76
+        "value": 1002.48
       }
     ],
     "intraday": [
@@ -701,41 +701,31 @@
       {
         "t": 1783627800000,
         "v": 1002.4
+      },
+      {
+        "t": 1783628100000,
+        "v": 1002.53
       }
     ]
   },
-  "pending_tickets": [
-    {
-      "id": "2026-07-09-1",
-      "side": "buy",
-      "symbol": "TQQQ",
-      "size": "$765 (10 sh)",
-      "qty": 10,
-      "entry": 76.4,
-      "trigger": 76.9,
-      "stop": 65,
-      "bracket": "stop $65.00 GTC (below the 7/8 washout low $69.59, −15%)",
-      "thesis": "Regime flipped risk-on: QQQ 723 reclaimed its 20-day with semis leading on real news (Micron $250B, SK Hynix 7x oversubscribed, AMD/AMAT/LRCX +7–10%). The pre-armed TQQQ trigger firing. Approve-now buys ~$76.4; pre-arm rests a buy-stop at $76.90 (just above today's high) that only fires on continuation. Stop $65, ~11% of sleeve. Replaces the wash-blocked NVDL add."
-    }
-  ],
+  "pending_tickets": [],
   "coverage": [
     {
       "ticker": "TQQQ",
       "name": "ProShares 3x Nasdaq-100",
       "theme": "Leveraged core",
       "verdict": "buy",
-      "verdict_label": "LIVE ticket pending · QQQ held its 20d into the close",
-      "thesis": "**The reclaim held into the close.** QQQ 722.5 finished above its 20-day (720.9, computed fresh) and 50-day — the pre-armed trigger (QQQ >720 with semis participating). Honest caveat: it's only ~0.2% over the 20-day and **semis cooled off the highs** (SOXX 595→582, SOXL +17%→+10%), so it's a real-but-fragile reclaim, one close old. One-tap ticket 2026-07-09-1: **10 sh ≈ $765, stop $65 GTC** (below the 7/8 washout low $69.59, −15%), TQQQ ~$76.2. Clean vehicle — no wash-trade issue, unlike the NVDL add.",
-      "size": "$0",
-      "size_pct": 0,
-      "size_note": "ticket 2026-07-09-1 pending — ~76% of sleeve on one tap",
+      "verdict_label": "LIVE — core position ON, stop $65 GTC ✓",
+      "thesis": "**The core is on.** Adam approved ticket 2026-07-09-1 right before the bell; the fast-lane bought all **10 sh @ $76.29** and this time attached the **$65 GTC stop correctly** (verified live at the broker). QQQ closed **723 (+1.7%)** back above its 20-day (721, computed fresh) and 50-day — the pre-armed reclaim confirmed. Riding it with a wide −15% stop (below the 7/8 washout low $69.59); no take-profit, reassessed each run. Position **+$2** on the day.",
+      "size": "$765",
+      "size_pct": 76,
+      "size_note": "10 sh held — the single core, ~76% of sleeve, $65 GTC stop",
       "plan_usd": 765,
       "horizon": 0.3,
-      "updated": "Jul 9 3:35pm",
-      "trigger": 76.9,
+      "updated": "Jul 9 4:10pm",
       "stop": 65,
-      "price": 76.48,
-      "chg_pct": 5.16,
+      "price": 76.47,
+      "chg_pct": 5.15,
       "spark": [
         74.76,
         77.09,
@@ -766,7 +756,7 @@
         82.78,
         82.48,
         74.21,
-        76.48
+        76.47
       ]
     },
     {
@@ -774,14 +764,14 @@
       "name": "Direxion 3x Semis",
       "theme": "Leveraged core",
       "verdict": "watch",
-      "verdict_label": "Higher-torque alt · SOXX faded back under its 20d",
-      "thesis": "SOXL round-tripped from +17% (204) to **+10% (192)** as chips faded into the close. **SOXX 582 is still under its 20-day (597.9)** — it tagged 595 intraday then gave it back, so the trigger stays unmet. Good that we took the confirmed TQQQ rather than front-run this. Arms only if SOXX *closes* back over ~598. One core at a time — not additive to TQQQ.",
+      "verdict_label": "Rotation candidate · SOXX still under its 20d",
+      "thesis": "Chips ripped again (SOXL +9.9% to 192, off an intraday 204) on the Micron $250B catalyst — but **SOXX 582 is still under its 20-day (~598)**, so its trigger stays unmet. It's the higher-torque alternative to TQQQ, not an addition: if SOXX *closes* over ~598 with semis leading, the next live run considers rotating the TQQQ core into SOXL. One core at a time.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "alternative core — arms on SOXX 20d reclaim (~598)",
+      "size_note": "rotation-from-TQQQ candidate on a SOXX 20d close reclaim (~598)",
       "plan_usd": 765,
       "horizon": 0.2,
-      "updated": "Jul 9 3:35pm",
+      "updated": "Jul 9 4:10pm",
       "trigger": "SOXX > 598 close",
       "price": 193.59,
       "chg_pct": 10.7,
@@ -823,14 +813,14 @@
       "name": "GraniteShares 2x NVDA",
       "theme": "Leveraged core",
       "verdict": "buy",
-      "verdict_label": "LIVE — 1 sh held · add wash-blocked",
-      "thesis": "The live starter: 1 sh @ $30.59, last $31.00 (+1.4%), **stop $27 GTC verified**. The top-up (ticket -2) was approved but the broker **rejected it as a wash trade** against that very stop — so the fresh capital moved to TQQQ. NVDA consolidating at highs is constructive; direct adds wait on a fast-lane fix for stopped-position buys.",
+      "verdict_label": "LIVE — 1 sh held · add still wash-blocked",
+      "thesis": "The live starter: 1 sh @ $30.59, last $30.57 (flat), **stop $27 GTC verified**. The top-up (ticket -2) was approved but broker-**rejected as a wash trade** vs that stop, so the fresh capital went to TQQQ. NVDA consolidating at highs is constructive; direct adds wait on a fast-lane fix for stopped-position buys.",
       "size": "$31",
       "size_pct": 3,
       "size_note": "1 sh legacy starter, protected; adds blocked by wash-trade",
       "plan_usd": 0,
       "horizon": 0.4,
-      "updated": "Jul 9 3:35pm",
+      "updated": "Jul 9 4:10pm",
       "trigger": 30.56,
       "stop": 27,
       "price": 30.56,
@@ -874,13 +864,13 @@
       "theme": "AI / semis",
       "verdict": "watch",
       "verdict_label": "Leader · consolidating at highs",
-      "thesis": "204.3 (flat) after yesterday's +3.6% — **digesting the breakout at the highs, which is bullish**. Micron/SK-Hynix demand signals and AI-infra spend keep the leadership intact. Exposure via the 1-sh NVDL + the $10 pipe-test artifact (+5.0%); broad upside expressed through TQQQ.",
+      "thesis": "202.7 (−0.7%) after the run — **digesting the breakout at the highs, which is bullish**. Micron/SK-Hynix demand signals and AI-infra spend keep the leadership intact. Exposure via the 1-sh NVDL + the $10 pipe-test artifact (+4.3%); broad upside now expressed through the TQQQ core.",
       "size": "$10",
       "size_pct": 1,
-      "size_note": "$10 pipe-test artifact (live), +5.0%",
+      "size_note": "$10 pipe-test artifact (live), +4.3%",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 9 3:35pm",
+      "updated": "Jul 9 4:10pm",
       "price": 202.69,
       "chg_pct": -0.67,
       "spark": [
@@ -922,14 +912,14 @@
       "theme": "Energy-for-AI",
       "verdict": "wait",
       "verdict_label": "Near a 50-day reclaim",
-      "thesis": "250.6 (+2.4%) — well clear of the $230 line, the profitable power-for-AI bid working again (VRT +2.6% same day). Next trigger: a clean 50-day reclaim for a momentum entry. Best business of the energy names; the only one in a real uptrend.",
+      "thesis": "250.7 (+2.5%) — well clear of the $230 line, the profitable power-for-AI bid working again (VRT +1.9% same day). Next trigger: a clean 50-day reclaim for a momentum entry. Best business of the energy names; the only one in a real uptrend. Bench candidate if TQQQ isn't the vehicle.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "planned ~$200 on a 50d reclaim",
+      "size_note": "planned ~$200 on a 50d reclaim (bench, not additive to core)",
       "plan_usd": 200,
       "card": "/research/ceg.html",
       "horizon": 0.4,
-      "updated": "Jul 9 3:35pm",
+      "updated": "Jul 9 4:10pm",
       "price": 250.67,
       "chg_pct": 2.47,
       "spark": [
@@ -970,14 +960,14 @@
       "name": "Vertiv",
       "theme": "Energy-for-AI",
       "verdict": "watch",
-      "verdict_label": "Power-for-AI, gave back its pop",
-      "thesis": "326.3 (+2.6%) but opened 334 and faded — strong theme, choppy tape. Trades with CEG as the AI-power complex; no clean setup of its own yet. Watch for a base above 320.",
+      "verdict_label": "Power-for-AI, choppy",
+      "thesis": "324.0 (+1.9%) — opened 334 and faded again; strong theme, choppy tape. Trades with CEG as the AI-power complex; no clean setup of its own yet. Watch for a base above 320.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "watch — trades with CEG",
       "plan_usd": 0,
       "horizon": 0.5,
-      "updated": "Jul 9 3:35pm",
+      "updated": "Jul 9 4:10pm",
       "price": 323.98,
       "chg_pct": 1.92,
       "spark": [
@@ -1018,14 +1008,14 @@
       "name": "Tesla",
       "theme": "High-beta bench",
       "verdict": "watch",
-      "verdict_label": "Reclaimed $400",
-      "thesis": "407.0 (+3.3%) — **took back $400** on the risk-on turn, snapping the story-name outflow. Not a clean entry (extended off the low), but off the avoid list; a base above $400 would open a momentum look.",
+      "verdict_label": "Held $400",
+      "thesis": "406.5 (+3.2%) — **held $400** on the risk-on turn, snapping the story-name outflow. Not a clean entry (extended off the low), but off the avoid list; a base above $400 would open a momentum look.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching — watching for a base > $400",
       "plan_usd": 0,
       "horizon": 0.7,
-      "updated": "Jul 9 3:35pm",
+      "updated": "Jul 9 4:10pm",
       "price": 406.51,
       "chg_pct": 3.21,
       "spark": [
@@ -1067,13 +1057,13 @@
       "theme": "High-beta bench",
       "verdict": "watch",
       "verdict_label": "High-beta, riding the risk-on bid",
-      "thesis": "18.53 (+4.4%) — launched a new income ETF and caught the risk-on wave. Not a charter core, but a clean high-beta mover to keep on the bench if the tape stays green.",
+      "thesis": "18.60 (+4.8%) — caught the risk-on wave and made a new local high. Not a charter core, but a clean high-beta mover to keep on the bench while the tape stays green.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "bench — not a core vehicle",
       "plan_usd": 0,
       "horizon": 0.6,
-      "updated": "Jul 9 3:35pm",
+      "updated": "Jul 9 4:10pm",
       "price": 18.6,
       "chg_pct": 4.79,
       "spark": [
@@ -1115,13 +1105,13 @@
       "theme": "High-beta bench",
       "verdict": "avoid",
       "verdict_label": "Suspended · red on a green tape",
-      "thesis": "128.5 (−2.8%) — **down on a broadly risk-on day**, the tell that money keeps leaving. Structure still broken; trigger stays suspended until a real base forms. Notable relative weakness.",
+      "thesis": "129.1 (−2.4%) — **down again on a broadly risk-on day**, the tell that money keeps leaving. Structure still broken; trigger stays suspended until a real base forms. Notable relative weakness.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "trigger suspended — needs repair",
       "plan_usd": 0,
       "horizon": 0.6,
-      "updated": "Jul 9 3:35pm",
+      "updated": "Jul 9 4:10pm",
       "price": 129.05,
       "chg_pct": -2.39,
       "spark": [
@@ -1162,15 +1152,15 @@
       "name": "Bloom Energy",
       "theme": "Energy-for-AI",
       "verdict": "avoid",
-      "verdict_label": "Bearish outside day",
-      "thesis": "258.4 — gapped up to 275 and **reversed all the way to 258** (bearish outside look) even on a green tape. Still no floor after the multi-day unwind. Not touching; not a knife I catch.",
+      "verdict_label": "Another wild reversal",
+      "thesis": "257.0 — gapped to 275, sold to 253, closed 257: another huge two-way range with **no floor** after the multi-day unwind. Not touching; not a knife I catch.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/be.html",
       "horizon": 0.9,
-      "updated": "Jul 9 3:35pm",
+      "updated": "Jul 9 4:10pm",
       "price": 257.02,
       "chg_pct": 1.07,
       "spark": [
@@ -1212,13 +1202,13 @@
       "theme": "Space",
       "verdict": "watch",
       "verdict_label": "Stabilizing 82–86",
-      "thesis": "84.0 (flat) — holding the 82–86 shelf after the Iridium-deal slide. Constructive but no edge; the charter's 74–80 zone is the dip-buy area if it gets there.",
+      "thesis": "82.5 (−1.0%) — holding the 82–86 shelf after the Iridium-deal slide. Constructive but no edge; the charter's 74–80 zone is the dip-buy area if it gets there.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "horizon": 0.8,
-      "updated": "Jul 9 3:35pm",
+      "updated": "Jul 9 4:10pm",
       "price": 82.54,
       "chg_pct": -0.97,
       "spark": [
@@ -1260,14 +1250,14 @@
       "theme": "Energy-for-AI",
       "verdict": "watch",
       "verdict_label": "Bounced with the tape",
-      "thesis": "49.8 (+5.3%) — caught a risk-on bounce off a broken chart. Still below structure and behind CEG/VRT (the profitable plays). No entry until it proves a real base, not a one-day pop.",
+      "thesis": "49.3 (+4.3%) — a second risk-on bounce off a broken chart. Still below structure and behind CEG/VRT (the profitable plays). No entry until it proves a real base, not a two-day pop.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/oklo.html",
       "horizon": 0.9,
-      "updated": "Jul 9 3:35pm",
+      "updated": "Jul 9 4:10pm",
       "price": 49.3,
       "chg_pct": 4.24,
       "spark": [
@@ -1306,11 +1296,18 @@
   ],
   "feed": [
     {
+      "type": "trade",
+      "account": "live",
+      "ts": "2026-07-09T16:10:00-04:00",
+      "symbol": "TQQQ",
+      "text": "**Filled — the core is on.** You approved the TQQQ ticket right before the bell and the machine bought all **10 shares at $76.29**. This time the $65 safety exit went on correctly as a **good-till-canceled** order (I verified it at the broker) — so both bugs from earlier this week are behind us. That's ~$765 of 3x-Nasdaq riding the risk-on reclaim, ~$196 cash left as buffer, and it closed **+$2**. Nothing for you to do — I'll manage it and trail the stop up as it runs."
+    },
+    {
       "type": "note",
       "account": "live",
-      "ts": "2026-07-09T15:35:00-04:00",
-      "symbol": "TQQQ",
-      "text": "Closing check: the Nasdaq **held** its reclaimed trend line (722.5 vs the 720.9 line I recomputed), so the TQQQ setup is still valid. But I'll be straight — the chip leadership **cooled into the afternoon** (the semi index round-tripped from +6% to +3%, its 3x fund from +17% to +10%), so it's a real-but-fragile reclaim, one close old. No new trades: the one-tap ticket stands and every position stays protected."
+      "ts": "2026-07-09T16:08:00-04:00",
+      "symbol": "QQQ",
+      "text": "Regime check, confirmed: the Nasdaq closed **723, back above its 20-day trend line** for the first time since the rout, with chips leading on real news (Micron's $250B US commitment). One honest wrinkle — today's rally was **hardware over software**: the chip names ripped while Alphabet fell 2.5% and dragged. TQQQ owns both sides of that, so the core's fine; just noting where the leadership actually is."
     },
     {
       "type": "trade",
@@ -1423,45 +1420,15 @@
       "ts": "2026-07-07T16:18:00-04:00",
       "symbol": "NVDA",
       "text": "Day one of the aggressive engine ends **deliberately flat** — cash through a −5% semis rout while SOXL bled 15%. The leaders told the story all day: NVDA, NVDL and PLTR all closed green. Live sleeve ticked to a **new high-water mark ($1,000.11)** on the $10 pipe test. The regime gate is up ~6 points on buy-and-hold TQQQ in three sessions."
-    },
-    {
-      "type": "trade",
-      "account": "live",
-      "ts": "2026-07-06T06:30:00-07:00",
-      "symbol": "NVDA",
-      "side": "buy",
-      "size": "$10 · 0.05 sh",
-      "text": "The **$10 NVDA pipe test** you approved Friday **filled at the open** ($194.48). That's the Alpaca email — the live order path officially works end to end. It's not a real thesis trade, just $10 proving the plumbing."
-    },
-    {
-      "type": "watch",
-      "account": "paper",
-      "ts": "2026-07-03T22:10:00-07:00",
-      "symbol": "SOXX",
-      "text": "Dug into Thursday's chip rout tonight — it's not just profit-taking. Zuckerberg said Meta's AI bets **haven't come to fruition yet**, the memory/smartphone demand picture looks ugly, and SOXX just had its **worst 2-day drop in over a year**. My Monday buy-the-dip-in-semis plan now needs real stabilization first — I'm not catching this knife on the open."
-    },
-    {
-      "type": "memory",
-      "account": "paper",
-      "ts": "2026-07-02T16:45:00-07:00",
-      "symbol": "RKLB",
-      "text": "Changed my mind on Rocket Lab. It's not the simple launch-momentum story I first pegged — they're **buying Iridium for ~$8B**, so now it's an M&A/integration play with financing overhang after a 16% pop. Moving it to watch-only until the deal digests. Not chasing it Monday."
-    },
-    {
-      "type": "memory",
-      "account": "paper",
-      "ts": "2026-07-02T16:38:00-07:00",
-      "symbol": "TSLA",
-      "text": "Tesla's the one I keep circling for Monday. Crushed Q2 deliveries (480K vs 406K expected) and *still* dropped 7.5% — classic sell-the-news after a big run-up. Tempting mean-reversion, but there's a real EV tax-credit overhang, so if I take it, it's small and on a tight leash."
     }
   ],
-  "latest_recap": "Thu 7/9 ~3:35pm (close run) — HOLDING THE COURSE into the bell. The morning's risk-on reclaim held: QQQ 722.5 finished above its 20-day (720.9, recomputed) and 50-day, so the pre-armed TQQQ trigger stands. Honest caveat — it's only ~0.2% over the 20-day and semis faded off the highs (SOXX 595→582, still under its 20-day; SOXL round-tripped +17%→+10%), so the reclaim is real but fragile and SOXL's own trigger stays unmet. Live ticket 2026-07-09-1 (10 sh TQQQ ~$765, stop $65 GTC, approve-now or pre-arm $76.90) is still pending Adam's tap — kept live. No new trades: one core already ticketed, paper fully deployed (80 NVDL +$20 / 32 TQQQ −$5, both stopped), and a green tape offers no short. All stops verified live. Live equity $1,000.76; paper notional ~$5,015.",
+  "latest_recap": "Thu 7/9 ~4:10pm (evening / post-close run) — THE CORE IS ON. Since the last run Adam approved ticket 2026-07-09-1 right at the bell and the fast-lane filled all 10 sh TQQQ @ $76.29 with the $65 GTC stop attached correctly (verified live, order 2947c9be) — the sizing and GTC-stop fixes both worked this time. Live book now fully deployed: TQQQ 10 sh (+$2) as the single core, plus the NVDL 1-sh (flat, $27 GTC ✓) and NVDA $10 artifacts; ~$196 cash buffer. Regime confirmed risk-on: QQQ closed 723 (+1.7%) back above its 20-day (721, computed) and 50-day; semis rallied hard on Micron's $250B US catalyst (SOXX +3.5%, AMD +7.2%, Micron +4.5%) — but SOXX 582 is still under its own 20-day (~598), so SOXL's trigger stays unmet and TQQQ is the right vehicle. Honest note on the internals: today led with hardware/semis while software/hyperscalers lagged (GOOGL −2.5%). No new ticket — the single core is held, the market's closed, and a correlated add would over-deploy. Paper fully deployed too (80 NVDL / 32 TQQQ, both GTC-stopped). Live equity $1,002.48; paper notional ~$5,002. Straight benchmark: from the 7/2 close, buy-hold TQQQ is +4.1% vs the sleeve +0.25% — sitting in cash through the V-recovery cost us the bounce, and today's entry is the move to stop lagging it.",
   "activity": [
     {
-      "ts": "2026-07-09T15:35:00-04:00",
+      "ts": "2026-07-09T16:10:00-04:00",
       "kind": "engine",
-      "title": "3:35pm close run — held the course: TQQQ ticket 2026-07-09-1 still pending, all stops verified, no new trades (semis faded off highs)",
-      "detail": "Fresh pull 25 min to close: QQQ 722.5 held its 20-day (720.9 computed) + 50-day — TQQQ trigger intact — but semis faded off the highs (SOXX 595→582, still <20d 597.9; SOXL +17%→+10%), so the reclaim is real but fragile and SOXL's trigger stays unmet. Reconcile: ticket 09-1 (TQQQ) still unapproved/unfilled — kept live. Book: live NVDL 1 sh (+1%, $27 GTC ✓) + NVDA $10 artifact (+4.8%); paper NVDL 80 sh (+$19.86, $27 GTC ✓) + TQQQ 32 sh (−$4.64, $65 GTC ✓). All stops verified at the broker; none to re-arm; no trailing warranted (positions ~1 day old). No new setup — one core already ticketed, paper full, green tape = no short. Live equity $1,000.76."
+      "title": "4:10pm evening run — CORE ON: ticket 2026-07-09-1 approved & filled (10 sh TQQQ @ $76.29, $65 GTC stop verified); no new trades",
+      "detail": "Reconcile: Adam approved the TQQQ ticket ~3:43pm and the fast-lane filled all 10 sh @ $76.29 with the $65 GTC stop attached (order 2947c9be, GTC, verified live) — the qty and GTC-stop fixes both held. Live book fully deployed: TQQQ 10 sh (+$2, core) + NVDL 1 sh (flat, $27 GTC ✓) + NVDA $10 artifact (+4.3%); ~$196 cash. Regime confirmed risk-on: QQQ 723 (+1.7%) above its 20-day (721 computed) + 50-day; semis ripped on Micron's $250B catalyst (SOXX +3.5%/582 still <20d ~598 → SOXL trigger unmet; AMD +7.2%, Micron +4.5%); rotation note: hardware led, software lagged (GOOGL −2.5%). No new ticket — single core held, market closed, correlated add would over-deploy; no trailing (fresh entry, wide stop by design). Paper: NVDL 80 sh + TQQQ 32 sh, both $27/$65 GTC ✓, notional ~$5,002. Live equity $1,002.48. Benchmark from 7/2 close: buy-hold TQQQ +4.1% vs sleeve +0.25%."
     },
     {
       "ts": "2026-07-09T15:25:00-04:00",
@@ -1502,6 +1469,10 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-09T16:10:00-04:00",
+      "text": "You tapped it — we're **in**. The TQQQ core filled near the close with the hard stop already set, so the cash is finally **working**. Nothing for you to do; I've got it from here."
+    },
+    {
       "ts": "2026-07-09T15:35:00-04:00",
       "text": "Into the close the reclaim **held** — the Nasdaq stayed above its trend line — but chips backed off their highs, so I'm **holding the course**: TQQQ tap still ready, both practice legs still protected."
     },
@@ -1540,17 +1511,13 @@
     {
       "ts": "2026-07-07T11:45:00-04:00",
       "text": "Semis are getting wrecked today; my rules say **no leverage in a downtrend**, so I am in cash."
-    },
-    {
-      "ts": "2026-07-07T00:07:51-04:00",
-      "text": "Switched to the aggressive playbook — leveraged ETFs, both-way momentum, hard stops. Hunting now."
     }
   ],
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 76.48,
-    "tqqq_pct": -0.55
+    "tqqq": 76.47,
+    "tqqq_pct": -0.56
   },
   "status": [
     {
@@ -1560,6 +1527,10 @@
     {
       "session": "Afternoon",
       "text": "Reclaim held into close; chips cooled"
+    },
+    {
+      "session": "Evening",
+      "text": "Long TQQQ core — filled & stopped"
     }
   ]
 }
