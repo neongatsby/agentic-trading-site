@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-09T20:41:43.912Z",
+  "generated_at": "2026-07-09T20:42:50.718Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99998.42,
+    "equity": 99996.34,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98998.42,
-    "day_pnl": -1.58,
+    "total_pnl": 98996.34,
+    "day_pnl": -3.66,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 30.61,
-        "pl": -0.94,
-        "plpc": -0.04,
+        "current": 30.58,
+        "pl": -3.34,
+        "plpc": -0.14,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 76.27,
-        "pl": -0.64,
-        "plpc": -0.03,
+        "current": 76.28,
+        "pl": -0.32,
+        "plpc": -0.01,
         "thesis": ""
       }
     ],
@@ -54,36 +54,36 @@
     ]
   },
   "live": {
-    "equity": 1000.22,
+    "equity": 1000.29,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 0.22,
-    "day_pnl": -0.66,
+    "total_pnl": 0.29,
+    "day_pnl": -0.59,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 202.83,
+        "current": 202.78,
         "pl": 0.43,
-        "plpc": 4.29,
+        "plpc": 4.27,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 30.61,
-        "pl": 0.02,
-        "plpc": 0.08,
+        "current": 30.58,
+        "pl": -0.01,
+        "plpc": -0.02,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.27,
-        "pl": -0.2,
-        "plpc": -0.03,
+        "current": 76.28,
+        "pl": -0.1,
+        "plpc": -0.01,
         "thesis": ""
       }
     ],
@@ -110,7 +110,7 @@
       },
       {
         "date": "Jul 9",
-        "value": 1002.48
+        "value": 1000.54
       }
     ],
     "intraday": [
@@ -736,13 +736,13 @@
       "theme": "Leveraged core",
       "verdict": "buy",
       "verdict_label": "LIVE — core position ON, stop $65 GTC ✓",
-      "thesis": "**The core is on.** Adam approved ticket 2026-07-09-1 right before the bell; the fast-lane bought all **10 sh @ $76.29** and this time attached the **$65 GTC stop correctly** (verified live at the broker). QQQ closed **723 (+1.7%)** back above its 20-day (721, computed fresh) and 50-day — the pre-armed reclaim confirmed. Riding it with a wide −15% stop (below the 7/8 washout low $69.59); no take-profit, reassessed each run. Position **+$2** on the day.",
-      "size": "$765",
+      "thesis": "**The core is on and holding.** Adam approved ticket 2026-07-09-1 at the bell; the fast-lane bought all **10 sh @ $76.29** with the **$65 GTC stop** attached correctly (verified live again this run). QQQ closed **723 (+1.7%)** above its 20-day (721) and 50-day, and held ~723 into after-hours — the reclaim is intact overnight. Riding it with the wide −15% stop (below the 7/8 washout low $69.59); no take-profit, reassessed each run. **Flat on the day** at the close (last ~$76.5 after hours).",
+      "size": "$763",
       "size_pct": 76,
       "size_note": "10 sh held — the single core, ~76% of sleeve, $65 GTC stop",
-      "plan_usd": 765,
+      "plan_usd": 763,
       "horizon": 0.3,
-      "updated": "Jul 9 4:10pm",
+      "updated": "Jul 9 4:40pm",
       "stop": 65,
       "price": 76.47,
       "chg_pct": 5.15,
@@ -1316,6 +1316,13 @@
   ],
   "feed": [
     {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-09T16:40:00-04:00",
+      "symbol": "TQQQ",
+      "text": "Quick after-close check: we're **long and steady**. The Nasdaq held its reclaim into after-hours (~723) and the TQQQ core sat right around our entry — both safety exits confirmed live at the broker again. One thing I'm watching honestly, not asking you to do anything about: the **US-Iran flare-up escalated** today (US airstrikes, Iran retaliating). The market shrugged it off and oil actually fell, but it's the overnight wildcard — and if it gaps us down, the $65 stop is the pre-set floor. Nothing for you to do."
+    },
+    {
       "type": "trade",
       "account": "live",
       "ts": "2026-07-09T16:10:00-04:00",
@@ -1550,7 +1557,7 @@
     },
     {
       "session": "Evening",
-      "text": "Long TQQQ core — filled & stopped"
+      "text": "Long TQQQ core, steady after hours"
     }
   ]
 }
