@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-10T11:43:34.733Z",
+  "generated_at": "2026-07-10T11:44:39.805Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99947.27,
+    "equity": 99947.59,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98947.27,
-    "day_pnl": -49.38,
+    "total_pnl": 98947.59,
+    "day_pnl": -49.06,
     "positions": [
       {
         "symbol": "NVDL",
@@ -20,9 +20,9 @@
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 75.56,
-        "pl": -23.36,
-        "plpc": -0.96,
+        "current": 75.57,
+        "pl": -23.04,
+        "plpc": -0.94,
         "thesis": ""
       }
     ],
@@ -54,18 +54,18 @@
     ]
   },
   "live": {
-    "equity": 992.71,
+    "equity": 992.81,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -7.29,
-    "day_pnl": -8.16,
+    "total_pnl": -7.19,
+    "day_pnl": -8.06,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 201.7,
+        "current": 201.74,
         "pl": 0.37,
-        "plpc": 3.71,
+        "plpc": 3.73,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
@@ -81,9 +81,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.56,
-        "pl": -7.3,
-        "plpc": -0.96,
+        "current": 75.57,
+        "pl": -7.2,
+        "plpc": -0.94,
         "thesis": ""
       }
     ],
@@ -321,13 +321,13 @@
       "theme": "Leveraged core",
       "verdict": "buy",
       "verdict_label": "LIVE — core held, stop $65 GTC ✓",
-      "thesis": "**The core is held.** 10 sh @ $76.29, **$65 GTC stop re-verified live** (order 2947c9be, qty 10). QQQ closed **723.28** above its 20-day (720.97) and 50-day — reclaim intact but **thin** (+0.32%). Core is flat to entry; no higher low yet, so no trailing. **Pre-bell read (7/10):** futures split **Dow up, Nasdaq-100 DOWN** — a mild rotation toward old-economy names with mega-tech/chips soft into the open (not a broad selloff); offsetting positive, the Iran story shifted to *'technical talks'* (de-escalation). Not adding leverage into a soft tape. **Calendar:** today is low-catalyst — the week's real prints (June CPI, Fed Chair Warsh testimony, big-bank earnings) cluster ~Jul 14, so the core rides the intact regime into that cluster; the $65 stop (−15%, under the 7/8 washout low $69.59) is the pre-set floor. Holds while QQQ keeps its 20-day; if QQQ loses ~720 decisively the reclaim is in doubt.",
+      "thesis": "**The core is held.** 10 sh @ $76.29, **$65 GTC stop re-verified live** (order 2947c9be, qty 10). QQQ closed **723.21** above its 20-day (~721) and 50-day — reclaim intact but **thin** (+0.32%). Core flat to entry; no higher low yet, so no trailing. **Pre-bell read (7:40am 7/10):** Nasdaq-100 futures **−0.3 to −0.5%**, Dow futures **+0.1%** — a mild rotation into old-economy names as the **10-year yield ticks up to ~4.54%** (the classic pressure on high-multiple tech), traders stepping back after the week's rally; SK Hynix debuts on Nasdaq today ($149 price, $26.5B raise). Not a trend break — QQQ still over its 20-day — but not a tape to add leverage into. **Calendar:** today low-catalyst; the week's real prints (June CPI, Fed Chair Warsh testimony, big-bank earnings) cluster ~Jul 14, so the core rides the intact regime into that cluster; the $65 stop (−15%, under the 7/8 washout low $69.59) is the floor. Holds while QQQ keeps its 20-day; a decisive loss of ~720 puts the reclaim in doubt.",
       "size": "$751",
       "size_pct": 76,
       "size_note": "10 sh held — the single core, ~76% of sleeve, $65 GTC stop",
       "plan_usd": 751,
       "horizon": 0.3,
-      "updated": "Jul 10 7:10am",
+      "updated": "Jul 10 7:40am",
       "stop": 65,
       "price": 76.32,
       "chg_pct": 4.94,
@@ -376,7 +376,7 @@
       "size_note": "Core-rotation candidate (mutually exclusive w/ TQQQ). SOXX 581.7 still ~2.8% under its 20-day ~598 = gate UNMET; with Nasdaq/chips soft pre-bell today, a same-day >598 close is less likely — but a SOXX close >~598 with semis leading still flips the core TQQQ→SOXL on the next live run (engine-handled swap).",
       "plan_usd": 751,
       "horizon": 0.2,
-      "updated": "Jul 10 7:10am",
+      "updated": "Jul 10 7:40am",
       "trigger": "SOXX > 598 close",
       "price": 192.62,
       "chg_pct": 10.15,
@@ -425,7 +425,7 @@
       "size_note": "1 sh legacy starter, protected; adds blocked by wash-trade",
       "plan_usd": 0,
       "horizon": 0.4,
-      "updated": "Jul 10 7:10am",
+      "updated": "Jul 10 7:40am",
       "trigger": 30.56,
       "stop": 27,
       "price": 30.56,
@@ -668,7 +668,7 @@
       "size_note": "one-tap 10 sh @ ~$18.65, stop $16.20 GTC — deploys the buffer",
       "plan_usd": 186,
       "horizon": 0.6,
-      "updated": "Jul 10 7:10am",
+      "updated": "Jul 10 7:40am",
       "trigger": 18.7,
       "stop": 16.2,
       "price": 18.6,
@@ -903,6 +903,13 @@
     }
   ],
   "feed": [
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-10T07:40:00-04:00",
+      "symbol": "QQQ",
+      "text": "7:40am pre-bell — the futures firmed up the read: **Nasdaq futures a touch red, Dow green**, and the tell is the **10-year yield near 4.5%** — higher rates are what's cooling the priciest tech names this morning, with traders taking a breather after the week's run. Not a selloff, a rotation. So I'm doing the disciplined thing: **holding** the 3x-Nasdaq core (still above its trend line) with its safety exit set, and NOT stacking more leverage into a soft open. The **SoFi** one-tap is ready — it's a rate-independent name the market's been buying, so it's a fine place for the last ~20% of cash at the open. Nothing for you to do."
+    },
     {
       "type": "note",
       "account": "live",
@@ -1201,6 +1208,10 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-10T07:40:00-04:00",
+      "text": "7:40am — Futures firmed the picture: **Nasdaq** slightly red, Dow green, and the 10-year yield near **4.5%** is what's cooling tech this morning. Core's still **long** and protected, your **SoFi** one-tap is ready to put the last ~20% to work at the open, and I'm not adding leverage into a soft tape. Nothing for you to do."
+    },
+    {
       "ts": "2026-07-10T07:10:00-04:00",
       "text": "7:10am — Pre-bell read: money's tilting **Dow over Nasdaq** this morning (mega-tech and chips a touch soft into the open), and the Iran story turned to *talks* instead of strikes — a risk off the table. Core's still **long** and protected, your **SoFi** one-tap is ready for the open, and I'm not chasing more leverage into a soft tape. Nothing for you to do."
     },
@@ -1274,7 +1285,7 @@
   "status": [
     {
       "session": "Morning",
-      "text": "Core long; SOFI staged; Nasdaq soft pre-bell"
+      "text": "Core long; SOFI staged; yields up, Nasdaq soft"
     }
   ]
 }
