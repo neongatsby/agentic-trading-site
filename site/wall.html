@@ -1057,11 +1057,14 @@
     var heroReady = false, heroFontReady = false;
     var hScene, hCam, hRenderer, hRoot, hNumGroup, hBloomGroup, hEnv, hPmrem, hFont;
     var hLights = {}, hBloom = [];
-    var hGlyphs = [];              // { mesh, ch, adv, x, anim, dir }
+    var hGlyphs = [];              // { mesh, ch, gw, cell, minY, maxY, x, anim, dir }
     var hCurrentStr = "";
     var hPointerX = 0, hPointerY = 0, hTiltX = 0, hTiltY = 0;
     var HSIZE = 1.0, HDEPTH = 0.30, HBEVEL = 0.035;
-    var hDigitAdv = 0.62;          // uniform (tabular) advance for 0-9
+    var HTRACK = 0.12;             // tracking (letter-spacing) as a fraction of the font size
+    var hGeoCache = {};            // ch -> { geo, gw, minY, maxY } — measured & normalized once
+    var hDigitCell = 0.62 * HSIZE; // uniform tabular digit cell = widest measured digit
+    var hTotalWidth = 1, hRowH = 1;
     var hFlashUp = true;
 
     function webglOK() {
@@ -1129,19 +1132,30 @@
       hCam.position.set(0, 0, 8);
       hCam.lookAt(0, 0, 0);
 
-      // env map for real reflections on the metal
+      // env map for real reflections on the metal.
+      // IMPORTANT: the procedural gradient is used ONLY as an image-based-lighting
+      // env map (scene.environment + material.envMap). It is NEVER added to the
+      // scene as visible geometry and scene.background stays null — so there is no
+      // stray "environment sphere" / PMREM source mesh floating behind the number.
+      hScene.background = null;
       hPmrem = new THREE.PMREMGenerator(hRenderer);
       hPmrem.compileEquirectangularShader();
-      hEnv = hPmrem.fromEquirectangular(makeEnvTexture()).texture;
+      var hEquirect = makeEnvTexture();
+      hEnv = hPmrem.fromEquirectangular(hEquirect).texture;   // -> reflections only
       hScene.environment = hEnv;
+      // the source equirect + generator are fully consumed now — release them so
+      // nothing from the PMREM's internal source scene can ever reach the render.
+      hEquirect.dispose();
+      hPmrem.dispose();
+      hPmrem = null;
 
       hRoot = new THREE.Group(); hScene.add(hRoot);
       hNumGroup = new THREE.Group(); hRoot.add(hNumGroup);
       hBloomGroup = new THREE.Group(); hBloomGroup.position.z = -0.6; hRoot.add(hBloomGroup);
 
       // lighting: soft ambient + white key + COLORED rim lights behind the digits
-      hScene.add(new THREE.AmbientLight(0x2a3550, 0.55));
-      var key = new THREE.DirectionalLight(0xffffff, 0.85);
+      hScene.add(new THREE.AmbientLight(0x44506e, 0.70));
+      var key = new THREE.DirectionalLight(0xffffff, 1.15);
       key.position.set(0.6, 1.1, 2.2); hScene.add(key);
 
       hLights.cyan   = new THREE.PointLight(COL.cyan,   9.0, 16, 2);
@@ -1157,7 +1171,7 @@
       // additive bloom sprites behind the numerals
       var bloomCols = [COL.cyan, COL.purple, COL.mint];
       for (var b = 0; b < 3; b++) {
-        var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map:makeGlowTexture(), color:new THREE.Color(bloomCols[b]), transparent:true, opacity:0.24, depthWrite:false, blending:THREE.AdditiveBlending }));
+        var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map:makeGlowTexture(), color:new THREE.Color(bloomCols[b]), transparent:true, opacity:0.24, depthWrite:false, depthTest:false, blending:THREE.AdditiveBlending }));
         sp.scale.set(3.4, 2.2, 1);
         sp.position.set((b - 1) * 1.8, (b % 2 ? 0.25 : -0.25), 0);
         hBloomGroup.add(sp); hBloom.push(sp);
