@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-10T21:54:04.131Z",
+  "generated_at": "2026-07-10T21:55:11.433Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99948.56,
+    "equity": 99955.77,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98948.56,
-    "day_pnl": -48.09,
+    "total_pnl": 98955.77,
+    "day_pnl": -40.88,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.32,
-        "pl": 8.02,
-        "plpc": 0.03,
+        "current": 210.4,
+        "pl": 18.2,
+        "plpc": 0.07,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.84,
-        "pl": 177.32,
-        "plpc": 7.24,
+        "current": 32.83,
+        "pl": 176.66,
+        "plpc": 7.21,
         "thesis": ""
       },
       {
@@ -38,18 +38,18 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 77.1,
-        "pl": 3.5,
-        "plpc": 0.02,
+        "current": 77.11,
+        "pl": 6.24,
+        "plpc": 0.03,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 407.37,
-        "pl": -98.28,
-        "plpc": -0.67,
+        "current": 407.23,
+        "pl": -103.32,
+        "plpc": -0.7,
         "thesis": ""
       }
     ],
@@ -85,27 +85,27 @@
     ]
   },
   "live": {
-    "equity": 1011.53,
+    "equity": 1011.62,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 11.53,
-    "day_pnl": 10.66,
+    "total_pnl": 11.62,
+    "day_pnl": 10.75,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 210.32,
-        "pl": 0.81,
-        "plpc": 8.15,
+        "current": 210.4,
+        "pl": 0.82,
+        "plpc": 8.19,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.84,
-        "pl": 2.25,
-        "plpc": 7.36,
+        "current": 32.83,
+        "pl": 2.24,
+        "plpc": 7.34,
         "thesis": ""
       },
       {
@@ -121,9 +121,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 77.1,
-        "pl": 8.1,
-        "plpc": 1.06,
+        "current": 77.11,
+        "pl": 8.2,
+        "plpc": 1.07,
         "thesis": ""
       }
     ],
@@ -825,6 +825,10 @@
       {
         "t": 1783720200000,
         "v": 1011.52
+      },
+      {
+        "t": 1783720500000,
+        "v": 1011.64
       }
     ]
   },
