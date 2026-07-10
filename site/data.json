@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-10T14:13:13.004Z",
+  "generated_at": "2026-07-10T14:14:20.218Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 100037.37,
+    "equity": 100042.73,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 99037.37,
-    "day_pnl": 40.72,
+    "total_pnl": 99042.73,
+    "day_pnl": 46.08,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.03,
-        "pl": 113.06,
-        "plpc": 4.61,
+        "current": 32.12,
+        "pl": 119.86,
+        "plpc": 4.89,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 19.11,
-        "pl": -80,
-        "plpc": -2.05,
+        "current": 19.12,
+        "pl": -78.4,
+        "plpc": -2.01,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 76.42,
-        "pl": 4.32,
-        "plpc": 0.18,
+        "current": 76.35,
+        "pl": 1.92,
+        "plpc": 0.08,
         "thesis": ""
       }
     ],
@@ -63,36 +63,36 @@
     ]
   },
   "live": {
-    "equity": 1003.44,
+    "equity": 1002.79,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 3.44,
-    "day_pnl": 2.57,
+    "total_pnl": 2.79,
+    "day_pnl": 1.92,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 207.66,
-        "pl": 0.68,
-        "plpc": 6.77,
+        "current": 207.97,
+        "pl": 0.69,
+        "plpc": 6.94,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.03,
-        "pl": 1.45,
-        "plpc": 4.74,
+        "current": 32.12,
+        "pl": 1.53,
+        "plpc": 5.02,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.42,
-        "pl": 1.35,
-        "plpc": 0.18,
+        "current": 76.35,
+        "pl": 0.6,
+        "plpc": 0.08,
         "thesis": ""
       }
     ],
@@ -450,16 +450,16 @@
       "theme": "Leveraged core",
       "verdict": "buy",
       "verdict_label": "LIVE — core held, stop $65 GTC ✓",
-      "thesis": "**Core held.** 10 sh @ $76.29, last ~$75.9 (−0.5%), **$65 GTC stop verified live**. QQQ 721.5 is barely above its 20-day (720.97) — risk-on regime holds but it's **marginal**, and the leadership group (semis) is breaking down on real AI-capex fear. Holding while QQQ keeps its 20-day; a close below ~721 cuts it next run. Not adding into a soft, rotating tape.",
-      "size": "$759",
+      "thesis": "**Core held, back to flat.** 10 sh @ $76.29, last **$76.41 (+$0.1)** — recovered the whole soft pre-market open. QQQ **$723.6** is above its 20-day (~721) and bounced off a $719.9 low; risk-on regime holds despite semis selling off underneath (broad NDX firmer than the chip subsector). **$65 GTC stop verified live.** Holding while QQQ keeps its 20-day; no higher low big enough to trail the wide stop yet.",
+      "size": "$764",
       "size_pct": 76,
       "size_note": "10 sh held — the single core, ~76% of sleeve, $65 GTC stop",
-      "plan_usd": 759,
+      "plan_usd": 764,
       "horizon": 0.3,
-      "updated": "Jul 10 9:45am",
+      "updated": "Jul 10 10:12am",
       "stop": 65,
-      "price": 76.49,
-      "chg_pct": 0.3,
+      "price": 76.45,
+      "chg_pct": 0.25,
       "spark": [
         74.76,
         77.09,
@@ -490,7 +490,7 @@
         82.78,
         82.48,
         74.21,
-        76.49
+        76.45
       ]
     },
     {
@@ -499,16 +499,16 @@
       "theme": "Leveraged core",
       "verdict": "avoid",
       "verdict_label": "Rotation candidate · gate UNMET & widening",
-      "thesis": "**Semis ARE the downtrend** — SOXX ~570 sits well under its 20-day (~598) and fell ~2% again today; SOXL −6%, while the inverse **SOXS is +6%**. The confirmed both-directions play here is the SHORT (SOXS/puts), NOT a 3x-semis long. Driver: AI-capex scare + DeepSeek building its own AI chip (~$1T of chip cap wiped). Rotation gate to flip our core into SOXL is UNMET and **widening** — no long.",
+      "thesis": "**Semis ARE the downtrend** — SOXX **$577.8** sits ~3% under its 20-day (~598), down a 2nd day; the inverse **SOXS is +3% ($4.18)**. News confirms it: chips −4.5% (Teradyne −13.6%, KLA −11.5%) on AI-capex profit-taking after a +80% H1. The confirmed both-directions play here is the SHORT (SOXS/puts), NOT a 3x-semis long. Rotation gate to flip our core into SOXL is UNMET — no long here.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "Core-rotation candidate (mutually exclusive w/ TQQQ). SOXX 581.7 close is ~3% under its 20-day ~601 = gate UNMET; pre-mkt ~$572.6 and SOXL ~$181.7 (−5.5%) move it FURTHER away as chips soften into the SK Hynix debut — a same-day >~600 close is unlikely. A SOXX close >~600 with semis leading still flips the core TQQQ→SOXL on the next live run (engine-handled swap).",
+      "size_note": "Core-rotation candidate (mutually exclusive w/ TQQQ). SOXX $577.8 is ~3% under its 20-day ~598 = gate UNMET; semis in a confirmed 2-day downtrend. A SOXX close >~598 with semis leading flips the core TQQQ→SOXL on the next live run (engine-handled swap). SOXS is the both-directions bench short.",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 10 9:45am",
+      "updated": "Jul 10 10:12am",
       "trigger": "SOXX > 598 close",
-      "price": 187.05,
-      "chg_pct": -2.67,
+      "price": 186.66,
+      "chg_pct": -2.88,
       "spark": [
         172.54,
         184.35,
@@ -539,7 +539,7 @@
         279.32,
         301.42,
         230.82,
-        187.05
+        186.66
       ]
     },
     {
@@ -605,8 +605,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "Jul 10 9:45am",
-      "price": 207.75,
-      "chg_pct": 2.49,
+      "price": 207.95,
+      "chg_pct": 2.59,
       "spark": [
         220.62,
         225.65,
@@ -637,7 +637,7 @@
         210.38,
         208.59,
         200.07,
-        207.75
+        207.95
       ]
     },
     {
@@ -654,8 +654,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.4,
       "updated": "Jul 10 9:45am",
-      "price": 251.13,
-      "chg_pct": 0.18,
+      "price": 250.54,
+      "chg_pct": -0.05,
       "spark": [
         293.02,
         274.38,
@@ -686,7 +686,7 @@
         274.09,
         275.65,
         270.31,
-        251.13
+        250.54
       ]
     },
     {
@@ -702,8 +702,8 @@
       "plan_usd": 0,
       "horizon": 0.5,
       "updated": "Jul 10 9:45am",
-      "price": 320.48,
-      "chg_pct": -1.08,
+      "price": 320.27,
+      "chg_pct": -1.15,
       "spark": [
         367.07,
         370.14,
@@ -734,7 +734,7 @@
         333.19,
         358.37,
         318.27,
-        320.48
+        320.27
       ]
     },
     {
@@ -750,8 +750,8 @@
       "plan_usd": 0,
       "horizon": 0.7,
       "updated": "Jul 10 9:45am",
-      "price": 410.94,
-      "chg_pct": 1.09,
+      "price": 410.64,
+      "chg_pct": 1.02,
       "spark": [
         433.45,
         445.32,
@@ -782,7 +782,7 @@
         400.49,
         405.05,
         381.54,
-        410.94
+        410.64
       ]
     },
     {
@@ -800,8 +800,8 @@
       "updated": "Jul 10 9:45am",
       "trigger": 18.9,
       "stop": 16.2,
-      "price": 19.11,
-      "chg_pct": 2.77,
+      "price": 19.13,
+      "chg_pct": 2.82,
       "spark": [
         15.9,
         15.3,
@@ -832,7 +832,7 @@
         17.91,
         17.1,
         17.29,
-        19.11
+        19.13
       ]
     },
     {
@@ -848,8 +848,8 @@
       "plan_usd": 0,
       "horizon": 0.6,
       "updated": "Jul 10 9:45am",
-      "price": 128.19,
-      "chg_pct": -0.67,
+      "price": 128.4,
+      "chg_pct": -0.5,
       "spark": [
         136.02,
         130.07,
@@ -880,7 +880,7 @@
         128.44,
         119.46,
         116.72,
-        128.19
+        128.4
       ]
     },
     {
@@ -897,8 +897,8 @@
       "card": "/research/be.html",
       "horizon": 0.9,
       "updated": "Jul 10 9:45am",
-      "price": 243.87,
-      "chg_pct": -5.12,
+      "price": 246,
+      "chg_pct": -4.29,
       "spark": [
         280.91,
         289.88,
@@ -929,7 +929,7 @@
         328.78,
         345.98,
         321.82,
-        243.87
+        246
       ]
     },
     {
@@ -946,8 +946,8 @@
       "horizon": 0.6,
       "updated": "Jul 10 9:45am",
       "stop": 74.5,
-      "price": 80.34,
-      "chg_pct": -2.67,
+      "price": 80.4,
+      "chg_pct": -2.59,
       "spark": [
         117.55,
         124.16,
@@ -978,7 +978,7 @@
         107.33,
         100.28,
         95.09,
-        80.34
+        80.4
       ]
     },
     {
@@ -995,8 +995,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.9,
       "updated": "Jul 10 9:45am",
-      "price": 48.75,
-      "chg_pct": -1.11,
+      "price": 48.7,
+      "chg_pct": -1.22,
       "spark": [
         73.64,
         69.75,
@@ -1027,7 +1027,7 @@
         61.28,
         58.35,
         57.16,
-        48.75
+        48.7
       ]
     }
   ],
@@ -1465,13 +1465,13 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 76.49,
-    "tqqq_pct": -0.53
+    "tqqq": 76.45,
+    "tqqq_pct": -0.59
   },
   "status": [
     {
       "session": "Morning",
-      "text": "Core long; SoFi broke out"
+      "text": "Long core; SoFi faded, holds"
     }
   ]
 }
