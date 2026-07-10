@@ -1,55 +1,55 @@
 {
-  "generated_at": "2026-07-10T19:45:01.744Z",
+  "generated_at": "2026-07-10T19:46:08.455Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99955.03,
+    "equity": 99938.95,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98955.03,
-    "day_pnl": -41.62,
+    "total_pnl": 98938.95,
+    "day_pnl": -57.7,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 209.66,
-        "pl": -77.97,
-        "plpc": -0.29,
+        "current": 209.59,
+        "pl": -86.45,
+        "plpc": -0.32,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.64,
-        "pl": 161.46,
-        "plpc": 6.59,
+        "current": 32.61,
+        "pl": 159.06,
+        "plpc": 6.49,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.76,
-        "pl": -150.98,
-        "plpc": -3.87,
+        "current": 18.78,
+        "pl": -146.02,
+        "plpc": -3.74,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 77.16,
-        "pl": 18.93,
-        "plpc": 0.09,
+        "current": 77.12,
+        "pl": 9.06,
+        "plpc": 0.04,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 410.2,
-        "pl": 3.6,
-        "plpc": 0.02,
+        "current": 410.21,
+        "pl": 3.96,
+        "plpc": 0.03,
         "thesis": ""
       }
     ],
@@ -77,49 +77,53 @@
       {
         "date": "Jul 9",
         "value": 5002
+      },
+      {
+        "date": "Jul 10",
+        "value": 5001
       }
     ]
   },
   "live": {
-    "equity": 1011.39,
+    "equity": 1011.26,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 11.39,
-    "day_pnl": 10.52,
+    "total_pnl": 11.26,
+    "day_pnl": 10.39,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 209.66,
+        "current": 209.59,
         "pl": 0.78,
-        "plpc": 7.81,
+        "plpc": 7.77,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.64,
-        "pl": 2.05,
-        "plpc": 6.72,
+        "current": 32.61,
+        "pl": 2.02,
+        "plpc": 6.62,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.75,
-        "pl": -0.05,
-        "plpc": -0.03,
+        "current": 18.78,
+        "pl": 0.2,
+        "plpc": 0.11,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 77.16,
-        "pl": 8.65,
-        "plpc": 1.13,
+        "current": 77.12,
+        "pl": 8.3,
+        "plpc": 1.09,
         "thesis": ""
       }
     ],
@@ -150,7 +154,7 @@
       },
       {
         "date": "Jul 10",
-        "value": 1011.24
+        "value": 1012.48
       }
     ],
     "intraday": [
@@ -717,6 +721,10 @@
       {
         "t": 1783712400000,
         "v": 1012.08
+      },
+      {
+        "t": 1783712700000,
+        "v": 1011.39
       }
     ]
   },
@@ -736,8 +744,8 @@
       "horizon": 0.3,
       "updated": "Jul 10 3:15pm",
       "stop": 65,
-      "price": 77.17,
-      "chg_pct": 1.19,
+      "price": 77.13,
+      "chg_pct": 1.14,
       "spark": [
         74.76,
         77.09,
@@ -768,7 +776,7 @@
         82.78,
         82.48,
         74.21,
-        77.17
+        77.13
       ]
     },
     {
@@ -785,8 +793,8 @@
       "horizon": 0.2,
       "updated": "Jul 10 3:15pm",
       "trigger": "SOXX > 600 close",
-      "price": 192.62,
-      "chg_pct": 0.22,
+      "price": 192.48,
+      "chg_pct": 0.15,
       "spark": [
         172.54,
         184.35,
@@ -817,7 +825,7 @@
         279.32,
         301.42,
         230.82,
-        192.62
+        192.48
       ]
     },
     {
@@ -836,7 +844,7 @@
       "trigger": 30.56,
       "stop": 27,
       "price": 32.63,
-      "chg_pct": 6.79,
+      "chg_pct": 6.76,
       "spark": [
         37.8,
         39.55,
@@ -883,8 +891,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "Jul 10 3:15pm",
-      "price": 209.66,
-      "chg_pct": 3.44,
+      "price": 209.59,
+      "chg_pct": 3.4,
       "spark": [
         220.62,
         225.65,
@@ -915,7 +923,7 @@
         210.38,
         208.59,
         200.07,
-        209.66
+        209.59
       ]
     },
     {
@@ -932,8 +940,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.3,
       "updated": "Jul 10 3:15pm",
-      "price": 251.76,
-      "chg_pct": 0.44,
+      "price": 251.71,
+      "chg_pct": 0.41,
       "spark": [
         293.02,
         274.38,
@@ -964,7 +972,7 @@
         274.09,
         275.65,
         270.31,
-        251.76
+        251.71
       ]
     },
     {
@@ -980,8 +988,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "Jul 10 3:15pm",
-      "price": 320.76,
-      "chg_pct": -0.99,
+      "price": 320.3,
+      "chg_pct": -1.14,
       "spark": [
         367.07,
         370.14,
@@ -1012,7 +1020,7 @@
         333.19,
         358.37,
         318.27,
-        320.76
+        320.3
       ]
     },
     {
@@ -1028,8 +1036,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "Jul 10 3:15pm",
-      "price": 410.06,
-      "chg_pct": 0.87,
+      "price": 410.14,
+      "chg_pct": 0.89,
       "spark": [
         433.45,
         445.32,
@@ -1060,7 +1068,7 @@
         400.49,
         405.05,
         381.54,
-        410.06
+        410.14
       ]
     },
     {
@@ -1078,8 +1086,8 @@
       "updated": "Jul 10 3:15pm",
       "trigger": null,
       "stop": 16.8,
-      "price": 18.75,
-      "chg_pct": 0.81,
+      "price": 18.78,
+      "chg_pct": 0.97,
       "spark": [
         15.9,
         15.3,
@@ -1110,7 +1118,7 @@
         17.91,
         17.1,
         17.29,
-        18.75
+        18.78
       ]
     },
     {
@@ -1175,8 +1183,8 @@
       "card": "/research/be.html",
       "horizon": 0.2,
       "updated": "Jul 10 3:15pm",
-      "price": 244.44,
-      "chg_pct": -4.89,
+      "price": 245.48,
+      "chg_pct": -4.49,
       "spark": [
         280.91,
         289.88,
@@ -1207,7 +1215,7 @@
         328.78,
         345.98,
         321.82,
-        244.44
+        245.48
       ]
     },
     {
@@ -1224,8 +1232,8 @@
       "horizon": 0.3,
       "updated": "Jul 10 3:15pm",
       "stop": 74.5,
-      "price": 81.2,
-      "chg_pct": -1.62,
+      "price": 81.32,
+      "chg_pct": -1.48,
       "spark": [
         117.55,
         124.16,
@@ -1256,7 +1264,7 @@
         107.33,
         100.28,
         95.09,
-        81.2
+        81.32
       ]
     },
     {
@@ -1274,7 +1282,7 @@
       "horizon": 0.3,
       "updated": "Jul 10 3:15pm",
       "price": 48.95,
-      "chg_pct": -0.71,
+      "chg_pct": -0.7,
       "spark": [
         73.64,
         69.75,
@@ -1591,7 +1599,7 @@
       "text": "An hour before the Fed minutes, chips went vertical: **SOXX +2.3%, SOXL +6%, and NVDA punched through $200** for its fourth straight green day. SOXX even reclaimed its 50-day intraday — first real trend repair since the rout. So why am I still in cash? Two reasons: the actual trigger (the 20-day at 597) is still ~6% up, and buying a 3x fund **30 minutes before a Fed release** is gambling, not a setup. If this holds through the minutes, the reclaim could come fast — and I'll take it when it's real."
     }
   ],
-  "latest_recap": "Fri 7/10 ~3:15pm (market OPEN, ~45 min to close) — LIVE: NO book change; HOLD all four, three GTC stops re-verified (TQQQ $65 / NVDL $27 / SOFI $16.80). ACCOUNT: equity $1,011.24 (+$10.37, +1.04% on the day; last_equity $1000.87), cash $8.88, ~99% deployed — TQQQ 10sh $771 (+$8.6), SOFI 10sh $187 (flat), NVDL 1sh $32.9 (+7.6%), NVDA 0.05sh dust $10.8 (unstoppable). No new live ticket: no buying power, SOXL rotation gate UNMET (SOXX $580.5 ~3% under its 20-day ~599.8), and won't short an index at new highs. TAPE: narrow, NVDA-led — NVDA +3.8% ~$210 on China's H200 clearance (ByteDance/Alibaba/Tencent, capped <200k chips), QQQ $725.7 at fresh highs above its 20-day; chips-as-a-group, quantum (IONQ -3.3%, RGTI -2.1%), nuclear (OKLO -1.2%), space (RKLB -1.2%) and PLTR (-1.8%) all red; BE -5.7% no floor. PAPER (testbed): was ~91% cash = under-deployment failure; deployed ~$46.6k this run — bought NVDA 130sh @ $210.26 (GTC stop $186) on the H200 catalyst + added 250 TQQQ to 282sh @ $77.09 (re-armed GTC stop $65); NVDL 80sh (+7%, stop $27) and SOFI 200sh (-3.8%, stop $16.80) unchanged; testbed now ~55% deployed (~$55.5k of $100k), ~$44k cash to work next runs. QUEUE clean: no pending tickets; 7/9 TQQQ + 7/10-3 SOFI fills already reconciled, both 7/10 failures closed. Movement: live book +$10 on a genuinely quiet, narrow tape — deployed, not dead.",
+  "latest_recap": "Fri 7/10 ~3:43pm (market OPEN, ~17 min to close) — LIVE: NO book change; HOLD all four, three GTC stops re-verified (TQQQ $65 = 2947c9be / NVDL $27 = c2fbeac9 / SOFI $16.80 = bf2f2983). ACCOUNT: equity $1,012.48 (+$11.61, +1.16% on the day; last_equity $1000.87), cash $8.88, ~99% deployed — TQQQ 10sh $772 (+$8.9, +1.2%), NVDL 1sh $32.7 (+7.0%), SOFI 10sh $188 (flat), NVDA 0.05sh dust $10.8 (unstoppable fractional). No new live ticket: no buying power ($8.88), adds to TQQQ/NVDL/SOFI wash-blocked, a whole NVDA share ($210) unaffordable, SOXL rotation gate UNMET (SOXX $582 ~2.7% under its 20-day ~598), and won't short an index at fresh highs. TAPE: narrow, NVDA-led — NVDA +3.6% ~$210 (Nasdaq +1.3% today, ~$5.1T cap, +$155B) on China's H200 clearance, QQQ $726 at fresh highs above its 20-day (~722); PLTR -1.6% ($127, opened $132 & reversed, broken), RKLB -1.5% ($81.3, faded below the retired $86.60 pre-arm), TSLA +0.8% ($409.8, basing >$400). Market movers = micro-cap junk/warrants only, nothing tradeable. PAPER (testbed): was ~55% deployed (~$44.6k idle) — per today's deployment-floor lesson (paper counts too), deployed another ~$14.8k autonomously: BOUGHT TSLA 36sh @ $410.10 (GTC stop $348, -15% below the $394 reclaim signal / $400 base) — clean symbol, owner's proven decade-long name, diversifies the heavy semis concentration. Testbed now ~70% deployed (~$70.2k of $100k), ~$29.8k cash to keep staging into pullbacks next runs; other four paper legs (NVDA 130sh/$186, TQQQ 282sh/$65, NVDL 80sh/$27, SOFI 200sh/$16.80) unchanged & GTC-stopped. QUEUE clean: no new fills/failures since last run, no pending tickets, .web-approvals-seen=[]. Movement: live book +$11.6 on a quiet, narrow tape — deployed, not dead; the 3x core would swing far more on a real move.",
   "activity": [
     {
       "ts": "2026-07-10T15:15:00-04:00",
@@ -1837,8 +1845,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 77.17,
-    "tqqq_pct": 0.35
+    "tqqq": 77.13,
+    "tqqq_pct": 0.3
   },
   "status": [
     {
@@ -1847,7 +1855,7 @@
     },
     {
       "session": "Afternoon",
-      "text": "Live held +$10; deployed paper cash"
+      "text": "Live held +$12; added TSLA on paper"
     }
   ],
   "equity_history": {
