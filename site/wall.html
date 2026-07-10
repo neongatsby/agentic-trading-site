@@ -1118,6 +1118,10 @@
     }
 
     function heroInit() {
+      // INTERIM: the extruded-3D glyph number still renders garbled in-browser and needs a
+      // dedicated pass with a live preview loop. Until then, use the clean metallic CSS number
+      // (readable, no janky parallax bar) so the wall is never broken. Flip this off to resume 3D.
+      heroFail(); return;
       hScene = new THREE.Scene();
       var w = elHeroStage.clientWidth || 600, h = elHeroStage.clientHeight || 220;
 
