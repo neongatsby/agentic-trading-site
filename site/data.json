@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-10T08:19:16.812Z",
+  "generated_at": "2026-07-10T08:20:21.721Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99938.74,
+    "equity": 99937.78,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98938.74,
-    "day_pnl": -61.26,
+    "total_pnl": 98937.78,
+    "day_pnl": -62.22,
     "positions": [
       {
         "symbol": "NVDL",
@@ -20,9 +20,9 @@
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 75.18,
-        "pl": -35.52,
-        "plpc": -1.46,
+        "current": 75.15,
+        "pl": -36.48,
+        "plpc": -1.49,
         "thesis": ""
       }
     ],
@@ -54,18 +54,18 @@
     ]
   },
   "live": {
-    "equity": 988.96,
+    "equity": 988.66,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -11.04,
-    "day_pnl": -11.91,
+    "total_pnl": -11.34,
+    "day_pnl": -12.21,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 201.91,
+        "current": 201.88,
         "pl": 0.38,
-        "plpc": 3.82,
+        "plpc": 3.81,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
@@ -81,9 +81,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.18,
-        "pl": -11.1,
-        "plpc": -1.46,
+        "current": 75.15,
+        "pl": -11.4,
+        "plpc": -1.49,
         "thesis": ""
       }
     ],
@@ -129,10 +129,27 @@
       {
         "t": 1783671300000,
         "v": 989.62
+      },
+      {
+        "t": 1783671600000,
+        "v": 989.26
       }
     ]
   },
-  "pending_tickets": [],
+  "pending_tickets": [
+    {
+      "id": "2026-07-10-1",
+      "symbol": "RKLB",
+      "side": "buy",
+      "size": "$173",
+      "qty": 2,
+      "entry": 86.6,
+      "trigger": 86.6,
+      "stop": 74.5,
+      "bracket": "stop $74.50 GTC (below $74-80 support, -14%)",
+      "thesis": "Pre-arm the buffer into Rocket Lab's $8B Iridium-deal catalyst: a buy-stop above the 2-day high ($86.40) that only fires if the deal gets BOUGHT on day two. 2 sh ≈ $173, wide $74.50 GTC stop (risk ~$24). One tap; if it never reclaims $86.60 it never fires."
+    }
+  ],
   "coverage": [
     {
       "ticker": "TQQQ",
@@ -188,14 +205,14 @@
       "name": "Direxion 3x Semis",
       "theme": "Leveraged core",
       "verdict": "watch",
-      "verdict_label": "Rotation candidate · SOXX still under its 20d",
-      "thesis": "Chips ripped again (SOXL +9.9% to 192, off an intraday 204) on the Micron $250B catalyst — but **SOXX 582 is still under its 20-day (~598)**, so its trigger stays unmet. It's the higher-torque alternative to TQQQ, not an addition: if SOXX *closes* over ~598 with semis leading, the next live run considers rotating the TQQQ core into SOXL. One core at a time.",
+      "verdict_label": "Rotation candidate · gate closing fast",
+      "thesis": "The semi conviction just got **louder**: US semi ETFs pulled a **record $7.1B inflow** (SOXX $5.4B, SOXL $1.2B — 'buy the AI-chip dip'), on top of Micron's $250B US commitment and SK Hynix's 7x-oversubscribed listing. But **SOXX 581.7 is still ~2.8% under its 20-day (597.8)** — the rotation gate stays UNMET, and SOXL round-tripped $204→$192 on 7/9 (the chop the gate guards against). Plan: if SOXX *closes* over ~598 with semis leading, the next live run rotates the TQQQ core → SOXL for more torque (sell TQQQ, buy SOXL — not additive). One core at a time.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "rotation-from-TQQQ candidate on a SOXX 20d close reclaim (~598)",
-      "plan_usd": 765,
+      "plan_usd": 751,
       "horizon": 0.2,
-      "updated": "Jul 9 9:35pm",
+      "updated": "Jul 10 4:10am",
       "trigger": "SOXX > 598 close",
       "price": 192.62,
       "chg_pct": 10.15,
@@ -287,14 +304,14 @@
       "name": "Nvidia",
       "theme": "AI / semis",
       "verdict": "watch",
-      "verdict_label": "Leader · H20 China licenses reopened",
-      "thesis": "202.7, consolidating just under the highs after the run — constructive. **Fresh catalyst for tomorrow: Washington has reopened H20 chip export licenses to China**, a market the US had blocked (bullish; treated as untrusted data). Data-center strength (rev +92% YoY) and the Micron/SK-Hynix signals keep leadership intact. If the ~$196 buffer deploys into a single name at the open, NVDA on this catalyst is the pick. Exposure now via the 1-sh NVDL + $10 artifact + the TQQQ core.",
+      "thesis": "202.7, consolidating just under the highs — the undisputed leader. **US is now issuing the H20 China export licenses** (bullish; treated as untrusted data), and the semi-ETF record inflow underlines the leadership. Wanted it for the buffer, but **1 whole share ($202) > the $196 buying power**, and a fractional add can't carry a stop — so the buffer goes to RKLB instead (clean, affordable, stoppable). Exposure stays via the TQQQ core + 1-sh NVDL + the $10 dust artifact.",
+      "verdict_label": "Leader · H20 licenses issuing · unaffordable whole-share",
       "size": "$10",
       "size_pct": 1,
-      "size_note": "$10 pipe-test artifact (live), +4.3%",
+      "size_note": "$10 dust artifact (live), no stop (fractional) — fold into a real NVDA trade",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 9 9:35pm",
+      "updated": "Jul 10 4:10am",
       "price": 202.69,
       "chg_pct": -0.67,
       "spark": [
@@ -480,14 +497,14 @@
       "name": "SoFi",
       "theme": "High-beta bench",
       "verdict": "watch",
-      "verdict_label": "High-beta, riding the risk-on bid",
-      "thesis": "18.60 (+4.8%) — caught the risk-on wave and made a new local high. Not a charter core, but a clean high-beta mover to keep on the bench while the tape stays green.",
+      "verdict_label": "High-beta bench · Goldman lifted PT to $21",
+      "thesis": "18.60 (+4.8%) — reclaimed $18 on volume; **Goldman raised its target to $21** (still Neutral) as SoFi expands its lending footprint. Was the runner-up for the buffer, but RKLB's fresh $8B-deal catalyst won the tap. Clean high-beta mover to keep on the bench; a continuation above $18.63 would open a momentum look.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "bench — not a core vehicle",
+      "size_note": "bench — runner-up for the buffer this run",
       "plan_usd": 0,
       "horizon": 0.6,
-      "updated": "Jul 9 4:40pm",
+      "updated": "Jul 10 4:10am",
       "price": 18.6,
       "chg_pct": 4.79,
       "spark": [
@@ -624,15 +641,17 @@
       "ticker": "RKLB",
       "name": "Rocket Lab",
       "theme": "Space",
-      "verdict": "watch",
-      "verdict_label": "Stabilizing 82–86",
-      "thesis": "82.5 (−1.0%) — holding the 82–86 shelf after the Iridium-deal slide. Constructive but no edge; the charter's 74–80 zone is the dip-buy area if it gets there.",
-      "size": "$0",
-      "size_pct": 0,
-      "size_note": "not touching",
-      "plan_usd": 0,
-      "horizon": 0.8,
-      "updated": "Jul 9 4:40pm",
+      "verdict": "buy",
+      "verdict_label": "STAGED — one-tap pre-arm buy-stop $86.60",
+      "thesis": "**The buffer deploy.** Rocket Lab landed a transformational **$8B Iridium deal** (+$3.6B bridge loan) but the tape FADED it on the print (opened $85.79, closed $82.54 on debt/dilution worry). The ticket is a **pre-arm**: a buy-stop just above the 2-day high ($86.40) that only fires if the deal gets **bought** on day two — buying strength, not the fade. 2 sh ≈ $173 (the idle ~$196 buffer), wide **$74.50 GTC stop** (below the charter's $74–80 zone, −14%, risk ~$24 ≈ 2.4%). One tap; if it never reclaims $86.60 it never fires.",
+      "size": "$173",
+      "size_pct": 18,
+      "size_note": "pre-arm buy-stop 2 sh @ $86.60, stop $74.50 GTC — deploys the buffer",
+      "plan_usd": 173,
+      "horizon": 0.6,
+      "updated": "Jul 10 4:10am",
+      "trigger": 86.6,
+      "stop": 74.5,
       "price": 82.54,
       "chg_pct": -0.97,
       "spark": [
