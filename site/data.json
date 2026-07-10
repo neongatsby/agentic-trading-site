@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-10T19:17:58.981Z",
+  "generated_at": "2026-07-10T19:19:04.804Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99986.4,
+    "equity": 99996.8,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98986.4,
-    "day_pnl": -10.25,
+    "total_pnl": 98996.8,
+    "day_pnl": 0.15,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210,
-        "pl": -33.8,
-        "plpc": -0.12,
+        "current": 209.99,
+        "pl": -35.09,
+        "plpc": -0.13,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.74,
-        "pl": 169.46,
-        "plpc": 6.92,
+        "current": 32.73,
+        "pl": 168.83,
+        "plpc": 6.89,
         "thesis": ""
       },
       {
@@ -30,17 +30,17 @@
         "qty": "200.0000",
         "entry": 19.51,
         "current": 18.77,
-        "pl": -147,
-        "plpc": -3.77,
+        "pl": -147.4,
+        "plpc": -3.78,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 77.08,
-        "pl": -2.25,
-        "plpc": -0.01,
+        "current": 77.13,
+        "pl": 11.88,
+        "plpc": 0.06,
         "thesis": ""
       }
     ],
@@ -72,18 +72,18 @@
     ]
   },
   "live": {
-    "equity": 1010.96,
+    "equity": 1011.43,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 10.96,
-    "day_pnl": 10.09,
+    "total_pnl": 11.43,
+    "day_pnl": 10.56,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 210,
+        "current": 210.01,
         "pl": 0.8,
-        "plpc": 7.98,
+        "plpc": 7.99,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
@@ -100,17 +100,17 @@
         "qty": "10.0000",
         "entry": 18.76,
         "current": 18.77,
-        "pl": 0.15,
-        "plpc": 0.08,
+        "pl": 0.13,
+        "plpc": 0.07,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 77.08,
-        "pl": 7.9,
-        "plpc": 1.04,
+        "current": 77.14,
+        "pl": 8.45,
+        "plpc": 1.11,
         "thesis": ""
       }
     ],
@@ -141,7 +141,7 @@
       },
       {
         "date": "Jul 10",
-        "value": 1010.23
+        "value": 1011.24
       }
     ],
     "intraday": [
@@ -699,16 +699,16 @@
       "theme": "Leveraged core",
       "verdict": "buy",
       "verdict_label": "LIVE — core held, stop $65 GTC ✓",
-      "thesis": "**Core green, the book's biggest $ winner.** 10 sh @ $76.29, last **$77.08 (+1.0%, +$7.7)**, near the day's high. QQQ **$725.7** at a fresh HOD ($726.2), holding above its computed 20-day (722.6) — risk-on intact (NVDA +3.6%, Nasdaq +1.5% with SK Hynix's $26B debut popping). The 3x rides that trend. **$65 GTC stop re-verified live** (below the 7/8 washout, wide by design). No trail — core only ~1% above entry with no higher-low to trail to; a tight stop just gets whipsawed. Cut first only on a decisive QQQ break of its 20-day (722.6).",
+      "thesis": "**Core green, the book's biggest $ winner.** 10 sh @ $76.29, last **$77.10 (+1.1%, +$8)**, riding QQQ at **fresh highs ($725.7)**, just above its 20-day (~723 on QQQ / ~77.0 on TQQQ). NVDA +3.8% is carrying a narrow tape. **$65 GTC stop re-verified live** — wide by design, below the 7/8 washout. No trail: core only ~1% above entry with no higher-low to trail to; a tight stop just whipsaws. Cut first only on a decisive QQQ break of its 20-day.",
       "size": "$771",
       "size_pct": 76,
       "size_note": "10 sh held — the single core, ~76% of sleeve, $65 GTC stop",
       "plan_usd": 771,
       "horizon": 0.3,
-      "updated": "Jul 10 2:40pm",
+      "updated": "Jul 10 3:15pm",
       "stop": 65,
-      "price": 77.12,
-      "chg_pct": 1.13,
+      "price": 77.13,
+      "chg_pct": 1.14,
       "spark": [
         74.76,
         77.09,
@@ -739,7 +739,7 @@
         82.78,
         82.48,
         74.21,
-        77.12
+        77.13
       ]
     },
     {
@@ -748,16 +748,16 @@
       "theme": "Leveraged core",
       "verdict": "avoid",
       "verdict_label": "Rotation candidate · gate UNMET",
-      "thesis": "**Semis firm but gate still UNMET.** SOXX **$581.6** (computed 20-day = 599.8) sits **~3.0% under its 20-day** — recovered off the $567 low but the line hasn't been reclaimed. Today's leadership is still NVDA-*specific* (a 3x basket owns the laggards), so a rotation to flip the core TQQQ→SOXL is UNMET; no long until SOXX *closes* >~600 with broad semis leading. Bear side (SOXS fading) also fails — won't short semis into new index highs.",
+      "thesis": "**Semis still under trend — gate UNMET.** SOXX **$580.5** vs its 20-day ~599.8 = **~3% below**; SK Hynix's +14% Nasdaq debut lifted sentiment but the broad semi basket hasn't reclaimed its line and today's strength is NVDA-*specific*. No TQQQ→SOXL flip until SOXX *closes* >~600 with broad semis leading. Bear side fails too — won't short semis into new index highs.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "Core-rotation candidate (mutually exclusive w/ TQQQ). SOXX $581.6 ~3.0% under its 20-day 599.8 = gate UNMET; a SOXX close >~600 with broad semis leading flips the core TQQQ→SOXL next live run.",
+      "size_note": "Core-rotation candidate (mutually exclusive w/ TQQQ). Flip TQQQ→SOXL only on a SOXX close >~600 with broad semis leading.",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 10 2:40pm",
+      "updated": "Jul 10 3:15pm",
       "trigger": "SOXX > 600 close",
-      "price": 190.4,
-      "chg_pct": -0.93,
+      "price": 190.58,
+      "chg_pct": -0.84,
       "spark": [
         172.54,
         184.35,
@@ -788,7 +788,7 @@
         279.32,
         301.42,
         230.82,
-        190.4
+        190.58
       ]
     },
     {
@@ -797,13 +797,13 @@
       "theme": "Leveraged core",
       "verdict": "buy",
       "verdict_label": "LIVE — held, stop $27 GTC ✓",
-      "thesis": "**+7.0%, near the day's high.** 1 sh @ $30.59, last **$32.77**. 2x-NVDA riding NVDA at **$210 (+3.6%)** on the H200-China clearance + durable AI-hardware demand (~$5.1T cap). **$27 GTC stop re-verified live**, wide by design — no premature trail on a $33 legacy share (a tight stop would whipsaw a 2x name). Add still wash-blocked.",
+      "thesis": "**+7.2%, near the day's high.** 1 sh @ $30.59, last **$32.76**. 2x-NVDA riding NVDA at **$210 (+3.8%)** on the H200-China clearance (ByteDance/Alibaba/Tencent cleared for a capped <200k chips). **$27 GTC stop re-verified live**, wide by design — no premature trail on a $33 legacy share. Add still wash-blocked.",
       "size": "$33",
       "size_pct": 3,
       "size_note": "1 sh legacy starter — 2x-NVDA, $27 GTC stop; add wash-blocked",
       "plan_usd": 33,
       "horizon": 0.3,
-      "updated": "Jul 10 2:40pm",
+      "updated": "Jul 10 3:15pm",
       "trigger": 30.56,
       "stop": 27,
       "price": 32.76,
@@ -846,15 +846,15 @@
       "name": "Nvidia",
       "theme": "AI / semis",
       "verdict": "buy",
-      "thesis": "**Leader, +3.6% at ~$210** (eased off the $210.9 HOD), riding the China H200 clearance. We own it 2x via NVDL and inside the 3x TQQQ core. The **$10.78** direct sliver is unstoppable fractional dust (+7.9% on cost) — folds into a real NVDA trade when buying power allows a whole share ($210 > $9 cash); won't tap Adam for a $10 sell.",
-      "verdict_label": "Leader — held as dust (unstoppable)",
+      "verdict_label": "Leader — dust live, bought on paper",
+      "thesis": "**Leader, +3.8% at ~$210**, adding ~$155B in a morning to a ~$5.1T cap on China's H200 green-light. We own it 2x via NVDL and inside the 3x TQQQ core; the **$10.8** direct sliver is unstoppable fractional dust — folds into a real NVDA trade when BP allows a whole share ($210 > $9 cash). **Bought outright on the practice account** (130 sh, stop $186) to put idle testbed cash on the leader.",
       "size": "$11",
       "size_pct": 1,
-      "size_note": "0.05 sh dust, unstoppable fractional — fold into a real NVDA trade when BP allows",
+      "size_note": "0.05 sh dust live (unstoppable); 130 sh on paper w/ $186 stop",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 10 2:40pm",
-      "price": 210,
+      "updated": "Jul 10 3:15pm",
+      "price": 209.99,
       "chg_pct": 3.6,
       "spark": [
         220.62,
@@ -886,7 +886,7 @@
         210.38,
         208.59,
         200.07,
-        210
+        209.99
       ]
     },
     {
@@ -894,17 +894,17 @@
       "name": "Constellation Energy",
       "theme": "Energy-for-AI",
       "verdict": "watch",
-      "verdict_label": "Bench — power-for-AI, basing",
-      "thesis": "**Power-for-AI, basing ~$251** (flat). Holding above the $230 floor near a 50-day reclaim; no fresh catalyst today. A clean break with the AI-power bid would make it a ~$200 vehicle. Bench watch — not competing with the deployed book.",
+      "verdict_label": "Bench — power-for-AI, firming",
+      "thesis": "**Power-for-AI, firming ~$252** (+0.6%). Holding above the $230 floor, grinding toward a 50-day reclaim; no fresh catalyst today. A clean break with the AI-power bid makes it a ~$200 vehicle. Bench watch — not competing with the deployed book.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "planned ~$200 on a 50d reclaim (bench, not additive to core)",
       "plan_usd": 0,
       "card": "/research/ceg.html",
       "horizon": 0.3,
-      "updated": "Jul 10 2:40pm",
-      "price": 251.99,
-      "chg_pct": 0.53,
+      "updated": "Jul 10 3:15pm",
+      "price": 251.76,
+      "chg_pct": 0.43,
       "spark": [
         293.02,
         274.38,
@@ -935,7 +935,7 @@
         274.09,
         275.65,
         270.31,
-        251.99
+        251.76
       ]
     },
     {
@@ -944,15 +944,15 @@
       "theme": "Energy-for-AI",
       "verdict": "watch",
       "verdict_label": "Bench — AI data-center infra",
-      "thesis": "**AI data-center infra, ~$322** (−0.5%). Faded from Wednesday's $338 spike, digesting. Strong secular story (power/cooling for AI racks) but no fresh trigger today; watch for a reclaim of $330+ to re-engage.",
+      "thesis": "**AI data-center infra, ~$321** (−0.8%). Faded from Wednesday's $338 spike, digesting. Strong secular story (power/cooling for AI racks) but no fresh trigger today; watch for a reclaim of $330+ to re-engage.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "watch — trades with CEG",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 10 2:40pm",
-      "price": 320.92,
-      "chg_pct": -0.94,
+      "updated": "Jul 10 3:15pm",
+      "price": 321.14,
+      "chg_pct": -0.88,
       "spark": [
         367.07,
         370.14,
@@ -983,7 +983,7 @@
         333.19,
         358.37,
         318.27,
-        320.92
+        321.14
       ]
     },
     {
@@ -992,15 +992,15 @@
       "theme": "High-beta bench",
       "verdict": "watch",
       "verdict_label": "Bench — basing >$400",
-      "thesis": "**Basing >$400, +0.4% to $409.** Firm (day range $403–413) — the one high-beta name holding while quantum/nuclear/space bleed. No position, but the cleanest momentum re-entry candidate if it clears ~$415 with the tape. Watch.",
+      "thesis": "**Basing >$400, +0.6% to $409.** Firm (day range $403–413) — the one high-beta name holding while quantum/nuclear/space bleed. No position, but the cleanest momentum re-entry candidate if it clears ~$415 with the tape. Watch (a whole share needs a core sale to fund live).",
       "size": "$0",
       "size_pct": 0,
       "size_note": "watching a base > $410 (whole share needs a core sale to fund)",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 10 2:40pm",
-      "price": 409.35,
-      "chg_pct": 0.7,
+      "updated": "Jul 10 3:15pm",
+      "price": 409.71,
+      "chg_pct": 0.79,
       "spark": [
         433.45,
         445.32,
@@ -1031,7 +1031,7 @@
         400.49,
         405.05,
         381.54,
-        409.35
+        409.71
       ]
     },
     {
@@ -1040,17 +1040,17 @@
       "theme": "High-beta bench",
       "verdict": "buy",
       "verdict_label": "LIVE — held, stop $16.80 GTC ✓",
-      "thesis": "**Held, ~flat.** 10 sh @ $18.76, last **$18.745**, faded from a $19.74 open spike but holding the $18.70 breakout. Rate-independent fintech relative strength (green while chips/quantum red). Catalyst stack: Composer AI-trading acquisition, $250k SMB-loan launch, Goldman $21, into 7/29 earnings. **$16.80 GTC stop re-verified live.** Independent of the TQQQ core.",
+      "thesis": "**Held, ~flat.** 10 sh @ $18.76, last **$18.75**, faded from a $19.74 open spike but holding the $18.70 breakout. Rate-independent fintech relative strength (green while chips/quantum red). Catalyst stack: Composer AI-trading buy, $250k SMB-loan launch, Goldman $21, into 7/29 earnings. **$16.80 GTC stop re-verified live.** Independent of the TQQQ core.",
       "size": "$187",
       "size_pct": 19,
       "size_note": "10 sh held — rate-independent fintech satellite, $16.80 GTC stop",
       "plan_usd": 187,
       "horizon": 0.4,
-      "updated": "Jul 10 2:40pm",
+      "updated": "Jul 10 3:15pm",
       "trigger": null,
       "stop": 16.8,
-      "price": 18.78,
-      "chg_pct": 0.97,
+      "price": 18.77,
+      "chg_pct": 0.94,
       "spark": [
         15.9,
         15.3,
@@ -1081,7 +1081,7 @@
         17.91,
         17.1,
         17.29,
-        18.78
+        18.77
       ]
     },
     {
@@ -1090,15 +1090,15 @@
       "theme": "High-beta bench",
       "verdict": "avoid",
       "verdict_label": "Suspended — structure broken",
-      "thesis": "**Structure broken, red again** (−1.7%, $126.9). Opened $132.2 and reversed hard — below its 20-day on a green tape at new index highs. No trade until it reclaims strength; suspended as a long.",
+      "thesis": "**Structure broken, red again** (−1.8%, $126.7). Opened $132 and reversed hard — below its 20-day on a green tape at new index highs. No trade until it reclaims strength; suspended as a long.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "trigger suspended — needs repair",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 10 2:40pm",
-      "price": 126.79,
-      "chg_pct": -1.75,
+      "updated": "Jul 10 3:15pm",
+      "price": 126.69,
+      "chg_pct": -1.83,
       "spark": [
         136.02,
         130.07,
@@ -1129,7 +1129,7 @@
         128.44,
         119.46,
         116.72,
-        126.79
+        126.69
       ]
     },
     {
@@ -1138,16 +1138,16 @@
       "theme": "Energy-for-AI",
       "verdict": "avoid",
       "verdict_label": "Avoid — no floor",
-      "thesis": "**No floor — avoid.** Another violent two-way range (o $251, low $229.6, last $243, −5.5% vs prior close) after wild whipsaws all week. No stable structure to buy; sidelined until it bases.",
+      "thesis": "**No floor — avoid.** Another violent two-way range (o $251, low $229.6, last $242, −5.7% vs prior close) after wild whipsaws all week. No stable structure to buy; sidelined until it bases.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/be.html",
       "horizon": 0.2,
-      "updated": "Jul 10 2:40pm",
-      "price": 241.77,
-      "chg_pct": -5.94,
+      "updated": "Jul 10 3:15pm",
+      "price": 242.16,
+      "chg_pct": -5.78,
       "spark": [
         280.91,
         289.88,
@@ -1178,7 +1178,7 @@
         328.78,
         345.98,
         321.82,
-        241.77
+        242.16
       ]
     },
     {
@@ -1187,16 +1187,16 @@
       "theme": "Space",
       "verdict": "watch",
       "verdict_label": "Watch — overhang intact",
-      "thesis": "**Faded, overhang intact** (−1.0%, $81.7). CEO Beck's 5M-share sale still weighs; below the $82.54 prior close even as the index prints new highs. Re-ticket only on a genuine reclaim of strength (>$86) — not catching the knife into $79–82.",
+      "thesis": "**Faded, overhang intact** (−1.2%, $81.6). CEO Beck's 5M-share sale still weighs; below the $82.54 prior close even as the index prints new highs. Pre-arm retired 7/10 (never fired, buffer went to SOFI). Re-ticket only on a genuine reclaim of strength (>$86) — not catching the knife into $79–82.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "pre-arm retired — buffer redeployed to SOFI; re-ticket on a real reclaim",
+      "size_note": "pre-arm retired — re-ticket on a real reclaim >$86",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 10 2:40pm",
+      "updated": "Jul 10 3:15pm",
       "stop": 74.5,
-      "price": 81.35,
-      "chg_pct": -1.44,
+      "price": 81.26,
+      "chg_pct": -1.55,
       "spark": [
         117.55,
         124.16,
@@ -1227,7 +1227,7 @@
         107.33,
         100.28,
         95.09,
-        81.35
+        81.26
       ]
     },
     {
@@ -1236,16 +1236,16 @@
       "theme": "Energy-for-AI",
       "verdict": "watch",
       "verdict_label": "Watch — nuclear-for-AI, red",
-      "thesis": "**Nuclear-for-AI, red** (−2.3%, $48.2). Part of the quantum/nuclear/space cohort bleeding today. Above longer-term support but no fresh catalyst; watch, no trade into sector weakness.",
+      "thesis": "**Nuclear-for-AI, red** (−1.2%, $48.7). Part of the quantum/nuclear/space cohort bleeding today. Above longer-term support but no fresh catalyst; watch, no trade into sector weakness.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/oklo.html",
       "horizon": 0.3,
-      "updated": "Jul 10 2:40pm",
-      "price": 48.67,
-      "chg_pct": -1.27,
+      "updated": "Jul 10 3:15pm",
+      "price": 48.59,
+      "chg_pct": -1.44,
       "spark": [
         73.64,
         69.75,
@@ -1276,11 +1276,25 @@
         61.28,
         58.35,
         57.16,
-        48.67
+        48.59
       ]
     }
   ],
   "feed": [
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-10T15:15:00-04:00",
+      "symbol": "NVDA",
+      "text": "3:15pm — easy **hold** on your account, nothing to do. Same narrow, Nvidia-led tape: **NVDA** +3.8% at ~$210 (China cleared its top H200 chips for ByteDance, Alibaba and Tencent) is dragging the Nasdaq to fresh highs (**QQQ $725.7**), while chips as a group, quantum, nuclear and space stay red. Your book's **up ~$10 (+1%)** and fully protected — the 3x-Nasdaq core, the 2x-Nvidia sliver (+7%) and SoFi all green/flat, all three live exits re-checked (core $65, Nvidia $27, SoFi $16.80). ~99% invested with ~$9 cash, so no room to add and nothing cleaner worth making — semis still lag their trend (no 3x-semis flip) and I won't short a market at new highs."
+    },
+    {
+      "type": "trade",
+      "account": "paper",
+      "ts": "2026-07-10T15:15:00-04:00",
+      "symbol": "NVDA",
+      "text": "Put the **idle practice cash to work** — the test account had drifted to ~90% cash, exactly the sitting-on-your-hands failure we're trying to avoid. Bought the leader **Nvidia (130 sh, ~$27k, hard exit $186)** on the live H200 catalyst and **added to the 3x-Nasdaq core (now 282 sh, exit $65)**, both protected GTC. That takes the testbed from ~9% to ~55% deployed; the rest goes to work into the next clean setups. Your real account is unchanged."
+    },
     {
       "type": "note",
       "account": "live",
@@ -1546,24 +1560,15 @@
       "ts": "2026-07-08T13:30:00-04:00",
       "symbol": "SOXX",
       "text": "An hour before the Fed minutes, chips went vertical: **SOXX +2.3%, SOXL +6%, and NVDA punched through $200** for its fourth straight green day. SOXX even reclaimed its 50-day intraday — first real trend repair since the rout. So why am I still in cash? Two reasons: the actual trigger (the 20-day at 597) is still ~6% up, and buying a 3x fund **30 minutes before a Fed release** is gambling, not a setup. If this holds through the minutes, the reclaim could come fast — and I'll take it when it's real."
-    },
-    {
-      "type": "watch",
-      "account": "live",
-      "ts": "2026-07-08T12:20:00-04:00",
-      "symbol": "SOXX",
-      "text": "Midday on Fed-minutes day and the tape handed me a surprise: **chips are the only green on the board** — SOXX +0.3%, SMH +0.5% — while the Nasdaq and S&P sag on the Iran headlines. Better still, this morning's dip stopped at **543.9, well above yesterday's 536 low**. That's a higher low forming, two days running. Trigger's still the 20-day reclaim ~8% up at 597, so I'm **cash through the 2pm minutes** — but this is the most constructive tape since the rout started."
-    },
-    {
-      "type": "watch",
-      "account": "live",
-      "ts": "2026-07-08T12:18:00-04:00",
-      "symbol": "NVDA",
-      "text": "NVDA tagged **$199.86** this morning — third straight green day, knocking on $200 while everything around it bleeds. It's now the undisputed leader of this tape, which moves **NVDL to the top of my trigger list**: if semis base out and NVDA leads, that fires before SOXL's index trigger does."
     }
   ],
-  "latest_recap": "Fri 7/10 ~2:40pm (market OPEN, ~80 min to close) — NO book change; HOLD all four, six stops re-verified GTC (LIVE TQQQ $65 / NVDL $27 / SOFI $16.80; PAPER same three, all GTC). RECONCILE: SOFI fill (2026-07-10-3, 10sh @18.76, $16.80 GTC stop bf2f2983) reconciled + logged to trades.jsonl along with the 7/9 TQQQ fill; trade-failed-2026-07-10-1 ('no ticket details', retired-RKLB orphan) and -2 (SOFI BP-reserve reject, superseded by -3) both correctly closed, no retry needed. ACCOUNT: portfolio_value $1,010.23 / last_equity $1,000.87 → +$9.36 (+0.94%); cash $8.88 (~1%), long_market_value $1,001.35, ~99% deployed. TQQQ $77.08 (mv $770.6, +$7.7, +1.0%, core near HOD) is the biggest $ winner; NVDL $32.77 (+7.0% on NVDA +3.6% $210); SOFI $18.745 (~flat, holding the $18.70 breakout); NVDA $10.78 dust +7.9% (unstoppable fractional). REGIME (computed off 20 closes): QQQ $725.7 above its 20-day 722.6 (risk-on holds, fresh HOD $726.2; inverse ETFs fading) → TQQQ core valid; SOXX $581.6 ~3.0% under its 20-day 599.8 → SOXL rotation gate UNMET (no TQQQ→SOXL flip). SCAN: movers = micro-cap junk only; TSLA $409 basing (watch >$415), PLTR $126.9 broken (avoid), RKLB $81.7 CEO-sale overhang (watch >$86), BE $243 no floor, IONQ/OKLO red. No new catalyst beats the current book, no cash → no new ticket. MOVEMENT: book +$9 on a calm narrow +1% Nasdaq day = market being quiet, not under-deployment (99% invested). PAPER: $100,040 equity (+$44), same 3 names all GTC-stopped, aligned — no churn. NEXT: cut TQQQ only on a decisive QQQ break of 722.6; flip core→SOXL only on SOXX close >~600 with broad semis leading; deploy dust into a real NVDA share once BP allows.",
+  "latest_recap": "Fri 7/10 ~3:15pm (market OPEN, ~45 min to close) — LIVE: NO book change; HOLD all four, three GTC stops re-verified (TQQQ $65 / NVDL $27 / SOFI $16.80). ACCOUNT: equity $1,011.24 (+$10.37, +1.04% on the day; last_equity $1000.87), cash $8.88, ~99% deployed — TQQQ 10sh $771 (+$8.6), SOFI 10sh $187 (flat), NVDL 1sh $32.9 (+7.6%), NVDA 0.05sh dust $10.8 (unstoppable). No new live ticket: no buying power, SOXL rotation gate UNMET (SOXX $580.5 ~3% under its 20-day ~599.8), and won't short an index at new highs. TAPE: narrow, NVDA-led — NVDA +3.8% ~$210 on China's H200 clearance (ByteDance/Alibaba/Tencent, capped <200k chips), QQQ $725.7 at fresh highs above its 20-day; chips-as-a-group, quantum (IONQ -3.3%, RGTI -2.1%), nuclear (OKLO -1.2%), space (RKLB -1.2%) and PLTR (-1.8%) all red; BE -5.7% no floor. PAPER (testbed): was ~91% cash = under-deployment failure; deployed ~$46.6k this run — bought NVDA 130sh @ $210.26 (GTC stop $186) on the H200 catalyst + added 250 TQQQ to 282sh @ $77.09 (re-armed GTC stop $65); NVDL 80sh (+7%, stop $27) and SOFI 200sh (-3.8%, stop $16.80) unchanged; testbed now ~55% deployed (~$55.5k of $100k), ~$44k cash to work next runs. QUEUE clean: no pending tickets; 7/9 TQQQ + 7/10-3 SOFI fills already reconciled, both 7/10 failures closed. Movement: live book +$10 on a genuinely quiet, narrow tape — deployed, not dead.",
   "activity": [
+    {
+      "ts": "2026-07-10T15:15:00-04:00",
+      "kind": "engine",
+      "title": "3:15pm run — LIVE: NO change, HOLD all four, three stops re-verified GTC (TQQQ $65 / NVDL $27 / SOFI $16.80). Equity $1,011.24 (+$10.37, +1.04%), cash $8.88, ~99% deployed — no BP + no rotation gate + won't short new highs = no new live ticket. Narrow NVDA-led tape: NVDA +3.8% ~$210 (H200 China clearance) at new highs, QQQ $725.7; SOXX $580.5 ~3% under its 20-day = SOXL gate UNMET. PAPER: fixed under-deployment — bought NVDA 130sh (stop $186) + added TQQQ to 282sh (stop $65), testbed ~9%->~55% deployed; NVDL/SOFI stops GTC. Queue clean, no pending tickets."
+    },
     {
       "ts": "2026-07-10T14:40:00-04:00",
       "kind": "engine",
@@ -1736,15 +1741,13 @@
       "kind": "engine",
       "title": "After-close run — RISK-OFF, but semis closed on a hammer",
       "detail": "SOXX −5.1% but rallied into the bell: the 536.12 low held all day and it closed 551.7, back above the 50d. QQQ 709.4 below both MAs. Leaders green: NVDA +0.7%, NVDL +1.4%, PLTR +1.4%. No setup — cash into Wed 2pm FOMC minutes. Live $1,000.11 = new HWM. Gate +6 pts vs TQQQ since 7/2."
-    },
-    {
-      "ts": "2026-07-07T11:45:00-04:00",
-      "kind": "engine",
-      "title": "Aggressive engine, first run — RISK-OFF, cash",
-      "detail": "SOXX −6.9% (below 20/50d), QQQ −2.2% (lost 50d), SOXL −20% today. DeepSeek own-chip reports + denied NVDA delay story. No trades; universe reseeded to leveraged core + high-beta bench; triggers armed (SOXL on SOXX 20d reclaim, TQQQ on QQQ >720). Live pipe test filled Mon @194.48 — held, $10 risk. FOMC minutes Wed."
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-10T15:15:00-04:00",
+      "text": "3:15pm — nothing for you to do; your money's **fully working** and up ~1% on the day as Nvidia drags the Nasdaq to fresh highs. I put the idle **practice** cash to work over there (bought Nvidia + more of the Nasdaq core) so the test account isn't just sitting on its hands. I'd only touch your real account if the core breaks its trend or a clean new setup shows up."
+    },
     {
       "ts": "2026-07-10T14:40:00-04:00",
       "text": "2:40pm — still an easy **hold**, nothing for you to do. Quiet, narrow Friday: **Nvidia** holds +3% and drags the Nasdaq to fresh highs while quantum, nuclear and space stay red — so our 3x-Nasdaq **core**, the 2x-Nvidia sliver (+7%) and SoFi are all green and protected, book **up ~$9**. Fully invested with ~$9 cash and no cleaner trade worth making (semis still lag their trend, won't short new highs), so I'm just letting the winners run."
@@ -1800,17 +1803,13 @@
     {
       "ts": "2026-07-10T08:10:00-04:00",
       "text": "8:10am — the **soft** open is real now: the Nasdaq's opening just under its trend line and our 3x core is down about **$12** pre-market on higher yields (a normal wiggle — the safety exit sits far below). Still **long** and protected; the **SoFi** one-tap's ready for the open (I'd let it fire only on a breakout on a red morning like this) and I won't add leverage into a soft tape. Nothing for you to do."
-    },
-    {
-      "ts": "2026-07-10T07:40:00-04:00",
-      "text": "7:40am — Futures firmed the picture: **Nasdaq** slightly red, Dow green, and the 10-year yield near **4.5%** is what's cooling tech this morning. Core's still **long** and protected, your **SoFi** one-tap is ready to put the last ~20% to work at the open, and I'm not adding leverage into a soft tape. Nothing for you to do."
     }
   ],
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 77.12,
-    "tqqq_pct": 0.29
+    "tqqq": 77.13,
+    "tqqq_pct": 0.3
   },
   "status": [
     {
@@ -1819,7 +1818,335 @@
     },
     {
       "session": "Afternoon",
-      "text": "Held & green, up ~$9"
+      "text": "Live held +$10; deployed paper cash"
     }
-  ]
+  ],
+  "equity_history": {
+    "1D": [
+      [
+        1783690200000,
+        992.31
+      ],
+      [
+        1783690500000,
+        998.55
+      ],
+      [
+        1783690800000,
+        995.19
+      ],
+      [
+        1783691100000,
+        994.92
+      ],
+      [
+        1783691400000,
+        1002.15
+      ],
+      [
+        1783691700000,
+        1001.92
+      ],
+      [
+        1783692000000,
+        1000.88
+      ],
+      [
+        1783692300000,
+        1002.32
+      ],
+      [
+        1783692600000,
+        1003.77
+      ],
+      [
+        1783692900000,
+        1002.56
+      ],
+      [
+        1783693200000,
+        999.31
+      ],
+      [
+        1783693500000,
+        998.58
+      ],
+      [
+        1783693800000,
+        999.72
+      ],
+      [
+        1783694100000,
+        995.22
+      ],
+      [
+        1783694400000,
+        997.67
+      ],
+      [
+        1783694700000,
+        998.21
+      ],
+      [
+        1783695000000,
+        999.04
+      ],
+      [
+        1783695300000,
+        995.25
+      ],
+      [
+        1783695600000,
+        992.45
+      ],
+      [
+        1783695900000,
+        991.28
+      ],
+      [
+        1783696200000,
+        996.01
+      ],
+      [
+        1783696500000,
+        996.84
+      ],
+      [
+        1783696800000,
+        1001.63
+      ],
+      [
+        1783697100000,
+        1003.94
+      ],
+      [
+        1783697400000,
+        1006.46
+      ],
+      [
+        1783697700000,
+        1006.14
+      ],
+      [
+        1783698000000,
+        1000.8
+      ],
+      [
+        1783698300000,
+        997.81
+      ],
+      [
+        1783698600000,
+        1002.1
+      ],
+      [
+        1783698900000,
+        1003.27
+      ],
+      [
+        1783699200000,
+        1004.42
+      ],
+      [
+        1783699500000,
+        1006.72
+      ],
+      [
+        1783699800000,
+        1005.79
+      ],
+      [
+        1783700100000,
+        1006.98
+      ],
+      [
+        1783700400000,
+        1010.87
+      ],
+      [
+        1783700700000,
+        1010.76
+      ],
+      [
+        1783701000000,
+        1010.1
+      ],
+      [
+        1783701300000,
+        1011.14
+      ],
+      [
+        1783701600000,
+        1009.22
+      ],
+      [
+        1783701900000,
+        1010.05
+      ],
+      [
+        1783702200000,
+        1010.69
+      ],
+      [
+        1783702500000,
+        1010.76
+      ],
+      [
+        1783702800000,
+        1010.78
+      ],
+      [
+        1783703100000,
+        1009.23
+      ],
+      [
+        1783703400000,
+        1008.39
+      ],
+      [
+        1783703700000,
+        1009.18
+      ],
+      [
+        1783704000000,
+        1008.47
+      ],
+      [
+        1783704300000,
+        1010.78
+      ],
+      [
+        1783704600000,
+        1011.61
+      ],
+      [
+        1783704900000,
+        1011.11
+      ],
+      [
+        1783705200000,
+        1012.75
+      ],
+      [
+        1783705500000,
+        1012.88
+      ],
+      [
+        1783705800000,
+        1012.8
+      ],
+      [
+        1783706100000,
+        1011.77
+      ],
+      [
+        1783706400000,
+        1010.74
+      ],
+      [
+        1783706700000,
+        1011.82
+      ],
+      [
+        1783707000000,
+        1012.25
+      ],
+      [
+        1783707300000,
+        1011.79
+      ],
+      [
+        1783707600000,
+        1009.8
+      ],
+      [
+        1783707900000,
+        1011.5
+      ],
+      [
+        1783708200000,
+        1011.06
+      ],
+      [
+        1783708500000,
+        1011.8
+      ],
+      [
+        1783708800000,
+        1010.22
+      ],
+      [
+        1783709100000,
+        1010.41
+      ],
+      [
+        1783709400000,
+        1009.73
+      ],
+      [
+        1783709700000,
+        1009.73
+      ],
+      [
+        1783710000000,
+        1009.6
+      ],
+      [
+        1783710300000,
+        1012.2
+      ],
+      [
+        1783710600000,
+        1011.11
+      ],
+      [
+        1783710900000,
+        1012.15
+      ]
+    ],
+    "1M": [
+      [
+        1783036800000,
+        1000
+      ],
+      [
+        1783382400000,
+        1000.04
+      ],
+      [
+        1783468800000,
+        1000.12
+      ],
+      [
+        1783555200000,
+        1000.88
+      ],
+      [
+        1783641600000,
+        1000.87
+      ]
+    ],
+    "1Y": [
+      [
+        1783036800000,
+        1000
+      ],
+      [
+        1783382400000,
+        1000.04
+      ],
+      [
+        1783468800000,
+        1000.12
+      ],
+      [
+        1783555200000,
+        1000.88
+      ],
+      [
+        1783641600000,
+        1000.87
+      ]
+    ]
+  }
 }
