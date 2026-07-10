@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-10T14:14:20.218Z",
+  "generated_at": "2026-07-10T14:15:26.578Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 100042.73,
+    "equity": 99998.16,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 99042.73,
-    "day_pnl": 46.08,
+    "total_pnl": 98998.16,
+    "day_pnl": 1.51,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.12,
-        "pl": 119.86,
-        "plpc": 4.89,
+        "current": 32.01,
+        "pl": 111.05,
+        "plpc": 4.53,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 19.12,
-        "pl": -78.4,
-        "plpc": -2.01,
+        "current": 18.96,
+        "pl": -110,
+        "plpc": -2.82,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 76.35,
-        "pl": 1.92,
-        "plpc": 0.08,
+        "current": 76.2,
+        "pl": -2.88,
+        "plpc": -0.12,
         "thesis": ""
       }
     ],
@@ -63,36 +63,36 @@
     ]
   },
   "live": {
-    "equity": 1002.79,
+    "equity": 1001.16,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 2.79,
-    "day_pnl": 1.92,
+    "total_pnl": 1.16,
+    "day_pnl": 0.29,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 207.97,
-        "pl": 0.69,
-        "plpc": 6.94,
+        "current": 207.54,
+        "pl": 0.67,
+        "plpc": 6.71,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.12,
-        "pl": 1.53,
-        "plpc": 5.02,
+        "current": 32.01,
+        "pl": 1.42,
+        "plpc": 4.66,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.35,
-        "pl": 0.6,
-        "plpc": 0.08,
+        "current": 76.2,
+        "pl": -0.9,
+        "plpc": -0.12,
         "thesis": ""
       }
     ],
@@ -426,6 +426,10 @@
       {
         "t": 1783692600000,
         "v": 1003.77
+      },
+      {
+        "t": 1783692900000,
+        "v": 1002.56
       }
     ]
   },
@@ -458,8 +462,8 @@
       "horizon": 0.3,
       "updated": "Jul 10 10:12am",
       "stop": 65,
-      "price": 76.45,
-      "chg_pct": 0.25,
+      "price": 76.2,
+      "chg_pct": -0.08,
       "spark": [
         74.76,
         77.09,
@@ -490,7 +494,7 @@
         82.78,
         82.48,
         74.21,
-        76.45
+        76.2
       ]
     },
     {
@@ -507,8 +511,8 @@
       "horizon": 0.2,
       "updated": "Jul 10 10:12am",
       "trigger": "SOXX > 598 close",
-      "price": 186.66,
-      "chg_pct": -2.88,
+      "price": 186.12,
+      "chg_pct": -3.16,
       "spark": [
         172.54,
         184.35,
@@ -539,7 +543,7 @@
         279.32,
         301.42,
         230.82,
-        186.66
+        186.12
       ]
     },
     {
@@ -548,17 +552,17 @@
       "theme": "Leveraged core",
       "verdict": "buy",
       "verdict_label": "LIVE — 1 sh held · add still wash-blocked",
-      "thesis": "Live starter: 1 sh @ $30.59, last ~$30.8 (+0.8%), **stop $27 GTC verified**. Tiny artifact of the wash-blocked add; rides with NVDA. Not adding (semis soft).",
-      "size": "$31",
+      "thesis": "Live starter: 1 sh @ $30.59, last **$31.81 (+4%)**, **stop $27 GTC verified**. Tiny artifact of the wash-blocked add, but green — riding NVDA (+2%, the one leader holding up while the semi ETFs bleed). Not adding (a plain add is still wash-blocked by the resting $27 stop).",
+      "size": "$32",
       "size_pct": 3,
-      "size_note": "1 sh legacy starter, protected; adds blocked by wash-trade",
+      "size_note": "1 sh legacy starter, protected (+4%); adds blocked by wash-trade",
       "plan_usd": 0,
       "horizon": 0.4,
-      "updated": "Jul 10 9:45am",
+      "updated": "Jul 10 10:12am",
       "trigger": 30.56,
       "stop": 27,
-      "price": 31.92,
-      "chg_pct": 4.45,
+      "price": 32.01,
+      "chg_pct": 4.73,
       "spark": [
         37.8,
         39.55,
@@ -589,7 +593,7 @@
         33.28,
         32.71,
         30.03,
-        31.92
+        32.01
       ]
     },
     {
@@ -597,16 +601,16 @@
       "name": "Nvidia",
       "theme": "AI / semis",
       "verdict": "watch",
-      "thesis": "~$203.5 (+0.4%) — holding up better than the semi ETFs, but it's $10 of unstoppable dust. Leaving it (won't tap you for $10); fold into a real semis entry later.",
-      "verdict_label": "Leader · H20 licenses issuing · unaffordable whole-share",
-      "size": "$10",
+      "thesis": "**$206.8 (+2%)** — the one leader clearly outperforming, green while the semi ETFs sell off (H20 China licenses issuing). But it's $10.60 of unstoppable dust and a whole share ($207) > buying power ($196). Leaving it (won't tap you for $10); fold into a real NVDA trade when BP allows.",
+      "verdict_label": "Leader · +2% while chips bleed · whole-share unaffordable",
+      "size": "$11",
       "size_pct": 1,
-      "size_note": "$10 dust artifact (live), no stop (fractional) — fold into a real NVDA trade",
+      "size_note": "$10.60 dust artifact (live), no stop (fractional) — fold into a real NVDA trade",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 10 9:45am",
-      "price": 207.95,
-      "chg_pct": 2.59,
+      "updated": "Jul 10 10:12am",
+      "price": 207.53,
+      "chg_pct": 2.39,
       "spark": [
         220.62,
         225.65,
@@ -637,7 +641,7 @@
         210.38,
         208.59,
         200.07,
-        207.95
+        207.53
       ]
     },
     {
@@ -646,16 +650,16 @@
       "theme": "Energy-for-AI",
       "verdict": "watch",
       "verdict_label": "Near a 50-day reclaim",
-      "thesis": "$251.7 (+0.4%) — power-for-AI, holding green while chips dump; steady but no entry trigger.",
+      "thesis": "$250.7 (flat) — power-for-AI, holding its ground while chips dump; steady but no entry trigger, still under the 50-day.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "planned ~$200 on a 50d reclaim (bench, not additive to core)",
       "plan_usd": 200,
       "card": "/research/ceg.html",
       "horizon": 0.4,
-      "updated": "Jul 10 9:45am",
-      "price": 250.54,
-      "chg_pct": -0.05,
+      "updated": "Jul 10 10:12am",
+      "price": 250.38,
+      "chg_pct": -0.12,
       "spark": [
         293.02,
         274.38,
@@ -686,7 +690,7 @@
         274.09,
         275.65,
         270.31,
-        250.54
+        250.38
       ]
     },
     {
@@ -695,15 +699,15 @@
       "theme": "Energy-for-AI",
       "verdict": "watch",
       "verdict_label": "Power-for-AI, choppy",
-      "thesis": "$318 (−1.8%) — AI-power theme selling off with chips; faded from 338. Wait for it to stop falling.",
+      "thesis": "$320.7 (−1%) — AI-power theme heavy with chips; still digesting the fade from $338. Wait for it to base.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "watch — trades with CEG",
       "plan_usd": 0,
       "horizon": 0.5,
-      "updated": "Jul 10 9:45am",
-      "price": 320.27,
-      "chg_pct": -1.15,
+      "updated": "Jul 10 10:12am",
+      "price": 320.2,
+      "chg_pct": -1.17,
       "spark": [
         367.07,
         370.14,
@@ -734,7 +738,7 @@
         333.19,
         358.37,
         318.27,
-        320.27
+        320.2
       ]
     },
     {
@@ -742,16 +746,16 @@
       "name": "Tesla",
       "theme": "High-beta bench",
       "verdict": "watch",
-      "verdict_label": "Held $400",
-      "thesis": "$406 (flat) — held $400 but stalling with the tape; no setup.",
+      "verdict_label": "Held $400 · firming",
+      "thesis": "$410.8 (+1%) — reclaimed and holding $400, the one high-beta name quietly firming on a soft tape. Watching for a clean base to build over $400; no trigger yet.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching — watching for a base > $400",
       "plan_usd": 0,
       "horizon": 0.7,
-      "updated": "Jul 10 9:45am",
-      "price": 410.64,
-      "chg_pct": 1.02,
+      "updated": "Jul 10 10:12am",
+      "price": 410.22,
+      "chg_pct": 0.91,
       "spark": [
         433.45,
         445.32,
@@ -782,7 +786,7 @@
         400.49,
         405.05,
         381.54,
-        410.64
+        410.22
       ]
     },
     {
@@ -790,18 +794,18 @@
       "name": "SoFi",
       "theme": "High-beta bench",
       "verdict": "buy",
-      "verdict_label": "STAGED — one-tap buffer deploy (~$189) · rate-independent",
-      "thesis": "**The breakout fired** — +5% at the open (to ~$19.6, now ~$19.3), clearing $18.70 as money rotates OUT of AI/semis INTO rate-independent fintech. Catalyst stack intact (Goldman $21, CEO buying, ARK adding, $250k SMB loans + Composer AI, into 7/29 earnings). Refreshed one-tap: 9 sh, marketable limit $19.90 (caps the chase), **stop $16.80 GTC** (−14%). Honest: now a breakout-continuation entry, not a base.",
-      "size": "$177",
-      "size_pct": 18,
-      "size_note": "one-tap 10 sh @ ~$18.85, limit $19.10, stop $16.20 GTC — deploys the buffer",
-      "plan_usd": 177,
+      "verdict_label": "STAGED — one-tap buffer deploy (~$172) · rate-independent",
+      "thesis": "Spiked to $19.74 at the open then **faded to ~$19.07** — but STILL **green (+2.5%)** and holding above the $18.70 breakout while chips sell off, which IS the thesis: money rotating OUT of AI/semis INTO rate-independent fintech (Fiserv +5% today). Now a **pullback-to-breakout** entry, not a chase. Catalyst stack intact (Goldman $21, Street avg PT ~$21, CEO buying, ARK adding, $250k SMB loans + Composer AI, into 7/29 earnings). One-tap: 9 sh, marketable limit $19.90, **stop $16.80 GTC** (risk ~$20). Honest: Street is Hold, KBW Underperform $16 — small, defined-risk buffer bet.",
+      "size": "$172",
+      "size_pct": 17,
+      "size_note": "one-tap 9 sh @ ~$19.07, limit $19.90, stop $16.80 GTC — deploys the ~$196 buffer",
+      "plan_usd": 172,
       "horizon": 0.6,
-      "updated": "Jul 10 9:45am",
-      "trigger": 18.9,
-      "stop": 16.2,
-      "price": 19.13,
-      "chg_pct": 2.82,
+      "updated": "Jul 10 10:12am",
+      "trigger": null,
+      "stop": 16.8,
+      "price": 18.95,
+      "chg_pct": 1.85,
       "spark": [
         15.9,
         15.3,
@@ -832,7 +836,7 @@
         17.91,
         17.1,
         17.29,
-        19.13
+        18.95
       ]
     },
     {
@@ -841,15 +845,15 @@
       "theme": "High-beta bench",
       "verdict": "watch",
       "verdict_label": "Suspended · red on a green tape",
-      "thesis": "$129.9 (+0.7%) — **quietly green while semis dump**, a relative-strength tell. No trigger yet, but the one AI-adjacent name holding; watch for a reclaim of the highs.",
+      "thesis": "$128.1 (−0.7%) — slipped red again, back under $129; structure still broken (no reclaim of the highs). Stays suspended until it proves a base.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "trigger suspended — needs repair",
       "plan_usd": 0,
       "horizon": 0.6,
-      "updated": "Jul 10 9:45am",
-      "price": 128.4,
-      "chg_pct": -0.5,
+      "updated": "Jul 10 10:12am",
+      "price": 127.99,
+      "chg_pct": -0.82,
       "spark": [
         136.02,
         130.07,
@@ -880,7 +884,7 @@
         128.44,
         119.46,
         116.72,
-        128.4
+        127.99
       ]
     },
     {
@@ -897,8 +901,8 @@
       "card": "/research/be.html",
       "horizon": 0.9,
       "updated": "Jul 10 9:45am",
-      "price": 246,
-      "chg_pct": -4.29,
+      "price": 245.13,
+      "chg_pct": -4.63,
       "spark": [
         280.91,
         289.88,
@@ -929,7 +933,7 @@
         328.78,
         345.98,
         321.82,
-        246
+        245.13
       ]
     },
     {
@@ -946,8 +950,8 @@
       "horizon": 0.6,
       "updated": "Jul 10 9:45am",
       "stop": 74.5,
-      "price": 80.4,
-      "chg_pct": -2.59,
+      "price": 80.07,
+      "chg_pct": -2.99,
       "spark": [
         117.55,
         124.16,
@@ -978,7 +982,7 @@
         107.33,
         100.28,
         95.09,
-        80.4
+        80.07
       ]
     },
     {
@@ -995,8 +999,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.9,
       "updated": "Jul 10 9:45am",
-      "price": 48.7,
-      "chg_pct": -1.22,
+      "price": 48.52,
+      "chg_pct": -1.58,
       "spark": [
         73.64,
         69.75,
@@ -1027,7 +1031,7 @@
         61.28,
         58.35,
         57.16,
-        48.7
+        48.52
       ]
     }
   ],
@@ -1465,8 +1469,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 76.45,
-    "tqqq_pct": -0.59
+    "tqqq": 76.2,
+    "tqqq_pct": -0.91
   },
   "status": [
     {
