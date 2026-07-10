@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-10T15:17:49.897Z",
+  "generated_at": "2026-07-10T15:18:56.279Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99967.11,
+    "equity": 99954.45,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98967.11,
-    "day_pnl": -29.54,
+    "total_pnl": 98954.45,
+    "day_pnl": -42.2,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.08,
-        "pl": 116.44,
-        "plpc": 4.75,
+        "current": 31.98,
+        "pl": 108.66,
+        "plpc": 4.44,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.77,
-        "pl": -149,
-        "plpc": -3.82,
+        "current": 18.75,
+        "pl": -151,
+        "plpc": -3.87,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 76.28,
-        "pl": -0.32,
-        "plpc": -0.01,
+        "current": 76.19,
+        "pl": -3.2,
+        "plpc": -0.13,
         "thesis": ""
       }
     ],
@@ -63,36 +63,45 @@
     ]
   },
   "live": {
-    "equity": 1002.04,
+    "equity": 1000.97,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 2.04,
-    "day_pnl": 1.17,
+    "total_pnl": 0.97,
+    "day_pnl": 0.1,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 207.79,
-        "pl": 0.68,
-        "plpc": 6.84,
+        "current": 207.5,
+        "pl": 0.67,
+        "plpc": 6.69,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.08,
-        "pl": 1.49,
-        "plpc": 4.88,
+        "current": 31.98,
+        "pl": 1.39,
+        "plpc": 4.56,
+        "thesis": ""
+      },
+      {
+        "symbol": "SOFI",
+        "qty": "10.0000",
+        "entry": 18.76,
+        "current": 18.75,
+        "pl": -0.05,
+        "plpc": -0.03,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.28,
-        "pl": -0.1,
-        "plpc": -0.01,
+        "current": 76.18,
+        "pl": -1.1,
+        "plpc": -0.14,
         "thesis": ""
       }
     ],
@@ -481,20 +490,7 @@
       }
     ]
   },
-  "pending_tickets": [
-    {
-      "id": "2026-07-10-3",
-      "symbol": "SOFI",
-      "side": "buy",
-      "size": "$188",
-      "qty": 10,
-      "entry": 18.74,
-      "trigger": null,
-      "stop": 16.8,
-      "bracket": "stop $16.80 GTC (below the $17 shelf / 7/8 low $17.085, -10%)",
-      "thesis": "RE-ISSUED (new id) — the prior 2026-07-10-2 was APPROVED by Adam but the fast-lane rejected it 'insufficient buying power' (10 sh x $19.90 limit = $199 reserve > $196.49 BP). Re-sized to fit: qty 10 x limit $19.05 = $190.50 reserve, so his next tap actually fills. SOFI spiked to $19.74 at the open then faded back to ~$18.74 (roughly flat, +0.8%) but is HOLDING green/above its $18.60 breakout while the whole high-beta complex bleeds (RKLB -2.7%, PLTR -1.9%, IONQ -4.3%, OKLO -2.8%, BE -8.4%, SOXL -3.4%). On a broadly risk-off day that relative strength IS the thesis: NVDA sucks up the AI money (H200-China unlock, +2.3%), rate-independent fintech catches the rotation bid (Fiserv +5%). Catalyst stack: Goldman → $21, Street avg PT ~$21.13, CEO Noto buying, ARK adding, $250k SMB-loans + Composer AI + SFYI ETF, into Jul 29 earnings. Marketable limit $19.05 caps overpay, wide $16.80 GTC stop (risk ~$19, ~1.9%). APPROVE-NOW: one tap buys near $18.74. Honest: Street is Hold, KBW Underperform $16 — a small, defined-risk buffer bet, and the only clean+affordable one (a whole NVDA share $207 > BP, an NVDL/TQQQ add is wash-blocked). Paper mirror filled the $19.51 spike (now -$153), showing exactly why the pullback is the better live entry."
-    }
-  ],
+  "pending_tickets": [],
   "coverage": [
     {
       "ticker": "TQQQ",
@@ -510,8 +506,8 @@
       "horizon": 0.3,
       "updated": "Jul 10 11:15am",
       "stop": 65,
-      "price": 76.27,
-      "chg_pct": 0.01,
+      "price": 76.19,
+      "chg_pct": -0.09,
       "spark": [
         74.76,
         77.09,
@@ -542,7 +538,7 @@
         82.78,
         82.48,
         74.21,
-        76.27
+        76.19
       ]
     },
     {
@@ -559,8 +555,8 @@
       "horizon": 0.2,
       "updated": "Jul 10 11:15am",
       "trigger": "SOXX > 598 close",
-      "price": 188.56,
-      "chg_pct": -1.89,
+      "price": 187.93,
+      "chg_pct": -2.22,
       "spark": [
         172.54,
         184.35,
@@ -591,7 +587,7 @@
         279.32,
         301.42,
         230.82,
-        188.56
+        187.93
       ]
     },
     {
@@ -657,8 +653,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "Jul 10 11:15am",
-      "price": 207.79,
-      "chg_pct": 2.51,
+      "price": 207.5,
+      "chg_pct": 2.37,
       "spark": [
         220.62,
         225.65,
@@ -689,7 +685,7 @@
         210.38,
         208.59,
         200.07,
-        207.79
+        207.5
       ]
     },
     {
@@ -754,8 +750,8 @@
       "plan_usd": 0,
       "horizon": 0.5,
       "updated": "Jul 10 10:12am",
-      "price": 322.16,
-      "chg_pct": -0.56,
+      "price": 322.14,
+      "chg_pct": -0.57,
       "spark": [
         367.07,
         370.14,
@@ -786,7 +782,7 @@
         333.19,
         358.37,
         318.27,
-        322.16
+        322.14
       ]
     },
     {
@@ -802,8 +798,8 @@
       "plan_usd": 0,
       "horizon": 0.7,
       "updated": "Jul 10 11:15am",
-      "price": 407.81,
-      "chg_pct": 0.32,
+      "price": 407.75,
+      "chg_pct": 0.31,
       "spark": [
         433.45,
         445.32,
@@ -834,7 +830,7 @@
         400.49,
         405.05,
         381.54,
-        407.81
+        407.75
       ]
     },
     {
@@ -852,8 +848,8 @@
       "updated": "Jul 10 11:15am",
       "trigger": null,
       "stop": 16.8,
-      "price": 18.77,
-      "chg_pct": 0.89,
+      "price": 18.75,
+      "chg_pct": 0.83,
       "spark": [
         15.9,
         15.3,
@@ -884,7 +880,7 @@
         17.91,
         17.1,
         17.29,
-        18.77
+        18.75
       ]
     },
     {
@@ -900,8 +896,8 @@
       "plan_usd": 0,
       "horizon": 0.6,
       "updated": "Jul 10 11:15am",
-      "price": 126.4,
-      "chg_pct": -2.05,
+      "price": 126.36,
+      "chg_pct": -2.08,
       "spark": [
         136.02,
         130.07,
@@ -932,7 +928,7 @@
         128.44,
         119.46,
         116.72,
-        126.4
+        126.36
       ]
     },
     {
@@ -949,8 +945,8 @@
       "card": "/research/be.html",
       "horizon": 0.9,
       "updated": "Jul 10 11:15am",
-      "price": 234.77,
-      "chg_pct": -8.66,
+      "price": 233.59,
+      "chg_pct": -9.12,
       "spark": [
         280.91,
         289.88,
@@ -981,7 +977,7 @@
         328.78,
         345.98,
         321.82,
-        234.77
+        233.59
       ]
     },
     {
@@ -998,8 +994,8 @@
       "horizon": 0.6,
       "updated": "Jul 10 11:15am",
       "stop": 74.5,
-      "price": 80.3,
-      "chg_pct": -2.72,
+      "price": 80.26,
+      "chg_pct": -2.76,
       "spark": [
         117.55,
         124.16,
@@ -1030,7 +1026,7 @@
         107.33,
         100.28,
         95.09,
-        80.3
+        80.26
       ]
     },
     {
@@ -1047,8 +1043,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.9,
       "updated": "Jul 10 11:15am",
-      "price": 47.97,
-      "chg_pct": -2.7,
+      "price": 47.92,
+      "chg_pct": -2.79,
       "spark": [
         73.64,
         69.75,
@@ -1079,11 +1075,25 @@
         61.28,
         58.35,
         57.16,
-        47.97
+        47.92
       ]
     }
   ],
   "feed": [
+    {
+      "type": "system",
+      "account": "live",
+      "ts": "2026-07-10T11:15:00-04:00",
+      "symbol": "SOFI",
+      "text": "Caught why the **SoFi tap didn't go through**: you approved it, but the broker rejected it for **insufficient buying power** — a marketable-limit buy reserves *shares × limit price* up front, and 10 × $19.90 = $199 just topped our $196 cash. My fault on the sizing. I **re-issued** the exact same idea sized to fit (10 sh, limit $19.05 → reserves $190), so your next tap fills cleanly. Hard exit $16.80, risk ~$19. Nothing else changed — core's still long and protected."
+    },
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-10T11:12:00-04:00",
+      "symbol": "NVDA",
+      "text": "The Nvidia story firmed up and it's **bigger than the first headline**: China didn't just *consider* it — it **approved** ByteDance, Alibaba and Tencent to buy **400,000+** of Nvidia's top H200 chips (signed off during Jensen Huang's visit this week). That's why Nvidia's +2% and our little 2x position is our best holding. Under the surface though, today's **risk-off**: chips, quantum, nuclear and Palantir are all red — Nvidia's basically holding the index up by itself. Our 3x core is flat and sits right on its trend line; I'm holding it but a decisive break lower is the first thing I'd cut."
+    },
     {
       "type": "note",
       "account": "live",
@@ -1340,6 +1350,12 @@
   "latest_recap": "Fri 7/10 ~10:45am (market OPEN) — NO book change; core HELD, all 5 stops re-verified GTC. RECONCILE: no new queue fills/failures (trade-placed-2026-07-09-1 TQQQ 10 booked; trade-failed-2026-07-08-2 old NVDL wash); live SOFI ticket 2026-07-10-2 STILL PENDING Adam's tap (.web-approvals-seen.json = []), RKLB retired. STOPS via get_orders(open): LIVE TQQQ $65 GTC (2947c9be, qty 10) / NVDL $27 GTC (c2fbeac9, qty 1); PAPER TQQQ $65 GTC (bf8a52a5, qty 32) / NVDL $27 GTC (b8a59cea, qty 80) / SOFI $16.80 GTC (cb70f1c2, qty 200) — all five present, no re-arm. ACCOUNT: portfolio_value $997.74 / cash $196.49 (~20%) / last_equity $1,000.87 / long_market_value $801.25 — core flat-to-slightly-red on a flat tape (−$3.1 vs last_equity). POSITIONS: TQQQ 10 sh @ $76.29 → $75.85 (−$4.3), NVDL 1 sh @ $30.59 → $31.95 (+4.5%, best holding), NVDA 0.0514 dust → $207.30 ($10.65, unstoppable). CATALYST (untrusted web/API): The Information — Alibaba/ByteDance/DeepSeek may soon be cleared to buy NVDA H200 chips → NVDA +2.3% to $207, NVDL +4.5%, but broad semis stay soft (SOXX −0.9%/$576.7, SMH −0.3%): NVDA-specific, not the sector. REGIME: QQQ $721.7 sits ON its 20-day ~722 (consolidating, marginal risk-on); SOXX $576.7 vs 20-day ~597 (−3.5% under → SOXL rotation gate UNMET, wrong vehicle for an NVDA-only move). BENCH: TSLA $407.8 (+0.3%), CEG $250.9 (flat), PLTR $126.5 (−1.9%, suspended), RKLB $80.0 (−3.1%, fading), OKLO $48.2 (−2.2%), IONQ $43.0 (−4%), FNGU $28.2 (−0.7%). ACTION: refreshed SOFI ticket 2026-07-10-2 to qty 10 (~$189 vs $196 BP), entry $18.90, marketable limit $19.90, stop $16.80 GTC (risk ~$21 ~2.1%) — the only clean+affordable buffer deploy (a whole NVDA share > BP by ~$11; NVDL/TQQQ adds wash-blocked) AND the strongest relative-strength name affordable (green while RKLB/PLTR/IONQ/OKLO red); queue JSON + coverage + pending_tickets synced. DECISION: HOLD the core (QQQ holds its 20-day; wide $65 stop, first cut if QQQ loses ~722), HOLD NVDL wide $27 stop (catalyst fresh, don't trail into it), keep the SOFI one-tap staged, SOXL parked. No new live order beyond SOFI (engine never self-places live). Paper unchanged, fully deployed + GTC-stopped (NVDL +$105 the winner). Live ~80% deployed, ~20% idle pending Adam's tap. Benchmark from 7/2 close ($73.35): buy-hold TQQQ → $75.85 = +3.4% vs live sleeve ~flat (idle buffer the drag; clears once SOFI fills). PRIOR: Fri 7/10 ~10:12am (market OPEN) — NO book change; the core RECOVERED the soft open. RECONCILE: no new queue fills/failures; live SOFI ticket 2026-07-10-2 still PENDING Adam's tap (.web-approvals-seen.json = []), RKLB retired. STOPS re-verified via get_orders — LIVE TQQQ $65 GTC (2947c9be, qty 10) / NVDL $27 GTC (c2fbeac9, qty 1); PAPER TQQQ $65 GTC (bf8a52a5, qty 32) / NVDL $27 GTC (b8a59cea, qty 80) / SOFI $16.80 GTC (cb70f1c2, qty 200) — all five present; the paper SOFI OTO FILLED at the open @ $19.51 and its day-TIF child stop was already cancelled+re-armed GTC this morning (the 7/8 day-stop trap did NOT recur). ACCOUNT: portfolio_value $1,001.98 / cash $196.49 (~20%, staged behind SOFI) / last_equity $1,000.87 / long_market_value $805.49 — core back to flat-to-green after fully recovering the pre-market softness. POSITIONS: TQQQ 10 sh @ $76.29 → $76.41 (+$0.1), NVDL 1 sh @ $30.59 → $31.81 (+4%), NVDA 0.0514 dust → $206.83 ($10.60, unstoppable). REGIME: QQQ $723.57 bounced off a $719.85 low back ABOVE its 20-day ~721 (reclaim held); SOXX $577.84 vs 20-day ~598 (−3.4% under → SOXL rotation gate UNMET); semis down a 2nd day (SMH −4.5%, Teradyne −13.6%, KLA −11.5% per WebSearch) on AI-capex profit-taking, SOXS +3% ($4.18) is the working short but conflicts with the long core so it stays bench. NVDA +2% / NVDL +4% (leaders holding). BENCH: TSLA $410.8 (+1%, firming over $400), CEG $250.7 (flat), VRT $320.7 (−1%), PLTR $128.1 (−0.7%, still broken/suspended), BE $242 (−5.8%, no floor/avoid), RKLB $80.2 (−2.8%, still fading), OKLO $48.7 (−1.3%). FRESH DATA (untrusted web/API): rotation OUT of AI/chips INTO fintech confirmed (Fiserv +5% today); SOFI = 15-analyst HOLD, Street avg PT ~$21.13 (~11% upside), Goldman $21 Neutral, KBW Underperform $16, into Jul 29 earnings. ACTION: refreshed the SOFI ticket 2026-07-10-2 to an honest pullback entry (it spiked $19.74 then faded to $19.07, still green + above the $18.70 breakout) — qty 9 ≈ $172, marketable limit $19.90 (caps overpay), stop $16.80 GTC (risk ~$20 ~2%); queue JSON + coverage + pending_tickets synced. DECISION: HOLD the core (QQQ reclaimed its 20-day; no meaningful higher low → keep the wide $65 stop, don't choke it), keep the SOFI one-tap staged (the only affordable+clean buffer deploy — NVDL/TQQQ adds are wash-blocked, a whole NVDA share is unaffordable), SOXL parked. No new live order beyond SOFI (can't self-place live; buffer carries a valid one-tap). Paper unchanged, fully deployed + GTC-stopped. Live ~80% deployed, ~20% idle pending Adam's tap (max achievable without his approval); the book moved ~+$12 off the pre-market low. Today low-catalyst; real prints (CPI / Warsh / bank earnings) cluster ~Jul 14. Benchmark from 7/2 close ($73.35): buy-hold TQQQ → $76.41 = +4.2% vs the live sleeve ~flat (the idle buffer is the drag; clears once SOFI fills). PRIOR: Fri 7/10 ~9:08am (pre-market, ~20 min to open) — NO book change. RECONCILE: no new fills/failures; live SOFI ticket 2026-07-10-2 still pending Adam's tap, RKLB retired. STOPS re-verified via get_orders — LIVE TQQQ $65 GTC (2947c9be, qty 10) / NVDL $27 GTC (c2fbeac9, qty 1); PAPER TQQQ $65 GTC (bf8a52a5, qty 32) / NVDL $27 GTC (b8a59cea, qty 80); paper SOFI OTO (542c1199, 200 sh @ $19.10 → $16.20 stop) still RESTING for the open (child stop day-TIF → re-arm GTC after fill). All 4 core stops present, no re-arm. ACCOUNT: portfolio_value $990.15 / cash $196.49 (~20%, staged behind SOFI) / last_equity $1,000.87 / long_market_value $793.66 — core −$9.8 on a real pre-market mark (TQQQ $75.31); the deployed book is MOVING (−$10.7 vs last_equity), not stuck at pennies. REGIME (fresh 9am snapshots + 30d bars): QQQ 20-day ≈ 722, 7/9 close 723.28 (just over), pre-mkt QQQ ~$719.9 sitting JUST UNDER the 20-day → reclaim tested at the open; SOXX 20-day ≈ 601, 7/9 close 581.7 (−3.2% under), pre-mkt ~$572.6 and SOXL ~$181.7 (−5.5%) → SOXL rotation gate UNMET and WIDENING. FRESH DATA (untrusted web/API): futures mixed (Dow +0.2%, S&P flat, NDX −0.2%), QQQ pre-mkt −0.42% $720.17, 10-yr 4.54% / 2-yr 4.17% (pressuring high-multiple tech); day's event = SK Hynix's $26.5B Nasdaq debut ('a test for the AI trade'), chips soft into it; watching the Strait of Hormuz. SOFI catalyst stack intact — Goldman $21 (7/7), consensus avg PT $22.50, SB-loans up to $250k / Composer-AI / new SFYI ETF / Trump-Accounts visibility (~6M kids enrolled) into Jul 29 earnings; Q1 rev +41% YoY, EPS $0.06→$0.13, originations +68%; closed 7/9 at a 2-day high $18.60 (+4.8%). DECISION: HOLD the core (QQQ still >20-day on the last close; no higher low → no trailing), keep the SOFI one-tap staged (approve-now fills at the open, or PRE-ARM $18.90 for a confirmed breakout — the cleaner path on a soft open), SOXL parked (gate unmet + widening). NVDA $10 dust still unstoppable (won't tap Adam for $10). No new live order — can't fill off-hours; the buffer already carries a valid one-tap. Today low-catalyst; real prints (CPI / Warsh / bank earnings) cluster ~Jul 14. Benchmark from 7/2 close ($73.35): buy-hold TQQQ → ~$75.3 = +2.7% vs the live sleeve ~flat. PRIOR: Fri 7/10 ~8:40am (pre-market, opens 9:30 ET) — ACTION run. RECONCILE: no new fills/failures; live SOFI ticket 2026-07-10-2 still pending Adam's tap, RKLB retired. STOPS re-verified via get_orders — LIVE TQQQ $65 GTC (2947c9be, qty 10) / NVDL $27 GTC (c2fbeac9, qty 1); PAPER TQQQ $65 GTC (qty 32) / NVDL $27 GTC (qty 80) — all four present, no re-arm. ACCOUNT: portfolio_value $991.82 / cash $196.49 (~20%, staged behind SOFI) / last_equity $1,000.87; core −$8 pre-mkt (TQQQ ~$75.67), settles at the open. REGIME: QQQ 20-day 720.97, 7/9 close 723.28 (+0.32% over, >50-day) but pre-mkt ~721.2 sits ON the 20-day → reclaim TESTED at the open; SOXX 581.72 <20-day 597.83 (−2.70%) and pre-mkt ~575 → SOXL rotation gate UNMET and moving away. FRESH DATA (untrusted web/API): futures mixed (Dow +0.2%, S&P flat, NDX −0.2%), 10-yr ~4.54–4.6% elevated; day's event = SK Hynix $26.5B Nasdaq debut ('a test for the AI trade'), chips soft into it; SOFI catalyst stack deepened — Goldman $21 (7/7), consensus ~$21–22, CEO Noto buying, ARK +200k sh, into Jul 29 earnings — and SOFI is UP ~$18.86 pre-mkt reclaiming the $18.70 breakout WHILE tech/chips are red (rate-independent strength tell). ACTIONS: (1) PAPER deploy — the idle $100k testbed (95% cash) put to work on my one conviction: SOFI OTO buy 200 sh limit $19.10 → open + $16.20 stop (order 542c1199); a first buy-stop $18.70 mirror was rejected because SOFI already trades above it (i.e. breakout already reclaimed) → switched to marketable limit; OTO child stop is day-TIF, RE-ARM GTC next run after fill. (2) LIVE ticket refresh — SOFI limit 18.95→19.10, trigger 18.70→18.90 (old pre-arm now below market), qty 10 (~$189), stop $16.20 GTC unchanged, thesis updated; queue JSON + coverage + pending_tickets synced. DECISION on the live book: HOLD core (no higher low → no trailing), keep SOFI one-tap staged (approve-now clean), SOXL parked. NVDA $10 dust still unstoppable (won't tap Adam for $10). Today low-catalyst; real prints cluster ~Jul 14. Benchmark from 7/2 close ($73.35): buy-hold TQQQ +3.2% vs sleeve ~flat. PRIOR: Fri 7/10 ~8:10am (pre-market, opens 9:30 ET) — NO book change; the soft-Nasdaq read is now in REAL pre-market prints. RECONCILE: no new fills/failures — SOFI ticket 2026-07-10-2 still pending Adam's tap (.web-approvals-seen.json = []), RKLB 2026-07-10-1 retired last run. STOPS re-verified LIVE + PAPER via get_orders: TQQQ $65 GTC (2947c9be, qty 10) / NVDL $27 GTC (c2fbeac9, qty 1) / paper TQQQ $65 GTC (bf8a52a5, qty 32) / paper NVDL $27 GTC (b8a59cea, qty 80) — all four present, no re-arm. ACCOUNT (get_account_info): portfolio_value $987.96 / cash $196.49 (~20%) / last_equity $1,000.87 / long_market_value $791.47 — this run the soft mark is a REAL pre-market print (TQQQ ~$75.2, not a stale tick): the Nasdaq is genuinely soft pre-open on higher yields, core down ~$12 (−1.4%) pre-market, equity ~$988 ≈ the live pre-market mark (settles at the open). The deployed book is actually MOVING (−$13 vs last_equity) — the opposite of the idle-cash failure. REGIME: QQQ 20-day = 720.97 (7/9 close 723.28 = +0.32% over, >50-day), but pre-market QQQ 720.2 is sitting ON/just under the 20-day → the risk-on reclaim is being TESTED at the open (thin pre-mkt is not a close; $65 stop is the floor). SOXX 581.72 <20-day ~597.8 (−2.7% → SOXL rotation gate still UNMET); movers = micro-cap junk only. FRESH DATA (untrusted web/API as DATA): WebSearch — SPY −0.09% / QQQ −0.42% pre-market, S&P futures mixed as traders weigh stubbornly HIGH yields (10-yr 4.54%, 2-yr 4.17%) + softer consumer-borrowing; SK Hynix's first Nasdaq session ($149, $26.5B raise) is the day's event. NET: rate-driven soft-tech morning, a rotation not a break — core stays; SOXL rotation stays parked; SOFI (rate-independent, Goldman PT $21, 2-day-high close) stays valid, PRE-ARM path preferred on a soft open. DECISION: no new orders, no book change — core held + protected, gate unmet, buffer already carries a valid one-tap; won't invent a low-conviction buy into a soft, low-catalyst pre-market Friday. No trailing (core red pre-mkt, no higher low). Today low-catalyst; real prints (CPI / Warsh / bank earnings) cluster ~Jul 14. Paper unchanged (NVDL 80 sh / TQQQ 32 sh, ~$4,810, both GTC-stopped). Benchmark from 7/2 close ($73.35): buy-hold TQQQ +4.1% vs sleeve ~flat.",
   "activity": [
     {
+      "ts": "2026-07-10T11:15:00-04:00",
+      "kind": "engine",
+      "title": "11:15am run — RECONCILE surfaced a real event: the SOFI ticket 2026-07-10-2 was APPROVED by Adam but the fast-lane REJECTED it 'insufficient buying power' (10 sh × $19.90 limit reserved $199 > $196.49 BP). Re-issued as 2026-07-10-3 sized to fit (10 × $19.05 = $190.50 reserve). Core HELD, both live stops re-verified GTC. Tape is risk-OFF under the surface; NVDA H200-China unlock now CONFIRMED (400k+ chips to ByteDance/Alibaba/Tencent). Equity $995.",
+      "detail": "Market OPEN (get_clock is_open=true, 11:09 ET, next_close 16:00). RECONCILE (queue): TWO new failure files since last run — (1) trade-failed-2026-07-10-1.json 'no ticket details' = the retired RKLB orphan tap no-op'd exactly as designed (harmless); (2) trade-failed-2026-07-10-2.json = SOFI qty 10 'order rejected / insufficient buying power' — Adam DID approve it but the fast-lane's marketable-limit BUY reserves qty×limit of BP at submit (10 × $19.90 = $199 > $196.49 BP) → rejected; the ticket file was consumed (gone from queue), .web-approvals-seen.json reset to []. NEW LESSON (logged to STRATEGY-NOTES): size every live buy ticket so qty × limit ≤ BP with a ~5% buffer, not just qty × expected-fill. ACTION: re-issued the SOFI idea under a FRESH id 2026-07-10-3 (avoids colliding with the failed-2 record) — qty 10, entry $18.74, marketable limit $19.05 (reserve $190.50 < $196.49 BP, validated), stop $16.80 GTC (risk ~$19, ~1.9%), approve-now; queue JSON written+validated, pending_tickets + coverage synced. STOPS re-verified via get_orders(open): LIVE TQQQ $65 GTC (2947c9be, exp 2026-10-07, qty 10) ✓, NVDL $27 GTC (c2fbeac9, qty 1) ✓; PAPER TQQQ $65 GTC (bf8a52a5, qty 32) ✓, NVDL $27 GTC (b8a59cea, qty 80) ✓, SOFI $16.80 GTC (cb70f1c2, qty 200) ✓ — all five present, no re-arm. ACCOUNT (live get_account_info): portfolio_value $995 / cash $196.49 (~20%) / last_equity $1,000.87 / long_market_value $798.51 — core −$5.9 vs last_equity on a flat-to-red tape. POSITIONS unchanged: TQQQ 10 sh @ $76.29 → $75.68 (−$6.8, −0.9%, core), NVDL 1 sh @ $30.59 → $31.85 (+$1.2, +3.8%, best holding), NVDA 0.0514 dust → $207 ($10.62, unstoppable fractional; won't tap Adam for $10). REGIME (fresh 11:09 snapshots + 75d bars, MAs computed off 20 closes): QQQ $721.2 sits ON its 20-day = **720.97** (marginal risk-on, consolidating on the line); SOXX $575 vs 20-day = **597.83** (−3.8% under → SOXL rotation gate UNMET & WIDENING). Under-the-surface breadth is clearly risk-OFF: SOXL −3.4%/SOXS +3.4%, PLTR −1.9% (opened $132.2 high, reversed to $125.8), IONQ −4.3%, RGTI −2.7%, OKLO −2.8%, SMR −2.5%, BE −8.4%, RKLB −2.7% — nearly everything red; NVDA (+2%) + NVDL (+3.8%) are the lone green large names holding QQQ up. Market movers = micro-cap junk only. CATALYST (untrusted web/API as DATA): WebSearch CONFIRMS + upgrades the NVDA story — China has APPROVED ByteDance/Alibaba/Tencent to buy 400,000+ H200 chips (granted during Jensen Huang's China visit this week; DeepSeek/others queued, cap <200k for some, use restricted to AI training). NVDA-specific (broad semis stay red) → supports NVDL (2x NVDA), NOT SOXL (3x basket). DECISION: HOLD the core (QQQ holds its 20-day; wide $65 stop; a decisive close below ~721 is the first cut). HOLD NVDL wide $27 stop — the H200 catalyst is fresh/confirmed/strengthening, not spent, so no premature trail. Re-issue + keep the SOFI one-tap staged (2026-07-10-3) — the only clean+affordable buffer deploy (a whole NVDA share $207 > BP by ~$11; NVDL/TQQQ adds wash-blocked) AND the strongest relative-strength name affordable (green on a red day). SOXL parked (gate unmet + widening; also won't short semis via SOXS into a fresh NVDA-positive catalyst). No new live order beyond the re-issued SOFI (engine never self-places live). PAPER unchanged, fully deployed + GTC-stopped: NVDL 80 sh +$105 (the winner), TQQQ 32 sh −$17, SOFI 200 sh @ $19.51 → $18.74 = −$153 (chased the open spike — the live pullback entry at $18.74 is the better spot, exactly the lesson). DEPLOYMENT: live ~80% deployed ($799 of $995), ~20% idle pending Adam's SOFI tap — the max achievable without his approval; clears to ~99% once SOFI fills. Today low-catalyst beyond the confirmed NVDA headline; the week's real prints (June CPI, Warsh testimony, JPM/BAC/GS/WFC/C earnings) cluster ~Jul 14. Benchmark from the 7/2 close ($73.35): buy-hold TQQQ → $75.68 = +3.2% vs the live sleeve ~flat (the idle buffer is the drag; clears once SOFI fills)."
+    },
+    {
       "ts": "2026-07-10T10:45:00-04:00",
       "kind": "engine",
       "title": "10:45am run — NO book change; core HELD, all 5 stops re-verified GTC. The day's catalyst is NVDA (+2.3% to $207 on a report China may be cleared to buy H200 chips) — but it's NVDA-specific (broad semis soft: SOXX −0.9%, SMH −0.3%). QQQ $721.7 sits ON its 20-day ~722 (consolidating). Refreshed the SOFI one-tap 2026-07-10-2 to qty 10 (~$189, entry $18.90, limit $19.90, stop $16.80 GTC) — the only clean+affordable buffer deploy, and green while every other affordable high-beta is red. Equity $997.74 (−$3 on the day).",
@@ -1545,8 +1561,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 76.27,
-    "tqqq_pct": -0.82
+    "tqqq": 76.19,
+    "tqqq_pct": -0.92
   },
   "status": [
     {
