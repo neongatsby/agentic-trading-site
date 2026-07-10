@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-10T21:42:55.892Z",
+  "generated_at": "2026-07-10T21:44:01.849Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99935.53,
+    "equity": 99932.33,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98935.53,
-    "day_pnl": -61.12,
+    "total_pnl": 98932.33,
+    "day_pnl": -64.32,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.29,
-        "pl": 3.9,
-        "plpc": 0.01,
+        "current": 210.3,
+        "pl": 5.47,
+        "plpc": 0.02,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.84,
-        "pl": 177.46,
-        "plpc": 7.24,
+        "current": 32.83,
+        "pl": 176.76,
+        "plpc": 7.22,
         "thesis": ""
       },
       {
@@ -30,8 +30,8 @@
         "qty": "200.0000",
         "entry": 19.51,
         "current": 18.76,
-        "pl": -150,
-        "plpc": -3.84,
+        "pl": -149.58,
+        "plpc": -3.83,
         "thesis": ""
       },
       {
@@ -39,7 +39,7 @@
         "qty": "282.0000",
         "entry": 77.09,
         "current": 77.1,
-        "pl": 3.5,
+        "pl": 3.42,
         "plpc": 0.02,
         "thesis": ""
       },
@@ -47,9 +47,9 @@
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 407.34,
-        "pl": -99.32,
-        "plpc": -0.67,
+        "current": 407.22,
+        "pl": -103.74,
+        "plpc": -0.7,
         "thesis": ""
       }
     ],
@@ -85,36 +85,36 @@
     ]
   },
   "live": {
-    "equity": 1011.13,
+    "equity": 1011.14,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 11.13,
-    "day_pnl": 10.26,
+    "total_pnl": 11.14,
+    "day_pnl": 10.27,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 210.29,
+        "current": 210.3,
         "pl": 0.81,
-        "plpc": 8.13,
+        "plpc": 8.14,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.84,
+        "current": 32.83,
         "pl": 2.25,
-        "plpc": 7.37,
+        "plpc": 7.34,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.77,
-        "pl": 0.1,
-        "plpc": 0.05,
+        "current": 18.76,
+        "pl": 0.02,
+        "plpc": 0.01,
         "thesis": ""
       },
       {
@@ -1464,6 +1464,13 @@
     {
       "type": "note",
       "account": "live",
+      "ts": "2026-07-10T17:40:00-04:00",
+      "symbol": "NVDA",
+      "text": "5:40pm — end-of-week wrap, book unchanged. Re-verified all three live GTC stops at the broker (**TQQQ $65 / NVDL $27 / SoFi $16.80**); NVDA 0.05sh is unstoppable fractional dust (~$11), tidied at Monday's open. You're **~99% invested**, closed **+$11 (+1.1%)**. On the **practice** book (no approval) I confirmed all five held legs are GTC-stopped and **FNGU 520sh @ $29.20** is staged to fill Monday, taking that testbed to ~85% with ~$15k dry for a CPI-day add. Week ahead: **CPI Tue 7/14** (cons. cooling to ~3.7–3.8% y/y, core still sticky), Warsh testimony, and bank earnings (JPM/GS/WFC/C 7/14) — ASML Wed, TSMC + Netflix Thu are the AI/semis read-throughs. Nothing to approve into the weekend."
+    },
+    {
+      "type": "note",
+      "account": "live",
       "ts": "2026-07-10T17:10:00-04:00",
       "symbol": "NVDA",
       "text": "5:10pm — after-hours check, all quiet. The close held: **NVDA** a record **+4%** ($211), **Meta** +6% capping its best week since early 2024, Nasdaq at fresh highs — our 3x-Nasdaq core and 2x-Nvidia piece ride that while the risky stuff we avoid (Rocket Lab, Palantir, Bloom, quantum) stayed red. You're ~99% invested with every live position GTC-stopped (core $65, Nvidia $27, SoFi $16.80). Next week's mover is **Tuesday's CPI** + bank earnings — nothing to approve into a weekend."
@@ -1924,6 +1931,10 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-10T17:40:00-04:00",
+      "text": "5:40pm — weekend's **set**, nothing for you to do. You finished **up ~$11 (+1.1%)**, ~99% invested with a hard exit on every position (all three re-checked at the broker just now). I mapped next week: **Tuesday's CPI** plus the first big-bank earnings are the movers — I'll flag anything that shifts the setup before Monday's open."
+    },
+    {
       "ts": "2026-07-10T17:10:00-04:00",
       "text": "5:10pm — after-hours check, all quiet, **nothing** for you to do. You closed the week **up ~$11 (+1.1%)**, ~99% invested with a hard exit on every position. The next real test is **Tuesday's** inflation report — if anything shifts the setup before Monday's open I'll flag it. Enjoy the weekend."
     },
@@ -1978,10 +1989,6 @@
     {
       "ts": "2026-07-10T11:15:00-04:00",
       "text": "11:15am — quick fix: your **SoFi** tap got **bounced by the broker** earlier for a hair too little buying power (it tried to reserve $199 against $196 cash). I re-sent it sized to fit — same trade, **10 shares, hard exit $16.80** — so this time one tap actually fills. It's still the right buy: SoFi's **holding green** while almost everything else (Rocket Lab, Palantir, Bloom −8%, the quantum names) is red. Core's **long** and protected; nothing else to do but tap SoFi."
-    },
-    {
-      "ts": "2026-07-10T10:45:00-04:00",
-      "text": "10:45am — quiet hold, everything protected. The one real story today is **Nvidia** ripping (+2%) on news China may get cleared to buy its top-tier chips — our core already owns Nvidia, so we're along for it. **SoFi** is still the standout I can actually afford with the spare cash: it's **green** while the rest of the risky names (Rocket Lab, Palantir, quantum) are red. One tap on SoFi puts the last of the cash to work; nothing else for you to do."
     }
   ],
   "benchmark": {
@@ -2001,7 +2008,7 @@
     },
     {
       "session": "Evening",
-      "text": "Weekend hold — +1.1%, fully stopped"
+      "text": "Weekend hold +1.1% — set for CPI week"
     }
   ],
   "equity_history": {
