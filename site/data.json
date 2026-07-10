@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-10T08:20:21.721Z",
+  "generated_at": "2026-07-10T08:21:26.836Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99937.78,
+    "equity": 99934.58,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98937.78,
-    "day_pnl": -62.22,
+    "total_pnl": 98934.58,
+    "day_pnl": -65.42,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 30.3,
-        "pl": -25.74,
-        "plpc": -1.05,
+        "current": 30.28,
+        "pl": -27.34,
+        "plpc": -1.12,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 75.15,
-        "pl": -36.48,
-        "plpc": -1.49,
+        "current": 75.1,
+        "pl": -38.08,
+        "plpc": -1.56,
         "thesis": ""
       }
     ],
@@ -54,36 +54,36 @@
     ]
   },
   "live": {
-    "equity": 988.66,
+    "equity": 988.13,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -11.34,
-    "day_pnl": -12.21,
+    "total_pnl": -11.87,
+    "day_pnl": -12.74,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 201.88,
-        "pl": 0.38,
-        "plpc": 3.81,
+        "current": 201.76,
+        "pl": 0.37,
+        "plpc": 3.74,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 30.3,
-        "pl": -0.29,
-        "plpc": -0.93,
+        "current": 30.28,
+        "pl": -0.31,
+        "plpc": -1,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.15,
-        "pl": -11.4,
-        "plpc": -1.49,
+        "current": 75.1,
+        "pl": -11.9,
+        "plpc": -1.56,
         "thesis": ""
       }
     ],
@@ -111,6 +111,10 @@
       {
         "date": "Jul 9",
         "value": 1000.54
+      },
+      {
+        "date": "Jul 10",
+        "value": 987.82
       }
     ],
     "intraday": [
@@ -739,6 +743,20 @@
   ],
   "feed": [
     {
+      "type": "watch",
+      "account": "live",
+      "ts": "2026-07-10T04:10:00-04:00",
+      "symbol": "RKLB",
+      "text": "**New one-tap ticket: Rocket Lab, pre-arm.** RKLB just landed a transformational **$8B Iridium deal**, but the market *faded* it yesterday (opened at the highs, closed lower) on worries about the $3.6B loan attached. So I'm not buying the fade — I've set a buy-stop just above the two-day high that **only fires if the deal gets bought** at the open. ~$173 of the idle buffer, hard exit at $74.50. One tap arms it; if it never breaks out, it never buys."
+    },
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-10T04:08:00-04:00",
+      "symbol": "SOXX",
+      "text": "The chip story got **louder** overnight: US semiconductor ETFs pulled a **record $7.1B of new money in a single day** ('buy the AI-chip dip'), on top of Micron's $250B US plan and SK Hynix's 7x-oversubscribed listing. Chips are clearly the leadership. The one thing still missing is confirmation on the trend line — the chip index is ~3% under its 20-day — so I'm keeping the 3x-Nasdaq core for now and I'll rotate it into the 3x-chip fund the moment that line is reclaimed. Nothing for you to do."
+    },
+    {
       "type": "note",
       "account": "live",
       "ts": "2026-07-09T21:35:00-04:00",
@@ -882,6 +900,12 @@
   "latest_recap": "Thu 7/9 ~9:35pm (evening deep-check) — CORE HELD, ALL FOUR STOPS VERIFIED, ~20% BUFFER HELD ONE RUN WITH A DEPLOY-AT-OPEN PLAN. Nothing new in the queue since the 4:10pm reconcile (the TQQQ core is already booked). Re-verified every protective stop live — LIVE TQQQ $65 GTC (2947c9be) + NVDL $27 GTC (c2fbeac9); PAPER TQQQ $65 (bf8a52a5) + NVDL $27 (b8a59cea) — all GTC, none missing. Recomputed the moving averages off 70 days of bars: QQQ 20-day = 721.0 (close 723.3 — reclaim intact but THIN, ~0.3% above); SOXX 20-day = 597.8 (close 581.7 — still ~2.7% under, so the SOXL rotation gate stays UNMET); TQQQ 20-day = 76.6 (the core sits right on it). After-hours flat vs the close (TQQQ 76.32, QQQ 723, NVDA 202.7, NVDL 30.56); live equity ~$1,000 flat, cash $196.49 (~20%). No new live ticket — the market's closed and the ~$196 buying power genuinely can't be put to clean, meaningful work tonight: it can't add to the wash-blocked TQQQ core, can't afford a single whole NVDA share, and the SOXL gate is unmet (buying 1 share of an unconfirmed 3x-semis fund into a faded bounce is exactly the undisciplined move the regime gate exists to prevent). So I'm holding the buffer for ONE run — flagged honestly at the deployment-floor edge, not idle-for-idle — with a concrete deploy-at-open plan: (1) if SOXX confirms above its 20-day (~598) with semis leading, rotate the whole core TQQQ→SOXL for more torque (one clean tap, no wash); (2) otherwise put the buffer into the freshest single-name catalyst — NVDA on the reopened H20 China export licenses (a real, fresh bullish catalyst from tonight's research; treated as untrusted data). No trailing yet (fresh entry at the 20-day, wide $65 stop by design). Paper unchanged (80 NVDL / 32 TQQQ, both GTC-stopped, ~$4,850). Benchmark from the 7/2 close: buy-hold TQQQ +4.1% vs the sleeve ~flat — from here the core tracks TQQQ 1:1. PRIOR (4:40pm) — CORE HELD, STEADY AFTER HOURS. Nothing changed since the 4:10pm reconcile: still long the single TQQQ core (10 sh @ $76.29, $65 GTC stop verified live AGAIN this run) plus the NVDL 1-sh ($27 GTC ✓) and NVDA $10 dust; ~$196 cash. Fresh after-hours pull: QQQ held ~723 (above its 20-day 721 and 50-day → reclaim intact overnight), TQQQ steady ~$76.5, NVDA ~$202.7, NVDL flat ~$30.56 — the book closed essentially flat, live equity $1,000.54. SOXX 581.7 is STILL under its 20-day (~598), so the TQQQ→SOXL rotation stays unarmed and TQQQ remains the right vehicle. Overnight wildcard flagged honestly: the US-Iran conflict escalated today (US airstrikes on ~90 targets, Iran retaliating) — the tape shrugged it off (Nasdaq +1.3%, oil fell) but it's the gap risk into tomorrow; the $65 stop is the pre-set floor. No new trade: fully deployed, one-core-at-a-time, market closed, and any add would be a correlated over-deploy — this is deployed-and-disciplined, not the idle-cash failure mode. Paper unchanged (80 NVDL / 32 TQQQ, both GTC-stopped, ~$5,002). Benchmark from the 7/2 close: buy-hold TQQQ +4.0% vs sleeve +0.05% — from here the sleeve tracks TQQQ 1:1 on the core. PRIOR (4:10pm): THE CORE IS ON. Since the last run Adam approved ticket 2026-07-09-1 right at the bell and the fast-lane filled all 10 sh TQQQ @ $76.29 with the $65 GTC stop attached correctly (verified live, order 2947c9be) — the sizing and GTC-stop fixes both worked this time. Live book now fully deployed: TQQQ 10 sh (+$2) as the single core, plus the NVDL 1-sh (flat, $27 GTC ✓) and NVDA $10 artifacts; ~$196 cash buffer. Regime confirmed risk-on: QQQ closed 723 (+1.7%) back above its 20-day (721, computed) and 50-day; semis rallied hard on Micron's $250B US catalyst (SOXX +3.5%, AMD +7.2%, Micron +4.5%) — but SOXX 582 is still under its own 20-day (~598), so SOXL's trigger stays unmet and TQQQ is the right vehicle. Honest note on the internals: today led with hardware/semis while software/hyperscalers lagged (GOOGL −2.5%). No new ticket — the single core is held, the market's closed, and a correlated add would over-deploy. Paper fully deployed too (80 NVDL / 32 TQQQ, both GTC-stopped). Live equity $1,002.48; paper notional ~$5,002. Straight benchmark: from the 7/2 close, buy-hold TQQQ is +4.1% vs the sleeve +0.25% — sitting in cash through the V-recovery cost us the bounce, and today's entry is the move to stop lagging it.",
   "activity": [
     {
+      "ts": "2026-07-10T04:10:00-04:00",
+      "kind": "engine",
+      "title": "4:10am pre-market run — core HELD (stop $65 GTC re-verified), buffer STAGED into RKLB pre-arm ($8B Iridium-deal confirmation), record $7.1B semi-ETF inflow but SOXX still <20d so SOXL rotation stays queued",
+      "detail": "Market closed (opens 9:30 ET). Reconcile: no new fills/failures in the queue since 7/9 (trade-placed-2026-07-09-1 already booked). Stops re-verified live — LIVE: TQQQ $65 GTC (2947c9be), NVDL $27 GTC (c2fbeac9); PAPER: TQQQ $65 GTC (bf8a52a5), NVDL $27 GTC (b8a59cea). MAs off 90d bars: QQQ close 723.2 vs 20-day 721.0 (reclaim intact but thin, +0.3%); SOXX 581.7 vs 20-day 597.8 (still ~2.8% under → SOXL rotation gate UNMET); TQQQ 76.3 sits on its 20-day (76.6). Overnight the account marks softer (TQQQ ~$75.1, portfolio_value ~$987.8, −1.3% on a pre-market tick) — not thesis-breaking, $65 stop far below. Catalyst read (untrusted web/API data): semis are leadership — RECORD $7.1B US semi-ETF inflow (SOXX $5.4B, SOXL $1.2B), Micron $250B US, SK Hynix 7x oversubscribed, NVDA H20 China licenses issuing. DEPLOY: the ~$196 buffer had been idle one run; charter says fix >1-run idle cash. Live BP $196.49 can't add TQQQ/NVDL (wash-blocked) or afford a whole NVDA share ($202), and buying SOXL at market violates the unmet gate — so staged a clean, affordable, stoppable satellite: RKLB pre-arm buy-stop 2 sh @ $86.60 (above the 2-day high), stop $74.50 GTC, on the $8B Iridium-deal catalyst that the tape faded 7/9 — fires only on a day-two reclaim (buys strength, not the fade). Queue: trade-ticket-2026-07-10-1.json written; pending_tickets updated. No trailing on the core (no higher low). Paper unchanged (80 NVDL / 32 TQQQ, both GTC-stopped, ~$4,833) — already semi-tilted via NVDL. Next-run watch: SOXX close >~598 → rotate core TQQQ→SOXL."
+    },
+    {
       "ts": "2026-07-09T21:35:00-04:00",
       "kind": "engine",
       "title": "9:35pm evening run — core HELD & steady, all four stops re-verified; MAs recomputed (QQQ +2 over 20d = thin reclaim, SOXX still <20d); ~20% cash held one run with a deploy-at-open plan; H20 China tailwind flagged",
@@ -937,6 +961,10 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-10T04:10:00-04:00",
+      "text": "Pre-dawn check: still **long** the Nasdaq core (safety exit set), futures a touch soft overnight. Chips are the clear leader — record money poured into chip funds overnight — so I lined up a **one-tap** on Rocket Lab that only **fires if** its $8B-deal pop gets bought at the open. Nothing to babysit."
+    },
     {
       "ts": "2026-07-09T21:35:00-04:00",
       "text": "Late check: still **long** the Nasdaq core and it's holding steady overnight — I kept a small cash buffer ready and it goes to **work** the moment chips confirm at tomorrow's open."
