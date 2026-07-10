@@ -7,17 +7,23 @@
 <title>Agentic Trading — Wall</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
 <meta name="theme-color" content="#07090f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500;1,6..72,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 <style>
   :root {
     color-scheme: dark;
     --bg:#07090f; --cyan:#7dd3fc; --purple:#a78bfa; --mint:#6ee7b7;
     --red:#fca5a5; --text:#e8eaf2; --muted:#9aa0b5;
     --panel:rgba(255,255,255,0.035); --panel-br:rgba(255,255,255,0.08);
+    --serif:"Newsreader","Source Serif 4",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html, body { height:100%; }
   body {
-    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+    font-family:var(--serif);
+    font-size:18px;
     background:
       radial-gradient(ellipse 70% 45% at 18% -6%, #16203b 0%, transparent 55%),
       radial-gradient(ellipse 55% 40% at 92% 4%, #241636 0%, transparent 52%),
@@ -27,6 +33,7 @@
     -webkit-font-smoothing:antialiased;
     user-select:none; -webkit-user-select:none;
   }
+  .tnum { font-family:var(--sans); font-variant-numeric:tabular-nums; }
   /* slow drifting nebula so it's alive even without WebGL */
   body::before {
     content:""; position:fixed; inset:-20% -20% -20% -20%; z-index:0; pointer-events:none;
@@ -38,37 +45,41 @@
   }
   @keyframes drift { 0%{transform:translate3d(-2%,-1%,0) scale(1.02)} 100%{transform:translate3d(2%,2%,0) scale(1.08)} }
 
+  /* P&L ambient particle field (behind everything) */
+  #pnlCanvas { position:fixed; inset:0; z-index:0; pointer-events:none; display:block; }
+
   #wall {
     position:relative; z-index:1;
-    height:100vh; width:100vw; max-width:1240px; margin:0 auto;
+    height:100vh; width:100vw; max-width:1300px; margin:0 auto;
     display:flex; flex-direction:column;
-    padding:clamp(14px,2.4vh,34px) clamp(16px,3vw,40px);
+    padding:clamp(14px,2.4vh,34px) clamp(16px,3vw,44px);
     gap:clamp(10px,1.7vh,22px);
   }
 
   /* ---------- top bar ---------- */
   #topbar { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; }
   #clock {
-    font-size:clamp(20px,2.7vh,34px); font-weight:800; letter-spacing:.01em;
+    font-family:var(--sans);
+    font-size:clamp(24px,3.2vh,42px); font-weight:800; letter-spacing:.01em;
     font-variant-numeric:tabular-nums; line-height:1;
     background:linear-gradient(120deg,#eaf0ff,#c3ccec 60%,#e7ecfb);
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
-  #date { margin-top:5px; font-size:clamp(11px,1.35vh,15px); font-weight:600; color:var(--muted); letter-spacing:.04em; }
+  #date { margin-top:6px; font-size:clamp(13px,1.6vh,18px); font-weight:500; color:var(--muted); letter-spacing:.01em; font-style:italic; }
   #statuschip {
-    margin-top:11px; display:inline-flex; align-items:center; gap:9px; max-width:min(62vw,560px);
-    font-size:clamp(11px,1.45vh,15px); font-weight:600;
-    padding:8px 15px; border-radius:999px;
+    margin-top:12px; display:inline-flex; align-items:center; gap:10px; max-width:min(62vw,600px);
+    font-size:clamp(13px,1.7vh,18px); font-weight:600;
+    padding:9px 17px; border-radius:999px;
     background:rgba(110,231,183,0.08); border:1px solid rgba(110,231,183,0.28); color:#e8f6ef;
     backdrop-filter:blur(12px) saturate(150%); -webkit-backdrop-filter:blur(12px) saturate(150%);
   }
-  #statuschip .sk { font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--mint); flex:none; }
+  #statuschip .sk { font-family:var(--sans); font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--mint); flex:none; }
   #statuschip .st { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   #topright { display:flex; flex-direction:column; align-items:flex-end; gap:10px; flex:none; }
   #back {
     display:inline-flex; align-items:center; gap:7px; text-decoration:none;
-    font-size:12.5px; font-weight:700; color:#c4c9db;
-    padding:8px 14px; border-radius:999px;
+    font-family:var(--sans); font-size:13.5px; font-weight:700; color:#c4c9db;
+    padding:8px 15px; border-radius:999px;
     background:linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
     border:1px solid rgba(255,255,255,0.10);
     backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
@@ -76,24 +87,29 @@
   }
   #back:hover { color:#fff; border-color:rgba(125,211,252,.45); }
   #updated {
-    display:inline-flex; align-items:center; gap:8px;
-    font-size:11.5px; font-weight:600; color:#aab0c5; font-variant-numeric:tabular-nums;
-    padding:7px 13px; border-radius:999px;
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:var(--sans); font-size:12.5px; font-weight:600; color:#aab0c5; font-variant-numeric:tabular-nums;
+    padding:8px 14px; border-radius:999px;
     background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09);
     backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    transition:opacity .3s ease, border-color .3s ease;
   }
-  #updated .dot { width:7px; height:7px; border-radius:50%; background:var(--mint); box-shadow:0 0 8px rgba(110,231,183,.75); animation:blink 2s ease-in-out infinite; flex:none; }
+  #updated .dot { width:8px; height:8px; border-radius:50%; background:var(--mint); box-shadow:0 0 9px rgba(110,231,183,.75); flex:none; }
+  #updated.live .dot { animation:blink 1.8s ease-in-out infinite; }
+  #updated.live .lv { color:var(--mint); font-weight:800; letter-spacing:.14em; font-size:10.5px; text-transform:uppercase; }
   #updated.stale .dot { background:#fcd34d; box-shadow:0 0 8px rgba(252,211,77,.7); animation:none; }
   #updated.err .dot { background:var(--red); box-shadow:0 0 8px rgba(252,165,165,.7); animation:none; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+  #updated.closed { opacity:.62; border-color:rgba(255,255,255,0.07); }
+  #updated.closed .dot { background:#6b7288; box-shadow:none; animation:none; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.28} }
 
-  /* ---------- hero ---------- */
+  /* ---------- hero (one cohesive scene w/ chart) ---------- */
   #hero { display:flex; flex-direction:column; }
-  #heroLabel { font-size:11px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:#7c8299; margin-bottom:6px; }
-  #heroStage { position:relative; width:100%; height:clamp(120px,15.5vh,230px); }
+  #heroLabel { font-family:var(--sans); font-size:12px; font-weight:800; letter-spacing:.24em; text-transform:uppercase; color:#7c8299; margin-bottom:6px; }
+  #heroStage { position:relative; width:100%; height:clamp(140px,17vh,250px); }
   #heroStage canvas { display:block; width:100%; height:100%; }
   #heroFallback {
-    display:none; font-size:clamp(52px,12vh,150px); font-weight:800; letter-spacing:-.02em;
+    display:none; font-family:var(--sans); font-size:clamp(58px,13vh,168px); font-weight:800; letter-spacing:-.02em;
     font-variant-numeric:tabular-nums; line-height:1;
     background:linear-gradient(118deg,#f4f8ff 4%,#c6cfee 34%,#7d88ac 52%,#dfe6fb 70%,#aeb7d6 96%);
     -webkit-background-clip:text; background-clip:text; color:transparent;
@@ -101,21 +117,20 @@
   }
   #hero.fallback #heroStage { display:none; }
   #hero.fallback #heroFallback { display:block; }
-  #heroChange { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-top:8px; }
-  #dayChange { font-size:clamp(22px,3.4vh,42px); font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-.01em; color:var(--muted); transition:color .4s ease; }
-  #dayChangePct { font-size:clamp(15px,2.1vh,26px); font-weight:700; font-variant-numeric:tabular-nums; color:var(--muted); transition:color .4s ease; }
+  #heroChange { display:flex; align-items:baseline; gap:13px; flex-wrap:wrap; margin-top:8px; }
+  #dayChange { font-family:var(--sans); font-size:clamp(26px,3.8vh,48px); font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-.01em; color:var(--muted); transition:color .4s ease; }
+  #dayChangePct { font-family:var(--sans); font-size:clamp(18px,2.4vh,30px); font-weight:700; font-variant-numeric:tabular-nums; color:var(--muted); transition:color .4s ease; }
   #heroChange.up #dayChange, #heroChange.up #dayChangePct { color:var(--mint); text-shadow:0 0 22px rgba(110,231,183,.35); }
   #heroChange.down #dayChange, #heroChange.down #dayChangePct { color:var(--red); text-shadow:0 0 22px rgba(252,165,165,.32); }
-  #heroChange .arr { font-size:.8em; }
-  #heroSince { font-size:clamp(11px,1.3vh,14px); font-weight:600; color:#8188a0; margin-left:2px; }
-  #asOf { margin-top:5px; font-size:clamp(10.5px,1.25vh,13.5px); color:#7c8299; font-weight:500; }
+  #heroSince { font-size:clamp(13px,1.55vh,17px); font-weight:500; color:#8188a0; margin-left:2px; font-style:italic; }
+  #asOf { margin-top:6px; font-size:clamp(12px,1.5vh,16px); color:#7c8299; font-weight:500; font-style:italic; }
 
   /* ---------- chart ---------- */
   #chartSection { display:flex; flex-direction:column; gap:9px; }
-  #rangeRow { display:flex; gap:7px; flex-wrap:wrap; }
+  #rangeRow { display:flex; gap:8px; flex-wrap:wrap; }
   .rangeBtn {
-    font:inherit; cursor:pointer; font-size:12.5px; font-weight:700; letter-spacing:.03em;
-    color:#aab0c5; padding:7px 15px; border-radius:999px;
+    font-family:var(--sans); cursor:pointer; font-size:13.5px; font-weight:700; letter-spacing:.03em;
+    color:#aab0c5; padding:8px 17px; border-radius:999px;
     background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.08);
     transition:all .18s ease;
   }
@@ -125,47 +140,69 @@
     background:linear-gradient(135deg,rgba(125,211,252,.16),rgba(167,139,250,.12));
     box-shadow:0 0 18px rgba(125,211,252,.18);
   }
+  /* full-bleed: no boxed top border, blends up into the hero's space */
   #chartWrap {
-    position:relative; width:100%; height:clamp(210px,25vh,440px);
-    border-radius:18px; overflow:hidden;
-    background:linear-gradient(180deg,rgba(125,211,252,0.03),rgba(10,13,22,0.15));
-    border:1px solid rgba(255,255,255,0.06);
+    position:relative; width:100%; height:clamp(220px,26vh,460px);
+    border:none; border-radius:0 0 20px 20px; overflow:hidden;
+    background:linear-gradient(180deg,rgba(125,211,252,0.02) 0%, rgba(10,13,22,0.16) 100%);
   }
   #equityCanvas { display:block; width:100%; height:100%; }
   #chartEmpty {
     position:absolute; inset:0; display:none; align-items:center; justify-content:center;
-    font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#606784;
+    font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#606784;
   }
   #chartWrap.empty #chartEmpty { display:flex; }
-  #chartMeta { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:clamp(11px,1.3vh,14px); }
-  #chartHL { font-weight:700; font-variant-numeric:tabular-nums; color:#c4c9db; }
+  #chartMeta { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:clamp(13px,1.6vh,17px); }
+  #chartHL { font-family:var(--sans); font-weight:700; font-variant-numeric:tabular-nums; color:#c4c9db; }
   #chartHL .hi { color:var(--mint); } #chartHL .lo { color:#c0c6dc; } #chartHL .sep { color:#4c5474; margin:0 8px; }
-  #chartRange { color:var(--muted); font-weight:600; }
+  #chartRange { color:var(--muted); font-weight:500; font-style:italic; }
 
-  /* ---------- ticker ---------- */
+  /* ---------- thinking crawl ticker ---------- */
   #tickerSection {
     position:relative; overflow:hidden; border-radius:13px;
     background:rgba(255,255,255,0.028); border:1px solid rgba(255,255,255,0.07);
-    padding:11px 0; flex:none;
+    padding:13px 0; flex:none;
   }
   #tickerSection::before, #tickerSection::after {
-    content:""; position:absolute; top:0; bottom:0; width:56px; z-index:2; pointer-events:none;
+    content:""; position:absolute; top:0; bottom:0; width:64px; z-index:2; pointer-events:none;
   }
   #tickerSection::before { left:0; background:linear-gradient(90deg,#0a0d15,transparent); }
   #tickerSection::after { right:0; background:linear-gradient(270deg,#0a0d15,transparent); }
   #tickerTag {
     position:absolute; left:0; top:0; bottom:0; z-index:3; display:flex; align-items:center;
-    padding:0 15px 0 16px; font-size:10px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+    padding:0 16px 0 18px; font-family:var(--sans); font-size:10.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
     color:#07090f; background:linear-gradient(120deg,var(--cyan),var(--purple));
     border-radius:13px 0 0 13px;
   }
-  #ticker { white-space:nowrap; will-change:transform; padding-left:118px; }
+  #ticker { white-space:nowrap; will-change:transform; padding-left:132px; }
   #tickerTrack { display:inline-block; }
   #ticker.run #tickerTrack { animation:crawl linear infinite; }
   @keyframes crawl { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-  .tk { display:inline-block; font-size:clamp(13px,1.7vh,17px); font-weight:500; color:#d3d8ea; padding:0 4px; }
-  .tk .dia { color:var(--cyan); margin:0 22px; opacity:.7; }
+  .tk { display:inline-block; font-size:clamp(17px,2.3vh,25px); font-weight:400; color:#d3d8ea; padding:0 4px; }
+  .tk .dia { color:var(--cyan); margin:0 26px; opacity:.7; }
   .tk b { color:#fff; font-weight:700; }
+
+  /* ---------- AWAITING YOU (pending tickets) ---------- */
+  #pendingCard {
+    display:none; flex:none;
+    background:linear-gradient(135deg,rgba(252,211,77,0.08),rgba(167,139,250,0.06));
+    border:1px solid rgba(252,211,77,0.34); border-radius:16px;
+    padding:clamp(12px,1.7vh,18px) clamp(14px,1.9vw,22px);
+    box-shadow:0 0 28px rgba(252,211,77,0.10);
+  }
+  #pendingCard .pc-title {
+    font-family:var(--sans); font-size:11px; font-weight:800; letter-spacing:.18em; text-transform:uppercase;
+    color:#fcd34d; margin-bottom:11px; display:flex; align-items:center; gap:9px;
+  }
+  #pendingCard .pc-title .pc-pulse { width:8px; height:8px; border-radius:50%; background:#fcd34d; box-shadow:0 0 10px rgba(252,211,77,.85); animation:blink 1.5s ease-in-out infinite; }
+  #pendingList { display:flex; flex-direction:column; gap:10px; }
+  .pend { display:flex; align-items:center; gap:13px; padding:6px 2px; }
+  .pend-m { min-width:0; flex:1 1 auto; }
+  .pend-h { display:flex; align-items:center; gap:10px; margin-bottom:3px; flex-wrap:wrap; }
+  .pend-sym { font-family:var(--sans); font-size:clamp(16px,2vh,21px); font-weight:800; letter-spacing:.02em; }
+  .pend-size { font-family:var(--sans); font-size:13px; font-weight:600; color:#cdd3e6; font-variant-numeric:tabular-nums; }
+  .pend-note { font-size:14px; line-height:1.45; color:#c8cee0; }
+  .pend-src { font-family:var(--sans); font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#fcd34d; margin-left:auto; flex:none; }
 
   /* ---------- lower grid ---------- */
   #lowerGrid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(10px,1.6vh,18px); flex:1 1 auto; min-height:0; }
@@ -175,74 +212,109 @@
     padding:clamp(12px,1.7vh,18px) clamp(13px,1.8vw,20px);
     backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
   }
-  .panel-title { font-size:10.5px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:#7c8299; margin-bottom:11px; display:flex; align-items:center; gap:8px; flex:none; }
+  .panel-title { font-family:var(--sans); font-size:11.5px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:#7c8299; margin-bottom:12px; display:flex; align-items:center; gap:8px; flex:none; }
   .panel-title .cnt { color:#5a6180; font-weight:700; letter-spacing:.04em; }
   .scroller { overflow:hidden; display:flex; flex-direction:column; gap:9px; }
 
-  .pos { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:9px 12px; border-radius:11px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); }
+  .pos { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 13px; border-radius:11px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); }
   .pos-l { display:flex; flex-direction:column; gap:2px; min-width:0; }
-  .pos-sym { font-size:clamp(15px,1.95vh,20px); font-weight:800; letter-spacing:.01em; }
-  .pos-qty { font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums; }
+  .pos-sym { font-family:var(--sans); font-size:clamp(17px,2.2vh,23px); font-weight:800; letter-spacing:.01em; }
+  .pos-qty { font-family:var(--sans); font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; }
   .pos-r { text-align:right; flex:none; }
-  .pos-val { font-size:clamp(13px,1.7vh,17px); font-weight:700; font-variant-numeric:tabular-nums; }
-  .pos-pl { font-size:11.5px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:2px; }
+  .pos-val { font-family:var(--sans); font-size:clamp(15px,1.9vh,19px); font-weight:700; font-variant-numeric:tabular-nums; }
+  .pos-pl { font-family:var(--sans); font-size:12.5px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:2px; }
   .up { color:var(--mint); } .down { color:var(--red); } .flat { color:var(--muted); }
 
-  .trade { display:flex; gap:11px; padding:8px 4px; border-bottom:1px solid rgba(255,255,255,0.04); }
+  /* ---------- recent trades (LIVE only) ---------- */
+  .trade { display:flex; gap:12px; padding:10px 4px; border-bottom:1px solid rgba(255,255,255,0.04); }
   .trade:last-child { border-bottom:none; }
-  .trade-t { flex:none; width:58px; font-size:11px; font-weight:700; color:#8188a0; font-variant-numeric:tabular-nums; padding-top:2px; }
+  .trade-t { flex:none; width:62px; font-family:var(--sans); font-size:11.5px; font-weight:700; color:#8188a0; font-variant-numeric:tabular-nums; padding-top:3px; }
   .trade-m { min-width:0; }
-  .trade-h { display:flex; align-items:center; gap:8px; margin-bottom:2px; }
-  .trade-sym { font-size:13.5px; font-weight:800; letter-spacing:.02em; }
-  .badge { font-size:8.5px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; padding:2px 6px; border-radius:6px; }
-  .badge.live { color:#07090f; background:var(--mint); }
-  .badge.paper { color:#cdd3e6; background:rgba(255,255,255,0.10); }
-  .trade-txt { font-size:12px; line-height:1.42; color:#aab0c5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-  .trade-txt b { color:#d3d8ea; font-weight:650; }
+  .trade-h { display:flex; align-items:center; gap:9px; margin-bottom:3px; flex-wrap:wrap; }
+  .trade-sym { font-family:var(--sans); font-size:15px; font-weight:800; letter-spacing:.02em; }
+  /* bright button-style pills */
+  .pill { display:inline-flex; align-items:center; gap:5px; font-family:var(--sans); font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:4px 10px; border-radius:8px; line-height:1; }
+  .pill.buy  { background:linear-gradient(135deg,#6ee7b7,#3fcf97); color:#062015; box-shadow:0 2px 10px rgba(110,231,183,.28); }
+  .pill.sell { background:linear-gradient(135deg,#fca5a5,#f27373); color:#2a0808; box-shadow:0 2px 10px rgba(252,165,165,.26); }
+  .pill .ck { font-size:12px; font-weight:900; }
+  .pill.failed { opacity:.85; filter:grayscale(.15); }
+  .pill.cancelled { background:rgba(255,255,255,0.10); color:#aab0c5; text-decoration:line-through; box-shadow:none; }
+  .pill.pending { background:rgba(252,211,77,0.18); color:#fcd34d; box-shadow:none; }
+  .trade-flag { font-family:var(--sans); font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+  .trade-flag.failed { color:var(--red); }
+  .trade-flag.cancelled { color:var(--muted); }
+  .trade-txt { font-size:14px; line-height:1.45; color:#aab0c5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .trade-txt b { color:#d3d8ea; font-weight:700; }
 
-  #thinkingPanel { flex:none; }
-  #thinkingText { font-size:clamp(13px,1.7vh,17px); line-height:1.5; color:#cdd3e6; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
-  #thinkingText b { color:#fff; font-weight:650; }
-  #thinkingMeta { margin-top:8px; font-size:11px; color:#7c8299; font-weight:600; }
+  /* ---------- research newspaper card ---------- */
+  #researchCard {
+    flex:none;
+    background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.02));
+    border:1px solid rgba(255,255,255,0.09); border-radius:16px;
+    padding:clamp(16px,2.2vh,26px) clamp(18px,2.4vw,32px);
+    position:relative;
+  }
+  #researchCard::before {
+    content:""; position:absolute; left:clamp(18px,2.4vw,32px); right:clamp(18px,2.4vw,32px); top:clamp(50px,6.6vh,72px);
+    border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .rc-masthead { display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+  .rc-kicker { font-family:var(--sans); font-size:11px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:#7c8299; }
+  .rc-kicker .verdict { color:var(--mint); }
+  .rc-kicker .verdict.avoid, .rc-kicker .verdict.watch { color:#fcd34d; }
+  .rc-tick { font-family:var(--sans); font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan); }
+  .rc-headline { font-family:var(--serif); font-size:clamp(23px,3.1vh,36px); font-weight:700; line-height:1.12; letter-spacing:-.01em; color:#f2f4fb; margin-top:8px; }
+  .rc-byline { font-family:var(--serif); font-style:italic; font-size:13px; color:#8188a0; margin-top:16px; letter-spacing:.01em; }
+  .rc-body {
+    font-family:var(--serif); font-size:clamp(15px,1.85vh,19px); line-height:1.55; color:#cdd3e6;
+    margin-top:9px; text-align:justify; hyphens:auto; -webkit-hyphens:auto;
+    display:-webkit-box; -webkit-line-clamp:6; -webkit-box-orient:vertical; overflow:hidden;
+    column-count:1;
+  }
+  .rc-body b { color:#eef1f9; font-weight:700; }
+  .rc-body::first-letter { font-size:2.9em; font-weight:700; float:left; line-height:0.82; padding:4px 9px 0 0; color:var(--cyan); }
+  @media (min-width:820px) { .rc-body { column-count:2; column-gap:34px; -webkit-line-clamp:7; } }
 
-  .muted-empty { font-size:12.5px; color:#606784; padding:6px 2px; }
+  .muted-empty { font-size:14px; color:#606784; padding:6px 2px; font-style:italic; }
 
   /* boot shimmer */
   #boot {
     position:fixed; inset:0; z-index:20; display:flex; align-items:center; justify-content:center;
     background:#07090f; transition:opacity .7s ease;
-    font-size:12px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:#6a7088;
+    font-family:var(--sans); font-size:12px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:#6a7088;
   }
   #boot.hide { opacity:0; pointer-events:none; }
   #boot .spin { width:24px; height:24px; margin-right:13px; border-radius:50%; border:2.5px solid rgba(125,211,252,.18); border-top-color:var(--cyan); animation:sp .8s linear infinite; }
   @keyframes sp { to{ transform:rotate(360deg); } }
 
   @media (max-aspect-ratio:3/4) { /* tall portrait wall */
-    #heroStage { height:clamp(150px,13vh,260px); }
-    #chartWrap { height:clamp(260px,22vh,520px); }
+    #heroStage { height:clamp(170px,15vh,290px); }
+    #chartWrap { height:clamp(280px,23vh,540px); }
   }
   @media (max-width:640px) {
     #lowerGrid { grid-template-columns:1fr; }
     #statuschip { max-width:80vw; }
+    .rc-body { -webkit-line-clamp:5; }
   }
   @media (prefers-reduced-motion:reduce) {
-    #updated .dot, .spin, body::before, #ticker.run #tickerTrack { animation:none; }
+    #updated .dot, .spin, body::before, #ticker.run #tickerTrack, #pendingCard .pc-pulse { animation:none; }
   }
 </style>
 </head>
 <body>
+  <canvas id="pnlCanvas" aria-hidden="true"></canvas>
   <div id="boot"><span class="spin"></span><span>Warming up the wall</span></div>
 
   <div id="wall">
     <header id="topbar">
       <div id="clockbox">
-        <div id="clock">--:--:--</div>
+        <div id="clock" class="tnum">--:--:--</div>
         <div id="date">—</div>
         <div id="statuschip"><span class="sk">Session</span><span class="st" id="statusText">connecting…</span></div>
       </div>
       <div id="topright">
         <a id="back" href="./" aria-label="Back to dashboard">← dashboard</a>
-        <div id="updated"><span class="dot"></span><span id="updatedText">connecting…</span></div>
+        <div id="updated"><span class="dot"></span><span class="lv" id="updatedLive" style="display:none">Live</span><span id="updatedText">connecting…</span></div>
       </div>
     </header>
 
@@ -282,36 +354,49 @@
       <div id="ticker"><div id="tickerTrack"></div></div>
     </section>
 
+    <section id="pendingCard">
+      <div class="pc-title"><span class="pc-pulse"></span>Awaiting you</div>
+      <div id="pendingList"></div>
+    </section>
+
     <section id="lowerGrid">
       <div class="panel" id="positionsPanel">
         <div class="panel-title">Open positions <span class="cnt" id="posCount"></span></div>
         <div class="scroller" id="positionsList"><div class="muted-empty">loading…</div></div>
       </div>
       <div class="panel" id="tradesPanel">
-        <div class="panel-title">Recent trades</div>
+        <div class="panel-title">Recent trades <span class="cnt">· live account</span></div>
         <div class="scroller" id="tradesList"><div class="muted-empty">loading…</div></div>
       </div>
     </section>
 
-    <section class="panel" id="thinkingPanel">
-      <div class="panel-title">What the engine's thinking</div>
-      <div id="thinkingText">…</div>
-      <div id="thinkingMeta"></div>
+    <section id="researchCard">
+      <div class="rc-masthead">
+        <span class="rc-kicker" id="rcKicker">Engine Research</span>
+        <span class="rc-tick" id="rcTick"></span>
+      </div>
+      <div class="rc-headline" id="rcHeadline">…</div>
+      <div class="rc-byline" id="rcByline"></div>
+      <div class="rc-body" id="rcBody"></div>
     </section>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FontLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TextGeometry.js"></script>
   <script>
   "use strict";
   (function () {
     // =====================================================================
     //  Agentic Trading — WALL DISPLAY
-    //  A portrait ambient scoreboard. Hero = a metallic 3D account value
-    //  (per-digit textured planes, baked chrome gradient + rim, additive
-    //  bloom sprites, a live specular sweep, and pointer/tilt parallax).
-    //  Below: a glowing gradient equity chart with light-sprites tracing
-    //  the line, a news-crawl of the engine's thoughts, and positions /
-    //  trades. Fake-bloom via additive sprites (no r128 postprocessing).
+    //  Hero = a GENUINE 3D account value: real extruded TextGeometry glyphs
+    //  (helvetiker bold typeface) in a metallic MeshStandardMaterial with a
+    //  PMREM environment map for true reflections, colored cyan/purple/mint
+    //  rim point-lights behind the numerals so the bevels catch light, real
+    //  3D mouse/tilt parallax (you see the sides of the digits shift), and
+    //  additive bloom sprites. Digits flip + flash on value change.
+    //  Behind everything: P&L-tied ambient particles (green up / red down).
+    //  Graceful CSS-number fallback if WebGL / font ever fails.
     // =====================================================================
 
     var COL = { bg:0x07090f, cyan:0x7dd3fc, purple:0xa78bfa, mint:0x6ee7b7, red:0xfca5a5, text:0xe8eaf2, muted:0x9aa0b5 };
@@ -319,23 +404,26 @@
 
     var PRIMARY  = "https://raw.githubusercontent.com/neongatsby/agentic-trading-site/main/site/data.json";
     var FALLBACK = "./data.json";
-    var POLL_MS  = 20000;
+    var FONT_URL = "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/fonts/helvetiker_bold.typeface.json";
+    var POLL_MS  = 10000; // poll aggressively (~10s) with cache-busting
 
     // ---- DOM refs ----
     var $ = function (id) { return document.getElementById(id); };
     var elBoot = $("boot");
     var elClock = $("clock"), elDate = $("date"), elStatusText = $("statusText");
-    var elUpdated = $("updated"), elUpdatedText = $("updatedText");
+    var elUpdated = $("updated"), elUpdatedText = $("updatedText"), elUpdatedLive = $("updatedLive");
     var elHero = $("hero"), elHeroStage = $("heroStage"), elHeroFallback = $("heroFallback");
     var elHeroChange = $("heroChange"), elDayChange = $("dayChange"), elDayChangePct = $("dayChangePct"), elHeroSince = $("heroSince");
     var elAsOf = $("asOf");
     var elChartWrap = $("chartWrap"), elCanvas = $("equityCanvas"), elChartHL = $("chartHL"), elChartRange = $("chartRange");
     var elTicker = $("ticker"), elTickerTrack = $("tickerTrack");
     var elPositions = $("positionsList"), elPosCount = $("posCount"), elTrades = $("tradesList");
-    var elThinking = $("thinkingText"), elThinkingMeta = $("thinkingMeta");
+    var elPendingCard = $("pendingCard"), elPendingList = $("pendingList");
+    var elRcKicker = $("rcKicker"), elRcTick = $("rcTick"), elRcHeadline = $("rcHeadline"), elRcByline = $("rcByline"), elRcBody = $("rcBody");
+    var elPnl = $("pnlCanvas");
 
     // ---- shared state ----
-    var state = { data:null, equity:null, dayPnl:0, totalPnl:0, generatedAt:null, marketNote:"" };
+    var state = { data:null, equity:null, equityStr:"", dayPnl:0, totalPnl:0, generatedAt:null, marketNote:"", marketClosed:false };
     var currentRange = "1D";
 
     // =====================================================================
@@ -360,14 +448,17 @@
       return "$" + Number(n).toLocaleString("en-US", { minimumFractionDigits:2, maximumFractionDigits:2 });
     }
     function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" })[c]; }); }
-    // **bold** friend-voice markdown → <b>  (keeps original sentence case)
     function rich(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }
-    // strip markdown to plain text (for the crawl / short snippets)
     function plain(s) { return String(s == null ? "" : s).replace(/\*\*(.+?)\*\*/g, "$1").replace(/\s+/g, " ").trim(); }
     function timeStr(ts) {
       var t = typeof ts === "number" ? ts : Date.parse(ts);
       if (isNaN(t)) return "";
       return new Date(t).toLocaleTimeString([], { hour:"numeric", minute:"2-digit" });
+    }
+    function dateStr(ts) {
+      var t = typeof ts === "number" ? ts : Date.parse(ts);
+      if (isNaN(t)) return "";
+      return new Date(t).toLocaleDateString([], { weekday:"long", month:"long", day:"numeric" });
     }
 
     // =====================================================================
@@ -395,7 +486,9 @@
         .catch(function (err) {
           console.warn("[wall] data fetch failed:", err && err.message);
           if (state.equity === null) { elHero.classList.add("fallback"); elHeroFallback.textContent = "$—"; }
+          elUpdated.classList.remove("live", "closed");
           elUpdated.classList.add("err"); elUpdatedText.textContent = "reconnecting…";
+          elUpdatedLive.style.display = "none";
         });
     }
 
@@ -409,18 +502,19 @@
       state.totalPnl = Number(live.total_pnl) || 0;
       state.generatedAt = d.generated_at || null;
       state.marketNote = d.market_note || "";
+      state.marketClosed = /clos/i.test(state.marketNote);
 
       renderHeroChange();
       renderStatus(d.status);
       renderTicker(d.pulse);
-      renderThinking(d.pulse);
       renderPositions(live.positions);
       renderTrades(d.feed);
+      renderPending(d.pending_tickets);
+      renderResearch(d);
       renderChart(currentRange);
 
       // hero number
-      if (heroReady && state.equity != null) heroSetValue(state.equity);
-      else if (state.equity != null) elHeroFallback.textContent = fmtMoney(state.equity);
+      if (state.equity != null) heroSetValue(state.equity);
       bootDone();
     }
 
@@ -444,54 +538,63 @@
       if (!Array.isArray(status) || !status.length) return;
       var s = status[status.length - 1]; // latest session
       elStatusText.textContent = plain(s.text || "");
-      var sk = $("statusText").previousElementSibling;
+      var sk = elStatusText.previousElementSibling;
       if (sk) sk.textContent = plain(s.session || "Session");
     }
 
+    // freshness: LIVE pulse when open; de-emphasize when market closed
     function markUpdated() { elUpdated.classList.remove("err"); updateAgo(); }
     function updateAgo() {
       if (!state.generatedAt) return;
       var t = Date.parse(state.generatedAt);
-      if (isNaN(t)) { elUpdatedText.textContent = "live"; return; }
-      var secs = Math.max(0, Math.round((Date.now() - t) / 1000));
-      var txt, stale = false;
-      if (secs < 60) txt = "updated " + secs + "s ago";
-      else if (secs < 3600) { txt = "updated " + Math.round(secs / 60) + "m ago"; stale = secs > 240; }
-      else { txt = "updated " + Math.round(secs / 3600) + "h ago"; stale = true; }
-      elUpdatedText.textContent = txt;
-      elUpdated.classList.toggle("stale", stale);
-      // "as of" line
-      var asof = "as of " + timeStr(state.generatedAt);
-      if (state.marketNote) asof += "  ·  " + state.marketNote;
+      var closed = state.marketClosed;
+      elUpdated.classList.toggle("closed", closed);
+      elUpdated.classList.toggle("live", !closed);
+      elUpdatedLive.style.display = closed ? "none" : "";
+
+      if (closed) {
+        elUpdated.classList.remove("stale");
+        elUpdatedText.textContent = "Market closed";
+      } else if (isNaN(t)) {
+        elUpdatedText.textContent = "updated just now";
+      } else {
+        var secs = Math.max(0, Math.round((Date.now() - t) / 1000));
+        var txt, stale = false;
+        if (secs < 60) txt = "updated " + secs + "s ago";
+        else if (secs < 3600) { txt = "updated " + Math.round(secs / 60) + "m ago"; stale = secs > 240; }
+        else { txt = "updated " + Math.round(secs / 3600) + "h ago"; stale = true; }
+        elUpdatedText.textContent = txt;
+        elUpdated.classList.toggle("stale", stale);
+      }
+
+      // "as of" line — lean on the market-closed messaging when closed
+      var asof;
+      if (closed) {
+        asof = (state.marketNote || "Market closed") + "  ·  updates at next open";
+      } else {
+        asof = "as of " + timeStr(state.generatedAt);
+        if (state.marketNote) asof += "  ·  " + state.marketNote;
+      }
       elAsOf.textContent = asof;
     }
     setInterval(updateAgo, 1000);
 
     // =====================================================================
-    //  TICKER  (news crawl of engine thoughts — sentence case, not caps)
+    //  TICKER  (thinking crawl — HALF speed, bigger text)
     // =====================================================================
     function renderTicker(pulse) {
       if (!Array.isArray(pulse) || !pulse.length) return;
       var items = pulse.slice(0, 12).map(function (p) { return plain(p.text); }).filter(Boolean);
       if (!items.length) return;
       var one = items.map(function (t) { return '<span class="tk">' + esc(t) + '<span class="dia">◆</span></span>'; }).join("");
-      // duplicate for a seamless -50% loop
-      elTickerTrack.innerHTML = one + one;
-      // speed proportional to content so it always reads at a steady pace
+      elTickerTrack.innerHTML = one + one; // duplicate for a seamless -50% loop
       requestAnimationFrame(function () {
         var w = elTickerTrack.scrollWidth / 2; // one copy
-        var pxPerSec = 62;
-        var dur = Math.max(30, w / pxPerSec);
+        var pxPerSec = 31; // HALF of the previous 62px/s
+        var dur = Math.max(60, w / pxPerSec);
         elTickerTrack.style.animationDuration = dur + "s";
         elTicker.classList.add("run");
       });
-    }
-
-    function renderThinking(pulse) {
-      if (!Array.isArray(pulse) || !pulse.length) { return; }
-      var p = pulse[0];
-      elThinking.innerHTML = rich(p.text || "");
-      elThinkingMeta.textContent = p.ts ? ("latest · " + timeStr(p.ts)) : "";
     }
 
     // =====================================================================
@@ -527,22 +630,57 @@
     }
 
     // =====================================================================
-    //  RECENT TRADES  (feed items of type 'trade')
+    //  RECENT TRADES — LIVE ACCOUNT ONLY + status pills
     // =====================================================================
+    function isLive(o) { return o && String(o.account || "").toLowerCase() === "live"; }
+    function tradeSide(o) {
+      var s = String((o && (o.side || o.action)) || "").toLowerCase();
+      if (s.indexOf("sell") >= 0 || s === "s") return "sell";
+      if (s.indexOf("buy") >= 0 || s === "b") return "buy";
+      var tx = String((o && o.text) || "").toLowerCase();
+      if (/\b(sold|sell|selling|trim|trimmed|exit|exited|closed out|close out|reduce|reduced|took profit|stopped out|stop hit)\b/.test(tx)) return "sell";
+      return "buy"; // default: buys / new tickets
+    }
+    function tradeStatus(o) {
+      var st = String((o && (o.status || o.state)) || "").toLowerCase();
+      if (st) {
+        if (/fill|filled|done|complete|executed/.test(st)) return "filled";
+        if (/cancel/.test(st)) return "cancelled";
+        if (/fail|reject|error|declin/.test(st)) return "failed";
+        if (/pend|await|queued|open|new|submit/.test(st)) return "pending";
+      }
+      var tx = String((o && o.text) || "").toLowerCase();
+      if (/\bcancell?ed\b/.test(tx)) return "cancelled";
+      if (/\b(failed|rejected|order error|couldn'?t fill)\b/.test(tx)) return "failed";
+      if (/\b(awaiting|pending approval|one-tap ticket|new ticket)\b/.test(tx)) return "pending";
+      return "filled"; // feed trades are filled by default
+    }
+    function statusMark(status) {
+      if (status === "filled") return '<span class="ck">✓</span>';
+      if (status === "failed") return '<span class="ck">✗</span>';
+      if (status === "cancelled") return '';
+      if (status === "pending") return '<span class="ck">…</span>';
+      return '<span class="ck">✓</span>';
+    }
     function renderTrades(feed) {
-      if (!Array.isArray(feed)) { elTrades.innerHTML = '<div class="muted-empty">No trades yet.</div>'; return; }
-      var trades = feed.filter(function (f) { return f && f.type === "trade"; }).slice(0, 6);
-      if (!trades.length) { elTrades.innerHTML = '<div class="muted-empty">No trades yet.</div>'; return; }
+      if (!Array.isArray(feed)) { elTrades.innerHTML = '<div class="muted-empty">No live trades yet.</div>'; return; }
+      var trades = feed.filter(function (f) { return f && f.type === "trade" && isLive(f); }).slice(0, 7);
+      if (!trades.length) { elTrades.innerHTML = '<div class="muted-empty">No live trades yet — every fill on the real account shows up here.</div>'; return; }
       var html = trades.map(function (t) {
-        var acct = (t.account || "").toLowerCase() === "live" ? "live" : "paper";
-        var snippet = plain(t.text || "");
+        var side = tradeSide(t);          // buy | sell
+        var status = tradeStatus(t);      // filled | failed | cancelled | pending
+        var pillCls = "pill " + side + (status === "failed" ? " failed" : status === "cancelled" ? " cancelled" : status === "pending" ? " pending" : "");
+        var flag = "";
+        if (status === "failed") flag = '<span class="trade-flag failed">failed</span>';
+        else if (status === "cancelled") flag = '<span class="trade-flag cancelled">cancelled</span>';
         return '' +
           '<div class="trade">' +
             '<div class="trade-t">' + esc(timeStr(t.ts)) + '</div>' +
             '<div class="trade-m">' +
               '<div class="trade-h">' +
                 '<span class="trade-sym">' + esc(t.symbol || "—") + '</span>' +
-                '<span class="badge ' + acct + '">' + acct + '</span>' +
+                '<span class="' + pillCls + '">' + (side === "sell" ? "SELL" : "BUY") + statusMark(status) + '</span>' +
+                flag +
               '</div>' +
               '<div class="trade-txt">' + rich(t.text || "") + '</div>' +
             '</div>' +
@@ -552,12 +690,70 @@
     }
 
     // =====================================================================
-    //  TIME-RANGE SERIES DERIVATION
-    //  Buttons: 1H · 1D · 1W · 1M · 6M · 1Y
-    //  Map:  1D→"1D"  1M→"1M"  1Y→"1Y";  1H=last 60min of 1D,
-    //        1W=last 7d of 1M, 6M=last 180d of 1Y.
-    //  Fallbacks: live.intraday ({t,v}) then live.equity_curve ({date,value}).
-    //  Each source normalizes to { pts:[[x,y]...], isTime, startLab, endLab }.
+    //  AWAITING YOU — pending trade tickets (Telegram / web requests)
+    // =====================================================================
+    function renderPending(tickets) {
+      if (!Array.isArray(tickets) || !tickets.length) { elPendingCard.style.display = "none"; return; }
+      var html = tickets.map(function (tk) {
+        var sym = tk.symbol || tk.ticker || "—";
+        var side = tradeSide(tk);
+        var size = tk.notional || tk.usd || tk.amount || tk.plan_usd || tk.size ||
+                   (tk.qty != null ? (tk.qty + " sh") : "");
+        if (typeof size === "number") size = fmtCompact(size);
+        var note = plain(tk.note || tk.reason || tk.thesis || tk.text || tk.rationale || "");
+        var src = tk.source || tk.channel || tk.via || "";
+        var when = tk.ts || tk.created_at || tk.created || tk.requested_at;
+        var whenStr = when ? timeStr(when) : "";
+        return '' +
+          '<div class="pend">' +
+            '<span class="pill ' + side + '">' + (side === "sell" ? "SELL" : "BUY") + '</span>' +
+            '<div class="pend-m">' +
+              '<div class="pend-h">' +
+                '<span class="pend-sym">' + esc(sym) + '</span>' +
+                (size ? '<span class="pend-size">' + esc(String(size)) + '</span>' : '') +
+                (whenStr ? '<span class="pend-size">· ' + esc(whenStr) + '</span>' : '') +
+              '</div>' +
+              (note ? '<div class="pend-note">' + esc(note) + '</div>' : '<div class="pend-note">Awaiting your approval on the wall or your phone.</div>') +
+            '</div>' +
+            (src ? '<span class="pend-src">' + esc(String(src)) + '</span>' : '<span class="pend-src">awaiting you</span>') +
+          '</div>';
+      }).join("");
+      elPendingList.innerHTML = html;
+      elPendingCard.style.display = "";
+    }
+
+    // =====================================================================
+    //  RESEARCH — newspaper-style editorial card
+    // =====================================================================
+    function renderResearch(d) {
+      var cov = Array.isArray(d.coverage) ? d.coverage : [];
+      var pick = null;
+      // highest-conviction: prefer a 'buy' verdict, else the first entry
+      for (var i = 0; i < cov.length; i++) {
+        if (String(cov[i].verdict || "").toLowerCase() === "buy") { pick = cov[i]; break; }
+      }
+      if (!pick && cov.length) pick = cov[0];
+
+      if (pick && (pick.thesis || pick.name)) {
+        var verdict = String(pick.verdict || "").toLowerCase();
+        var vlabel = plain(pick.verdict_label || pick.verdict || "");
+        elRcKicker.innerHTML = 'Engine Research · <span class="verdict ' + esc(verdict) + '">' + esc(vlabel || verdict.toUpperCase()) + '</span>';
+        elRcTick.textContent = pick.ticker || "";
+        elRcHeadline.textContent = (pick.name || pick.ticker || "");
+        var when = pick.updated || d.generated_at;
+        elRcByline.textContent = "Engine Research · " + (when ? dateStr(when) : "");
+        elRcBody.innerHTML = rich(pick.thesis || pick.size_note || "");
+      } else if (d.latest_recap) {
+        elRcKicker.innerHTML = 'Engine Research · <span class="verdict">Latest recap</span>';
+        elRcTick.textContent = "RECAP";
+        elRcHeadline.textContent = "The engine's latest read";
+        elRcByline.textContent = "Engine Research · " + (d.generated_at ? dateStr(d.generated_at) : "");
+        elRcBody.innerHTML = rich(String(d.latest_recap));
+      }
+    }
+
+    // =====================================================================
+    //  TIME-RANGE SERIES DERIVATION   (1H · 1D · 1W · 1M · 6M · 1Y)
     // =====================================================================
     var DAY = 24 * 3600 * 1000;
 
@@ -570,7 +766,7 @@
       if (!arr || arr.length < 2) return arr || [];
       var last = arr[arr.length - 1][0];
       var out = arr.filter(function (p) { return p[0] >= last - ms; });
-      return out.length >= 2 ? out : arr; // never return a broken single-point slice
+      return out.length >= 2 ? out : arr;
     }
     function intradayPts(d) {
       var ia = d.live && d.live.intraday;
@@ -583,9 +779,9 @@
       return c.map(function (p, i) { return { x:i, y:Number(p.value), lab:p.date }; }).filter(function (p) { return isFinite(p.y); });
     }
 
-    // returns { pts:[[x,y]...], isTime, startLab, endLab, empty }
+    // returns { pts:[[x,y]...], isTime, labels:[...], startLab, endLab, empty }
     function seriesForRange(d, range) {
-      var raw = [], isTime = true;
+      var raw = [];
       if (range === "1H") {
         raw = tailByTime(ehSeries(d, "1D"), 60 * 60 * 1000);
         if (raw.length < 2) { var ip = intradayPts(d); if (ip.length >= 2) raw = tailByTime(ip, 60 * 60 * 1000); }
@@ -606,28 +802,34 @@
         return {
           pts: raw.map(function (p) { return [p[0], p[1]]; }),
           isTime: true,
-          startLab: labelFor(raw[0][0], range),
-          endLab: labelFor(raw[raw.length - 1][0], range),
+          labels: raw.map(function (p) { return axisLabel(p[0], range); }),
+          startLab: axisLabel(raw[0][0], range),
+          endLab: axisLabel(raw[raw.length - 1][0], range),
           empty: false
         };
       }
-      // final fallback: the daily equity curve (indexed x, date labels)
       var cp = curvePts(d);
       if (cp && cp.length >= 2) {
         return {
           pts: cp.map(function (p) { return [p.x, p.y]; }),
           isTime: false,
+          labels: cp.map(function (p) { return p.lab || ""; }),
           startLab: cp[0].lab || "",
           endLab: cp[cp.length - 1].lab || "",
           empty: false
         };
       }
-      return { pts: [], isTime: true, startLab: "", endLab: "", empty: true };
+      return { pts: [], isTime: true, labels: [], startLab: "", endLab: "", empty: true };
     }
 
-    function labelFor(ms, range) {
+    // axis-friendly labels: compact times for intraday, month/day otherwise
+    function axisLabel(ms, range) {
       var dte = new Date(ms);
-      if (range === "1H" || range === "1D") return dte.toLocaleTimeString([], { hour:"numeric", minute:"2-digit" });
+      if (range === "1H" || range === "1D") {
+        var h = dte.getHours(), m = dte.getMinutes();
+        var ap = h < 12 ? "AM" : "PM"; var hh = h % 12; if (hh === 0) hh = 12;
+        return m === 0 ? (hh + ap) : (hh + ":" + (m < 10 ? "0" : "") + m + ap);
+      }
       return dte.toLocaleDateString([], { month:"short", day:"numeric" });
     }
     function rangeCaption(range, ser) {
@@ -639,10 +841,10 @@
     }
 
     // =====================================================================
-    //  EQUITY CHART  (custom canvas 2D — gradient glow line, area fill,
-    //  pulsing end-dot, and light-sprites tracing the path)
+    //  EQUITY CHART  (canvas 2D — glow line, area, tracing sprites, end-dot,
+    //  and X-AXIS TIME LABELS along the bottom)
     // =====================================================================
-    var chart = { ser:null, pts:[], min:0, max:1, revealT:1, W:0, H:0, dpr:1, plX:[], plY:[], cum:[], total:0 };
+    var chart = { ser:null, pts:[], min:0, max:1, revealT:1, W:0, H:0, dpr:1, plX:[], plY:[], cum:[], total:0, xticks:[] };
 
     function sizeChart() {
       var r = elChartWrap.getBoundingClientRect();
@@ -664,7 +866,7 @@
       elChartWrap.classList.toggle("empty", !!ser.empty);
       elChartRange.textContent = rangeCaption(range, ser);
       if (ser.empty || ser.pts.length < 2) {
-        chart.pts = [];
+        chart.pts = []; chart.xticks = [];
         elChartHL.innerHTML = '<span class="hi">H $—</span><span class="sep">·</span><span class="lo">L $—</span>';
         return;
       }
@@ -675,22 +877,23 @@
       elChartHL.innerHTML = '<span class="hi">H ' + esc(fmtCompact(chart.max)) + '</span>' +
                             '<span class="sep">·</span>' +
                             '<span class="lo">L ' + esc(fmtCompact(chart.min)) + '</span>';
-      chart.revealT = 0; // draw-on animation
+      chart.revealT = 0;
       buildChartGeometry();
     }
 
+    var CHART_PADB = 26; // room for x-axis labels
+
     function buildChartGeometry() {
       var pts = chart.pts;
-      chart.plX = []; chart.plY = []; chart.cum = []; chart.total = 0;
+      chart.plX = []; chart.plY = []; chart.cum = []; chart.total = 0; chart.xticks = [];
       if (!pts || pts.length < 2) return;
-      var padL = 8, padR = 8, padT = 20, padB = 14;
+      var padL = 10, padR = 10, padT = 22, padB = CHART_PADB;
       var w = chart.W, h = chart.H;
       var xs = pts.map(function (p) { return p[0]; });
       var xMin = Math.min.apply(null, xs), xMax = Math.max.apply(null, xs);
       var xSpan = (xMax - xMin) || 1;
       var yMin = chart.min, yMax = chart.max;
       var ySpan = (yMax - yMin) || 1;
-      // add headroom so the line breathes
       var pad = ySpan * 0.14; yMin -= pad; yMax += pad; ySpan = yMax - yMin;
       for (var i = 0; i < pts.length; i++) {
         var px = padL + (pts[i][0] - xMin) / xSpan * (w - padL - padR);
@@ -703,9 +906,19 @@
         chart.total += Math.sqrt(dx * dx + dy * dy);
         chart.cum.push(chart.total);
       }
+      // X-axis ticks (evenly spaced along the series)
+      var labels = chart.ser && chart.ser.labels ? chart.ser.labels : null;
+      var N = Math.min(6, pts.length);
+      var seen = {};
+      for (var q = 0; q < N; q++) {
+        var idx = Math.round(q * (pts.length - 1) / (N - 1));
+        var txt = labels ? labels[idx] : "";
+        if (!txt || seen[txt]) continue;
+        seen[txt] = 1;
+        chart.xticks.push({ px: chart.plX[idx], text: txt });
+      }
     }
 
-    // point at arc-length fraction u (0..1) along the polyline
     function pointAtU(u) {
       var target = u * chart.total, n = chart.plX.length;
       if (n < 2) return null;
@@ -733,15 +946,13 @@
       var rev = 1 - Math.pow(1 - chart.revealT, 3);
       var upMood = state.dayPnl >= 0;
 
-      // gradient stroke cyan → purple → mint across x
       var grad = ctx.createLinearGradient(0, 0, chart.W, 0);
       grad.addColorStop(0, CSSC.cyan); grad.addColorStop(0.55, CSSC.purple); grad.addColorStop(1, CSSC.mint);
 
-      // how far along to draw for the reveal
       var drawTo = Math.max(1, Math.floor((n - 1) * rev));
       var endPt = pointAtU(rev);
 
-      // ---- area fill under the (revealed) line ----
+      // area fill
       ctx.beginPath();
       ctx.moveTo(chart.plX[0], chart.plY[0]);
       for (var i = 1; i <= drawTo; i++) ctx.lineTo(chart.plX[i], chart.plY[i]);
@@ -756,7 +967,7 @@
       ctx.fillStyle = fill;
       ctx.fill();
 
-      // ---- glow underlay ----
+      // glow underlay + crisp line
       ctx.save();
       ctx.lineJoin = "round"; ctx.lineCap = "round";
       ctx.strokeStyle = grad;
@@ -767,18 +978,16 @@
       for (var k = 1; k <= drawTo; k++) ctx.lineTo(chart.plX[k], chart.plY[k]);
       if (endPt) ctx.lineTo(endPt.x, endPt.y);
       ctx.stroke();
-      // crisp core line
       ctx.shadowBlur = 0; ctx.lineWidth = 2.1; ctx.stroke();
       ctx.restore();
 
-      // ---- light sprites tracing the path ----
+      // tracing light sprites
       if (chart.revealT >= 0.98) {
         var SPRITES = 3;
         for (var s = 0; s < SPRITES; s++) {
           var u = ((t * 0.06) + s / SPRITES) % 1;
           var p = pointAtU(u);
           if (!p) continue;
-          // small comet tail
           for (var tail = 0; tail < 5; tail++) {
             var tu = u - tail * 0.012; if (tu < 0) tu += 1;
             var tp = pointAtU(tu); if (!tp) continue;
@@ -795,7 +1004,7 @@
         }
       }
 
-      // ---- pulsing end-dot ----
+      // pulsing end-dot
       if (endPt) {
         var pulse = 0.5 + 0.5 * Math.sin(t * 3.0);
         var endCol = upMood ? "110,231,183" : "252,165,165";
@@ -808,6 +1017,22 @@
         ctx.beginPath(); ctx.arc(endPt.x, endPt.y, 3.4, 0, Math.PI * 2); ctx.fill();
         ctx.strokeStyle = "rgba(" + endCol + ",0.9)"; ctx.lineWidth = 2;
         ctx.beginPath(); ctx.arc(endPt.x, endPt.y, 5.5 + pulse * 2, 0, Math.PI * 2); ctx.stroke();
+      }
+
+      // X-axis time labels
+      if (chart.xticks && chart.xticks.length) {
+        ctx.save();
+        ctx.font = "600 12px -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif";
+        ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+        for (var x = 0; x < chart.xticks.length; x++) {
+          var tick = chart.xticks[x];
+          var lx = Math.max(16, Math.min(chart.W - 16, tick.px));
+          ctx.strokeStyle = "rgba(255,255,255,0.06)"; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(lx, chart.H - CHART_PADB + 4); ctx.lineTo(lx, chart.H - CHART_PADB + 9); ctx.stroke();
+          ctx.fillStyle = "rgba(154,160,181,0.78)";
+          ctx.fillText(tick.text, lx, chart.H - 7);
+        }
+        ctx.restore();
       }
     }
 
@@ -824,85 +1049,57 @@
     })();
 
     // =====================================================================
-    //  HERO NUMBER — metallic 3D digits (Three.js r128, fake bloom)
+    //  HERO NUMBER — REAL extruded 3D geometry (Three.js r128)
+    //  Metallic PBR + PMREM env reflections + colored rim point-lights +
+    //  additive bloom + true 3D parallax. Per-digit flip/flash on change.
     // =====================================================================
-    var heroReady = false;
     var THREE_OK = (typeof THREE !== "undefined");
-    var hScene, hCam, hRenderer, hRoot, hNumGroup, hBgGroup, hSweep, hParticles, hParticleGeo;
-    var hGlyphs = [];          // { mesh, glow, ch, anim }
+    var heroReady = false, heroFontReady = false;
+    var hScene, hCam, hRenderer, hRoot, hNumGroup, hBloomGroup, hEnv, hPmrem, hFont;
+    var hLights = {}, hBloom = [];
+    var hGlyphs = [];              // { mesh, ch, adv, x, anim, dir }
     var hCurrentStr = "";
-    var hGlyphTex = {};        // char -> CanvasTexture
-    var hGlowTex = null, hSweepTex = null;
     var hPointerX = 0, hPointerY = 0, hTiltX = 0, hTiltY = 0;
-    var GS = 1.5;              // glyph world height
-    var ADV = { "0":0.62,"1":0.52,"2":0.62,"3":0.62,"4":0.64,"5":0.62,"6":0.62,"7":0.60,"8":0.62,"9":0.62,",":0.30,".":0.28,"$":0.60,"−":0.42,"-":0.42 };
-    function advOf(ch) { return (ADV[ch] || 0.6) * GS; }
+    var HSIZE = 1.0, HDEPTH = 0.30, HBEVEL = 0.035;
+    var hDigitAdv = 0.62;          // uniform (tabular) advance for 0-9
+    var hFlashUp = true;
 
     function webglOK() {
       try { var c = document.createElement("canvas"); return !!(window.WebGLRenderingContext && (c.getContext("webgl") || c.getContext("experimental-webgl"))); }
       catch (e) { return false; }
     }
-
-    function hueLerp(tt) {
-      // cyan → purple → mint
-      var c1 = new THREE.Color(COL.cyan), c2 = new THREE.Color(COL.purple), c3 = new THREE.Color(COL.mint), c = new THREE.Color();
-      if (tt < 0.5) c.copy(c1).lerp(c2, tt / 0.5); else c.copy(c2).lerp(c3, (tt - 0.5) / 0.5);
-      return c;
+    function textGeomOK() {
+      return THREE_OK && typeof THREE.TextGeometry === "function" && typeof THREE.FontLoader === "function";
     }
 
-    function makeGlyphTexture(ch) {
-      if (hGlyphTex[ch]) return hGlyphTex[ch];
-      var S = 256;
-      var cv = document.createElement("canvas"); cv.width = S; cv.height = S;
+    // procedural equirect gradient → PMREM env map (real reflections)
+    function makeEnvTexture() {
+      var W = 512, H = 256, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
       var g = cv.getContext("2d");
-      g.clearRect(0, 0, S, S);
-      g.font = "800 190px -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif";
-      g.textAlign = "center"; g.textBaseline = "middle";
-      var cx = S / 2, cy = S / 2 + 6;
-
-      // outer soft glow (cyan rim bloom)
-      g.save();
-      g.shadowColor = "rgba(125,211,252,0.85)"; g.shadowBlur = 26;
-      g.fillStyle = "rgba(220,235,255,0.9)";
-      g.fillText(ch, cx, cy);
-      g.restore();
-
-      // metallic vertical gradient (polished steel / chrome)
-      var grad = g.createLinearGradient(0, S * 0.16, 0, S * 0.86);
-      grad.addColorStop(0.00, "#ffffff");
-      grad.addColorStop(0.16, "#eaf0ff");
-      grad.addColorStop(0.34, "#c2ccea");
-      grad.addColorStop(0.50, "#828cad");
-      grad.addColorStop(0.55, "#6b7597");
-      grad.addColorStop(0.62, "#aab4d3");
-      grad.addColorStop(0.80, "#f0f4ff");
-      grad.addColorStop(1.00, "#b9c2de");
-      g.fillStyle = grad;
-      g.fillText(ch, cx, cy);
-
-      // diagonal specular streak (baked glint) — clipped to the glyph
-      g.save();
-      g.globalCompositeOperation = "source-atop";
-      var sg = g.createLinearGradient(0, 0, S, S);
-      sg.addColorStop(0.30, "rgba(255,255,255,0)");
-      sg.addColorStop(0.46, "rgba(255,255,255,0.55)");
-      sg.addColorStop(0.54, "rgba(255,255,255,0.0)");
-      g.fillStyle = sg;
-      g.fillRect(0, 0, S, S);
-      g.restore();
-
-      // bright thin top rim for the edge-light
-      g.save();
-      g.lineWidth = 2.2; g.strokeStyle = "rgba(245,250,255,0.55)";
-      g.strokeText(ch, cx, cy - 1.4);
-      g.restore();
-
+      var grd = g.createLinearGradient(0, 0, 0, H);
+      grd.addColorStop(0.00, "#1a2e40"); // top sky (light) for streaky specular reflections
+      grd.addColorStop(0.35, "#141b2e");
+      grd.addColorStop(0.62, "#0a0f1c");
+      grd.addColorStop(1.00, "#05070d");
+      g.fillStyle = grd; g.fillRect(0, 0, W, H);
+      // bright specular blobs so the metal has streaks to catch
+      function blob(x, y, r, col) {
+        var rg = g.createRadialGradient(x, y, 0, x, y, r);
+        rg.addColorStop(0, col); rg.addColorStop(1, "rgba(0,0,0,0)");
+        g.fillStyle = rg; g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill();
+      }
+      blob(W * 0.22, H * 0.28, 120, "rgba(125,211,252,0.55)");
+      blob(W * 0.78, H * 0.30, 120, "rgba(167,139,250,0.50)");
+      blob(W * 0.52, H * 0.16, 90,  "rgba(255,255,255,0.85)");
+      blob(W * 0.50, H * 0.70, 150, "rgba(110,231,183,0.28)");
       var tex = new THREE.CanvasTexture(cv);
-      tex.anisotropy = 4; tex.needsUpdate = true;
-      hGlyphTex[ch] = tex;
+      tex.mapping = THREE.EquirectangularReflectionMapping;
+      if ("sRGBEncoding" in THREE) tex.encoding = THREE.sRGBEncoding;
       return tex;
     }
 
+    // soft round sprite for additive bloom
+    var hGlowTex = null;
     function makeGlowTexture() {
       if (hGlowTex) return hGlowTex;
       var S = 128, cv = document.createElement("canvas"); cv.width = S; cv.height = S;
@@ -915,203 +1112,298 @@
       g.fillStyle = grd; g.fillRect(0, 0, S, S);
       hGlowTex = new THREE.CanvasTexture(cv); return hGlowTex;
     }
-    function makeSweepTexture() {
-      if (hSweepTex) return hSweepTex;
-      var W = 256, H = 64, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
-      var g = cv.getContext("2d");
-      var grd = g.createLinearGradient(0, 0, W, 0);
-      grd.addColorStop(0.0, "rgba(255,255,255,0)");
-      grd.addColorStop(0.44, "rgba(255,255,255,0)");
-      grd.addColorStop(0.5, "rgba(255,255,255,0.9)");
-      grd.addColorStop(0.56, "rgba(255,255,255,0)");
-      grd.addColorStop(1.0, "rgba(255,255,255,0)");
-      g.fillStyle = grd; g.fillRect(0, 0, W, H);
-      hSweepTex = new THREE.CanvasTexture(cv); return hSweepTex;
-    }
 
     function heroInit() {
       hScene = new THREE.Scene();
-      var w = elHeroStage.clientWidth || 600, h = elHeroStage.clientHeight || 200;
-      var aspect = w / h, viewH = 3.4;
-      hCam = new THREE.OrthographicCamera(-viewH*aspect/2, viewH*aspect/2, viewH/2, -viewH/2, -50, 50);
-      hCam.position.z = 10;
+      var w = elHeroStage.clientWidth || 600, h = elHeroStage.clientHeight || 220;
 
       hRenderer = new THREE.WebGLRenderer({ antialias:true, alpha:true, powerPreference:"high-performance" });
       hRenderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
       hRenderer.setSize(w, h);
       hRenderer.setClearColor(0x000000, 0);
+      if ("sRGBEncoding" in THREE) hRenderer.outputEncoding = THREE.sRGBEncoding;
+      if ("ACESFilmicToneMapping" in THREE) { hRenderer.toneMapping = THREE.ACESFilmicToneMapping; hRenderer.toneMappingExposure = 1.15; }
       elHeroStage.appendChild(hRenderer.domElement);
 
+      hCam = new THREE.PerspectiveCamera(30, w / h, 0.1, 100);
+      hCam.position.set(0, 0, 8);
+      hCam.lookAt(0, 0, 0);
+
+      // env map for real reflections on the metal
+      hPmrem = new THREE.PMREMGenerator(hRenderer);
+      hPmrem.compileEquirectangularShader();
+      hEnv = hPmrem.fromEquirectangular(makeEnvTexture()).texture;
+      hScene.environment = hEnv;
+
       hRoot = new THREE.Group(); hScene.add(hRoot);
-
-      // ambient depth blobs (parallax back layer)
-      hBgGroup = new THREE.Group(); hBgGroup.position.z = -3; hRoot.add(hBgGroup);
-      var blobCols = [COL.cyan, COL.purple, COL.mint];
-      for (var b = 0; b < 3; b++) {
-        var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map:makeGlowTexture(), color:new THREE.Color(blobCols[b]), transparent:true, opacity:0.22, depthWrite:false, blending:THREE.AdditiveBlending }));
-        sp.scale.set(4.2, 3.0, 1);
-        sp.position.set((b - 1) * 2.4, (b % 2 ? 0.4 : -0.4), 0);
-        hBgGroup.add(sp);
-      }
-
-      // number group (foreground)
       hNumGroup = new THREE.Group(); hRoot.add(hNumGroup);
+      hBloomGroup = new THREE.Group(); hBloomGroup.position.z = -0.6; hRoot.add(hBloomGroup);
 
-      // moving specular sweep across the numerals
-      hSweep = new THREE.Sprite(new THREE.SpriteMaterial({ map:makeSweepTexture(), color:0xffffff, transparent:true, opacity:0.0, depthWrite:false, blending:THREE.AdditiveBlending }));
-      hSweep.scale.set(2.0, GS * 1.25, 1);
-      hSweep.position.z = 0.6;
-      hRoot.add(hSweep);
+      // lighting: soft ambient + white key + COLORED rim lights behind the digits
+      hScene.add(new THREE.AmbientLight(0x2a3550, 0.55));
+      var key = new THREE.DirectionalLight(0xffffff, 0.85);
+      key.position.set(0.6, 1.1, 2.2); hScene.add(key);
 
-      // light particle field (alive when idle)
-      var N = 90;
-      hParticleGeo = new THREE.BufferGeometry();
-      var pos = new Float32Array(N * 3), spd = new Float32Array(N);
-      for (var i = 0; i < N; i++) {
-        pos[i*3] = (Math.random() - 0.5) * 14;
-        pos[i*3+1] = (Math.random() - 0.5) * 5;
-        pos[i*3+2] = -1.5 - Math.random() * 2;
-        spd[i] = 0.1 + Math.random() * 0.3;
+      hLights.cyan   = new THREE.PointLight(COL.cyan,   9.0, 16, 2);
+      hLights.purple = new THREE.PointLight(COL.purple, 9.0, 16, 2);
+      hLights.mint   = new THREE.PointLight(COL.mint,   7.5, 16, 2);
+      hLights.back   = new THREE.PointLight(0xdfe8ff,   3.0, 14, 2);
+      hLights.cyan.position.set(-2.4, 0.4, 1.7);
+      hLights.purple.position.set(2.4, -0.2, 1.7);
+      hLights.mint.position.set(0, 1.5, -1.4);
+      hLights.back.position.set(0, 0, -2.2);
+      hRoot.add(hLights.cyan, hLights.purple, hLights.mint, hLights.back);
+
+      // additive bloom sprites behind the numerals
+      var bloomCols = [COL.cyan, COL.purple, COL.mint];
+      for (var b = 0; b < 3; b++) {
+        var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map:makeGlowTexture(), color:new THREE.Color(bloomCols[b]), transparent:true, opacity:0.24, depthWrite:false, blending:THREE.AdditiveBlending }));
+        sp.scale.set(3.4, 2.2, 1);
+        sp.position.set((b - 1) * 1.8, (b % 2 ? 0.25 : -0.25), 0);
+        hBloomGroup.add(sp); hBloom.push(sp);
       }
-      hParticleGeo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-      hParticleGeo.userData.spd = spd;
-      hParticles = new THREE.Points(hParticleGeo, new THREE.PointsMaterial({ size:0.09, map:makeGlowTexture(), transparent:true, opacity:0.4, depthWrite:false, blending:THREE.AdditiveBlending, color:new THREE.Color(COL.cyan) }));
-      hBgGroup.add(hParticles);
 
-      window.addEventListener("pointermove", function (e) { hPointerX = (e.clientX / window.innerWidth - 0.5) * 2; hPointerY = (e.clientY / window.innerHeight - 0.5) * 2; }, { passive:true });
-      window.addEventListener("deviceorientation", function (e) { if (e.gamma != null) hTiltX = Math.max(-1, Math.min(1, e.gamma / 35)); if (e.beta != null) hTiltY = Math.max(-1, Math.min(1, (e.beta - 45) / 45)); }, { passive:true });
+      window.addEventListener("pointermove", function (e) {
+        hPointerX = (e.clientX / window.innerWidth - 0.5) * 2;
+        hPointerY = (e.clientY / window.innerHeight - 0.5) * 2;
+      }, { passive:true });
+      window.addEventListener("deviceorientation", function (e) {
+        if (e.gamma != null) hTiltX = Math.max(-1, Math.min(1, e.gamma / 35));
+        if (e.beta != null) hTiltY = Math.max(-1, Math.min(1, (e.beta - 45) / 45));
+      }, { passive:true });
 
       heroReady = true;
+
+      // load the typeface, then build the number (graceful fallback on error)
+      try {
+        new THREE.FontLoader().load(FONT_URL, function (font) {
+          hFont = font;
+          try {
+            if (font.data && font.data.glyphs && font.data.glyphs["0"] && font.data.glyphs["0"].ha) {
+              hDigitAdv = font.data.glyphs["0"].ha * (HSIZE / (font.data.resolution || 1000));
+            }
+          } catch (e0) {}
+          heroFontReady = true;
+          heroBuildOrDiff(state.equityStr || "$0.00");
+        }, undefined, function () {
+          console.warn("[wall] font load failed → CSS fallback");
+          heroFail();
+        });
+      } catch (eLoad) { heroFail(); }
+    }
+
+    function heroFail() {
+      heroReady = false; heroFontReady = false;
+      elHero.classList.add("fallback");
+      if (state.equityStr) elHeroFallback.textContent = state.equityStr;
+    }
+
+    function advOf(ch) {
+      if (ch >= "0" && ch <= "9") return hDigitAdv; // tabular digits
+      if (hFont && hFont.data && hFont.data.glyphs && hFont.data.glyphs[ch] && hFont.data.glyphs[ch].ha) {
+        return hFont.data.glyphs[ch].ha * (HSIZE / (hFont.data.resolution || 1000));
+      }
+      var f = { "$":0.62, ",":0.30, ".":0.30, "−":0.5, "-":0.5, " ":0.3 };
+      return (f[ch] || 0.6) * HSIZE;
+    }
+
+    function makeGlyphGeo(ch) {
+      var geo = new THREE.TextGeometry(ch, {
+        font: hFont, size: HSIZE, height: HDEPTH, curveSegments: 5,
+        bevelEnabled: true, bevelThickness: HDEPTH * 0.4, bevelSize: HBEVEL, bevelSegments: 3
+      });
+      geo.computeBoundingBox();
+      return geo;
+    }
+    function makeGlyphMat() {
+      var m = new THREE.MeshStandardMaterial({
+        color: 0xdfe6f5, metalness: 0.92, roughness: 0.24,
+        envMap: hEnv, emissive: new THREE.Color(0x000000), emissiveIntensity: 0
+      });
+      if ("envMapIntensity" in m) m.envMapIntensity = 1.2;
+      return m;
+    }
+
+    function heroTeardown() {
+      for (var i = 0; i < hGlyphs.length; i++) {
+        var g = hGlyphs[i];
+        hNumGroup.remove(g.mesh);
+        if (g.mesh.geometry) g.mesh.geometry.dispose();
+        if (g.mesh.material) g.mesh.material.dispose();
+      }
+      hGlyphs = [];
+    }
+
+    function heroLayout() {
+      var total = 0, i;
+      for (i = 0; i < hGlyphs.length; i++) total += hGlyphs[i].adv;
+      total = Math.max(0.5, total);
+      var cursor = -total / 2;
+      var capMid = 0.36 * HSIZE; // approx cap-height center for vertical centering
+      for (i = 0; i < hGlyphs.length; i++) {
+        hGlyphs[i].x = cursor;
+        hGlyphs[i].mesh.position.x = cursor;
+        cursor += hGlyphs[i].adv;
+      }
+      hNumGroup.position.y = -capMid;
+      // reposition rim lights to hug the current row width
+      if (hLights.cyan)   hLights.cyan.position.x   = -(total * 0.52 + 0.5);
+      if (hLights.purple) hLights.purple.position.x =  (total * 0.52 + 0.5);
+      // fit camera so the number always fills the stage nicely
+      var w = elHeroStage.clientWidth || 600, h = elHeroStage.clientHeight || 220;
+      var aspect = w / h, tan = Math.tan((hCam.fov * Math.PI / 180) / 2);
+      var zW = (total * 1.16) / (2 * tan * aspect);
+      var zH = (HSIZE * 1.55) / (2 * tan);
+      hCam.position.z = Math.max(zW, zH) + 0.35;
+      hCam.updateProjectionMatrix();
     }
 
     function heroBuildRow(str) {
-      // tear down
-      for (var i = 0; i < hGlyphs.length; i++) { hNumGroup.remove(hGlyphs[i].mesh); hNumGroup.remove(hGlyphs[i].glow); }
-      hGlyphs = [];
-      // total width
-      var totalW = 0, ci;
-      for (ci = 0; ci < str.length; ci++) totalW += advOf(str[ci]);
-      var x = -totalW / 2;
-      var geo = new THREE.PlaneGeometry(GS, GS);
-      for (ci = 0; ci < str.length; ci++) {
-        var ch = str[ci];
-        var adv = advOf(ch);
-        var cxp = x + adv / 2;
-        var hue = hueLerp(str.length <= 1 ? 0.5 : ci / (str.length - 1));
-        // bloom sprite behind the glyph
-        var glow = new THREE.Sprite(new THREE.SpriteMaterial({ map:makeGlowTexture(), color:hue.clone(), transparent:true, opacity:0.30, depthWrite:false, blending:THREE.AdditiveBlending }));
-        glow.scale.set(GS * 1.25, GS * 1.35, 1);
-        glow.position.set(cxp, 0, -0.25);
-        hNumGroup.add(glow);
-        // glyph plane
-        var mat = new THREE.MeshBasicMaterial({ map:makeGlyphTexture(ch), transparent:true, depthWrite:false });
-        var mesh = new THREE.Mesh(geo, mat);
-        mesh.position.set(cxp, 0, 0);
+      heroTeardown();
+      var flashHex = hFlashUp ? COL.mint : COL.red;
+      for (var i = 0; i < str.length; i++) {
+        var ch = str[i];
+        var geo = makeGlyphGeo(ch);
+        var mesh = new THREE.Mesh(geo, makeGlyphMat());
+        mesh.material.emissive.setHex(flashHex);
         hNumGroup.add(mesh);
-        hGlyphs.push({ mesh:mesh, glow:glow, ch:ch, anim:0, x:cxp });
-        x += adv;
+        hGlyphs.push({ mesh: mesh, ch: ch, adv: advOf(ch), x: 0, anim: 1, dir: (i % 2 ? 1 : -1) });
       }
       hCurrentStr = str;
-      heroFit();
+      heroLayout();
     }
 
-    function heroFit() {
-      var w = elHeroStage.clientWidth || 600, h = elHeroStage.clientHeight || 200;
-      var aspect = w / h, viewH = 3.4;
-      var visW = viewH * aspect;
-      // measure row width
-      var totalW = 0; for (var i = 0; i < hCurrentStr.length; i++) totalW += advOf(hCurrentStr[i]);
-      totalW = Math.max(0.5, totalW);
-      var scaleW = (visW * 0.94) / totalW;
-      var scaleH = (viewH * 0.72) / GS;
-      var sc = Math.min(scaleW, scaleH);
-      hNumGroup.scale.set(sc, sc, sc);
-      hSweep.scale.set(totalW * sc * 0.55, GS * sc * 1.2, 1);
-    }
-
-    function heroSetValue(v) {
-      if (!heroReady) return;
-      var str = fmtMoney(v);
-      if (str === hCurrentStr) return;
-      if (str.length !== hCurrentStr.length) { heroBuildRow(str); heroPulse(); return; }
-      // diff & animate only changed glyphs
+    function heroDiff(str) {
+      var flashHex = hFlashUp ? COL.mint : COL.red;
       for (var i = 0; i < str.length; i++) {
-        if (str[i] !== hGlyphs[i].ch) {
-          hGlyphs[i].ch = str[i];
-          hGlyphs[i].mesh.material.map = makeGlyphTexture(str[i]);
-          hGlyphs[i].mesh.material.needsUpdate = true;
-          hGlyphs[i].anim = 1; // drop-in + flash
+        var g = hGlyphs[i];
+        if (str[i] !== g.ch) {
+          if (g.mesh.geometry) g.mesh.geometry.dispose();
+          g.mesh.geometry = makeGlyphGeo(str[i]);
+          g.ch = str[i];
+          g.adv = advOf(str[i]);
+          g.anim = 1; g.dir = (i % 2 ? 1 : -1);
+          g.mesh.material.emissive.setHex(flashHex);
         }
       }
       hCurrentStr = str;
-      heroPulse();
+      heroLayout();
     }
-    var heroPulseT = 0, heroUp = true;
-    function heroPulse() { heroPulseT = 1; heroUp = state.dayPnl >= 0; }
+
+    function heroBuildOrDiff(str) {
+      if (!heroReady || !heroFontReady) { return; }
+      if (str === hCurrentStr && hGlyphs.length) return;
+      hFlashUp = state.dayPnl >= 0;
+      if (str.length !== hCurrentStr.length || !hGlyphs.length) heroBuildRow(str);
+      else heroDiff(str);
+    }
+
+    function heroSetValue(v) {
+      state.equityStr = fmtMoney(v);
+      if (heroReady && heroFontReady) heroBuildOrDiff(state.equityStr);
+      else elHeroFallback.textContent = state.equityStr;
+    }
 
     function heroResize() {
       if (!heroReady) return;
-      var w = elHeroStage.clientWidth || 600, h = elHeroStage.clientHeight || 200;
-      var aspect = w / h, viewH = 3.4;
-      hCam.left = -viewH*aspect/2; hCam.right = viewH*aspect/2; hCam.top = viewH/2; hCam.bottom = -viewH/2;
-      hCam.updateProjectionMatrix();
+      var w = elHeroStage.clientWidth || 600, h = elHeroStage.clientHeight || 220;
+      hCam.aspect = w / h; hCam.updateProjectionMatrix();
       hRenderer.setSize(w, h);
-      heroFit();
+      if (hGlyphs.length) heroLayout();
     }
 
     function heroUpdate(dt, t) {
       if (!heroReady) return;
-      // parallax: tilt the whole readout with pointer / device
+      // real 3D parallax — rotate the whole readout; you see the digit bevels/sides shift
       var px = hPointerX + hTiltX, py = hPointerY + hTiltY;
-      var tRotY = px * 0.14 + Math.sin(t * 0.25) * 0.02;
-      var tRotX = -py * 0.10 + Math.cos(t * 0.2) * 0.015;
+      var tRotY = px * 0.34 + Math.sin(t * 0.35) * 0.03;
+      var tRotX = -py * 0.22 + Math.cos(t * 0.28) * 0.02;
       hRoot.rotation.y += (tRotY - hRoot.rotation.y) * Math.min(1, dt * 3);
       hRoot.rotation.x += (tRotX - hRoot.rotation.x) * Math.min(1, dt * 3);
-      // depth layer drifts opposite for parallax
-      hBgGroup.position.x += ((-px * 0.5) - hBgGroup.position.x) * Math.min(1, dt * 2);
-      hBgGroup.position.y += ((py * 0.35) - hBgGroup.position.y) * Math.min(1, dt * 2);
 
-      // specular sweep glides across (driven by time + pointer)
-      var totalW = 0; for (var g = 0; g < hCurrentStr.length; g++) totalW += advOf(hCurrentStr[g]);
-      var sc = hNumGroup.scale.x || 1;
-      var span = totalW * sc * 0.62;
-      var sweepU = ((t * 0.16) % 1) * 2 - 1;         // -1..1
-      hSweep.position.x = sweepU * span + px * 0.4 * span;
-      hSweep.material.opacity = 0.10 + 0.14 * (0.5 + 0.5 * Math.sin(t * 0.9));
+      // orbit the colored rim lights slightly for living reflections
+      if (hLights.cyan)   hLights.cyan.position.z   = 1.7 + Math.sin(t * 0.6) * 0.6;
+      if (hLights.purple) hLights.purple.position.z = 1.7 + Math.cos(t * 0.5) * 0.6;
+      if (hLights.mint)   hLights.mint.position.x   = Math.sin(t * 0.4) * 0.8;
 
-      // pulse decay (bloom flash on value change)
-      heroPulseT *= Math.pow(0.05, dt);
-      var flashCol = new THREE.Color(heroUp ? COL.mint : COL.red);
-
-      // per-glyph animation
+      // per-glyph change animation (3D flip + emissive flash + pop)
       for (var i = 0; i < hGlyphs.length; i++) {
-        var gl = hGlyphs[i];
-        var baseOpacity = 0.30;
-        if (gl.anim > 0) {
-          gl.anim = Math.max(0, gl.anim - dt / 0.45);
-          var e = gl.anim; // 1 -> 0
-          gl.mesh.position.y = (e * e) * 0.55 * GS * (hNumGroup.scale.x); // drop in from above
-          var pop = 1 + e * 0.14;
-          gl.mesh.scale.set(pop, pop, 1);
-          gl.glow.material.opacity = baseOpacity + e * 0.6;
-          gl.glow.material.color.lerp(flashCol, e * 0.5);
+        var g = hGlyphs[i];
+        if (g.anim > 0) {
+          g.anim = Math.max(0, g.anim - dt / 0.5);
+          var e = g.anim;                 // 1 -> 0
+          g.mesh.rotation.x = e * e * Math.PI * 0.85 * g.dir;
+          var pop = 1 + e * 0.12;
+          g.mesh.scale.set(pop, pop, pop);
+          g.mesh.material.emissiveIntensity = e * 0.9;
         } else {
-          gl.mesh.position.y += (0 - gl.mesh.position.y) * Math.min(1, dt * 8);
-          gl.mesh.scale.set(1, 1, 1);
-          var idleGlow = baseOpacity + heroPulseT * 0.5 + 0.05 * Math.sin(t * 1.3 + i);
-          gl.glow.material.opacity += (idleGlow - gl.glow.material.opacity) * Math.min(1, dt * 4);
+          if (g.mesh.rotation.x) g.mesh.rotation.x += (0 - g.mesh.rotation.x) * Math.min(1, dt * 10);
+          if (g.mesh.scale.x !== 1) g.mesh.scale.set(1, 1, 1);
+          if (g.mesh.material.emissiveIntensity) g.mesh.material.emissiveIntensity = 0;
         }
       }
 
-      // particles drift
-      var pos = hParticleGeo.attributes.position.array, spd = hParticleGeo.userData.spd;
-      for (var p = 0; p < spd.length; p++) {
-        pos[p*3] += spd[p] * dt * 0.4;
-        if (pos[p*3] > 8) pos[p*3] = -8;
+      // bloom breathe
+      for (var b = 0; b < hBloom.length; b++) {
+        hBloom[b].material.opacity = 0.18 + 0.10 * (0.5 + 0.5 * Math.sin(t * 0.8 + b));
       }
-      hParticleGeo.attributes.position.needsUpdate = true;
 
       hRenderer.render(hScene, hCam);
+    }
+
+    // =====================================================================
+    //  P&L-TIED AMBIENT PARTICLES (2D canvas behind everything)
+    //  UP → green particles flowing slowly UPWARD.
+    //  DOWN → red particles drifting DOWN like light snow.
+    // =====================================================================
+    var pnl = { ctx:null, W:0, H:0, dpr:1, ps:[] };
+    function pnlSize() {
+      pnl.dpr = Math.min(window.devicePixelRatio || 1, 2);
+      pnl.W = window.innerWidth; pnl.H = window.innerHeight;
+      elPnl.width = Math.round(pnl.W * pnl.dpr);
+      elPnl.height = Math.round(pnl.H * pnl.dpr);
+      if (pnl.ctx) pnl.ctx.setTransform(pnl.dpr, 0, 0, pnl.dpr, 0, 0);
+    }
+    function pnlSpawn(atEdge) {
+      var up = state.dayPnl >= 0;
+      return {
+        x: Math.random() * pnl.W,
+        y: atEdge ? (up ? pnl.H + Math.random() * 40 : -Math.random() * 40) : Math.random() * pnl.H,
+        r: 0.8 + Math.random() * 2.4,
+        sp: 6 + Math.random() * 18,
+        drift: (Math.random() - 0.5) * 10,
+        ph: Math.random() * 6.28,
+        a: 0.08 + Math.random() * 0.22
+      };
+    }
+    function pnlInit() {
+      pnl.ctx = elPnl.getContext("2d");
+      pnlSize();
+      var N = 64;
+      pnl.ps = [];
+      for (var i = 0; i < N; i++) pnl.ps.push(pnlSpawn(false));
+    }
+    function pnlStep(dt, t) {
+      if (!pnl.ctx) return;
+      var up = state.dayPnl >= 0;
+      var flat = Math.abs(state.dayPnl) < 0.005;
+      var col = flat ? "154,160,181" : (up ? "110,231,183" : "252,165,165");
+      var ctx = pnl.ctx;
+      ctx.clearRect(0, 0, pnl.W, pnl.H);
+      for (var i = 0; i < pnl.ps.length; i++) {
+        var p = pnl.ps[i];
+        if (up || flat) p.y -= p.sp * dt; else p.y += p.sp * dt;         // up: rise, down: fall like snow
+        p.x += Math.sin(t + p.ph) * p.drift * dt + (up ? 0 : Math.sin(t * 0.7 + p.ph) * 4 * dt);
+        // recycle off-screen
+        if ((up || flat) && p.y < -10) { pnl.ps[i] = pnlSpawn(true); continue; }
+        if (!up && !flat && p.y > pnl.H + 10) { pnl.ps[i] = pnlSpawn(true); continue; }
+        if (p.x < -10) p.x = pnl.W + 10; else if (p.x > pnl.W + 10) p.x = -10;
+        var rg = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 3);
+        rg.addColorStop(0, "rgba(" + col + "," + p.a + ")");
+        rg.addColorStop(1, "rgba(" + col + ",0)");
+        ctx.fillStyle = rg;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2); ctx.fill();
+      }
     }
 
     // =====================================================================
@@ -1125,8 +1417,9 @@
       if (!startT) { startT = tSec; lastT = tSec; }
       var t = tSec - startT;
       var dt = Math.min(0.05, tSec - lastT); lastT = tSec;
-      try { drawChart(t); } catch (e) { /* keep looping */ }
-      if (heroReady) { try { heroUpdate(dt, t); } catch (e2) { } }
+      try { pnlStep(dt, t); } catch (e0) {}
+      try { drawChart(t); } catch (e) {}
+      if (heroReady) { try { heroUpdate(dt, t); } catch (e2) {} }
     }
 
     document.addEventListener("visibilitychange", function () {
@@ -1144,6 +1437,7 @@
     window.addEventListener("resize", function () {
       sizeChart();
       heroResize();
+      pnlSize();
     }, { passive:true });
 
     function bootDone() {
@@ -1156,16 +1450,16 @@
     // =====================================================================
     //  BOOT
     // =====================================================================
-    // hero: try WebGL 3D metallic, else CSS metallic fallback
-    if (THREE_OK && webglOK()) {
-      try { heroInit(); heroBuildRow("$0.00"); }
-      catch (e) { console.warn("[wall] hero 3D init failed:", e && e.message); heroReady = false; elHero.classList.add("fallback"); }
+    if (THREE_OK && webglOK() && textGeomOK()) {
+      try { heroInit(); }
+      catch (e) { console.warn("[wall] hero 3D init failed:", e && e.message); heroFail(); }
     } else {
-      elHero.classList.add("fallback");
+      heroFail();
     }
 
+    try { pnlInit(); } catch (ep) {}
+
     sizeChart();
-    // set default active range button
     (function () {
       var b = document.querySelector('.rangeBtn[data-range="1D"]');
       if (b) b.classList.add("active");
@@ -1174,8 +1468,7 @@
     requestAnimationFrame(frame);
     poll();
     setInterval(poll, POLL_MS);
-    // safety: never leave the boot spinner forever
-    setTimeout(bootDone, 8000);
+    setTimeout(bootDone, 8000); // never leave the boot spinner forever
 
   })();
   </script>
