@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-10T21:49:34.287Z",
+  "generated_at": "2026-07-10T21:50:41.847Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99942,
+    "equity": 99944.65,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98942,
-    "day_pnl": -54.65,
+    "total_pnl": 98944.65,
+    "day_pnl": -52,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.31,
-        "pl": 6.5,
-        "plpc": 0.02,
+        "current": 210.33,
+        "pl": 9.72,
+        "plpc": 0.04,
         "thesis": ""
       },
       {
@@ -29,27 +29,27 @@
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.78,
-        "pl": -146,
-        "plpc": -3.74,
+        "current": 18.8,
+        "pl": -142,
+        "plpc": -3.64,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 77.12,
-        "pl": 9.06,
-        "plpc": 0.04,
+        "current": 77.1,
+        "pl": 3.67,
+        "plpc": 0.02,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 407.23,
-        "pl": -103.41,
-        "plpc": -0.7,
+        "current": 407.25,
+        "pl": -102.6,
+        "plpc": -0.69,
         "thesis": ""
       }
     ],
@@ -85,18 +85,18 @@
     ]
   },
   "live": {
-    "equity": 1011.5,
+    "equity": 1011.51,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 11.5,
-    "day_pnl": 10.63,
+    "total_pnl": 11.51,
+    "day_pnl": 10.64,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 210.31,
+        "current": 210.33,
         "pl": 0.81,
-        "plpc": 8.14,
+        "plpc": 8.15,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
@@ -112,18 +112,18 @@
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.78,
-        "pl": 0.2,
-        "plpc": 0.11,
+        "current": 18.8,
+        "pl": 0.4,
+        "plpc": 0.21,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 77.12,
-        "pl": 8.3,
-        "plpc": 1.09,
+        "current": 77.1,
+        "pl": 8.11,
+        "plpc": 1.06,
         "thesis": ""
       }
     ],
@@ -821,6 +821,10 @@
       {
         "t": 1783719900000,
         "v": 1011.33
+      },
+      {
+        "t": 1783720200000,
+        "v": 1011.52
       }
     ]
   },
