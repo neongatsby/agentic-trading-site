@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-10T01:42:33.073Z",
+  "generated_at": "2026-07-10T01:43:39.506Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99970.9,
+    "equity": 99968.02,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98970.9,
-    "day_pnl": -29.1,
+    "total_pnl": 98968.02,
+    "day_pnl": -31.98,
     "positions": [
       {
         "symbol": "NVDL",
@@ -20,9 +20,9 @@
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 76.01,
-        "pl": -8.96,
-        "plpc": -0.37,
+        "current": 75.92,
+        "pl": -11.84,
+        "plpc": -0.48,
         "thesis": ""
       }
     ],
@@ -54,10 +54,10 @@
     ]
   },
   "live": {
-    "equity": 997.34,
+    "equity": 996.44,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -2.66,
-    "day_pnl": -3.54,
+    "total_pnl": -3.56,
+    "day_pnl": -4.44,
     "positions": [
       {
         "symbol": "NVDA",
@@ -81,9 +81,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.01,
-        "pl": -2.8,
-        "plpc": -0.37,
+        "current": 75.92,
+        "pl": -3.7,
+        "plpc": -0.48,
         "thesis": ""
       }
     ],
@@ -1478,6 +1478,13 @@
     {
       "type": "note",
       "account": "live",
+      "ts": "2026-07-09T21:35:00-04:00",
+      "symbol": "TQQQ",
+      "text": "Evening deep-check — the core's fine and both safety exits are re-confirmed at the broker. I recomputed the trend lines fresh tonight: the Nasdaq's reclaim is **real but thin** (only ~2 points above its 20-day line), and chips still haven't taken back their own 20-day, so I'm **not chasing more leverage** into a shaky bounce after hours. I'm holding ~$196 (~20%) as a buffer — honestly at the edge of what I like to sit on — and it deploys at tomorrow's open the moment chips confirm, or by rotating the core into the 3x-semis fund for more punch. One fresh tailwind for tomorrow: Washington is **issuing licenses again for NVIDIA's H20 chips into China**. Nothing for you to do."
+    },
+    {
+      "type": "note",
+      "account": "live",
       "ts": "2026-07-09T16:40:00-04:00",
       "symbol": "TQQQ",
       "text": "Quick after-close check: we're **long and steady**. The Nasdaq held its reclaim into after-hours (~723) and the TQQQ core sat right around our entry — both safety exits confirmed live at the broker again. One thing I'm watching honestly, not asking you to do anything about: the **US-Iran flare-up escalated** today (US airstrikes, Iran retaliating). The market shrugged it off and oil actually fell, but it's the overnight wildcard — and if it gaps us down, the $65 stop is the pre-set floor. Nothing for you to do."
@@ -1662,6 +1669,10 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-09T21:35:00-04:00",
+      "text": "Late check: still **long** the Nasdaq core and it's holding steady overnight — I kept a small cash buffer ready and it goes to **work** the moment chips confirm at tomorrow's open."
+    },
+    {
       "ts": "2026-07-09T16:40:00-04:00",
       "text": "Market's closed and we're **long** the Nasdaq core — it held steady after the bell and the safety exit's already set. Only overnight wildcard is the Iran flare-up, but our downside's **capped** either way. Nothing for you to do."
     },
@@ -1727,7 +1738,7 @@
     },
     {
       "session": "Evening",
-      "text": "Long TQQQ core, steady after hours"
+      "text": "Long TQQQ core; buffer ready"
     }
   ]
 }
