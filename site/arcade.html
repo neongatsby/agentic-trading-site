@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<meta name="robots" content="noindex">
+<title>Agentic Trading — Arcade</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎰</text></svg>">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#07090f">
+<style>
+  :root { color-scheme: dark; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+    background: radial-gradient(ellipse 80% 60% at 20% -10%, #16203b 0%, transparent 55%),
+                radial-gradient(ellipse 60% 55% at 90% 8%, #251636 0%, transparent 52%),
+                radial-gradient(ellipse 75% 60% at 50% 112%, #0c2620 0%, transparent 58%),
+                #07090f;
+    color: #e8eaf2; overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none;
+    user-select: none; -webkit-user-select: none;
+    overscroll-behavior: none; touch-action: none;
+  }
+  #stage { position: fixed; inset: 0; z-index: 0; }
+  canvas { display: block; }
+
+  /* ---- HUD overlays (DOM on top of WebGL) ---- */
+  .hud { position: fixed; z-index: 5; pointer-events: none; }
+  .hud a, .hud button { pointer-events: auto; }
+
+  /* top-left back link */
+  #back {
+    top: calc(14px + env(safe-area-inset-top));
+    left: calc(14px + env(safe-area-inset-left));
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 13px; font-weight: 700; letter-spacing: .01em;
+    color: #c4c9db; text-decoration: none;
+    padding: 8px 14px; border-radius: 999px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.10);
+    backdrop-filter: blur(14px) saturate(150%); -webkit-backdrop-filter: blur(14px) saturate(150%);
+    transition: border-color .2s ease, color .2s ease, transform .12s ease;
+  }
+  #back:hover { color: #fff; border-color: rgba(125,211,252,.45); }
+  #back:active { transform: scale(.97); }
+
+  /* top-right updated readout */
+  #updated {
+    top: calc(14px + env(safe-area-inset-top));
+    right: calc(14px + env(safe-area-inset-right));
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11.5px; font-weight: 600; color: #aab0c5;
+    font-variant-numeric: tabular-nums; letter-spacing: .01em;
+    padding: 8px 13px; border-radius: 999px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+    border: 1px solid rgba(255,255,255,0.09);
+    backdrop-filter: blur(14px) saturate(150%); -webkit-backdrop-filter: blur(14px) saturate(150%);
+  }
+  #updated .dot { width: 7px; height: 7px; border-radius: 50%; background: #6ee7b7; box-shadow: 0 0 8px rgba(110,231,183,.75); animation: pulse 2s ease-in-out infinite; flex: none; }
+  #updated.stale .dot { background: #fcd34d; box-shadow: 0 0 8px rgba(252,211,77,.7); animation: none; }
+  #updated.err .dot { background: #fca5a5; box-shadow: 0 0 8px rgba(252,165,165,.7); animation: none; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+  /* bottom caption block */
+  #caption {
+    left: 50%; transform: translateX(-50%);
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    width: min(92vw, 560px); text-align: center;
+  }
+  #label {
+    font-size: 11px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase;
+    color: #7c8299; margin-bottom: 9px;
+  }
+  #pnlrow { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 12.5px; font-weight: 700; font-variant-numeric: tabular-nums;
+    padding: 7px 14px; border-radius: 999px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
+    backdrop-filter: blur(14px) saturate(150%); -webkit-backdrop-filter: blur(14px) saturate(150%);
+    color: #c4c9db; transition: color .3s ease, border-color .3s ease, background .3s ease;
+  }
+  .chip .k { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; color: #7c8299; }
+  .chip.up { color: #d7fbee; border-color: rgba(110,231,183,.32); background: rgba(110,231,183,.09); }
+  .chip.up .k { color: #6ee7b7; }
+  .chip.down { color: #ffe3e3; border-color: rgba(252,165,165,.32); background: rgba(252,165,165,.09); }
+  .chip.down .k { color: #fca5a5; }
+  #tagline { margin-top: 13px; font-size: 12px; font-style: italic; color: #8a90a6; line-height: 1.5; }
+  #tagline b { background: linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: italic; }
+
+  /* CSS fallback (no WebGL / fetch fail) — never a blank screen */
+  #fallback {
+    position: fixed; inset: 0; z-index: 3; display: none;
+    flex-direction: column; align-items: center; justify-content: center;
+    padding: 24px; text-align: center;
+  }
+  #fallback.show { display: flex; }
+  #fbLabel { font-size: 11px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #7c8299; margin-bottom: 14px; }
+  #fbValue {
+    font-size: clamp(44px, 15vw, 108px); font-weight: 800; letter-spacing: -.02em;
+    font-variant-numeric: tabular-nums;
+    background: linear-gradient(120deg, #7dd3fc, #a78bfa 52%, #6ee7b7);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-shadow: 0 0 60px rgba(125,211,252,.25);
+  }
+  #fbSub { margin-top: 16px; font-size: 13px; color: #9aa0b5; }
+
+  /* loading shimmer */
+  #boot {
+    position: fixed; inset: 0; z-index: 8; display: flex; align-items: center; justify-content: center;
+    background: #07090f; transition: opacity .7s ease; font-size: 12px; letter-spacing: .18em;
+    text-transform: uppercase; font-weight: 700; color: #6a7088;
+  }
+  #boot.hide { opacity: 0; pointer-events: none; }
+  #boot .spin { width: 26px; height: 26px; margin-right: 14px; border-radius: 50%;
+    border: 2.5px solid rgba(125,211,252,.18); border-top-color: #7dd3fc; animation: sp .8s linear infinite; }
+  @keyframes sp { to { transform: rotate(360deg); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    #updated .dot, .spin { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <div id="stage"></div>
+
+  <div id="boot"><span class="spin"></span><span>Spinning up the reels</span></div>
+
+  <a class="hud" id="back" href="./" aria-label="Back to dashboard">← dashboard</a>
+  <div class="hud" id="updated"><span class="dot"></span><span id="updatedText">connecting…</span></div>
+
+  <div class="hud" id="caption">
+    <div id="label">Live Account Value</div>
+    <div id="pnlrow">
+      <span class="chip" id="dayChip"><span class="k">Today</span><span id="dayVal">—</span></span>
+      <span class="chip" id="totalChip"><span class="k">Since inception</span><span id="totalVal">—</span></span>
+    </div>
+    <div id="tagline">A real autonomous agent, trading real money. <b>Watch the reels roll.</b></div>
+  </div>
+
+  <div id="fallback">
+    <div id="fbLabel">Live Account Value</div>
+    <div id="fbValue">$—</div>
+    <div id="fbSub">Live 3D view unavailable — showing the number the simple way.</div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+  "use strict";
+  (function () {
+    // ---------------------------------------------------------------------
+    //  Agentic Trading — ARCADE
+    //  A volumetric slot-machine / odometer: each digit is a physical 3D
+    //  reel (a cylinder wrapped in numerals) that spins & rolls to the live
+    //  account value. Coins tumble, particles drift, the camera breathes,
+    //  and the day's P&L drives the color/mood. Fake-bloom via additive
+    //  sprites (no r128 postprocessing dependency).
+    // ---------------------------------------------------------------------
+
+    // ---- palette ----
+    var COL = {
+      bg:    0x07090f,
+      cyan:  0x7dd3fc,
+      purple:0xa78bfa,
+      mint:  0x6ee7b7,
+      red:   0xfca5a5,
+      text:  0xe8eaf2,
+      muted: 0x9aa0b5
+    };
+
+    // ---- data endpoints ----
+    var PRIMARY = "https://raw.githubusercontent.com/neongatsby/agentic-trading-site/main/site/data.json";
+    var FALLBACK = "./data.json";
+    var POLL_MS = 20000;
+
+    // ---- shared state ----
+    var state = {
+      equity: null,        // hero number
+      dayPnl: 0,
+      totalPnl: 0,
+      generatedAt: null,
+      mood: 0              // -1 down .. +1 up (smoothed)
+    };
+
+    // DOM refs
+    var elBoot = document.getElementById("boot");
+    var elUpdated = document.getElementById("updated");
+    var elUpdatedText = document.getElementById("updatedText");
+    var elDayChip = document.getElementById("dayChip");
+    var elDayVal = document.getElementById("dayVal");
+    var elTotalChip = document.getElementById("totalChip");
+    var elTotalVal = document.getElementById("totalVal");
+    var elFallback = document.getElementById("fallback");
+    var elFbValue = document.getElementById("fbValue");
+
+    // ---- number formatting ----
+    function fmtMoney(n) {
+      if (n == null || isNaN(n)) return "—";
+      return "$" + Number(n).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+    function fmtSigned(n) {
+      if (n == null || isNaN(n)) return "—";
+      var s = n >= 0 ? "+" : "−";
+      return s + "$" + Math.abs(Number(n)).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    // =====================================================================
+    //  WebGL capability check → decide 3D vs CSS fallback
+    // =====================================================================
+    function webglOK() {
+      try {
+        var c = document.createElement("canvas");
+        return !!(window.WebGLRenderingContext &&
+          (c.getContext("webgl") || c.getContext("experimental-webgl")));
+      } catch (e) { return false; }
+    }
+
+    var USE_3D = webglOK();
+
+    // =====================================================================
+    //  DATA LAYER (shared by both 3D and fallback paths)
+    // =====================================================================
+    var firstLoad = true;
+    var lastEquityShown = null;
+
+    function applyData(d) {
+      if (!d || !d.live) throw new Error("bad shape");
+      var live = d.live;
+      var eq = Number(live.equity);
+      if (isNaN(eq)) throw new Error("no equity");
+
+      state.equity = eq;
+      state.dayPnl = Number(live.day_pnl) || 0;
+      state.totalPnl = Number(live.total_pnl) || 0;
+      state.generatedAt = d.generated_at || null;
+
+      // mood target from day pnl (clamped, gentle)
+      var target = 0;
+      if (state.dayPnl > 0.0001) target = 1;
+      else if (state.dayPnl < -0.0001) target = -1;
+      moodTarget = target;
+
+      updateChips();
+      markUpdated();
+
+      // notify the visualization
+      if (USE_3D && reelBank) {
+        if (firstLoad) {
+          reelBank.setValue(0, false);           // start at 0
+          reelBank.rollTo(eq, true);              // grand entrance roll-up
+        } else if (lastEquityShown === null || Math.abs(lastEquityShown - eq) > 0.0049) {
+          reelBank.rollTo(eq, eq >= (lastEquityShown || 0));
+        }
+      } else {
+        // fallback: just show it
+        elFbValue.textContent = fmtMoney(eq);
+      }
+      lastEquityShown = eq;
+      firstLoad = false;
+    }
+
+    function updateChips() {
+      elDayVal.textContent = fmtSigned(state.dayPnl);
+      elTotalVal.textContent = fmtSigned(state.totalPnl);
+      setChipMood(elDayChip, state.dayPnl);
+      setChipMood(elTotalChip, state.totalPnl);
+    }
+    function setChipMood(el, v) {
+      el.classList.remove("up", "down");
+      if (v > 0.0001) el.classList.add("up");
+      else if (v < -0.0001) el.classList.add("down");
+    }
+
+    function markUpdated() {
+      elUpdated.classList.remove("err");
+      updateAgo();
+    }
+    function updateAgo() {
+      if (!state.generatedAt) return;
+      var t = Date.parse(state.generatedAt);
+      if (isNaN(t)) { elUpdatedText.textContent = "live"; return; }
+      var secs = Math.max(0, Math.round((Date.now() - t) / 1000));
+      var txt, stale = false;
+      if (secs < 60) txt = "updated " + secs + "s ago";
+      else if (secs < 3600) { txt = "updated " + Math.round(secs / 60) + "m ago"; stale = secs > 180; }
+      else { txt = "updated " + Math.round(secs / 3600) + "h ago"; stale = true; }
+      elUpdatedText.textContent = txt;
+      elUpdated.classList.toggle("stale", stale);
+    }
+
+    function fetchOnce(url) {
+      return fetch(url + "?t=" + Date.now(), { cache: "no-store" })
+        .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); });
+    }
+
+    function poll() {
+      fetchOnce(PRIMARY)
+        .catch(function () { return fetchOnce(FALLBACK); })
+        .then(function (d) { applyData(d); })
+        .catch(function (err) {
+          console.warn("[arcade] data fetch failed:", err && err.message);
+          if (state.equity === null) {
+            // never loaded anything → show fallback number screen
+            showHardFallback("Couldn't reach live data. Check your connection.");
+          } else {
+            elUpdated.classList.add("err");
+            elUpdatedText.textContent = "reconnecting…";
+          }
+        });
+    }
+
+    function showHardFallback(sub) {
+      USE_3D = false;
+      elFallback.classList.add("show");
+      if (state.equity != null) elFbValue.textContent = fmtMoney(state.equity);
+      if (sub) document.getElementById("fbSub").textContent = sub;
+      bootDone();
+    }
+
+    function bootDone() {
+      if (!elBoot.classList.contains("hide")) {
+        elBoot.classList.add("hide");
+        setTimeout(function () { if (elBoot.parentNode) elBoot.parentNode.removeChild(elBoot); }, 800);
+      }
+    }
+
+    // tick the "updated Xs ago" every second
+    setInterval(updateAgo, 1000);
+
+    // =====================================================================
+    //  If no WebGL → CSS fallback only. Still fetch data.
+    // =====================================================================
+    if (!USE_3D) {
+      elFallback.classList.add("show");
+      document.getElementById("fbSub").textContent = "Live 3D view unavailable — showing the number the simple way.";
+      bootDone();
+      poll();
+      setInterval(poll, POLL_MS);
+      return;
+    }
+
+    // =====================================================================
+    //  THREE.JS SCENE
+    // =====================================================================
+    var scene, camera, renderer, root;
+    var W = window.innerWidth, H = window.innerHeight;
+    var clock, running = true;
+    var moodTarget = 0, moodNow = 0;
+    var reelBank = null;
+
+    // canvas textures for glyphs (0-9 and symbols) reused across reels
+    var glyphTexCache = {};
+
+    function makeGlyphTexture(ch, hue) {
+      var key = ch + "|" + hue;
+      if (glyphTexCache[key]) return glyphTexCache[key];
+      var S = 256;
+      var cv = document.createElement("canvas");
+      cv.width = S; cv.height = S;
+      var g = cv.getContext("2d");
+      g.clearRect(0, 0, S, S);
+      // soft dark plate so unlit sides still read
+      g.fillStyle = "rgba(10,13,22,0.0)";
+      g.fillRect(0, 0, S, S);
+      g.font = "800 180px -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif";
+      g.textAlign = "center";
+      g.textBaseline = "middle";
+      // glow
+      g.shadowColor = hue;
+      g.shadowBlur = 34;
+      g.fillStyle = "#f2f5ff";
+      g.fillText(ch, S / 2, S / 2 + 8);
+      g.shadowBlur = 0;
+      g.fillStyle = "#ffffff";
+      g.fillText(ch, S / 2, S / 2 + 8);
+      var tex = new THREE.CanvasTexture(cv);
+      tex.anisotropy = 4;
+      tex.needsUpdate = true;
+      glyphTexCache[key] = tex;
+      return tex;
+    }
+
+    // radial glow sprite (fake bloom) — one texture, tinted per sprite
+    var glowTex = null;
+    function makeGlowTexture() {
+      if (glowTex) return glowTex;
+      var S = 128;
+      var cv = document.createElement("canvas");
+      cv.width = S; cv.height = S;
+      var g = cv.getContext("2d");
+      var grd = g.createRadialGradient(S / 2, S / 2, 0, S / 2, S / 2, S / 2);
+      grd.addColorStop(0, "rgba(255,255,255,1)");
+      grd.addColorStop(0.25, "rgba(255,255,255,0.55)");
+      grd.addColorStop(0.6, "rgba(255,255,255,0.12)");
+      grd.addColorStop(1, "rgba(255,255,255,0)");
+      g.fillStyle = grd;
+      g.fillRect(0, 0, S, S);
+      glowTex = new THREE.CanvasTexture(cv);
+      return glowTex;
+    }
+
+    function hexColor(h) { return new THREE.Color(h); }
+
+    // ---- A single spinning digit reel -----------------------------------
+    // A cylinder standing upright; 10 numerals wrapped around its curved
+    // face. Rotating about X shows different digits through a "window".
+    function DigitReel(radius, height, hue) {
+      this.group = new THREE.Group();
+      this.radius = radius;
+      this.hue = hue;
+      this.angle = 0;         // current rotation (radians)
+      this.targetAngle = 0;   // where we're rolling to
+      this.velocity = 0;
+      this.value = 0;         // digit 0-9 currently targeted
+
+      // the drum body — dark glassy cylinder
+      var bodyGeo = new THREE.CylinderGeometry(radius, radius, height, 40, 1, true);
+      var bodyMat = new THREE.MeshStandardMaterial({
+        color: 0x0d1120, metalness: 0.55, roughness: 0.35,
+        emissive: new THREE.Color(hue), emissiveIntensity: 0.05,
+        side: THREE.DoubleSide, transparent: true, opacity: 0.92
+      });
+      this.body = new THREE.Mesh(bodyGeo, bodyMat);
+      this.group.add(this.body);
+
+      // end caps (rings) for a machined-metal look
+      var capGeo = new THREE.TorusGeometry(radius * 0.995, radius * 0.05, 10, 40);
+      var capMat = new THREE.MeshStandardMaterial({
+        color: 0x1a2138, metalness: 0.85, roughness: 0.28,
+        emissive: new THREE.Color(hue), emissiveIntensity: 0.12
+      });
+      var capTop = new THREE.Mesh(capGeo, capMat);
+      capTop.rotation.x = Math.PI / 2; capTop.position.y = height / 2;
+      var capBot = capTop.clone(); capBot.position.y = -height / 2;
+      this.group.add(capTop); this.group.add(capBot);
+
+      // 10 numeral panels around the drum
+      this.numMat = [];
+      var panelH = height * 0.72;
+      var panelW = 2 * Math.PI * radius / 10 * 0.86;
+      var pgeo = new THREE.PlaneGeometry(panelW, panelH);
+      for (var i = 0; i < 10; i++) {
+        var tex = makeGlyphTexture(String(i), hexToCss(hue));
+        var m = new THREE.MeshBasicMaterial({
+          map: tex, transparent: true, depthWrite: false,
+          side: THREE.DoubleSide
+        });
+        this.numMat.push(m);
+        var panel = new THREE.Mesh(pgeo, m);
+        var a = (i / 10) * Math.PI * 2;
+        // rotate the drum about X, so digits advance vertically through the window
+        panel.position.set(0, Math.sin(a) * (radius + 0.02) * -1, Math.cos(a) * (radius + 0.02));
+        panel.rotation.x = -a;
+        this.body.add(panel); // parented to body so they spin with it
+      }
+
+      // window glow bar (fake bloom) in front of the reel
+      var glow = new THREE.Sprite(new THREE.SpriteMaterial({
+        map: makeGlowTexture(), color: new THREE.Color(hue),
+        transparent: true, opacity: 0.0, depthWrite: false,
+        blending: THREE.AdditiveBlending
+      }));
+      glow.scale.set(radius * 3.4, height * 0.8, 1);
+      glow.position.set(0, 0, radius + 0.6);
+      this.group.add(glow);
+      this.glow = glow;
+    }
+    DigitReel.prototype.setDigit = function (d, instant) {
+      this.value = ((d % 10) + 10) % 10;
+      // target angle: digit i sits at window when body.rotation.x = i * step
+      var step = Math.PI * 2 / 10;
+      // choose target that continues forward from current for a nice roll
+      var base = this.value * step;
+      if (instant) { this.targetAngle = base; this.angle = base; this.velocity = 0; }
+      else {
+        // roll forward at least one full-ish sweep for arcade feel
+        var cur = this.angle;
+        var t = base;
+        while (t < cur + step * 2.2) t += Math.PI * 2;
+        this.targetAngle = t;
+      }
+    };
+    DigitReel.prototype.update = function (dt, extraSpin) {
+      // critically-ish damped spring toward target, plus optional idle spin
+      var k = 26, c = 8.5;
+      var x = this.targetAngle - this.angle;
+      var a = k * x - c * this.velocity;
+      this.velocity += a * dt;
+      this.angle += this.velocity * dt;
+      this.body.rotation.x = this.angle + extraSpin;
+      // glow intensity tracks angular speed (the "spin heat")
+      var speed = Math.min(1, Math.abs(this.velocity) / 22);
+      this.glow.material.opacity = 0.10 + speed * 0.55;
+      var s = 1 + speed * 0.25;
+      this.glow.scale.set(this.radius * 3.4 * s, this.radius * 1.0, 1);
+      return Math.abs(this.velocity);
+    };
+
+    function hexToCss(h) {
+      return "#" + ("000000" + h.toString(16)).slice(-6);
+    }
+
+    // ---- Static glyph plate (for $ , .) mounted between reels -----------
+    function GlyphPlate(ch, size, hue) {
+      var tex = makeGlyphTexture(ch, hexToCss(hue));
+      var m = new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false });
+      var geo = new THREE.PlaneGeometry(size, size);
+      this.mesh = new THREE.Mesh(geo, m);
+    }
+
+    // ---- The whole odometer bank ----------------------------------------
+    // Lays out $ + integer reels + . + 2 decimal reels, centered.
+    function ReelBank() {
+      this.group = new THREE.Group();
+      this.reels = [];        // {reel, place} left→right, integer part high→low
+      this.intCount = 0;
+      this.decimals = 2;
+      this.reelR = 0.62;
+      this.reelH = 1.7;
+      this.spacing = 1.45;
+      this.decSpacing = 1.28;
+      this.rolling = false;
+      this.rollStart = 0;
+      this.staticGlyphs = [];
+      this.targetValue = 0;
+      this.built = false;
+    }
+    ReelBank.prototype.build = function (maxIntDigits) {
+      // tear down previous
+      while (this.group.children.length) this.group.remove(this.group.children[0]);
+      this.reels = [];
+      this.staticGlyphs = [];
+      this.intCount = maxIntDigits;
+
+      var self = this;
+      var hueFor = function (idx, total) {
+        // gradient cyan→purple→mint across the reels
+        var t = total <= 1 ? 0 : idx / (total - 1);
+        var c1 = hexColor(COL.cyan), c2 = hexColor(COL.purple), c3 = hexColor(COL.mint);
+        var c = new THREE.Color();
+        if (t < 0.5) c.copy(c1).lerp(c2, t / 0.5);
+        else c.copy(c2).lerp(c3, (t - 0.5) / 0.5);
+        return c.getHex();
+      };
+
+      var totalReels = this.intCount + this.decimals;
+      var xs = [];
+      var x = 0;
+      // build positions: $ glyph, int reels, dot, dec reels
+      var layout = [];
+      layout.push({ type: "glyph", ch: "$" });
+      for (var i = 0; i < this.intCount; i++) {
+        layout.push({ type: "reel", place: this.intCount - 1 - i });
+      }
+      layout.push({ type: "glyph", ch: "." });
+      for (var j = 0; j < this.decimals; j++) {
+        layout.push({ type: "reel", place: -(j + 1) });
+      }
+
+      // measure total width to center
+      var widths = layout.map(function (it, idx) {
+        if (it.type === "glyph") return it.ch === "$" ? 0.9 : 0.55;
+        return self.spacing;
+      });
+      var totalW = widths.reduce(function (a, b) { return a + b; }, 0);
+      var cx = -totalW / 2;
+
+      var reelIdx = 0;
+      for (var k = 0; k < layout.length; k++) {
+        var it = layout[k];
+        var w = widths[k];
+        var px = cx + w / 2;
+        if (it.type === "glyph") {
+          var gp = new GlyphPlate(it.ch, it.ch === "$" ? 1.0 : 0.7, it.ch === "$" ? COL.cyan : COL.mint);
+          gp.mesh.position.set(px, it.ch === "." ? -0.35 : 0, 0.2);
+          this.group.add(gp.mesh);
+          this.staticGlyphs.push(gp);
+        } else {
+          var hue = hueFor(reelIdx, totalReels);
+          var reel = new DigitReel(this.reelR, this.reelH, hue);
+          reel.group.position.set(px, 0, 0);
+          this.group.add(reel.group);
+          this.reels.push({ reel: reel, place: it.place });
+          reelIdx++;
+        }
+        cx += w;
+      }
+      this.built = true;
+    };
+
+    // decompose a value into per-place digits and drive reels
+    ReelBank.prototype.applyDigits = function (value, instant) {
+      var cents = Math.round(Math.abs(value) * 100);
+      for (var i = 0; i < this.reels.length; i++) {
+        var r = this.reels[i];
+        var place = r.place; // >=0 integer place, <0 decimal
+        var digit;
+        if (place >= 0) {
+          digit = Math.floor(cents / 100 / Math.pow(10, place)) % 10;
+        } else {
+          // place -1 → tenths, -2 → hundredths
+          var decPow = Math.pow(10, this.decimals + place); // place=-1 → 10^(2-1)=10
+          digit = Math.floor(cents / decPow) % 10;
+        }
+        r.reel.setDigit(digit, instant);
+      }
+    };
+
+    ReelBank.prototype.neededIntDigits = function (value) {
+      var iv = Math.floor(Math.abs(value));
+      return Math.max(1, String(iv).length);
+    };
+
+    ReelBank.prototype.setValue = function (value, instant) {
+      var need = this.neededIntDigits(value);
+      if (!this.built || need !== this.intCount) this.build(Math.max(need, this.intCount || 0, 1));
+      this.applyDigits(value, instant !== false);
+      this.targetValue = value;
+    };
+
+    ReelBank.prototype.rollTo = function (value, isUp) {
+      var need = this.neededIntDigits(value);
+      if (!this.built || need > this.intCount) this.build(need);
+      this.applyDigits(value, false);
+      this.targetValue = value;
+      this.rolling = true;
+      this.rollStart = clock.getElapsedTime();
+      // celebratory pulse
+      burst(isUp);
+    };
+
+    ReelBank.prototype.update = function (dt, t) {
+      var maxSpeed = 0;
+      // idle micro-spin shimmer when settled
+      var idle = Math.sin(t * 0.6) * 0.006;
+      for (var i = 0; i < this.reels.length; i++) {
+        var spd = this.reels[i].reel.update(dt, this.rolling ? 0 : idle * (i % 2 ? 1 : -1));
+        if (spd > maxSpeed) maxSpeed = spd;
+      }
+      if (this.rolling && maxSpeed < 0.05 && (t - this.rollStart) > 0.4) this.rolling = false;
+      return maxSpeed;
+    };
+
+    // ===================== particles & coins =============================
+    var particles, particleGeo, coinGroup, coins = [];
+
+    function buildAmbient() {
+      var N = (W < 640) ? 220 : 420;
+      particleGeo = new THREE.BufferGeometry();
+      var pos = new Float32Array(N * 3);
+      var spd = new Float32Array(N);
+      for (var i = 0; i < N; i++) {
+        pos[i * 3] = (Math.random() - 0.5) * 26;
+        pos[i * 3 + 1] = (Math.random() - 0.5) * 16;
+        pos[i * 3 + 2] = (Math.random() - 0.5) * 18 - 4;
+        spd[i] = 0.15 + Math.random() * 0.5;
+      }
+      particleGeo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+      particleGeo.userData.spd = spd;
+      var pmat = new THREE.PointsMaterial({
+        size: 0.07, map: makeGlowTexture(), transparent: true,
+        opacity: 0.5, depthWrite: false, blending: THREE.AdditiveBlending,
+        color: new THREE.Color(COL.cyan)
+      });
+      particles = new THREE.Points(particleGeo, pmat);
+      scene.add(particles);
+    }
+
+    function buildCoins() {
+      coinGroup = new THREE.Group();
+      scene.add(coinGroup);
+      var geo = new THREE.CylinderGeometry(0.32, 0.32, 0.07, 22);
+      var COIN_N = (W < 640) ? 10 : 16;
+      for (var i = 0; i < COIN_N; i++) {
+        var mat = new THREE.MeshStandardMaterial({
+          color: 0xffe08a, metalness: 0.9, roughness: 0.25,
+          emissive: new THREE.Color(COL.mint), emissiveIntensity: 0.08
+        });
+        var m = new THREE.Mesh(geo, mat);
+        m.visible = false;
+        m.userData = { life: 0, active: false, vx: 0, vy: 0, vz: 0, rx: 0, ry: 0, rz: 0 };
+        coinGroup.add(m);
+        coins.push(m);
+      }
+    }
+
+    function burst(isUp) {
+      // launch a handful of coins upward (up) or let them fall (down)
+      var launched = 0;
+      var want = 8;
+      for (var i = 0; i < coins.length && launched < want; i++) {
+        var c = coins[i];
+        if (c.userData.active) continue;
+        c.userData.active = true;
+        c.visible = true;
+        c.userData.life = 1.6 + Math.random() * 0.8;
+        c.position.set((Math.random() - 0.5) * 3, -1.2, (Math.random() - 0.3) * 2);
+        var dir = isUp ? 1 : -0.4;
+        c.userData.vx = (Math.random() - 0.5) * 3.2;
+        c.userData.vy = (isUp ? (4.5 + Math.random() * 2.5) : (0.6 + Math.random() * 1.2));
+        c.userData.vz = (Math.random() - 0.5) * 2.2;
+        c.userData.rx = (Math.random() - 0.5) * 10;
+        c.userData.ry = (Math.random() - 0.5) * 10;
+        c.userData.rz = (Math.random() - 0.5) * 10;
+        c.material.emissive.set(isUp ? COL.mint : COL.red);
+        launched++;
+      }
+      // mood punch
+      pulseFlash = isUp ? 1 : 0.7;
+      pulseUp = isUp;
+    }
+
+    var pulseFlash = 0, pulseUp = true;
+
+    function updateCoins(dt) {
+      var g = -9.8;
+      for (var i = 0; i < coins.length; i++) {
+        var c = coins[i];
+        if (!c.userData.active) continue;
+        c.userData.vy += g * dt;
+        c.position.x += c.userData.vx * dt;
+        c.position.y += c.userData.vy * dt;
+        c.position.z += c.userData.vz * dt;
+        c.rotation.x += c.userData.rx * dt;
+        c.rotation.y += c.userData.ry * dt;
+        c.rotation.z += c.userData.rz * dt;
+        c.userData.life -= dt;
+        if (c.userData.life <= 0 || c.position.y < -8) {
+          c.userData.active = false;
+          c.visible = false;
+        }
+      }
+    }
+
+    // ===================== scene setup ===================================
+    function initThree() {
+      scene = new THREE.Scene();
+      scene.fog = new THREE.FogExp2(COL.bg, 0.035);
+
+      camera = new THREE.PerspectiveCamera(48, W / H, 0.1, 100);
+      camera.position.set(0, 0.4, 11.5);
+      camera.lookAt(0, 0, 0);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setSize(W, H);
+      renderer.setClearColor(0x000000, 0);
+      document.getElementById("stage").appendChild(renderer.domElement);
+
+      root = new THREE.Group();
+      scene.add(root);
+
+      // lighting
+      var amb = new THREE.AmbientLight(0x8090c0, 0.55);
+      scene.add(amb);
+      keyLight = new THREE.PointLight(COL.cyan, 1.1, 60);
+      keyLight.position.set(-6, 5, 9);
+      scene.add(keyLight);
+      fillLight = new THREE.PointLight(COL.purple, 0.9, 60);
+      fillLight.position.set(7, -3, 7);
+      scene.add(fillLight);
+      rimLight = new THREE.PointLight(COL.mint, 0.7, 60);
+      rimLight.position.set(0, -6, -6);
+      scene.add(rimLight);
+      var top = new THREE.DirectionalLight(0xffffff, 0.35);
+      top.position.set(0, 10, 4);
+      scene.add(top);
+
+      // glass cabinet frame (subtle box behind the reels)
+      var frameGeo = new THREE.BoxGeometry(1, 1, 1);
+      var frameMat = new THREE.MeshStandardMaterial({
+        color: 0x0b0f1c, metalness: 0.4, roughness: 0.6,
+        transparent: true, opacity: 0.28,
+        emissive: new THREE.Color(COL.purple), emissiveIntensity: 0.04
+      });
+      cabinet = new THREE.Mesh(frameGeo, frameMat);
+      cabinet.position.set(0, 0, -1.4);
+      root.add(cabinet);
+
+      // reels
+      reelBank = new ReelBank();
+      reelBank.setValue(0, true);
+      root.add(reelBank.group);
+
+      buildAmbient();
+      buildCoins();
+
+      clock = new THREE.Clock();
+      window.addEventListener("resize", onResize, { passive: true });
+      // subtle parallax by pointer / device tilt
+      window.addEventListener("pointermove", onPointer, { passive: true });
+      window.addEventListener("deviceorientation", onTilt, { passive: true });
+    }
+
+    var keyLight, fillLight, rimLight, cabinet;
+    var pointerX = 0, pointerY = 0, tiltX = 0, tiltY = 0;
+
+    function onPointer(e) {
+      pointerX = (e.clientX / W - 0.5) * 2;
+      pointerY = (e.clientY / H - 0.5) * 2;
+    }
+    function onTilt(e) {
+      if (e.gamma != null) tiltX = Math.max(-1, Math.min(1, e.gamma / 35));
+      if (e.beta != null) tiltY = Math.max(-1, Math.min(1, (e.beta - 45) / 45));
+    }
+
+    function onResize() {
+      W = window.innerWidth; H = window.innerHeight;
+      camera.aspect = W / H;
+      camera.updateProjectionMatrix();
+      renderer.setSize(W, H);
+    }
+
+    // ===================== render loop ===================================
+    function fitCabinet() {
+      // size the cabinet to hug the reel bank
+      if (!reelBank.built) return;
+      var span = (reelBank.intCount + reelBank.decimals) * reelBank.spacing + 2.2;
+      cabinet.scale.set(span, reelBank.reelH + 1.7, 0.6);
+    }
+
+    function animate() {
+      if (!running) return;
+      requestAnimationFrame(animate);
+      var dt = Math.min(0.05, clock.getDelta());
+      var t = clock.getElapsedTime();
+
+      // smooth mood
+      moodNow += (moodTarget - moodNow) * Math.min(1, dt * 2.2);
+      // decay flash
+      pulseFlash *= Math.pow(0.06, dt);
+
+      // reels
+      var speed = reelBank.update(dt, t);
+      fitCabinet();
+
+      // mood-driven lighting: mint/up warms rim green, red/down cools
+      var upC = new THREE.Color(COL.mint), dnC = new THREE.Color(COL.red), neu = new THREE.Color(COL.cyan);
+      var moodCol = new THREE.Color();
+      if (moodNow >= 0) moodCol.copy(neu).lerp(upC, moodNow);
+      else moodCol.copy(neu).lerp(dnC, -moodNow);
+      rimLight.color.copy(moodCol);
+      rimLight.intensity = 0.6 + Math.abs(moodNow) * 0.5 + pulseFlash * 1.4;
+      keyLight.intensity = 1.0 + speed * 0.02 + pulseFlash * 0.6;
+      var flashCol = pulseUp ? upC : dnC;
+      fillLight.color.copy(new THREE.Color(COL.purple)).lerp(flashCol, pulseFlash * 0.6);
+
+      // particle colour drifts with mood
+      particles.material.color.copy(new THREE.Color(COL.cyan)).lerp(moodCol, 0.5 + 0.4 * Math.abs(moodNow));
+
+      // camera breathing + parallax
+      var px = pointerX + tiltX, py = pointerY + tiltY;
+      var camX = Math.sin(t * 0.22) * 0.9 + px * 1.1;
+      var camY = 0.4 + Math.cos(t * 0.17) * 0.35 - py * 0.7;
+      camera.position.x += (camX - camera.position.x) * Math.min(1, dt * 2);
+      camera.position.y += (camY - camera.position.y) * Math.min(1, dt * 2);
+      camera.position.z = 11.5 - pulseFlash * 0.4;
+      camera.lookAt(0, 0.1, 0);
+
+      // gentle bank sway
+      root.rotation.y = Math.sin(t * 0.25) * 0.06 + px * 0.05;
+      root.rotation.x = Math.cos(t * 0.19) * 0.03 - py * 0.03;
+
+      // particles drift upward, wrap
+      var pos = particleGeo.attributes.position.array;
+      var spd = particleGeo.userData.spd;
+      for (var i = 0; i < spd.length; i++) {
+        pos[i * 3 + 1] += spd[i] * dt * 0.9;
+        pos[i * 3] += Math.sin(t * 0.3 + i) * dt * 0.05;
+        if (pos[i * 3 + 1] > 9) pos[i * 3 + 1] = -9;
+      }
+      particleGeo.attributes.position.needsUpdate = true;
+
+      // coins
+      updateCoins(dt);
+
+      renderer.render(scene, camera);
+    }
+
+    // ===================== visibility handling ==========================
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        running = false;
+      } else if (USE_3D) {
+        if (!running) {
+          running = true;
+          if (clock) clock.getDelta(); // discard the gap
+          animate();
+        }
+        // catch up data immediately
+        updateAgo();
+      }
+    });
+
+    // ===================== boot ==========================================
+    try {
+      initThree();
+      animate();
+      // let the first frame paint, then reveal
+      requestAnimationFrame(function () { requestAnimationFrame(bootDone); });
+    } catch (err) {
+      console.error("[arcade] three init failed:", err);
+      showHardFallback("3D rendering failed — showing the number the simple way.");
+      poll();
+      setInterval(poll, POLL_MS);
+      return;
+    }
+
+    // kick off data
+    poll();
+    setInterval(poll, POLL_MS);
+
+    // safety: if data never arrives in 8s, at least stop the boot spinner
+    setTimeout(function () { bootDone(); }, 8000);
+
+  })();
+  </script>
+</body>
+</html>
