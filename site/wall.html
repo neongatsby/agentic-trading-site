@@ -60,12 +60,12 @@
   #topbar { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; }
   #clock {
     font-family:var(--sans);
-    font-size:clamp(24px,3.2vh,42px); font-weight:800; letter-spacing:.01em;
+    font-size:clamp(20px,2.4vh,32px); font-weight:800; letter-spacing:.01em;
     font-variant-numeric:tabular-nums; line-height:1;
     background:linear-gradient(120deg,#eaf0ff,#c3ccec 60%,#e7ecfb);
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
-  #date { margin-top:6px; font-size:clamp(13px,1.6vh,18px); font-weight:500; color:var(--muted); letter-spacing:.01em; font-style:italic; }
+  #date { margin-top:6px; font-family:var(--sans); font-size:clamp(13px,1.6vh,18px); font-weight:500; color:var(--muted); letter-spacing:.01em; }
   #statuschip {
     margin-top:12px; display:inline-flex; align-items:center; gap:10px; max-width:min(62vw,600px);
     font-size:clamp(13px,1.7vh,18px); font-weight:600;
@@ -109,7 +109,7 @@
   #heroStage { position:relative; width:100%; height:clamp(140px,17vh,250px); }
   #heroStage canvas { display:block; width:100%; height:100%; }
   #heroFallback {
-    display:none; font-family:var(--sans); font-size:clamp(58px,13vh,168px); font-weight:800; letter-spacing:-.02em;
+    display:none; font-family:var(--sans); font-size:clamp(58px,13vh,168px); font-weight:500; letter-spacing:-.02em;
     font-variant-numeric:tabular-nums; line-height:1;
     background:linear-gradient(118deg,#f4f8ff 4%,#c6cfee 34%,#7d88ac 52%,#dfe6fb 70%,#aeb7d6 96%);
     -webkit-background-clip:text; background-clip:text; color:transparent;
@@ -122,8 +122,8 @@
   #dayChangePct { font-family:var(--sans); font-size:clamp(18px,2.4vh,30px); font-weight:700; font-variant-numeric:tabular-nums; color:var(--muted); transition:color .4s ease; }
   #heroChange.up #dayChange, #heroChange.up #dayChangePct { color:var(--mint); text-shadow:0 0 22px rgba(110,231,183,.35); }
   #heroChange.down #dayChange, #heroChange.down #dayChangePct { color:var(--red); text-shadow:0 0 22px rgba(252,165,165,.32); }
-  #heroSince { font-size:clamp(13px,1.55vh,17px); font-weight:500; color:#8188a0; margin-left:2px; font-style:italic; }
-  #asOf { margin-top:6px; font-size:clamp(12px,1.5vh,16px); color:#7c8299; font-weight:500; font-style:italic; }
+  #heroSince { font-family:var(--sans); font-size:clamp(13px,1.55vh,17px); font-weight:500; color:#8188a0; font-variant-numeric:tabular-nums; margin-top:5px; }
+  #asOf { margin-top:6px; font-family:var(--sans); font-size:clamp(12px,1.5vh,16px); color:#7c8299; font-weight:500; font-variant-numeric:tabular-nums; }
 
   /* ---------- chart ---------- */
   #chartSection { display:flex; flex-direction:column; gap:9px; }
@@ -143,8 +143,8 @@
   /* full-bleed: no boxed top border, blends up into the hero's space */
   #chartWrap {
     position:relative; width:100%; height:clamp(220px,26vh,460px);
-    border:none; border-radius:0 0 20px 20px; overflow:hidden;
-    background:linear-gradient(180deg,rgba(125,211,252,0.02) 0%, rgba(10,13,22,0.16) 100%);
+    border:none; border-radius:0; overflow:hidden;
+    background:transparent; box-shadow:none;
   }
   #equityCanvas { display:block; width:100%; height:100%; }
   #chartEmpty {
@@ -152,10 +152,10 @@
     font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#606784;
   }
   #chartWrap.empty #chartEmpty { display:flex; }
-  #chartMeta { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:clamp(13px,1.6vh,17px); }
+  #chartMeta { display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:var(--sans); font-variant-numeric:tabular-nums; font-size:clamp(13px,1.6vh,17px); }
   #chartHL { font-family:var(--sans); font-weight:700; font-variant-numeric:tabular-nums; color:#c4c9db; }
   #chartHL .hi { color:var(--mint); } #chartHL .lo { color:#c0c6dc; } #chartHL .sep { color:#4c5474; margin:0 8px; }
-  #chartRange { color:var(--muted); font-weight:500; font-style:italic; }
+  #chartRange { font-family:var(--sans); color:var(--muted); font-weight:500; }
 
   /* ---------- thinking crawl ticker ---------- */
   #tickerSection {
@@ -178,7 +178,7 @@
   #tickerTrack { display:inline-block; }
   #ticker.run #tickerTrack { animation:crawl linear infinite; }
   @keyframes crawl { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-  .tk { display:inline-block; font-size:clamp(17px,2.3vh,25px); font-weight:400; color:#d3d8ea; padding:0 4px; }
+  .tk { display:inline-block; font-size:clamp(14px,1.7vh,19px); font-weight:400; color:#d3d8ea; padding:0 4px; }
   .tk .dia { color:var(--cyan); margin:0 26px; opacity:.7; }
   .tk b { color:#fff; font-weight:700; }
 
@@ -325,8 +325,8 @@
       <div id="heroChange">
         <span id="dayChange">$0.00</span>
         <span id="dayChangePct">0.00%</span>
-        <span id="heroSince"></span>
       </div>
+      <div id="heroSince"></div>
       <div id="asOf">connecting…</div>
     </section>
 
@@ -466,7 +466,7 @@
     // =====================================================================
     function tickClock() {
       var now = new Date();
-      elClock.textContent = now.toLocaleTimeString([], { hour:"2-digit", minute:"2-digit", second:"2-digit", hour12:false });
+      elClock.textContent = now.toLocaleTimeString([], { hour:"numeric", minute:"2-digit", second:"2-digit", hour12:true });
       elDate.textContent = now.toLocaleDateString([], { weekday:"long", month:"long", day:"numeric" });
     }
     tickClock();
@@ -531,7 +531,7 @@
         var base = state.equity - state.totalPnl;
         if (base && base !== 0) totPct = (state.totalPnl / base) * 100;
       }
-      elHeroSince.textContent = "· " + fmtSigned(state.totalPnl) + (totPct != null ? " (" + fmtPct(totPct) + ") since inception" : " since inception");
+      elHeroSince.textContent = "All-time " + fmtSigned(state.totalPnl) + (totPct != null ? " (" + fmtPct(totPct) + ")" : "");
     }
 
     function renderStatus(status) {
@@ -789,7 +789,8 @@
         raw = ehSeries(d, "1D");
         if (raw.length < 2) raw = intradayPts(d);
       } else if (range === "1W") {
-        raw = tailByTime(ehSeries(d, "1M"), 7 * DAY);
+        raw = ehSeries(d, "1W");
+        if (raw.length < 2) raw = tailByTime(ehSeries(d, "1M"), 7 * DAY);
       } else if (range === "1M") {
         raw = ehSeries(d, "1M");
       } else if (range === "6M") {
@@ -844,7 +845,10 @@
     //  EQUITY CHART  (canvas 2D — glow line, area, tracing sprites, end-dot,
     //  and X-AXIS TIME LABELS along the bottom)
     // =====================================================================
-    var chart = { ser:null, pts:[], min:0, max:1, revealT:1, W:0, H:0, dpr:1, plX:[], plY:[], cum:[], total:0, xticks:[] };
+    var chart = { ser:null, pts:[], dispPts:[], min:0, max:1, W:0, H:0, dpr:1, plX:[], plY:[], cum:[], total:0, xticks:[], everDrawn:false,
+                  tween:{ active:false, startMs:0, dur:400, from:[], to:[] },
+                  fade:{ active:false, startMs:0, dur:320, from:0 },
+                  hover:{ active:false, x:0 } };
 
     function sizeChart() {
       var r = elChartWrap.getBoundingClientRect();
@@ -866,33 +870,56 @@
       elChartWrap.classList.toggle("empty", !!ser.empty);
       elChartRange.textContent = rangeCaption(range, ser);
       if (ser.empty || ser.pts.length < 2) {
-        chart.pts = []; chart.xticks = [];
+        chart.pts = []; chart.dispPts = []; chart.xticks = [];
+        chart.tween.active = false; chart.fade.active = false;
         elChartHL.innerHTML = '<span class="hi">H $—</span><span class="sep">·</span><span class="lo">L $—</span>';
         return;
       }
-      chart.pts = ser.pts;
-      var ys = ser.pts.map(function (p) { return p[1]; });
+      var newPts = ser.pts.map(function (p) { return [p[0], p[1]]; });
+      var ys = newPts.map(function (p) { return p[1]; });
       chart.min = Math.min.apply(null, ys);
       chart.max = Math.max.apply(null, ys);
       elChartHL.innerHTML = '<span class="hi">H ' + esc(fmtCompact(chart.max)) + '</span>' +
                             '<span class="sep">·</span>' +
                             '<span class="lo">L ' + esc(fmtCompact(chart.min)) + '</span>';
-      chart.revealT = 0;
+
+      var nowMs = (typeof performance !== "undefined" ? performance.now() : Date.now());
+      var prev = chart.dispPts;
+      var hadLine = prev && prev.length >= 2;
+      if (hadLine && prev.length === newPts.length) {
+        // SAME shape → smoothly MORPH (tween) old points → new points (no draw-on wipe)
+        chart.tween.from = prev.map(function (p) { return [p[0], p[1]]; });
+        chart.tween.to = newPts.map(function (p) { return [p[0], p[1]]; });
+        chart.tween.startMs = nowMs;
+        chart.tween.active = true;
+        chart.fade.active = false;
+        chart.dispPts = chart.tween.from.map(function (p) { return [p[0], p[1]]; });
+      } else {
+        // first paint OR point-count changed (range switch) → gentle opacity fade, NO wipe
+        chart.dispPts = newPts.map(function (p) { return [p[0], p[1]]; });
+        chart.tween.active = false;
+        chart.fade.from = chart.everDrawn ? 0.55 : 0;
+        chart.fade.startMs = nowMs;
+        chart.fade.active = true;
+      }
+      chart.pts = newPts;
+      chart.everDrawn = true;
       buildChartGeometry();
     }
 
     var CHART_PADB = 26; // room for x-axis labels
 
     function buildChartGeometry() {
-      var pts = chart.pts;
+      var pts = chart.dispPts;
       chart.plX = []; chart.plY = []; chart.cum = []; chart.total = 0; chart.xticks = [];
       if (!pts || pts.length < 2) return;
       var padL = 10, padR = 10, padT = 22, padB = CHART_PADB;
       var w = chart.W, h = chart.H;
       var xs = pts.map(function (p) { return p[0]; });
+      var ys = pts.map(function (p) { return p[1]; });
       var xMin = Math.min.apply(null, xs), xMax = Math.max.apply(null, xs);
       var xSpan = (xMax - xMin) || 1;
-      var yMin = chart.min, yMax = chart.max;
+      var yMin = Math.min.apply(null, ys), yMax = Math.max.apply(null, ys);
       var ySpan = (yMax - yMin) || 1;
       var pad = ySpan * 0.14; yMin -= pad; yMax += pad; ySpan = yMax - yMin;
       for (var i = 0; i < pts.length; i++) {
@@ -933,31 +960,63 @@
       return { x: chart.plX[n - 1], y: chart.plY[n - 1] };
     }
 
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
     function drawChart(t) {
       var ctx = elCanvas.getContext("2d");
       if (!ctx) return;
       var dpr = chart.dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, chart.W, chart.H);
+
+      var nowMs = (typeof performance !== "undefined" ? performance.now() : Date.now());
+
+      // --- MORPH tween: glide old points -> new points (NO left-to-right draw-on wipe) ---
+      if (chart.tween.active) {
+        var tt = Math.min(1, (nowMs - chart.tween.startMs) / chart.tween.dur);
+        var es = tt < 0.5 ? 2 * tt * tt : 1 - Math.pow(-2 * tt + 2, 2) / 2; // easeInOutQuad
+        var from = chart.tween.from, to = chart.tween.to, dp = chart.dispPts;
+        var mlen = Math.min(dp.length, to.length, from.length);
+        for (var mi = 0; mi < mlen; mi++) {
+          dp[mi][0] = from[mi][0] + (to[mi][0] - from[mi][0]) * es;
+          dp[mi][1] = from[mi][1] + (to[mi][1] - from[mi][1]) * es;
+        }
+        buildChartGeometry();
+        if (tt >= 1) chart.tween.active = false;
+      }
+
       var n = chart.plX.length;
       if (n < 2) return;
 
-      chart.revealT = Math.min(1, chart.revealT + 0.03);
-      var rev = 1 - Math.pow(1 - chart.revealT, 3);
-      var upMood = state.dayPnl >= 0;
+      // gentle opacity fade on first paint / range change (NOT a reveal wipe)
+      var alpha = 1;
+      if (chart.fade.active) {
+        var ft = Math.min(1, (nowMs - chart.fade.startMs) / chart.fade.dur);
+        alpha = chart.fade.from + (1 - chart.fade.from) * ft;
+        if (ft >= 1) chart.fade.active = false;
+      }
 
+      var upMood = state.dayPnl >= 0;
       var grad = ctx.createLinearGradient(0, 0, chart.W, 0);
       grad.addColorStop(0, CSSC.cyan); grad.addColorStop(0.55, CSSC.purple); grad.addColorStop(1, CSSC.mint);
 
-      var drawTo = Math.max(1, Math.floor((n - 1) * rev));
-      var endPt = pointAtU(rev);
+      var endPt = { x: chart.plX[n - 1], y: chart.plY[n - 1] };
 
-      // area fill
+      ctx.globalAlpha = alpha;
+
+      // area fill — always the FULL line
       ctx.beginPath();
       ctx.moveTo(chart.plX[0], chart.plY[0]);
-      for (var i = 1; i <= drawTo; i++) ctx.lineTo(chart.plX[i], chart.plY[i]);
-      if (endPt) ctx.lineTo(endPt.x, endPt.y);
-      ctx.lineTo(endPt ? endPt.x : chart.plX[drawTo], chart.H);
+      for (var i = 1; i < n; i++) ctx.lineTo(chart.plX[i], chart.plY[i]);
+      ctx.lineTo(chart.plX[n - 1], chart.H);
       ctx.lineTo(chart.plX[0], chart.H);
       ctx.closePath();
       var fill = ctx.createLinearGradient(0, 0, 0, chart.H);
@@ -967,7 +1026,7 @@
       ctx.fillStyle = fill;
       ctx.fill();
 
-      // glow underlay + crisp line
+      // glow underlay + crisp line — always the FULL line
       ctx.save();
       ctx.lineJoin = "round"; ctx.lineCap = "round";
       ctx.strokeStyle = grad;
@@ -975,49 +1034,46 @@
       ctx.lineWidth = 3.2;
       ctx.beginPath();
       ctx.moveTo(chart.plX[0], chart.plY[0]);
-      for (var k = 1; k <= drawTo; k++) ctx.lineTo(chart.plX[k], chart.plY[k]);
-      if (endPt) ctx.lineTo(endPt.x, endPt.y);
+      for (var k = 1; k < n; k++) ctx.lineTo(chart.plX[k], chart.plY[k]);
       ctx.stroke();
       ctx.shadowBlur = 0; ctx.lineWidth = 2.1; ctx.stroke();
       ctx.restore();
 
-      // tracing light sprites
-      if (chart.revealT >= 0.98) {
-        var SPRITES = 3;
-        for (var s = 0; s < SPRITES; s++) {
-          var u = ((t * 0.06) + s / SPRITES) % 1;
-          var p = pointAtU(u);
-          if (!p) continue;
-          for (var tail = 0; tail < 5; tail++) {
-            var tu = u - tail * 0.012; if (tu < 0) tu += 1;
-            var tp = pointAtU(tu); if (!tp) continue;
-            var a = (1 - tail / 5) * 0.5;
-            var rr = 3.4 - tail * 0.5;
-            var g2 = ctx.createRadialGradient(tp.x, tp.y, 0, tp.x, tp.y, rr * 3);
-            g2.addColorStop(0, "rgba(230,245,255," + a + ")");
-            g2.addColorStop(1, "rgba(230,245,255,0)");
-            ctx.fillStyle = g2;
-            ctx.beginPath(); ctx.arc(tp.x, tp.y, rr * 3, 0, Math.PI * 2); ctx.fill();
-          }
-          ctx.fillStyle = "rgba(255,255,255,0.95)";
-          ctx.beginPath(); ctx.arc(p.x, p.y, 2.0, 0, Math.PI * 2); ctx.fill();
+      // tracing light sprites (line is always fully drawn now)
+      var SPRITES = 3;
+      for (var s = 0; s < SPRITES; s++) {
+        var u = ((t * 0.06) + s / SPRITES) % 1;
+        var p = pointAtU(u);
+        if (!p) continue;
+        for (var tail = 0; tail < 5; tail++) {
+          var tu = u - tail * 0.012; if (tu < 0) tu += 1;
+          var tp = pointAtU(tu); if (!tp) continue;
+          var a = (1 - tail / 5) * 0.5;
+          var rr = 3.4 - tail * 0.5;
+          var g2 = ctx.createRadialGradient(tp.x, tp.y, 0, tp.x, tp.y, rr * 3);
+          g2.addColorStop(0, "rgba(230,245,255," + a + ")");
+          g2.addColorStop(1, "rgba(230,245,255,0)");
+          ctx.fillStyle = g2;
+          ctx.beginPath(); ctx.arc(tp.x, tp.y, rr * 3, 0, Math.PI * 2); ctx.fill();
         }
+        ctx.fillStyle = "rgba(255,255,255,0.95)";
+        ctx.beginPath(); ctx.arc(p.x, p.y, 2.0, 0, Math.PI * 2); ctx.fill();
       }
 
       // pulsing end-dot
-      if (endPt) {
-        var pulse = 0.5 + 0.5 * Math.sin(t * 3.0);
-        var endCol = upMood ? "110,231,183" : "252,165,165";
-        var halo = ctx.createRadialGradient(endPt.x, endPt.y, 0, endPt.x, endPt.y, 16 + pulse * 8);
-        halo.addColorStop(0, "rgba(" + endCol + ",0.55)");
-        halo.addColorStop(1, "rgba(" + endCol + ",0)");
-        ctx.fillStyle = halo;
-        ctx.beginPath(); ctx.arc(endPt.x, endPt.y, 16 + pulse * 8, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = "#ffffff";
-        ctx.beginPath(); ctx.arc(endPt.x, endPt.y, 3.4, 0, Math.PI * 2); ctx.fill();
-        ctx.strokeStyle = "rgba(" + endCol + ",0.9)"; ctx.lineWidth = 2;
-        ctx.beginPath(); ctx.arc(endPt.x, endPt.y, 5.5 + pulse * 2, 0, Math.PI * 2); ctx.stroke();
-      }
+      var pulse = 0.5 + 0.5 * Math.sin(t * 3.0);
+      var endCol = upMood ? "110,231,183" : "252,165,165";
+      var halo = ctx.createRadialGradient(endPt.x, endPt.y, 0, endPt.x, endPt.y, 16 + pulse * 8);
+      halo.addColorStop(0, "rgba(" + endCol + ",0.55)");
+      halo.addColorStop(1, "rgba(" + endCol + ",0)");
+      ctx.fillStyle = halo;
+      ctx.beginPath(); ctx.arc(endPt.x, endPt.y, 16 + pulse * 8, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = "#ffffff";
+      ctx.beginPath(); ctx.arc(endPt.x, endPt.y, 3.4, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = "rgba(" + endCol + ",0.9)"; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(endPt.x, endPt.y, 5.5 + pulse * 2, 0, Math.PI * 2); ctx.stroke();
+
+      ctx.globalAlpha = 1;
 
       // X-axis time labels
       if (chart.xticks && chart.xticks.length) {
@@ -1034,6 +1090,54 @@
         }
         ctx.restore();
       }
+
+      // --- hover crosshair + tooltip (mouse / pencil / stylus) ---
+      if (chart.hover.active && n >= 2) {
+        var hx = chart.hover.x, best = 0, bestD = Infinity;
+        for (var hi = 0; hi < n; hi++) {
+          var dd = Math.abs(chart.plX[hi] - hx);
+          if (dd < bestD) { bestD = dd; best = hi; }
+        }
+        var cx = chart.plX[best], cy = chart.plY[best];
+        ctx.save();
+        // vertical crosshair
+        ctx.strokeStyle = "rgba(200,214,240,0.28)"; ctx.lineWidth = 1;
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath(); ctx.moveTo(cx, 8); ctx.lineTo(cx, chart.H - CHART_PADB); ctx.stroke();
+        ctx.setLineDash([]);
+        // highlighted nearest point
+        ctx.fillStyle = "#eaf6ff";
+        ctx.beginPath(); ctx.arc(cx, cy, 3.6, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = "rgba(125,211,252,0.95)"; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(cx, cy, 6.2, 0, Math.PI * 2); ctx.stroke();
+        // tooltip: value + time/date at that point
+        var srcPts = (chart.pts && chart.pts.length === n) ? chart.pts : chart.dispPts;
+        var valTxt = fmtCompact(srcPts[best][1]);
+        var labTxt = (chart.ser && chart.ser.labels && chart.ser.labels[best]) ? String(chart.ser.labels[best]) : "";
+        ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+        ctx.font = "700 13px -apple-system,'SF Pro Display','Segoe UI',sans-serif";
+        var vw = ctx.measureText(valTxt).width;
+        ctx.font = "600 11px -apple-system,'SF Pro Display','Segoe UI',sans-serif";
+        var lw = labTxt ? ctx.measureText(labTxt).width : 0;
+        var boxW = Math.max(vw, lw) + 20;
+        var boxH = labTxt ? 41 : 27;
+        var bx = cx + 14; if (bx + boxW > chart.W - 6) bx = cx - 14 - boxW;
+        if (bx < 6) bx = 6;
+        var by = Math.min(Math.max(6, cy - boxH - 12), chart.H - CHART_PADB - boxH - 2);
+        if (by < 6) by = 6;
+        ctx.fillStyle = "rgba(12,16,26,0.94)";
+        ctx.strokeStyle = "rgba(255,255,255,0.14)"; ctx.lineWidth = 1;
+        roundRect(ctx, bx, by, boxW, boxH, 8); ctx.fill(); ctx.stroke();
+        ctx.fillStyle = "#eaf6ff";
+        ctx.font = "700 13px -apple-system,'SF Pro Display','Segoe UI',sans-serif";
+        ctx.fillText(valTxt, bx + 10, by + 18);
+        if (labTxt) {
+          ctx.fillStyle = "rgba(154,160,181,0.92)";
+          ctx.font = "600 11px -apple-system,'SF Pro Display','Segoe UI',sans-serif";
+          ctx.fillText(labTxt, bx + 10, by + 34);
+        }
+        ctx.restore();
+      }
     }
 
     // =====================================================================
@@ -1046,6 +1150,20 @@
           renderChart(this.getAttribute("data-range"));
         });
       }
+    })();
+
+    // chart hover interactivity — crosshair + tooltip (mouse AND pencil/stylus)
+    (function wireChartHover() {
+      function onMove(e) {
+        var r = elCanvas.getBoundingClientRect();
+        chart.hover.active = true;
+        chart.hover.x = e.clientX - r.left; // CSS px, same space as chart.plX
+      }
+      function onLeave() { chart.hover.active = false; }
+      elCanvas.addEventListener("pointermove", onMove, { passive:true });
+      elCanvas.addEventListener("pointerdown", onMove, { passive:true });
+      elCanvas.addEventListener("pointerleave", onLeave, { passive:true });
+      elCanvas.addEventListener("pointercancel", onLeave, { passive:true });
     })();
 
     // =====================================================================
@@ -1456,11 +1574,11 @@
       return {
         x: Math.random() * pnl.W,
         y: atEdge ? (up ? pnl.H + Math.random() * 40 : -Math.random() * 40) : Math.random() * pnl.H,
-        r: 0.8 + Math.random() * 2.4,
+        r: 0.5 + Math.random() * 0.8,
         sp: 6 + Math.random() * 18,
         drift: (Math.random() - 0.5) * 10,
         ph: Math.random() * 6.28,
-        a: 0.08 + Math.random() * 0.22
+        a: 0.12 + Math.random() * 0.28
       };
     }
     function pnlInit() {
@@ -1485,11 +1603,9 @@
         if ((up || flat) && p.y < -10) { pnl.ps[i] = pnlSpawn(true); continue; }
         if (!up && !flat && p.y > pnl.H + 10) { pnl.ps[i] = pnlSpawn(true); continue; }
         if (p.x < -10) p.x = pnl.W + 10; else if (p.x > pnl.W + 10) p.x = -10;
-        var rg = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 3);
-        rg.addColorStop(0, "rgba(" + col + "," + p.a + ")");
-        rg.addColorStop(1, "rgba(" + col + ",0)");
-        ctx.fillStyle = rg;
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2); ctx.fill();
+        // tiny CRISP dot — no shadowBlur / no radial-gradient glow (fine in-focus dust)
+        ctx.fillStyle = "rgba(" + col + "," + p.a + ")";
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
       }
     }
 
