@@ -1,55 +1,55 @@
 {
-  "generated_at": "2026-07-10T19:47:14.334Z",
+  "generated_at": "2026-07-10T19:48:19.805Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99952.7,
+    "equity": 99952.11,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98952.7,
-    "day_pnl": -43.95,
+    "total_pnl": 98952.11,
+    "day_pnl": -44.54,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 209.67,
-        "pl": -76.7,
-        "plpc": -0.28,
+        "current": 209.86,
+        "pl": -51.99,
+        "plpc": -0.19,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.64,
-        "pl": 161.46,
-        "plpc": 6.59,
+        "current": 32.69,
+        "pl": 165.46,
+        "plpc": 6.75,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.77,
-        "pl": -147,
-        "plpc": -3.77,
+        "current": 18.76,
+        "pl": -150,
+        "plpc": -3.84,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 77.14,
-        "pl": 13.29,
-        "plpc": 0.06,
+        "current": 77.1,
+        "pl": 3.42,
+        "plpc": 0.02,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 410.11,
-        "pl": 0.36,
-        "plpc": 0,
+        "current": 409.71,
+        "pl": -14.04,
+        "plpc": -0.1,
         "thesis": ""
       }
     ],
@@ -85,45 +85,45 @@
     ]
   },
   "live": {
-    "equity": 1011.39,
+    "equity": 1010.95,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 11.39,
-    "day_pnl": 10.52,
+    "total_pnl": 10.95,
+    "day_pnl": 10.08,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 209.68,
-        "pl": 0.78,
-        "plpc": 7.81,
+        "current": 209.86,
+        "pl": 0.79,
+        "plpc": 7.91,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.64,
-        "pl": 2.05,
-        "plpc": 6.72,
+        "current": 32.69,
+        "pl": 2.1,
+        "plpc": 6.88,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.77,
-        "pl": 0.15,
-        "plpc": 0.08,
+        "current": 18.76,
+        "pl": 0,
+        "plpc": 0,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 77.14,
-        "pl": 8.45,
-        "plpc": 1.11,
+        "current": 77.1,
+        "pl": 8.1,
+        "plpc": 1.06,
         "thesis": ""
       }
     ],
@@ -742,10 +742,10 @@
       "size_note": "10 sh held — the single core, ~76% of sleeve, $65 GTC stop",
       "plan_usd": 771,
       "horizon": 0.3,
-      "updated": "Jul 10 3:15pm",
+      "updated": "Jul 10 3:43pm",
       "stop": 65,
-      "price": 77.14,
-      "chg_pct": 1.15,
+      "price": 77.13,
+      "chg_pct": 1.13,
       "spark": [
         74.76,
         77.09,
@@ -776,7 +776,7 @@
         82.78,
         82.48,
         74.21,
-        77.14
+        77.13
       ]
     },
     {
@@ -791,10 +791,10 @@
       "size_note": "Core-rotation candidate (mutually exclusive w/ TQQQ). Flip TQQQ→SOXL only on a SOXX close >~600 with broad semis leading.",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 10 3:15pm",
+      "updated": "Jul 10 3:43pm",
       "trigger": "SOXX > 600 close",
-      "price": 192.07,
-      "chg_pct": -0.06,
+      "price": 191.96,
+      "chg_pct": -0.12,
       "spark": [
         172.54,
         184.35,
@@ -825,7 +825,7 @@
         279.32,
         301.42,
         230.82,
-        192.07
+        191.96
       ]
     },
     {
@@ -840,7 +840,7 @@
       "size_note": "1 sh legacy starter — 2x-NVDA, $27 GTC stop; add wash-blocked",
       "plan_usd": 33,
       "horizon": 0.3,
-      "updated": "Jul 10 3:15pm",
+      "updated": "Jul 10 3:43pm",
       "trigger": 30.56,
       "stop": 27,
       "price": 32.63,
@@ -890,9 +890,9 @@
       "size_note": "0.05 sh dust live (unstoppable); 130 sh on paper w/ $186 stop",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 10 3:15pm",
-      "price": 209.68,
-      "chg_pct": 3.45,
+      "updated": "Jul 10 3:43pm",
+      "price": 209.87,
+      "chg_pct": 3.54,
       "spark": [
         220.62,
         225.65,
@@ -923,7 +923,7 @@
         210.38,
         208.59,
         200.07,
-        209.68
+        209.87
       ]
     },
     {
@@ -939,9 +939,9 @@
       "plan_usd": 0,
       "card": "/research/ceg.html",
       "horizon": 0.3,
-      "updated": "Jul 10 3:15pm",
-      "price": 251.68,
-      "chg_pct": 0.4,
+      "updated": "Jul 10 3:43pm",
+      "price": 251.72,
+      "chg_pct": 0.42,
       "spark": [
         293.02,
         274.38,
@@ -972,7 +972,7 @@
         274.09,
         275.65,
         270.31,
-        251.68
+        251.72
       ]
     },
     {
@@ -987,9 +987,9 @@
       "size_note": "watch — trades with CEG",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 10 3:15pm",
-      "price": 320.12,
-      "chg_pct": -1.19,
+      "updated": "Jul 10 3:43pm",
+      "price": 319.94,
+      "chg_pct": -1.25,
       "spark": [
         367.07,
         370.14,
@@ -1020,24 +1020,25 @@
         333.19,
         358.37,
         318.27,
-        320.12
+        319.94
       ]
     },
     {
       "ticker": "TSLA",
       "name": "Tesla",
       "theme": "High-beta bench",
-      "verdict": "watch",
-      "verdict_label": "Bench — basing >$400",
-      "thesis": "**Basing >$400, +0.6% to $409.** Firm (day range $403–413) — the one high-beta name holding while quantum/nuclear/space bleed. No position, but the cleanest momentum re-entry candidate if it clears ~$415 with the tape. Watch (a whole share needs a core sale to fund live).",
+      "verdict": "buy",
+      "verdict_label": "PAPER — 36 sh, stop $348 GTC ✓",
+      "thesis": "**Bought on the practice account — basing >$400, +0.8% to $409.8.** Reclaimed a bullish signal at $394 and closed +3% prior day; Q2 deliveries (480,126, a beat) already out so no imminent earnings landmine. Deployed idle testbed cash here (36 sh @ $410.10, **GTC stop $348**, −15% below the $394/$400 reclaim structure) — a clean non-chip name (owner's proven decade-long winner) that diversifies the paper book away from its heavy NVDA/semis tilt. LIVE: no position — a whole share ($410) needs a core sale to fund the ~$1k sleeve, so it stays a live watch (re-engage on a clear >$415 push).",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "watching a base > $410 (whole share needs a core sale to fund)",
+      "size_note": "PAPER 36 sh @ $410.10, $348 GTC stop; no live position (whole share needs a core sale)",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 10 3:15pm",
-      "price": 410.12,
-      "chg_pct": 0.89,
+      "updated": "Jul 10 3:43pm",
+      "stop": 348,
+      "price": 409.74,
+      "chg_pct": 0.79,
       "spark": [
         433.45,
         445.32,
@@ -1068,7 +1069,7 @@
         400.49,
         405.05,
         381.54,
-        410.12
+        409.74
       ]
     },
     {
@@ -1083,11 +1084,11 @@
       "size_note": "10 sh held — rate-independent fintech satellite, $16.80 GTC stop",
       "plan_usd": 187,
       "horizon": 0.4,
-      "updated": "Jul 10 3:15pm",
+      "updated": "Jul 10 3:43pm",
       "trigger": null,
       "stop": 16.8,
       "price": 18.77,
-      "chg_pct": 0.91,
+      "chg_pct": 0.89,
       "spark": [
         15.9,
         15.3,
@@ -1133,9 +1134,9 @@
       "size_note": "trigger suspended — needs repair",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 10 3:15pm",
+      "updated": "Jul 10 3:43pm",
       "price": 126.94,
-      "chg_pct": -1.64,
+      "chg_pct": -1.63,
       "spark": [
         136.02,
         130.07,
@@ -1182,9 +1183,9 @@
       "plan_usd": 0,
       "card": "/research/be.html",
       "horizon": 0.2,
-      "updated": "Jul 10 3:15pm",
-      "price": 245.19,
-      "chg_pct": -4.6,
+      "updated": "Jul 10 3:43pm",
+      "price": 245.25,
+      "chg_pct": -4.58,
       "spark": [
         280.91,
         289.88,
@@ -1215,7 +1216,7 @@
         328.78,
         345.98,
         321.82,
-        245.19
+        245.25
       ]
     },
     {
@@ -1230,10 +1231,10 @@
       "size_note": "pre-arm retired — re-ticket on a real reclaim >$86",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 10 3:15pm",
+      "updated": "Jul 10 3:43pm",
       "stop": 74.5,
-      "price": 81.36,
-      "chg_pct": -1.43,
+      "price": 81.39,
+      "chg_pct": -1.39,
       "spark": [
         117.55,
         124.16,
@@ -1264,7 +1265,7 @@
         107.33,
         100.28,
         95.09,
-        81.36
+        81.39
       ]
     },
     {
@@ -1280,9 +1281,9 @@
       "plan_usd": 0,
       "card": "/research/oklo.html",
       "horizon": 0.3,
-      "updated": "Jul 10 3:15pm",
-      "price": 48.83,
-      "chg_pct": -0.94,
+      "updated": "Jul 10 3:43pm",
+      "price": 48.87,
+      "chg_pct": -0.87,
       "spark": [
         73.64,
         69.75,
@@ -1313,7 +1314,7 @@
         61.28,
         58.35,
         57.16,
-        48.83
+        48.87
       ]
     }
   ],
@@ -1869,8 +1870,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 77.14,
-    "tqqq_pct": 0.31
+    "tqqq": 77.13,
+    "tqqq_pct": 0.3
   },
   "status": [
     {
