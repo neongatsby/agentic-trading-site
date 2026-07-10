@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-10T08:18:10.031Z",
+  "generated_at": "2026-07-10T08:19:16.812Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99941.3,
+    "equity": 99938.74,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98941.3,
-    "day_pnl": -58.7,
+    "total_pnl": 98938.74,
+    "day_pnl": -61.26,
     "positions": [
       {
         "symbol": "NVDL",
@@ -20,9 +20,9 @@
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 75.26,
-        "pl": -32.96,
-        "plpc": -1.35,
+        "current": 75.18,
+        "pl": -35.52,
+        "plpc": -1.46,
         "thesis": ""
       }
     ],
@@ -54,18 +54,18 @@
     ]
   },
   "live": {
-    "equity": 989.76,
+    "equity": 988.96,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -10.24,
-    "day_pnl": -11.11,
+    "total_pnl": -11.04,
+    "day_pnl": -11.91,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 201.89,
+        "current": 201.91,
         "pl": 0.38,
-        "plpc": 3.81,
+        "plpc": 3.82,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
@@ -81,9 +81,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.26,
-        "pl": -10.3,
-        "plpc": -1.35,
+        "current": 75.18,
+        "pl": -11.1,
+        "plpc": -1.46,
         "thesis": ""
       }
     ],
@@ -139,14 +139,14 @@
       "name": "ProShares 3x Nasdaq-100",
       "theme": "Leveraged core",
       "verdict": "buy",
-      "verdict_label": "LIVE — core position ON, stop $65 GTC ✓",
-      "thesis": "**The core is on and holding.** Adam approved ticket 2026-07-09-1 at the bell; the fast-lane bought all **10 sh @ $76.29** with the **$65 GTC stop** attached correctly (verified live again this run). QQQ closed **723 (+1.7%)** above its 20-day (721) and 50-day, and held ~723 into after-hours — the reclaim is intact overnight. Riding it with the wide −15% stop (below the 7/8 washout low $69.59); no take-profit, reassessed each run. **Flat on the day** at the close (last ~$76.5 after hours).",
-      "size": "$763",
+      "verdict_label": "LIVE — core held, stop $65 GTC ✓",
+      "thesis": "**The core is held.** 10 sh @ $76.29, **$65 GTC stop re-verified live** at the broker this run (order 2947c9be). QQQ closed **723.2** above its 20-day (721.0) and 50-day — reclaim intact but **thin** (~0.3% over). Overnight the mark **softened to ~$75.1 (−1.6%)** as futures cooled; not thesis-breaking, and the $65 stop sits far below (−15%, under the 7/8 washout low $69.59). No trailing yet — no higher low to trail to. Reassess at the open: holds while QQQ keeps its 20-day; if QQQ loses ~720 decisively the reclaim is in doubt.",
+      "size": "$751",
       "size_pct": 76,
       "size_note": "10 sh held — the single core, ~76% of sleeve, $65 GTC stop",
-      "plan_usd": 763,
+      "plan_usd": 751,
       "horizon": 0.3,
-      "updated": "Jul 9 9:35pm",
+      "updated": "Jul 10 4:10am",
       "stop": 65,
       "price": 76.32,
       "chg_pct": 4.94,
@@ -980,15 +980,7 @@
   "status": [
     {
       "session": "Morning",
-      "text": "Risk-on open, chips leading"
-    },
-    {
-      "session": "Afternoon",
-      "text": "Reclaim held into close; chips cooled"
-    },
-    {
-      "session": "Evening",
-      "text": "Long TQQQ core; buffer ready"
+      "text": "Pre-market: long core, buffer staged"
     }
   ]
 }
