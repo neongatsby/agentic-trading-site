@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-07-10T23:14:57.063Z",
+  "generated_at": "2026-07-10T23:16:03.180Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99971.27,
+    "equity": 99972.61,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98971.27,
-    "day_pnl": -25.38,
+    "total_pnl": 98972.61,
+    "day_pnl": -24.04,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.54,
-        "pl": 36.4,
+        "current": 210.53,
+        "pl": 35.72,
         "plpc": 0.13,
         "thesis": ""
       },
@@ -30,7 +30,7 @@
         "qty": "200.0000",
         "entry": 19.51,
         "current": 18.76,
-        "pl": -149.94,
+        "pl": -150,
         "plpc": -3.84,
         "thesis": ""
       },
@@ -38,18 +38,18 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 77.11,
-        "pl": 6.24,
-        "plpc": 0.03,
+        "current": 77.12,
+        "pl": 9.03,
+        "plpc": 0.04,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 407.22,
-        "pl": -103.68,
-        "plpc": -0.7,
+        "current": 407.2,
+        "pl": -104.4,
+        "plpc": -0.71,
         "thesis": ""
       }
     ],
@@ -85,18 +85,18 @@
     ]
   },
   "live": {
-    "equity": 1011.3,
+    "equity": 1011.39,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 11.3,
-    "day_pnl": 10.43,
+    "total_pnl": 11.39,
+    "day_pnl": 10.52,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 210.54,
+        "current": 210.53,
         "pl": 0.82,
-        "plpc": 8.26,
+        "plpc": 8.25,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
@@ -113,7 +113,7 @@
         "qty": "10.0000",
         "entry": 18.76,
         "current": 18.76,
-        "pl": 0.01,
+        "pl": 0,
         "plpc": 0,
         "thesis": ""
       },
@@ -121,9 +121,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 77.11,
-        "pl": 8.2,
-        "plpc": 1.07,
+        "current": 77.12,
+        "pl": 8.3,
+        "plpc": 1.09,
         "thesis": ""
       }
     ],
@@ -889,6 +889,10 @@
       {
         "t": 1783725000000,
         "v": 1011.91
+      },
+      {
+        "t": 1783725300000,
+        "v": 1011.3
       }
     ]
   },
