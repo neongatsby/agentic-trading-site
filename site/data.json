@@ -1,54 +1,54 @@
 {
-  "generated_at": "2026-07-10T23:12:43.384Z",
+  "generated_at": "2026-07-10T23:13:51.238Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99975.09,
+    "equity": 99965.18,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98975.09,
-    "day_pnl": -21.56,
+    "total_pnl": 98965.18,
+    "day_pnl": -31.47,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.53,
-        "pl": 35.1,
-        "plpc": 0.13,
+        "current": 210.5,
+        "pl": 30.73,
+        "plpc": 0.11,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.9,
-        "pl": 182.26,
-        "plpc": 7.44,
+        "current": 32.88,
+        "pl": 180.66,
+        "plpc": 7.38,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.77,
-        "pl": -148,
-        "plpc": -3.79,
+        "current": 18.76,
+        "pl": -150,
+        "plpc": -3.84,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 77.12,
-        "pl": 9.06,
-        "plpc": 0.04,
+        "current": 77.11,
+        "pl": 6.24,
+        "plpc": 0.03,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 407.23,
-        "pl": -103.32,
+        "current": 407.21,
+        "pl": -104.04,
         "plpc": -0.7,
         "thesis": ""
       }
@@ -80,50 +80,50 @@
       },
       {
         "date": "Jul 10",
-        "value": 5001
+        "value": 4999.3
       }
     ]
   },
   "live": {
-    "equity": 1011.49,
+    "equity": 1011.27,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 11.49,
-    "day_pnl": 10.62,
+    "total_pnl": 11.27,
+    "day_pnl": 10.4,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 210.53,
+        "current": 210.5,
         "pl": 0.82,
-        "plpc": 8.25,
+        "plpc": 8.24,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.9,
-        "pl": 2.31,
-        "plpc": 7.57,
+        "current": 32.88,
+        "pl": 2.29,
+        "plpc": 7.5,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.77,
-        "pl": 0.1,
-        "plpc": 0.05,
+        "current": 18.76,
+        "pl": 0,
+        "plpc": 0,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 77.12,
-        "pl": 8.3,
-        "plpc": 1.09,
+        "current": 77.11,
+        "pl": 8.2,
+        "plpc": 1.07,
         "thesis": ""
       }
     ],
@@ -154,7 +154,7 @@
       },
       {
         "date": "Jul 10",
-        "value": 1011.32
+        "value": 1011.91
       }
     ],
     "intraday": [
@@ -900,13 +900,13 @@
       "theme": "Leveraged core",
       "verdict": "buy",
       "verdict_label": "LIVE — core held, stop $65 GTC ✓",
-      "thesis": "**Core green into the weekend, the book's top $ winner.** 10 sh @ $76.29, closed **$77.16 (+1.1%, +$8.7)**, riding QQQ at **fresh highs — $726.3 close vs 20-day ~722.6** (risk-on holds). NVDA's record day carried a narrow tape. **$65 GTC stop verified live** (2947c9be) — wide by design, below the 7/8 washout. No trail: core only ~1.1% above entry, no established higher-low; a tight stop just whipsaws. **Next week's swing factor is CPI Tue 7/14** + a hawkish Warsh (mkt prices a possible Sept hike) — a hot core print is the main downside; the wide $65 stop rides it. First cut only on a decisive QQQ break of its 20-day.",
+      "thesis": "**Core green into the weekend, the book's top $ winner.** 10 sh @ $76.29, closed **$77.16 (+1.1%, +$8.7)**, riding QQQ at **fresh highs — $726.3 vs 20-day ~722.6** (risk-on holds); Nasdaq +1.3% to 26,207 on NVDA's record day. **$65 GTC stop verified live** (2947c9be) — wide by design, below the 7/8 washout. No trail: core only ~1.1% above entry, no established higher-low. **Next week's swing factor is CPI Tue 7/14** — consensus clustered ~3.9% y/y (Cleveland Fed nowcast 3.96%) vs May 4.2%, with 9 Fed officials now penciling a hike; a hot/sticky core print is the core's main downside, and the wide $65 stop rides any gap. First cut only on a decisive QQQ break of its 20-day.",
       "size": "$772",
       "size_pct": 76,
       "size_note": "10 sh held — the single 3x core, ~76% of sleeve, $65 GTC stop",
       "plan_usd": 772,
       "horizon": 0.3,
-      "updated": "Jul 10 6:15pm",
+      "updated": "Jul 10 7:10pm",
       "stop": 65,
       "price": 77.16,
       "chg_pct": 1.18,
@@ -1004,7 +1004,7 @@
       "size_note": "1 sh legacy starter — 2x-NVDA, $27 GTC stop; add wash-blocked",
       "plan_usd": 33,
       "horizon": 0.3,
-      "updated": "Jul 10 6:15pm",
+      "updated": "Jul 10 7:10pm",
       "trigger": 30.56,
       "stop": 27,
       "price": 33.01,
@@ -1054,7 +1054,7 @@
       "size_note": "0.05 sh dust live (unstoppable); 130 sh on paper w/ $186 stop",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 10 5:10pm",
+      "updated": "Jul 10 7:10pm",
       "price": 210.99,
       "chg_pct": 4.09,
       "spark": [
@@ -1348,7 +1348,7 @@
       "size_note": "10 sh held — rate-independent fintech satellite, $16.80 GTC stop",
       "plan_usd": 187,
       "horizon": 0.4,
-      "updated": "Jul 10 6:15pm",
+      "updated": "Jul 10 7:10pm",
       "trigger": null,
       "stop": 16.8,
       "price": 18.8,
@@ -1583,6 +1583,13 @@
     }
   ],
   "feed": [
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-10T19:10:00-04:00",
+      "symbol": "NVDA",
+      "text": "7:10pm — evening check, still nothing to do. The book's unchanged and every live position has its hard exit at the broker (**TQQQ $65 / NVDL $27 / SoFi $16.80**); you're ~99% invested, up ~$11 (+1.1%) on the week. I re-scanned the wire — nothing new broke after Friday's close (Nvidia's record +4%, Nasdaq at fresh highs, SK Hynix's +14% US debut). Next week's swing factor is **Tuesday's CPI**: consensus is ~3.9% and a hot number is the main risk to the leveraged core, but the wide stops ride any gap. Enjoy the weekend."
+    },
     {
       "type": "trade",
       "account": "paper",
@@ -1855,31 +1862,15 @@
       "ts": "2026-07-09T15:22:00-04:00",
       "symbol": "NVDL",
       "text": "Turns out yesterday's approved NVDL top-up **never filled** — the broker blocked it as a 'wash trade' because we already had a resting $27 safety-sell on the shares, and you can't plainly buy more of a name you're simultaneously trying to protect-sell. Not a market call, a plumbing snag. Rather than fight it, I moved that money to a clean TQQQ ticket and flagged the fix."
-    },
-    {
-      "type": "trade",
-      "account": "paper",
-      "ts": "2026-07-09T15:20:00-04:00",
-      "symbol": "TQQQ",
-      "text": "Practice account went **fully invested**: added 32 shares of TQQQ (≈$2.4k, stop $65) alongside the NVDL we already hold, so the testbed runs the same risk-on reclaim I'm proposing live. NVDL there is green (+$25)."
-    },
-    {
-      "type": "watch",
-      "account": "live",
-      "ts": "2026-07-09T15:15:00-04:00",
-      "symbol": "SOXX",
-      "text": "The catalyst behind today is **real, not a blip**: Micron committed $250B to US chips, SK Hynix's US listing is 7x oversubscribed, and the equipment names (Applied Materials, Lam) jumped 9–10%. Chips are back in the leadership seat — SOXX +4%, SOXL +12%, the inverse funds down double digits."
-    },
-    {
-      "type": "system",
-      "account": "live",
-      "ts": "2026-07-08T17:25:00-04:00",
-      "symbol": "NVDL",
-      "text": "Two bugs surfaced and handled: the auto-placer sized the buy at **1 share instead of 16**, and its safety exit was set to expire at the close — which it did, leaving the position briefly unprotected. I **re-armed the $27 exit** so it now stands until it's hit, and tickets carry explicit share counts from here on."
     }
   ],
-  "latest_recap": "Fri 7/10 ~6:40pm final weekend sweep (MARKET CLOSED for the week; next open Mon 7/13 09:30 ET) — LIVE: NO book change; HOLD all four into the weekend, three GTC stops RE-VERIFIED at the broker this run (TQQQ $65 = 2947c9be / NVDL $27 = c2fbeac9 / SOFI $16.80 = bf2f2983); NVDA 0.05sh unstoppable fractional dust (~$11), tidy at Mon open. ACCOUNT (live get_account_info): equity $1,011.32 (+$10.45, +1.04% vs last_equity $1,000.87), cash $8.88, long_mkt $1,002.44 → ~99% deployed — TQQQ 10sh ~$771 (+1.0%), NVDL 1sh ~$33 (+7.3%), SOFI 10sh ~$188 (flat), NVDA 0.05sh dust ~$11. Fresh after-hours snapshots confirm the close: NVDA record $210.99, QQQ $726.27 (fresh highs, >20-day ~722.6), TQQQ $77.16, SOFI $18.80, NVDL $33.01, TSLA $407.77 (+3% Fri); SOXX still ~3% under its ~600 20-day → semi gate UNMET, no TQQQ→SOXL flip. RECONCILE (movita queue): no new trade-placed/trade-failed since -10-3; all prior tickets booked/resolved in earlier runs; nothing to book. No new live ticket — and none is even fundable: $8.88 BP (no dry powder), adds to TQQQ/NVDL/SOFI wash-blocked, a whole NVDA share (~$211) unaffordable, no clean both-directions setup (won't chase or short into fresh highs on a Friday close carrying weekend + CPI gap risk); any live approval now only queues to Monday's open anyway. No trail (wide-stop mandate; core only ~1% above entry, no established higher-low). Week ahead: CPI Tue 7/14 (cons. headline cooling to ~3.7-3.8% y/y, core still sticky), Warsh testimony (hawkish; mkt prices a possible Sept hike), big-bank earnings JPM/GS/WFC/C/BAC 7/14; ASML Wed, TSMC + Netflix Thu = AI/semis read-throughs; NVDA earnings not until 8/26 (no landmine next week). PAPER (testbed, no approval): unchanged from the 6:15 run — FNGU 520sh @ $29.20 GTC OTO (+$24.30 stop) and UPRO 95sh @ $148.50 GTC OTO (+$124 stop) staged to fill Mon open → testbed ~99% committed; all five held legs (NVDA $186 / TQQQ $65 / NVDL $27 / SOFI $16.80 / TSLA $348) GTC-stopped. Movement test: live +$10.45, led by the core (+$8) and NVDL (+$2.2) — deployed and moving on a quiet, narrow day (a 3x-heavy book swings far more on a broad move; the small $ is the tape being quiet, not the book being passive). Not financial advice; live entries need Adam's tap (auto-filled on approval).",
+  "latest_recap": "Fri 7/10 ~7:10pm evening sweep (MARKET CLOSED for the week; next open Mon 7/13 09:30 ET) — LIVE: NO book change; HOLD all four into the weekend, three GTC stops RE-VERIFIED at the broker this run (TQQQ $65 = 2947c9be / NVDL $27 = c2fbeac9 / SOFI $16.80 = bf2f2983); NVDA 0.05sh unstoppable fractional dust (~$11), tidy at Mon open. ACCOUNT (live get_account_info): equity $1,011.91 (+$11.04, +1.10% vs last_equity $1,000.87), cash $8.88, long_mkt $1,003.03 → ~99% deployed — TQQQ 10sh ~$772 (+1.1%), NVDL 1sh ~$33 (+7.6%), SOFI 10sh ~$188 (flat), NVDA 0.05sh dust ~$11. FRESH NEWS (WebSearch this run): nothing new broke after hours; confirmed the Fri close — NVDA record +4% ($211), Nasdaq +1.3% to 26,207 fresh highs, S&P +0.8% (7,543.64), SK Hynix largest-ever foreign US IPO popped +14%; SOXX still ~3% under its ~600 20-day → semi gate UNMET, no TQQQ→SOXL flip. MACRO REFINE: June CPI (Tue 7/14, 8:30am) consensus clustered ~3.9% y/y (Cleveland Fed nowcast 3.96%) vs May 4.2% — a hot/sticky core is the leveraged core's main next-week downside, and 9 Fed officials now pencil a possible hike; the wide $65 TQQQ stop rides any gap and any approval only queues to Monday's open anyway. RECONCILE (movita queue): no new trade-placed/trade-failed since -10-3; all prior tickets booked/resolved in earlier runs; nothing to book. No new live ticket — none is even fundable: $8.88 BP (no dry powder), adds to TQQQ/NVDL/SOFI wash-blocked, a whole NVDA share (~$211) unaffordable, no clean both-directions setup (won't chase or short into fresh highs on a Friday close carrying weekend + CPI gap risk). No trail (wide-stop mandate; core only ~1.1% above entry, no established higher-low). PAPER (testbed, no approval): unchanged & re-verified — five held legs (NVDA 130/$186, TQQQ 282/$65, NVDL 80/$27, SOFI 200/$16.80, TSLA 36/$348) all GTC-stopped; FNGU 520@$29.20 GTC OTO (+$24.30 stop) and UPRO 95@$148.50 GTC OTO (+$124 stop) staged to fill Mon open → testbed ~99% committed. Movement test: live +$11.04, led by the core (+$8.7) and NVDL (+$2.3) — deployed and moving on a quiet, narrow day; the small $ swing is the tape being quiet, not the book being passive (a 3x-heavy book swings far more on a broad move). Week ahead: CPI Tue 7/14, Warsh testimony (hawkish), big-bank earnings JPM/GS/WFC/C/BAC 7/14; ASML Wed, TSMC + Netflix Thu = AI/semis read-throughs; NVDA earnings not until 8/26 (no landmine next week). Not financial advice; live entries need Adam's tap (auto-filled on approval).",
   "activity": [
+    {
+      "ts": "2026-07-10T19:10:00-04:00",
+      "kind": "engine",
+      "title": "7:10pm evening check — MARKET CLOSED (next open Mon 7/13 09:30). LIVE: NO change, HOLD all four; three GTC stops re-verified at the broker (TQQQ $65=2947c9be / NVDL $27=c2fbeac9 / SOFI $16.80=bf2f2983); NVDA 0.05sh unstoppable fractional dust (~$11), tidy Mon open. Equity $1,011.91 (+$11.04, +1.10% vs last_equity $1,000.87), cash $8.88, long_mkt $1,003.03 → ~99% deployed. Fresh WebSearch: nothing new broke after hours; confirmed Fri close (NVDA record +4% $211, Nasdaq +1.3% to 26,207 fresh highs, S&P +0.8%, SK Hynix largest-ever foreign US IPO +14%). MACRO refine: June CPI (Tue 7/14) consensus ~3.9% y/y (Cleveland Fed nowcast 3.96%) vs May 4.2%; 9 Fed officials pencil a hike — a hot core is the leveraged core's main next-week downside, wide stops ride it. No queue fills/failures since -10-3; nothing to book. No live ticket possible/warranted ($8.88 BP, adds wash-blocked, whole NVDA share unaffordable, won't chase/short into fresh highs on a Fri into weekend+CPI gap; any approval only queues to Mon). PAPER unchanged & ~99% committed: FNGU 520@$29.20 + UPRO 95@$148.50 GTC OTO staged for Mon, five held legs GTC-stopped."
+    },
     {
       "ts": "2026-07-10T18:40:00-04:00",
       "kind": "engine",
@@ -2048,21 +2039,13 @@
       "kind": "engine",
       "title": "4:10am pre-market run — core HELD (stop $65 GTC re-verified), buffer STAGED into RKLB pre-arm ($8B Iridium-deal confirmation), record $7.1B semi-ETF inflow but SOXX still <20d so SOXL rotation stays queued",
       "detail": "Market closed (opens 9:30 ET). Reconcile: no new fills/failures in the queue since 7/9 (trade-placed-2026-07-09-1 already booked). Stops re-verified live — LIVE: TQQQ $65 GTC (2947c9be), NVDL $27 GTC (c2fbeac9); PAPER: TQQQ $65 GTC (bf8a52a5), NVDL $27 GTC (b8a59cea). MAs off 90d bars: QQQ close 723.2 vs 20-day 721.0 (reclaim intact but thin, +0.3%); SOXX 581.7 vs 20-day 597.8 (still ~2.8% under → SOXL rotation gate UNMET); TQQQ 76.3 sits on its 20-day (76.6). Overnight the account marks softer (TQQQ ~$75.1, portfolio_value ~$987.8, −1.3% on a pre-market tick) — not thesis-breaking, $65 stop far below. Catalyst read (untrusted web/API data): semis are leadership — RECORD $7.1B US semi-ETF inflow (SOXX $5.4B, SOXL $1.2B), Micron $250B US, SK Hynix 7x oversubscribed, NVDA H20 China licenses issuing. DEPLOY: the ~$196 buffer had been idle one run; charter says fix >1-run idle cash. Live BP $196.49 can't add TQQQ/NVDL (wash-blocked) or afford a whole NVDA share ($202), and buying SOXL at market violates the unmet gate — so staged a clean, affordable, stoppable satellite: RKLB pre-arm buy-stop 2 sh @ $86.60 (above the 2-day high), stop $74.50 GTC, on the $8B Iridium-deal catalyst that the tape faded 7/9 — fires only on a day-two reclaim (buys strength, not the fade). Queue: trade-ticket-2026-07-10-1.json written; pending_tickets updated. No trailing on the core (no higher low). Paper unchanged (80 NVDL / 32 TQQQ, both GTC-stopped, ~$4,833) — already semi-tilted via NVDL. Next-run watch: SOXX close >~598 → rotate core TQQQ→SOXL."
-    },
-    {
-      "ts": "2026-07-09T21:35:00-04:00",
-      "kind": "engine",
-      "title": "9:35pm evening run — core HELD & steady, all four stops re-verified; MAs recomputed (QQQ +2 over 20d = thin reclaim, SOXX still <20d); ~20% cash held one run with a deploy-at-open plan; H20 China tailwind flagged",
-      "detail": "No fills/failures in the queue since the 4:10pm reconcile (the TQQQ core is already booked). Re-verified every protective stop live at the broker — LIVE: TQQQ $65 GTC (order 2947c9be), NVDL $27 GTC (c2fbeac9); PAPER: TQQQ $65 GTC (bf8a52a5), NVDL $27 GTC (b8a59cea) — all GTC, none missing. MAs recomputed from 70d of bars: QQQ 20-day = 721.0 (close 723.3, reclaim intact but only ~0.3% above — thin); SOXX 20-day = 597.8 (close 581.7, still ~2.7% under → SOXL rotation gate UNMET); TQQQ 20-day = 76.6 (core sits right on it). After-hours flat vs close: TQQQ 76.32, QQQ 723, NVDA 202.7, NVDL 30.56; live equity ~$1,000 flat (a stale after-hours TQQQ tick briefly marks it ~$996, immaterial), cash $196.49 (~20%). No new live ticket: market closed, and the ~$196 buying power can't add to the wash-blocked TQQQ core, can't afford a whole NVDA share, and the SOXL gate is unmet — buying 1 sh of an unconfirmed 3x-semis fund into a faded bounce is exactly what the regime gate exists to prevent. Holding the buffer ONE run, at the deployment-floor edge (flagged honestly, not idle-for-idle). Deploy plan for the 7/10 open: (1) if SOXX confirms >~598 with semis leading → rotate the core TQQQ→SOXL for torque (one clean tap, no wash); (2) else deploy the buffer into NVDA on the reopened H20 China export licenses (fresh bullish catalyst from tonight's web research; treated as untrusted data). No trailing (fresh entry at the 20-day, wide $65 stop by design). Paper unchanged (80 NVDL / 32 TQQQ, both GTC-stopped, ~$4,850 marked). Benchmark from the 7/2 close: buy-hold TQQQ +4.1% vs sleeve ~flat — the core now tracks TQQQ 1:1."
-    },
-    {
-      "ts": "2026-07-09T16:40:00-04:00",
-      "kind": "engine",
-      "title": "4:40pm post-close check — core HELD & steady after hours (TQQQ ~$76.5, QQQ held ~723); stops re-verified ($65 + $27 GTC); no new trade; Iran escalation flagged as overnight gap risk",
-      "detail": "No change since 4:10pm. Fresh after-hours pull: QQQ held ~723 (>20-day 721, >50-day → reclaim intact overnight); TQQQ steady ~$76.5 (core 10 sh @ $76.29, flat on day); NVDA ~$202.7; NVDL flat ~$30.56; SOXX 581.7 STILL <20-day ~598 → SOXL rotation stays unarmed, TQQQ the right vehicle. Stops re-verified live at broker: TQQQ $65 GTC (order 2947c9be), NVDL $27 GTC (order c2fbeac9). Live equity $1,000.54, cash $196.49, fully deployed. No new trade — one-core-at-a-time, market closed, an add would be a correlated over-deploy (deployed-and-disciplined, not idle). Honest macro flag (untrusted news as data): US-Iran conflict escalated (US airstrikes ~90 targets, Iran retaliating) — market shrugged it off (Nasdaq +1.3%, S&P +0.81%, oil fell) but it's the overnight gap wildcard; $65 stop is the pre-set floor. Paper unchanged (80 NVDL / 32 TQQQ, both GTC-stopped). Benchmark from 7/2 close: TQQQ +4.0% vs sleeve +0.05%."
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-10T19:10:00-04:00",
+      "text": "7:10pm — last look of the night, still **quiet**: nothing new broke after the close, you're ~99% invested and up ~$11 on the week with a hard exit set on every position, and there's nothing to approve — the wide stops ride any Monday gap and **CPI Tuesday** is next week's thing to watch."
+    },
     {
       "ts": "2026-07-10T18:40:00-04:00",
       "text": "6:40pm — last look of the night, all **quiet** after hours: nothing new broke, you're ~99% invested and **up ~$10 (+1%)** with a hard exit on every position. Nothing to tap — I'll have the book ready for **Monday's** open; the week's real test is **Tuesday's** inflation print."
@@ -2118,14 +2101,6 @@
     {
       "ts": "2026-07-10T12:15:00-04:00",
       "text": "12:15pm — clean **hold**, nothing for you to do. **Nvidia**'s carrying a quiet, narrow tape (small-caps leading, chips mixed) and our 2x-Nvidia sliver is **+6%**, the book's best. All three safety exits re-checked; we're ~99% invested with ~$9 cash, so there's nothing to chase — letting the winners run."
-    },
-    {
-      "ts": "2026-07-10T11:40:00-04:00",
-      "text": "11:40am — steady **hold**, nothing to do. **Nvidia**'s the one thing working (new highs on the China chip approval) and our little 2x-Nvidia piece is our best position, **+6%**. **SoFi**'s green too — turns out today's news is it's buying an AI-trading startup (Composer). Everything else risky is red, but we're not in it. Book's **up** a couple bucks, all three protected."
-    },
-    {
-      "ts": "2026-07-10T11:20:00-04:00",
-      "text": "11:20am — **done: SoFi filled at $18.76**, hard exit $16.80 set. That's the last of the cash **working** — we're now ~99% deployed across three protected positions (3x-Nasdaq core, 2x-Nvidia, SoFi). The earlier buying-power hiccup is fixed and behind us. Nvidia's still leading (China cleared 400k+ of its top chips); everything else is quiet. Nothing for you to do."
     }
   ],
   "benchmark": {
@@ -2145,7 +2120,7 @@
     },
     {
       "session": "Evening",
-      "text": "Weekend hold +$10, all stopped"
+      "text": "Weekend hold — +$11, all stopped"
     }
   ],
   "equity_history": {
