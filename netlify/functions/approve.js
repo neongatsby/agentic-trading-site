@@ -26,12 +26,26 @@ const J = (code, obj) => ({
 
 exports.handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') return J(204, {});
-  if (event.httpMethod !== 'POST') return J(405, { error: 'POST only' });
 
   const PIN = process.env.APPROVE_PIN;
   const TOKEN = process.env.GH_TOKEN;
   const REPO = process.env.GH_REPO || 'neongatsby/agentic-trading-site';
   const BRANCH = process.env.GH_BRANCH || 'main';
+
+  // Read-only self-diagnostic (no secret revealed): reports whether the token can WRITE the repo.
+  // GET /.netlify/functions/approve?diag=1
+  if (event.httpMethod === 'GET') {
+    if (!TOKEN) return J(200, { diag: true, pinPresent: !!PIN, tokenPresent: false });
+    try {
+      const g = await fetch(`https://api.github.com/repos/${REPO}`, {
+        headers: { authorization: `Bearer ${TOKEN}`, accept: 'application/vnd.github+json', 'user-agent': 'diag' },
+      });
+      let perms = null; try { perms = g.ok ? (await g.json()).permissions : null; } catch {}
+      return J(200, { diag: true, pinPresent: !!PIN, tokenPresent: true, repo: REPO, repoStatus: g.status, canWrite: !!(perms && perms.push) , permissions: perms });
+    } catch (e) { return J(200, { diag: true, tokenPresent: true, error: String(e).slice(0, 140) }); }
+  }
+
+  if (event.httpMethod !== 'POST') return J(405, { error: 'POST only' });
   if (!PIN || !TOKEN)
     return J(503, { error: 'approval endpoint not configured', need: ['APPROVE_PIN', 'GH_TOKEN'] });
 
