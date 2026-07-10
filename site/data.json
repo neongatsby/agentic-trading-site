@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-10T14:15:26.578Z",
+  "generated_at": "2026-07-10T14:16:32.325Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99998.16,
+    "equity": 100009.23,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98998.16,
-    "day_pnl": 1.51,
+    "total_pnl": 99009.23,
+    "day_pnl": 12.58,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.01,
-        "pl": 111.05,
-        "plpc": 4.53,
+        "current": 32,
+        "pl": 110.02,
+        "plpc": 4.49,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.96,
-        "pl": -110,
-        "plpc": -2.82,
+        "current": 19.03,
+        "pl": -96,
+        "plpc": -2.46,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 76.2,
-        "pl": -2.88,
-        "plpc": -0.12,
+        "current": 76.14,
+        "pl": -4.78,
+        "plpc": -0.2,
         "thesis": ""
       }
     ],
@@ -63,16 +63,16 @@
     ]
   },
   "live": {
-    "equity": 1001.16,
+    "equity": 1000.55,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 1.16,
-    "day_pnl": 0.29,
+    "total_pnl": 0.55,
+    "day_pnl": -0.32,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 207.54,
+        "current": 207.52,
         "pl": 0.67,
         "plpc": 6.71,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
@@ -81,18 +81,18 @@
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.01,
-        "pl": 1.42,
-        "plpc": 4.66,
+        "current": 32,
+        "pl": 1.41,
+        "plpc": 4.61,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.2,
-        "pl": -0.9,
-        "plpc": -0.12,
+        "current": 76.14,
+        "pl": -1.49,
+        "plpc": -0.2,
         "thesis": ""
       }
     ],
@@ -438,13 +438,13 @@
       "id": "2026-07-10-2",
       "symbol": "SOFI",
       "side": "buy",
-      "size": "$177",
+      "size": "$172",
       "qty": 9,
-      "entry": 19.57,
+      "entry": 19.07,
       "trigger": null,
       "stop": 16.8,
-      "bracket": "stop $16.80 GTC (below the $17 shelf / 7/8 low $17.085, -14%)",
-      "thesis": "The breakout FIRED — SOFI gapped up +5% (to ~$19.6, now ~$19.3), clearing the $18.70 level as money rotates OUT of AI/semis (Samsung capex scare + DeepSeek's own-chip headline, ~$1T of chip cap wiped, SOXX -2%/SOXL -6% today) INTO rate-independent fintech, and SOFI is the beneficiary. Catalyst stack intact: Goldman → $21, consensus ~$22 (~13% upside), CEO Noto buying, ARK adding, new $250k SMB-loans platform + Composer AI + SFYI ETF, into Jul 29 earnings. Refreshed: the old $19.10/$18.90 levels are now below market, so this is a breakout-CONTINUATION entry — 9 sh ≈ $177, marketable limit $19.90 caps the chase at ~+1.7%, wide $16.80 GTC stop (-14%, risk ~$25). APPROVE-NOW only (pre-arm retired — price is already through it). Honest: chasing a +5% day-one move, defined-risk and small. Mirrored in paper (200 sh filled @ $19.51, stop $16.80 GTC)."
+      "bracket": "stop $16.80 GTC (below the $17 shelf / 7/8 low $17.085, -12%)",
+      "thesis": "SOFI spiked to $19.74 at the open then FADED to ~$19.07 — but it's STILL green (+2.5%) and holding above the $18.70 breakout while chips sell off, which is the whole thesis: money rotating OUT of AI/semis (chips -4.5%, Teradyne -13.6%, KLA -11.5% today) INTO rate-independent fintech (Fiserv +5%). Now a pullback-to-breakout entry, not a chase. Catalyst stack intact: Goldman → $21, Street avg PT ~$21.13 (~11% upside), CEO Noto buying, ARK adding, new $250k SMB-loans platform + Composer AI + SFYI ETF, into Jul 29 earnings. 9 sh ≈ $172, marketable limit $19.90 caps any overpay, wide $16.80 GTC stop (risk ~$20, ~2%). APPROVE-NOW: one tap buys near $19.07. Honest: Street is Hold, KBW Underperform $16 — a small, defined-risk buffer bet. Paper mirror filled the spike at $19.51 (now -$89), showing exactly why the pullback is the better entry."
     }
   ],
   "coverage": [
@@ -462,8 +462,8 @@
       "horizon": 0.3,
       "updated": "Jul 10 10:12am",
       "stop": 65,
-      "price": 76.2,
-      "chg_pct": -0.08,
+      "price": 76.15,
+      "chg_pct": -0.14,
       "spark": [
         74.76,
         77.09,
@@ -494,7 +494,7 @@
         82.78,
         82.48,
         74.21,
-        76.2
+        76.15
       ]
     },
     {
@@ -511,8 +511,8 @@
       "horizon": 0.2,
       "updated": "Jul 10 10:12am",
       "trigger": "SOXX > 598 close",
-      "price": 186.12,
-      "chg_pct": -3.16,
+      "price": 184.95,
+      "chg_pct": -3.77,
       "spark": [
         172.54,
         184.35,
@@ -543,7 +543,7 @@
         279.32,
         301.42,
         230.82,
-        186.12
+        184.95
       ]
     },
     {
@@ -561,8 +561,8 @@
       "updated": "Jul 10 10:12am",
       "trigger": 30.56,
       "stop": 27,
-      "price": 32.01,
-      "chg_pct": 4.73,
+      "price": 31.98,
+      "chg_pct": 4.65,
       "spark": [
         37.8,
         39.55,
@@ -593,7 +593,7 @@
         33.28,
         32.71,
         30.03,
-        32.01
+        31.98
       ]
     },
     {
@@ -609,8 +609,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "Jul 10 10:12am",
-      "price": 207.53,
-      "chg_pct": 2.39,
+      "price": 207.48,
+      "chg_pct": 2.36,
       "spark": [
         220.62,
         225.65,
@@ -641,7 +641,7 @@
         210.38,
         208.59,
         200.07,
-        207.53
+        207.48
       ]
     },
     {
@@ -658,8 +658,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.4,
       "updated": "Jul 10 10:12am",
-      "price": 250.38,
-      "chg_pct": -0.12,
+      "price": 250.64,
+      "chg_pct": -0.01,
       "spark": [
         293.02,
         274.38,
@@ -690,7 +690,7 @@
         274.09,
         275.65,
         270.31,
-        250.38
+        250.64
       ]
     },
     {
@@ -706,8 +706,8 @@
       "plan_usd": 0,
       "horizon": 0.5,
       "updated": "Jul 10 10:12am",
-      "price": 320.2,
-      "chg_pct": -1.17,
+      "price": 319.15,
+      "chg_pct": -1.49,
       "spark": [
         367.07,
         370.14,
@@ -738,7 +738,7 @@
         333.19,
         358.37,
         318.27,
-        320.2
+        319.15
       ]
     },
     {
@@ -754,8 +754,8 @@
       "plan_usd": 0,
       "horizon": 0.7,
       "updated": "Jul 10 10:12am",
-      "price": 410.22,
-      "chg_pct": 0.91,
+      "price": 409.88,
+      "chg_pct": 0.83,
       "spark": [
         433.45,
         445.32,
@@ -786,7 +786,7 @@
         400.49,
         405.05,
         381.54,
-        410.22
+        409.88
       ]
     },
     {
@@ -804,8 +804,8 @@
       "updated": "Jul 10 10:12am",
       "trigger": null,
       "stop": 16.8,
-      "price": 18.95,
-      "chg_pct": 1.85,
+      "price": 19.02,
+      "chg_pct": 2.26,
       "spark": [
         15.9,
         15.3,
@@ -836,7 +836,7 @@
         17.91,
         17.1,
         17.29,
-        18.95
+        19.02
       ]
     },
     {
@@ -852,8 +852,8 @@
       "plan_usd": 0,
       "horizon": 0.6,
       "updated": "Jul 10 10:12am",
-      "price": 127.99,
-      "chg_pct": -0.82,
+      "price": 128.16,
+      "chg_pct": -0.69,
       "spark": [
         136.02,
         130.07,
@@ -884,7 +884,7 @@
         128.44,
         119.46,
         116.72,
-        127.99
+        128.16
       ]
     },
     {
@@ -893,16 +893,16 @@
       "theme": "Energy-for-AI",
       "verdict": "avoid",
       "verdict_label": "Another wild reversal",
-      "thesis": "$243.8 (−5%) — another failed pop (gapped to 275 yesterday, closed 257, now bleeding). No base; avoid.",
+      "thesis": "$242 (−5.8%) — yet another failed pop (gapped to $275 Wed, closed $257, now $242 and bleeding). Wild two-way, no floor; avoid.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/be.html",
       "horizon": 0.9,
-      "updated": "Jul 10 9:45am",
-      "price": 245.13,
-      "chg_pct": -4.63,
+      "updated": "Jul 10 10:12am",
+      "price": 243.43,
+      "chg_pct": -5.29,
       "spark": [
         280.91,
         289.88,
@@ -933,7 +933,7 @@
         328.78,
         345.98,
         321.82,
-        245.13
+        243.43
       ]
     },
     {
@@ -942,16 +942,16 @@
       "theme": "Space",
       "verdict": "watch",
       "verdict_label": "Pre-arm RETIRED — faded away from its trigger",
-      "thesis": "$81.1 (−1.8%) — still fading post-Iridium (Beck's 5M-sh sale overhang). Re-ticket only on a real reclaim of strength; not catching the knife.",
+      "thesis": "$80.2 (−2.8%) — still fading post-Iridium (Beck's 5M-sh sale overhang), now under $81. Re-ticket only on a real reclaim of strength; not catching the knife.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "pre-arm retired — buffer redeployed to SOFI; re-ticket on a real reclaim",
       "plan_usd": 0,
       "horizon": 0.6,
-      "updated": "Jul 10 9:45am",
+      "updated": "Jul 10 10:12am",
       "stop": 74.5,
-      "price": 80.07,
-      "chg_pct": -2.99,
+      "price": 80.18,
+      "chg_pct": -2.86,
       "spark": [
         117.55,
         124.16,
@@ -982,7 +982,7 @@
         107.33,
         100.28,
         95.09,
-        80.07
+        80.18
       ]
     },
     {
@@ -991,16 +991,16 @@
       "theme": "Energy-for-AI",
       "verdict": "watch",
       "verdict_label": "Bounced with the tape",
-      "thesis": "$49.3 (flat) — nuclear-for-AI, cooled off; no setup.",
+      "thesis": "$48.7 (−1.3%) — nuclear-for-AI, cooled off with the tape; no setup.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/oklo.html",
       "horizon": 0.9,
-      "updated": "Jul 10 9:45am",
-      "price": 48.52,
-      "chg_pct": -1.58,
+      "updated": "Jul 10 10:12am",
+      "price": 48.59,
+      "chg_pct": -1.43,
       "spark": [
         73.64,
         69.75,
@@ -1031,7 +1031,7 @@
         61.28,
         58.35,
         57.16,
-        48.52
+        48.59
       ]
     }
   ],
@@ -1469,8 +1469,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 76.2,
-    "tqqq_pct": -0.91
+    "tqqq": 76.15,
+    "tqqq_pct": -0.98
   },
   "status": [
     {
