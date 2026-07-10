@@ -1080,10 +1080,11 @@
       var W = 512, H = 256, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
       var g = cv.getContext("2d");
       var grd = g.createLinearGradient(0, 0, 0, H);
-      grd.addColorStop(0.00, "#1a2e40"); // top sky (light) for streaky specular reflections
-      grd.addColorStop(0.35, "#141b2e");
-      grd.addColorStop(0.62, "#0a0f1c");
-      grd.addColorStop(1.00, "#05070d");
+      grd.addColorStop(0.00, "#b8c8e0"); // bright top -> shiny silver sheen across the metal
+      grd.addColorStop(0.30, "#6b7f9e");
+      grd.addColorStop(0.55, "#33415c");
+      grd.addColorStop(0.78, "#1a2336");
+      grd.addColorStop(1.00, "#0a1120"); // darker floor for chrome-like top-to-bottom contrast
       g.fillStyle = grd; g.fillRect(0, 0, W, H);
       // bright specular blobs so the metal has streaks to catch
       function blob(x, y, r, col) {
@@ -1192,11 +1193,7 @@
       try {
         new THREE.FontLoader().load(FONT_URL, function (font) {
           hFont = font;
-          try {
-            if (font.data && font.data.glyphs && font.data.glyphs["0"] && font.data.glyphs["0"].ha) {
-              hDigitAdv = font.data.glyphs["0"].ha * (HSIZE / (font.data.resolution || 1000));
-            }
-          } catch (e0) {}
+          try { measureDigitCell(); } catch (e0) { hDigitCell = 0.62 * HSIZE; }
           heroFontReady = true;
           heroBuildOrDiff(state.equityStr || "$0.00");
         }, undefined, function () {
@@ -1212,63 +1209,127 @@
       if (state.equityStr) elHeroFallback.textContent = state.equityStr;
     }
 
-    function advOf(ch) {
-      if (ch >= "0" && ch <= "9") return hDigitAdv; // tabular digits
-      if (hFont && hFont.data && hFont.data.glyphs && hFont.data.glyphs[ch] && hFont.data.glyphs[ch].ha) {
-        return hFont.data.glyphs[ch].ha * (HSIZE / (hFont.data.resolution || 1000));
-      }
-      var f = { "$":0.62, ",":0.30, ".":0.30, "−":0.5, "-":0.5, " ":0.3 };
-      return (f[ch] || 0.6) * HSIZE;
-    }
+    function isDigitCh(ch) { return ch >= "0" && ch <= "9"; }
 
-    function makeGlyphGeo(ch) {
+    // Build a glyph ONCE per character, measure its true bounding box, and
+    // normalize it so its LEFT edge sits at local x=0 (side-bearing removed) and
+    // it is centered through the extrusion depth. The baseline stays at y=0 so
+    // punctuation like "." and "," rest correctly. Geometries are cached and
+    // shared across meshes — cheap, and it lets layout use exact per-glyph widths
+    // so nothing can overlap. Returns { geo, gw, minY, maxY }.
+    function getGlyph(ch) {
+      if (hGeoCache[ch]) return hGeoCache[ch];
       var geo = new THREE.TextGeometry(ch, {
         font: hFont, size: HSIZE, height: HDEPTH, curveSegments: 5,
         bevelEnabled: true, bevelThickness: HDEPTH * 0.4, bevelSize: HBEVEL, bevelSegments: 3
       });
       geo.computeBoundingBox();
-      return geo;
+      var bb = geo.boundingBox, rec;
+      if (bb && isFinite(bb.min.x) && isFinite(bb.max.x) && (bb.max.x - bb.min.x) > 1e-4) {
+        var gw = bb.max.x - bb.min.x;                 // true visual width of the glyph
+        geo.translate(-bb.min.x, 0, -HDEPTH / 2);     // left edge -> 0, keep baseline, center depth
+        rec = { geo: geo, gw: gw, minY: bb.min.y, maxY: bb.max.y };
+      } else {
+        // empty glyph (e.g. a space) — no drawable mesh, just an advance
+        geo.dispose();
+        rec = { geo: null, gw: 0.30 * HSIZE, minY: 0, maxY: 0.70 * HSIZE };
+      }
+      hGeoCache[ch] = rec;
+      return rec;
+    }
+
+    // Widest measured digit -> a single uniform digit CELL. Digits then advance
+    // on a fixed tabular grid (so the readout doesn't jitter/reflow when a digit
+    // changes) while the cell is guaranteed wide enough that digits never collide.
+    function measureDigitCell() {
+      var mw = 0;
+      for (var d = 0; d < 10; d++) {
+        var r = getGlyph(String(d));
+        if (r.gw > mw) mw = r.gw;
+      }
+      hDigitCell = mw > 1e-4 ? mw : 0.62 * HSIZE;
     }
     function makeGlyphMat() {
       var m = new THREE.MeshStandardMaterial({
-        color: 0xdfe6f5, metalness: 0.92, roughness: 0.24,
+        color: 0xeaf0ff, metalness: 0.88, roughness: 0.28,
         envMap: hEnv, emissive: new THREE.Color(0x000000), emissiveIntensity: 0
       });
-      if ("envMapIntensity" in m) m.envMapIntensity = 1.2;
+      if ("envMapIntensity" in m) m.envMapIntensity = 1.5;
       return m;
     }
 
     function heroTeardown() {
       for (var i = 0; i < hGlyphs.length; i++) {
         var g = hGlyphs[i];
-        hNumGroup.remove(g.mesh);
-        if (g.mesh.geometry) g.mesh.geometry.dispose();
-        if (g.mesh.material) g.mesh.material.dispose();
+        if (g.mesh) {
+          hNumGroup.remove(g.mesh);
+          if (g.mesh.material) g.mesh.material.dispose();
+          // NB: geometry is shared from hGeoCache and reused — never disposed here.
+        }
       }
       hGlyphs = [];
     }
 
-    function heroLayout() {
-      var total = 0, i;
-      for (i = 0; i < hGlyphs.length; i++) total += hGlyphs[i].adv;
-      total = Math.max(0.5, total);
-      var cursor = -total / 2;
-      var capMid = 0.36 * HSIZE; // approx cap-height center for vertical centering
-      for (i = 0; i < hGlyphs.length; i++) {
-        hGlyphs[i].x = cursor;
-        hGlyphs[i].mesh.position.x = cursor;
-        cursor += hGlyphs[i].adv;
+    // -- pure layout math: given each glyph's measured width, place them on a
+    //    left->right cursor (digits on a fixed tabular cell, punctuation on its
+    //    real width), advancing by width + tracking, then CENTER the whole group.
+    //    Exposed on the closure so the headless sanity check can exercise it.
+    function computeHeroLayout(glyphs) {
+      var tracking = HTRACK * HSIZE;
+      var n = glyphs.length, i, g;
+      var totalW = 0, minY = 1e9, maxY = -1e9;
+      for (i = 0; i < n; i++) {
+        g = glyphs[i];
+        g.cell = isDigitCh(g.ch) ? hDigitCell : g.gw;   // digits share a uniform cell
+        totalW += g.cell;
+        if (g.minY < minY) minY = g.minY;
+        if (g.maxY > maxY) maxY = g.maxY;
       }
-      hNumGroup.position.y = -capMid;
-      // reposition rim lights to hug the current row width
-      if (hLights.cyan)   hLights.cyan.position.x   = -(total * 0.52 + 0.5);
-      if (hLights.purple) hLights.purple.position.x =  (total * 0.52 + 0.5);
-      // fit camera so the number always fills the stage nicely
+      totalW += tracking * Math.max(0, n - 1);           // gaps between cells
+      if (!isFinite(minY) || !isFinite(maxY) || maxY <= minY) { minY = 0; maxY = 0.70 * HSIZE; }
+      totalW = Math.max(0.5, totalW);
+      var cursor = 0;
+      for (i = 0; i < n; i++) {
+        g = glyphs[i];
+        // digits are centered inside their (wider) uniform cell; others sit flush left
+        g.x = cursor + (isDigitCh(g.ch) ? (g.cell - g.gw) / 2 : 0);
+        cursor += g.cell + tracking;
+      }
+      return { totalWidth: totalW, rowH: maxY - minY, midY: (minY + maxY) / 2, offsetX: -totalW / 2 };
+    }
+
+    function heroLayout() {
+      if (!hGlyphs.length) return;
+      var L = computeHeroLayout(hGlyphs);
+      for (var i = 0; i < hGlyphs.length; i++) {
+        if (hGlyphs[i].mesh) hGlyphs[i].mesh.position.x = hGlyphs[i].x;
+      }
+      hTotalWidth = L.totalWidth;
+      hRowH = L.rowH;
+      // center the whole readout on the origin (h + v) so parallax rotates about
+      // its true center and it sits dead-center, evenly spaced, in the frame.
+      hNumGroup.position.x = L.offsetX;
+      hNumGroup.position.y = -L.midY;
+      // colored rim point-lights hug the current row width
+      if (hLights.cyan)   hLights.cyan.position.x   = -(hTotalWidth * 0.5 + 0.6);
+      if (hLights.purple) hLights.purple.position.x =  (hTotalWidth * 0.5 + 0.6);
+      heroFitCamera();
+    }
+
+    // Frame the camera so the ENTIRE row fits with ~15% margin on both axes —
+    // recomputed on every rebuild and on resize so digits never clip or overlap
+    // the frame edge. distance = fit(width) vs fit(height), whichever is larger.
+    function heroFitCamera() {
       var w = elHeroStage.clientWidth || 600, h = elHeroStage.clientHeight || 220;
-      var aspect = w / h, tan = Math.tan((hCam.fov * Math.PI / 180) / 2);
-      var zW = (total * 1.16) / (2 * tan * aspect);
-      var zH = (HSIZE * 1.55) / (2 * tan);
-      hCam.position.z = Math.max(zW, zH) + 0.35;
+      var aspect = w / h;
+      var tanHalf = Math.tan((hCam.fov * Math.PI / 180) / 2);
+      var margin = 1.15;
+      var distW = (hTotalWidth * margin) / (2 * tanHalf * aspect); // fit full width
+      var distH = (hRowH * margin) / (2 * tanHalf);                // fit full height
+      var dist = Math.max(distW, distH, 1.5);
+      hCam.aspect = aspect;
+      hCam.position.set(0, 0, dist + HDEPTH);   // +depth so the extruded front never clips
+      hCam.lookAt(0, 0, 0);
       hCam.updateProjectionMatrix();
     }
 
@@ -1277,11 +1338,14 @@
       var flashHex = hFlashUp ? COL.mint : COL.red;
       for (var i = 0; i < str.length; i++) {
         var ch = str[i];
-        var geo = makeGlyphGeo(ch);
-        var mesh = new THREE.Mesh(geo, makeGlyphMat());
-        mesh.material.emissive.setHex(flashHex);
-        hNumGroup.add(mesh);
-        hGlyphs.push({ mesh: mesh, ch: ch, adv: advOf(ch), x: 0, anim: 1, dir: (i % 2 ? 1 : -1) });
+        var rec = getGlyph(ch);
+        var mesh = null;
+        if (rec.geo) {
+          mesh = new THREE.Mesh(rec.geo, makeGlyphMat());
+          mesh.material.emissive.setHex(flashHex);
+          hNumGroup.add(mesh);
+        }
+        hGlyphs.push({ mesh: mesh, ch: ch, gw: rec.gw, cell: 0, minY: rec.minY, maxY: rec.maxY, x: 0, anim: mesh ? 1 : 0, dir: (i % 2 ? 1 : -1) });
       }
       hCurrentStr = str;
       heroLayout();
@@ -1292,12 +1356,16 @@
       for (var i = 0; i < str.length; i++) {
         var g = hGlyphs[i];
         if (str[i] !== g.ch) {
-          if (g.mesh.geometry) g.mesh.geometry.dispose();
-          g.mesh.geometry = makeGlyphGeo(str[i]);
-          g.ch = str[i];
-          g.adv = advOf(str[i]);
-          g.anim = 1; g.dir = (i % 2 ? 1 : -1);
-          g.mesh.material.emissive.setHex(flashHex);
+          var rec = getGlyph(str[i]);
+          if (rec.geo) {
+            if (g.mesh) { g.mesh.geometry = rec.geo; g.mesh.visible = true; }
+            else { g.mesh = new THREE.Mesh(rec.geo, makeGlyphMat()); hNumGroup.add(g.mesh); }
+          } else if (g.mesh) {
+            g.mesh.visible = false;
+          }
+          g.ch = str[i]; g.gw = rec.gw; g.minY = rec.minY; g.maxY = rec.maxY;
+          g.anim = g.mesh ? 1 : 0; g.dir = (i % 2 ? 1 : -1);
+          if (g.mesh && g.mesh.material) g.mesh.material.emissive.setHex(flashHex);
         }
       }
       hCurrentStr = str;
@@ -1343,6 +1411,7 @@
       // per-glyph change animation (3D flip + emissive flash + pop)
       for (var i = 0; i < hGlyphs.length; i++) {
         var g = hGlyphs[i];
+        if (!g.mesh) continue;
         if (g.anim > 0) {
           g.anim = Math.max(0, g.anim - dt / 0.5);
           var e = g.anim;                 // 1 -> 0
