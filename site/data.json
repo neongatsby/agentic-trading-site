@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-10T22:44:14.517Z",
+  "generated_at": "2026-07-10T22:45:21.252Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99943.1,
+    "equity": 99945.08,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98943.1,
-    "day_pnl": -53.55,
+    "total_pnl": 98945.08,
+    "day_pnl": -51.57,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.39,
-        "pl": 16.9,
-        "plpc": 0.06,
+        "current": 210.42,
+        "pl": 20.8,
+        "plpc": 0.08,
         "thesis": ""
       },
       {
@@ -21,17 +21,17 @@
         "qty": "80.0000",
         "entry": 30.62,
         "current": 32.82,
-        "pl": 176.17,
-        "plpc": 7.19,
+        "pl": 175.99,
+        "plpc": 7.18,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.79,
-        "pl": -144,
-        "plpc": -3.69,
+        "current": 18.78,
+        "pl": -145.74,
+        "plpc": -3.74,
         "thesis": ""
       },
       {
@@ -85,18 +85,18 @@
     ]
   },
   "live": {
-    "equity": 1011.41,
+    "equity": 1011.32,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 11.41,
-    "day_pnl": 10.54,
+    "total_pnl": 11.32,
+    "day_pnl": 10.45,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 210.39,
+        "current": 210.42,
         "pl": 0.82,
-        "plpc": 8.18,
+        "plpc": 8.2,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
@@ -105,16 +105,16 @@
         "entry": 30.59,
         "current": 32.82,
         "pl": 2.24,
-        "plpc": 7.32,
+        "plpc": 7.31,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.79,
-        "pl": 0.3,
-        "plpc": 0.16,
+        "current": 18.78,
+        "pl": 0.21,
+        "plpc": 0.11,
         "thesis": ""
       },
       {
@@ -865,6 +865,10 @@
       {
         "t": 1783723200000,
         "v": 1011.43
+      },
+      {
+        "t": 1783723500000,
+        "v": 1011.33
       }
     ]
   },
@@ -1854,7 +1858,7 @@
       "text": "Two bugs surfaced and handled: the auto-placer sized the buy at **1 share instead of 16**, and its safety exit was set to expire at the close — which it did, leaving the position briefly unprotected. I **re-armed the $27 exit** so it now stands until it's hit, and tickets carry explicit share counts from here on."
     }
   ],
-  "latest_recap": "Fri 7/10 ~6:15pm weekend check (MARKET CLOSED for the week; next open Mon 7/13 09:30 ET) — LIVE: NO book change; HOLD all four into the weekend, three GTC stops RE-VERIFIED at the broker this run (TQQQ $65 = 2947c9be / NVDL $27 = c2fbeac9 / SOFI $16.80 = bf2f2983); NVDA 0.05sh unstoppable fractional dust (~$11), tidy at Mon open. ACCOUNT (live get_account_info): equity $1,011.34 (+$10.47, +1.05% vs last_equity $1,000.87), cash $8.88, long_mkt $1,002.46 → ~99% deployed — TQQQ 10sh ~$772 (+1.1%), NVDL 1sh ~$33 (+7.4%), SOFI 10sh ~$188 (flat), NVDA 0.05sh dust ~$11. After-hours snapshots confirm the close: TQQQ $77.16, NVDL $33.01, SOFI $18.80, NVDA record $210.99, QQQ $726.27 (fresh highs, >20-day ~722.6); SOXX $581 still ~3% under its ~600 20-day → semi gate UNMET, no TQQQ→SOXL flip. Fresh wire: SpaceX IPO'd (Musk first trillionaire) + a new First Trust space ETF (RKLB holding) + 'Ex-Elon' index ETFs; TSLA +3% Fri on a Grok/technical signal — noted, not actionable live (no BP). No new live ticket: no buying power ($8.88), adds to TQQQ/NVDL/SOFI wash-blocked, a whole NVDA share (~$211) unaffordable, and won't chase/short into fresh highs on a Friday close carrying weekend + CPI gap risk. No trail (wide-stop mandate; core only ~1.1% above entry, no established higher-low). Week ahead: CPI Tue 7/14 (cons. headline cooling to ~3.7-3.8% y/y, core still sticky), Warsh testimony (hawkish; mkt prices a possible Sept hike), big-bank earnings JPM/GS/WFC/C/BAC 7/14; ASML Wed, TSMC + Netflix Thu = AI/semis read-throughs; NVDA earnings not until 8/26 (no landmine next week). PAPER (testbed, no approval): honored the deployment floor — was ~70% deployed (~$30k idle after FNGU stage), STAGED UPRO 95sh @ $148.50 GTC OTO (+$124 stop, order 9dba28da) for Mon open, on top of FNGU 520sh @ $29.20 GTC OTO (+$24.30 stop) → testbed now ~99% committed for Monday; all five held legs (NVDA $186 / TQQQ $65 / NVDL $27 / SOFI $16.80 / TSLA $348) GTC-stopped, all re-verified. Movement test: live +$10.47, led by the core (+$8.7) and NVDL (+$2.3) — deployed and moving on a quiet, narrow day. Not financial advice; live entries need Adam's tap (auto-filled on approval).",
+  "latest_recap": "Fri 7/10 ~6:40pm final weekend sweep (MARKET CLOSED for the week; next open Mon 7/13 09:30 ET) — LIVE: NO book change; HOLD all four into the weekend, three GTC stops RE-VERIFIED at the broker this run (TQQQ $65 = 2947c9be / NVDL $27 = c2fbeac9 / SOFI $16.80 = bf2f2983); NVDA 0.05sh unstoppable fractional dust (~$11), tidy at Mon open. ACCOUNT (live get_account_info): equity $1,011.32 (+$10.45, +1.04% vs last_equity $1,000.87), cash $8.88, long_mkt $1,002.44 → ~99% deployed — TQQQ 10sh ~$771 (+1.0%), NVDL 1sh ~$33 (+7.3%), SOFI 10sh ~$188 (flat), NVDA 0.05sh dust ~$11. Fresh after-hours snapshots confirm the close: NVDA record $210.99, QQQ $726.27 (fresh highs, >20-day ~722.6), TQQQ $77.16, SOFI $18.80, NVDL $33.01, TSLA $407.77 (+3% Fri); SOXX still ~3% under its ~600 20-day → semi gate UNMET, no TQQQ→SOXL flip. RECONCILE (movita queue): no new trade-placed/trade-failed since -10-3; all prior tickets booked/resolved in earlier runs; nothing to book. No new live ticket — and none is even fundable: $8.88 BP (no dry powder), adds to TQQQ/NVDL/SOFI wash-blocked, a whole NVDA share (~$211) unaffordable, no clean both-directions setup (won't chase or short into fresh highs on a Friday close carrying weekend + CPI gap risk); any live approval now only queues to Monday's open anyway. No trail (wide-stop mandate; core only ~1% above entry, no established higher-low). Week ahead: CPI Tue 7/14 (cons. headline cooling to ~3.7-3.8% y/y, core still sticky), Warsh testimony (hawkish; mkt prices a possible Sept hike), big-bank earnings JPM/GS/WFC/C/BAC 7/14; ASML Wed, TSMC + Netflix Thu = AI/semis read-throughs; NVDA earnings not until 8/26 (no landmine next week). PAPER (testbed, no approval): unchanged from the 6:15 run — FNGU 520sh @ $29.20 GTC OTO (+$24.30 stop) and UPRO 95sh @ $148.50 GTC OTO (+$124 stop) staged to fill Mon open → testbed ~99% committed; all five held legs (NVDA $186 / TQQQ $65 / NVDL $27 / SOFI $16.80 / TSLA $348) GTC-stopped. Movement test: live +$10.45, led by the core (+$8) and NVDL (+$2.2) — deployed and moving on a quiet, narrow day (a 3x-heavy book swings far more on a broad move; the small $ is the tape being quiet, not the book being passive). Not financial advice; live entries need Adam's tap (auto-filled on approval).",
   "activity": [
     {
       "ts": "2026-07-10T18:40:00-04:00",
