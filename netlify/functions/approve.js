@@ -36,7 +36,19 @@ exports.handler = async (event) => {
   // GET /.netlify/functions/approve?diag=1
   if (event.httpMethod === 'GET') {
     if (!TOKEN) return J(200, { diag: true, pinPresent: !!PIN, tokenPresent: false });
+    const which = (event.queryStringParameters && event.queryStringParameters.diag) || '1';
     try {
+      if (which === 'commit') {
+        // actually exercise the write path with a throwaway file → surfaces GitHub's real error
+        const p = `site/approvals/_diagtest-${Date.now()}.json`;
+        const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${p}`, {
+          method: 'PUT',
+          headers: { authorization: `Bearer ${TOKEN}`, accept: 'application/vnd.github+json', 'user-agent': 'agentic-trading-approve', 'content-type': 'application/json' },
+          body: JSON.stringify({ message: 'diag write test', content: Buffer.from('{"diag":true}').toString('base64'), branch: BRANCH }),
+        });
+        const txt = await r.text().catch(() => '');
+        return J(200, { diag: 'commit', putStatus: r.status, ok: r.ok, detail: txt.slice(0, 300) });
+      }
       const g = await fetch(`https://api.github.com/repos/${REPO}`, {
         headers: { authorization: `Bearer ${TOKEN}`, accept: 'application/vnd.github+json', 'user-agent': 'diag' },
       });
