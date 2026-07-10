@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-10T22:43:06.805Z",
+  "generated_at": "2026-07-10T22:44:14.517Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99940.59,
+    "equity": 99943.1,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98940.59,
-    "day_pnl": -56.06,
+    "total_pnl": 98943.1,
+    "day_pnl": -53.55,
     "positions": [
       {
         "symbol": "NVDA",
@@ -38,17 +38,17 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 77.09,
-        "pl": 0.6,
-        "plpc": 0,
+        "current": 77.1,
+        "pl": 3.42,
+        "plpc": 0.02,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 407.07,
-        "pl": -109.08,
+        "current": 407.06,
+        "pl": -109.38,
         "plpc": -0.74,
         "thesis": ""
       }
@@ -85,10 +85,10 @@
     ]
   },
   "live": {
-    "equity": 1011.31,
+    "equity": 1011.41,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 11.31,
-    "day_pnl": 10.44,
+    "total_pnl": 11.41,
+    "day_pnl": 10.54,
     "positions": [
       {
         "symbol": "NVDA",
@@ -121,9 +121,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 77.09,
-        "pl": 8,
-        "plpc": 1.05,
+        "current": 77.1,
+        "pl": 8.1,
+        "plpc": 1.06,
         "thesis": ""
       }
     ],
@@ -154,7 +154,7 @@
       },
       {
         "date": "Jul 10",
-        "value": 1012.09
+        "value": 1011.32
       }
     ],
     "intraday": [
@@ -1857,6 +1857,11 @@
   "latest_recap": "Fri 7/10 ~6:15pm weekend check (MARKET CLOSED for the week; next open Mon 7/13 09:30 ET) — LIVE: NO book change; HOLD all four into the weekend, three GTC stops RE-VERIFIED at the broker this run (TQQQ $65 = 2947c9be / NVDL $27 = c2fbeac9 / SOFI $16.80 = bf2f2983); NVDA 0.05sh unstoppable fractional dust (~$11), tidy at Mon open. ACCOUNT (live get_account_info): equity $1,011.34 (+$10.47, +1.05% vs last_equity $1,000.87), cash $8.88, long_mkt $1,002.46 → ~99% deployed — TQQQ 10sh ~$772 (+1.1%), NVDL 1sh ~$33 (+7.4%), SOFI 10sh ~$188 (flat), NVDA 0.05sh dust ~$11. After-hours snapshots confirm the close: TQQQ $77.16, NVDL $33.01, SOFI $18.80, NVDA record $210.99, QQQ $726.27 (fresh highs, >20-day ~722.6); SOXX $581 still ~3% under its ~600 20-day → semi gate UNMET, no TQQQ→SOXL flip. Fresh wire: SpaceX IPO'd (Musk first trillionaire) + a new First Trust space ETF (RKLB holding) + 'Ex-Elon' index ETFs; TSLA +3% Fri on a Grok/technical signal — noted, not actionable live (no BP). No new live ticket: no buying power ($8.88), adds to TQQQ/NVDL/SOFI wash-blocked, a whole NVDA share (~$211) unaffordable, and won't chase/short into fresh highs on a Friday close carrying weekend + CPI gap risk. No trail (wide-stop mandate; core only ~1.1% above entry, no established higher-low). Week ahead: CPI Tue 7/14 (cons. headline cooling to ~3.7-3.8% y/y, core still sticky), Warsh testimony (hawkish; mkt prices a possible Sept hike), big-bank earnings JPM/GS/WFC/C/BAC 7/14; ASML Wed, TSMC + Netflix Thu = AI/semis read-throughs; NVDA earnings not until 8/26 (no landmine next week). PAPER (testbed, no approval): honored the deployment floor — was ~70% deployed (~$30k idle after FNGU stage), STAGED UPRO 95sh @ $148.50 GTC OTO (+$124 stop, order 9dba28da) for Mon open, on top of FNGU 520sh @ $29.20 GTC OTO (+$24.30 stop) → testbed now ~99% committed for Monday; all five held legs (NVDA $186 / TQQQ $65 / NVDL $27 / SOFI $16.80 / TSLA $348) GTC-stopped, all re-verified. Movement test: live +$10.47, led by the core (+$8.7) and NVDL (+$2.3) — deployed and moving on a quiet, narrow day. Not financial advice; live entries need Adam's tap (auto-filled on approval).",
   "activity": [
     {
+      "ts": "2026-07-10T18:40:00-04:00",
+      "kind": "engine",
+      "title": "6:40pm final weekend sweep — MARKET CLOSED (next open Mon 7/13 09:30). LIVE: NO change, HOLD all four, three GTC stops re-verified at the broker (TQQQ $65=2947c9be / NVDL $27=c2fbeac9 / SOFI $16.80=bf2f2983); NVDA 0.05sh unstoppable fractional dust (~$11), tidy Mon open. Equity $1,011.32 (+$10.45, +1.04% vs last_equity $1,000.87), cash $8.88, long_mkt $1,002.44 → ~99% deployed. Fresh after-hours snapshots confirm the close: NVDA record $210.99, QQQ $726.27 (fresh highs), TQQQ $77.16, SOFI $18.80, NVDL $33.01, TSLA $407.77. No new queue fills/failures since -10-3; nothing to book. No live ticket possible/warranted: $8.88 BP (no dry powder), adds wash-blocked, whole NVDA share (~$211) unaffordable, won't chase/short into fresh highs on a Fri close carrying weekend + CPI gap. PAPER unchanged: FNGU 520sh @ $29.20 + UPRO 95sh @ $148.50 (both GTC OTO, stops $24.30/$124) staged to fill Mon → testbed ~99% committed. Week ahead: CPI Tue 7/14, Warsh testimony, big-bank earnings (JPM/GS/WFC/C/BAC). Movement test: +$10.45 led by core (+$8) + NVDL (+$2.2) — deployed and moving on a narrow, quiet tape."
+    },
+    {
       "ts": "2026-07-10T18:15:00-04:00",
       "kind": "engine",
       "title": "6:15pm weekend check — MARKET CLOSED (next open Mon 7/13). LIVE: NO change, HOLD all four, three GTC stops re-verified (TQQQ $65 / NVDL $27 / SOFI $16.80); equity $1,011.34 (+$10.47, +1.05%), ~99% deployed, $8.88 cash. PAPER: staged UPRO 95sh @ $148.50 GTC OTO (+$124 stop) for Mon open, alongside FNGU 520sh → testbed ~99% deployed. No live ticket (no BP; adds wash-blocked; won't chase into fresh highs over a weekend)."
@@ -2035,6 +2040,10 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-10T18:40:00-04:00",
+      "text": "6:40pm — last look of the night, all **quiet** after hours: nothing new broke, you're ~99% invested and **up ~$10 (+1%)** with a hard exit on every position. Nothing to tap — I'll have the book ready for **Monday's** open; the week's real test is **Tuesday's** inflation print."
+    },
+    {
       "ts": "2026-07-10T18:15:00-04:00",
       "text": "6:15pm — you're **all set** for the weekend, nothing to do; you closed **+1.1%** with a hard exit on every position. On the practice book I put the last idle cash to work — staged a broad **3x-S&P** buy for Monday alongside FNGU so it isn't holding cash into CPI week."
     },
@@ -2112,7 +2121,7 @@
     },
     {
       "session": "Evening",
-      "text": "Weekend hold +1.1%, all stopped"
+      "text": "Weekend hold +$10, all stopped"
     }
   ],
   "equity_history": {
