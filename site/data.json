@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-10T13:47:33.342Z",
+  "generated_at": "2026-07-10T13:48:39.942Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 100013.28,
+    "equity": 100019.03,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 99013.28,
-    "day_pnl": 16.63,
+    "total_pnl": 99019.03,
+    "day_pnl": 22.38,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 31.28,
-        "pl": 52.31,
-        "plpc": 2.14,
+        "current": 31.47,
+        "pl": 67.86,
+        "plpc": 2.77,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 19.36,
-        "pl": -30,
-        "plpc": -0.77,
+        "current": 19.32,
+        "pl": -38,
+        "plpc": -0.97,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 76.07,
-        "pl": -7.04,
-        "plpc": -0.29,
+        "current": 76.04,
+        "pl": -8,
+        "plpc": -0.33,
         "thesis": ""
       }
     ],
@@ -63,36 +63,36 @@
     ]
   },
   "live": {
-    "equity": 999,
+    "equity": 998.94,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -1,
-    "day_pnl": -1.87,
+    "total_pnl": -1.06,
+    "day_pnl": -1.93,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 205.17,
-        "pl": 0.55,
-        "plpc": 5.5,
+        "current": 205.82,
+        "pl": 0.58,
+        "plpc": 5.83,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 31.28,
-        "pl": 0.69,
-        "plpc": 2.25,
+        "current": 31.48,
+        "pl": 0.89,
+        "plpc": 2.92,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.07,
-        "pl": -2.2,
-        "plpc": -0.29,
+        "current": 76.05,
+        "pl": -2.45,
+        "plpc": -0.32,
         "thesis": ""
       }
     ],
@@ -123,7 +123,7 @@
       },
       {
         "date": "Jul 10",
-        "value": 1000.6
+        "value": 998.1
       }
     ],
     "intraday": [
@@ -414,13 +414,13 @@
       "id": "2026-07-10-2",
       "symbol": "SOFI",
       "side": "buy",
-      "size": "$189",
-      "qty": 10,
-      "entry": 18.85,
-      "trigger": 18.9,
-      "stop": 16.2,
-      "bracket": "stop $16.20 GTC (below the $17 shelf / 7/8 low $17.085, -14%)",
-      "thesis": "Redeploys the idle ~$196 buffer into a rate-independent fintech the tape's been with. SOFI closed 7/9 at a 2-day high ($18.60, +4.8%) — clawing back after a soft stretch, and independent of the mega-tech/chip weakness dragging the open (a plus on a higher-yields morning). Deep catalyst stack: Goldman → $21 (from $17, 7/7), consensus avg PT ~$22.50, CEO Noto a steady open-market buyer, ARK adding shares, new small-business-loans platform (up to $250k) + Composer AI + the SFYI income ETF, plus Trump-Accounts visibility (~6M kids enrolled, $1,000 federal contributions), into Jul 29 earnings (Q1 rev +41% YoY, EPS $0.06→$0.13, originations +68%). 10 sh ≈ $189, limit $19.10, wide $16.20 GTC stop (below the $17 shelf / 7/8 low $17.085, −14%, risk ~$27 ≈ 2.7%). Clean (no wash), affordable, stoppable in whole shares. APPROVE-NOW fills at the open; PRE-ARM rests a buy-stop $18.90 (above the 7/9 high $18.63) that fires only on a confirmed breakout — the cleaner path on a soft open. Independent of the TQQQ core. Mirrored in the paper book (200 sh, same $16.20 stop)."
+      "size": "$177",
+      "qty": 9,
+      "entry": 19.57,
+      "trigger": null,
+      "stop": 16.8,
+      "bracket": "stop $16.80 GTC (below the $17 shelf / 7/8 low $17.085, -14%)",
+      "thesis": "The breakout FIRED — SOFI gapped up +5% (to ~$19.6, now ~$19.3), clearing the $18.70 level as money rotates OUT of AI/semis (Samsung capex scare + DeepSeek's own-chip headline, ~$1T of chip cap wiped, SOXX -2%/SOXL -6% today) INTO rate-independent fintech, and SOFI is the beneficiary. Catalyst stack intact: Goldman → $21, consensus ~$22 (~13% upside), CEO Noto buying, ARK adding, new $250k SMB-loans platform + Composer AI + SFYI ETF, into Jul 29 earnings. Refreshed: the old $19.10/$18.90 levels are now below market, so this is a breakout-CONTINUATION entry — 9 sh ≈ $177, marketable limit $19.90 caps the chase at ~+1.7%, wide $16.80 GTC stop (-14%, risk ~$25). APPROVE-NOW only (pre-arm retired — price is already through it). Honest: chasing a +5% day-one move, defined-risk and small. Mirrored in paper (200 sh filled @ $19.51, stop $16.80 GTC)."
     }
   ],
   "coverage": [
@@ -430,16 +430,16 @@
       "theme": "Leveraged core",
       "verdict": "buy",
       "verdict_label": "LIVE — core held, stop $65 GTC ✓",
-      "thesis": "**The core is held.** 10 sh @ $76.29, **$65 GTC stop re-verified live** (order 2947c9be, qty 10). QQQ closed **723.28** just above its 20-day (~722) and 50-day — reclaim intact but **thin**. Core −$10 to entry; no higher low yet → no trailing. **Pre-bell read (9:08am 7/10, ~20 min to open):** QQQ **~$719.9** pre-market is sitting **just under** its 20-day and TQQQ **~$75.3** (core −$10) — the reclaim is being *tested* at the open on **higher yields (10-yr ~4.54%)**, a rotation/breather, not a break. Today's main event is **SK Hynix's $26.5B Nasdaq debut** — a test for the AI trade; chips soft into it. Not a tape to add leverage into. Today low-catalyst; the week's real prints (June CPI, Warsh testimony, big-bank earnings) cluster ~Jul 14; the $65 stop (−15%, under the 7/8 washout low $69.59) is the floor. Holds while QQQ keeps its 20-day; a decisive close under ~720 puts the reclaim in doubt.",
-      "size": "$751",
+      "thesis": "**Core held.** 10 sh @ $76.29, last ~$75.9 (−0.5%), **$65 GTC stop verified live**. QQQ 721.5 is barely above its 20-day (720.97) — risk-on regime holds but it's **marginal**, and the leadership group (semis) is breaking down on real AI-capex fear. Holding while QQQ keeps its 20-day; a close below ~721 cuts it next run. Not adding into a soft, rotating tape.",
+      "size": "$759",
       "size_pct": 76,
       "size_note": "10 sh held — the single core, ~76% of sleeve, $65 GTC stop",
-      "plan_usd": 751,
+      "plan_usd": 759,
       "horizon": 0.3,
-      "updated": "Jul 10 9:08am",
+      "updated": "Jul 10 9:45am",
       "stop": 65,
-      "price": 75.98,
-      "chg_pct": -0.37,
+      "price": 76.02,
+      "chg_pct": -0.31,
       "spark": [
         74.76,
         77.09,
@@ -470,25 +470,25 @@
         82.78,
         82.48,
         74.21,
-        75.98
+        76.02
       ]
     },
     {
       "ticker": "SOXL",
       "name": "Direxion 3x Semis",
       "theme": "Leveraged core",
-      "verdict": "watch",
+      "verdict": "avoid",
       "verdict_label": "Rotation candidate · gate UNMET & widening",
-      "thesis": "The semi conviction just got **louder**: US semi ETFs pulled a **record $7.1B inflow** (SOXX $5.4B, SOXL $1.2B — 'buy the AI-chip dip'), on top of Micron's $250B US commitment and SK Hynix's 7x-oversubscribed listing. But **SOXX 581.7 is still ~2.8% under its 20-day (597.8)** — the rotation gate stays UNMET, and SOXL round-tripped $204→$192 on 7/9 (the chop the gate guards against). Plan: if SOXX *closes* over ~598 with semis leading, the next live run rotates the TQQQ core → SOXL for more torque (sell TQQQ, buy SOXL — not additive). One core at a time.",
+      "thesis": "**Semis ARE the downtrend** — SOXX ~570 sits well under its 20-day (~598) and fell ~2% again today; SOXL −6%, while the inverse **SOXS is +6%**. The confirmed both-directions play here is the SHORT (SOXS/puts), NOT a 3x-semis long. Driver: AI-capex scare + DeepSeek building its own AI chip (~$1T of chip cap wiped). Rotation gate to flip our core into SOXL is UNMET and **widening** — no long.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "Core-rotation candidate (mutually exclusive w/ TQQQ). SOXX 581.7 close is ~3% under its 20-day ~601 = gate UNMET; pre-mkt ~$572.6 and SOXL ~$181.7 (−5.5%) move it FURTHER away as chips soften into the SK Hynix debut — a same-day >~600 close is unlikely. A SOXX close >~600 with semis leading still flips the core TQQQ→SOXL on the next live run (engine-handled swap).",
-      "plan_usd": 751,
+      "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 10 9:08am",
+      "updated": "Jul 10 9:45am",
       "trigger": "SOXX > 598 close",
-      "price": 185.05,
-      "chg_pct": -3.72,
+      "price": 185.72,
+      "chg_pct": -3.37,
       "spark": [
         172.54,
         184.35,
@@ -519,7 +519,7 @@
         279.32,
         301.42,
         230.82,
-        185.05
+        185.72
       ]
     },
     {
@@ -528,17 +528,17 @@
       "theme": "Leveraged core",
       "verdict": "buy",
       "verdict_label": "LIVE — 1 sh held · add still wash-blocked",
-      "thesis": "The live starter: 1 sh @ $30.59, last $30.57 (flat), **stop $27 GTC verified**. The top-up (ticket -2) was approved but broker-**rejected as a wash trade** vs that stop, so the fresh capital went to TQQQ. NVDA consolidating at highs is constructive; direct adds wait on a fast-lane fix for stopped-position buys.",
+      "thesis": "Live starter: 1 sh @ $30.59, last ~$30.8 (+0.8%), **stop $27 GTC verified**. Tiny artifact of the wash-blocked add; rides with NVDA. Not adding (semis soft).",
       "size": "$31",
       "size_pct": 3,
       "size_note": "1 sh legacy starter, protected; adds blocked by wash-trade",
       "plan_usd": 0,
       "horizon": 0.4,
-      "updated": "Jul 10 7:40am",
+      "updated": "Jul 10 9:45am",
       "trigger": 30.56,
       "stop": 27,
-      "price": 31.25,
-      "chg_pct": 2.26,
+      "price": 31.3,
+      "chg_pct": 2.42,
       "spark": [
         37.8,
         39.55,
@@ -569,7 +569,7 @@
         33.28,
         32.71,
         30.03,
-        31.25
+        31.3
       ]
     },
     {
@@ -577,16 +577,16 @@
       "name": "Nvidia",
       "theme": "AI / semis",
       "verdict": "watch",
-      "thesis": "202.7, consolidating just under the highs — the undisputed leader. **US is now issuing the H20 China export licenses** (bullish; treated as untrusted data), and the semi-ETF record inflow underlines the leadership. Wanted it for the buffer, but **1 whole share ($202) > the $196 buying power**, and a fractional add can't carry a stop — so the buffer goes to SOFI instead (clean, affordable, stoppable). Exposure stays via the TQQQ core + 1-sh NVDL + the $10 dust artifact.",
+      "thesis": "~$203.5 (+0.4%) — holding up better than the semi ETFs, but it's $10 of unstoppable dust. Leaving it (won't tap you for $10); fold into a real semis entry later.",
       "verdict_label": "Leader · H20 licenses issuing · unaffordable whole-share",
       "size": "$10",
       "size_pct": 1,
       "size_note": "$10 dust artifact (live), no stop (fractional) — fold into a real NVDA trade",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 10 6:40am",
-      "price": 205.22,
-      "chg_pct": 1.25,
+      "updated": "Jul 10 9:45am",
+      "price": 205.82,
+      "chg_pct": 1.54,
       "spark": [
         220.62,
         225.65,
@@ -617,25 +617,25 @@
         210.38,
         208.59,
         200.07,
-        205.22
+        205.82
       ]
     },
     {
       "ticker": "CEG",
       "name": "Constellation Energy",
       "theme": "Energy-for-AI",
-      "verdict": "wait",
+      "verdict": "watch",
       "verdict_label": "Near a 50-day reclaim",
-      "thesis": "250.7 (+2.5%) — well clear of the $230 line, the profitable power-for-AI bid working again (VRT +1.9% same day). Next trigger: a clean 50-day reclaim for a momentum entry. Best business of the energy names; the only one in a real uptrend. Bench candidate if TQQQ isn't the vehicle.",
+      "thesis": "$251.7 (+0.4%) — power-for-AI, holding green while chips dump; steady but no entry trigger.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "planned ~$200 on a 50d reclaim (bench, not additive to core)",
       "plan_usd": 200,
       "card": "/research/ceg.html",
       "horizon": 0.4,
-      "updated": "Jul 10 6:40am",
-      "price": 250.83,
-      "chg_pct": 0.06,
+      "updated": "Jul 10 9:45am",
+      "price": 250.87,
+      "chg_pct": 0.08,
       "spark": [
         293.02,
         274.38,
@@ -666,7 +666,7 @@
         274.09,
         275.65,
         270.31,
-        250.83
+        250.87
       ]
     },
     {
@@ -675,15 +675,15 @@
       "theme": "Energy-for-AI",
       "verdict": "watch",
       "verdict_label": "Power-for-AI, choppy",
-      "thesis": "324.0 (+1.9%) — opened 334 and faded again; strong theme, choppy tape. Trades with CEG as the AI-power complex; no clean setup of its own yet. Watch for a base above 320.",
+      "thesis": "$318 (−1.8%) — AI-power theme selling off with chips; faded from 338. Wait for it to stop falling.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "watch — trades with CEG",
       "plan_usd": 0,
       "horizon": 0.5,
-      "updated": "Jul 10 6:40am",
-      "price": 318.88,
-      "chg_pct": -1.58,
+      "updated": "Jul 10 9:45am",
+      "price": 318.68,
+      "chg_pct": -1.64,
       "spark": [
         367.07,
         370.14,
@@ -714,7 +714,7 @@
         333.19,
         358.37,
         318.27,
-        318.88
+        318.68
       ]
     },
     {
@@ -723,15 +723,15 @@
       "theme": "High-beta bench",
       "verdict": "watch",
       "verdict_label": "Held $400",
-      "thesis": "406.5 (+3.2%) — **held $400** on the risk-on turn, snapping the story-name outflow. Not a clean entry (extended off the low), but off the avoid list; a base above $400 would open a momentum look.",
+      "thesis": "$406 (flat) — held $400 but stalling with the tape; no setup.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching — watching for a base > $400",
       "plan_usd": 0,
       "horizon": 0.7,
-      "updated": "Jul 10 6:40am",
-      "price": 408.61,
-      "chg_pct": 0.52,
+      "updated": "Jul 10 9:45am",
+      "price": 408.66,
+      "chg_pct": 0.53,
       "spark": [
         433.45,
         445.32,
@@ -762,7 +762,7 @@
         400.49,
         405.05,
         381.54,
-        408.61
+        408.66
       ]
     },
     {
@@ -771,17 +771,17 @@
       "theme": "High-beta bench",
       "verdict": "buy",
       "verdict_label": "STAGED — one-tap buffer deploy (~$189) · rate-independent",
-      "thesis": "**The buffer deploy — a rate-independent fintech the tape's been with.** SOFI closed 7/9 **at its 2-day high** ($18.60, +4.8%), independent of the mega-tech/chip softness dragging this open — a plus on a higher-yields morning. Catalyst stack runs deep: **Goldman → $21** (from $17, 7/7), **consensus avg PT ~$22.50**, **CEO Noto a steady open-market buyer**, ARK adding shares, a new small-business-loans platform (up to $250k) + Composer AI + the SFYI income ETF, plus **Trump-Accounts** visibility (~6M kids enrolled), into **Jul 29 earnings** (Q1 rev +41% YoY, EPS $0.06→$0.13, originations +68%). Ticket 2026-07-10-2: 10 sh ≈ $189, limit $19.10, wide **$16.20 GTC stop** (below the $17 shelf / 7/8 low $17.085, −14%, risk ~$27 ≈ 2.7%). Clean (no wash), affordable, stoppable in whole shares. **Approve-now** fills at the open; **Pre-arm** rests a buy-stop $18.90 (above the 7/9 high $18.63) that fires only on a confirmed breakout — the cleaner path on a soft open. Independent of the core. **Mirrored in the paper book** (200 sh, same $16.20 stop).",
-      "size": "$189",
-      "size_pct": 19,
+      "thesis": "**The breakout fired** — +5% at the open (to ~$19.6, now ~$19.3), clearing $18.70 as money rotates OUT of AI/semis INTO rate-independent fintech. Catalyst stack intact (Goldman $21, CEO buying, ARK adding, $250k SMB loans + Composer AI, into 7/29 earnings). Refreshed one-tap: 9 sh, marketable limit $19.90 (caps the chase), **stop $16.80 GTC** (−14%). Honest: now a breakout-continuation entry, not a base.",
+      "size": "$177",
+      "size_pct": 18,
       "size_note": "one-tap 10 sh @ ~$18.85, limit $19.10, stop $16.20 GTC — deploys the buffer",
-      "plan_usd": 189,
+      "plan_usd": 177,
       "horizon": 0.6,
-      "updated": "Jul 10 9:08am",
+      "updated": "Jul 10 9:45am",
       "trigger": 18.9,
       "stop": 16.2,
-      "price": 19.35,
-      "chg_pct": 4.03,
+      "price": 19.31,
+      "chg_pct": 3.82,
       "spark": [
         15.9,
         15.3,
@@ -812,24 +812,24 @@
         17.91,
         17.1,
         17.29,
-        19.35
+        19.31
       ]
     },
     {
       "ticker": "PLTR",
       "name": "Palantir",
       "theme": "High-beta bench",
-      "verdict": "avoid",
+      "verdict": "watch",
       "verdict_label": "Suspended · red on a green tape",
-      "thesis": "129.1 (−2.4%) — **down again on a broadly risk-on day**, the tell that money keeps leaving. Structure still broken; trigger stays suspended until a real base forms. Notable relative weakness.",
+      "thesis": "$129.9 (+0.7%) — **quietly green while semis dump**, a relative-strength tell. No trigger yet, but the one AI-adjacent name holding; watch for a reclaim of the highs.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "trigger suspended — needs repair",
       "plan_usd": 0,
       "horizon": 0.6,
-      "updated": "Jul 10 6:40am",
-      "price": 129.44,
-      "chg_pct": 0.3,
+      "updated": "Jul 10 9:45am",
+      "price": 129.46,
+      "chg_pct": 0.32,
       "spark": [
         136.02,
         130.07,
@@ -860,7 +860,7 @@
         128.44,
         119.46,
         116.72,
-        129.44
+        129.46
       ]
     },
     {
@@ -869,16 +869,16 @@
       "theme": "Energy-for-AI",
       "verdict": "avoid",
       "verdict_label": "Another wild reversal",
-      "thesis": "257.0 — gapped to 275, sold to 253, closed 257: another huge two-way range with **no floor** after the multi-day unwind. Not touching; not a knife I catch.",
+      "thesis": "$243.8 (−5%) — another failed pop (gapped to 275 yesterday, closed 257, now bleeding). No base; avoid.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/be.html",
       "horizon": 0.9,
-      "updated": "Jul 10 6:40am",
-      "price": 244.26,
-      "chg_pct": -4.97,
+      "updated": "Jul 10 9:45am",
+      "price": 243.93,
+      "chg_pct": -5.09,
       "spark": [
         280.91,
         289.88,
@@ -909,7 +909,7 @@
         328.78,
         345.98,
         321.82,
-        244.26
+        243.93
       ]
     },
     {
@@ -918,16 +918,16 @@
       "theme": "Space",
       "verdict": "watch",
       "verdict_label": "Pre-arm RETIRED — faded away from its trigger",
-      "thesis": "**Retired the buffer pre-arm this run.** The $8B Iridium deal is real (analyst PTs $115–132), but the tape kept **selling** it — **CEO Peter Beck's 5M-share sale** drove a multi-day slide ($100 on 7/2 → $82.54 close 7/9 → ~$79 after-hours). A 'day-two reclaim' pre-arm at $86.60 is now ~8–10% above the price and won't realistically fire — so it was leaving the buffer idle behind a dead trigger (the exact under-deployment the charter flags). Buffer redeployed to SOFI (a name the tape is actually *with*). RKLB goes back on the bench: if it stops falling and reclaims $86+ on real strength, re-ticket then — I don't catch this knife into the $74–80 zone.",
+      "thesis": "$81.1 (−1.8%) — still fading post-Iridium (Beck's 5M-sh sale overhang). Re-ticket only on a real reclaim of strength; not catching the knife.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "pre-arm retired — buffer redeployed to SOFI; re-ticket on a real reclaim",
       "plan_usd": 0,
       "horizon": 0.6,
-      "updated": "Jul 10 7:10am",
+      "updated": "Jul 10 9:45am",
       "stop": 74.5,
-      "price": 81.04,
-      "chg_pct": -1.82,
+      "price": 81.1,
+      "chg_pct": -1.74,
       "spark": [
         117.55,
         124.16,
@@ -958,7 +958,7 @@
         107.33,
         100.28,
         95.09,
-        81.04
+        81.1
       ]
     },
     {
@@ -967,16 +967,16 @@
       "theme": "Energy-for-AI",
       "verdict": "watch",
       "verdict_label": "Bounced with the tape",
-      "thesis": "49.3 (+4.3%) — a second risk-on bounce off a broken chart. Still below structure and behind CEG/VRT (the profitable plays). No entry until it proves a real base, not a two-day pop.",
+      "thesis": "$49.3 (flat) — nuclear-for-AI, cooled off; no setup.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/oklo.html",
       "horizon": 0.9,
-      "updated": "Jul 10 6:40am",
+      "updated": "Jul 10 9:45am",
       "price": 48.98,
-      "chg_pct": -0.64,
+      "chg_pct": -0.63,
       "spark": [
         73.64,
         69.75,
@@ -1012,6 +1012,13 @@
     }
   ],
   "feed": [
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-10T09:45:00-04:00",
+      "symbol": "SOFI",
+      "text": "9:45am — **SoFi popped ~5%** at the open and ran past our planned buy, so I bumped the one-tap up to catch the breakout near here, hard exit $16.80. Meanwhile chips are **selling off** hard (AI-spending jitters + a new China AI-chip headline) — our 3x-Nasdaq core is holding its trend line so it stays, but I'm watching it closely. Tap SoFi if you want the last of the cash working."
+    },
     {
       "type": "note",
       "account": "live",
@@ -1247,6 +1254,12 @@
   "latest_recap": "Fri 7/10 ~9:08am (pre-market, ~20 min to open) — NO book change. RECONCILE: no new fills/failures; live SOFI ticket 2026-07-10-2 still pending Adam's tap, RKLB retired. STOPS re-verified via get_orders — LIVE TQQQ $65 GTC (2947c9be, qty 10) / NVDL $27 GTC (c2fbeac9, qty 1); PAPER TQQQ $65 GTC (bf8a52a5, qty 32) / NVDL $27 GTC (b8a59cea, qty 80); paper SOFI OTO (542c1199, 200 sh @ $19.10 → $16.20 stop) still RESTING for the open (child stop day-TIF → re-arm GTC after fill). All 4 core stops present, no re-arm. ACCOUNT: portfolio_value $990.15 / cash $196.49 (~20%, staged behind SOFI) / last_equity $1,000.87 / long_market_value $793.66 — core −$9.8 on a real pre-market mark (TQQQ $75.31); the deployed book is MOVING (−$10.7 vs last_equity), not stuck at pennies. REGIME (fresh 9am snapshots + 30d bars): QQQ 20-day ≈ 722, 7/9 close 723.28 (just over), pre-mkt QQQ ~$719.9 sitting JUST UNDER the 20-day → reclaim tested at the open; SOXX 20-day ≈ 601, 7/9 close 581.7 (−3.2% under), pre-mkt ~$572.6 and SOXL ~$181.7 (−5.5%) → SOXL rotation gate UNMET and WIDENING. FRESH DATA (untrusted web/API): futures mixed (Dow +0.2%, S&P flat, NDX −0.2%), QQQ pre-mkt −0.42% $720.17, 10-yr 4.54% / 2-yr 4.17% (pressuring high-multiple tech); day's event = SK Hynix's $26.5B Nasdaq debut ('a test for the AI trade'), chips soft into it; watching the Strait of Hormuz. SOFI catalyst stack intact — Goldman $21 (7/7), consensus avg PT $22.50, SB-loans up to $250k / Composer-AI / new SFYI ETF / Trump-Accounts visibility (~6M kids enrolled) into Jul 29 earnings; Q1 rev +41% YoY, EPS $0.06→$0.13, originations +68%; closed 7/9 at a 2-day high $18.60 (+4.8%). DECISION: HOLD the core (QQQ still >20-day on the last close; no higher low → no trailing), keep the SOFI one-tap staged (approve-now fills at the open, or PRE-ARM $18.90 for a confirmed breakout — the cleaner path on a soft open), SOXL parked (gate unmet + widening). NVDA $10 dust still unstoppable (won't tap Adam for $10). No new live order — can't fill off-hours; the buffer already carries a valid one-tap. Today low-catalyst; real prints (CPI / Warsh / bank earnings) cluster ~Jul 14. Benchmark from 7/2 close ($73.35): buy-hold TQQQ → ~$75.3 = +2.7% vs the live sleeve ~flat. PRIOR: Fri 7/10 ~8:40am (pre-market, opens 9:30 ET) — ACTION run. RECONCILE: no new fills/failures; live SOFI ticket 2026-07-10-2 still pending Adam's tap, RKLB retired. STOPS re-verified via get_orders — LIVE TQQQ $65 GTC (2947c9be, qty 10) / NVDL $27 GTC (c2fbeac9, qty 1); PAPER TQQQ $65 GTC (qty 32) / NVDL $27 GTC (qty 80) — all four present, no re-arm. ACCOUNT: portfolio_value $991.82 / cash $196.49 (~20%, staged behind SOFI) / last_equity $1,000.87; core −$8 pre-mkt (TQQQ ~$75.67), settles at the open. REGIME: QQQ 20-day 720.97, 7/9 close 723.28 (+0.32% over, >50-day) but pre-mkt ~721.2 sits ON the 20-day → reclaim TESTED at the open; SOXX 581.72 <20-day 597.83 (−2.70%) and pre-mkt ~575 → SOXL rotation gate UNMET and moving away. FRESH DATA (untrusted web/API): futures mixed (Dow +0.2%, S&P flat, NDX −0.2%), 10-yr ~4.54–4.6% elevated; day's event = SK Hynix $26.5B Nasdaq debut ('a test for the AI trade'), chips soft into it; SOFI catalyst stack deepened — Goldman $21 (7/7), consensus ~$21–22, CEO Noto buying, ARK +200k sh, into Jul 29 earnings — and SOFI is UP ~$18.86 pre-mkt reclaiming the $18.70 breakout WHILE tech/chips are red (rate-independent strength tell). ACTIONS: (1) PAPER deploy — the idle $100k testbed (95% cash) put to work on my one conviction: SOFI OTO buy 200 sh limit $19.10 → open + $16.20 stop (order 542c1199); a first buy-stop $18.70 mirror was rejected because SOFI already trades above it (i.e. breakout already reclaimed) → switched to marketable limit; OTO child stop is day-TIF, RE-ARM GTC next run after fill. (2) LIVE ticket refresh — SOFI limit 18.95→19.10, trigger 18.70→18.90 (old pre-arm now below market), qty 10 (~$189), stop $16.20 GTC unchanged, thesis updated; queue JSON + coverage + pending_tickets synced. DECISION on the live book: HOLD core (no higher low → no trailing), keep SOFI one-tap staged (approve-now clean), SOXL parked. NVDA $10 dust still unstoppable (won't tap Adam for $10). Today low-catalyst; real prints cluster ~Jul 14. Benchmark from 7/2 close ($73.35): buy-hold TQQQ +3.2% vs sleeve ~flat. PRIOR: Fri 7/10 ~8:10am (pre-market, opens 9:30 ET) — NO book change; the soft-Nasdaq read is now in REAL pre-market prints. RECONCILE: no new fills/failures — SOFI ticket 2026-07-10-2 still pending Adam's tap (.web-approvals-seen.json = []), RKLB 2026-07-10-1 retired last run. STOPS re-verified LIVE + PAPER via get_orders: TQQQ $65 GTC (2947c9be, qty 10) / NVDL $27 GTC (c2fbeac9, qty 1) / paper TQQQ $65 GTC (bf8a52a5, qty 32) / paper NVDL $27 GTC (b8a59cea, qty 80) — all four present, no re-arm. ACCOUNT (get_account_info): portfolio_value $987.96 / cash $196.49 (~20%) / last_equity $1,000.87 / long_market_value $791.47 — this run the soft mark is a REAL pre-market print (TQQQ ~$75.2, not a stale tick): the Nasdaq is genuinely soft pre-open on higher yields, core down ~$12 (−1.4%) pre-market, equity ~$988 ≈ the live pre-market mark (settles at the open). The deployed book is actually MOVING (−$13 vs last_equity) — the opposite of the idle-cash failure. REGIME: QQQ 20-day = 720.97 (7/9 close 723.28 = +0.32% over, >50-day), but pre-market QQQ 720.2 is sitting ON/just under the 20-day → the risk-on reclaim is being TESTED at the open (thin pre-mkt is not a close; $65 stop is the floor). SOXX 581.72 <20-day ~597.8 (−2.7% → SOXL rotation gate still UNMET); movers = micro-cap junk only. FRESH DATA (untrusted web/API as DATA): WebSearch — SPY −0.09% / QQQ −0.42% pre-market, S&P futures mixed as traders weigh stubbornly HIGH yields (10-yr 4.54%, 2-yr 4.17%) + softer consumer-borrowing; SK Hynix's first Nasdaq session ($149, $26.5B raise) is the day's event. NET: rate-driven soft-tech morning, a rotation not a break — core stays; SOXL rotation stays parked; SOFI (rate-independent, Goldman PT $21, 2-day-high close) stays valid, PRE-ARM path preferred on a soft open. DECISION: no new orders, no book change — core held + protected, gate unmet, buffer already carries a valid one-tap; won't invent a low-conviction buy into a soft, low-catalyst pre-market Friday. No trailing (core red pre-mkt, no higher low). Today low-catalyst; real prints (CPI / Warsh / bank earnings) cluster ~Jul 14. Paper unchanged (NVDL 80 sh / TQQQ 32 sh, ~$4,810, both GTC-stopped). Benchmark from 7/2 close ($73.35): buy-hold TQQQ +4.1% vs sleeve ~flat.",
   "activity": [
     {
+      "ts": "2026-07-10T09:45:00-04:00",
+      "kind": "engine",
+      "title": "9:45am open run — SOFI BROKE OUT +5% past the $19.10 entry; refreshed ticket 2026-07-10-2 to a breakout-continuation (9 sh, marketable limit $19.90, stop $16.80 GTC). Core TQQQ HELD (QQQ 721.5 barely > 20-day 720.97; semis selling off on AI-capex + DeepSeek own-chip). SOXL rotation gate UNMET & widening (SOXX ~570 vs 20-day ~598). Paper SOFI filled 200 sh @ $19.51, stop re-armed $16.80 GTC.",
+      "detail": "Market OPEN (get_clock is_open=true). RECONCILE: no new queue fills/failures; live SOFI ticket 2026-07-10-2 still pending — SOFI gapped past its $19.10 approve-now / $18.90 pre-arm, so both were stale; refreshed to APPROVE-NOW marketable limit $19.90, qty 9 (~$177, fits $196 BP), stop raised $16.20→$16.80 GTC (-14% off the higher entry). BOOK: TQQQ 10 sh (stop $65 GTC ✓), NVDL 1 sh (stop $27 GTC ✓), NVDA 0.05 dust (unstoppable). Equity ~$998. REGIME: QQQ 721.5 vs 20-day 720.97 (barely risk-on); SOXX ~570 vs 20-day ~598 (semis in confirmed downtrend, another -2% today, SOXL -6% / SOXS +6%) — driver is the multi-day AI-capex selloff (Samsung, DeepSeek own-chip, ~$1T wiped). Core held (index regime intact) but flagged marginal; not rotating into 3x-semis (gate unmet). PAPER: SOFI 200 sh filled @ $19.51; day-TIF OTO stop cancelled + re-placed $16.80 GTC; NVDL/TQQQ stops $27/$65 GTC verified."
+    },
+    {
       "ts": "2026-07-10T09:08:00-04:00",
       "kind": "engine",
       "title": "9:08am pre-market run (~20 min to open) — NO book change; fresh 9am prints confirm a soft-tech open (QQQ ~$720 just under its 20-day, SOXL -5.5% pre-mkt, chips down into SK Hynix's $26.5B debut). Core HELD (stop $65 GTC ✓), SOFI one-tap still staged (2026-07-10-2), SOXL rotation gate UNMET and widening.",
@@ -1369,6 +1382,10 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-10T09:45:00-04:00",
+      "text": "9:45am — **SoFi ripped ~5%** at the open and blew past our planned buy, so I raised the one-tap to grab the breakout near here (hard exit $16.80). Chips are **selling off** hard on AI-spending fears, but our 3x core's holding its trend line so I'm keeping it and watching. One tap on SoFi and you're set."
+    },
+    {
       "ts": "2026-07-10T09:08:00-04:00",
       "text": "9:08am — ~20 min to the open. Tech's still **soft** (chip stocks down into SK Hynix's giant Nasdaq listing, 10-year yield near 4.5%) and our 3x core's off about **$10** pre-market — a normal wiggle, the safety exit sits far below. Still **long** and protected; your **SoFi** one-tap is set to put the last of the cash to work at the open. Nothing for you to do."
     },
@@ -1423,22 +1440,18 @@
     {
       "ts": "2026-07-09T16:10:00-04:00",
       "text": "You tapped it — we're **in**. The TQQQ core filled near the close with the hard stop already set, so the cash is finally **working**. Nothing for you to do; I've got it from here."
-    },
-    {
-      "ts": "2026-07-09T15:35:00-04:00",
-      "text": "Into the close the reclaim **held** — the Nasdaq stayed above its trend line — but chips backed off their highs, so I'm **holding the course**: TQQQ tap still ready, both practice legs still protected."
     }
   ],
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 75.98,
-    "tqqq_pct": -1.2
+    "tqqq": 76.02,
+    "tqqq_pct": -1.14
   },
   "status": [
     {
       "session": "Morning",
-      "text": "Long core held; SOFI one-tap staged"
+      "text": "Core long; SoFi broke out"
     }
   ]
 }
