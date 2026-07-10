@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-10T17:44:40.282Z",
+  "generated_at": "2026-07-10T17:45:46.866Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 100071.2,
+    "equity": 100075.71,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 99071.2,
-    "day_pnl": 74.55,
+    "total_pnl": 99075.71,
+    "day_pnl": 79.06,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.91,
-        "pl": 183.16,
-        "plpc": 7.48,
+        "current": 32.97,
+        "pl": 187.68,
+        "plpc": 7.66,
         "thesis": ""
       },
       {
@@ -21,17 +21,17 @@
         "qty": "200.0000",
         "entry": 19.51,
         "current": 18.8,
-        "pl": -142.02,
-        "plpc": -3.64,
+        "pl": -143,
+        "plpc": -3.67,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 77.23,
-        "pl": 30.07,
-        "plpc": 1.23,
+        "current": 77.26,
+        "pl": 31.04,
+        "plpc": 1.27,
         "thesis": ""
       }
     ],
@@ -63,27 +63,27 @@
     ]
   },
   "live": {
-    "equity": 1012.91,
+    "equity": 1013.22,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 12.91,
-    "day_pnl": 12.04,
+    "total_pnl": 13.22,
+    "day_pnl": 12.35,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 210.6,
-        "pl": 0.83,
-        "plpc": 8.29,
+        "current": 210.76,
+        "pl": 0.84,
+        "plpc": 8.37,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.91,
-        "pl": 2.33,
-        "plpc": 7.6,
+        "current": 32.97,
+        "pl": 2.38,
+        "plpc": 7.79,
         "thesis": ""
       },
       {
@@ -91,17 +91,17 @@
         "qty": "10.0000",
         "entry": 18.76,
         "current": 18.8,
-        "pl": 0.4,
-        "plpc": 0.21,
+        "pl": 0.35,
+        "plpc": 0.19,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 77.23,
-        "pl": 9.4,
-        "plpc": 1.23,
+        "current": 77.26,
+        "pl": 9.7,
+        "plpc": 1.27,
         "thesis": ""
       }
     ],
@@ -603,6 +603,10 @@
       {
         "t": 1783705200000,
         "v": 1012.75
+      },
+      {
+        "t": 1783705500000,
+        "v": 1012.88
       }
     ]
   },
@@ -622,8 +626,8 @@
       "horizon": 0.3,
       "updated": "Jul 10 1:40pm",
       "stop": 65,
-      "price": 77.22,
-      "chg_pct": 1.27,
+      "price": 77.27,
+      "chg_pct": 1.32,
       "spark": [
         74.76,
         77.09,
@@ -654,7 +658,7 @@
         82.78,
         82.48,
         74.21,
-        77.22
+        77.27
       ]
     },
     {
@@ -671,8 +675,8 @@
       "horizon": 0.2,
       "updated": "Jul 10 1:40pm",
       "trigger": "SOXX > 600 close",
-      "price": 195.85,
-      "chg_pct": 1.9,
+      "price": 195.94,
+      "chg_pct": 1.95,
       "spark": [
         172.54,
         184.35,
@@ -703,7 +707,7 @@
         279.32,
         301.42,
         230.82,
-        195.85
+        195.94
       ]
     },
     {
@@ -769,8 +773,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "Jul 10 1:40pm",
-      "price": 210.6,
-      "chg_pct": 3.9,
+      "price": 210.78,
+      "chg_pct": 3.99,
       "spark": [
         220.62,
         225.65,
@@ -801,7 +805,7 @@
         210.38,
         208.59,
         200.07,
-        210.6
+        210.78
       ]
     },
     {
@@ -866,8 +870,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "Jul 10 12:40pm",
-      "price": 323.03,
-      "chg_pct": -0.29,
+      "price": 322.92,
+      "chg_pct": -0.33,
       "spark": [
         367.07,
         370.14,
@@ -898,7 +902,7 @@
         333.19,
         358.37,
         318.27,
-        323.03
+        322.92
       ]
     },
     {
@@ -907,15 +911,15 @@
       "theme": "High-beta bench",
       "verdict": "watch",
       "verdict_label": "Bench — basing >$400",
-      "thesis": "**Basing >$400, +1.2% to $411.** Recovered off a $391 low — the one high-beta name firming while quantum/nuclear/space bleed. No position, but the cleanest momentum re-entry candidate if it clears ~$415 with the tape. Watch.",
+      "thesis": "**Basing >$400, +0.7% to $409.** Firm (day range $403-413) — the one high-beta name holding while quantum/nuclear/space bleed. No position, but the cleanest momentum re-entry candidate if it clears ~$415 with the tape. Watch.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "watching a base > $410 (whole share needs a core sale to fund)",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 10 12:40pm",
-      "price": 408.63,
-      "chg_pct": 0.52,
+      "updated": "Jul 10 1:40pm",
+      "price": 408.51,
+      "chg_pct": 0.49,
       "spark": [
         433.45,
         445.32,
@@ -946,7 +950,7 @@
         400.49,
         405.05,
         381.54,
-        408.63
+        408.51
       ]
     },
     {
@@ -955,17 +959,17 @@
       "theme": "High-beta bench",
       "verdict": "buy",
       "verdict_label": "LIVE — held, stop $16.80 GTC ✓",
-      "thesis": "**Green, held.** 10 sh @ $18.76, last **$18.83 (+0.4%)**, day +1.2%. Rate-independent fintech showing relative strength — faded from a $19.74 spike but holding the $18.70 breakout. Catalyst stack: Composer AI-trading acquisition, $250k SMB-loan launch, Goldman $21, CEO/ARK buying, into 7/29 earnings. **$16.80 GTC stop re-verified live.** Independent of the TQQQ core.",
-      "size": "$189",
+      "thesis": "**Green, held.** 10 sh @ $18.76, last **$18.80 (+0.2%)**, day +1.1%. Rate-independent fintech relative strength — faded from a $19.74 open spike but holding the $18.70 breakout. Catalyst stack: Composer AI-trading acquisition, $250k SMB-loan launch, Goldman $21, CEO/ARK buying, into 7/29 earnings. **$16.80 GTC stop re-verified live.** Independent of the TQQQ core.",
+      "size": "$188",
       "size_pct": 19,
       "size_note": "10 sh held — rate-independent fintech satellite, $16.80 GTC stop",
-      "plan_usd": 189,
+      "plan_usd": 188,
       "horizon": 0.4,
-      "updated": "Jul 10 1:12pm",
+      "updated": "Jul 10 1:40pm",
       "trigger": null,
       "stop": 16.8,
       "price": 18.8,
-      "chg_pct": 1.05,
+      "chg_pct": 1.08,
       "spark": [
         15.9,
         15.3,
@@ -1005,15 +1009,15 @@
       "theme": "High-beta bench",
       "verdict": "avoid",
       "verdict_label": "Suspended — structure broken",
-      "thesis": "**Structure broken, red again** (−1.2%, $127.5). Opened $132 and reversed hard — down on a green tape, below its 20-day. No trade until it reclaims strength; suspended as a long.",
+      "thesis": "**Structure broken, red again** (−1.9%, $126.6). Opened $132.2 and reversed hard — down on a green tape at new index highs, below its 20-day. No trade until it reclaims strength; suspended as a long.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "trigger suspended — needs repair",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 10 12:40pm",
-      "price": 126.21,
-      "chg_pct": -2.2,
+      "updated": "Jul 10 1:40pm",
+      "price": 126.17,
+      "chg_pct": -2.23,
       "spark": [
         136.02,
         130.07,
@@ -1044,7 +1048,7 @@
         128.44,
         119.46,
         116.72,
-        126.21
+        126.17
       ]
     },
     {
@@ -1061,8 +1065,8 @@
       "card": "/research/be.html",
       "horizon": 0.2,
       "updated": "Jul 10 12:40pm",
-      "price": 244.32,
-      "chg_pct": -4.94,
+      "price": 243.93,
+      "chg_pct": -5.09,
       "spark": [
         280.91,
         289.88,
@@ -1093,7 +1097,7 @@
         328.78,
         345.98,
         321.82,
-        244.32
+        243.93
       ]
     },
     {
@@ -1102,16 +1106,16 @@
       "theme": "Space",
       "verdict": "watch",
       "verdict_label": "Watch — overhang intact",
-      "thesis": "**Faded, overhang intact** (−1.5%, $81.3). CEO Beck's 5M-share sale still weighs; below the $82.54 prior close and recent highs. Re-ticket only on a genuine reclaim of strength (>$86) — not catching the knife into $79–82.",
+      "thesis": "**Faded, overhang intact** (−1.1%, $81.6). CEO Beck's 5M-share sale still weighs; below the $82.54 prior close and recent highs even as the index prints new highs. Re-ticket only on a genuine reclaim of strength (>$86) — not catching the knife into $79–82.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "pre-arm retired — buffer redeployed to SOFI; re-ticket on a real reclaim",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 10 1:12pm",
+      "updated": "Jul 10 1:40pm",
       "stop": 74.5,
-      "price": 81.83,
-      "chg_pct": -0.85,
+      "price": 81.98,
+      "chg_pct": -0.67,
       "spark": [
         117.55,
         124.16,
@@ -1142,7 +1146,7 @@
         107.33,
         100.28,
         95.09,
-        81.83
+        81.98
       ]
     },
     {
@@ -1159,8 +1163,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.3,
       "updated": "Jul 10 12:40pm",
-      "price": 48.23,
-      "chg_pct": -2.17,
+      "price": 48.22,
+      "chg_pct": -2.19,
       "spark": [
         73.64,
         69.75,
@@ -1191,7 +1195,7 @@
         61.28,
         58.35,
         57.16,
-        48.23
+        48.22
       ]
     }
   ],
@@ -1728,8 +1732,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 77.22,
-    "tqqq_pct": 0.42
+    "tqqq": 77.27,
+    "tqqq_pct": 0.48
   },
   "status": [
     {
