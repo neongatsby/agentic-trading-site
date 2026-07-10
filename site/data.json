@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-10T14:45:32.008Z",
+  "generated_at": "2026-07-10T14:46:37.457Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99958.05,
+    "equity": 99963.92,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98958.05,
-    "day_pnl": -38.6,
+    "total_pnl": 98963.92,
+    "day_pnl": -32.73,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 31.75,
-        "pl": 89.86,
-        "plpc": 3.67,
+        "current": 31.78,
+        "pl": 92.67,
+        "plpc": 3.78,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.91,
-        "pl": -119,
-        "plpc": -3.05,
+        "current": 18.94,
+        "pl": -114.98,
+        "plpc": -2.95,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 75.89,
-        "pl": -12.78,
-        "plpc": -0.52,
+        "current": 75.86,
+        "pl": -13.76,
+        "plpc": -0.56,
         "thesis": ""
       }
     ],
@@ -63,36 +63,36 @@
     ]
   },
   "live": {
-    "equity": 997.76,
+    "equity": 997.5,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -2.24,
-    "day_pnl": -3.11,
+    "total_pnl": -2.5,
+    "day_pnl": -3.37,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 206.71,
+        "current": 206.84,
         "pl": 0.63,
-        "plpc": 6.29,
+        "plpc": 6.35,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 31.75,
-        "pl": 1.16,
-        "plpc": 3.79,
+        "current": 31.78,
+        "pl": 1.19,
+        "plpc": 3.91,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.89,
-        "pl": -3.99,
-        "plpc": -0.52,
+        "current": 75.86,
+        "pl": -4.3,
+        "plpc": -0.56,
         "thesis": ""
       }
     ],
@@ -478,16 +478,16 @@
       "theme": "Leveraged core",
       "verdict": "buy",
       "verdict_label": "LIVE — core held, stop $65 GTC ✓",
-      "thesis": "**Core held, back to flat.** 10 sh @ $76.29, last **$76.41 (+$0.1)** — recovered the whole soft pre-market open. QQQ **$723.6** is above its 20-day (~721) and bounced off a $719.9 low; risk-on regime holds despite semis selling off underneath (broad NDX firmer than the chip subsector). **$65 GTC stop verified live.** Holding while QQQ keeps its 20-day; no higher low big enough to trail the wide stop yet.",
-      "size": "$764",
+      "thesis": "**Core held, flat.** 10 sh @ $76.29, last **$75.85 (−$4, −0.6%)**. QQQ **$721.7** is sitting right ON its 20-day (~722) — consolidating, not trending; risk-on regime intact but marginal. NVDA (+2.3%) is leading on the H200-China news but broad software is flat, so the 3x index is treading water. **$65 GTC stop verified live** (below the 7/8 washout $69.59, by design). Holding while QQQ keeps its 20-day; no higher low to trail yet. If QQQ loses ~722 decisively, the core is the first thing to cut.",
+      "size": "$759",
       "size_pct": 76,
       "size_note": "10 sh held — the single core, ~76% of sleeve, $65 GTC stop",
-      "plan_usd": 764,
+      "plan_usd": 759,
       "horizon": 0.3,
-      "updated": "Jul 10 10:12am",
+      "updated": "Jul 10 10:45am",
       "stop": 65,
-      "price": 75.89,
-      "chg_pct": -0.49,
+      "price": 75.81,
+      "chg_pct": -0.59,
       "spark": [
         74.76,
         77.09,
@@ -518,7 +518,7 @@
         82.78,
         82.48,
         74.21,
-        75.89
+        75.81
       ]
     },
     {
@@ -535,8 +535,8 @@
       "horizon": 0.2,
       "updated": "Jul 10 10:12am",
       "trigger": "SOXX > 598 close",
-      "price": 186.68,
-      "chg_pct": -2.87,
+      "price": 186.53,
+      "chg_pct": -2.95,
       "spark": [
         172.54,
         184.35,
@@ -567,7 +567,7 @@
         279.32,
         301.42,
         230.82,
-        186.68
+        186.53
       ]
     },
     {
@@ -575,14 +575,14 @@
       "name": "GraniteShares 2x NVDA",
       "theme": "Leveraged core",
       "verdict": "buy",
-      "verdict_label": "LIVE — 1 sh held · add still wash-blocked",
-      "thesis": "Live starter: 1 sh @ $30.59, last **$31.81 (+4%)**, **stop $27 GTC verified**. Tiny artifact of the wash-blocked add, but green — riding NVDA (+2%, the one leader holding up while the semi ETFs bleed). Not adding (a plain add is still wash-blocked by the resting $27 stop).",
+      "verdict_label": "LIVE — 1 sh held (+4.5%) · add still wash-blocked",
+      "thesis": "Live starter: 1 sh @ $30.59, last **$31.95 (+4.5%)**, **stop $27 GTC verified**. Tiny artifact of the wash-blocked add, but the best-performing thing we hold — 2x NVDA, riding the H200-China breakout (+2.3%). Not adding (a plain add is still wash-blocked by the resting $27 stop; would need a cancel-stop→buy→re-arm flow or a clean symbol). Wide $27 stop stays — thesis is strengthening on the catalyst, not spent, so no premature trail.",
       "size": "$32",
       "size_pct": 3,
-      "size_note": "1 sh legacy starter, protected (+4%); adds blocked by wash-trade",
+      "size_note": "1 sh legacy starter, protected (+4.5%); adds blocked by wash-trade",
       "plan_usd": 0,
       "horizon": 0.4,
-      "updated": "Jul 10 10:12am",
+      "updated": "Jul 10 10:45am",
       "trigger": 30.56,
       "stop": 27,
       "price": 31.5,
@@ -624,17 +624,17 @@
       "ticker": "NVDA",
       "name": "Nvidia",
       "theme": "AI / semis",
-      "verdict": "watch",
-      "thesis": "**$206.8 (+2%)** — the one leader clearly outperforming, green while the semi ETFs sell off (H20 China licenses issuing). But it's $10.60 of unstoppable dust and a whole share ($207) > buying power ($196). Leaving it (won't tap you for $10); fold into a real NVDA trade when BP allows.",
-      "verdict_label": "Leader · +2% while chips bleed · whole-share unaffordable",
+      "verdict": "buy",
+      "thesis": "**$207.3 (+2.3%) — the day's catalyst and the clear leader.** The Information reports Alibaba/ByteDance/DeepSeek may soon be cleared to buy NVDA's top-tier **H200** chips — a bigger China unlock than the H20 licenses — so NVDA breaks out to $207 while the broad semi ETFs stay soft (money concentrating in NVDA, not the sector). We already own it two ways: 76% of the core is TQQQ (NVDA is its top weight) plus the NVDL 2x + the $10.65 dust. Would take a whole share of the buffer, but $207 > BP ($196.49) by ~$11 and an NVDL add is wash-blocked — so the clean, affordable buffer deploy is SOFI. Fold the dust into a real NVDA trade the moment BP allows a whole share.",
+      "verdict_label": "Leader — +2.3% on H200 China unlock · whole-share just unaffordable",
       "size": "$11",
       "size_pct": 1,
-      "size_note": "$10.60 dust artifact (live), no stop (fractional) — fold into a real NVDA trade",
+      "size_note": "$10.65 dust artifact (live), no stop (fractional) — owned via TQQQ/NVDL; fold into a real NVDA share when BP allows",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 10 10:12am",
-      "price": 206.71,
-      "chg_pct": 1.98,
+      "updated": "Jul 10 10:45am",
+      "price": 206.83,
+      "chg_pct": 2.04,
       "spark": [
         220.62,
         225.65,
@@ -665,7 +665,7 @@
         210.38,
         208.59,
         200.07,
-        206.71
+        206.83
       ]
     },
     {
@@ -682,8 +682,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.4,
       "updated": "Jul 10 10:12am",
-      "price": 252,
-      "chg_pct": 0.53,
+      "price": 252.24,
+      "chg_pct": 0.63,
       "spark": [
         293.02,
         274.38,
@@ -714,7 +714,7 @@
         274.09,
         275.65,
         270.31,
-        252
+        252.24
       ]
     },
     {
@@ -730,8 +730,8 @@
       "plan_usd": 0,
       "horizon": 0.5,
       "updated": "Jul 10 10:12am",
-      "price": 321.34,
-      "chg_pct": -0.81,
+      "price": 321.49,
+      "chg_pct": -0.77,
       "spark": [
         367.07,
         370.14,
@@ -762,7 +762,7 @@
         333.19,
         358.37,
         318.27,
-        321.34
+        321.49
       ]
     },
     {
@@ -778,8 +778,8 @@
       "plan_usd": 0,
       "horizon": 0.7,
       "updated": "Jul 10 10:12am",
-      "price": 407.94,
-      "chg_pct": 0.35,
+      "price": 408.23,
+      "chg_pct": 0.42,
       "spark": [
         433.45,
         445.32,
@@ -810,7 +810,7 @@
         400.49,
         405.05,
         381.54,
-        407.94
+        408.23
       ]
     },
     {
@@ -828,8 +828,8 @@
       "updated": "Jul 10 10:12am",
       "trigger": null,
       "stop": 16.8,
-      "price": 18.91,
-      "chg_pct": 1.67,
+      "price": 18.92,
+      "chg_pct": 1.72,
       "spark": [
         15.9,
         15.3,
@@ -860,7 +860,7 @@
         17.91,
         17.1,
         17.29,
-        18.91
+        18.92
       ]
     },
     {
@@ -876,8 +876,8 @@
       "plan_usd": 0,
       "horizon": 0.6,
       "updated": "Jul 10 10:12am",
-      "price": 126.77,
-      "chg_pct": -1.77,
+      "price": 126.8,
+      "chg_pct": -1.74,
       "spark": [
         136.02,
         130.07,
@@ -908,7 +908,7 @@
         128.44,
         119.46,
         116.72,
-        126.77
+        126.8
       ]
     },
     {
@@ -925,8 +925,8 @@
       "card": "/research/be.html",
       "horizon": 0.9,
       "updated": "Jul 10 10:12am",
-      "price": 236.3,
-      "chg_pct": -8.06,
+      "price": 237.22,
+      "chg_pct": -7.71,
       "spark": [
         280.91,
         289.88,
@@ -957,7 +957,7 @@
         328.78,
         345.98,
         321.82,
-        236.3
+        237.22
       ]
     },
     {
@@ -974,8 +974,8 @@
       "horizon": 0.6,
       "updated": "Jul 10 10:12am",
       "stop": 74.5,
-      "price": 80.25,
-      "chg_pct": -2.77,
+      "price": 80.3,
+      "chg_pct": -2.71,
       "spark": [
         117.55,
         124.16,
@@ -1006,7 +1006,7 @@
         107.33,
         100.28,
         95.09,
-        80.25
+        80.3
       ]
     },
     {
@@ -1023,8 +1023,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.9,
       "updated": "Jul 10 10:12am",
-      "price": 48.24,
-      "chg_pct": -2.14,
+      "price": 48.27,
+      "chg_pct": -2.09,
       "spark": [
         73.64,
         69.75,
@@ -1055,7 +1055,7 @@
         61.28,
         58.35,
         57.16,
-        48.24
+        48.27
       ]
     }
   ],
@@ -1504,13 +1504,13 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 75.89,
-    "tqqq_pct": -1.31
+    "tqqq": 75.81,
+    "tqqq_pct": -1.42
   },
   "status": [
     {
       "session": "Morning",
-      "text": "Long core; SoFi faded, holds"
+      "text": "Long core; NVDA leads, SoFi tap staged"
     }
   ]
 }
