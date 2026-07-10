@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-10T13:19:26.462Z",
+  "generated_at": "2026-07-10T13:20:31.762Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99944.17,
+    "equity": 99946.69,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98944.17,
-    "day_pnl": -52.48,
+    "total_pnl": 98946.69,
+    "day_pnl": -49.96,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 30.28,
-        "pl": -27.34,
-        "plpc": -1.12,
+        "current": 30.3,
+        "pl": -25.74,
+        "plpc": -1.05,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 75.4,
-        "pl": -28.48,
-        "plpc": -1.17,
+        "current": 75.43,
+        "pl": -27.56,
+        "plpc": -1.13,
         "thesis": ""
       }
     ],
@@ -54,36 +54,36 @@
     ]
   },
   "live": {
-    "equity": 991.14,
+    "equity": 991.45,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -8.86,
-    "day_pnl": -9.73,
+    "total_pnl": -8.55,
+    "day_pnl": -9.42,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 201.89,
+        "current": 201.96,
         "pl": 0.38,
-        "plpc": 3.81,
+        "plpc": 3.85,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 30.28,
-        "pl": -0.31,
-        "plpc": -1,
+        "current": 30.3,
+        "pl": -0.29,
+        "plpc": -0.93,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.4,
-        "pl": -8.9,
-        "plpc": -1.17,
+        "current": 75.43,
+        "pl": -8.61,
+        "plpc": -1.13,
         "thesis": ""
       }
     ],
@@ -373,6 +373,10 @@
       {
         "t": 1783689300000,
         "v": 990.69
+      },
+      {
+        "t": 1783689600000,
+        "v": 991.39
       }
     ]
   },
@@ -454,8 +458,8 @@
       "horizon": 0.2,
       "updated": "Jul 10 9:08am",
       "trigger": "SOXX > 598 close",
-      "price": 181.18,
-      "chg_pct": 3.61,
+      "price": 181.8,
+      "chg_pct": 3.96,
       "spark": [
         172.54,
         184.35,
@@ -486,7 +490,7 @@
         279.32,
         301.42,
         230.82,
-        181.18
+        181.8
       ]
     },
     {
