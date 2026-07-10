@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-10T15:22:13.745Z",
+  "generated_at": "2026-07-10T15:23:20.611Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99980.61,
+    "equity": 99974.97,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98980.61,
-    "day_pnl": -16.04,
+    "total_pnl": 98974.97,
+    "day_pnl": -21.68,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.2,
-        "pl": 126.26,
-        "plpc": 5.15,
+        "current": 32.07,
+        "pl": 115.88,
+        "plpc": 4.73,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.79,
-        "pl": -145,
-        "plpc": -3.72,
+        "current": 18.82,
+        "pl": -138.02,
+        "plpc": -3.54,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 76.28,
-        "pl": -0.48,
-        "plpc": -0.02,
+        "current": 76.22,
+        "pl": -2.4,
+        "plpc": -0.1,
         "thesis": ""
       }
     ],
@@ -63,45 +63,45 @@
     ]
   },
   "live": {
-    "equity": 1002.38,
+    "equity": 1002.03,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 2.38,
-    "day_pnl": 1.51,
+    "total_pnl": 2.03,
+    "day_pnl": 1.16,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 208.22,
-        "pl": 0.71,
-        "plpc": 7.07,
+        "current": 207.84,
+        "pl": 0.69,
+        "plpc": 6.87,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.2,
-        "pl": 1.61,
-        "plpc": 5.28,
+        "current": 32.07,
+        "pl": 1.48,
+        "plpc": 4.85,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.79,
-        "pl": 0.25,
-        "plpc": 0.13,
+        "current": 18.82,
+        "pl": 0.6,
+        "plpc": 0.32,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.28,
-        "pl": -0.15,
-        "plpc": -0.02,
+        "current": 76.22,
+        "pl": -0.7,
+        "plpc": -0.09,
         "thesis": ""
       }
     ],
@@ -132,7 +132,7 @@
       },
       {
         "date": "Jul 10",
-        "value": 995
+        "value": 1002
       }
     ],
     "intraday": [
@@ -494,20 +494,7 @@
       }
     ]
   },
-  "pending_tickets": [
-    {
-      "id": "2026-07-10-3",
-      "symbol": "SOFI",
-      "side": "buy",
-      "size": "$188",
-      "qty": 10,
-      "entry": 18.74,
-      "trigger": null,
-      "stop": 16.8,
-      "bracket": "stop $16.80 GTC (below the $17 shelf / 7/8 low $17.085, -10%)",
-      "thesis": "RE-ISSUED (new id) — the prior 2026-07-10-2 was APPROVED by Adam but the fast-lane rejected it 'insufficient buying power' (10 sh x $19.90 limit = $199 reserve > $196.49 BP). Re-sized to fit: qty 10 x limit $19.05 = $190.50 reserve, so his next tap actually fills. SOFI spiked to $19.74 at the open then faded back to ~$18.74 (roughly flat, +0.8%) but is HOLDING green/above its $18.60 breakout while the whole high-beta complex bleeds (RKLB -2.7%, PLTR -1.9%, IONQ -4.3%, OKLO -2.8%, BE -8.4%, SOXL -3.4%). On a broadly risk-off day that relative strength IS the thesis: NVDA sucks up the AI money (H200-China unlock, +2.3%), rate-independent fintech catches the rotation bid (Fiserv +5%). Catalyst stack: Goldman → $21, Street avg PT ~$21.13, CEO Noto buying, ARK adding, $250k SMB-loans + Composer AI + SFYI ETF, into Jul 29 earnings. Marketable limit $19.05 caps overpay, wide $16.80 GTC stop (risk ~$19, ~1.9%). APPROVE-NOW: one tap buys near $18.74. Honest: Street is Hold, KBW Underperform $16 — a small, defined-risk buffer bet, and the only clean+affordable one (a whole NVDA share $207 > BP, an NVDL/TQQQ add is wash-blocked). Paper mirror filled the $19.51 spike (now -$153), showing exactly why the pullback is the better live entry."
-    }
-  ],
+  "pending_tickets": [],
   "coverage": [
     {
       "ticker": "TQQQ",
@@ -523,8 +510,8 @@
       "horizon": 0.3,
       "updated": "Jul 10 11:15am",
       "stop": 65,
-      "price": 76.29,
-      "chg_pct": 0.04,
+      "price": 76.28,
+      "chg_pct": 0.03,
       "spark": [
         74.76,
         77.09,
@@ -555,7 +542,7 @@
         82.78,
         82.48,
         74.21,
-        76.29
+        76.28
       ]
     },
     {
@@ -572,8 +559,8 @@
       "horizon": 0.2,
       "updated": "Jul 10 11:15am",
       "trigger": "SOXX > 598 close",
-      "price": 189,
-      "chg_pct": -1.66,
+      "price": 188.05,
+      "chg_pct": -2.15,
       "spark": [
         172.54,
         184.35,
@@ -604,7 +591,7 @@
         279.32,
         301.42,
         230.82,
-        189
+        188.05
       ]
     },
     {
@@ -670,8 +657,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "Jul 10 11:15am",
-      "price": 208.24,
-      "chg_pct": 2.74,
+      "price": 207.81,
+      "chg_pct": 2.52,
       "spark": [
         220.62,
         225.65,
@@ -702,7 +689,7 @@
         210.38,
         208.59,
         200.07,
-        208.24
+        207.81
       ]
     },
     {
@@ -719,8 +706,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.4,
       "updated": "Jul 10 10:45am",
-      "price": 251.06,
-      "chg_pct": 0.16,
+      "price": 251.01,
+      "chg_pct": 0.14,
       "spark": [
         293.02,
         274.38,
@@ -751,7 +738,7 @@
         274.09,
         275.65,
         270.31,
-        251.06
+        251.01
       ]
     },
     {
@@ -767,8 +754,8 @@
       "plan_usd": 0,
       "horizon": 0.5,
       "updated": "Jul 10 10:12am",
-      "price": 321.9,
-      "chg_pct": -0.64,
+      "price": 321.73,
+      "chg_pct": -0.69,
       "spark": [
         367.07,
         370.14,
@@ -799,7 +786,7 @@
         333.19,
         358.37,
         318.27,
-        321.9
+        321.73
       ]
     },
     {
@@ -815,8 +802,8 @@
       "plan_usd": 0,
       "horizon": 0.7,
       "updated": "Jul 10 11:15am",
-      "price": 407.78,
-      "chg_pct": 0.31,
+      "price": 408.41,
+      "chg_pct": 0.47,
       "spark": [
         433.45,
         445.32,
@@ -847,7 +834,7 @@
         400.49,
         405.05,
         381.54,
-        407.78
+        408.41
       ]
     },
     {
@@ -855,18 +842,18 @@
       "name": "SoFi",
       "theme": "High-beta bench",
       "verdict": "buy",
-      "verdict_label": "STAGED (re-issued 2026-07-10-3) — one-tap ~$188 · relative strength",
-      "thesis": "**Re-issued after the fast-lane bounced the approved tap on 'insufficient buying power'** (10 sh × $19.90 limit reserved $199 > $196.49 BP). New id 2026-07-10-3 is sized to fit: 10 × $19.05 = $190.50 reserve, so the next tap fills. SOFI spiked to $19.74 then faded to **~$18.74** (roughly flat, +0.8%) but is HOLDING green/above its $18.60 breakout while the **whole high-beta complex bleeds** (RKLB −2.7%, PLTR −1.9%, IONQ −4.3%, OKLO −2.8%, BE −8.4%, SOXL −3.4%). On a risk-off day that relative strength IS the thesis: NVDA sucks the AI money, rate-independent fintech catches the rotation bid (Fiserv +5%). Catalyst stack intact (Goldman $21, Street avg ~$21, CEO buying, ARK adding, into 7/29 earnings). One-tap: **10 sh, marketable limit $19.05, stop $16.80 GTC** (risk ~$19). Honest: Street is Hold, KBW Underperform $16 — a small, defined-risk buffer bet, and the only clean+affordable one.",
+      "verdict_label": "LIVE — FILLED 10 sh @ $18.76, stop $16.80 GTC ✓",
+      "thesis": "**FILLED this run.** Adam approved the re-issued ticket (2026-07-10-3) and the fast-lane bought **10 sh @ $18.76** with the **$16.80 GTC stop attached** (order bf2f2983) — the BP-reserve fix worked end-to-end (the prior 2026-07-10-2 had bounced on 'insufficient buying power'). Now +$0.15, essentially flat to entry. This deploys the last ~20% buffer → the sleeve is **~99% working**. Thesis: relative strength on a risk-off day (SOFI ~flat/green while RKLB/PLTR/IONQ/OKLO/BE all red), rate-independent fintech catching the rotation bid, catalyst stack into 7/29 earnings (Goldman $21, CEO buying, ARK adding). Wide $16.80 GTC stop is the defined downside (risk ~$19, ~1.9%); reassessed each run, no take-profit. Honest: Street is Hold, KBW Underperform $16.",
       "size": "$188",
       "size_pct": 19,
-      "size_note": "one-tap 10 sh @ ~$18.74, limit $19.05, stop $16.80 GTC — deploys the ~$196 buffer (re-sized to fit BP)",
+      "size_note": "LIVE 10 sh @ $18.76, $16.80 GTC stop ✓ — the buffer is now deployed (~99% working)",
       "plan_usd": 188,
       "horizon": 0.6,
-      "updated": "Jul 10 11:15am",
+      "updated": "Jul 10 11:20am",
       "trigger": null,
       "stop": 16.8,
-      "price": 18.79,
-      "chg_pct": 0.99,
+      "price": 18.82,
+      "chg_pct": 1.16,
       "spark": [
         15.9,
         15.3,
@@ -897,7 +884,7 @@
         17.91,
         17.1,
         17.29,
-        18.79
+        18.82
       ]
     },
     {
@@ -913,8 +900,8 @@
       "plan_usd": 0,
       "horizon": 0.6,
       "updated": "Jul 10 11:15am",
-      "price": 126.37,
-      "chg_pct": -2.08,
+      "price": 126.28,
+      "chg_pct": -2.15,
       "spark": [
         136.02,
         130.07,
@@ -945,7 +932,7 @@
         128.44,
         119.46,
         116.72,
-        126.37
+        126.28
       ]
     },
     {
@@ -962,8 +949,8 @@
       "card": "/research/be.html",
       "horizon": 0.9,
       "updated": "Jul 10 11:15am",
-      "price": 233.81,
-      "chg_pct": -9.03,
+      "price": 233.76,
+      "chg_pct": -9.05,
       "spark": [
         280.91,
         289.88,
@@ -994,7 +981,7 @@
         328.78,
         345.98,
         321.82,
-        233.81
+        233.76
       ]
     },
     {
@@ -1011,8 +998,8 @@
       "horizon": 0.6,
       "updated": "Jul 10 11:15am",
       "stop": 74.5,
-      "price": 80.12,
-      "chg_pct": -2.93,
+      "price": 80.28,
+      "chg_pct": -2.74,
       "spark": [
         117.55,
         124.16,
@@ -1043,7 +1030,7 @@
         107.33,
         100.28,
         95.09,
-        80.12
+        80.28
       ]
     },
     {
@@ -1060,8 +1047,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.9,
       "updated": "Jul 10 11:15am",
-      "price": 47.97,
-      "chg_pct": -2.69,
+      "price": 47.94,
+      "chg_pct": -2.75,
       "spark": [
         73.64,
         69.75,
@@ -1092,7 +1079,7 @@
         61.28,
         58.35,
         57.16,
-        47.97
+        47.94
       ]
     }
   ],
@@ -1578,13 +1565,13 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 76.29,
-    "tqqq_pct": -0.79
+    "tqqq": 76.28,
+    "tqqq_pct": -0.81
   },
   "status": [
     {
       "session": "Morning",
-      "text": "Long core; SoFi tap re-sized to fit BP"
+      "text": "SoFi filled — ~99% deployed, all stopped"
     }
   ]
 }
