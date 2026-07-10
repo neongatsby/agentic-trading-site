@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-10T15:16:44.593Z",
+  "generated_at": "2026-07-10T15:17:49.897Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99977.63,
+    "equity": 99967.11,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98977.63,
-    "day_pnl": -19.02,
+    "total_pnl": 98967.11,
+    "day_pnl": -29.54,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.1,
-        "pl": 118.26,
-        "plpc": 4.83,
+        "current": 32.08,
+        "pl": 116.44,
+        "plpc": 4.75,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.79,
-        "pl": -143.98,
-        "plpc": -3.69,
+        "current": 18.77,
+        "pl": -149,
+        "plpc": -3.82,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 76.39,
-        "pl": 3.2,
-        "plpc": 0.13,
+        "current": 76.28,
+        "pl": -0.32,
+        "plpc": -0.01,
         "thesis": ""
       }
     ],
@@ -63,36 +63,36 @@
     ]
   },
   "live": {
-    "equity": 1003.18,
+    "equity": 1002.04,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 3.18,
-    "day_pnl": 2.31,
+    "total_pnl": 2.04,
+    "day_pnl": 1.17,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 207.89,
-        "pl": 0.69,
-        "plpc": 6.89,
+        "current": 207.79,
+        "pl": 0.68,
+        "plpc": 6.84,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.1,
-        "pl": 1.51,
-        "plpc": 4.95,
+        "current": 32.08,
+        "pl": 1.49,
+        "plpc": 4.88,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.39,
-        "pl": 1,
-        "plpc": 0.13,
+        "current": 76.28,
+        "pl": -0.1,
+        "plpc": -0.01,
         "thesis": ""
       }
     ],
@@ -510,8 +510,8 @@
       "horizon": 0.3,
       "updated": "Jul 10 11:15am",
       "stop": 65,
-      "price": 76.38,
-      "chg_pct": 0.16,
+      "price": 76.27,
+      "chg_pct": 0.01,
       "spark": [
         74.76,
         77.09,
@@ -542,7 +542,7 @@
         82.78,
         82.48,
         74.21,
-        76.38
+        76.27
       ]
     },
     {
@@ -551,16 +551,16 @@
       "theme": "Leveraged core",
       "verdict": "avoid",
       "verdict_label": "Rotation candidate · gate UNMET (NVDA the only exception)",
-      "thesis": "**Broad semis are still the laggard** — SOXX **$576.7** sits ~3.5% under its 20-day (~597), down a 3rd day, and SOXL is **−2.8%** even as NVDA rips: today's chip strength is NVDA-*specific* (H200 China), not the sector (SMH −0.3%). So a 3x-*basket* long is the wrong vehicle — you'd own the laggards. Rotation gate to flip our core TQQQ→SOXL is UNMET; no long here until SOXX closes back >~597 with semis leading broadly.",
+      "thesis": "**Broad semis are the laggard and getting worse** — SOXX **$575** sits **−3.8% under its 20-day (597.83)**, down a 3rd day and moving away, SOXL −3.4% / SOXS +3.4% even as NVDA rips: today's chip strength is NVDA-*specific* (H200 China), not the sector (SMH −0.5%). A 3x-*basket* long is the wrong vehicle — you'd own the laggards. Rotation gate to flip our core TQQQ→SOXL is UNMET and widening; no long until SOXX closes back >~598 with semis leading. (Bear side: SOXS/SQQQ is the working expression, but shorting semis the same day NVDA gets a major China unlock is fighting a fresh catalyst — passing.)",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "Core-rotation candidate (mutually exclusive w/ TQQQ). SOXX $576.7 ~3.5% under its 20-day ~597 = gate UNMET; today's semi strength is NVDA-only, not the basket. A SOXX close >~597 with broad semis leading flips the core TQQQ→SOXL on the next live run.",
+      "size_note": "Core-rotation candidate (mutually exclusive w/ TQQQ). SOXX $575 −3.8% under its 20-day 597.83 = gate UNMET & widening; today's semi strength is NVDA-only. A SOXX close >~598 with broad semis leading flips the core TQQQ→SOXL on the next live run.",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "Jul 10 10:45am",
-      "trigger": "SOXX > 597 close",
-      "price": 188.89,
-      "chg_pct": -1.72,
+      "updated": "Jul 10 11:15am",
+      "trigger": "SOXX > 598 close",
+      "price": 188.56,
+      "chg_pct": -1.89,
       "spark": [
         172.54,
         184.35,
@@ -591,7 +591,7 @@
         279.32,
         301.42,
         230.82,
-        188.89
+        188.56
       ]
     },
     {
@@ -657,8 +657,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "Jul 10 11:15am",
-      "price": 207.9,
-      "chg_pct": 2.57,
+      "price": 207.79,
+      "chg_pct": 2.51,
       "spark": [
         220.62,
         225.65,
@@ -689,7 +689,7 @@
         210.38,
         208.59,
         200.07,
-        207.9
+        207.79
       ]
     },
     {
@@ -706,8 +706,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.4,
       "updated": "Jul 10 10:45am",
-      "price": 250.47,
-      "chg_pct": -0.08,
+      "price": 250.94,
+      "chg_pct": 0.11,
       "spark": [
         293.02,
         274.38,
@@ -738,7 +738,7 @@
         274.09,
         275.65,
         270.31,
-        250.47
+        250.94
       ]
     },
     {
@@ -754,8 +754,8 @@
       "plan_usd": 0,
       "horizon": 0.5,
       "updated": "Jul 10 10:12am",
-      "price": 321.72,
-      "chg_pct": -0.7,
+      "price": 322.16,
+      "chg_pct": -0.56,
       "spark": [
         367.07,
         370.14,
@@ -786,7 +786,7 @@
         333.19,
         358.37,
         318.27,
-        321.72
+        322.16
       ]
     },
     {
@@ -794,16 +794,16 @@
       "name": "Tesla",
       "theme": "High-beta bench",
       "verdict": "watch",
-      "verdict_label": "Held $400 · firming",
-      "thesis": "$407.8 (+0.3%) — still holding above $400, the one high-beta bench name that's green on a mixed tape. Watching for a clean base over $400; no trigger yet, and a whole share ($408) is unaffordable for the buffer anyway.",
+      "verdict_label": "Holding $400 · two-way chop",
+      "thesis": "$406.9 (flat) — opened $411, dipped to $403, back to $407; still holding above $400 and roughly flat on a red tape (relative strength). Watching for a clean base over $400; no trigger yet, and a whole share ($407) is unaffordable for the buffer anyway.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching — watching for a base > $400 (whole share > buffer)",
       "plan_usd": 0,
       "horizon": 0.7,
-      "updated": "Jul 10 10:45am",
-      "price": 407.94,
-      "chg_pct": 0.35,
+      "updated": "Jul 10 11:15am",
+      "price": 407.81,
+      "chg_pct": 0.32,
       "spark": [
         433.45,
         445.32,
@@ -834,7 +834,7 @@
         400.49,
         405.05,
         381.54,
-        407.94
+        407.81
       ]
     },
     {
@@ -852,8 +852,8 @@
       "updated": "Jul 10 11:15am",
       "trigger": null,
       "stop": 16.8,
-      "price": 18.8,
-      "chg_pct": 1.05,
+      "price": 18.77,
+      "chg_pct": 0.89,
       "spark": [
         15.9,
         15.3,
@@ -884,7 +884,7 @@
         17.91,
         17.1,
         17.29,
-        18.8
+        18.77
       ]
     },
     {
@@ -900,8 +900,8 @@
       "plan_usd": 0,
       "horizon": 0.6,
       "updated": "Jul 10 11:15am",
-      "price": 126.36,
-      "chg_pct": -2.08,
+      "price": 126.4,
+      "chg_pct": -2.05,
       "spark": [
         136.02,
         130.07,
@@ -932,7 +932,7 @@
         128.44,
         119.46,
         116.72,
-        126.36
+        126.4
       ]
     },
     {
@@ -940,17 +940,17 @@
       "name": "Bloom Energy",
       "theme": "Energy-for-AI",
       "verdict": "avoid",
-      "verdict_label": "Another wild reversal",
-      "thesis": "$242 (−5.8%) — yet another failed pop (gapped to $275 Wed, closed $257, now $242 and bleeding). Wild two-way, no floor; avoid.",
+      "verdict_label": "Wild reversal — −8% today",
+      "thesis": "$235 (−8.4%) — the wild two-way continues (gapped to $275 Wed, closed $257, opened $251 today and dumped to $233). No floor, one of the day's worst high-beta names; avoid.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/be.html",
       "horizon": 0.9,
-      "updated": "Jul 10 10:12am",
-      "price": 235.35,
-      "chg_pct": -8.43,
+      "updated": "Jul 10 11:15am",
+      "price": 234.77,
+      "chg_pct": -8.66,
       "spark": [
         280.91,
         289.88,
@@ -981,7 +981,7 @@
         328.78,
         345.98,
         321.82,
-        235.35
+        234.77
       ]
     },
     {
@@ -990,16 +990,16 @@
       "theme": "Space",
       "verdict": "watch",
       "verdict_label": "Pre-arm RETIRED — still fading",
-      "thesis": "$80.0 (−3.1%) — still bleeding post-Iridium (Beck's 5M-sh sale overhang), back to $80. Re-ticket only on a real reclaim of strength; not catching the knife.",
+      "thesis": "$80.3 (−2.7%) — still bleeding post-Iridium (Beck's 5M-sh sale overhang), opened $82.3 and faded to $79.1. Re-ticket only on a real reclaim of strength; not catching the knife.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "pre-arm retired — buffer redeployed to SOFI; re-ticket on a real reclaim",
       "plan_usd": 0,
       "horizon": 0.6,
-      "updated": "Jul 10 10:45am",
+      "updated": "Jul 10 11:15am",
       "stop": 74.5,
-      "price": 80.42,
-      "chg_pct": -2.57,
+      "price": 80.3,
+      "chg_pct": -2.72,
       "spark": [
         117.55,
         124.16,
@@ -1030,7 +1030,7 @@
         107.33,
         100.28,
         95.09,
-        80.42
+        80.3
       ]
     },
     {
@@ -1039,16 +1039,16 @@
       "theme": "Energy-for-AI",
       "verdict": "watch",
       "verdict_label": "Cooling off",
-      "thesis": "$48.2 (−2.2%) — nuclear-for-AI, red with the risk-off crowd; no setup.",
+      "thesis": "$47.9 (−2.8%) — nuclear-for-AI, red with the risk-off crowd (opened $49.5, faded to $47.7); no setup.",
       "size": "$0",
       "size_pct": 0,
       "size_note": "not touching",
       "plan_usd": 0,
       "card": "/research/oklo.html",
       "horizon": 0.9,
-      "updated": "Jul 10 10:45am",
-      "price": 47.98,
-      "chg_pct": -2.67,
+      "updated": "Jul 10 11:15am",
+      "price": 47.97,
+      "chg_pct": -2.7,
       "spark": [
         73.64,
         69.75,
@@ -1079,7 +1079,7 @@
         61.28,
         58.35,
         57.16,
-        47.98
+        47.97
       ]
     }
   ],
@@ -1474,6 +1474,10 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-10T11:15:00-04:00",
+      "text": "11:15am — quick fix: your **SoFi** tap got **bounced by the broker** earlier for a hair too little buying power (it tried to reserve $199 against $196 cash). I re-sent it sized to fit — same trade, **10 shares, hard exit $16.80** — so this time one tap actually fills. It's still the right buy: SoFi's **holding green** while almost everything else (Rocket Lab, Palantir, Bloom −8%, the quantum names) is red. Core's **long** and protected; nothing else to do but tap SoFi."
+    },
+    {
       "ts": "2026-07-10T10:45:00-04:00",
       "text": "10:45am — quiet hold, everything protected. The one real story today is **Nvidia** ripping (+2%) on news China may get cleared to buy its top-tier chips — our core already owns Nvidia, so we're along for it. **SoFi** is still the standout I can actually afford with the spare cash: it's **green** while the rest of the risky names (Rocket Lab, Palantir, quantum) are red. One tap on SoFi puts the last of the cash to work; nothing else for you to do."
     },
@@ -1541,8 +1545,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 76.38,
-    "tqqq_pct": -0.68
+    "tqqq": 76.27,
+    "tqqq_pct": -0.82
   },
   "status": [
     {
