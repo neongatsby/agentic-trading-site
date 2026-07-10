@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-10T12:45:37.805Z",
+  "generated_at": "2026-07-10T12:46:44.990Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99938.57,
+    "equity": 99935.47,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98938.57,
-    "day_pnl": -58.08,
+    "total_pnl": 98935.47,
+    "day_pnl": -61.18,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 30.17,
-        "pl": -36.14,
-        "plpc": -1.47,
+        "current": 30.16,
+        "pl": -36.96,
+        "plpc": -1.51,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "32.0000",
         "entry": 76.29,
-        "current": 75.5,
-        "pl": -25.28,
-        "plpc": -1.04,
+        "current": 75.43,
+        "pl": -27.55,
+        "plpc": -1.13,
         "thesis": ""
       }
     ],
@@ -54,36 +54,36 @@
     ]
   },
   "live": {
-    "equity": 992,
+    "equity": 991.29,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -8,
-    "day_pnl": -8.87,
+    "total_pnl": -8.71,
+    "day_pnl": -9.58,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 201.39,
-        "pl": 0.35,
-        "plpc": 3.55,
+        "current": 201.41,
+        "pl": 0.36,
+        "plpc": 3.56,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 30.17,
-        "pl": -0.42,
-        "plpc": -1.36,
+        "current": 30.16,
+        "pl": -0.43,
+        "plpc": -1.39,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.5,
-        "pl": -7.9,
-        "plpc": -1.03,
+        "current": 75.43,
+        "pl": -8.61,
+        "plpc": -1.13,
         "thesis": ""
       }
     ],
@@ -713,15 +713,15 @@
       "name": "SoFi",
       "theme": "High-beta bench",
       "verdict": "buy",
-      "verdict_label": "STAGED — one-tap buffer deploy (~$186)",
-      "thesis": "**The buffer deploy this run.** SOFI closed 7/9 **at its 2-day high** ($18.60, +4.8%), reclaiming $18 on volume; **Goldman lifted its target to $21** as SoFi expands its lending footprint. It's a name the tape is *with* (green, at the highs), clean (no wash), affordable and stoppable in whole shares — so it's the disciplined redeploy of the idle ~$196 that RKLB's dead trigger was sitting on. Ticket 2026-07-10-2: 10 sh ≈ $186, wide **$16.20 GTC stop** (below the $17 shelf / 7/8 low $17.085, −13%, risk ~$24 ≈ 2.4%). Approve-now buys at the open; Pre-arm rests a buy-stop $18.70 that only fires on a breakout over the 2-day high. Independent of the core — the SOXL rotation watch is unaffected.",
-      "size": "$186",
+      "verdict_label": "STAGED — one-tap buffer deploy (~$189) · strong pre-mkt",
+      "thesis": "**The buffer deploy — and it's showing strength.** SOFI closed 7/9 **at its 2-day high** ($18.60, +4.8%) and is trading **UP again pre-market (~$18.86, +1.4%)**, reclaiming the $18.70 breakout **even as mega-tech and chips soften on higher yields** — exactly the rate-independent relative strength a fintech should show on a rate-soft morning. Catalyst stack is deeper than a single PT bump: **Goldman → $21** (from $17, 7/7), consensus ~$21–22 (~13% upside), **CEO Noto a steady open-market buyer**, **ARK added 200k+ shares**, Composer-AI acquisition + a new small-business-loans platform, and an **18th straight Rule-of-40 quarter into Jul 29 earnings**. Clean (no wash), affordable, stoppable in whole shares. Ticket 2026-07-10-2: 10 sh ≈ $189, limit $19.10, wide **$16.20 GTC stop** (below the $17 shelf / 7/8 low $17.085, −14%, risk ~$27 ≈ 2.7%). **Approve-now** is the clean path now that it's above the breakout; Pre-arm rests a buy-stop $18.90 for continuation. Independent of the core. **Mirrored in the paper book this run** (200 sh, same $16.20 stop) to build the track record.",
+      "size": "$189",
       "size_pct": 19,
-      "size_note": "one-tap 10 sh @ ~$18.65, stop $16.20 GTC — deploys the buffer",
-      "plan_usd": 186,
+      "size_note": "one-tap 10 sh @ ~$18.85, limit $19.10, stop $16.20 GTC — deploys the buffer",
+      "plan_usd": 189,
       "horizon": 0.6,
-      "updated": "Jul 10 8:10am",
-      "trigger": 18.7,
+      "updated": "Jul 10 8:40am",
+      "trigger": 18.9,
       "stop": 16.2,
       "price": 18.6,
       "chg_pct": 4.79,
@@ -1352,7 +1352,7 @@
   "status": [
     {
       "session": "Morning",
-      "text": "Long core (soft open, −$12 pre-mkt); SOFI staged"
+      "text": "Long core; SOFI strong pre-mkt, one-tap staged"
     }
   ]
 }
