@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>The Degen Layer — concept deck</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎰</text></svg>">
+<style>
+  :root{
+    --bg:#07090f; --cyan:#7dd3fc; --purple:#a78bfa; --mint:#6ee7b7; --red:#fca5a5; --gold:#fcd34d;
+    --text:#e8eaf2; --muted:#9aa0b5; --dim:#6b7188;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --serif:"Newsreader","Source Serif 4",Georgia,serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:var(--sans); color:var(--text); line-height:1.55; -webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(ellipse 70% 55% at 12% -8%, #1a2340 0%, transparent 55%),
+      radial-gradient(ellipse 55% 45% at 92% 4%, #2a1a3d 0%, transparent 52%),
+      radial-gradient(ellipse 60% 55% at 50% 112%, #0e2a24 0%, transparent 55%),
+      var(--bg);
+    min-height:100vh; padding:40px clamp(16px,5vw,56px) 100px;
+  }
+  .wrap{max-width:1080px;margin:0 auto;}
+  .kicker{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--purple);}
+  h1{font-size:clamp(30px,6vw,52px);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-top:10px;}
+  h1 .grad{background:linear-gradient(100deg,var(--cyan),var(--purple) 50%,var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .lede{color:var(--muted);font-size:clamp(15px,2vw,18px);max-width:70ch;margin-top:16px;}
+  .lede b{color:var(--text);}
+  h2{font-size:clamp(20px,3.4vw,28px);font-weight:800;letter-spacing:-.01em;margin:56px 0 6px;display:flex;align-items:center;gap:12px;}
+  h2 .n{font-size:13px;font-weight:800;color:#07090f;background:linear-gradient(135deg,var(--cyan),var(--purple));width:28px;height:28px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;flex:none;}
+  .sub{color:var(--muted);font-size:14.5px;margin-bottom:22px;max-width:74ch;}
+  .grid{display:grid;gap:14px;}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+  .card{background:linear-gradient(150deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:18px 18px 20px;box-shadow:0 8px 30px rgba(0,0,0,.28);}
+  .card h3{font-size:15px;font-weight:800;letter-spacing:.01em;}
+  .card .when{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;}
+  /* chat-bubble style copy sample */
+  .say{background:rgba(125,211,252,.10);border:1px solid rgba(125,211,252,.20);border-radius:14px 14px 14px 5px;padding:11px 14px;font-size:14.5px;color:#eaf0fb;margin-top:8px;}
+  .say.win{background:rgba(110,231,183,.11);border-color:rgba(110,231,183,.26);}
+  .say.loss{background:rgba(252,165,165,.10);border-color:rgba(252,165,165,.26);}
+  .say.gold{background:rgba(252,211,77,.10);border-color:rgba(252,211,77,.30);}
+  .say b{color:#fff;}
+  .serious{font-size:12.5px;color:var(--dim);margin-top:8px;font-style:italic;}
+  .serious b{color:var(--muted);font-style:normal;}
+  /* phone notification mockups */
+  .notif{background:rgba(20,24,34,.9);border:1px solid rgba(255,255,255,.10);border-radius:15px;padding:12px 14px;display:flex;gap:11px;align-items:flex-start;}
+  .notif .ic{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:flex;align-items:center;justify-content:center;font-size:18px;flex:none;}
+  .notif .body{flex:1;min-width:0;}
+  .notif .app{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);}
+  .notif .msg{font-size:13.5px;color:#e8eaf2;margin-top:2px;}
+  .notif .msg b{color:#fff;}
+  .notif .t{font-size:11px;color:var(--dim);margin-left:auto;flex:none;}
+  /* idea / mechanic tiles */
+  .tile{background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;}
+  .tile .emoji{font-size:26px;}
+  .tile h3{font-size:15.5px;font-weight:800;margin-top:10px;}
+  .tile p{font-size:13.5px;color:var(--muted);margin-top:7px;}
+  /* badges */
+  .badges{display:flex;flex-wrap:wrap;gap:10px;}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:700;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);}
+  .badge .e{font-size:16px;}
+  .badge small{color:var(--dim);font-weight:500;}
+  .callout{margin-top:16px;background:rgba(252,211,77,.07);border:1px solid rgba(252,211,77,.26);border-radius:14px;padding:16px 18px;font-size:14px;color:#e4e7f0;}
+  .callout b{color:var(--gold);}
+  .toggle-demo{display:inline-flex;border:1px solid rgba(255,255,255,.14);border-radius:999px;overflow:hidden;margin-top:4px;font-size:12.5px;font-weight:700;}
+  .toggle-demo span{padding:6px 14px;color:var(--muted);}
+  .toggle-demo span.on{background:linear-gradient(135deg,rgba(125,211,252,.25),rgba(167,139,250,.22));color:#fff;}
+  .foot{margin-top:60px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);color:var(--dim);font-size:12.5px;text-align:center;line-height:1.7;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(167,139,250,.15);color:#cbb8fb;margin-left:8px;vertical-align:middle;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Agentic Trading · concept deck</div>
+  <h1>The <span class="grad">Degen Layer</span> 🎰</h1>
+  <p class="lede">Same honest engine underneath — but with an <b>alter ego</b>: a copywriter who did his entire apprenticeship on r/WallStreetBets. It doesn't change a single trade or risk rule. It just <b>narrates the money</b> like a caffeinated hype-man who genuinely believes we're all going to make it. Every read has two voices, one tap apart:</p>
+  <div class="toggle-demo"><span>🧠 Serious</span><span class="on">🚀 Degen</span></div>
+
+  <h2><span class="n">1</span>The voice <span class="tag">persona</span></h2>
+  <p class="sub">A lovable degenerate optimist. Hypes the wins, roasts the losses, worships the diamond hand, and treats "not financial advice" as a running gag. Never mean, never actually gives advice, always one tap from the sober truth. Think: your funniest friend who somehow read the 10-K.</p>
+  <div class="grid g3">
+    <div class="tile"><div class="emoji">💎🙌</div><h3>Conviction</h3><p>Holding isn't boring, it's discipline with a meme attached. "We don't panic sell. We panic hold."</p></div>
+    <div class="tile"><div class="emoji">🤡</div><h3>Self-aware</h3><p>Roasts itself harder than any bagholder could. A red day is content, not a crisis.</p></div>
+    <div class="tile"><div class="emoji">🧠</div><h3>Honest core</h3><p>The real engine read is always underneath. Degen is a skin, not a lie — the stop, the size, the thesis are all real.</p></div>
+  </div>
+
+  <h2><span class="n">2</span>Headlines / pulse copy <span class="tag">the ticker</span></h2>
+  <p class="sub">The scrolling "what the engine's thinking" line, reskinned. Each card shows the <b>degen</b> version up top and the <b>serious</b> read underneath — the UI toggle swaps between them.</p>
+  <div class="grid g2">
+    <div class="card"><div class="when">Bought the TQQQ core</div>
+      <div class="say win">Aped into <b>TQQQ</b> — 3x Nasdaq or 3x nothing. Regime flipped green, chips are leading, and we are once again Extremely Online with leverage. 🚀 This is the way.</div>
+      <div class="serious"><b>Serious:</b> Entered TQQQ; Nasdaq reclaimed its 20-day, semis leading. $65 GTC stop set.</div>
+    </div>
+    <div class="card"><div class="when">Up ~1% on the day</div>
+      <div class="say win">Account's <b>green</b>. +$11 today, or in ape terms: one (1) premium burrito of pure alpha. 🌯📈 Somebody get me a Bloomberg terminal.</div>
+      <div class="serious"><b>Serious:</b> +$11.44 (+1.1%) today; fully deployed, all stops live.</div>
+    </div>
+    <div class="card"><div class="when">Holding, no trade</div>
+      <div class="say">Zero trades today. Sat on my hands like a monk with <b>diamond palms.</b> 💎🙌 Boring is a position. Boring is winning. Touch grass, check back at the close.</div>
+      <div class="serious"><b>Serious:</b> No new setup worth the risk; holding the core, nothing for you to do.</div>
+    </div>
+    <div class="card"><div class="when">Stopped out</div>
+      <div class="say loss">Stop hit on <b>X.</b> Took the L like a gentleman — that wasn't a loss, it was a <b>strategic donation</b> to the market gods. 🙏 Hands remain diamond. We ape again tomorrow.</div>
+      <div class="serious"><b>Serious:</b> X stopped out at $Y (−$Z). Risk was capped by design; thesis invalidated, moving on.</div>
+    </div>
+    <div class="card"><div class="when">New account high</div>
+      <div class="say gold">🚨 <b>NEW ACCOUNT HIGH.</b> 🚨 Someone call CNBC. Tendies acquired, ego inflated, retirement moved up by nine minutes. 🍗🎰</div>
+      <div class="serious"><b>Serious:</b> Equity made a new high, $X. Trailing the stop up to lock gains.</div>
+    </div>
+    <div class="card"><div class="when">Catalyst hits (Nvidia/China)</div>
+      <div class="say win"><b>Nvidia</b> might get cleared to sell chips to China and the entire Nasdaq did a backflip. We're long the whole party. You're welcome. 🐂</div>
+      <div class="serious"><b>Serious:</b> NVDA +2.3% on China H200 headlines; we hold it via the TQQQ core.</div>
+    </div>
+    <div class="card"><div class="when">Red day</div>
+      <div class="say loss">Red day. Cope levels: <b>elevated.</b> Thesis intact, hands still diamond, snacks fully stocked. We do not sell the dip — we ARE the dip. 💎🩸</div>
+      <div class="serious"><b>Serious:</b> −$X today (−Y%); within normal range, stops unbroken, holding.</div>
+    </div>
+    <div class="card"><div class="when">Missed a move (FOMO)</div>
+      <div class="say">Watched <b>SOXL</b> rip +8% without us because our regime filter said "no." Feeling things. This is fine. 🔥🐶☕ Discipline tastes like regret but pays like alpha.</div>
+      <div class="serious"><b>Serious:</b> Skipped SOXL — semis were under their 20-day, filter kept us out. Correct process, annoying outcome.</div>
+    </div>
+  </div>
+
+  <h2><span class="n">3</span>Trade notifications <span class="tag">phone / Telegram</span></h2>
+  <p class="sub">What lands on your phone. The <b>Approve</b> tap still does the exact same thing — it just arrives with more personality.</p>
+  <div class="grid g2">
+    <div class="notif"><div class="ic">🚨</div><div class="body"><div class="app">Agentic Trading</div><div class="msg"><b>SETUP ALERT — TQQQ, ~$765.</b> Regime flipped green, chips leading. Tap to ape. Not financial advice (it is absolutely financial advice). 🚀</div></div><div class="t">now</div></div>
+    <div class="notif"><div class="ic">✅</div><div class="body"><div class="app">Agentic Trading</div><div class="msg"><b>FILLED — 10 sh TQQQ.</b> Stop's resting at $65 so we can't zero the account (probably). LFG. 🟢</div></div><div class="t">1m</div></div>
+    <div class="notif"><div class="ic">🎯</div><div class="body"><div class="app">Agentic Trading</div><div class="msg"><b>PRE-ARMED.</b> Buy-stop set on X at $Y — it fires itself the second price crosses. You may now resume touching grass.</div></div><div class="t">3m</div></div>
+    <div class="notif"><div class="ic">💰</div><div class="body"><div class="app">Agentic Trading</div><div class="msg"><b>TRIMMED X for +$Y.</b> Tendies secured. 🍗 Reinvesting into the next questionable-but-disciplined decision.</div></div><div class="t">2h</div></div>
+    <div class="notif"><div class="ic">🛑</div><div class="body"><div class="app">Agentic Trading</div><div class="msg"><b>Stopped out of X (−$Z).</b> F in the chat. 🇫 We live to ape another day. Diamond hands recharging…</div></div><div class="t">4h</div></div>
+    <div class="notif"><div class="ic">🏆</div><div class="body"><div class="app">Agentic Trading</div><div class="msg"><b>NEW HIGH unlocked.</b> Account's never been fatter. Achievement earned: "To The Moon 🌙." Screenshot it before it reverses.</div></div><div class="t">5h</div></div>
+  </div>
+
+  <h2><span class="n">4</span>Reactions to wins &amp; losses <span class="tag">live moments</span></h2>
+  <p class="sub">The screen (and the wall display) should <b>react</b> to what just happened — a little dopamine on green, a little comedy on red.</p>
+  <div class="grid g3">
+    <div class="tile"><div class="emoji">🎰</div><h3>Slot pull on every fill</h3><p>New trade → the hero number spins like a slot reel and lands on the new value. Ties straight into the arcade concept.</p></div>
+    <div class="tile"><div class="emoji">🎉</div><h3>Jackpot on new highs</h3><p>Coins rain, "JACKPOT" flashes gold, a quiet <em>cha-ching</em>. Reserved for genuine account highs so it stays special.</p></div>
+    <div class="tile"><div class="emoji">🥲</div><h3>Cope Meter on red days</h3><p>A meter that fills the redder it gets, captioned with escalating denial. Pure comedy, zero panic.</p></div>
+    <div class="tile"><div class="emoji">💎</div><h3>Diamond Hands Streak</h3><p>Consecutive days held without panic-selling. Break it and the counter shatters (with sound).</p></div>
+    <div class="tile"><div class="emoji">🍗</div><h3>Tendies Counter</h3><p>Total realized gains shown as "tendies earned." A running scoreboard of the machine's greatest hits.</p></div>
+    <div class="tile"><div class="emoji">🎺</div><h3>Airhorn / Sad Trombone</h3><p>Opt-in SFX: airhorn on a big green day, sad trombone on a stop, reel-clicks on a spin. Muted by default.</p></div>
+  </div>
+
+  <h2><span class="n">5</span>Achievements &amp; badges <span class="tag">meta-game</span></h2>
+  <p class="sub">Unlockable badges computed from the real trade history — turns a month of trading into a high-score run you actually want to check.</p>
+  <div class="badges">
+    <span class="badge"><span class="e">🩸</span> First Blood <small>· first live trade</small></span>
+    <span class="badge"><span class="e">💎</span> Diamond Hands <small>· held through a −10% dip</small></span>
+    <span class="badge"><span class="e">🌙</span> To The Moon <small>· new account high</small></span>
+    <span class="badge"><span class="e">🧲</span> Regime Whisperer <small>· dodged a −5% day in cash</small></span>
+    <span class="badge"><span class="e">🎰</span> Full Send <small>· 100% deployed</small></span>
+    <span class="badge"><span class="e">🧺</span> Bagholder <small>· a position down &gt;15% (worn with pride)</small></span>
+    <span class="badge"><span class="e">🔁</span> Comeback Kid <small>· green week after a red one</small></span>
+    <span class="badge"><span class="e">🐂</span> Both Directions <small>· made money long AND short</small></span>
+  </div>
+
+  <h2><span class="n">6</span>Signature modals &amp; mechanics <span class="tag">the entertaining bits</span></h2>
+  <div class="grid g2">
+    <div class="card"><div class="when">The Daily Wrap</div>
+      <div class="say gold">📓 <b>Closing bell.</b> The machine turned $1,001 into $1,012 today. That's +1.1% — or, in ape terms, <b>1.1 bananas.</b> 🍌 Verdict: we cooked. Slightly. See you at the open.</div>
+      <p class="tile" style="margin-top:10px;background:none;border:none;padding:0;font-size:13px;color:var(--muted)">An end-of-day card / notification — a WSB-style recap with the honest number baked in. Auto-generated from the day's P&amp;L.</p>
+    </div>
+    <div class="card"><div class="when">The "How is that possible?" jackpot</div>
+      <div class="say">Your project's north star line, but as a slot mechanic: on a milestone, the reels spell out a stretch target ($2K → $5K → 🍌🍌🍌) and the machine dares itself to get there.</div>
+    </div>
+    <div class="card"><div class="when">Degeneracy / Risk-o-meter</div>
+      <div class="say win">A live gauge of how spicy the current book is — from "index fund coward" to "full ape." Right now: <b>🌶️🌶️🌶️ leveraged &amp; loving it.</b></div>
+    </div>
+    <div class="card"><div class="when">Roast Mode (on demand)</div>
+      <div class="say loss">Tap the account number and the machine roasts your worst position: "SOFI is up 0.1%, truly the Toyota Camry of this portfolio. Reliable. Boring. Beige."</div>
+    </div>
+  </div>
+
+  <h2><span class="n">7</span>How it plugs in <span class="tag">implementation</span></h2>
+  <p class="sub">The good news: almost all of this is a copy + front-end layer on data we already produce. Minimal moving parts.</p>
+  <div class="grid g2">
+    <div class="tile"><div class="emoji">✍️</div><h3>Dual-voice pulse</h3><p>The engine already writes a plain-English read. It writes a second <code>hype</code> string per event; the UI toggles Serious ⇄ Degen. Honest read is always one tap away.</p></div>
+    <div class="tile"><div class="emoji">🏷️</div><h3>Richer trade data</h3><p>Feed items get explicit <code>side</code>, <code>status</code>, and a <code>reaction</code> tag (win/loss/stop/high) so the UI can style + animate without guessing.</p></div>
+    <div class="tile"><div class="emoji">🏆</div><h3>Streaks &amp; badges</h3><p>Computed from the trade history + equity_history we already store. No new data source — just logic.</p></div>
+    <div class="tile"><div class="emoji">🎬</div><h3>Reactions &amp; SFX</h3><p>Pure front-end, shares the arcade/wall engine. Slot spin, jackpot, cope meter, opt-in sound. Off by default; a "Degen mode" switch turns the whole layer on.</p></div>
+  </div>
+
+  <div class="callout">
+    <b>The one guardrail.</b> This is a comedy skin on a disciplined, real-money system — not a nudge to gamble. Every degen line has the sober engine read one tap beneath it, the hard stop on every position is real, and "not financial advice" stays a joke because it's true. The fun is in <em>narrating</em> the risk you already chose to take — never in taking more of it.
+  </div>
+
+  <div class="foot">
+    Concept deck · pick the bits you love and I'll wire them in · the honest machine keeps running underneath<br>
+    Not financial advice. Obviously. (That's the whole joke.)
+  </div>
+
+</div>
+</body>
+</html>
