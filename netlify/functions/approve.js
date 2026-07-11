@@ -32,31 +32,6 @@ exports.handler = async (event) => {
   const REPO = process.env.GH_REPO || 'neongatsby/agentic-trading-site';
   const BRANCH = process.env.GH_BRANCH || 'main';
 
-  // Read-only self-diagnostic (no secret revealed): reports whether the token can WRITE the repo.
-  // GET /.netlify/functions/approve?diag=1
-  if (event.httpMethod === 'GET') {
-    if (!TOKEN) return J(200, { diag: true, pinPresent: !!PIN, tokenPresent: false });
-    const which = (event.queryStringParameters && event.queryStringParameters.diag) || '1';
-    try {
-      if (which === 'commit') {
-        // actually exercise the write path with a throwaway file → surfaces GitHub's real error
-        const p = `site/approvals/_diagtest-${Date.now()}.json`;
-        const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${p}`, {
-          method: 'PUT',
-          headers: { authorization: `Bearer ${TOKEN}`, accept: 'application/vnd.github+json', 'user-agent': 'agentic-trading-approve', 'content-type': 'application/json' },
-          body: JSON.stringify({ message: 'diag write test', content: Buffer.from('{"diag":true}').toString('base64'), branch: BRANCH }),
-        });
-        const txt = await r.text().catch(() => '');
-        return J(200, { diag: 'commit', putStatus: r.status, ok: r.ok, detail: txt.slice(0, 300) });
-      }
-      const g = await fetch(`https://api.github.com/repos/${REPO}`, {
-        headers: { authorization: `Bearer ${TOKEN}`, accept: 'application/vnd.github+json', 'user-agent': 'diag' },
-      });
-      let perms = null; try { perms = g.ok ? (await g.json()).permissions : null; } catch {}
-      return J(200, { diag: true, pinPresent: !!PIN, tokenPresent: true, repo: REPO, repoStatus: g.status, canWrite: !!(perms && perms.push) , permissions: perms });
-    } catch (e) { return J(200, { diag: true, tokenPresent: true, error: String(e).slice(0, 140) }); }
-  }
-
   if (event.httpMethod !== 'POST') return J(405, { error: 'POST only' });
   if (!PIN || !TOKEN)
     return J(503, { error: 'approval endpoint not configured', need: ['APPROVE_PIN', 'GH_TOKEN'] });
