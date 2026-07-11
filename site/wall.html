@@ -297,8 +297,94 @@
     .rc-body { -webkit-line-clamp:5; }
   }
   @media (prefers-reduced-motion:reduce) {
-    #updated .dot, .spin, body::before, #ticker.run #tickerTrack, #pendingCard .pc-pulse { animation:none; }
+    #updated .dot, .spin, body::before, #ticker.run #tickerTrack, #pendingCard .pc-pulse, #degenJackpot { animation:none; }
   }
+
+  /* ===================================================================
+     --- DEGEN LAYER ---  (entertainment skin; copy/UI ONLY — never trades)
+     A WallStreetBets-voice skin gated behind the Serious<->Degen toggle.
+     Everything below is cosmetic and self-contained. In Serious mode the
+     body has no `.degen` class, so `.degen-only` elements are fully hidden
+     and the wall looks exactly as it did before. Palette = house colors.
+     =================================================================== */
+  /* the gate: nothing degen shows unless <body class="degen"> */
+  body:not(.degen) .degen-only { display:none !important; }
+
+  /* voice toggle — segmented pill, visible in BOTH modes (top-right) */
+  #voiceToggle {
+    display:inline-flex; align-items:center; gap:3px; cursor:pointer;
+    font-family:var(--sans); font-size:12px; font-weight:800; letter-spacing:.01em;
+    padding:3px; border-radius:999px; color:#aab0c5;
+    background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10);
+    backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    transition:border-color .2s ease;
+  }
+  #voiceToggle:hover { border-color:rgba(125,211,252,.35); }
+  #voiceToggle .vt-opt {
+    padding:5px 11px; border-radius:999px; line-height:1; white-space:nowrap;
+    color:#8188a0; transition:color .18s ease, background .18s ease, box-shadow .18s ease;
+  }
+  body.degen #voiceToggle .vt-opt[data-v="degen"] {
+    color:#1a1204; background:linear-gradient(135deg,#fcd34d,#f0b429);
+    box-shadow:0 2px 10px rgba(252,211,77,.30);
+  }
+  body:not(.degen) #voiceToggle .vt-opt[data-v="serious"] {
+    color:#eaf0ff; background:linear-gradient(135deg,rgba(125,211,252,.92),rgba(167,139,250,.85));
+    box-shadow:0 2px 10px rgba(125,211,252,.24);
+  }
+
+  /* header badge strip: 💎 streak + 🍗 tendies (Degen only) */
+  #degenBadges { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .degen-badge {
+    display:inline-flex; align-items:center; gap:6px; line-height:1;
+    font-family:var(--sans); font-size:12px; font-weight:800; letter-spacing:.01em;
+    font-variant-numeric:tabular-nums; padding:5px 11px; border-radius:999px;
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10); color:#dfe4f2;
+  }
+  #degenStreak { color:#cdc4ff; border-color:rgba(167,139,250,.35); background:rgba(167,139,250,.10); }
+  #degenTendies { color:#bff0d6; border-color:rgba(110,231,183,.35); background:rgba(110,231,183,.10); }
+
+  /* NEW HIGH jackpot (Degen only) — gold pulse near the day-change */
+  #degenJackpot {
+    display:inline-flex; align-items:center; gap:6px; align-self:center; line-height:1;
+    font-family:var(--sans); font-size:12px; font-weight:900; letter-spacing:.07em; text-transform:uppercase;
+    padding:5px 12px; border-radius:999px; color:#1a1204;
+    background:linear-gradient(135deg,#fde68a,#fcd34d 55%,#f0b429);
+    animation:degenJackpot 1.6s ease-in-out infinite;
+  }
+  @keyframes degenJackpot {
+    0%,100% { box-shadow:0 0 10px rgba(252,211,77,.35); transform:translateY(0); }
+    50%     { box-shadow:0 0 22px rgba(252,211,77,.75), 0 0 40px rgba(252,211,77,.32); transform:translateY(-1px); }
+  }
+  body.wall-hidden #degenJackpot { animation-play-state:paused; }
+
+  /* Cope Meter (Degen only) — small, red days only */
+  #degenCope { margin-top:10px; max-width:280px; }
+  .cope-cap {
+    font-family:var(--sans); font-size:11px; font-weight:800; letter-spacing:.05em;
+    color:var(--red); margin-bottom:5px; display:flex; align-items:center; gap:7px;
+  }
+  .cope-track {
+    height:7px; border-radius:999px; overflow:hidden;
+    background:rgba(252,165,165,0.12); border:1px solid rgba(252,165,165,0.20);
+  }
+  .cope-fill {
+    height:100%; width:0%; border-radius:999px;
+    background:linear-gradient(90deg,#fca5a5,#f27373);
+    box-shadow:0 0 12px rgba(252,165,165,.45); transition:width .5s ease;
+  }
+
+  /* Daily Wrap closing-bell label (Degen only) — sits on the thinking crawl */
+  #degenBell {
+    position:absolute; right:14px; top:50%; transform:translateY(-50%); z-index:4;
+    display:inline-flex; align-items:center; gap:6px; line-height:1;
+    font-family:var(--sans); font-size:10.5px; font-weight:800; letter-spacing:.10em; text-transform:uppercase;
+    padding:5px 11px; border-radius:999px; color:#1a1204;
+    background:linear-gradient(135deg,#fcd34d,#f0b429); box-shadow:0 2px 10px rgba(252,211,77,.28);
+  }
+
+  /* per-trade reaction accent (Degen only, via .degen-only gate) */
+  .trade-reax { font-size:14px; line-height:1; }
 </style>
 </head>
 <body>
@@ -311,8 +397,18 @@
         <div id="clock" class="tnum">--:--:--</div>
         <div id="date">—</div>
         <div id="statuschip"><span class="sk">Session</span><span class="st" id="statusText">connecting…</span></div>
+        <!-- --- DEGEN LAYER: 💎 hold-streak + 🍗 tendies badges (Degen only) --- -->
+        <div id="degenBadges" class="degen-only" style="display:none">
+          <span id="degenStreak" class="degen-badge" style="display:none"></span>
+          <span id="degenTendies" class="degen-badge" style="display:none"></span>
+        </div>
       </div>
       <div id="topright">
+        <!-- --- DEGEN LAYER: Serious<->Degen voice toggle (shown in both modes) --- -->
+        <button id="voiceToggle" type="button" aria-label="Toggle voice">
+          <span class="vt-opt" data-v="serious">🧠 Serious</span>
+          <span class="vt-opt" data-v="degen">🚀 Degen</span>
+        </button>
         <a id="back" href="./" aria-label="Back to dashboard">← dashboard</a>
         <div id="updated"><span class="dot"></span><span class="lv" id="updatedLive" style="display:none">Live</span><span id="updatedText">connecting…</span></div>
       </div>
@@ -325,6 +421,13 @@
       <div id="heroChange">
         <span id="dayChange">$0.00</span>
         <span id="dayChangePct">0.00%</span>
+        <!-- --- DEGEN LAYER: 🎰 NEW HIGH jackpot flash (Degen only, at/above prior peak) --- -->
+        <span id="degenJackpot" class="degen-only" style="display:none">🎰 New High</span>
+      </div>
+      <!-- --- DEGEN LAYER: Cope Meter (Degen only, red days) --- -->
+      <div id="degenCope" class="degen-only" style="display:none">
+        <div id="degenCopeCap" class="cope-cap">cope</div>
+        <div class="cope-track"><div id="degenCopeFill" class="cope-fill"></div></div>
       </div>
       <div id="heroSince"></div>
       <div id="asOf">connecting…</div>
@@ -352,6 +455,8 @@
     <section id="tickerSection">
       <div id="tickerTag">Thinking</div>
       <div id="ticker"><div id="tickerTrack"></div></div>
+      <!-- --- DEGEN LAYER: 🔔 Daily Wrap / Closing bell label (Degen only, market closed) --- -->
+      <div id="degenBell" class="degen-only" style="display:none">🔔 Closing bell</div>
     </section>
 
     <section id="pendingCard">
@@ -511,6 +616,7 @@
       renderTrades(d.feed);
       renderPending(d.pending_tickets);
       renderResearch(d);
+      renderDegen(d); // --- DEGEN LAYER: compute mechanics (gated/hidden in Serious) ---
       renderChart(currentRange);
 
       // hero number
@@ -584,7 +690,13 @@
     // =====================================================================
     function renderTicker(pulse) {
       if (!Array.isArray(pulse) || !pulse.length) return;
-      var items = pulse.slice(0, 12).map(function (p) { return plain(p.text); }).filter(Boolean);
+      // --- DEGEN LAYER hook: in Degen voice use p.hype (WSB version); fall back
+      // to p.text when hype is absent. Serious voice always uses p.text. ---
+      var degen = (typeof isDegen === "function") && isDegen();
+      var items = pulse.slice(0, 12).map(function (p) {
+        var t = (degen && p && p.hype != null && String(p.hype).trim()) ? p.hype : (p && p.text);
+        return plain(t);
+      }).filter(Boolean);
       if (!items.length) return;
       var one = items.map(function (t) { return '<span class="tk">' + esc(t) + '<span class="dia">◆</span></span>'; }).join("");
       elTickerTrack.innerHTML = one + one; // duplicate for a seamless -50% loop
@@ -673,6 +785,10 @@
         var flag = "";
         if (status === "failed") flag = '<span class="trade-flag failed">failed</span>';
         else if (status === "cancelled") flag = '<span class="trade-flag cancelled">cancelled</span>';
+        // --- DEGEN LAYER: reaction accent from explicit tag; empty (nothing) when
+        // absent, and hidden entirely in Serious mode via the .degen-only gate. ---
+        var reax = (typeof reactionAccent === "function") ? reactionAccent(t) : "";
+        var reaxHtml = reax ? '<span class="trade-reax degen-only" aria-hidden="true">' + reax + '</span>' : '';
         return '' +
           '<div class="trade">' +
             '<div class="trade-t">' + esc(timeStr(t.ts)) + '</div>' +
@@ -680,7 +796,7 @@
               '<div class="trade-h">' +
                 '<span class="trade-sym">' + esc(t.symbol || "—") + '</span>' +
                 '<span class="' + pillCls + '">' + (side === "sell" ? "SELL" : "BUY") + statusMark(status) + '</span>' +
-                flag +
+                flag + reaxHtml +
               '</div>' +
               '<div class="trade-txt">' + rich(t.text || "") + '</div>' +
             '</div>' +
@@ -756,6 +872,150 @@
     //  TIME-RANGE SERIES DERIVATION   (1H · 1D · 1W · 1M · 6M · 1Y)
     // =====================================================================
     var DAY = 24 * 3600 * 1000;
+
+    // =====================================================================
+    //  --- DEGEN LAYER ---
+    //  Entertainment skin ONLY. Pure copy/UI computed client-side from data
+    //  that already exists (+ optional new fields used WHEN PRESENT). It never
+    //  implies or changes any trade, order, size, or risk. Gated behind the
+    //  Serious<->Degen voice toggle; Serious mode = the original wall untouched.
+    //  Self-contained + class-toggle driven so it ports cleanly onto a redesign.
+    // =====================================================================
+    var VOICE_KEY = "wall-voice";
+    var elVoiceToggle, elDegenBadges, elDegenJackpot, elDegenCope, elDegenCopeFill,
+        elDegenCopeCap, elDegenStreak, elDegenTendies, elDegenBell;
+
+    function degenGrabRefs() {
+      elVoiceToggle  = $("voiceToggle");
+      elDegenBadges  = $("degenBadges");
+      elDegenJackpot = $("degenJackpot");
+      elDegenCope    = $("degenCope");
+      elDegenCopeFill= $("degenCopeFill");
+      elDegenCopeCap = $("degenCopeCap");
+      elDegenStreak  = $("degenStreak");
+      elDegenTendies = $("degenTendies");
+      elDegenBell    = $("degenBell");
+    }
+
+    // voice: persisted choice, DEFAULT Degen (Serious is one tap away)
+    function currentVoice() {
+      try { var v = window.localStorage && localStorage.getItem(VOICE_KEY); if (v === "serious" || v === "degen") return v; } catch (e) {}
+      return "degen";
+    }
+    function isDegen() { return currentVoice() === "degen"; }
+
+    function applyVoice() {
+      var deg = isDegen();
+      document.body.classList.toggle("degen", deg);
+      if (elVoiceToggle) elVoiceToggle.setAttribute("aria-label",
+        deg ? "Voice: Degen — tap for Serious" : "Voice: Serious — tap for Degen");
+      // the thinking crawl swaps voice (hype vs text); re-render if we have data
+      if (state.data && state.data.pulse) { try { renderTicker(state.data.pulse); } catch (e) {} }
+    }
+    function setVoice(v) {
+      try { if (window.localStorage) localStorage.setItem(VOICE_KEY, v); } catch (e) {}
+      applyVoice();
+    }
+    function wireVoiceToggle() {
+      if (!elVoiceToggle) return;
+      elVoiceToggle.addEventListener("click", function () { setVoice(isDegen() ? "serious" : "degen"); });
+    }
+
+    // per-trade reaction accent from the explicit tag (Degen-only, gated in CSS).
+    // Empty string when the field is absent → nothing extra renders (clean fallback).
+    function reactionAccent(o) {
+      var r = String((o && o.reaction) || "").toLowerCase();
+      return ({ win:"🚀", loss:"🩸", stop:"🛑", newhigh:"🏆", hold:"💎", fomo:"👀" })[r] || "";
+    }
+
+    // highest equity we can see across every series (for an HONEST new-high test)
+    function degenEquityPeak(d) {
+      var peak = -Infinity, i;
+      var eh = (d && d.equity_history) || {};
+      ["1D", "1W", "1M", "1Y"].forEach(function (k) {
+        var a = eh[k];
+        if (Array.isArray(a)) for (i = 0; i < a.length; i++) {
+          var p = a[i]; if (Array.isArray(p) && isFinite(p[1]) && p[1] > peak) peak = p[1];
+        }
+      });
+      var ia = d && d.live && d.live.intraday;
+      if (Array.isArray(ia)) for (i = 0; i < ia.length; i++) { var q = ia[i]; if (q && isFinite(q.v) && q.v > peak) peak = q.v; }
+      var ec = d && d.live && d.live.equity_curve;
+      if (Array.isArray(ec)) for (i = 0; i < ec.length; i++) { var v = Number(ec[i].value); if (isFinite(v) && v > peak) peak = v; }
+      return peak;
+    }
+    function fmtTendies(n) {
+      var abs = Math.abs(n);
+      if (abs >= 1000000) return "$" + (n / 1000000).toFixed(2).replace(/\.?0+$/, "") + "M";
+      if (abs >= 10000)   return "$" + (n / 1000).toFixed(1).replace(/\.0$/, "") + "k";
+      return fmtCompact(n);
+    }
+
+    // Compute + set every mechanic. Each degrades to display:none when its data
+    // isn't there; Serious mode hides them ALL via the `.degen-only` CSS gate.
+    function renderDegen(d) {
+      if (!d || !d.live) return;
+      var live = d.live;
+
+      // 🎰 NEW HIGH jackpot — only when genuinely at/above the prior peak
+      if (elDegenJackpot) {
+        var eq = Number(live.equity), peak = degenEquityPeak(d);
+        var atHigh = isFinite(eq) && isFinite(peak) && peak > -Infinity && eq >= peak - 0.005;
+        elDegenJackpot.style.display = atHigh ? "" : "none";
+      }
+
+      // 😤 Cope Meter — red days only; fills redder the worse the day
+      if (elDegenCope) {
+        var dp = Number(live.day_pnl) || 0;
+        if (dp < -0.0001) {
+          var eqc = Number(live.equity);
+          var prev = isFinite(eqc) ? eqc - dp : null;
+          var pct = (prev && prev !== 0) ? Math.abs(dp / prev) * 100 : Math.abs(dp);
+          var fill = Math.max(12, Math.min(100, (pct / 3) * 100));
+          var cap = pct < 0.5 ? "😤 cope: mild" : pct < 1.5 ? "😤 cope: elevated" : pct < 3 ? "🫠 cope: heavy" : "💀 cope: maximum";
+          if (elDegenCopeFill) elDegenCopeFill.style.width = fill.toFixed(0) + "%";
+          if (elDegenCopeCap) elDegenCopeCap.textContent = cap;
+          elDegenCope.style.display = "";
+        } else {
+          elDegenCope.style.display = "none";
+        }
+      }
+
+      // 💎 Diamond Hands streak — consecutive days with no sell/exit (approx)
+      var streakShown = false;
+      if (elDegenStreak) {
+        var feed = d.feed, trades = Array.isArray(feed) ? feed.filter(function (f) { return f && f.type === "trade"; }) : [];
+        if (trades.length) {
+          var lastExit = null, earliest = null;
+          trades.forEach(function (t) {
+            var ts = Date.parse(t.ts); if (!isFinite(ts)) return;
+            if (earliest === null || ts < earliest) earliest = ts;
+            if (tradeSide(t) === "sell" && (lastExit === null || ts > lastExit)) lastExit = ts;
+          });
+          var ref = lastExit !== null ? lastExit : earliest;
+          var nowMs = Date.parse(d.generated_at) || Date.now();
+          var days = ref !== null ? Math.floor((nowMs - ref) / DAY) : -1;
+          if (days >= 1) {
+            elDegenStreak.textContent = "💎 " + days + "-day hold streak";
+            elDegenStreak.style.display = ""; streakShown = true;
+          } else { elDegenStreak.style.display = "none"; }
+        } else { elDegenStreak.style.display = "none"; }
+      }
+
+      // 🍗 Tendies — lifetime green only
+      var tendiesShown = false;
+      if (elDegenTendies) {
+        var tp = Number(live.total_pnl);
+        if (isFinite(tp) && tp > 0) {
+          elDegenTendies.textContent = "🍗 " + fmtTendies(tp);
+          elDegenTendies.style.display = ""; tendiesShown = true;
+        } else { elDegenTendies.style.display = "none"; }
+      }
+      if (elDegenBadges) elDegenBadges.style.display = (streakShown || tendiesShown) ? "" : "none";
+
+      // 🔔 Daily Wrap — closing-bell label on the thinking crawl when closed
+      if (elDegenBell) elDegenBell.style.display = state.marketClosed ? "" : "none";
+    }
 
     function ehSeries(d, key) {
       var eh = d.equity_history || {};
@@ -1626,6 +1886,7 @@
     }
 
     document.addEventListener("visibilitychange", function () {
+      document.body.classList.toggle("wall-hidden", document.hidden); // pause degen CSS anims
       if (document.hidden) {
         running = false;
         if (elTicker) elTicker.classList.remove("run");
@@ -1667,6 +1928,9 @@
       var b = document.querySelector('.rangeBtn[data-range="1D"]');
       if (b) b.classList.add("active");
     })();
+
+    // --- DEGEN LAYER: grab refs, wire the toggle, apply the saved voice (default Degen) ---
+    try { degenGrabRefs(); wireVoiceToggle(); applyVoice(); } catch (eDeg) { console.warn("[wall] degen layer init:", eDeg && eDeg.message); }
 
     requestAnimationFrame(frame);
     poll();
