@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>New Site — Audit & UX Opportunities</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+<style>
+  :root{
+    --bg:#07090f;--cyan:#7dd3fc;--purple:#a78bfa;--mint:#6ee7b7;--red:#fca5a5;--gold:#fcd34d;
+    --text:#e8eaf2;--muted:#9aa0b5;--dim:#6b7188;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:var(--sans);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;
+    background:radial-gradient(ellipse 70% 55% at 12% -8%,#1a2340 0,transparent 55%),radial-gradient(ellipse 55% 45% at 92% 4%,#2a1a3d 0,transparent 52%),var(--bg);
+    min-height:100vh;padding:40px clamp(16px,5vw,56px) 100px;}
+  .wrap{max-width:1000px;margin:0 auto;}
+  .kicker{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--purple);}
+  h1{font-size:clamp(28px,5.5vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1.06;margin-top:10px;}
+  h1 .g{background:linear-gradient(100deg,var(--cyan),var(--purple) 55%,var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .lede{color:var(--muted);font-size:clamp(15px,2vw,17px);max-width:74ch;margin-top:14px;}
+  .lede b{color:var(--text);}
+  .note{display:inline-block;margin-top:14px;font-size:12.5px;font-weight:700;color:var(--gold);background:rgba(252,211,77,.08);border:1px solid rgba(252,211,77,.28);border-radius:999px;padding:6px 14px;}
+  h2{font-size:clamp(19px,3.2vw,26px);font-weight:800;letter-spacing:-.01em;margin:52px 0 6px;display:flex;align-items:center;gap:12px;}
+  h2 .n{font-size:13px;font-weight:800;color:#07090f;background:linear-gradient(135deg,var(--cyan),var(--purple));width:28px;height:28px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;flex:none;}
+  .sub{color:var(--muted);font-size:14.5px;margin-bottom:20px;max-width:76ch;}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px;}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top;}
+  th{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);}
+  td .y{color:var(--mint);font-weight:700;} td .n{color:var(--red);font-weight:700;} td .m{color:var(--gold);font-weight:700;}
+  td small{color:var(--dim);}
+  .card{background:linear-gradient(150deg,rgba(255,255,255,.05),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.09);border-radius:15px;padding:16px 18px;margin-top:12px;}
+  .win{display:flex;gap:11px;align-items:flex-start;padding:9px 0;font-size:14.5px;}
+  .win .e{flex:none;font-size:17px;line-height:1.4;}
+  .win b{color:#fff;}
+  .lost{display:flex;gap:13px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+  .pri{flex:none;font-size:10.5px;font-weight:800;letter-spacing:.05em;padding:4px 9px;border-radius:6px;margin-top:2px;white-space:nowrap;}
+  .p-crit{background:rgba(252,165,165,.16);color:#fca5a5;} .p-high{background:rgba(252,211,77,.14);color:#fcd34d;}
+  .p-med{background:rgba(125,211,252,.14);color:#7dd3fc;} .p-low{background:rgba(154,160,181,.14);color:#c4c9db;}
+  .lost .b b{color:#fff;} .lost .b{font-size:14.5px;color:var(--muted);} .lost .b span{color:var(--text);font-weight:600;}
+  .rec{display:flex;gap:13px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+  .rec .b{font-size:14.5px;color:var(--muted);} .rec .b b{color:#fff;display:block;margin-bottom:2px;font-size:15px;}
+  .foot{margin-top:56px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);color:var(--dim);font-size:12.5px;text-align:center;line-height:1.7;}
+  .flag{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;background:rgba(110,231,183,.14);color:var(--mint);margin-left:6px;vertical-align:middle;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Live site · audit</div>
+  <h1>New Site — <span class="g">Functionality Audit</span> &amp; UX Opportunities</h1>
+  <p class="lede">The 3-skin slot design is ported and live, and it looks fantastic. This is an honest pass on <b>what works</b>, <b>what only looks like a button</b>, whether the <b>mouse/depth interactivity</b> responds, and — the big one — <b>what the simplification traded away</b> versus the old dashboard, so we can decide what depth to earn back.</p>
+  <div class="note">No changes made to the live site — findings only, per your ask.</div>
+
+  <h2><span class="n">1</span>What's working (verified on the live site)</h2>
+  <p class="sub">I clicked and hovered these on the real deployed page.</p>
+  <div class="win"><span class="e">✅</span><div><b>Faithful port of all three skins</b> — Glass / Neon / Gold match the handoff's layout, palettes, and the real extruded <b>3D chrome hero</b> renders (bright and crisp on Glass; the chrome equity ridge renders on Neon).</div></div>
+  <div class="win"><span class="e">✅</span><div><b>Skin toggle works</b> — switched Glass ⇄ Neon ⇄ Gold; only one skin's WebGL is live at a time (context budget respected).</div></div>
+  <div class="win"><span class="e">✅</span><div><b>Range buttons work</b> — clicking 1W re-drew the chart to a Mon–Fri week with real equity history and matching axis labels.</div></div>
+  <div class="win"><span class="e">✅</span><div><b>Chart hover works</b> — a value tooltip ("$1000.99") + vertical crosshair track the cursor.</div></div>
+  <div class="win"><span class="e">✅</span><div><b>Depth interactivity responds</b> — the hero light-sweep follows the pointer, Neon's glass cards have the tilt-highlight, and the ribbon parallaxes into depth. All engine-driven and live.</div></div>
+  <div class="win"><span class="e">✅</span><div><b>Live data is wired</b> — real equity, positions (with company names), trades, engine notes, a dynamically-computed "TOP HOLDING · TQQQ · 76% OF BOOK", the news ticker, and a live clock/date.</div></div>
+
+  <h2><span class="n">2</span>"Is it a button?" — interactivity map</h2>
+  <p class="sub">Where an element <em>looks</em> interactive but isn't, that's a UX smell worth fixing (either make it do something, or stop it looking tappable).</p>
+  <table>
+    <tr><th>Element</th><th>Looks tappable?</th><th>Actually interactive?</th><th>Notes</th></tr>
+    <tr><td>Skin toggle</td><td>yes</td><td><span class="y">✔ yes</span></td><td>switches skin</td></tr>
+    <tr><td>Range buttons (1H–1Y)</td><td>yes</td><td><span class="y">✔ yes</span></td><td>switch chart range/data</td></tr>
+    <tr><td>Equity chart</td><td>—</td><td><span class="y">✔ hover</span></td><td>tooltip + crosshair</td></tr>
+    <tr><td>Hero number</td><td>no</td><td><span class="y">✔ mouse parallax</span></td><td>display value; not a button — correct</td></tr>
+    <tr><td>Neon glass cards</td><td>no</td><td><span class="y">✔ tilt highlight</span></td><td>liquid-glass depth — working</td></tr>
+    <tr><td>Today's-change pill</td><td><b>yes (pill shape)</b></td><td><span class="n">✘ display only</span></td><td>animates on ticks; the pill look implies a tap it doesn't have</td></tr>
+    <tr><td>Position rows</td><td><b>yes-ish (list rows)</b></td><td><span class="n">✘ static</span></td><td>old dashboard let you tap for the "why" — now inert</td></tr>
+    <tr><td>Trade rows</td><td><b>yes-ish</b></td><td><span class="n">✘ static</span></td><td>same — the reasoning behind each trade is no longer reachable</td></tr>
+    <tr><td>Top-holding card</td><td>no</td><td><span class="n">✘ static</span></td><td>could expand to full thesis</td></tr>
+    <tr><td>News ticker</td><td>no</td><td><span class="n">✘ auto-scroll</span></td><td>fine as ambient</td></tr>
+  </table>
+  <div class="card">Two honest false-affordances: the <b>change-pill</b> reads like a button, and the <b>position/trade rows</b> look like they should expand. Neither does anything on click today.</div>
+
+  <h2><span class="n">3</span>What the simplification traded away</h2>
+  <p class="sub">The old dashboard was a deep <em>tool</em>; the new one is a beautiful <em>glance</em>. That's a good trade for a wall display — but here's the depth that got dropped, so we choose what to re-earn.</p>
+  <div class="lost"><span class="pri p-crit">CRITICAL</span><div class="b"><span>In-app Approve / Pre-arm / Skip</span> — the real-money control we just got working is gone from the display. (Backed up at <b>/legacy-dashboard.html</b>; Telegram still works.)</div></div>
+  <div class="lost"><span class="pri p-high">HIGH</span><div class="b"><span>Tap-a-trade / position for the "why"</span> — the engine's reasoning per trade/holding is no longer reachable. It was a signature feature.</div></div>
+  <div class="lost"><span class="pri p-high">HIGH</span><div class="b"><span>"How it works" explainer + (i) icon</span> — a friend glancing at the wall has no way to learn what they're seeing.</div></div>
+  <div class="lost"><span class="pri p-med">MED</span><div class="b"><span>Track Record scorecard</span> — return, drawdown, and alpha vs buy-and-hold TQQQ (the honest scoreboard).</div></div>
+  <div class="lost"><span class="pri p-med">MED</span><div class="b"><span>Serious ⇄ Casual voice toggle</span> — the two-voice engine-notes we just built aren't surfaced here.</div></div>
+  <div class="lost"><span class="pri p-med">MED</span><div class="b"><span>Paper-account view</span> — watching the always-on autonomous testbed rip.</div></div>
+  <div class="lost"><span class="pri p-low">LOW</span><div class="b"><span>Catalyst-orbits map &amp; full coverage intel</span>, and the "how is that possible?" creed — nice-to-haves.</div></div>
+
+  <h2><span class="n">4</span>Recommendations — prioritized</h2>
+  <div class="rec"><span class="pri p-crit">CRITICAL</span><div class="b"><b>Fold approvals into the design</b>When the engine has a pending trade, slide in a per-skin approval card (Approve / Pre-arm / Skip + PIN) near the top. This is the one true functional gap — the site should let you act, not just watch.</div></div>
+  <div class="rec"><span class="pri p-high">HIGH</span><div class="b"><b>Default → Glass, and a real "vibe" toggle menu</b>Your call, captured: make Glass the landing skin, and upgrade the toggle to a labeled menu (a word + one-line vibe each: "Glass — pro terminal / Neon — arcade / Gold — high roller") instead of three bare chips.</div></div>
+  <div class="rec"><span class="pri p-high">HIGH</span><div class="b"><b>Make positions &amp; trades tappable → the "why"</b>Tap a row to expand the engine's reasoning (we already store <code>thesis</code> per position and the note text per trade). Brings the depth back without cluttering the glance.</div></div>
+  <div class="rec"><span class="pri p-high">HIGH</span><div class="b"><b>Discreet (i) → the how-it-works page</b>One small corner icon so anyone can learn what the machine is doing. The explainer page already exists.</div></div>
+  <div class="rec"><span class="pri p-med">MED</span><div class="b"><b>A small Track-Record / vs-TQQQ stat</b>One honest line ("+1.1% all-time · vs +X% buy-hold TQQQ") — keeps the scoreboard visible.</div></div>
+  <div class="rec"><span class="pri p-med">MED</span><div class="b"><b>Surface the Serious ⇄ Casual voice</b>A tiny toggle on the notes panel — the dual-voice engine copy is already flowing.</div></div>
+  <div class="rec"><span class="pri p-low">POLISH</span><div class="b"><b>Fix false-affordances + Neon hero brightness + mobile pass</b>Make the pill/rows read correctly; nudge Neon's hero lighting to match Glass's readability; confirm the 1080→viewport scale reads well on the phone.</div></div>
+
+  <h2><span class="n">5</span>Suggested sequence</h2>
+  <div class="card"><b style="color:#fff">1.</b> Approvals card &nbsp;→&nbsp; <b style="color:#fff">2.</b> Glass default + vibe menu &nbsp;→&nbsp; <b style="color:#fff">3.</b> Tap-for-why + (i) explainer &nbsp;→&nbsp; <b style="color:#fff">4.</b> Track-record stat + voice toggle &nbsp;→&nbsp; <b style="color:#fff">5.</b> Polish (affordances, Neon light, mobile).<br><br>The through-line: <b style="color:var(--text)">keep the gorgeous glance, re-earn the depth.</b> The new design is a better first impression than we've ever had — it just needs a few of the old tool's powers folded back in without losing the calm.</div>
+
+  <div class="foot">Audit only · no live changes made · tell me which recommendations to build and I'll take them one at a time</div>
+
+</div>
+</body>
+</html>
