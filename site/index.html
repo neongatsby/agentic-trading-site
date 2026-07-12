@@ -101,9 +101,10 @@
     return 'BUY';
   }
   function inferStatus(text){
-    const t = String(text || '').toLowerCase();
-    if (/\b(failed|could not|couldn.t|no shares to borrow|rejected|not filled)\b/.test(t)) return 'FAILED';
-    if (/\bcancell?ed\b/.test(t)) return 'CANCELLED';
+    // drop "good-till-canceled" / GTC (a stop-order term, NOT a cancellation of this trade) before scanning
+    const t = String(text || '').toLowerCase().replace(/good[\s-]*til+l?[\s-]*cancell?ed|\bgtc\b/g, ' ');
+    if (/\b(failed|could not|couldn.t|no shares to borrow|rejected|not filled|didn.t fill|unable to fill)\b/.test(t)) return 'FAILED';
+    if (/\border\s+cancell?ed|\bcancell?ed the|\bcancell?ed\b/.test(t)) return 'CANCELLED';
     return 'FILLED';
   }
   function inferDetail(f){
@@ -453,7 +454,7 @@
   }
 
   /* test / debug hooks */
-  window.__dash = { mount: mount, setSkin: setSkin, setRange: setRange, poll: poll, computeModel: function (){ return DATA ? computeModel() : null; }, currentSkin: function (){ return currentSkin; }, root: function (){ return currentRoot; }, setData: function (d){ DATA = d; } };
+  window.__dash = { mount: mount, setSkin: setSkin, setRange: setRange, poll: poll, computeModel: function (){ return DATA ? computeModel() : null; }, equityPoints: equityPoints, currentSkin: function (){ return currentSkin; }, currentRange: function (){ return currentRange; }, root: function (){ return currentRoot; }, setData: function (d){ DATA = d; } };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
