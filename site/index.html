@@ -1,943 +1,689 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
-<meta name="robots" content="noindex">
-<title>Agentic Trading — Adam's Experiment</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0c081c">
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Sleeve">
-<meta name="theme-color" content="#07090f">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<title>Agentic Trading — Live</title>
 <style>
-  :root { color-scheme: dark; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
-    background: radial-gradient(ellipse 80% 60% at 20% -10%, #1a2340 0%, transparent 55%),
-                radial-gradient(ellipse 60% 50% at 90% 10%, #2a1a3d 0%, transparent 50%),
-                radial-gradient(ellipse 70% 60% at 50% 110%, #0e2a24 0%, transparent 55%),
-                #07090f;
-    min-height: 100vh; color: #e8eaf2;
-    padding: calc(24px + env(safe-area-inset-top)) calc(clamp(14px,4vw,48px) + env(safe-area-inset-right)) calc(64px + env(safe-area-inset-bottom)) calc(clamp(14px,4vw,48px) + env(safe-area-inset-left));
-    -webkit-font-smoothing: antialiased; overflow-x: hidden;
-    -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none;
-    user-select: none; -webkit-user-select: none;
-    -webkit-overflow-scrolling: touch; overscroll-behavior-y: contain;
-  }
-  * { min-width: 0; }
-  .glass {
-    background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.025) 100%);
-    backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%);
-    border: 1px solid rgba(255,255,255,0.09); border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08);
-  }
-  header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 22px; }
-  .brand h1 { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; }
-  .brand h1 span { background: linear-gradient(90deg, #7dd3fc, #a78bfa 55%, #6ee7b7); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .brand p { font-size: 12px; color: #8a90a6; margin-top: 3px; }
-  .live-pill { display:inline-flex; align-items:center; gap:7px; margin-top:8px; font-size:11.5px; font-weight:700; letter-spacing:.04em; color:#6ee7b7; }
-  .live-dot { width:8px; height:8px; border-radius:50%; background:#6ee7b7; box-shadow:0 0 0 0 rgba(110,231,183,.6); animation:pulse 2s infinite; }
-  .live-pill.stale { color:#fcd34d; } .live-pill.stale .live-dot{ background:#fcd34d; animation:none; }
-  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(110,231,183,.5);} 70%{box-shadow:0 0 0 7px rgba(110,231,183,0);} 100%{box-shadow:0 0 0 0 rgba(110,231,183,0);} }
-  /* ---- Full-bleed equity hero (boundless, edge-to-edge, fades up to the top) ---- */
-  #hero {
-    position: relative; width: 100vw; margin-left: 50%; transform: translateX(-50%);
-    margin-top: calc(-24px - env(safe-area-inset-top)); margin-bottom: 20px;
-    padding: calc(20px + env(safe-area-inset-top)) clamp(14px,4vw,48px) 0;
-    background:
-      radial-gradient(120% 130% at 50% -30%, rgba(125,211,252,0.16) 0%, rgba(167,139,250,0.08) 34%, transparent 66%);
-    animation: heroIn .7s cubic-bezier(.2,.75,.3,1) both;
-  }
-  @keyframes heroIn { from{opacity:0;} to{opacity:1;} }
-  .creed { font-size:12.5px; line-height:1.55; color:#9aa0b5; font-style:italic; margin:0; padding-left:12px; border-left:2px solid rgba(125,211,252,.5); max-width:640px; }
-  .creed em { font-style:italic; font-weight:700; background:linear-gradient(90deg,#7dd3fc,#a78bfa 60%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .hero-topbar { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; }
-  .live-clock { display:flex; align-items:center; gap:8px; font-variant-numeric:tabular-nums; font-size:12.5px; color:#aab0c5; font-weight:600; letter-spacing:.01em; white-space:nowrap; }
-  .live-clock .clk-dot { width:7px; height:7px; border-radius:50%; background:#6ee7b7; box-shadow:0 0 8px rgba(110,231,183,.7); animation:clkpulse 2s ease-in-out infinite; flex:none; }
-  .live-clock .clk-time { color:#f0f2f8; font-weight:800; }
-  @keyframes clkpulse { 0%,100%{opacity:1} 50%{opacity:.32} }
-  .statusrow { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:14px; }
-  .statuschip { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:600; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); color:#c4c9db; }
-  .statuschip .sc-k { font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#7c8299; }
-  .statuschip.on { background:rgba(110,231,183,.10); border-color:rgba(110,231,183,.30); color:#e8f6ef; }
-  .statuschip.on .sc-k { color:#6ee7b7; }
-  .acct-toggle { display:flex; justify-content:flex-end; margin-bottom:0; }
-  .acct-toggle button { font:inherit; font-size:12px; font-weight:700; padding:5px 15px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03); color:#9aa0b5; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:all .2s ease; }
-  .acct-toggle button:first-child { border-radius:999px 0 0 999px; }
-  .acct-toggle button:last-child { border-radius:0 999px 999px 0; border-left:0; }
-  .acct-toggle button.active { background:linear-gradient(135deg, rgba(125,211,252,.22), rgba(167,139,250,.18)); color:#fff; border-color:rgba(125,211,252,.45); }
-  .eq-toprow { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:4px; }
-  .eq-toprow .live-pill { margin-top:0; }
-  /* title moment — the brand + creed live BELOW the chart now (Robinhood-style: only value above the chart) */
-  .title-moment { margin:2px 0 20px; }
-  .title-moment h1 { font-size:20px; font-weight:800; letter-spacing:-0.02em; margin-bottom:10px; }
-  .title-moment h1 span { background:linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .info-btn { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; border:1.5px solid #7dd3fc; color:#7dd3fc; font-style:italic; font-weight:800; font-size:12px; font-family:Georgia,'Times New Roman',serif; text-decoration:none; vertical-align:middle; margin-left:7px; transition:background .2s ease; -webkit-tap-highlight-color:transparent; }
-  .info-btn:hover { background:rgba(125,211,252,.15); }
-  .title-moment .tm-pnl { margin-top:13px; font-size:12.5px; color:#8a90a6; }
-  .title-moment .tm-pnl b { font-size:15px; font-weight:800; font-variant-numeric:tabular-nums; margin:0 6px 0 4px; }
-  /* recent trades — tappable cards, expand for the why */
-  #trades-panel .empty { padding:6px 2px; }
-  .trade-card { padding:12px 15px; border-radius:14px; background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.07); margin-bottom:9px; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:background .2s ease, border-color .2s ease, transform .12s ease; }
-  .trade-card:last-child { margin-bottom:0; }
-  .trade-card:active { transform:scale(.99); }
-  .trade-card.open { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.13); }
-  .trade-card.pending { cursor:default; border-color:rgba(252,211,77,.4); background:linear-gradient(135deg, rgba(252,211,77,.12), rgba(252,211,77,.03)); box-shadow:0 0 0 1px rgba(252,211,77,.1); }
-  .tc-top { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-  .tc-sym { font-weight:800; font-size:15px; letter-spacing:.02em; color:#eef0f7; }
-  .tc-time { margin-left:auto; font-size:11px; color:#7c8299; font-variant-numeric:tabular-nums; }
-  .tc-chip { margin-left:auto; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:#fde68a; background:rgba(252,211,77,.2); padding:4px 10px; border-radius:999px; white-space:nowrap; }
-  .trade-card .caret { margin-left:4px; color:#6a7088; font-size:11px; transition:transform .3s ease; }
-  .trade-card.open .caret { transform:rotate(180deg); }
-  .tc-why { font-size:13px; color:#aeb4c6; line-height:1.55; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; }
-  .tc-why b { color:#fff; }
-  .trade-card.open .tc-why, .trade-card.pending .tc-why { max-height:240px; opacity:1; margin-top:10px; }
-  .tc-meta { font-size:11.5px; color:#8a90a6; margin-top:7px; font-variant-numeric:tabular-nums; }
-  .pos-card { padding:12px 15px; border-radius:14px; background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.07); margin-bottom:9px; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:background .2s ease, border-color .2s ease, transform .12s ease; }
-  .pos-card:last-child { margin-bottom:0; }
-  .pos-card:active { transform:scale(.99); }
-  .pos-card.open { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.13); }
-  .pos-card .pc-top { display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
-  .pos-card .pc-qty { font-size:11.5px; color:#8a90a6; font-variant-numeric:tabular-nums; }
-  .pos-card .pc-pl { margin-left:auto; font-weight:800; font-variant-numeric:tabular-nums; font-size:14px; white-space:nowrap; }
-  .pos-card .pc-pl small { font-weight:600; font-size:11px; opacity:.85; }
-  .pos-card .caret { margin-left:2px; color:#6a7088; font-size:11px; transition:transform .3s ease; }
-  .pos-card.open .caret { transform:rotate(180deg); }
-  .pos-card.open .tc-why { max-height:200px; opacity:1; margin-top:9px; }
-  /* stop-vs-price gauge */
-  .riskbar { margin-top:11px; }
-  .rb-track { position:relative; height:8px; border-radius:5px; background:linear-gradient(90deg, rgba(252,165,165,.3), rgba(255,255,255,.07) 45%, rgba(110,231,183,.22)); }
-  .rb-stopzone { position:absolute; left:0; top:0; bottom:0; background:rgba(252,165,165,.45); border-radius:5px 0 0 5px; }
-  .rb-now { position:absolute; top:50%; width:12px; height:12px; border-radius:50%; background:#fff; box-shadow:0 0 8px rgba(255,255,255,.6); transform:translate(-50%,-50%); }
-  .rb-tick { position:absolute; top:-3px; bottom:-3px; width:2px; background:#a78bfa; transform:translateX(-50%); }
-  .rb-labels { display:flex; justify-content:space-between; gap:8px; margin-top:7px; font-size:10.5px; }
-  .rb-l.stop { color:#fca5a5; } .rb-l.now { color:#c4c9db; } .rb-l.mid { color:#c4b5fd; }
-  /* engine pulse — text-message bubbles */
-  /* Horizontal, magnetically-snapping tick ticker — newest at the left, slide right for history */
-  .pulse { display:flex; flex-direction:row; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; padding:2px 2px 14px; margin:0 -2px; scrollbar-width:none; }
-  .pulse::-webkit-scrollbar { height:0; display:none; }
-  .tick { flex:0 0 82%; max-width:82%; scroll-snap-align:start; background:rgba(125,211,252,.09); border:1px solid rgba(125,211,252,.16); border-radius:16px; padding:13px 15px; animation:rise .4s ease both; }
-  .tick.now { background:rgba(125,211,252,.16); border-color:rgba(125,211,252,.34); }
-  .tick-t { font-size:10.5px; color:#7c8299; font-variant-numeric:tabular-nums; margin-bottom:7px; display:flex; align-items:center; gap:6px; }
-  .tick-live { width:6px; height:6px; border-radius:50%; background:#6ee7b7; box-shadow:0 0 7px rgba(110,231,183,.7); animation:clkpulse 1.6s ease-in-out infinite; }
-  .tick-x { font-size:13.5px; line-height:1.5; color:#e6eaf5; }
-  .tick-x b { color:#fff; font-weight:700; }
-  @media(min-width:620px){ .tick { flex-basis:46%; max-width:46%; } }
-  /* track-record scorecard */
-  .score { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; }
-  .sc { background:rgba(255,255,255,.04); border-radius:12px; padding:12px 14px; }
-  .sc-l { font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:#8a90a6; }
-  .sc-v { font-size:20px; font-weight:800; font-variant-numeric:tabular-nums; margin-top:5px; letter-spacing:-.01em; }
-  .sc-s { font-size:11px; color:#7c8299; margin-top:3px; line-height:1.4; }
-  .hero-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-  .hero-head h1 { font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#c8cde0; }
-  .hero-head h1 span { background:linear-gradient(90deg,#7dd3fc,#a78bfa 55%,#6ee7b7); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .hero-head .live-pill { margin-top:0; }
-  .hero-eq { margin-top:16px; }
-  .eq-label { font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:#8a90a6; margin-bottom:4px; }
-  .eq-big { font-size:clamp(46px,12vw,92px); font-weight:800; letter-spacing:-0.035em; line-height:1; font-variant-numeric:tabular-nums; }
-  .eq-day { display:flex; align-items:baseline; gap:7px; margin-top:9px; font-size:15px; font-weight:700; font-variant-numeric:tabular-nums; }
-  .eq-daypct { color:#8a90a6; font-weight:600; }
-  .eq-daylbl { color:#6b7188; font-weight:500; font-size:13px; }
-  .hero-asof { font-size:11.5px; color:#7c8299; margin-top:10px; line-height:1.5; }
-  .hero-chart { position:relative; height:clamp(250px,42vh,460px); margin:10px 0 0; }
-  /* fade the chart's top edge into the page so it looks boundless, not boxed */
-  .hero-chart::before { content:""; position:absolute; inset:0 0 auto 0; height:54px; z-index:2; pointer-events:none;
-    background:linear-gradient(#07090f 2%, rgba(7,9,15,0.5) 50%, transparent); }
-  #chart-dot { position:absolute; width:11px; height:11px; border-radius:50%; transform:translate(-50%,-50%); pointer-events:none; opacity:0; z-index:3; background:#7dd3fc; }
-  #chart-dot.on { opacity:1; }
-  #chart-dot.up { background:#6ee7b7; } #chart-dot.down { background:#fca5a5; }
-  #chart-dot.on.up { animation:dotU 2s infinite; } #chart-dot.on.down { animation:dotD 2s infinite; }
-  @keyframes dotU { 0%{ box-shadow:0 0 0 0 rgba(110,231,183,.55);} 70%{ box-shadow:0 0 0 13px rgba(110,231,183,0);} 100%{ box-shadow:0 0 0 0 rgba(110,231,183,0);} }
-  @keyframes dotD { 0%{ box-shadow:0 0 0 0 rgba(252,165,165,.55);} 70%{ box-shadow:0 0 0 13px rgba(252,165,165,0);} 100%{ box-shadow:0 0 0 0 rgba(252,165,165,0);} }
-  /* ---- Trade-approval status strip ---- */
-  .approval { display:flex; align-items:center; gap:12px; padding:13px 16px; border-radius:16px; margin-bottom:16px;
-    border:1px solid rgba(255,255,255,.09); background:rgba(255,255,255,.04); animation: rise .5s ease both; }
-  .approval .ap-ic { font-size:20px; line-height:1; flex:none; }
-  .approval .ap-body { flex:1; min-width:0; }
-  .approval .ap-title { font-size:13.5px; font-weight:750; color:#eef0f7; }
-  .approval .ap-sub { font-size:12px; color:#9096ab; margin-top:2px; line-height:1.45; }
-  .approval .ap-sub b { color:#cdd2e2; font-weight:700; }
-  .approval.ap-wait { border-color:rgba(252,211,77,.4); background:linear-gradient(135deg, rgba(252,211,77,.12), rgba(252,211,77,.03)); box-shadow:0 0 0 1px rgba(252,211,77,.12), 0 6px 22px rgba(252,211,77,.08); }
-  .approval.ap-wait .ap-title { color:#fde68a; }
-  .approval.ap-wait .ap-ic { animation: pulse2 1.8s infinite; }
-  @keyframes pulse2 { 0%,100%{ transform:scale(1); opacity:1;} 50%{ transform:scale(1.12); opacity:.75;} }
-  .approval.ap-done { border-color:rgba(110,231,183,.3); }
-  .approval.ap-done .ap-ic { color:#6ee7b7; }
-  .approval .ap-chip { margin-left:auto; flex:none; font-size:10.5px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; padding:5px 11px; border-radius:999px; white-space:nowrap; }
-  .approval.ap-wait .ap-chip { background:rgba(252,211,77,.2); color:#fde68a; }
-  .approval.ap-done .ap-chip { background:rgba(110,231,183,.16); color:#6ee7b7; }
-  .approval.ap-idle .ap-chip { background:rgba(255,255,255,.07); color:#9096ab; }
-  /* ---- in-UI approval buttons (approve / pre-arm / skip, right on the pending card) ---- */
-  .tc-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:13px; }
-  .ta { font:inherit; font-size:12.5px; font-weight:750; padding:9px 14px; border-radius:11px; border:1px solid transparent; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:transform .1s ease, opacity .2s ease; }
-  .ta:active { transform:scale(.97); }
-  .ta:disabled { opacity:.5; cursor:default; }
-  .ta-approve { background:linear-gradient(135deg,#6ee7b7,#34d399); color:#04120c; }
-  .ta-arm { background:rgba(125,211,252,.14); border-color:rgba(125,211,252,.4); color:#bfe6ff; }
-  .ta-skip { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.12); color:#9aa0b5; }
-  .ta-status { font-size:12px; margin-top:9px; color:#9aa0b5; }
-  .ta-status.ta-ok { color:#6ee7b7; font-weight:650; }
-  .ta-status.ta-warn { color:#fcd34d; }
-  .ta-note { font-size:12px; color:#8a90a6; margin-top:10px; font-style:italic; }
-  .trade-card.approved { border-color:rgba(110,231,183,.35); }
-  .trade-card.skipped { opacity:.55; }
-  /* ---- entrance motion ---- */
-  #app > .stats > .stat, #app > .panel { animation: rise .55s cubic-bezier(.2,.75,.3,1) both; animation-delay: calc(var(--i,0) * .05s); }
-  @keyframes rise { from{opacity:0; transform:translateY(16px) scale(.995);} to{opacity:1; transform:none;} }
-  .value { transition: color .3s ease; }
-  .value.flash-up { animation: flashUp .9s ease; } .value.flash-down { animation: flashDown .9s ease; }
-  @keyframes flashUp { 0%{color:#6ee7b7; text-shadow:0 0 20px rgba(110,231,183,.55);} 100%{text-shadow:none;} }
-  @keyframes flashDown { 0%{color:#fca5a5; text-shadow:0 0 20px rgba(252,165,165,.55);} 100%{text-shadow:none;} }
-  /* smooth account-toggle */
-  .toggle button { transition: color .3s ease, background .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; }
-  #app { transition: opacity .25s ease; }
-  #app.switching { opacity: .35; }
-  /* ---- Allocation (mobile-first, replaces the flow chart) ---- */
-  .alloc-bar { display:flex; height:15px; border-radius:8px; overflow:hidden; margin:4px 0 18px; background:rgba(255,255,255,.05); box-shadow:inset 0 0 0 1px rgba(255,255,255,.05); }
-  .alloc-bar > span { height:100%; min-width:2px; transition:width .7s cubic-bezier(.2,.7,.3,1); }
-  .alloc-bar > span.planned { background-color:currentColor; opacity:.34; }
-  .alloc-rows { display:flex; flex-direction:column; gap:9px; }
-  .alloc-row { padding:13px 15px; border-radius:15px; background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.07); cursor:pointer; transition:background .2s ease, border-color .2s ease, transform .12s ease; -webkit-tap-highlight-color:transparent; }
-  .alloc-row:active { transform:scale(.985); }
-  .alloc-row.open { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.13); }
-  .alloc-row .r1 { display:flex; align-items:center; gap:9px; }
-  .alloc-row .swatch { width:11px; height:11px; border-radius:50%; flex:none; }
-  .alloc-row.planned .swatch { background:transparent!important; box-shadow:inset 0 0 0 2px currentColor; }
-  .alloc-row .tk { font-weight:800; letter-spacing:.02em; font-size:14.5px; color:#eef0f7; }
-  .alloc-row .chip { font-size:10px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; padding:3px 8px; border-radius:999px; white-space:nowrap; }
-  .alloc-row .amt { margin-left:auto; text-align:right; font-weight:800; font-variant-numeric:tabular-nums; font-size:15px; color:#fff; white-space:nowrap; }
-  .alloc-row .amt small { display:block; font-size:10.5px; font-weight:600; color:#8a90a6; letter-spacing:.02em; }
-  .alloc-row .nm2 { font-size:12px; color:#9096ab; margin:6px 0 0; }
-  .alloc-row .mini { height:6px; border-radius:4px; margin:9px 0 0; background:rgba(255,255,255,.06); overflow:hidden; }
-  .alloc-row .mini > i { display:block; height:100%; border-radius:4px; transition:width .7s cubic-bezier(.2,.7,.3,1); }
-  .alloc-row .why { font-size:12.5px; color:#aeb4c6; line-height:1.55; max-height:0; overflow:hidden; opacity:0; transition:max-height .38s ease, opacity .3s ease, margin .3s ease; }
-  .alloc-row .why b { color:#fff; }
-  .alloc-row .why .cta { display:inline-block; margin-top:8px; font-size:11.5px; font-weight:700; color:#7dd3fc; }
-  .alloc-row.open .why { max-height:220px; opacity:1; margin-top:11px; }
-  .alloc-row .caret { margin-left:8px; color:#6a7088; font-size:11px; transition:transform .3s ease; flex:none; }
-  .alloc-row.open .caret { transform:rotate(180deg); }
-  .chip.c-buy { background:rgba(110,231,183,.18); color:#6ee7b7; }
-  .chip.c-wait { background:rgba(252,211,77,.15); color:#fcd34d; }
-  .chip.c-hold { background:rgba(125,211,252,.16); color:#7dd3fc; }
-  .chip.c-cash { background:rgba(138,144,166,.2); color:#aab0c5; }
-  .alloc-row .nm2 .up { color:#6ee7b7; } .alloc-row .nm2 .down { color:#fca5a5; }
-  /* ---- The Map (orbital) ---- */
-  #orbit-wrap { position:relative; }
-  #orbitsvg { width:100%; height:auto; display:block; touch-action:manipulation; }
-  #orbitsvg .orbit-ring { fill:none; stroke-width:1; }
-  #orbitsvg .planet { cursor:pointer; }
-  #orbitsvg .plabel { font-family:inherit; font-weight:800; pointer-events:none; }
-  #orbitsvg .ptrig { font-family:inherit; fill:#aab0c5; pointer-events:none; }
-  #orbitsvg .sunlbl { font-family:inherit; font-weight:800; fill:#cfeaff; pointer-events:none; }
-  #orbitsvg .flow { stroke-dasharray:3 7; animation:orbflow 11s linear infinite; }
-  @keyframes orbflow { to { stroke-dashoffset:-260; } }
-  #orbitsvg .halo { animation:sunpulse 3.6s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
-  @keyframes sunpulse { 0%,100%{ opacity:.5; } 50%{ opacity:.9; } }
-  #orbitsvg .planet.sel .pcore { filter:drop-shadow(0 0 7px currentColor); }
-  .orbit-legend { display:flex; flex-wrap:wrap; gap:13px; margin-top:6px; font-size:11.5px; color:#8a90a6; }
-  .orbit-legend span { display:inline-flex; align-items:center; gap:6px; }
-  .orbit-legend i { width:11px; height:11px; border-radius:50%; display:inline-block; }
-  .orbit-legend i.hollow { background:transparent; box-shadow:inset 0 0 0 2px #fca5a5; }
-  .orbit-detail { margin-top:14px; padding:15px 17px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); font-size:13.5px; color:#c4c9db; line-height:1.55; transition:opacity .25s ease; }
-  .orbit-detail b { color:#fff; }
-  .orbit-detail .oh { display:flex; align-items:center; gap:9px; margin-bottom:7px; flex-wrap:wrap; }
-  .orbit-detail .ot { font-weight:800; font-size:16px; letter-spacing:.03em; }
-  .orbit-detail .obadge { font-size:10px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; padding:3px 9px; border-radius:999px; }
-  .orbit-detail .oamt { margin-left:auto; font-weight:800; font-variant-numeric:tabular-nums; }
-  .orbit-detail .ometa { font-size:11.5px; color:#8a90a6; margin:2px 0 8px; }
-  .orbit-detail .octa { display:inline-block; margin-top:9px; font-size:11.5px; font-weight:700; color:#7dd3fc; }
-  /* ---- Research Log timeline ---- */
-  .tl { position:relative; padding-left:24px; }
-  .tl::before { content:""; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:linear-gradient(#7dd3fc,#a78bfa,rgba(167,139,250,0)); opacity:.45; }
-  .tl-item { position:relative; margin-bottom:17px; animation: rise .5s ease both; }
-  .tl-item:last-child { margin-bottom:2px; }
-  .tl-item::before { content:""; position:absolute; left:-24px; top:3px; width:13px;height:13px;border-radius:50%; background:#0b0f1a; border:2px solid #7dd3fc; box-shadow:0 0 9px rgba(125,211,252,.5); }
-  .tl-item.k-research::before{border-color:#6ee7b7;box-shadow:0 0 9px rgba(110,231,183,.5);} .tl-item.k-pivot::before{border-color:#a78bfa;box-shadow:0 0 9px rgba(167,139,250,.5);} .tl-item.k-system::before{border-color:#fcd34d;box-shadow:0 0 9px rgba(251,191,36,.5);}
-  .tl-item .tt { font-size:11px; color:#7c8299; font-variant-numeric:tabular-nums; }
-  .tl-item .th2 { font-size:14.5px; font-weight:700; color:#e8eaf2; margin:2px 0 3px; }
-  .tl-item .td { font-size:13px; color:#aeb4c6; line-height:1.55; }
-  .alloc-row { animation:rise .5s ease both; }
-  @keyframes fadein { from{opacity:0;} to{opacity:1;} }
-  /* subtle "it ticked" highlight when a live number updates in place (YouTube/Twitter-style) */
-  @keyframes bump { 0%{ background:rgba(125,211,252,.30); } 100%{ background:transparent; } }
-  .bump { animation:bump .6s ease; border-radius:6px; padding:0 2px; margin:0 -2px; }
-  .toggle { display: flex; padding: 4px; gap: 4px; }
-  .toggle button { border: none; background: transparent; color: #9aa0b5; font: inherit; padding: 6px 15px; border-radius: 14px; cursor: pointer; transition: all .25s ease; white-space:nowrap; line-height:1.15; text-align:center; }
-  .toggle button b { display:block; font-weight:800; font-size:13px; letter-spacing:.01em; }
-  .toggle button small { display:block; font-size:9px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; opacity:.65; margin-top:1px; }
-  .toggle button.active { background: linear-gradient(135deg, rgba(125,211,252,0.22), rgba(167,139,250,0.18)); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 12px rgba(125,211,252,0.15); }
-  .toggle button.active small { opacity:.85; }
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
-  .stat { padding: 16px 18px; }
-  .stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: #8a90a6; margin-bottom: 7px; }
-  .stat .value { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-  .stat .sub { font-size: 11.5px; color: #8a90a6; margin-top: 4px; }
-  .pos { color: #6ee7b7; } .neg { color: #fca5a5; } .flat { color: #cbd0e0; }
-  .panel { padding: 20px 22px; margin-bottom: 16px; }
-  .panel h2 { font-size: 13.5px; font-weight: 650; color: #c9cede; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-  .panel h2 .dot { width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, #7dd3fc, #a78bfa); box-shadow: 0 0 8px rgba(125,211,252,0.6); }
-  .panel h2 .count { margin-left: auto; font-size: 11px; font-weight: 600; color: #7c8299; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #08090d; overflow-x: hidden; }
+  body { font-family: "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 
-  /* ---- Feed (friend-voice cards) ---- */
-  .feed { display: flex; flex-direction: column; gap: 12px; }
-  .card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-    border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 15px 17px;
-    animation: rise .4s ease both;
-  }
-  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-  .card-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 9px; }
-  .pill { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; padding: 4px 13px; border-radius: 999px; white-space: nowrap; }
-  .pill-buy { background: rgba(110,231,183,0.15); color: #6ee7b7; border: 1px solid rgba(110,231,183,0.35); }
-  .pill-sell { background: rgba(252,165,165,0.15); color: #fca5a5; border: 1px solid rgba(252,165,165,0.35); }
-  .pill-mem { background: rgba(167,139,250,0.15); color: #c4b5fd; border: 1px solid rgba(167,139,250,0.35); }
-  .pill-watch { background: rgba(125,211,252,0.13); color: #7dd3fc; border: 1px solid rgba(125,211,252,0.30); }
-  .pill-size { background: rgba(255,255,255,0.07); color: #dfe3ef; border: 1px solid rgba(255,255,255,0.12); font-variant-numeric: tabular-nums; }
-  .card-sym { font-weight: 800; font-size: 14px; letter-spacing: 0.03em; }
-  .card-time { margin-left: auto; font-size: 11px; color: #6b7188; }
-  .card-text { font-size: 13.5px; line-height: 1.62; color: #c4c9db; }
-  .card-text b { color: #e8eaf2; font-weight: 650; }
+  /* scale-to-viewport-width wrapper (design root is 1080px wide, portrait) */
+  #scaler { position: relative; width: 100%; }
+  #stage  { position: absolute; top: 0; left: 0; width: 1080px; transform-origin: top left; }
+  #skin-root { width: 1080px; }
 
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th { text-align: left; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em; color: #7c8299; font-weight: 600; padding: 5px 8px 9px; border-bottom: 1px solid rgba(255,255,255,0.07); }
-  td { padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.045); font-variant-numeric: tabular-nums; vertical-align: top; }
-  tr:last-child td { border-bottom: none; }
-  td.sym { font-weight: 700; }
-  .thesis { font-size: 12px; color: #9aa0b5; line-height: 1.45; max-width: 420px; }
-  .chart-wrap { position: relative; height: 220px; }
-  .empty { padding: 26px 10px; text-align: center; color: #7c8299; font-size: 13px; line-height: 1.6; }
-  .recap { font-size: 13.5px; line-height: 1.65; color: #b8bdd0; white-space: pre-wrap; }
-  .scroll-x { overflow-x: auto; }
-  .side-buy { color: #6ee7b7; font-weight: 600; } .side-sell { color: #fca5a5; font-weight: 600; }
-  /* ---- Coverage tiles ---- */
-  .cov-hint { font-size:12.5px; color:#8a90a6; margin:-6px 0 14px; }
-  .cov { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr)); gap:12px; }
-  .scroll-x { max-width:100%; }
-  #chart { max-width:100%; }
-  .cov a { text-decoration:none; color:inherit; display:block; padding:16px 17px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); transition:transform .15s ease, border-color .15s ease, background .15s ease; }
-  .cov a:active { transform:scale(.99); }
-  .cov a:hover { transform:translateY(-2px); border-color:rgba(125,211,252,.4); background:rgba(255,255,255,.06); }
-  .cov .top { display:flex; align-items:center; gap:9px; margin-bottom:10px; flex-wrap:wrap; row-gap:7px; }
-  .cov .cpx { white-space:nowrap; }
-  .cov .sym { font-size:22px; line-height:1; }
-  .cov .tk { font-weight:800; font-size:16px; letter-spacing:.03em; }
-  .cov .cpx { margin-left:9px; font-size:13px; font-weight:700; font-variant-numeric:tabular-nums; color:#cdd2e2; }
-  .cov .cpx .up{color:#6ee7b7;} .cov .cpx .down{color:#fca5a5;}
-  .cov .badge { margin-left:auto; font-size:10.5px; font-weight:700; padding:4px 10px; border-radius:999px; white-space:nowrap; }
-  .cov .b-buy{background:rgba(110,231,183,.16);color:#6ee7b7;border:1px solid rgba(110,231,183,.35);}
-  .cov .b-wait{background:rgba(251,191,36,.14);color:#fcd34d;border:1px solid rgba(251,191,36,.32);}
-  .cov .b-avoid{background:rgba(252,165,165,.14);color:#fca5a5;border:1px solid rgba(252,165,165,.32);}
-  .cov .b-watch{background:rgba(125,211,252,.13);color:#7dd3fc;border:1px solid rgba(125,211,252,.3);}
-  .cov .nm { font-size:12px; color:#8a90a6; margin-bottom:9px; }
-  .cov .th { font-size:13.5px; color:#c0c5d6; line-height:1.5; }
-  .cov .size { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:12px; padding-top:11px; border-top:1px solid rgba(255,255,255,.07); }
-  .cov .size .amt { font-size:14px; font-weight:750; font-variant-numeric:tabular-nums; }
-  .cov .size .amt.g{color:#6ee7b7;} .cov .size .amt.d{color:#8a90a6;}
-  .cov .size .lbl { font-size:11px; color:#7c8299; }
-  .cov .open { font-size:11px; color:#7dd3fc; }
-  .cov .spk { display:contents; }
-  .cov .spark { width:100%; height:34px; margin-top:12px; display:block; }
-  .swipe-hint { display:none; font-size:11px; color:#6b7188; text-align:center; margin-top:10px; }
-  @media(max-width:560px){
-    .stats{ grid-template-columns:1fr 1fr; }
-    header .brand h1{ font-size:18px; }
-    .toggle button{ padding:9px 14px; font-size:12.5px; }
-    /* coverage becomes a swipeable snap carousel */
-    .cov{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:12px; padding:2px 2px 6px; scrollbar-width:none; }
-    .cov::-webkit-scrollbar{ display:none; }
-    .cov a{ scroll-snap-align:center; flex:0 0 84%; }
-    .swipe-hint{ display:block; }
+  /* keyframes used by the skins */
+  @keyframes bulbPulse { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+  @keyframes dotPulse  { 0%,100% { opacity: 1; transform: scale(1) } 50% { opacity: .5; transform: scale(.8) } }
+  @keyframes tickerX   { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+  @keyframes sweepX    { 0% { transform: translateX(-130%) } 100% { transform: translateX(430%) } }
+
+  /* skin toggle — tasteful segmented control, top-right corner */
+  #skin-toggle {
+    position: fixed; top: 12px; right: 12px; z-index: 9999;
+    display: flex; gap: 2px; padding: 3px;
+    background: rgba(12,10,20,0.55); backdrop-filter: blur(14px) saturate(1.3);
+    -webkit-backdrop-filter: blur(14px) saturate(1.3);
+    border: 1px solid rgba(255,255,255,0.14); border-radius: 999px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.45);
   }
-  .footer { margin-top: 10px; font-size: 11px; color: #6b7188; text-align: center; line-height: 1.7; }
+  #skin-toggle button {
+    appearance: none; border: 0; cursor: pointer;
+    font: 600 12px/1 "Avenir Next", Avenir, -apple-system, system-ui, sans-serif;
+    letter-spacing: 0.6px; color: rgba(255,255,255,0.6);
+    padding: 7px 13px; border-radius: 999px; background: transparent;
+    transition: color .18s ease, background .18s ease;
+  }
+  #skin-toggle button:hover { color: rgba(255,255,255,0.9); }
+  #skin-toggle button[aria-pressed="true"] { color: #0c0a14; background: rgba(255,255,255,0.92); }
 </style>
 </head>
 <body>
-<div id="hero">
-  <div class="hero-topbar">
-    <div class="live-clock"><span class="clk-dot"></span><span id="clk-date">—</span><span id="clk-time" class="clk-time">—</span></div>
-    <div class="acct-toggle"><button id="btn-live" class="active" onclick="setAccount('live')">Live</button><button id="btn-paper" onclick="setAccount('paper')">Paper</button></div>
-  </div>
-  <div id="statusrow" class="statusrow"></div>
-  <div class="hero-eq">
-    <div class="eq-toprow"><span class="eq-label" id="eq-label">Live portfolio value</span><div id="live-pill" class="live-pill" style="display:none"><span class="live-dot"></span><span id="live-txt">live</span></div></div>
-    <div class="eq-big value" id="s-equity">—</div>
-    <div class="eq-day"><span class="value" id="s-day">—</span><span class="eq-daypct" id="s-day-pct"></span><span class="eq-daylbl">today</span></div>
-    <p id="asof" class="hero-asof">Loading…</p>
-  </div>
-  <div class="hero-chart"><canvas id="chart"></canvas><span id="chart-dot"></span></div>
+
+<div id="skin-toggle" role="group" aria-label="Theme">
+  <button type="button" data-skin="glass">Glass</button>
+  <button type="button" data-skin="neon">Neon</button>
+  <button type="button" data-skin="gold">Gold</button>
 </div>
 
-<div id="app" style="display:none">
-  <div class="title-moment">
-    <h1><span>Agentic Trading</span> — Adam's Experiment <a class="info-btn" href="how-it-works.html" aria-label="How this works">i</a></h1>
-    <div class="creed">"If we ask <em>how is that possible?</em> instead of saying it's not — we usually find the answer."</div>
-    <div class="tm-pnl">Total P&amp;L <b class="value" id="s-pnl">—</b><span id="s-pnl-sub">since inception</span></div>
-  </div>
-
-  <div class="panel glass" id="read-panel">
-    <h2><span class="dot"></span>What the engine's thinking<span class="count" id="read-when"></span></h2>
-    <div class="pulse" id="pulse"><div class="empty">The engine texts its read here every run — including why it's <em>not</em> trading.</div></div>
-  </div>
-
-  <div class="panel glass" id="trades-panel">
-    <h2><span class="dot"></span>Recent Trades<span class="count" id="trades-count"></span></h2>
-    <div id="trades"></div>
-  </div>
-
-  <div class="panel glass" id="positions-panel">
-    <h2><span class="dot"></span>Open Positions<span class="count" id="pos-count"></span></h2>
-    <div class="scroll-x" id="positions"></div>
-  </div>
-
-  <div class="panel glass" id="score-panel">
-    <h2><span class="dot"></span>Track Record<span class="count" id="score-since"></span></h2>
-    <div class="score" id="score"></div>
-    <p class="cov-hint" style="margin:12px 0 0">The honest scoreboard: are we beating "just buy 3× Nasdaq and hold"? Not-losing in a falling market counts.</p>
-  </div>
-
-  <div class="panel glass" id="alloc-panel">
-    <h2><span class="dot"></span>Allocation — the plan &amp; the why</h2>
-    <div class="alloc-bar" id="alloc-bar"></div>
-    <div class="alloc-rows" id="alloc-rows"></div>
-    <p class="cov-hint" style="margin:12px 0 0">Bar = what's actually in the account (holdings + cash). Ringed rows are <b>armed triggers</b> — conditional, not funded until they fire. Tap any row for the reasoning.</p>
-  </div>
-
-  <div class="panel glass">
-    <h2><span class="dot"></span>Signals &amp; Moves<span class="count" id="feed-count"></span></h2>
-    <div class="feed" id="feed"></div>
-  </div>
-
-  <div class="panel glass">
-    <h2><span class="dot"></span>Research Log — how the plan is evolving<span class="count" id="tl-count"></span></h2>
-    <div class="tl" id="timeline"></div>
-  </div>
-
-  <div class="panel glass" id="orbit-panel">
-    <h2><span class="dot"></span>The Map — when each name wins &amp; its edge</h2>
-    <div id="orbit-wrap"><svg id="orbitsvg" viewBox="0 0 440 340" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Company timing and edge map"></svg></div>
-    <div class="orbit-legend" id="orbit-legend"></div>
-    <div class="orbit-detail" id="orbit-detail">Tap a planet — the closer it orbits, the sooner its setup; the bigger it is, the bigger the planned bet.</div>
-  </div>
-
-  <div class="panel glass">
-    <h2><span class="dot"></span>Coverage — Company Intelligence<span class="count" id="cov-count"></span></h2>
-    <p class="cov-hint">Tap any company to open the full deep-dive. Symbol = the call · $ = planned size in the sleeve.</p>
-    <div class="cov" id="coverage"></div>
-    <div class="swipe-hint">← swipe to browse →</div>
-  </div>
-
-
-  <div class="footer">
-    Data regenerated by the engine each cycle; page redeploys automatically · Read-only — no trades can be made here ·
-    Every real-money trade requires your per-ticket approval · Experimental system, not financial advice
+<div id="scaler">
+  <div id="stage">
+    <div id="skin-root"></div>
   </div>
 </div>
-<div class="empty" id="loaderr" style="display:none">Couldn't load data.json — the first engine cycle may not have published yet.</div>
+
+<!-- The visual engine. Loaded ONCE; it self-registers the custom elements. -->
+<script src="/slot-visuals.js"></script>
 
 <script>
-let account = localStorage.getItem('at-account') || 'live';
-let DATA = null, chart = null;
-function setAccount(a){
-  const changed = a !== account;
-  account = a; try{ localStorage.setItem('at-account', a); }catch{}
-  const bl=document.getElementById('btn-live'), bp=document.getElementById('btn-paper');
-  if(bl) bl.classList.toggle('active', a==='live'); if(bp) bp.classList.toggle('active', a==='paper');
-  const el=document.getElementById('eq-label'); if(el) el.textContent = a==='paper' ? 'Paper value · autonomous testbed' : 'Live portfolio value';
-  ['s-equity','s-pnl','s-day'].forEach(k=>delete _prev[k]);   // no misleading flash across accounts
-  if(changed){ _sig={}; if(chart){ chart.destroy(); chart=null; } }
-  if(DATA) render();
-}
-const fmt$ = v => (v < 0 ? '-$' : '$') + Math.abs(Number(v)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-const fmtPct = v => (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%';
-const cls = v => v > 0.004 ? 'pos' : v < -0.004 ? 'neg' : 'flat';
-const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rich = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); // **bold** in friend-voice text
-const ago = ts => { const m = Math.floor((Date.now() - new Date(ts)) / 60000); if (isNaN(m)) return ''; if (m < 1) return 'just now'; if (m < 60) return m + 'm ago'; const h = Math.floor(m/60); if (h < 24) return h + 'h ago'; return Math.floor(h/24) + 'd ago'; };
+(function () {
+  "use strict";
 
-// section-diffing: only rebuild a section (and replay its entrance animation) when its
-// underlying data actually changed; otherwise just roll the live numbers in place.
-let _sig = {};
-const sig = (arr, pick) => JSON.stringify((arr||[]).map(pick));
-const cssq = s => String(s).replace(/["\\]/g, '\\$&');
-function sync(name, s, build, update){ if (_sig[name] !== s) { _sig[name] = s; build(); } else if (update) update(); }
+  /* ─────────────────────────── palettes (verbatim from the .dc.html renderVals) ─────────────────────────── */
+  const palA = { activeBg:'rgba(52,211,153,0.14)', activeFg:'#6ee7b7', activeBorder:'rgba(52,211,153,0.4)', idleFg:'rgba(255,255,255,0.45)', upBg:'rgba(52,211,153,0.15)', upFg:'#6ee7b7', upBorder:'rgba(52,211,153,0.4)', dnBg:'rgba(248,113,113,0.15)', dnFg:'#fca5a5', dnBorder:'rgba(248,113,113,0.4)', okFg:'#6ee7b7', failFg:'#fca5a5' };
+  const palB = { activeBg:'rgba(34,211,238,0.14)', activeFg:'#67e8f9', activeBorder:'rgba(34,211,238,0.45)', idleFg:'rgba(241,238,252,0.45)', upBg:'rgba(34,211,238,0.16)', upFg:'#a5f3fc', upBorder:'rgba(34,211,238,0.45)', dnBg:'rgba(251,113,133,0.16)', dnFg:'#fda4af', dnBorder:'rgba(251,113,133,0.45)', okFg:'#67e8f9', failFg:'#fda4af' };
+  const palC = { activeBg:'rgba(255,210,122,0.14)', activeFg:'#ffe9b0', activeBorder:'rgba(255,210,122,0.45)', idleFg:'rgba(247,239,223,0.45)', upBg:'rgba(255,210,122,0.15)', upFg:'#ffe9b0', upBorder:'rgba(255,210,122,0.45)', dnBg:'rgba(255,94,122,0.16)', dnFg:'#ffb3c0', dnBorder:'rgba(255,94,122,0.45)', okFg:'#ffe9b0', failFg:'#ffb3c0' };
 
-// inline sparkline SVG from a small price series
-function spark(series, chg) {
-  if (!Array.isArray(series) || series.length < 3) return '';
-  const w=100, h=34, min=Math.min(...series), max=Math.max(...series), rng=(max-min)||1;
-  const pts = series.map((v,i)=>`${(i/(series.length-1)*w).toFixed(1)},${(h-2 - ((v-min)/rng)*(h-4)).toFixed(1)}`).join(' ');
-  const col = (chg==null? '#7dd3fc' : chg>=0? '#6ee7b7' : '#fca5a5');
-  const id = 'g'+Math.random().toString(36).slice(2,7);
-  return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">`
-    + `<defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity="0.28"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>`
-    + `<polygon points="0,${h} ${pts} ${w},${h}" fill="url(#${id})"/>`
-    + `<polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
-}
+  const SEP = '    ◇    ';
 
-function feedCard(item) {
-  let pills = '';
-  if (item.type === 'trade') {
-    const side = (item.side || '').toLowerCase();
-    pills = `<span class="pill pill-${side === 'sell' ? 'sell' : 'buy'}">${side === 'sell' ? 'SELL' : 'BUY'}</span>` +
-            (item.size ? `<span class="pill pill-size">${esc(item.size)}</span>` : '');
-  } else if (item.type === 'memory') {
-    pills = `<span class="pill pill-mem">🧠 Memory</span>`;
-  } else if (item.type === 'watch') {
-    pills = `<span class="pill pill-watch">👀 Watching</span>`;
+  /* ─────────────────────────── small helpers ─────────────────────────── */
+  function num(x){ const n = Number(x); return isFinite(n) ? n : 0; }
+  function money(n){ return num(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function fmtShares(q){ if (q % 1 === 0) return String(q); return q < 1 ? q.toFixed(4) : q.toFixed(2); }
+  function pct1(n){ return (n >= 0 ? '+' : '−') + Math.abs(n).toFixed(1) + '%'; }
+  function hmm(ts){ const d = new Date(ts); if (isNaN(d.getTime())) return ''; let h = d.getHours() % 12; if (h === 0) h = 12; return h + ':' + String(d.getMinutes()).padStart(2, '0'); }
+  function stripMd(s){ return String(s || '').replace(/\*\*/g, '').replace(/^\s*\d{1,2}:\d{2}\s*(?:am|pm)?\s*[—–-]\s*/i, '').trim(); }
+  function escapeHtml(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function (c){ return ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]; }); }
+  function css(o){
+    const unitless = { opacity:1, zIndex:1, fontWeight:1, lineHeight:1, flex:1, flexGrow:1, order:1, zoom:1 };
+    return Object.keys(o).map(function (k){
+      let v = o[k];
+      const kk = k.replace(/[A-Z]/g, function (m){ return '-' + m.toLowerCase(); });
+      if (typeof v === 'number' && !unitless[k]) v = v + 'px';
+      return kk + ':' + v;
+    }).join(';');
   }
-  const sym = item.symbol ? `<span class="card-sym">${esc(item.symbol)}</span>` : '';
-  return `<div class="card"><div class="card-top">${pills}${sym}<span class="card-time">${ago(item.ts)}</span></div><div class="card-text">${rich(item.text)}</div></div>`;
-}
+  function setText(root, sel, txt){ const el = root.querySelector(sel); if (el) el.textContent = txt; }
 
-// --- animated / flashing numbers (Robinhood-style) ---
-const _prev = {};
-function setAnimated(id, to, fmt, klass, subId, sub) {
-  const el = document.getElementById(id); if(!el) return;
-  if (subId && document.getElementById(subId)) document.getElementById(subId).textContent = sub || '';
-  el.className = 'value ' + (klass || 'flat');
-  const from = _prev[id]==null ? to : _prev[id];
-  if (_prev[id]!=null && Math.abs(to-from) > 1e-9) { el.classList.remove('flash-up','flash-down'); void el.offsetWidth; el.classList.add(to>=from ? 'flash-up' : 'flash-down'); }
-  const dur=650, t0=performance.now();
-  (function step(t){ const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3), v=from+(to-from)*e; el.textContent=fmt(v); if(p<1) requestAnimationFrame(step); else el.textContent=fmt(to); })(performance.now());
-  _prev[id]=to;
-}
-
-// --- Stop-vs-price gauge: shows where the stop sits relative to current price + entry/trigger ---
-function stopGauge(stop, cur, mark, markLabel){
-  stop=+stop; cur=+cur; if(!isFinite(stop)||!isFinite(cur)||stop<=0||cur<=0) return '';
-  const m = (mark!=null&&isFinite(+mark))?+mark:null;
-  const hi = Math.max(cur, m!=null?m:cur) * 1.04, lo = stop * 0.985, span=(hi-lo)||1;
-  const pos = v => Math.max(1, Math.min(99, ((v-lo)/span)*100));
-  const cushion = ((cur-stop)/cur*100);
-  return `<div class="riskbar">`
-    + `<div class="rb-track"><i class="rb-stopzone" style="width:${pos(stop).toFixed(0)}%"></i>`
-    + (m!=null?`<span class="rb-tick" style="left:${pos(m).toFixed(0)}%"></span>`:'')
-    + `<span class="rb-now" style="left:${pos(cur).toFixed(0)}%"></span></div>`
-    + `<div class="rb-labels"><span class="rb-l stop">🛑 $${stop} stop</span>`
-    + (m!=null?`<span class="rb-l mid">${esc(markLabel||'entry')} $${m}</span>`:'')
-    + `<span class="rb-l now">now $${cur.toFixed(2)} · ${cushion>=0?cushion.toFixed(0)+'% to stop':'under stop'}</span></div></div>`;
-}
-// --- Allocation: the $5K plan as a stacked bar + tappable rows (mobile-first) ---
-const usd0 = v => (v < 0 ? '-$' : '$') + Math.round(Math.abs(v)).toLocaleString('en-US');
-const pctOf = (u,pool) => { const p=u/pool*100; return u>0 && p<1 ? '<1%' : Math.round(p)+'%'; };
-const qtyStr = q => (+q).toFixed(4).replace(/\.?0+$/,'');
-function allocModel(){
-  const d = DATA[account] || {};
-  const pool = Math.max(1, +d.equity || 0);            // DYNAMIC — sizes off the actual account balance, whatever's in it
-  const holds = (d.positions||[]).map(p=>({
-    key:p.symbol, kind:'hold', label:p.symbol, usd:Math.max(0,(+p.current||0)*(+p.qty||0)),
-    chip:'HELD', chipCls:'c-hold', color:'#7dd3fc', planned:false,
-    why:(p.thesis||'Open position — hard stop, no fixed take-profit.'),
-    note:`${qtyStr(p.qty)} sh @ ${fmt$(p.entry)}` }));
-  const deployed = holds.reduce((s,h)=>s+h.usd,0);
-  const free = Math.max(0, pool - deployed);            // armed triggers below are CONDITIONAL — they don't tie up cash until they fire
-  const cash = { key:'cash', kind:'cash', label:'Free cash', usd:free, chip:'READY', chipCls:'c-cash', color:'#8a90a6', planned:false,
-    why:'Uncommitted capital — full buying power, ready to deploy the instant an armed trigger below fires.', note:'ready to deploy' };
-  const armed = (DATA.coverage||[]).filter(c=>+c.plan_usd>0).map(c=>{
-    const buy = /buy|accumulate/i.test(c.verdict||'');
-    const trig = (c.size_note||'').replace(/^.*?\)\s*/, '').trim();
-    return { key:c.ticker, kind:'plan', label:c.ticker, usd:+c.plan_usd, planned:true,
-      chip:buy?'BUYING':'ARMED', chipCls:buy?'c-buy':'c-wait', color:buy?'#6ee7b7':'#fcd34d',
-      why:c.thesis||'', card:c.card, note:[c.name, (trig && trig.length<24 ? trig : 'on trigger')].filter(Boolean).join(' · ') }; });
-  return { pool, deployed, free, rows:[...holds, cash, ...armed] };   // actual (held + cash) first, then conditional armed triggers
-}
-const allocSig = () => JSON.stringify(allocModel().rows.map(r=>[r.key,r.chip,r.planned,r.card||'',r.note]));
-function renderAlloc(){
-  const m = allocModel();
-  document.getElementById('alloc-bar').innerHTML = m.rows.filter(r=>!r.planned).map(r=>{
-    const w=(r.usd/m.pool*100).toFixed(2);
-    return `<span data-k="${esc(r.key)}" style="width:${w}%;background:${r.color}" title="${esc(r.label)}"></span>`;
-  }).join('');
-  document.getElementById('alloc-rows').innerHTML = m.rows.map((r,i)=>{
-    const pct = Math.min(100, Math.round(r.usd/m.pool*100));
-    const cta = r.card ? ` <a class="cta" href="${esc(r.card)}" target="_blank" rel="noopener">open the deep-dive ↗</a>` : '';
-    return `<div class="alloc-row ${r.planned?'planned':''}" data-i="${i}" style="color:${r.color};animation-delay:${(i*.05).toFixed(2)}s">`
-      + `<div class="r1"><span class="swatch" style="background:${r.color}"></span><span class="tk">${esc(r.label)}</span>`
-      + `<span class="chip ${r.chipCls}">${esc(r.chip)}</span>`
-      + `<span class="amt" data-amt="${esc(r.key)}">${usd0(r.usd)}<small>${pctOf(r.usd,m.pool)}</small></span>`
-      + `<span class="caret">▾</span></div>`
-      + (r.note?`<div class="nm2">${esc(r.note)}</div>`:'')
-      + `<div class="mini"><i data-mini="${esc(r.key)}" style="width:${pct}%;background:${r.color}"></i></div>`
-      + `<div class="why">${rich(r.why||'')}${cta}</div></div>`;
-  }).join('');
-  document.querySelectorAll('#alloc-rows .alloc-row').forEach(el=>el.addEventListener('click', e=>{
-    if (e.target.closest('a')) return;              // don't toggle when tapping the deep-dive link
-    el.classList.toggle('open');
-  }));
-}
-function updateAlloc(){                              // amounts/widths follow live prices — no rebuild, no scroll reset
-  const m = allocModel(), bar = document.getElementById('alloc-bar');
-  m.rows.forEach(r=>{
-    const w=(r.usd/m.pool*100), pct=Math.round(w);
-    const seg=bar.querySelector(`span[data-k="${cssq(r.key)}"]`); if(seg) seg.style.width=w.toFixed(2)+'%';
-    const amt=document.querySelector(`.amt[data-amt="${cssq(r.key)}"]`); if(amt){ const h=`${usd0(r.usd)}<small>${pctOf(r.usd,m.pool)}</small>`; if(amt.innerHTML!==h){ amt.innerHTML=h; bump(amt); } }
-    const mini=document.querySelector(`i[data-mini="${cssq(r.key)}"]`); if(mini) mini.style.width=pct+'%';
-  });
-}
-
-// --- The Map: a solar system of coverage names. Orbit radius = time-to-setup,
-// planet size = planned conviction, colour = the call. Tap for the why. ---
-const V_COLOR = { buy:'#6ee7b7', accumulate:'#6ee7b7', wait:'#fcd34d', extended:'#fcd34d', avoid:'#fca5a5', sell:'#fca5a5', watch:'#7dd3fc' };
-const V_TXT   = { '#6ee7b7':'#063a28', '#fcd34d':'#3a2e00', '#fca5a5':'#3a1414', '#7dd3fc':'#06283a' };
-const ORBIT_ANGLES = [-28, 210, 40, 132, -96, 88, 165, 8]; // pleasant spread for up to 8 names
-let _orbitNodes = [];
-function timingScore(c){                             // 0 = ready now (inner) … 1 = far off (outer)
-  if (c.horizon!=null && isFinite(+c.horizon)) return Math.max(0.06, Math.min(0.97, +c.horizon));
-  const v = (c.verdict||'').toLowerCase();
-  let t = /buy|accumulate/.test(v) ? 0.16 : /avoid|sell/.test(v) ? 0.92 : /wait|extended/.test(v) ? 0.5 : 0.7;
-  const s = ((c.size_note||'') + ' ' + (c.thesis||'')).toLowerCase();
-  if (/trigger|reclaim|holds|\bbase\b/.test(s)) t -= 0.09;   // a definable near-term level
-  if (/pullback|extended|wait for/.test(s))     t += 0.06;   // needs a dip first
-  if (/not touching|binary|fraud|pre-revenue/.test(s)) t += 0.05;
-  return Math.max(0.08, Math.min(0.96, t));
-}
-function orbitModel(){
-  const cov = (DATA.coverage||[]).slice(0, ORBIT_ANGLES.length);
-  const maxPlan = Math.max(1, ...cov.map(c=>+c.plan_usd||0));
-  return cov.map((c,i)=>{
-    const v=(c.verdict||'').toLowerCase(), col=V_COLOR[v]||'#7dd3fc', t=timingScore(c), plan=+c.plan_usd||0;
-    const trig = (c.size_note||'').replace(/^.*?\)\s*/, '').trim() || (/(avoid|sell)/.test(v)?'not in play':'watching');
-    return { ticker:c.ticker, name:c.name||'', verdict:v, vlabel:c.verdict_label||c.verdict, color:col,
-      t, plan, size: 8 + (plan>0 ? Math.sqrt(plan/maxPlan)*10 : 0), trig, thesis:c.thesis||'', card:c.card,
-      price:c.price, chg:c.chg_pct, angle: ORBIT_ANGLES[i] };
-  });
-}
-const orbitSig = () => JSON.stringify((DATA.coverage||[]).map(c=>[c.ticker,c.verdict,c.plan_usd,c.size_note,c.name,c.thesis,c.card,c.horizon]));
-function renderOrbit(){
-  const svg=document.getElementById('orbitsvg'); if(!svg) return;
-  const W=440, H=340, cx=220, cy=166, rIn=64, rOut=168;
-  const nodes = orbitModel(); _orbitNodes = nodes;
-  let s = '';
-  // faint starfield
-  const stars=[[52,44],[392,60],[360,30],[36,250],[404,270],[128,26],[300,300],[70,300],[410,150]];
-  s += stars.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="1" fill="#fff" opacity="0.4"/>`).join('');
-  // orbit rings (one per node, elliptical perspective) + planets
-  nodes.forEach((n,i)=>{
-    const rx = rIn + n.t*(rOut-rIn), ry = rx*0.6, a = n.angle*Math.PI/180;
-    const x = cx + rx*Math.cos(a), y = cy + ry*Math.sin(a);
-    n._x=x; n._y=y;
-    s += `<ellipse class="orbit-ring flow" cx="${cx}" cy="${cy}" rx="${rx.toFixed(1)}" ry="${ry.toFixed(1)}" stroke="${n.color}" opacity="0.28" style="animation-delay:${(i*0.5).toFixed(1)}s"/>`;
-  });
-  // sun
-  s += `<circle class="halo" cx="${cx}" cy="${cy}" r="34" fill="#7dd3fc" opacity="0.16"/>`;
-  s += `<circle cx="${cx}" cy="${cy}" r="23" fill="#0b1020" stroke="#7dd3fc" stroke-width="1.5"/>`;
-  s += `<text class="sunlbl" x="${cx}" y="${cy-2}" text-anchor="middle" font-size="10.5">AI power</text>`;
-  s += `<text class="sunlbl" x="${cx}" y="${cy+10}" text-anchor="middle" font-size="10.5">demand</text>`;
-  // planets (drawn after rings so they sit on top)
-  nodes.forEach((n,i)=>{
-    const r=n.size, avoid=/avoid|sell/.test(n.verdict), tcol=V_TXT[n.color]||'#06283a';
-    s += `<g class="planet" data-i="${i}" tabindex="0" role="button" aria-label="${esc(n.ticker)}">`;
-    if(!avoid) s += `<circle class="halo pcore" cx="${n._x}" cy="${n._y}" r="${(r*1.7).toFixed(1)}" fill="${n.color}" opacity="0.16" style="color:${n.color}"/>`;
-    if(avoid) s += `<circle class="pcore" cx="${n._x}" cy="${n._y}" r="${r}" fill="none" stroke="${n.color}" stroke-width="1.8" stroke-dasharray="3 3" style="color:${n.color}"/>`;
-    else      s += `<circle class="pcore" cx="${n._x}" cy="${n._y}" r="${r}" fill="${n.color}" style="color:${n.color}"/>`;
-    s += `<text class="plabel" x="${n._x}" y="${n._y+3.5}" text-anchor="middle" font-size="${Math.min(11,r*0.9)}" fill="${avoid?n.color:tcol}">${esc(n.ticker)}</text>`;
-    s += `<text class="ptrig" x="${n._x}" y="${(n._y - r - 6)}" text-anchor="middle" font-size="9">${esc(n.trig)}</text>`;
-    s += `</g>`;
-  });
-  svg.innerHTML = s;
-  svg.querySelectorAll('.planet').forEach(g=>{
-    const i=+g.getAttribute('data-i');
-    g.addEventListener('click', ()=>showOrbitDetail(i,g));
-    g.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); showOrbitDetail(i,g);} });
-  });
-  document.getElementById('orbit-legend').innerHTML =
-    '<span><i style="background:#6ee7b7"></i>buy now</span><span><i style="background:#fcd34d"></i>waiting on a trigger</span><span><i class="hollow"></i>avoid</span><span style="color:#6b7188">inner = sooner · size = planned $</span>';
-}
-function showOrbitDetail(i, el){
-  const n=_orbitNodes[i]; if(!n) return;
-  document.querySelectorAll('#orbitsvg .planet.sel').forEach(x=>x.classList.remove('sel'));
-  if(el) el.classList.add('sel');
-  const px = n.price!=null ? ` · $${n.price}${n.chg!=null?` (${n.chg>=0?'+':''}${n.chg}%)`:''}` : '';
-  const amt = n.plan>0 ? `$${n.plan.toLocaleString()}` : 'no position';
-  const cta = n.card ? `<a class="octa" href="${esc(n.card)}" target="_blank" rel="noopener">open the deep-dive ↗</a>` : '';
-  const md=document.getElementById('orbit-detail'); md.style.opacity=0;
-  setTimeout(()=>{ md.innerHTML =
-    `<div class="oh"><span class="ot" style="color:${n.color}">${esc(n.ticker)}</span>`
-    + `<span class="obadge" style="background:${n.color}22;color:${n.color}">${esc(n.vlabel)}</span>`
-    + `<span class="oamt" style="color:${n.color}">${amt}</span></div>`
-    + `<div class="ometa">${esc(n.name)}${px} · setup: <b style="color:#c4c9db">${esc(n.trig)}</b></div>`
-    + `${rich(n.thesis)}${cta}`;
-    md.style.opacity=1; }, 120);
-}
-
-// --- Engine pulse: short "text from a friend" reads. Merge pulse + activity headlines
-// by timestamp so the FRESHEST tick always shows even if a run only wrote one of them. ---
-function pulseItems(){
-  const a = (Array.isArray(DATA.pulse)?DATA.pulse:[]).map(p=>({ts:p.ts, text:p.text}));
-  const b = (DATA.activity||[]).filter(x=>x.kind==='engine'||x.kind==='digest').map(x=>({ts:x.ts, text:x.title}));
-  const seen=new Set();
-  const all=[...a,...b].filter(x=>{ const k=x.ts+'|'+String(x.text||'').slice(0,24); if(seen.has(k)) return false; seen.add(k); return !!x.text; });
-  all.sort((x,y)=> new Date(y.ts)-new Date(x.ts));
-  return all.slice(0,15);
-}
-const msgTime = ts => { const d=new Date(ts); if(isNaN(d)) return '';
-  const now=new Date(), sameDay=d.toDateString()===now.toDateString();
-  return sameDay ? d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})
-                 : d.toLocaleString('en-US',{weekday:'short',hour:'numeric',minute:'2-digit'}); };
-function renderPulse(){
-  const el=document.getElementById('pulse'); if(!el) return;
-  const items=pulseItems();
-  el.innerHTML = items.length
-    ? items.map((p,i)=>`<div class="tick${i===0?' now':''}"><div class="tick-t">${i===0?'<span class="tick-live"></span>':''}${msgTime(p.ts)}</div><div class="tick-x">${rich(p.text||'')}</div></div>`).join('')
-    : '<div class="empty">The engine texts its read here every tick — slide ← to see past ones.</div>';
-}
-// --- Track Record scorecard: return, alpha vs buy-and-hold TQQQ, drawdown ---
-function renderScore(){
-  const el=document.getElementById('score'); if(!el) return;
-  const d=DATA[account]||{}, curve=d.equity_curve||[];
-  const base = curve.length ? curve[0].value : ((d.equity||0)-(d.total_pnl||0));
-  const now = d.equity||0, ret = base ? (now/base-1)*100 : 0;
-  let peak=-Infinity, dd=0; curve.forEach(p=>{ if(p.value>peak)peak=p.value; if(peak>0){ const c=(p.value-peak)/peak; if(c<dd)dd=c; } });
-  const ddPct=dd*100, bench=DATA.benchmark||{}, bp=bench.tqqq_pct!=null?+bench.tqqq_pct:null, alpha=bp!=null?ret-bp:null;
-  const trades=(DATA.feed||[]).filter(f=>f.type==='trade').length;
-  const sc=document.getElementById('score-since'); if(sc) sc.textContent = bench.since?('since '+bench.since):(curve[0]?('since '+curve[0].date):'');
-  const cell=(l,v,k,s)=>`<div class="sc"><div class="sc-l">${l}</div><div class="sc-v ${k||'flat'}">${v}</div>${s?`<div class="sc-s">${s}</div>`:''}</div>`;
-  el.innerHTML =
-      cell('Return', (ret>=0?'+':'')+ret.toFixed(2)+'%', cls(ret))
-    + cell('vs buy-&-hold TQQQ', alpha!=null?((alpha>=0?'+':'')+alpha.toFixed(1)+'%'):'—', alpha!=null?cls(alpha):'flat', bp!=null?('TQQQ '+(bp>=0?'+':'')+bp.toFixed(1)+'% — you\'re '+(alpha>=0?'ahead':'behind')):'')
-    + cell('Max drawdown', ddPct.toFixed(1)+'%', ddPct<-0.05?'neg':'flat')
-    + cell('Trades taken', String(trades), 'flat');
-}
-// --- Research Log timeline ---
-function renderActivity(){
-  const el=document.getElementById('timeline'); if(!el) return;
-  const act=DATA.activity||[];
-  const c=document.getElementById('tl-count'); if(c) c.textContent = act.length? act.length+' updates':'';
-  el.innerHTML = act.length ? act.map((a,i)=>`<div class="tl-item k-${esc(a.kind||'digest')}" style="animation-delay:${(i*.05).toFixed(2)}s"><div class="tt">${new Date(a.ts).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</div><div class="th2">${esc(a.title||'')}</div><div class="td">${rich(a.detail||'')}</div></div>`).join('')
-    : '<div class="empty">The engine will log its research cycles here.</div>';
-}
-
-function verdictBadge(v){ v=(v||'').toLowerCase(); if(v.includes('buy')||v.includes('accumulate'))return {cls:'b-buy',sym:'🟢'}; if(v.includes('avoid')||v.includes('sell'))return {cls:'b-avoid',sym:'⛔'}; if(v.includes('wait')||v.includes('extended'))return {cls:'b-wait',sym:'⏳'}; return {cls:'b-watch',sym:'👀'}; }
-const covPx = c => c.price!=null ? `$${c.price}${c.chg_pct!=null?` <span class="${c.chg_pct>=0?'up':'down'}">${c.chg_pct>=0?'+':''}${c.chg_pct}%</span>`:''}` : '';
-function buildCoverage(){
-  const cov = DATA.coverage || [];
-  document.getElementById('cov-count').textContent = cov.length ? cov.length + ' tracked' : '';
-  document.getElementById('coverage').innerHTML = cov.length
-    ? cov.map(c => { const a=verdictBadge(c.verdict); const hasSize = c.size && Number(c.size_pct)>0;
-        return `<a href="${esc(c.card)}" target="_blank" rel="noopener">`
-        + `<div class="top"><span class="sym">${a.sym}</span><span class="tk">${esc(c.ticker)}</span><span class="cpx" data-cpx="${esc(c.ticker)}">${covPx(c)}</span><span class="badge ${a.cls}">${esc(c.verdict_label||c.verdict)}</span></div>`
-        + `<div class="nm">${esc(c.name)}${c.theme?' · '+esc(c.theme):''}</div>`
-        + `<span class="spk" data-spk="${esc(c.ticker)}">${spark(c.spark, c.chg_pct)}</span>`
-        + `<div class="th">${rich(c.thesis||'')}</div>`
-        + `<div class="size"><span class="amt ${hasSize?'g':'d'}">${esc(c.size||'$0')}</span><span class="lbl">${esc(c.size_note|| (hasSize?'of the sleeve':'no position'))}</span></div>`
-        + `<div class="size" style="border:0;padding-top:8px;margin-top:4px"><span class="lbl">${c.updated?'updated '+esc(c.updated):''}</span><span class="open">open card ↗</span></div>`
-        + `</a>`; }).join('')
-    : '<div class="empty">No coverage cards yet. The engine builds a deep-research intelligence card per company on a daily rotation — they\'ll appear here.</div>';
-}
-function bump(el){ if(!el) return; el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); } // brief highlight on a live tick
-function updateCoverPrices(){                          // stamp fresh price + sparkline in place; carousel scroll stays put
-  for(const c of (DATA.coverage||[])){
-    const px=document.querySelector(`[data-cpx="${cssq(c.ticker)}"]`);
-    if(px){ const h=covPx(c); if(px.innerHTML!==h){ px.innerHTML=h; bump(px); } }
-    const sp=document.querySelector(`[data-spk="${cssq(c.ticker)}"]`); if(sp) sp.innerHTML=spark(c.spark, c.chg_pct);
+  /* ─────────────────────────── trade inference (works today; explicit fields win when present) ─────────────────────────── */
+  function inferSide(text){
+    const t = String(text || '').toLowerCase();
+    if (/\bshort(ed|ing)?\b/.test(t)) return 'SHORT';
+    if (/\b(bought|buy|buying|added|adding|topped up|staged|accumulat)/.test(t)) return 'BUY';
+    if (/\b(sold|selling|sell|trimmed|exited|closed out|took profit|dumped)\b/.test(t)) return 'SELL';
+    return 'BUY';
   }
-}
-function buildFeed(){
-  const feed = (DATA.feed || []).filter(f => f.type!=='trade').slice(0, 8);   // signals = market views, account-agnostic; trades live under Recent Trades
-  document.getElementById('feed-count').textContent = feed.length ? feed.length + ' shown' : '';
-  document.getElementById('feed').innerHTML = feed.length
-    ? feed.map(feedCard).join('')
-    : '<div class="empty">No signals yet. When the engine forms or changes a view on a company, it\'ll post the take and its reasoning here — like a text from a friend who watches the market all day. Executed trades show up under Recent Trades above.</div>';
-}
-function buildPositions(){
-  const poss = (DATA[account]||{}).positions || [];
-  const el = document.getElementById('positions');
-  if(!poss.length){ el.innerHTML = '<div class="empty">No open positions yet — when the engine takes a trade it shows here with live P&L. Tap for the thesis.</div>'; return; }
-  el.innerHTML = poss.map(p=>{ const plc=cls(p.pl);
-    return `<div class="pos-card"><div class="pc-top"><span class="tc-sym">${esc(p.symbol)}</span><span class="pc-qty">${esc(p.qty)} sh @ ${fmt$(p.entry)} → ${fmt$(p.current)}</span><span class="pc-pl ${plc}">${fmt$(p.pl)}<small> (${fmtPct(p.plpc)})</small></span><span class="caret">▾</span></div>`
-      + (p.stop?stopGauge(p.stop,p.current,p.entry,'entry'):'')
-      + `<div class="tc-why">${esc(p.thesis||'No thesis recorded for this position.')}</div></div>`; }).join('');
-  el.querySelectorAll('.pos-card').forEach(c=>c.addEventListener('click', ()=>c.classList.toggle('open')));
-}
-// gradient helpers — evaluated per-draw so they upgrade once the chart area exists
-let _chartUp = true;
-const UP_COLS = ['#7dd3fc','#a78bfa','#6ee7b7'], DOWN_COLS = ['#fb7185','#a78bfa','#fca5a5'];
-function gStroke(c){ const cols=_chartUp?UP_COLS:DOWN_COLS; const {ctx,chartArea}=c.chart; if(!chartArea) return cols[0];
-  const g=ctx.createLinearGradient(chartArea.left,0,chartArea.right,0); g.addColorStop(0,cols[0]); g.addColorStop(.5,cols[1]); g.addColorStop(1,cols[2]); return g; }
-function gFill(c){ const {ctx,chartArea}=c.chart; if(!chartArea) return 'rgba(125,211,252,0.06)';
-  const g=ctx.createLinearGradient(0,chartArea.top,0,chartArea.bottom);
-  g.addColorStop(0, _chartUp?'rgba(125,211,252,0.34)':'rgba(251,113,133,0.30)');
-  g.addColorStop(.42, _chartUp?'rgba(167,139,250,0.14)':'rgba(167,139,250,0.12)');
-  g.addColorStop(1, 'rgba(125,211,252,0)'); return g; }
-const endDot = { id:'endDot', afterDraw(chart){
-  const dot=document.getElementById('chart-dot'); if(!dot) return;
-  const pts=(chart.getDatasetMeta(0)||{}).data; if(!pts||!pts.length){ dot.classList.remove('on'); return; }
-  const p=pts[pts.length-1]; dot.style.left=p.x+'px'; dot.style.top=p.y+'px';
-  dot.classList.remove(_chartUp?'down':'up'); dot.classList.add('on', _chartUp?'up':'down'); } };
-function syncChart(){                                  // create once; thereafter chart.update() animates the transition (no destroy/replay)
-  const d = DATA[account] || {};
-  _chartUp = (d.day_pnl ?? 0) >= 0;
-  const useIntra = d.intraday && d.intraday.length > 2;
-  const curve = useIntra
-    ? d.intraday.map(p => ({ date: new Date(p.t).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}), value: p.v }))
-    : (d.equity_curve || []);
-  const labels = curve.map(p => p.date), values = curve.map(p => p.value);
-  if (!chart) {
-    const ctx = document.getElementById('chart').getContext('2d');
-    chart = new Chart(ctx, {
-      type: 'line',
-      data: { labels, datasets: [{ data: values, borderColor: gStroke, borderWidth: 2.75, pointRadius: 0, pointHoverRadius: 5, pointHoverBackgroundColor:'#fff', fill: true, backgroundColor: gFill, tension: 0.38, cubicInterpolationMode:'monotone' }] },
-      options: { responsive: true, maintainAspectRatio: false, animation: { duration: 750 },
-        layout: { padding: { top: 10, bottom: 2 } },
-        interaction: { intersect:false, mode:'index' },
-        plugins: { legend: {display: false}, tooltip: { displayColors:false, callbacks: { title: items => items[0]?.label||'', label: c => fmt$(c.parsed.y) } } },
-        scales: { x: { display:false }, y: { display:false, grace:'12%' } } },   // boundless: no axes/grid
-      plugins: [endDot]
+  function inferStatus(text){
+    const t = String(text || '').toLowerCase();
+    if (/\b(failed|could not|couldn.t|no shares to borrow|rejected|not filled)\b/.test(t)) return 'FAILED';
+    if (/\bcancell?ed\b/.test(t)) return 'CANCELLED';
+    return 'FILLED';
+  }
+  function inferDetail(f){
+    if (f.detail) return f.detail;
+    if (f.size) return f.size;
+    const txt = String(f.text || '');
+    let m = txt.match(/(\d+(?:\.\d+)?)\s*(?:shares?|sh)\s*(?:@|at)\s*\$?\s*(\d+(?:\.\d+)?)/i);
+    if (m) return m[1] + ' @ ' + m[2];
+    m = txt.match(/(\d+(?:\.\d+)?)\s*(?:@|at)\s*\$?\s*(\d+(?:\.\d+)?)/i);
+    if (m) return m[1] + ' @ ' + m[2];
+    m = txt.match(/\$\s?(\d[\d,]*(?:\.\d+)?)/);
+    if (m) return '$' + m[1];
+    return '';
+  }
+
+  /* ─────────────────────────── state ─────────────────────────── */
+  let DATA = null;
+  let currentSkin = 'neon';
+  let currentRange = '1D';
+  let currentRoot = null;
+  let lastValue = null;
+  let ro = null;
+
+  const SKINS = {
+    glass: { pal: palA, build: buildGlass },
+    neon:  { pal: palB, build: buildNeon },
+    gold:  { pal: palC, build: buildGold }
+  };
+
+  function live(){ return (DATA && DATA.live) || {}; }
+
+  /* ─────────────────────────── data → design shapes ─────────────────────────── */
+  function heroText(){ return '$' + money(live().equity); }
+  function todayPct(){ const eq = num(live().equity), dp = num(live().day_pnl), prev = eq - dp; return prev ? (dp / prev * 100) : 0; }
+  function pillText(){
+    const t$ = num(live().day_pnl), up = t$ >= 0, p = todayPct();
+    return (up ? '▲ +$' : '▼ −$') + Math.abs(t$).toFixed(2) + ' · ' + (up ? '+' : '−') + Math.abs(p).toFixed(1) + '% today';
+  }
+
+  function arr(x){ return Array.isArray(x) ? x : []; }
+  function tailByTime(pairs, span){
+    if (!pairs.length) return [];
+    const lastTs = pairs[pairs.length - 1][0];
+    return pairs.filter(function (p){ return p[0] >= lastTs - span; });
+  }
+  function equityPoints(range){
+    const eh = (DATA && DATA.equity_history) || {};
+    let pairs;
+    if (range === '1H') { const d = arr(eh['1D']); pairs = tailByTime(d, 60 * 60 * 1000); if (pairs.length < 2) pairs = d; }
+    else if (range === '6M') { const y = arr(eh['1Y']); pairs = tailByTime(y, 180 * 86400000); if (pairs.length < 2) pairs = y; }
+    else { pairs = arr(eh[range]); }
+    let pts = pairs.map(function (p){ return Array.isArray(p) ? p[1] : (p && p.v); }).filter(function (n){ return typeof n === 'number' && isFinite(n); });
+    if (pts.length < 2) pts = arr(eh['1D']).map(function (p){ return p[1]; }).filter(function (n){ return typeof n === 'number'; });
+    if (pts.length < 2) pts = arr(live().equity_curve).map(function (p){ return p.value; }).filter(function (n){ return typeof n === 'number'; });
+    if (pts.length < 2) pts = arr(live().intraday).map(function (p){ return p.v; }).filter(function (n){ return typeof n === 'number'; });
+    return pts;
+  }
+
+  function computeModel(){
+    const L = live();
+    const equity = num(L.equity), dayPnl = num(L.day_pnl), totalPnl = num(L.total_pnl);
+    const allTimePct = totalPnl / 1000 * 100;
+    const marketOpen = String((DATA && DATA.market_note) || '').indexOf('OPEN') !== -1;
+    const status = marketOpen ? 'Engine live — working the market' : 'Engine resting — next wake at the open';
+
+    const cov = arr(DATA && DATA.coverage);
+    const covBy = function (s){ return cov.find(function (c){ return c.ticker === s; }); };
+
+    const positions = arr(L.positions).map(function (p){
+      const qty = parseFloat(p.qty) || 0, cur = num(p.current), mv = qty * cur, plpc = num(p.plpc);
+      const c = covBy(p.symbol);
+      return { t: p.symbol, name: c ? c.name : p.symbol, sh: fmtShares(qty), val: '$' + money(mv), mv: mv, up: plpc >= 0, pct: pct1(plpc), thesis: p.thesis || '' };
     });
-  } else {
-    chart.data.labels = labels;
-    chart.data.datasets[0].data = values;
-    chart.update();
+
+    // top holding = live position with largest market value
+    let top = null, thHead = 'TOP HOLDING', thBlurb = '';
+    if (positions.length) {
+      top = positions.slice().sort(function (a, b){ return b.mv - a.mv; })[0];
+      const c = covBy(top.t);
+      const pctBook = equity ? top.mv / equity * 100 : 0;
+      thHead = 'TOP HOLDING · ' + top.t + ' · ' + Math.round(pctBook) + '% OF BOOK';
+      thBlurb = stripMd((c && c.thesis) || top.thesis || (DATA && DATA.latest_recap) || '');
+    }
+
+    const trades = arr(DATA && DATA.feed)
+      .filter(function (f){ return f.type === 'trade' && f.account === 'live'; })
+      .slice().sort(function (a, b){ return new Date(b.ts) - new Date(a.ts); })
+      .map(function (f){
+        const side = (f.side ? String(f.side) : inferSide(f.text)).toUpperCase();
+        const st = (f.status ? String(f.status) : inferStatus(f.text)).toUpperCase();
+        return { time: hmm(f.ts), side: side, kind: side.toLowerCase(), tk: f.symbol, detail: inferDetail(f), status: st, ok: st === 'FILLED' };
+      });
+
+    const notes = arr(DATA && DATA.pulse).map(function (p){ return { time: hmm(p.ts), text: stripMd(p.hype || p.text || '') }; });
+
+    let news;
+    if (Array.isArray(DATA && DATA.headlines) && DATA.headlines.length) news = DATA.headlines.join(SEP) + SEP;
+    else if (cov.length) news = cov.map(function (c){ return c.ticker + ' ' + pct1(num(c.chg_pct)) + ' · ' + (c.theme || ''); }).join(SEP) + SEP;
+    else { const rec = String((DATA && DATA.latest_recap) || ''); news = rec.split(/[.;]\s+/).map(function (s){ return s.trim(); }).filter(Boolean).join(SEP) + SEP; }
+
+    return { equity: equity, dayPnl: dayPnl, allTimePct: allTimePct, status: status, positions: positions, thHead: thHead, thBlurb: thBlurb, trades: trades, notes: notes, news: news };
   }
-}
-// --- Recent Trades — pending approvals on top, then executed history; tap for the why ---
-function renderTrades(){
-  const el = document.getElementById('trades'); if(!el) return;
-  const pending = account==='live' ? (DATA.pending_tickets || []) : [];   // paper auto-executes — nothing awaits you there
-  const trades = (DATA.feed||[]).filter(f => f.type==='trade' && (!f.account||f.account===account));
-  const cnt = document.getElementById('trades-count'); if(cnt) cnt.textContent = trades.length ? trades.length + ' filled' : '';
-  const pill = s => `<span class="pill pill-${s==='sell'?'sell':'buy'}">${s==='sell'?'SELL':'BUY'}</span>`;
-  const trigOf = t => (t.trigger!=null&&+t.trigger>0)?+t.trigger:((t.entry!=null&&+t.entry>0)?+t.entry:null);
-  let html = pending.map(t=>{ const side=(t.side||'').toLowerCase(); const tg=trigOf(t); const hasId=!!t.id;
-    return `<div class="trade-card pending" data-id="${esc(t.id||'')}" data-sym="${esc(t.symbol||'')}"><div class="tc-top">${pill(side)}<span class="tc-sym">${esc(t.symbol||'')}</span>${t.size?`<span class="pill pill-size">${esc(t.size)}</span>`:''}<span class="tc-chip">Awaiting you</span></div>`
-      + `<div class="tc-why">${rich(t.thesis||'Ready to fire on your approval.')}${t.bracket?`<div class="tc-meta">${esc(t.bracket)}</div>`:''}</div>`
-      + (hasId
-          ? `<div class="tc-actions"><button class="ta ta-approve" onclick="doApprove(this,'approve','now')">Approve → buy now</button>`
-             + (tg?`<button class="ta ta-arm" onclick="doApprove(this,'approve','prearm')">Pre-arm → auto @ $${(+tg).toFixed(2)}</button>`:'')
-             + `<button class="ta ta-skip" onclick="doApprove(this,'skip','now')">Skip</button></div><div class="ta-status"></div>`
-          : `<div class="ta-note">Approve this one from the Telegram message — it predates in-app approval.</div>`)
-      + `</div>`; }).join('');
-  html += trades.map(f=>{ const side=(f.side||'').toLowerCase();
-    return `<div class="trade-card"><div class="tc-top">${pill(side)}<span class="tc-sym">${esc(f.symbol||'')}</span>${f.size?`<span class="pill pill-size">${esc(f.size)}</span>`:''}<span class="tc-time">${ago(f.ts)}</span><span class="caret">▾</span></div>`
-      + `<div class="tc-why">${rich(f.text||'No note recorded for this trade.')}</div></div>`; }).join('');
-  el.innerHTML = html || '<div class="empty">No trades yet — the moment the engine acts it posts here, and you approve live ones from your phone. Tap any trade for the why.</div>';
-  el.querySelectorAll('.trade-card:not(.pending)').forEach(c=>c.addEventListener('click', ()=>c.classList.toggle('open')));
-}
 
-// --- In-UI approval: approve now / pre-arm a resting buy-stop / skip — no Telegram needed ---
-// PIN-gated by the Netlify function; the Mac poller relays it into the same fast-lane as Telegram.
-const APPROVE_ENDPOINT = '/.netlify/functions/approve';
-async function doApprove(btn, action, mode){
-  const card = btn.closest('.trade-card'); if(!card) return;
-  const id = card.getAttribute('data-id'), sym = card.getAttribute('data-sym')||'';
-  if(!id) return;
-  let pin = localStorage.getItem('at-pin');
-  if(!pin){ pin = prompt('Enter your approval PIN (set once):'); if(!pin) return; localStorage.setItem('at-pin', pin.trim()); pin=pin.trim(); }
-  const acts = card.querySelector('.tc-actions'), status = card.querySelector('.ta-status');
-  const reenable = () => card.querySelectorAll('.ta').forEach(b=>b.disabled=false);
-  card.querySelectorAll('.ta').forEach(b=>b.disabled=true);
-  if(status){ status.className='ta-status'; status.textContent = mode==='prearm'?'Pre-arming…':(action==='skip'?'Skipping…':'Approving…'); }
-  try{
-    const r = await fetch(APPROVE_ENDPOINT, { method:'POST', headers:{'content-type':'application/json'},
-      body: JSON.stringify({ id, action, mode, symbol:sym, pin }) });
-    if(r.status===401){ localStorage.removeItem('at-pin'); if(status){status.className='ta-status ta-warn';status.textContent='Wrong PIN — tap again to re-enter.';} reenable(); return; }
-    if(r.status===503){ if(acts) acts.style.display='none'; if(status){status.className='ta-status ta-warn';status.textContent='In-app approval isn’t switched on yet — approve this one from the Telegram message.';} return; }
-    if(!r.ok){ if(status){status.className='ta-status ta-warn';status.textContent='Hiccup sending — try again.';} reenable(); return; }
-    if(acts) acts.style.display='none';
-    card.classList.add(action==='skip'?'skipped':'approved');
-    if(status){ status.className='ta-status ta-ok';
-      status.textContent = action==='skip' ? 'Skipped.'
-        : (mode==='prearm' ? 'Pre-armed — resting buy-stop goes in within ~60s.' : 'Approved — filling within ~60s.'); }
-  }catch(e){ if(status){status.className='ta-status ta-warn';status.textContent='Network hiccup — try again.';} reenable(); }
-}
-function render() {
-  const d = DATA[account] || {};
-  document.getElementById('asof').textContent =
-    (d.equity_note ? d.equity_note + ' · ' : '') + 'as of ' + new Date(DATA.generated_at).toLocaleString() +
-    (DATA.market_note ? ' · ' + DATA.market_note : '');
-  // live headline numbers — smooth count/flash, only when they actually change
-  setAnimated('s-equity', d.equity ?? 0, fmt$, 'flat');
-  setAnimated('s-day', d.day_pnl ?? 0, fmt$, cls(d.day_pnl ?? 0));
-  const dpct = (d.day_pnl!=null && d.equity) ? (d.day_pnl/((d.equity - d.day_pnl)||d.equity))*100 : null;
-  const dp = document.getElementById('s-day-pct'); if(dp) dp.textContent = (dpct!=null && isFinite(dpct)) ? `(${dpct>=0?'+':''}${dpct.toFixed(2)}%)` : '';
-  setAnimated('s-pnl', d.total_pnl ?? 0, fmt$, cls(d.total_pnl ?? 0), 's-pnl-sub', ' since inception');
-  const poss = d.positions || [];
-  const pc = document.getElementById('pos-count'); if(pc) pc.textContent = poss.length ? String(poss.length) : '';
-  // sections — rebuild (and replay entrance) ONLY when their data changed; otherwise roll numbers in place
-  sync('trades', JSON.stringify([DATA.pending_tickets||[], (DATA.feed||[]).filter(f=>f.type==='trade'&&(!f.account||f.account===account)).map(f=>[f.ts,f.symbol,f.side,f.size,f.text])]), renderTrades, null);
-  sync('cover', sig(DATA.coverage, c=>[c.ticker,c.verdict,c.verdict_label,c.thesis,c.size,c.size_note,c.name,c.card,c.updated]), buildCoverage, updateCoverPrices);
-  sync('orbit', orbitSig(), renderOrbit, null);
-  sync('alloc', allocSig(), renderAlloc, updateAlloc);
-  sync('feed', JSON.stringify((DATA.feed||[]).filter(f=>f.type!=='trade').slice(0,8)), buildFeed, null);
-  sync('act', JSON.stringify(DATA.activity||[]), renderActivity, null);
-  buildPositions();
-  renderScore();
-  sync('pulse', JSON.stringify(pulseItems()), renderPulse, null);
-  const lp = pulseItems()[0];
-  const lastRun = lp ? new Date(lp.ts) : null;
-  const rw = document.getElementById('read-when');
-  if (rw) rw.textContent = lastRun && !isNaN(lastRun) ? 'updated ' + lastRun.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}) : '';
-  renderStatus();
-  syncChart();
-}
+  /* ─────────────────────────── style-derivation helpers (verbatim logic from renderVals) ─────────────────────────── */
+  function chipStyle(up, pal){ return css({ font:'700 17px ui-monospace, Menlo, monospace', padding:'8px 14px', borderRadius:999, background: up ? pal.upBg : pal.dnBg, color: up ? pal.upFg : pal.dnFg }); }
+  function badgeStyle(kind, pal){ return css({ font:'800 14px ui-monospace, Menlo, monospace', letterSpacing:'1px', padding:'7px 12px', borderRadius:8, width:56, textAlign:'center', background: kind === 'buy' ? pal.upBg : kind === 'sell' ? pal.dnBg : 'rgba(255,255,255,0.08)', color: kind === 'buy' ? pal.upFg : kind === 'sell' ? pal.dnFg : 'rgba(255,255,255,0.6)' }); }
+  function statusChipStyle(ok, pal){ return css({ font:'700 13px ui-monospace, Menlo, monospace', letterSpacing:'1px', color: ok ? pal.okFg : pal.failFg, opacity: ok ? 0.7 : 1 }); }
 
-// --- Session status chips (Morning / Afternoon / Evening) near the top ---
-const sessionOf = ts => { const h=new Date(ts).getHours(); return h<12?'Morning':h<16?'Afternoon':'Evening'; };
-function statusItems(){
-  // prefer engine-written session statuses if present
-  if (Array.isArray(DATA.status) && DATA.status.length)
-    return DATA.status.slice(0,3).map(s=>({k:s.session||s.k||'', text:s.text||s.status||''}));
-  // fallback: derive a terse status from the freshest tick in each session
-  const items = pulseItems(); if(!items.length) return [];
-  const short = t => String(t||'').replace(/<[^>]+>/g,'').split(/[.—:]/)[0].trim().split(/\s+/).slice(0,6).join(' ');
-  const out=[], seen=new Set();
-  for(const it of items){ const k=sessionOf(it.ts); if(seen.has(k)) continue; seen.add(k); out.push({k, text:short(it.text)}); if(out.length>=3) break; }
-  const order={Morning:0,Afternoon:1,Evening:2};
-  return out.sort((a,b)=>order[a.k]-order[b.k]);
-}
-function renderStatus(){
-  const el=document.getElementById('statusrow'); if(!el) return;
-  const items=statusItems();
-  if(!items.length){ el.innerHTML=''; return; }
-  const now=sessionOf(Date.now());
-  el.innerHTML = items.map(s=>`<span class="statuschip${s.k===now?' on':''}"><span class="sc-k">${esc(s.k)}</span>${esc(s.text||'—')}</span>`).join('');
-}
+  /* ─────────────────────────── list renderers (markup per skin, from the .dc.html) ─────────────────────────── */
+  function renderPositions(root, positions){
+    const box = root.querySelector('[data-role=positions]'); if (!box) return;
+    const pal = SKINS[currentSkin].pal;
+    box.innerHTML = positions.map(function (p){
+      const chip = chipStyle(p.up, pal);
+      if (currentSkin === 'glass') {
+        return '<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)">' +
+          '<div style="width:84px;font:600 20px/1 \'Avenir Next Condensed\',\'Avenir Next\',\'Arial Narrow\',system-ui,sans-serif;letter-spacing:0.5px">' + escapeHtml(p.t) + '</div>' +
+          '<div style="flex:1;display:flex;flex-direction:column;gap:3px">' +
+            '<span style="font:500 15px/1 system-ui,sans-serif;color:rgba(255,255,255,0.5)">' + escapeHtml(p.name) + '</span>' +
+            '<span style="font:500 14px/1 system-ui,sans-serif;color:rgba(255,255,255,0.35)">' + escapeHtml(p.sh) + ' sh</span>' +
+          '</div>' +
+          '<div style="font:600 17px/1 ui-monospace,Menlo,monospace">' + escapeHtml(p.val) + '</div>' +
+          '<div style="' + chip + '">' + escapeHtml(p.pct) + '</div>' +
+        '</div>';
+      }
+      if (currentSkin === 'neon') {
+        return '<div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:11px;margin-bottom:8px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);box-shadow:inset 0 1px 0 rgba(255,255,255,0.18)">' +
+          '<div style="width:80px;font:600 20px/1 \'Avenir Next Condensed\',\'Avenir Next\',\'Arial Narrow\',system-ui,sans-serif;letter-spacing:0.5px;color:#e0f6ff">' + escapeHtml(p.t) + '</div>' +
+          '<div style="flex:1;font:500 14px/1.3 system-ui,sans-serif;color:rgba(241,238,252,0.45)">' + escapeHtml(p.sh) + ' sh · ' + escapeHtml(p.val) + '</div>' +
+          '<div style="' + chip + '">' + escapeHtml(p.pct) + '</div>' +
+        '</div>';
+      }
+      /* gold */
+      return '<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,210,122,0.09)">' +
+        '<div style="width:84px;font:600 20px/1 \'Avenir Next Condensed\',\'Avenir Next\',\'Arial Narrow\',system-ui,sans-serif;letter-spacing:0.5px;color:#ffe9b0">' + escapeHtml(p.t) + '</div>' +
+        '<div style="flex:1;font:500 14px/1.3 system-ui,sans-serif;color:rgba(247,239,223,0.45)">' + escapeHtml(p.sh) + ' sh · ' + escapeHtml(p.val) + '</div>' +
+        '<div style="' + chip + '">' + escapeHtml(p.pct) + '</div>' +
+      '</div>';
+    }).join('');
+  }
 
-// --- The ticking clock (top-left) — updates every second, independent of data ---
-function tickClock(){
-  const d=new Date();
-  const dEl=document.getElementById('clk-date'), tEl=document.getElementById('clk-time');
-  if(dEl) dEl.textContent = d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-  if(tEl) tEl.textContent = d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',second:'2-digit'});
-}
-tickClock(); setInterval(tickClock, 1000);
+  function renderTrades(root, trades){
+    const box = root.querySelector('[data-role=trades]'); if (!box) return;
+    const pal = SKINS[currentSkin].pal;
+    box.innerHTML = trades.map(function (t){
+      const badge = badgeStyle(t.kind, pal), stat = statusChipStyle(t.ok, pal);
+      if (currentSkin === 'glass') {
+        return '<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)">' +
+          '<div style="font:500 15px/1 ui-monospace,Menlo,monospace;color:rgba(255,255,255,0.4);width:52px">' + escapeHtml(t.time) + '</div>' +
+          '<div style="' + badge + '">' + escapeHtml(t.side) + '</div>' +
+          '<div style="font:600 19px/1 \'Avenir Next Condensed\',\'Avenir Next\',\'Arial Narrow\',system-ui,sans-serif;letter-spacing:0.5px;flex:1">' + escapeHtml(t.tk) + ' <span style="font-weight:500;color:rgba(255,255,255,0.45)">' + escapeHtml(t.detail) + '</span></div>' +
+          '<div style="' + stat + '">' + escapeHtml(t.status) + '</div>' +
+        '</div>';
+      }
+      if (currentSkin === 'neon') {
+        return '<div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:11px;margin-bottom:8px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);box-shadow:inset 0 1px 0 rgba(255,255,255,0.18)">' +
+          '<div style="' + badge + '">' + escapeHtml(t.side) + '</div>' +
+          '<div style="font:600 18px/1 \'Avenir Next Condensed\',\'Avenir Next\',\'Arial Narrow\',system-ui,sans-serif;letter-spacing:0.5px;flex:1;color:#e0f6ff">' + escapeHtml(t.tk) + ' <span style="font-weight:500;color:rgba(241,238,252,0.4);font-size:14px">' + escapeHtml(t.detail) + '</span></div>' +
+          '<div style="' + stat + '">' + escapeHtml(t.status) + '</div>' +
+        '</div>';
+      }
+      /* gold */
+      return '<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,210,122,0.09)">' +
+        '<div style="' + badge + '">' + escapeHtml(t.side) + '</div>' +
+        '<div style="font:600 18px/1 \'Avenir Next Condensed\',\'Avenir Next\',\'Arial Narrow\',system-ui,sans-serif;letter-spacing:0.5px;flex:1;color:#ffe9b0">' + escapeHtml(t.tk) + ' <span style="font-weight:500;color:rgba(247,239,223,0.4);font-size:14px">' + escapeHtml(t.detail) + '</span></div>' +
+        '<div style="' + stat + '">' + escapeHtml(t.status) + '</div>' +
+      '</div>';
+    }).join('');
+  }
 
-// Pull live data from GitHub raw (updated by the Mac poller every ~2 min,
-// no Netlify rebuild needed); fall back to the deployed copy.
-const RAW = 'https://raw.githubusercontent.com/neongatsby/agentic-trading-site/main/site/data.json';
-function load() {
-  fetch(RAW + '?t=' + Date.now()).then(r => { if(!r.ok) throw 0; return r.json(); })
-    .catch(() => fetch('./data.json?t=' + Date.now()).then(r => r.json()))
-    .then(j => { DATA = j; const app=document.getElementById('app'); app.style.display = 'block'; document.getElementById('loaderr').style.display='none';
-      app.querySelectorAll(':scope > .panel').forEach((p,i)=>p.style.setProperty('--i', i+1)); // stagger entrances
-      setAccount(account); })
-    .catch(() => { if(!DATA) document.getElementById('loaderr').style.display = 'block'; });
-}
-load();
-setInterval(load, 20000);   // auto-refresh numbers every 20s
+  function renderNotes(root, notes){
+    const box = root.querySelector('[data-role=notes]'); if (!box) return;
+    let timeCol, bubble;
+    if (currentSkin === 'glass') {
+      timeCol = 'color:rgba(255,255,255,0.35)';
+      bubble = 'background:rgba(255,255,255,0.05);border-radius:4px 18px 18px 18px;padding:10px 15px;font:400 16px/1.45 system-ui,sans-serif;color:rgba(255,255,255,0.85)';
+    } else if (currentSkin === 'neon') {
+      timeCol = 'color:rgba(241,238,252,0.35)';
+      bubble = 'background:linear-gradient(180deg,rgba(139,92,246,0.16),rgba(139,92,246,0.07));border:1px solid rgba(167,139,250,0.18);border-radius:4px 20px 20px 20px;padding:10px 15px;font:400 16px/1.45 system-ui,sans-serif;color:rgba(241,238,252,0.9)';
+    } else {
+      timeCol = 'color:rgba(247,239,223,0.35)';
+      bubble = 'background:rgba(255,210,122,0.07);border:1px solid rgba(255,210,122,0.12);border-radius:4px 18px 18px 18px;padding:10px 15px;font:400 16px/1.45 system-ui,sans-serif;color:rgba(247,239,223,0.88)';
+    }
+    box.innerHTML = notes.map(function (n){
+      return '<div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:10px">' +
+        '<div style="font:500 14px/1.5 ui-monospace,Menlo,monospace;width:52px;padding-top:4px;' + timeCol + '">' + escapeHtml(n.time) + '</div>' +
+        '<div style="flex:1;' + bubble + '">' + escapeHtml(n.text) + '</div>' +
+      '</div>';
+    }).join('');
+  }
 
-// Live freshness indicator — ticks every second off the poller's timestamp.
-function updateLivePill(){
-  if(!DATA || !DATA.generated_at) return;
-  const pill=document.getElementById('live-pill'), txt=document.getElementById('live-txt');
-  const secs=Math.max(0, Math.floor((Date.now()-new Date(DATA.generated_at))/1000));
-  const stale = secs > 240;   // poller runs ~1-2 min; >4 min = something's off
-  pill.style.display='inline-flex'; pill.classList.toggle('stale', stale);
-  txt.textContent = stale ? `paused · ${secs<3600?Math.floor(secs/60)+'m':Math.floor(secs/3600)+'h'} ago`
-    : (secs<5?'LIVE · just now':`LIVE · updated ${secs<60?secs+'s':Math.floor(secs/60)+'m'} ago`);
-}
-setInterval(updateLivePill, 1000);
+  function renderRanges(root){
+    const box = root.querySelector('[data-role=ranges]'); if (!box) return;
+    const pal = SKINS[currentSkin].pal;
+    box.innerHTML = '';
+    ['1H', '1D', '1W', '1M', '6M', '1Y'].forEach(function (r){
+      const active = currentRange === r;
+      const base = { padding:'9px 20px', borderRadius:11, font:'500 18px "Avenir Next", Avenir, -apple-system, system-ui, sans-serif', cursor:'pointer', letterSpacing:'0.5px' };
+      const st = active
+        ? Object.assign({}, base, { background: pal.activeBg, color: pal.activeFg, border: '1px solid ' + pal.activeBorder })
+        : Object.assign({}, base, { background: 'transparent', color: pal.idleFg, border: '1px solid transparent' });
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.style.cssText = css(st);
+      b.textContent = r;
+      b.setAttribute('data-range', r);
+      b.addEventListener('click', function (){ setRange(r); });
+      box.appendChild(b);
+    });
+  }
 
-// Tap the LIVE pill to force a refresh.
-document.getElementById('live-pill').addEventListener('click', () => { const t=document.getElementById('live-txt'); t.textContent='refreshing…'; load(); });
+  /* full data-driven refresh of the lists / header (never touches the hero value or WebGL contexts) */
+  function renderLists(root){
+    if (!DATA) return;
+    const m = computeModel();
+    setText(root, '[data-role=status]', m.status);
+    const at = root.querySelector('[data-role=alltime]'); if (at) at.textContent = pct1(m.allTimePct);
+    root.querySelectorAll('[data-role=news]').forEach(function (n){ n.textContent = m.news; });
+    renderPositions(root, m.positions);
+    renderTrades(root, m.trades);
+    renderNotes(root, m.notes);
+    setText(root, '[data-role=th-head]', m.thHead);
+    setText(root, '[data-role=th-blurb]', m.thBlurb);
+  }
 
+  /* ─────────────────────────── clock ─────────────────────────── */
+  function tickClock(root){
+    if (!root) return;
+    const now = new Date();
+    const c = root.querySelector('[data-role=clock]'); if (c) c.textContent = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit' });
+    const d = root.querySelector('[data-role=date]'); if (d) d.textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+  }
+
+  /* ─────────────────────────── range switch → chart + per-range up/down ─────────────────────────── */
+  function setRange(range){
+    currentRange = range;
+    const root = currentRoot; if (!root) return;
+    renderRanges(root);
+    const pts = DATA ? equityPoints(range) : [];
+    const up = pts.length >= 2 ? (pts[pts.length - 1] >= pts[0]) : true;
+    const trend = up ? 'up' : 'down';
+    const chart = root.querySelector('equity-chart');
+    const ribbon = root.querySelector('chart-ribbon');
+    const pf = root.querySelector('particle-field');
+    const pill = root.querySelector('value-pill');
+    if (pts.length >= 2) {
+      if (chart && chart.setData) chart.setData(pts, range);
+      if (ribbon && ribbon.setData) ribbon.setData(pts, range); /* 1b: same array to BOTH (§3) */
+    }
+    if (chart) { chart.setAttribute('trend', trend); chart.setAttribute('range', range); }
+    if (ribbon) { ribbon.setAttribute('trend', trend); ribbon.setAttribute('range', range); }
+    if (pf) pf.setAttribute('mode', trend);
+    if (pill) pill.setAttribute('mode', trend);
+  }
+
+  /* ─────────────────────────── live tick (imperative hero + acct-tick), never re-renders the hero ─────────────────────────── */
+  function seedValueUI(root){
+    const hero = root.querySelector('hero-3d'); if (hero) hero.setAttribute('value', heroText());
+    const pill = root.querySelector('value-pill'); if (pill) pill.setAttribute('text', pillText());
+    lastValue = num(live().equity);
+  }
+  function liveTick(root){
+    if (!DATA) return;
+    const eq = num(live().equity);
+    if (eq === lastValue) return;
+    const hero = root.querySelector('hero-3d');
+    if (hero) hero.setAttribute('value', heroText());                 /* 1. imperative hero value */
+    const pill = root.querySelector('value-pill');
+    const up = num(live().day_pnl) >= 0;
+    const txt = pillText();
+    const modeDown = pill && (pill.getAttribute('mode') || 'up') === 'down';
+    if (pill && !modeDown) window.dispatchEvent(new CustomEvent('acct-tick', { detail: { up: up, text: txt } })); /* 2. pill event */
+    else if (pill) pill.setAttribute('text', txt);                    /* gated when range is down — keep text correct */
+    lastValue = eq;
+  }
+
+  /* ─────────────────────────── mount / switch (ONE skin's WebGL live at a time) ─────────────────────────── */
+  function mount(skinKey){
+    const host = document.getElementById('skin-root');
+    if (currentRoot) { if (ro) { try { ro.disconnect(); } catch (e) {} ro = null; } currentRoot.remove(); currentRoot = null; }
+    currentSkin = skinKey;
+    const root = SKINS[skinKey].build();     /* fresh DOM → hero-3d / chart-ribbon boot their own contexts */
+    host.appendChild(root);
+    currentRoot = root;
+    lastValue = null;
+    renderRanges(root);
+    updateToggleActive();
+    if (DATA) { renderLists(root); seedValueUI(root); }
+    setRange(currentRange);
+    tickClock(root);
+    if (window.ResizeObserver) { ro = new ResizeObserver(applyScale); ro.observe(root); }
+    applyScale();
+  }
+  function setSkin(skinKey){
+    if (!SKINS[skinKey] || skinKey === currentSkin) return;
+    try { localStorage.setItem('skin', skinKey); } catch (e) {}
+    mount(skinKey);
+  }
+  function updateToggleActive(){
+    const box = document.getElementById('skin-toggle'); if (!box) return;
+    box.querySelectorAll('button').forEach(function (b){ b.setAttribute('aria-pressed', b.getAttribute('data-skin') === currentSkin ? 'true' : 'false'); });
+  }
+  function wireToggle(){
+    const box = document.getElementById('skin-toggle'); if (!box) return;
+    box.querySelectorAll('button').forEach(function (b){ b.addEventListener('click', function (){ setSkin(b.getAttribute('data-skin')); }); });
+  }
+
+  /* ─────────────────────────── scale the 1080-wide root to viewport width ─────────────────────────── */
+  function applyScale(){
+    const stage = document.getElementById('stage'), scaler = document.getElementById('scaler');
+    if (!stage || !scaler) return;
+    const s = window.innerWidth / 1080;
+    stage.style.transform = 'scale(' + s + ')';
+    const natH = currentRoot ? currentRoot.offsetHeight : 1920;
+    scaler.style.height = (natH * s) + 'px';
+  }
+
+  /* ─────────────────────────── polling ─────────────────────────── */
+  function fetchData(){
+    const ts = Date.now();
+    const urls = ['https://raw.githubusercontent.com/neongatsby/agentic-trading-site/main/site/data.json?t=' + ts, './data.json?t=' + ts];
+    return urls.reduce(function (chain, u){
+      return chain.then(function (got){
+        if (got) return got;
+        return fetch(u, { cache: 'no-store' }).then(function (r){ return r.ok ? r.json() : null; }).catch(function (){ return null; });
+      });
+    }, Promise.resolve(null));
+  }
+  function poll(){
+    return fetchData().then(function (d){
+      if (d) DATA = d;
+      if (DATA && currentRoot) { renderLists(currentRoot); setRange(currentRange); liveTick(currentRoot); applyScale(); }
+      return DATA;
+    });
+  }
+
+  /* ─────────────────────────── boot ─────────────────────────── */
+  function boot(){
+    wireToggle();
+    window.addEventListener('resize', applyScale);
+    try { const saved = localStorage.getItem('skin'); if (saved && SKINS[saved]) currentSkin = saved; } catch (e) {}
+    if (!SKINS[currentSkin]) currentSkin = 'neon';   /* default: Neon Arcade (1b) */
+    mount(currentSkin);
+    setInterval(function (){ tickClock(currentRoot); }, 1000);
+    poll();
+    setInterval(poll, 15000);
+  }
+
+  /* test / debug hooks */
+  window.__dash = { mount: mount, setSkin: setSkin, setRange: setRange, poll: poll, computeModel: function (){ return DATA ? computeModel() : null; }, currentSkin: function (){ return currentSkin; }, root: function (){ return currentRoot; }, setData: function (d){ DATA = d; } };
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+
+  /* ═══════════════════════════ SKIN BUILDERS (layout markup + inline styles verbatim from the .dc.html) ═══════════════════════════ */
+
+  /* 1a · GLASS TERMINAL */
+  function buildGlass(){
+    const root = document.createElement('div');
+    root.setAttribute('data-hero-scope', '1');
+    root.className = 'skin-root skin-glass';
+    root.style.cssText = 'position:relative;width:1080px;min-height:1920px;background:radial-gradient(120% 60% at 50% 0%, #10131d 0%, #0b0e15 55%, #080a10 100%);color:#eef1f6;overflow:hidden';
+    root.innerHTML =
+      '<particle-field mode="up" density="0.7" style="position:absolute;inset:0"></particle-field>' +
+      '<div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:22px;padding:40px 44px 36px;min-height:1920px;box-sizing:border-box">' +
+
+        '<div style="display:flex;align-items:center;justify-content:space-between">' +
+          '<div style="display:flex;flex-direction:column;gap:6px">' +
+            '<div style="font:700 17px/1 system-ui, sans-serif;letter-spacing:4px;color:rgba(255,255,255,0.9)">AGENTIC&nbsp;TRADING</div>' +
+            '<div style="display:flex;align-items:center;gap:9px;font:500 16px/1 system-ui, sans-serif;color:rgba(255,255,255,0.5)">' +
+              '<span style="width:9px;height:9px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:dotPulse 2.2s infinite"></span>' +
+              '<span data-role="status" style="white-space:nowrap">Engine resting — next wake at the open</span>' +
+            '</div>' +
+            '<div style="font:500 16px/1 system-ui, sans-serif;color:rgba(255,255,255,0.4)">All-time <span data-role="alltime" style="color:#6ee7b7;font-weight:600">+0.0%</span> · started $1,000</div>' +
+          '</div>' +
+          '<div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">' +
+            '<div data-role="clock" style="white-space:nowrap;font:700 17px/1 system-ui, sans-serif;letter-spacing:4px;color:rgba(255,255,255,0.45)"></div>' +
+            '<div data-role="date" style="font:500 15px/1 system-ui, sans-serif;color:rgba(255,255,255,0.45)"></div>' +
+          '</div>' +
+        '</div>' +
+
+        '<div style="display:flex;flex-direction:column;align-items:center;gap:0">' +
+          '<div style="font:600 15px/1 system-ui, sans-serif;letter-spacing:5px;color:rgba(255,255,255,0.4);margin-top:8px">ACCOUNT&nbsp;VALUE</div>' +
+          '<hero-3d value="$0.00" metal="#ffffff" rims="#34d399,#ffffff,#2dd4bf,#e6b45a" height="240" style="width:100%;height:240px;z-index:61"></hero-3d>' +
+          '<value-pill mode="up" text="▲ +$0.00 · +0.0% today" pad="11px 22px" up-bg="rgba(52,211,153,0.15)" up-fg="#6ee7b7" up-border="rgba(52,211,153,0.4)" dn-bg="rgba(248,113,113,0.15)" dn-fg="#fca5a5" dn-border="rgba(248,113,113,0.4)" style="margin-top:-16px"></value-pill>' +
+          '<div style="position:relative;width:100%;margin-top:10px">' +
+            '<equity-chart range="1D" trend="up" accent="#34d399" down="#f87171" tracer="dot" height="520" style="width:100%;height:520px"></equity-chart>' +
+            '<div style="position:absolute;left:0;top:0;bottom:22px;width:1px;background:linear-gradient(0deg, rgba(52,211,153,0.35), rgba(52,211,153,0))"></div>' +
+            '<div style="position:absolute;right:0;top:0;bottom:22px;width:1px;background:linear-gradient(0deg, rgba(52,211,153,0.35), rgba(52,211,153,0))"></div>' +
+          '</div>' +
+          '<div data-role="ranges" style="display:flex;justify-content:flex-end;align-items:center;width:100%;gap:8px;margin-top:8px"></div>' +
+        '</div>' +
+
+        '<div style="display:flex;align-items:center;margin:0 -44px;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);padding-left:44px">' +
+          '<div style="flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%);mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%)">' +
+            '<div style="display:flex;width:max-content;animation:tickerX 75s linear infinite">' +
+              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(255,255,255,0.6);padding:12px 0"></span>' +
+              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(255,255,255,0.6);padding:12px 0"></span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:22px">' +
+          '<div style="background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:14px">' +
+            '<div style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(255,255,255,0.45)">OPEN&nbsp;POSITIONS</div>' +
+            '<div style="overflow-y:auto;max-height:290px;-webkit-mask-image:linear-gradient(180deg, #000 76%, rgba(0,0,0,0.6) 92%, transparent 100%);mask-image:linear-gradient(180deg, #000 76%, rgba(0,0,0,0.6) 92%, transparent 100%)"><div data-role="positions"></div></div>' +
+          '</div>' +
+          '<div style="background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:14px">' +
+            '<div style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(255,255,255,0.45)">RECENT&nbsp;TRADES</div>' +
+            '<div style="overflow-y:auto;max-height:290px;-webkit-mask-image:linear-gradient(180deg, #000 76%, rgba(0,0,0,0.6) 92%, transparent 100%);mask-image:linear-gradient(180deg, #000 76%, rgba(0,0,0,0.6) 92%, transparent 100%)"><div data-role="trades"></div></div>' +
+          '</div>' +
+        '</div>' +
+
+        '<div style="background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:14px">' +
+          '<div style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(255,255,255,0.45)">WHAT&nbsp;THE&nbsp;ENGINE’S&nbsp;THINKING</div>' +
+          '<div style="overflow-y:auto;max-height:250px;-webkit-mask-image:linear-gradient(180deg, #000 76%, rgba(0,0,0,0.6) 92%, transparent 100%);mask-image:linear-gradient(180deg, #000 76%, rgba(0,0,0,0.6) 92%, transparent 100%)"><div data-role="notes"></div></div>' +
+        '</div>' +
+
+        '<div style="background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.15);border-radius:16px;padding:18px 22px;display:flex;flex-direction:column;gap:9px">' +
+          '<div data-role="th-head" style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:#6ee7b7">TOP&nbsp;HOLDING</div>' +
+          '<div data-role="th-blurb" style="font:400 15px/1.5 system-ui, sans-serif;color:rgba(255,255,255,0.7)"></div>' +
+        '</div>' +
+      '</div>';
+    return root;
+  }
+
+  /* 1b · NEON ARCADE (chrome ridge behind the 2D line) */
+  function buildNeon(){
+    const root = document.createElement('div');
+    root.setAttribute('data-hero-scope', '1');
+    root.className = 'skin-root skin-neon';
+    root.style.cssText = 'position:relative;width:1080px;min-height:1920px;background:radial-gradient(140% 55% at 50% -5%, #221448 0%, #150d2e 45%, #0c081c 100%);color:#f1eefc;overflow:hidden';
+    root.innerHTML =
+      '<particle-field mode="up" density="1.1" style="position:absolute;inset:0"></particle-field>' +
+      '<div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:22px;padding:40px 44px 36px;min-height:1920px;box-sizing:border-box">' +
+
+        '<div style="display:flex;align-items:center;justify-content:space-between">' +
+          '<div style="display:flex;flex-direction:column;gap:7px">' +
+            '<div style="font:800 19px/1 system-ui, sans-serif;letter-spacing:5px;background:linear-gradient(90deg, #22d3ee, #e879f9);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 14px rgba(139,92,246,0.55))">AGENTIC&nbsp;TRADING</div>' +
+            '<div style="display:flex;align-items:center;gap:9px;font:500 16px/1 system-ui, sans-serif;color:rgba(241,238,252,0.55)">' +
+              '<span style="width:9px;height:9px;border-radius:50%;background:#22d3ee;box-shadow:0 0 12px #22d3ee;animation:dotPulse 2.2s infinite"></span>' +
+              '<span data-role="status" style="white-space:nowrap">Engine resting — next wake at the open</span>' +
+            '</div>' +
+            '<div style="font:500 16px/1 system-ui, sans-serif;color:rgba(241,238,252,0.45)">All-time <span data-role="alltime" style="color:#22d3ee;font-weight:600">+0.0%</span> · started $1,000</div>' +
+          '</div>' +
+          '<div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">' +
+            '<div data-role="clock" style="white-space:nowrap;font:800 19px/1 system-ui, sans-serif;letter-spacing:5px;color:rgba(241,238,252,0.45)"></div>' +
+            '<div data-role="date" style="font:500 15px/1 system-ui, sans-serif;color:rgba(241,238,252,0.45)"></div>' +
+          '</div>' +
+        '</div>' +
+
+        '<div style="display:flex;flex-direction:column;align-items:center;gap:0">' +
+          '<div style="font:700 15px/1 system-ui, sans-serif;letter-spacing:6px;color:rgba(232,121,249,0.75);margin-top:8px">ACCOUNT&nbsp;VALUE</div>' +
+          '<hero-3d value="$0.00" metal="#cfd8ff" rims="#a855f7,#f472b6,#3b82f6,#f43f5e,#2dd4bf" height="250" style="width:100%;height:250px"></hero-3d>' +
+          '<value-pill mode="up" text="▲ +$0.00 · +0.0% today" pad="12px 24px" glow="1" up-bg="rgba(34,211,238,0.16)" up-fg="#a5f3fc" up-border="rgba(34,211,238,0.45)" dn-bg="rgba(251,113,133,0.16)" dn-fg="#fda4af" dn-border="rgba(251,113,133,0.45)" style="margin-top:-16px"></value-pill>' +
+          '<div style="position:relative;width:100%;margin-top:10px">' +
+            '<chart-ribbon overlay="1" range="1D" trend="up" metal="#cfd8ff" rims="#a855f7,#f472b6,#2dd4bf" bg="#150d2e" style="position:absolute;left:0;right:0;top:0;height:500px"></chart-ribbon>' +
+            '<equity-chart range="1D" trend="up" accent="#22d3ee" down="#fb7185" tracer="comet" height="500" style="position:relative;width:100%;height:500px"></equity-chart>' +
+            '<div style="position:absolute;left:0;top:0;bottom:22px;width:1px;background:linear-gradient(0deg, rgba(103,232,249,0.32), rgba(103,232,249,0))"></div>' +
+            '<div style="position:absolute;right:0;top:0;bottom:22px;width:1px;background:linear-gradient(0deg, rgba(103,232,249,0.32), rgba(103,232,249,0))"></div>' +
+          '</div>' +
+          '<div data-role="ranges" style="display:flex;justify-content:flex-end;align-items:center;width:100%;gap:8px;margin-top:8px"></div>' +
+        '</div>' +
+
+        '<div style="display:flex;align-items:center;margin:0 -44px;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);padding-left:44px">' +
+          '<div style="flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%);mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%)">' +
+            '<div style="display:flex;width:max-content;animation:tickerX 75s linear infinite">' +
+              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(241,238,252,0.6);padding:12px 0"></span>' +
+              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(241,238,252,0.6);padding:12px 0"></span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:22px">' +
+          '<div style="backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);background:rgba(255,255,255,0.055);border:1px solid rgba(255,255,255,0.16);border-radius:18px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(255,255,255,0.06), 0 14px 40px rgba(0,0,0,0.35);position:relative;padding:20px 22px;display:flex;flex-direction:column;gap:14px">' +
+            '<glass-rim radius="18" style="position:absolute;inset:0;pointer-events:none"></glass-rim>' +
+            '<div style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(241,238,252,0.45)">OPEN&nbsp;POSITIONS</div>' +
+            '<div style="overflow-y:auto;max-height:290px"><div data-role="positions"></div></div>' +
+          '</div>' +
+          '<div style="backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);background:rgba(255,255,255,0.055);border:1px solid rgba(255,255,255,0.16);border-radius:18px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(255,255,255,0.06), 0 14px 40px rgba(0,0,0,0.35);position:relative;padding:20px 22px;display:flex;flex-direction:column;gap:14px">' +
+            '<glass-rim radius="18" style="position:absolute;inset:0;pointer-events:none"></glass-rim>' +
+            '<div style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(241,238,252,0.45)">RECENT&nbsp;TRADES</div>' +
+            '<div style="overflow-y:auto;max-height:290px"><div data-role="trades"></div></div>' +
+          '</div>' +
+        '</div>' +
+
+        '<div style="backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);background:rgba(255,255,255,0.055);border:1px solid rgba(255,255,255,0.16);border-radius:18px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(255,255,255,0.06), 0 14px 40px rgba(0,0,0,0.35);position:relative;padding:20px 22px;display:flex;flex-direction:column;gap:14px">' +
+          '<glass-rim radius="18" style="position:absolute;inset:0;pointer-events:none"></glass-rim>' +
+          '<div style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(241,238,252,0.45)">WHAT&nbsp;THE&nbsp;ENGINE’S&nbsp;THINKING</div>' +
+          '<div style="overflow-y:auto;max-height:250px"><div data-role="notes"></div></div>' +
+        '</div>' +
+
+        '<div style="backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);background:linear-gradient(90deg, rgba(34,211,238,0.09), rgba(232,121,249,0.09));border:1px solid rgba(255,255,255,0.16);border-radius:18px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.25);position:relative;padding:18px 22px;display:flex;flex-direction:column;gap:9px">' +
+          '<glass-rim radius="18" style="position:absolute;inset:0;pointer-events:none"></glass-rim>' +
+          '<div data-role="th-head" style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:#67e8f9">TOP&nbsp;HOLDING</div>' +
+          '<div data-role="th-blurb" style="font:400 15px/1.5 system-ui, sans-serif;color:rgba(241,238,252,0.72)"></div>' +
+        '</div>' +
+      '</div>';
+    return root;
+  }
+
+  /* 1c · HIGH ROLLER (gold chrome, bezeled hero window, marquee bars) */
+  function buildGold(){
+    const root = document.createElement('div');
+    root.setAttribute('data-hero-scope', '1');
+    root.className = 'skin-root skin-gold';
+    root.style.cssText = 'position:relative;width:1080px;min-height:1920px;background:radial-gradient(130% 55% at 50% -5%, #241505 0%, #140d05 45%, #0b0805 100%);color:#f7efdf;overflow:hidden';
+    root.innerHTML =
+      '<particle-field mode="up" density="1.3" style="position:absolute;inset:0"></particle-field>' +
+      '<div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:22px;padding:36px 44px;min-height:1920px;box-sizing:border-box">' +
+
+        '<div style="display:flex;align-items:center;justify-content:space-between">' +
+          '<div style="display:flex;flex-direction:column;gap:7px">' +
+            '<div style="font:800 19px/1 system-ui, sans-serif;letter-spacing:6px;background:linear-gradient(180deg, #ffe9b0 10%, #d99a2b 55%, #ffd27a 90%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 8px rgba(217,154,43,0.4))">AGENTIC&nbsp;TRADING</div>' +
+            '<div style="display:flex;align-items:center;gap:9px;font:500 16px/1 system-ui, sans-serif;color:rgba(247,239,223,0.5)">' +
+              '<span style="width:9px;height:9px;border-radius:50%;background:#ffd27a;box-shadow:0 0 12px #ffb347;animation:dotPulse 2.2s infinite"></span>' +
+              '<span data-role="status" style="white-space:nowrap">Engine resting — next wake at the open</span>' +
+            '</div>' +
+            '<div style="font:500 16px/1 system-ui, sans-serif;color:rgba(247,239,223,0.4)">All-time <span data-role="alltime" style="color:#ffd27a;font-weight:600">+0.0%</span> · started $1,000</div>' +
+          '</div>' +
+          '<div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">' +
+            '<div data-role="clock" style="white-space:nowrap;font:800 19px/1 system-ui, sans-serif;letter-spacing:6px;color:rgba(247,239,223,0.4)"></div>' +
+            '<div data-role="date" style="font:500 15px/1 system-ui, sans-serif;color:rgba(247,239,223,0.4)"></div>' +
+          '</div>' +
+        '</div>' +
+
+        '<div style="display:flex;flex-direction:column;gap:0;border-radius:30px;overflow:hidden;border:2px solid rgba(255,210,122,0.35);background:linear-gradient(180deg, #1c1207, #120c05);box-shadow:0 24px 70px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,233,176,0.25)">' +
+          '<div style="height:20px;position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(255,233,176,0.1), rgba(255,233,176,0.03));border-bottom:1px solid rgba(255,210,122,0.22);box-shadow:inset 0 1px 0 rgba(255,233,176,0.28)">' +
+            '<div style="position:absolute;top:0;bottom:0;width:26%;background:linear-gradient(90deg, transparent, rgba(255,233,176,0.4), transparent);animation:sweepX 9s ease-in-out infinite"></div>' +
+          '</div>' +
+          '<div style="display:flex;flex-direction:column;align-items:center;gap:0;padding:16px 24px 20px">' +
+            '<div style="font:700 15px/1 system-ui, sans-serif;letter-spacing:7px;color:rgba(255,210,122,0.7)">ACCOUNT&nbsp;VALUE</div>' +
+            '<hero-3d value="$0.00" metal="#ffd27a" rims="#ffd27a,#ffb347,#fff3d6,#e6b45a" height="250" style="width:100%;height:250px"></hero-3d>' +
+            '<value-pill mode="up" text="▲ +$0.00 · +0.0% today" pad="12px 24px" glow="1" up-bg="rgba(255,210,122,0.15)" up-fg="#ffe9b0" up-border="rgba(255,210,122,0.45)" dn-bg="rgba(255,94,122,0.16)" dn-fg="#ffb3c0" dn-border="rgba(255,94,122,0.45)" style="margin-top:-16px"></value-pill>' +
+            '<div style="position:relative;width:100%;margin-top:10px">' +
+              '<equity-chart range="1D" trend="up" accent="#ffd27a" down="#ff5e7a" tracer="ember" height="430" style="width:100%;height:430px"></equity-chart>' +
+              '<div style="position:absolute;left:0;top:0;bottom:22px;width:1px;background:linear-gradient(0deg, rgba(255,210,122,0.35), rgba(255,210,122,0))"></div>' +
+              '<div style="position:absolute;right:0;top:0;bottom:22px;width:1px;background:linear-gradient(0deg, rgba(255,210,122,0.35), rgba(255,210,122,0))"></div>' +
+            '</div>' +
+            '<div data-role="ranges" style="display:flex;justify-content:flex-end;align-items:center;width:100%;gap:8px;margin-top:8px"></div>' +
+          '</div>' +
+          '<div style="height:20px;position:relative;overflow:hidden;background:linear-gradient(0deg, rgba(255,233,176,0.1), rgba(255,233,176,0.03));border-top:1px solid rgba(255,210,122,0.22);box-shadow:inset 0 -1px 0 rgba(255,233,176,0.28)">' +
+            '<div style="position:absolute;top:0;bottom:0;width:26%;background:linear-gradient(90deg, transparent, rgba(255,233,176,0.4), transparent);animation:sweepX 9s ease-in-out infinite reverse;animation-delay:-4.5s"></div>' +
+          '</div>' +
+        '</div>' +
+
+        '<div style="display:flex;align-items:center;margin:0 -44px;border-top:1px solid rgba(255,210,122,0.14);border-bottom:1px solid rgba(255,210,122,0.14);padding-left:44px">' +
+          '<div style="flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%);mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%)">' +
+            '<div style="display:flex;width:max-content;animation:tickerX 75s linear infinite">' +
+              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(247,239,223,0.6);padding:12px 0"></span>' +
+              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(247,239,223,0.6);padding:12px 0"></span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:22px">' +
+          '<div style="background:rgba(255,233,176,0.04);border:1px solid rgba(255,210,122,0.16);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:14px">' +
+            '<div style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(255,210,122,0.6)">OPEN&nbsp;POSITIONS</div>' +
+            '<div style="overflow-y:auto;max-height:290px"><div data-role="positions"></div></div>' +
+          '</div>' +
+          '<div style="background:rgba(255,233,176,0.04);border:1px solid rgba(255,210,122,0.16);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:14px">' +
+            '<div style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(255,210,122,0.6)">RECENT&nbsp;TRADES</div>' +
+            '<div style="overflow-y:auto;max-height:290px"><div data-role="trades"></div></div>' +
+          '</div>' +
+        '</div>' +
+
+        '<div style="background:rgba(255,233,176,0.04);border:1px solid rgba(255,210,122,0.16);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:14px">' +
+          '<div style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(255,210,122,0.6)">WHAT&nbsp;THE&nbsp;ENGINE’S&nbsp;THINKING</div>' +
+          '<div style="overflow-y:auto;max-height:250px"><div data-role="notes"></div></div>' +
+        '</div>' +
+
+        '<div style="background:linear-gradient(90deg, rgba(255,210,122,0.08), rgba(255,94,122,0.06));border:1px solid rgba(255,210,122,0.22);border-radius:16px;padding:18px 22px;display:flex;flex-direction:column;gap:9px">' +
+          '<div data-role="th-head" style="font:600 15px/1 system-ui, sans-serif;letter-spacing:3px;color:#ffd27a">TOP&nbsp;HOLDING</div>' +
+          '<div data-role="th-blurb" style="font:400 15px/1.5 system-ui, sans-serif;color:rgba(247,239,223,0.72)"></div>' +
+        '</div>' +
+      '</div>';
+    return root;
+  }
+
+})();
 </script>
 </body>
 </html>
