@@ -3,17 +3,22 @@
  "status": [
   {
    "session": "Morning",
-   "text": "Holding — 50-day holds, SoFi faded"
+   "text": "Held — 50-day holds, SoFi faded"
+  },
+  {
+   "session": "Afternoon",
+   "text": "Fully deployed, holding into CPI"
   }
  ],
  "headlines": [
-  "Chips lead the tape lower a 2nd day — Samsung Q2 miss + a report China's DeepSeek is building its own AI chip; profit-taking after +80% H1",
-  "June CPI Tue 8:30am ET — headline seen cooling to ~3.9% on a ~10% gasoline drop; core still sticky ~2.9% (+0.3% m/m)",
-  "JPMorgan, Goldman, Citi, Wells Fargo, BofA kick off Q2 bank earnings Tuesday morning",
+  "Chips lead the tape lower a 2nd day — Samsung Q2 miss + report China's DeepSeek is building its own AI chip; S&P -0.5%, Nasdaq -1.2%",
+  "June CPI Tue 8:30am ET — headline seen ~-0.1% m/m on the oil crash but YoY ~3.9%; core still sticky ~2.9%",
+  "Fed Chair Warsh testifies to House Financial Services Tue on the semi-annual policy report — a 2nd macro swing factor",
+  "Big banks — JPMorgan, Goldman, Citi, Wells Fargo, BofA — kick off Q2 earnings Tue morning",
   "ASML and TSMC report later this week — traders watch for any exhaustion in the chip trade",
   "QQQ defends its 50-day (~$716) after probing $712.6 — a dip-to-support test, not a break",
   "NY Fed 1-yr inflation expectations jump to 3.7%, highest since Sept 2023 — the hawkish risk in the print",
-  "Oil bid on renewed Middle East tension, muddying June's inflation read"
+  "SOXL -11% / SOXS +11% today — the inverses are the day's leaders, but already extended into a two-sided CPI"
  ],
  "coverage": [
   {
@@ -22,13 +27,13 @@
    "theme": "Leveraged core",
    "verdict": "buy",
    "verdict_label": "LIVE — core held, $68.50 GTC stop ✓",
-   "thesis": "**The book's 3x core — held behind the brake into tomorrow's CPI.** 10 sh @ $76.29, spot **~$74.34 (-2.6%, day -3.6%)** as chips lead a 2nd day of risk-off (SOXL -9%; Samsung's miss + a report DeepSeek is building its own AI chip + profit-taking after +80% H1). The tell: QQQ slipped under its 20-day (~$722.6) but is **defending its 50-day (~$716)** after bouncing off the $712.6 low — a dip-to-support test, not a decisive break — and AI-capex keeps confirming (TSMC June +68% YoY). No trail this run: still a down day, no new higher-low to ratchet to; stop stays **$68.50 GTC** (below the 7/8 swing low $69.57, ~8% under spot). Tuesday 8:30am **CPI** is the binary — headline seen cooling to ~3.9% on -10% gasoline, core sticky ~2.9%; the $68.50 stop is the defined downside on a break.",
-   "size": "$743",
+   "thesis": "**The book's 3x core — held behind the brake into tomorrow's CPI.** 10 sh @ $76.29, spot **~$73.83 (-3.1%, day -4.2%)** as chips lead a 2nd day of risk-off (SOXL -11%; Samsung's miss + a report DeepSeek is building its own AI chip + profit-taking after +80% H1). The tell: QQQ slipped under its 20-day (~$722.6) but is **sitting right on its 50-day (~$716)** after bouncing off the $712.6 low — a dip-to-support test, not a decisive break. No trail this run: still a down day, no new higher-low to ratchet to; stop stays **$68.50 GTC** (below the 7/8 swing low $69.57, ~7% under spot). Tuesday 8:30am **CPI** (+ Warsh testimony) is the binary — headline seen ~-0.1% m/m on the oil crash, YoY ~3.9%, core sticky ~2.9%; the $68.50 stop is the defined downside on a break.",
+   "size": "$738",
    "size_pct": 76,
    "size_note": "10 sh held — the single 3x core, ~76% of sleeve, $68.50 GTC stop",
-   "plan_usd": 743,
+   "plan_usd": 738,
    "horizon": 0.3,
-   "updated": "2026-07-13T11:41:00-04:00",
+   "updated": "2026-07-13T12:12:00-04:00",
    "stop": 68.5
   },
   {
@@ -36,14 +41,14 @@
    "name": "Direxion 3x Semis",
    "theme": "Leveraged core",
    "verdict": "avoid",
-   "verdict_label": "Rotation candidate · gate UNMET · bear hedge on standby",
-   "thesis": "**Semis under trend — long gate UNMET, and I won't short into a print consensus sees cooling.** SOXL ~$168 (-12% today) — the semi basket is well under its 20-day, so no TQQQ->SOXL flip. The **both-directions** read: the clean bear expression (**SQQQ ~$39.4 / SOXS ~$4.59**, both already +4-12% today) would pay on a hot CPI, but chasing inverses that have already run, the day before a number expected to cool, is fighting the base case — a hedge armed only if CPI runs hot and price confirms a breakdown, not a position today.",
+   "verdict_label": "Avoid — 3x semis, crushed -11%",
+   "thesis": "**3x semis got taken to the woodshed, -11% today** on the Samsung/DeepSeek chip scare. No knife-catch here into CPI — if anything the inverse is the day's move, but that's already extended. Avoid.",
    "size": "$0",
    "size_pct": 0,
    "size_note": "3x semis — **~−9% pre-market** on the SK Hynix (−8%) / Micron (−4%) drag. Confirms the sector's the weak spot today; no long here, and not chasing the SOXS spike into a CPI binary either.",
    "plan_usd": 0,
    "horizon": 0.2,
-   "updated": "2026-07-13T11:41:00-04:00",
+   "updated": "2026-07-13T12:12:00-04:00",
    "trigger": "SOXX > 600 close"
   },
   {
@@ -51,14 +56,14 @@
    "name": "GraniteShares 2x NVDA",
    "theme": "Leveraged core",
    "verdict": "buy",
-   "verdict_label": "LIVE — held, best % (+4.4%), $29.50 GTC stop ✓",
-   "thesis": "**2x NVDA — still the book's best position on entry (+4.4%).** 1 sh @ $30.59, spot **~$31.94** (day -3.2% with the chip tape, but +4.4% on our entry). Rides NVDA (~$207, -1.8%) holding up far better than the broad semi basket (SOXL -9%) — relative strength + TSMC June +68% YoY confirming AI-capex. Lone leftover single share; **$29.50 GTC stop** (~7.6% under) locks most of the gain. Too small to add to (wash-blocked, no BP) — it just rides its stop.",
+   "verdict_label": "LIVE — held, $29.50 GTC stop ✓",
+   "thesis": "**Lone green in the book (+3% vs entry).** 1 sh @ $30.59, spot **~$31.50 (day -4.6% but still up on entry)**. Small (1 share) but it carries a **$29.50 GTC stop** so it's protected, not unstoppable dust — leaving it. 2x-NVDA proxy; NVDA ~$206 is holding up better than pure semis.",
    "size": "$32",
    "size_pct": 3,
-   "size_note": "1 sh held — 2x NVDA, ~3% of sleeve, $29.50 GTC stop",
+   "size_note": "1 sh, protected — small but the lone green (+3%)",
    "plan_usd": 32,
    "horizon": 0.3,
-   "updated": "2026-07-13T11:41:00-04:00",
+   "updated": "2026-07-13T12:12:00-04:00",
    "trigger": 30.56,
    "stop": 29.5
   },
@@ -67,14 +72,14 @@
    "name": "Nvidia",
    "theme": "AI / semis",
    "verdict": "watch",
-   "verdict_label": "dust flushed at open ✓ — full size in paper (130 sh)",
-   "thesis": "**Leader holding ~$208 (day -1.6%, off the $211 record) while the broad chip basket craters (SOXL -9%) — real relative strength.** AI-hardware demand keeps confirming (TSMC June +68% YoY; bullish falling-wedge per 7/11). The tiny 0.05sh live dust **market-sold at the 9:30 open** per the charter's cleanup rule — confirmed done (cash $8.88->$19.59), so every remaining live position is protected. Full-size NVDA exposure lives in the paper book (130 sh @ $210.26, $186 GTC stop).",
+   "verdict_label": "Watch — holding up vs semis",
+   "thesis": "**Holds up better than the pure-semi wreck.** ~$206 (day -2.3%) vs SOXL -11%; bounced off ~$205.8. Still the AI-capex anchor (TSMC June +68% YoY). Watching for a clean reclaim; expressed live via TQQQ/NVDL, not a standalone share buy.",
    "size": "$0",
    "size_pct": 0,
    "size_note": "0.05sh dust — flushed at the open ✓, cash freed",
    "plan_usd": 0,
    "horizon": 0.3,
-   "updated": "2026-07-13T11:41:00-04:00",
+   "updated": "2026-07-13T12:12:00-04:00",
    "stop": null
   },
   {
@@ -82,15 +87,15 @@
    "name": "Constellation Energy",
    "theme": "Energy-for-AI",
    "verdict": "watch",
-   "verdict_label": "Bench — power-for-AI, firm",
-   "thesis": "**Power-for-AI, holding ~$251.** One of the steadier high-beta names; above the $230 floor, grinding toward a 50-day reclaim. No fresh catalyst and it'll dip with the tape today; a clean break with the AI-power bid makes it a ~$200 vehicle. Bench watch — not competing with the deployed book.",
+   "verdict_label": "Watch — green on a red day",
+   "thesis": "**One of the only green names (+1.7%), ~$255.5** — power-for-AI bid holding up while chips get sold. Watch for a momentum entry; no position.",
    "size": "$0",
    "size_pct": 0,
    "size_note": "planned ~$200 on a 50d reclaim (bench, not additive to core)",
    "plan_usd": 0,
    "card": "/research/ceg.html",
    "horizon": 0.3,
-   "updated": "2026-07-13T09:41:00-04:00"
+   "updated": "2026-07-13T12:12:00-04:00"
   },
   {
    "ticker": "VRT",
@@ -158,14 +163,14 @@
    "name": "SoFi",
    "theme": "High-beta bench",
    "verdict": "buy",
-   "verdict_label": "LIVE — held, $17.60 GTC stop ✓ (tell faded)",
-   "thesis": "**High-beta held — but the relative-strength tell faded today.** 10 sh @ $18.76, spot **~$18.32 (-2.3%, day -2.5%)** — SoFi opened green ($19.23 high) on its recent strength (Goldman $21 target, ARK buying, the Composer deal) but handed the pop back and is now red with the tape, so the book has no leader today. Still above its **$17.60 GTC stop** (below the 7/9 higher-low $17.71, ~4% under spot). Not cutting it into weakness the day before CPI — the stop is the discipline; if the relative strength doesn't reassert after the print, it's the first rotation candidate.",
+   "verdict_label": "LIVE — held, $17.60 GTC stop ✓",
+   "thesis": "**Held — faded with the tape but well above its stop.** 10 sh @ $18.76, spot **~$18.33 (-2.3%, day -2.4%)**. Gave back its morning pop, so the book's one green tell is gone, but structure isn't broken. Stop **$17.60 GTC** (~4% under spot). No add (wash-blocked, no BP); holding through the pre-CPI red.",
    "size": "$183",
    "size_pct": 19,
-   "size_note": "10 sh held — high-beta, ~19% of sleeve, $17.60 GTC stop",
+   "size_note": "10 sh held, $17.60 GTC stop",
    "plan_usd": 183,
    "horizon": 0.4,
-   "updated": "2026-07-13T11:41:00-04:00",
+   "updated": "2026-07-13T12:12:00-04:00",
    "trigger": null,
    "stop": 17.6
   },
@@ -173,15 +178,15 @@
    "ticker": "PLTR",
    "name": "Palantir",
    "theme": "High-beta bench",
-   "verdict": "avoid",
-   "verdict_label": "Suspended — structure broken",
-   "thesis": "**Structure broken, ~$126.8 and below its 20-day** even on last week's new-highs tape. No trade until it reclaims strength; suspended as a long.",
+   "verdict": "watch",
+   "verdict_label": "Watch — relative strength (green on a red tape)",
+   "thesis": "**Bucking the whole tape green (+2.2%) while everything else sells off — real relative strength.** ~$129.5, reclaiming its 20-day. Interesting as a strength name, but not chasing it into a two-sided CPI with no spare BP. On watch for a post-print continuation setup.",
    "size": "$0",
    "size_pct": 0,
    "size_note": "trigger suspended — needs repair",
    "plan_usd": 0,
    "horizon": 0.2,
-   "updated": "2026-07-13T09:41:00-04:00"
+   "updated": "2026-07-13T12:12:00-04:00"
   },
   {
    "ticker": "BE",
@@ -227,9 +232,31 @@
    "card": "/research/oklo.html",
    "horizon": 0.3,
    "updated": "2026-07-13T09:41:00-04:00"
+  },
+  {
+   "ticker": "SOXS",
+   "name": "Direxion 3x Inverse Semis",
+   "theme": "Inverse / bear",
+   "verdict": "watch",
+   "verdict_label": "Watch — day's leader but extended",
+   "size": "$0",
+   "size_pct": 0,
+   "size_note": "no position — extended into CPI",
+   "plan_usd": 0,
+   "thesis": "**The day's actual winner (+11%) — but that's the problem.** 3x-inverse semis spiked on the chip scare and is now stretched right into a two-sided CPI. Chasing +11% at the fear peak the day before the print is a poor entry; if CPI cools tomorrow it reverses hard. Watching, not chasing — would rather see it AND the tape confirm post-print.",
+   "horizon": 0.2,
+   "updated": "2026-07-13T12:12:00-04:00"
   }
  ],
  "feed": [
+  {
+   "type": "note",
+   "account": "live",
+   "ts": "2026-07-13T12:12:00-04:00",
+   "symbol": "TQQQ",
+   "reaction": "hold",
+   "text": "12:12pm — held it all, nothing to approve. The chip selloff has every long red, but QQQ's on its 50-day (support test, not a break) and all 3 stops are live GTC and well clear. Not cutting into support or chasing an already-extended inverse the day before CPI. ~98% deployed, book moved ~$38 today. Paper 99% deployed, all 7 legs stopped."
+  },
   {
    "type": "note",
    "account": "live",
@@ -506,17 +533,10 @@
    "ts": "2026-07-10T09:45:00-04:00",
    "symbol": "SOFI",
    "text": "9:45am — **SoFi popped ~5%** at the open and ran past our planned buy, so I bumped the one-tap up to catch the breakout near here, hard exit $16.80. Meanwhile chips are **selling off** hard (AI-spending jitters + a new China AI-chip headline) — our 3x-Nasdaq core is holding its trend line so it stays, but I'm watching it closely. Tap SoFi if you want the last of the cash working."
-  },
-  {
-   "type": "note",
-   "account": "live",
-   "ts": "2026-07-10T09:08:00-04:00",
-   "symbol": null,
-   "text": "9:08am — ~20 minutes to the open and the tape's still **soft**: chips are down ahead of SK Hynix's giant Nasdaq listing and the 10-year yield's near 4.5%, so our 3x-Nasdaq core is off about **$10** pre-market. That's a normal wiggle — the hard exit sits way down at $65. Still **long** and protected, and your **SoFi** one-tap is ready to put the last ~20% cash to work at the open. Nothing for you to do."
   }
  ],
- "latest_recap": "Mon 7/13 ~11:41am (RTH, market open). HELD the whole live book — no changes. Reconcile clean (no new fills/failures since 7/10; web-approvals empty). Honest read: SoFi gave back its morning green and is now red with the tape (-2.5%), so the book has no leader today. The semi-led risk-off runs a 2nd day (Samsung miss + a report DeepSeek is building its own AI chip + profit-taking after +80% H1; SOXL -9%, SOXS +9.7%, SQQQ +3.5%), but QQQ only slipped under its 20-day (~$722.6) and is defending its 50-day (~$716) after bouncing off the $712.6 low — a dip-to-support test, not a break; NVDA ~$207 (-1.8%) holds up vs the broad chip basket. Live book: TQQQ 10sh ~$74.34 (-2.6% entry, day -3.6%), SoFi 10sh ~$18.32 (-2.3%, day -2.5%), NVDL 1sh ~$31.94 (+4.4%, best %). All three stops re-verified live GTC (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50), each well clear — no trail on a down day with no new higher-low. Equity ~$979 (-$32/-3.2% today), cash $19.59 → ~98% deployed; movement test PASS. No new ticket: no BP, adds wash-blocked, won't churn a holding or chase an extended inverse into a two-sided CPI (Tue 8:30am — headline seen cooling to ~3.9% on -10% gasoline, core sticky ~2.9%) + Warsh + bank earnings. Paper $98.1k, ~99% deployed, all 7 legs GTC-stopped. pending_tickets [].",
- "_latest_recap_prev": "Mon 7/13 ~11:11am (RTH, market open). HELD the whole live book — no changes. Reconcile clean (no new fills/failures since 7/10, web-approvals empty). The semi-led risk-off persists (Nasdaq -1.2%, S&P -0.5%; Samsung Q2 miss + a report DeepSeek is building its own AI chip + profit-taking after chips ran +80% in H1; SOXL -9%, SOXS $4.49 +9% / SQQQ $39.02 +3%), but the indices are stabilizing: **QQQ crept from its $712.6 morning low back to ~$717.4, sitting right on its 50-day** (computed 50-day ~$716, 20-day ~$722.6) — buyers keep defending the line, a dip-to-support test not a decisive break, with NVDA ~$207 (day -1.8%) showing relative strength vs SOXL -9% and TSMC June +68% YoY still confirming AI-capex. Live book: TQQQ 10sh ~$74.40 (-2.5% entry, day -3.4%), SoFi 10sh ~$18.54 (-1.1%, day -1.3%), NVDL 1sh ~$31.85 (+4.2%, holding best). **No trail** — still a down day, no new higher-low; all three GTC stops re-verified live via get_orders(open) with post-trail IDs (**TQQQ $68.50 / SoFi $17.60 / NVDL $29.50**), each well clear. Equity **$981.22** (-$29.6/-2.9% today), cash $19.59 → ~98% deployed — moving with the tape (movement test PASS). No new live ticket: only $19.59 cash (can't fund), adds wash-blocked, and I won't concentrate the 3x core or chase already-popped inverses the day before a two-sided CPI (Tue 8:30am — headline seen cooling to ~3.9% on -10% gasoline but core sticky ~2.9%) + Warsh testimony + JPM/bank earnings. Wide stops are the brake. Paper $98.3k, ~99% deployed, all 7 legs GTC-stopped. pending_tickets [] — nothing fundable, and Adam's not watching.",
+ "latest_recap": "Mon 7/13 ~12:12pm (RTH, market open). HELD the whole live book — no changes. Reconcile clean (no new fills/failures since 7/10; web-approvals empty). Honest read: broad chip-led risk-off runs a 2nd day (Samsung Q2 miss + a report DeepSeek is building its own AI chip; SOXL -11%, SOXS/SQQQ the day's leaders), so every long is red — TQQQ ~$73.83 (-3.1% entry), SoFi $18.33, NVDL $31.50 (+3%, lone green). But QQQ is sitting on its 50-day (~$716) off the $712.6 low — a dip-to-support test, not a break; NVDA ~$206 holds up, and PLTR +2.2% / CEG +1.7% are the only green in the universe. All 3 stops re-verified live GTC (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50), each well clear — no trail on a down day. Equity ~$972.59 (-$38/-3.8% today), ~98% deployed, moved ~$38 (movement test PASS — the money is working, just red today). No new ticket: no BP, adds wash-blocked, and I won't cut a holding into support or chase an already +11% inverse into a two-sided CPI (Tue 8:30am + Warsh testimony). Paper $97.7k, ~99% deployed, all 7 legs GTC-stopped. The wide stops are the brake; the CPI print is the thesis resolver.",
+ "_latest_recap_prev": "Mon 7/13 ~11:41am (RTH, market open). HELD the whole live book — no changes. Reconcile clean (no new fills/failures since 7/10; web-approvals empty). Honest read: SoFi gave back its morning green and is now red with the tape (-2.5%), so the book has no leader today. The semi-led risk-off runs a 2nd day (Samsung miss + a report DeepSeek is building its own AI chip + profit-taking after +80% H1; SOXL -9%, SOXS +9.7%, SQQQ +3.5%), but QQQ only slipped under its 20-day (~$722.6) and is defending its 50-day (~$716) after bouncing off the $712.6 low — a dip-to-support test, not a break; NVDA ~$207 (-1.8%) holds up vs the broad chip basket. Live book: TQQQ 10sh ~$74.34 (-2.6% entry, day -3.6%), SoFi 10sh ~$18.32 (-2.3%, day -2.5%), NVDL 1sh ~$31.94 (+4.4%, best %). All three stops re-verified live GTC (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50), each well clear — no trail on a down day with no new higher-low. Equity ~$979 (-$32/-3.2% today), cash $19.59 → ~98% deployed; movement test PASS. No new ticket: no BP, adds wash-blocked, won't churn a holding or chase an extended inverse into a two-sided CPI (Tue 8:30am — headline seen cooling to ~3.9% on -10% gasoline, core sticky ~2.9%) + Warsh + bank earnings. Paper $98.1k, ~99% deployed, all 7 legs GTC-stopped. pending_tickets [].",
  "pending_tickets": [],
  "paper": {
   "equity_curve": [
@@ -582,11 +602,16 @@
    },
    {
     "date": "Jul 13",
-    "value": 978.7
+    "value": 972.59
    }
   ]
  },
  "activity": [
+  {
+   "ts": "2026-07-13T12:12:00-04:00",
+   "kind": "engine",
+   "title": "12:12pm RTH (market open). HELD — no changes. Reconcile clean (no new trade-placed/failed since 7/10; web-approvals empty). Chip-led risk-off runs a 2nd day (Samsung Q2 miss + report DeepSeek is building its own AI chip; SOXL -11%, SOXS +11%, SQQQ +4%) — every long red: TQQQ ~$73.83, SoFi $18.33, NVDL $31.50 (+3%, lone green). But QQQ is sitting on its 50-day (~$716) off the $712.6 low = dip-to-support, not a break; NVDA ~$206 (-2.3%) holds up vs pure semis; PLTR +2.2% and CEG +1.7% the only green in the universe. All 3 stops re-verified live GTC (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7), each well clear — no trail on a down day with no new higher-low. Equity ~$972.59 (-$38/-3.8% today), cash $19.59, ~98% deployed; moved ~$38 (movement test PASS). No new ticket: no BP, adds wash-blocked, won't cut a holding into support or chase an extended inverse into a two-sided CPI (Tue 8:30am + Warsh testimony). Paper $97.7k, ~99% deployed, all 7 legs GTC-stopped. pending_tickets []."
+  },
   {
    "ts": "2026-07-13T11:41:00-04:00",
    "kind": "engine",
@@ -681,14 +706,14 @@
    "ts": "2026-07-10T19:40:00-04:00",
    "kind": "engine",
    "title": "7:40pm re-check — MARKET CLOSED (next open Mon 7/13 09:30). LIVE: NO change, HOLD all four; three GTC stops RE-VERIFIED at the broker (TQQQ $65=2947c9be / NVDL $27=c2fbeac9 / SOFI $16.80=bf2f2983); NVDA 0.05sh unstoppable dust (~$11). Equity $1,012.37 (+$11.50, +1.15% vs last_equity $1,000.87), cash $8.88, long_mkt $1,003.49 -> ~99% deployed. Fresh snapshots: TQQQ $77.16, NVDL $33.01, SOFI $18.80 (spiked $19.74, faded), NVDA $210.99 record. Universe scanned BOTH ways: satellites faded (BE -4.8%, PLTR -1.8%, IONQ -4.2%, RKLB $81, OKLO -1%), SOXX $581 still <20d ~600 -> semi gate UNMET, won't short record highs -> no rotation trigger. Queue reconciled (movita): nothing new since -10-3, all booked. No new ticket -- no dry powder ($8.88 BP), adds to held names wash-blocked, no clean both-directions setup on a Friday into weekend+CPI gap. PAPER: 70% deployed + UPRO $148.50 / FNGU $29.20 dip-limits staged, five GTC stops verified. Weekend hold into CPI Tue 7/14."
-  },
-  {
-   "ts": "2026-07-10T19:10:00-04:00",
-   "kind": "engine",
-   "title": "7:10pm evening check — MARKET CLOSED (next open Mon 7/13 09:30). LIVE: NO change, HOLD all four; three GTC stops re-verified at the broker (TQQQ $65=2947c9be / NVDL $27=c2fbeac9 / SOFI $16.80=bf2f2983); NVDA 0.05sh unstoppable fractional dust (~$11), tidy Mon open. Equity $1,011.91 (+$11.04, +1.10% vs last_equity $1,000.87), cash $8.88, long_mkt $1,003.03 → ~99% deployed. Fresh WebSearch: nothing new broke after hours; confirmed Fri close (NVDA record +4% $211, Nasdaq +1.3% to 26,207 fresh highs, S&P +0.8%, SK Hynix largest-ever foreign US IPO +14%). MACRO refine: June CPI (Tue 7/14) consensus ~3.9% y/y (Cleveland Fed nowcast 3.96%) vs May 4.2%; 9 Fed officials pencil a hike — a hot core is the leveraged core's main next-week downside, wide stops ride it. No queue fills/failures since -10-3; nothing to book. No live ticket possible/warranted ($8.88 BP, adds wash-blocked, whole NVDA share unaffordable, won't chase/short into fresh highs on a Fri into weekend+CPI gap; any approval only queues to Mon). PAPER unchanged & ~99% committed: FNGU 520@$29.20 + UPRO 95@$148.50 GTC OTO staged for Mon, five held legs GTC-stopped."
   }
  ],
  "pulse": [
+  {
+   "ts": "2026-07-13T12:12:00-04:00",
+   "text": "12:12pm — held the whole book again; reconcile clean, nothing to approve. Honest read: it's a broad chip-led risk-off 2nd day (Samsung Q2 miss + a report DeepSeek is building its own AI chip), so every long is red — TQQQ ~$73.83 (-3.1% vs entry), SoFi $18.33, NVDL $31.50 (still the lone green, +3%). But QQQ is sitting right on its 50-day (~$716) — a support test, not a break — and all three stops are verified live GTC (TQQQ **$68.50** / SoFi **$17.60** / NVDL **$29.50**), each well clear. Equity **~$972.59** (-$38/-3.8% today), ~98% deployed and the book moved ~$38 today, so the money is genuinely working. No new ticket: no BP, adds are wash-blocked, and I'm not cutting into support or chasing an already +11% inverse into a two-sided **CPI** (Tue 8:30am + Warsh testimony). Paper $97.7k, ~99% deployed, all 7 legs GTC-stopped.",
+   "hype": "Whole book's red on the chip selloff, but QQQ's holding its 50-day and nothing actually broke. Not cutting into support or chasing the short the day before CPI — the stops have the downside."
+  },
   {
    "ts": "2026-07-13T11:41:00-04:00",
    "text": "11:41am — still **holding**. Honest note: SoFi gave back its morning pop and is red with the tape now (**-2.5%**), so the book's one green tell has faded. QQQ slipped just under its 20-day (~$722.6) but is **defending its 50-day** (~$716, bounced off the $712.6 low) — a dip-to-support test, not a break. Equity **~$979** (-$32/-3.2% today), ~98% deployed. Re-verified all three stops live at the broker (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50). Not cutting a name into weakness or chasing an inverse already +9% the day before **CPI** — the wide stops are the brake, the cooling-headline print is the thesis.",
@@ -746,11 +771,7 @@
   {
    "ts": "2026-07-13T05:10:00-04:00",
    "text": "5am and our names still haven't printed a share — but **oil's up 4%**, the US-Iran headlines got worse overnight, and futures are pointing **down** into tomorrow's CPI. Nothing for me to do: **~99% invested**, all three stops live and miles below, and I'm not flipping the book bearish the day before a number the Street thinks will *cool*. Holding."
-  },
-  {
-   "ts": "2026-07-13T04:40:00-04:00",
-   "text": "Swept the last **$10 of NVDA dust** off the table so everything left is protected, then left the leveraged book alone — still **holding** into tomorrow's inflation print. All three stops sit live and miles below; nothing for you to tap."
   }
  ],
- "updated": "2026-07-13T11:41:00-04:00"
+ "updated": "2026-07-13T12:12:00-04:00"
 }
