@@ -1,55 +1,55 @@
 {
-  "generated_at": "2026-07-13T11:59:01.704Z",
+  "generated_at": "2026-07-13T12:00:09.495Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 98917.4,
+    "equity": 98955.68,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 97917.4,
-    "day_pnl": -1119.68,
+    "total_pnl": 97955.68,
+    "day_pnl": -1081.4,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 208.05,
-        "pl": -287.7,
-        "plpc": -1.05,
+        "current": 208.13,
+        "pl": -276.9,
+        "plpc": -1.01,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.15,
-        "pl": 122.26,
-        "plpc": 4.99,
+        "current": 32.14,
+        "pl": 121.46,
+        "plpc": 4.96,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 19.22,
-        "pl": -58,
-        "plpc": -1.49,
+        "current": 19.21,
+        "pl": -60,
+        "plpc": -1.54,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 74.75,
-        "pl": -659.34,
-        "plpc": -3.03,
+        "current": 74.86,
+        "pl": -628.34,
+        "plpc": -2.89,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 404.55,
-        "pl": -199.8,
-        "plpc": -1.35,
+        "current": 404.53,
+        "pl": -200.52,
+        "plpc": -1.36,
         "thesis": ""
       }
     ],
@@ -85,45 +85,45 @@
     ]
   },
   "live": {
-    "equity": 991.41,
+    "equity": 992.41,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -8.59,
-    "day_pnl": -19.44,
+    "total_pnl": -7.59,
+    "day_pnl": -18.44,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 208.05,
+        "current": 208.13,
         "pl": 0.7,
-        "plpc": 6.98,
+        "plpc": 7.02,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.15,
-        "pl": 1.56,
-        "plpc": 5.11,
+        "current": 32.14,
+        "pl": 1.55,
+        "plpc": 5.08,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 19.22,
-        "pl": 4.6,
-        "plpc": 2.45,
+        "current": 19.21,
+        "pl": 4.5,
+        "plpc": 2.4,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 74.75,
-        "pl": -15.4,
-        "plpc": -2.02,
+        "current": 74.86,
+        "pl": -14.3,
+        "plpc": -1.88,
         "thesis": ""
       }
     ],
@@ -349,6 +349,10 @@
       {
         "t": 1783943700000,
         "v": 992.34
+      },
+      {
+        "t": 1783944000000,
+        "v": 991.59
       }
     ]
   },
@@ -368,8 +372,8 @@
       "horizon": 0.3,
       "updated": "2026-07-13T07:40:00-04:00",
       "stop": 65,
-      "price": 77.16,
-      "chg_pct": 1.18,
+      "price": 74.82,
+      "chg_pct": -1.89,
       "spark": [
         78.76,
         75.17,
@@ -400,7 +404,7 @@
         74.21,
         73.35,
         74.79,
-        77.16
+        74.82
       ]
     },
     {
@@ -1558,8 +1562,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 77.16,
-    "tqqq_pct": 0.34
+    "tqqq": 74.82,
+    "tqqq_pct": -2.7
   },
   "status": [
     {
