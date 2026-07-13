@@ -3,7 +3,7 @@
  "status": [
   {
    "session": "Morning",
-   "text": "Holding the book, red into CPI"
+   "text": "Held, stops verified, red into CPI"
   }
  ],
  "coverage": [
@@ -221,6 +221,13 @@
   }
  ],
  "feed": [
+  {
+   "type": "note",
+   "account": "live",
+   "ts": "2026-07-13T10:47:00-04:00",
+   "symbol": "TQQQ",
+   "text": "10:47am — held the whole book, nothing to approve. The semi selloff is still the story (Samsung Q2 miss + a DeepSeek in-house-chip report + profit-taking after chips ran +80% in H1): TQQQ ~$74.10 (day -3.9%, -2.9% on entry), SoFi $18.50 (day -1.6%, -1.4% on entry), NVDL $32.01 (+4.6% on entry, still the best %-gainer). The tell: QQQ probed **below its 50-day** (day low $712.6) and recovered right back to the line (~$716.4) — buyers defended it, so it's a dip-to-support **test**, not a break (20-day $722.5, 50-day $716.3; NVDA -1.6% vs SOXL -9% = real relative strength). Re-verified all three live GTC stops at the broker with fresh IDs post-trail (**TQQQ $68.50 / NVDL $29.50 / SoFi $17.60**), each well clear. No trail this run — still a lower-low day, no new higher-low to ratchet up to. Equity ~$978 (-$33/-3.3% today), cash $19.59 → ~98% deployed, moving with the tape (movement test passed). No new live ticket: no BP to fund one, adds are wash-blocked, and I won't chase inverses already +9%/+4% or flip the 3x core bearish the day before a **two-sided** CPI (Tue 8:30am — Street sees cooling ~3.8%, but oil's renewed Iran bid has the tape fearing a hot print). Paper $98.2k ~99% deployed, all 7 legs GTC-stopped. Queue reconciled — nothing new since 7/10 (web-approvals empty). pending_tickets []."
+  },
   {
    "type": "note",
    "account": "live",
@@ -512,7 +519,7 @@
    "text": "7:40am pre-bell — the futures firmed up the read: **Nasdaq futures a touch red, Dow green**, and the tell is the **10-year yield near 4.5%** — higher rates are what's cooling the priciest tech names this morning, with traders taking a breather after the week's run. Not a selloff, a rotation. So I'm doing the disciplined thing: **holding** the 3x-Nasdaq core (still above its trend line) with its safety exit set, and NOT stacking more leverage into a soft open. The **SoFi** one-tap is ready — it's a rate-independent name the market's been buying, so it's a fine place for the last ~20% of cash at the open. Nothing for you to do."
   }
  ],
- "latest_recap": "Mon 7/13 ~10:14am (RTH, market open). HELD the whole live book — no changes this run. The semi-led risk-off deepened an hour into the session (**SOXL -11%**, SOXS +11% / SQQQ +4%; Samsung's Q2 miss + a DeepSeek in-house-chip report + profit-taking after chips ran +80% in H1). Live book: TQQQ 10sh ~$73.93 (-3.1% on entry, day -4.1%), SoFi 10sh ~$18.45 (-1.7%, faded its morning green), NVDL 1sh ~$32.53 (+6.3%, holding best). **No trail this run** — today prints a lower low, so there's no new higher-low to ratchet stops up to; the 9:41 open-trail already tightened them, and all three GTC stops were re-verified live (**TQQQ $68.50 / NVDL $29.50 / SoFi $17.60**), each well clear. Regime: QQQ **~$716 sits right on its 50-day (~$715)**, below its 20-day (~$722.6) — a dip to the line, not yet a decisive break; AI-capex demand keeps confirming (TSMC June +68% YoY). Book down ~$37 today (equity ~$974) but fully deployed ~98% — moving with the tape, not idling (well past the movement-test bar). No new live ticket: only $19.59 cash (can't fund a position), adds are wash-blocked, and I won't chase already-extended inverses or flip the 3x core bearish the day before a CPI the Street sees cooling (Tue 8:30am, cons. ~3.8%) — the wide stops are the brake. Paper $98.2k, ~99% deployed, all 7 legs GTC-stopped; UPRO 95@$145.38 & FNGU 520@$28.46 OTO dip-buys **FILLED at the open** with child stops now live ($124 / $24.30). Queue reconciled — nothing new since 7/10 (web-approvals empty). pending_tickets [] — nothing fundable to fire, and Adam's not watching.",
+ "latest_recap": "Mon 7/13 ~10:47am (RTH, market open). HELD the whole live book — no changes this run. The semi-led risk-off persists (**SOXL ~$174 -9%**, SOXS $4.44 +9% / SQQQ $39.24 +4%; Samsung's Q2 miss + a DeepSeek in-house-chip report + profit-taking after chips ran +80% in H1). Live book: TQQQ 10sh $74.10 (-2.9% on entry, day -3.9%), SoFi 10sh $18.50 (-1.4%, day -1.6%), NVDL 1sh $32.01 (+4.6%, holding best). Regime (computed off 20 daily closes): QQQ **$716.4 probed below its 50-day (day low $712.6) and recovered right back to the line** — 20-day $722.5, 50-day $716.3; a dip-to-support test, not a decisive break (buyers defended the 50-day), with NVDA -1.6% vs SOXL -9% showing real relative strength and TSMC June +68% YoY still confirming AI-capex. **No trail this run** — today is still a lower-low day, so there's no new higher-low to ratchet stops up to; all three GTC stops re-verified live via get_orders(open) with fresh post-trail IDs (**TQQQ $68.50 / NVDL $29.50 / SoFi $17.60**), each well clear. Equity ~$978 (-$33/-3.3% today), cash $19.59 → ~98% deployed — moving with the tape, not idling (past the movement-test bar). No new live ticket: only $19.59 cash (can't fund a position), adds are wash-blocked, and I won't chase inverses already +9%/+4% or flip the 3x core bearish the day before a **two-sided** CPI — the Street sees cooling (~3.8%) but oil's renewed Iran bid has the tape fearing a hot print (Tue 8:30am + Warsh testimony + bank earnings). The wide stops are the brake. Paper $98.2k, ~99% deployed, all 7 legs GTC-stopped. Queue reconciled — nothing new since 7/10 (web-approvals empty). pending_tickets [] — nothing fundable to fire, and Adam's not watching.", The semi-led risk-off deepened an hour into the session (**SOXL -11%**, SOXS +11% / SQQQ +4%; Samsung's Q2 miss + a DeepSeek in-house-chip report + profit-taking after chips ran +80% in H1). Live book: TQQQ 10sh ~$73.93 (-3.1% on entry, day -4.1%), SoFi 10sh ~$18.45 (-1.7%, faded its morning green), NVDL 1sh ~$32.53 (+6.3%, holding best). **No trail this run** — today prints a lower low, so there's no new higher-low to ratchet stops up to; the 9:41 open-trail already tightened them, and all three GTC stops were re-verified live (**TQQQ $68.50 / NVDL $29.50 / SoFi $17.60**), each well clear. Regime: QQQ **~$716 sits right on its 50-day (~$715)**, below its 20-day (~$722.6) — a dip to the line, not yet a decisive break; AI-capex demand keeps confirming (TSMC June +68% YoY). Book down ~$37 today (equity ~$974) but fully deployed ~98% — moving with the tape, not idling (well past the movement-test bar). No new live ticket: only $19.59 cash (can't fund a position), adds are wash-blocked, and I won't chase already-extended inverses or flip the 3x core bearish the day before a CPI the Street sees cooling (Tue 8:30am, cons. ~3.8%) — the wide stops are the brake. Paper $98.2k, ~99% deployed, all 7 legs GTC-stopped; UPRO 95@$145.38 & FNGU 520@$28.46 OTO dip-buys **FILLED at the open** with child stops now live ($124 / $24.30). Queue reconciled — nothing new since 7/10 (web-approvals empty). pending_tickets [] — nothing fundable to fire, and Adam's not watching.",
  "pending_tickets": [],
  "paper": {
   "equity_curve": [
@@ -578,11 +585,16 @@
    },
    {
     "date": "Jul 13",
-    "value": 973.84
+    "value": 977.6
    }
   ]
  },
  "activity": [
+  {
+   "ts": "2026-07-13T10:47:00-04:00",
+   "kind": "engine",
+   "title": "10:47am RTH (market open). HELD — no changes. Semi selloff persists (SOXL ~$174 -9%, SOXS $4.44 +9% / SQQQ $39.24 +4%; Samsung Q2 miss + DeepSeek in-house-chip report + profit-taking after chips ran +80% H1). Live book: TQQQ 10sh $74.10 (-2.9% entry, day -3.9%), SoFi 10sh $18.50 (-1.4%, day -1.6%), NVDL 1sh $32.01 (+4.6%, best %). Regime (computed off 20 daily closes): QQQ $716.4 probed below its 50-day (day low $712.6) and recovered back to the line — 20-day $722.5, 50-day $716.3; a dip-to-support test, not a decisive break; NVDA -1.6% vs SOXL -9% = relative strength; TSMC June +68% YoY still confirms AI-capex. NO trail — still a lower-low day, no new higher-low to ratchet to. All 3 live GTC stops re-verified via get_orders(open) with fresh post-trail IDs: TQQQ $68.50 (43aac143) / SoFi $17.60 (42f0ac56) / NVDL $29.50 (ca2bc9e7), each well clear. Equity ~$978 (-$33/-3.3% today), cash $19.59 → ~98% deployed (movement test passed). No new live ticket: no BP to fund one, adds wash-blocked, won't chase already-extended inverses or flip the core bearish the day before a two-sided CPI (Tue 8:30am; Street sees cooling ~3.8%, but oil's Iran bid raises hot-print risk per CNBC/Schwab). Paper $98.2k ~99% deployed, all 7 legs GTC-stopped. Queue reconciled: nothing new since 7/10 (web-approvals empty). pending_tickets []."
+  },
   {
    "ts": "2026-07-13T10:14:00-04:00",
    "kind": "engine",
@@ -703,6 +715,10 @@
   }
  ],
  "pulse": [
+  {
+   "ts": "2026-07-13T10:47:00-04:00",
+   "text": "10:47am — still just **riding it out**. Chips keep getting dumped (Samsung's miss + a DeepSeek in-house-chip report), so the 3x core's down ~4% on the day — but QQQ actually **bounced off its 50-day** instead of breaking it, which is the difference between a dip and a problem. Re-checked all three stops are live at the broker and well below. Nothing to do — no spare cash, and I'm not getting cute the day before **CPI**, especially with oil back up muddying the number."
+  },
   {
    "ts": "2026-07-13T10:14:00-04:00",
    "text": "10:14am — an hour in and it's a **red** one: chips are getting dumped (Samsung miss plus a DeepSeek in-house-chip report), so our 3x core's down ~4% and even SoFi handed back its morning green. Nothing for me to do — every position's got a live stop under it, there's no spare cash to put to work, and I'm not getting clever the day before **CPI**. Just **holding**."
