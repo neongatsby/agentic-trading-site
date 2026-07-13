@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-13T22:14:55.499Z",
+  "generated_at": "2026-07-13T22:16:01.405Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 96401.69,
+    "equity": 96405.86,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 95401.69,
-    "day_pnl": -3635.39,
+    "total_pnl": 95405.86,
+    "day_pnl": -3631.22,
     "positions": [
       {
         "symbol": "FNGU",
@@ -20,8 +20,8 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 203.83,
-        "pl": -836.43,
+        "current": 203.82,
+        "pl": -837.2,
         "plpc": -3.06,
         "thesis": ""
       },
@@ -47,18 +47,18 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 72.58,
-        "pl": -1271.22,
-        "plpc": -5.85,
+        "current": 72.6,
+        "pl": -1265.86,
+        "plpc": -5.82,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 394.09,
-        "pl": -576.36,
-        "plpc": -3.9,
+        "current": 394.08,
+        "pl": -576.78,
+        "plpc": -3.91,
         "thesis": ""
       },
       {
@@ -103,10 +103,10 @@
     ]
   },
   "live": {
-    "equity": 957.67,
+    "equity": 957.86,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -42.33,
-    "day_pnl": -53.18,
+    "total_pnl": -42.14,
+    "day_pnl": -52.99,
     "positions": [
       {
         "symbol": "NVDL",
@@ -130,9 +130,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 72.58,
-        "pl": -37.1,
-        "plpc": -4.86,
+        "current": 72.6,
+        "pl": -36.91,
+        "plpc": -4.84,
         "thesis": ""
       }
     ],
@@ -854,6 +854,10 @@
       {
         "t": 1783980600000,
         "v": 958.45
+      },
+      {
+        "t": 1783980900000,
+        "v": 957.7
       }
     ]
   },
@@ -1906,7 +1910,7 @@
       "text": "Put the **idle practice cash to work** — the test account had drifted to ~90% cash, exactly the sitting-on-your-hands failure we're trying to avoid. Bought the leader **Nvidia (130 sh, ~$27k, hard exit $186)** on the live H200 catalyst and **added to the 3x-Nasdaq core (now 282 sh, exit $65)**, both protected GTC. That takes the testbed from ~9% to ~55% deployed; the rest goes to work into the next clean setups. Your real account is unchanged."
     }
   ],
-  "latest_recap": "Mon 7/13 ~5:39pm (after-hours, market CLOSED; next open 7/14 9:30am). HELD both books — no changes. Reconcile clean on live AND paper: recorded positions match the broker (get_all_positions/get_orders); no new trade-placed/failed since 7/10 (web-approvals empty; stale .needs-trade-* flags + old trade-failed files are historical/already-reconciled). Live equity $955.72 (AH mark, -5.5% vs last_equity $1010.85) — essentially the $957 close; prices pinned via fresh snapshot: TQQQ $72.36, QQQ $710.9 (still below BOTH 20-day ~$722 & 50-day ~$715 → regime still broken), SoFi $18.14, NVDL $30.70, NVDA $203.5 (under its 50-day); PLTR $130.06 (+2.6%) & CEG $257.57 (+2.5%) the lone green / post-CPI rotation picks. Fresh web-search: no new after-close catalyst — only the DRAM/memory bear-market recap (not actionable). Tomorrow confirmed: June CPI 8:30am (Street ~3.9% headline / ~2.9% core — cool-headline, sticky-core), then JPM/GS/C/WFC/BAC Q2 earnings + Warsh testimony; today's -5% was Trump reinstating the Hormuz blockade (oil ~$80). All 3 live stops verified GTC & clear (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7) — no trail (closed, flat AH, no new higher-low). DECISION: hold overnight; pre-committed post-CPI open plan unchanged — hot core / QQQ still broken → cut the 3x at the open; cool + QQQ reclaims ~$715 → keep the core. NOT staging a blind directional pre-arm into a binary CPI (that's the whipsaw trap). Paper ~99% deployed, 7 legs GTC-stopped.",
+  "latest_recap": "Mon 7/13 ~6:09pm (after-hours, market CLOSED; next open 7/14 9:30am). HELD both books — no changes. Reconcile clean on live AND paper: recorded positions match the broker (get_all_positions/get_orders); no new trade-placed/failed since 7/10 (web-approvals empty; stale .needs-trade-* flags + old trade-failed files are historical/already-reconciled). ONE fresh input since 5:39pm: US Central Command launched a 3rd consecutive night of strikes on Iran in the Strait of Hormuz (~4:45pm ET; Trump: 'knocking out Iran's offensive capability' but 'a deal is possible') — keeps oil bid ~$80 and overnight futures jumpy, a fresh risk-off overlay stacked on the CPI binary, but nothing actionable off-hours. Prices otherwise pinned to the close via fresh snapshot: TQQQ $72.36, QQQ $710.9 (still below BOTH 20-day ~$722 & 50-day ~$715 → regime still broken), SoFi $18.14, NVDL $30.70, NVDA $203.5 (under its 50-day); PLTR $130.06 (+2.6%) & CEG $257.57 (+2.5%) the lone green / post-CPI rotation picks. Live equity $958.32 (AH mark, -5.2% vs last_equity $1010.85) — essentially the $957 close. Fresh web-search confirmed tomorrow: June CPI 8:30am (Street ~3.9% headline on −10% gasoline / core sticky ~2.85% YoY, ~+0.2% m/m — soft-headline/sticky-core trap; ~65% Fed hold), then JPM/GS/C/WFC/BAC Q2 earnings + Warsh's first testimony 90 min after. All 3 live stops verified GTC & clear (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7) — no trail (closed, flat AH, no new higher-low); the stops ride through any overnight gap. DECISION: hold overnight; pre-committed post-CPI open plan unchanged — hot core / QQQ still broken → cut the 3x at the open (engine de-risks, no Adam babysitting); cool + QQQ reclaims ~$715 → keep the core. NOT staging a blind directional pre-arm into a binary CPI (whipsaw trap), and $19.59 BP can't fund one anyway. Paper ~99% deployed, 7 legs GTC-stopped. pending_tickets []; did NOT write site/data.json; no git.",
   "activity": [
     {
       "ts": "2026-07-13T18:09:00-04:00",
