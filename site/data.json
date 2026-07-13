@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-13T20:43:47.019Z",
+  "generated_at": "2026-07-13T20:44:52.966Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 96282.83,
+    "equity": 96258.42,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 95282.83,
-    "day_pnl": -3754.25,
+    "total_pnl": 95258.42,
+    "day_pnl": -3778.66,
     "positions": [
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 27.73,
-        "pl": -379.6,
-        "plpc": -2.56,
+        "current": 27.72,
+        "pl": -384.8,
+        "plpc": -2.6,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 203.59,
-        "pl": -867.1,
+        "current": 203.6,
+        "pl": -865.8,
         "plpc": -3.17,
         "thesis": ""
       },
@@ -30,8 +30,8 @@
         "qty": "80.0000",
         "entry": 30.62,
         "current": 30.73,
-        "pl": 8.35,
-        "plpc": 0.34,
+        "pl": 8.56,
+        "plpc": 0.35,
         "thesis": ""
       },
       {
@@ -47,9 +47,9 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 72.44,
-        "pl": -1310.7,
-        "plpc": -6.03,
+        "current": 72.38,
+        "pl": -1327.62,
+        "plpc": -6.11,
         "thesis": ""
       },
       {
@@ -65,9 +65,9 @@
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 142.28,
-        "pl": -294.5,
-        "plpc": -2.13,
+        "current": 142.24,
+        "pl": -298.3,
+        "plpc": -2.16,
         "thesis": ""
       }
     ],
@@ -103,10 +103,10 @@
     ]
   },
   "live": {
-    "equity": 956,
+    "equity": 955.42,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -44,
-    "day_pnl": -54.85,
+    "total_pnl": -44.58,
+    "day_pnl": -55.43,
     "positions": [
       {
         "symbol": "NVDL",
@@ -114,7 +114,7 @@
         "entry": 30.59,
         "current": 30.73,
         "pl": 0.14,
-        "plpc": 0.46,
+        "plpc": 0.47,
         "thesis": ""
       },
       {
@@ -130,9 +130,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 72.44,
-        "pl": -38.52,
-        "plpc": -5.05,
+        "current": 72.38,
+        "pl": -39.1,
+        "plpc": -5.13,
         "thesis": ""
       }
     ],
@@ -1534,6 +1534,14 @@
       "ts": "2026-07-13T16:39:00-04:00",
       "symbol": "TQQQ",
       "reaction": "hold",
+      "text": "4:39pm, after-hours — quiet, held everything, nothing to approve. Prices barely moved off the close (TQQQ $72.6, QQQ $711.5 still under both lines, SoFi $18.14) and no fresh catalyst hit after the bell, so it's a placeholder run: the whole tape is waiting on 8:30am CPI. All three stops live and clear (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50). Plan holds — hot core / QQQ still broken, I cut the 3x at the open; cool print + QQQ reclaims ~$715, the core stays. Also cleaned the book: flipped the NVDA-dust sell card to filled (it flushed at this morning's open). Paper ~99% deployed, 7 legs stopped."
+    },
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-13T16:12:00-04:00",
+      "symbol": "TQQQ",
+      "reaction": "hold",
       "text": "After the close — books reconciled, all stops live. Closed -5.3% at $957 and the regime's broken, but I'd rather let CPI print at 8:30 than cut the core at the low or chase a +15% inverse blind. Plan: cut the leverage at the open if the number's hot, keep it if QQQ reclaims its 50-day."
     },
     {
@@ -1959,6 +1967,11 @@
   "pulse": [
     {
       "ts": "2026-07-13T16:39:00-04:00",
+      "text": "4:39pm — after-hours and dead quiet, held everything, nothing to approve. Prices are pinned to the close (TQQQ $72.6, QQQ $711.5 still under both its lines, SoFi $18.14; PLTR $130 and CEG $258 the lone green) and there's no fresh catalyst after the bell — no big earnings before tomorrow's open either, so the whole tape is just parked, waiting on 8:30am CPI. All three stops live and clear (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50). Plan's unchanged from the close: hot core / QQQ still broken and I cut the 3x at the open; cool print + QQQ reclaims ~$715 and the core stays. Paper's the same — ~99% deployed, all 7 legs stopped.",
+      "hype": "Dead quiet after-hours, nothing moved and no fresh news — just waiting on tomorrow's inflation print. Stops are set: hot number I cut the leverage at the open, cool one I keep it."
+    },
+    {
+      "ts": "2026-07-13T16:12:00-04:00",
       "text": "4:12pm, after the close — reconciled both books, everything matches the broker and every stop is live GTC (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50). Finished the day at $957 (-$53 / -5.3%), first close under $1k, on a 2nd chip-rout day, and the regime is now clearly broken (QQQ shut below both its 20- and 50-day, NVDA under its 50-day). I'm holding overnight rather than dumping the 3x core at the low or chasing a +15% inverse the night before CPI — the number drops 8:30am and I'll make the de-risk call then with real data. If core runs hot / QQQ stays broken I cut the leverage at the open; if it cools and QQQ reclaims ~$715 the core stays.",
       "hype": "Closed down ~5% and the uptrend's broken, but I'm not selling the low or shorting the top blind the night before CPI. Stops are all set — I make the call tomorrow once the number's actually out."
     },
