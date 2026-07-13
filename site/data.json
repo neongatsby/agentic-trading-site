@@ -1,64 +1,64 @@
 {
-  "generated_at": "2026-07-13T14:44:03.768Z",
+  "generated_at": "2026-07-13T14:45:12.372Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 97847.63,
+    "equity": 97824.21,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 96847.63,
-    "day_pnl": -2189.45,
+    "total_pnl": 96824.21,
+    "day_pnl": -2212.87,
     "positions": [
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 28.11,
-        "pl": -182,
-        "plpc": -1.23,
+        "current": 28.07,
+        "pl": -202.8,
+        "plpc": -1.37,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 207.15,
-        "pl": -404.95,
-        "plpc": -1.48,
+        "current": 207.23,
+        "pl": -393.9,
+        "plpc": -1.44,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 31.81,
-        "pl": 95.23,
-        "plpc": 3.89,
+        "current": 31.86,
+        "pl": 98.82,
+        "plpc": 4.03,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.46,
-        "pl": -210.02,
-        "plpc": -5.38,
+        "current": 18.43,
+        "pl": -215.54,
+        "plpc": -5.52,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 73.93,
-        "pl": -890.52,
-        "plpc": -4.1,
+        "current": 73.91,
+        "pl": -897.57,
+        "plpc": -4.13,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 398.01,
-        "pl": -435.24,
-        "plpc": -2.95,
+        "current": 397.96,
+        "pl": -437.04,
+        "plpc": -2.96,
         "thesis": ""
       },
       {
@@ -66,7 +66,7 @@
         "qty": "95.0000",
         "entry": 145.38,
         "current": 144.06,
-        "pl": -125.5,
+        "pl": -125.4,
         "plpc": -0.91,
         "thesis": ""
       }
@@ -103,36 +103,36 @@
     ]
   },
   "live": {
-    "equity": 975.3,
+    "equity": 974.82,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -24.7,
-    "day_pnl": -35.55,
+    "total_pnl": -25.18,
+    "day_pnl": -36.03,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 31.81,
-        "pl": 1.23,
-        "plpc": 4.01,
+        "current": 31.86,
+        "pl": 1.27,
+        "plpc": 4.16,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.46,
-        "pl": -3,
-        "plpc": -1.6,
+        "current": 18.43,
+        "pl": -3.27,
+        "plpc": -1.75,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 73.93,
-        "pl": -23.6,
-        "plpc": -3.09,
+        "current": 73.91,
+        "pl": -23.85,
+        "plpc": -3.13,
         "thesis": ""
       }
     ],
@@ -494,6 +494,10 @@
       {
         "t": 1783953600000,
         "v": 980.85
+      },
+      {
+        "t": 1783953900000,
+        "v": 975.89
       }
     ]
   },
@@ -513,8 +517,8 @@
       "horizon": 0.3,
       "updated": "2026-07-13T10:14:00-04:00",
       "stop": 68.5,
-      "price": 73.9,
-      "chg_pct": -4.16,
+      "price": 73.99,
+      "chg_pct": -4.05,
       "spark": [
         78.76,
         75.17,
@@ -545,7 +549,7 @@
         74.21,
         73.35,
         74.79,
-        73.9
+        73.99
       ]
     },
     {
@@ -562,8 +566,8 @@
       "horizon": 0.2,
       "updated": "2026-07-13T09:41:00-04:00",
       "trigger": "SOXX > 600 close",
-      "price": 172.37,
-      "chg_pct": -10.32,
+      "price": 172.56,
+      "chg_pct": -10.22,
       "spark": [
         186.17,
         164.2,
@@ -594,7 +598,7 @@
         230.82,
         229.99,
         252.93,
-        172.37
+        172.56
       ]
     },
     {
@@ -612,8 +616,8 @@
       "updated": "2026-07-13T10:14:00-04:00",
       "trigger": 30.56,
       "stop": 29.5,
-      "price": 31.81,
-      "chg_pct": -3.64,
+      "price": 31.86,
+      "chg_pct": -3.47,
       "spark": [
         43,
         39.13,
@@ -644,7 +648,7 @@
         30.03,
         29.67,
         28.76,
-        31.81
+        31.86
       ]
     },
     {
@@ -661,8 +665,8 @@
       "horizon": 0.3,
       "updated": "2026-07-13T10:14:00-04:00",
       "stop": null,
-      "price": 207.1,
-      "chg_pct": -1.84,
+      "price": 207.24,
+      "chg_pct": -1.78,
       "spark": [
         235.51,
         225.04,
@@ -693,7 +697,7 @@
         200.07,
         198.94,
         195.89,
-        207.1
+        207.24
       ]
     },
     {
@@ -758,8 +762,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "2026-07-13T09:41:00-04:00",
-      "price": 310.39,
-      "chg_pct": -2.64,
+      "price": 311.01,
+      "chg_pct": -2.45,
       "spark": [
         376.28,
         370.87,
@@ -790,7 +794,7 @@
         318.27,
         316.26,
         325.41,
-        310.39
+        311.01
       ]
     },
     {
@@ -807,8 +811,8 @@
       "horizon": 0.3,
       "updated": "2026-07-13T09:41:00-04:00",
       "stop": 348,
-      "price": 397.97,
-      "chg_pct": -2.4,
+      "price": 398.04,
+      "chg_pct": -2.39,
       "spark": [
         443.21,
         422.27,
@@ -839,7 +843,7 @@
         381.54,
         375.36,
         375.12,
-        397.97
+        398.04
       ]
     },
     {
@@ -857,8 +861,8 @@
       "updated": "2026-07-13T10:14:00-04:00",
       "trigger": 29.2,
       "stop": 24.3,
-      "price": 28.16,
-      "chg_pct": -1.62,
+      "price": 28.11,
+      "chg_pct": -1.8,
       "spark": [
         30.56,
         28.97,
@@ -889,7 +893,7 @@
         25.07,
         24.41,
         23.68,
-        28.16
+        28.11
       ]
     },
     {
@@ -957,8 +961,8 @@
       "updated": "2026-07-13T10:14:00-04:00",
       "trigger": null,
       "stop": 17.6,
-      "price": 18.48,
-      "chg_pct": -1.68,
+      "price": 18.43,
+      "chg_pct": -1.94,
       "spark": [
         16.02,
         15.59,
@@ -989,7 +993,7 @@
         17.29,
         17.32,
         17.29,
-        18.48
+        18.43
       ]
     },
     {
@@ -1005,8 +1009,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "2026-07-13T09:41:00-04:00",
-      "price": 127.97,
-      "chg_pct": 0.96,
+      "price": 127.67,
+      "chg_pct": 0.73,
       "spark": [
         133.73,
         133.97,
@@ -1037,7 +1041,7 @@
         116.72,
         113.5,
         107.3,
-        127.97
+        127.67
       ]
     },
     {
@@ -1054,8 +1058,8 @@
       "card": "/research/be.html",
       "horizon": 0.2,
       "updated": "2026-07-13T09:41:00-04:00",
-      "price": 237.87,
-      "chg_pct": -2.78,
+      "price": 238.22,
+      "chg_pct": -2.64,
       "spark": [
         303.51,
         276.29,
@@ -1086,7 +1090,7 @@
         321.82,
         325.42,
         308.97,
-        237.87
+        238.22
       ]
     },
     {
@@ -1103,8 +1107,8 @@
       "horizon": 0.3,
       "updated": "2026-07-13T09:41:00-04:00",
       "stop": 74.5,
-      "price": 77.95,
-      "chg_pct": -3.76,
+      "price": 77.99,
+      "chg_pct": -3.72,
       "spark": [
         132.56,
         124.68,
@@ -1135,7 +1139,7 @@
         95.09,
         85.4,
         80.68,
-        77.95
+        77.99
       ]
     },
     {
@@ -1152,8 +1156,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.3,
       "updated": "2026-07-13T09:41:00-04:00",
-      "price": 46.76,
-      "chg_pct": -4.2,
+      "price": 46.8,
+      "chg_pct": -4.12,
       "spark": [
         67.14,
         62.23,
@@ -1184,11 +1188,18 @@
         57.16,
         54.06,
         50.99,
-        46.76
+        46.8
       ]
     }
   ],
   "feed": [
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-13T10:47:00-04:00",
+      "symbol": "TQQQ",
+      "text": "10:47am — held the whole book, nothing to approve. The semi selloff is still the story (Samsung Q2 miss + a DeepSeek in-house-chip report + profit-taking after chips ran +80% in H1): TQQQ ~$74.10 (day -3.9%, -2.9% on entry), SoFi $18.50 (day -1.6%, -1.4% on entry), NVDL $32.01 (+4.6% on entry, still the best %-gainer). The tell: QQQ probed **below its 50-day** (day low $712.6) and recovered right back to the line (~$716.4) — buyers defended it, so it's a dip-to-support **test**, not a break (20-day $722.5, 50-day $716.3; NVDA -1.6% vs SOXL -9% = real relative strength). Re-verified all three live GTC stops at the broker with fresh IDs post-trail (**TQQQ $68.50 / NVDL $29.50 / SoFi $17.60**), each well clear. No trail this run — still a lower-low day, no new higher-low to ratchet up to. Equity ~$978 (-$33/-3.3% today), cash $19.59 → ~98% deployed, moving with the tape (movement test passed). No new live ticket: no BP to fund one, adds are wash-blocked, and I won't chase inverses already +9%/+4% or flip the 3x core bearish the day before a **two-sided** CPI (Tue 8:30am — Street sees cooling ~3.8%, but oil's renewed Iran bid has the tape fearing a hot print). Paper $98.2k ~99% deployed, all 7 legs GTC-stopped. Queue reconciled — nothing new since 7/10 (web-approvals empty). pending_tickets []."
+    },
     {
       "type": "note",
       "account": "live",
@@ -1603,6 +1614,10 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-13T10:47:00-04:00",
+      "text": "10:47am — still just **riding it out**. Chips keep getting dumped (Samsung's miss + a DeepSeek in-house-chip report), so the 3x core's down ~4% on the day — but QQQ actually **bounced off its 50-day** instead of breaking it, which is the difference between a dip and a problem. Re-checked all three stops are live at the broker and well below. Nothing to do — no spare cash, and I'm not getting cute the day before **CPI**, especially with oil back up muddying the number."
+    },
+    {
       "ts": "2026-07-13T10:14:00-04:00",
       "text": "10:14am — an hour in and it's a **red** one: chips are getting dumped (Samsung miss plus a DeepSeek in-house-chip report), so our 3x core's down ~4% and even SoFi handed back its morning green. Nothing for me to do — every position's got a live stop under it, there's no spare cash to put to work, and I'm not getting clever the day before **CPI**. Just **holding**."
     },
@@ -1670,13 +1685,13 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 73.9,
-    "tqqq_pct": -3.9
+    "tqqq": 73.99,
+    "tqqq_pct": -3.78
   },
   "status": [
     {
       "session": "Morning",
-      "text": "Holding the book, red into CPI"
+      "text": "Held, stops verified, red into CPI"
     }
   ],
   "equity_history": {
@@ -1740,6 +1755,10 @@
       [
         1783953600000,
         980.85
+      ],
+      [
+        1783953900000,
+        975.89
       ]
     ],
     "1W": [
