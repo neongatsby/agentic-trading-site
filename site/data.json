@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-13T23:15:48.061Z",
+  "generated_at": "2026-07-13T23:16:55.716Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 95981.27,
+    "equity": 96022.81,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 94981.27,
-    "day_pnl": -4055.81,
+    "total_pnl": 95022.81,
+    "day_pnl": -4014.27,
     "positions": [
       {
         "symbol": "FNGU",
@@ -20,18 +20,18 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 203.3,
-        "pl": -904.8,
-        "plpc": -3.31,
+        "current": 203.46,
+        "pl": -883.66,
+        "plpc": -3.23,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 30.69,
-        "pl": 5.46,
-        "plpc": 0.22,
+        "current": 30.6,
+        "pl": -1.74,
+        "plpc": -0.07,
         "thesis": ""
       },
       {
@@ -47,18 +47,18 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 72.01,
-        "pl": -1431.96,
-        "plpc": -6.59,
+        "current": 72.09,
+        "pl": -1409.4,
+        "plpc": -6.48,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 393,
-        "pl": -615.6,
-        "plpc": -4.17,
+        "current": 393.14,
+        "pl": -610.56,
+        "plpc": -4.14,
         "thesis": ""
       },
       {
@@ -103,18 +103,18 @@
     ]
   },
   "live": {
-    "equity": 951.48,
+    "equity": 952.19,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -48.52,
-    "day_pnl": -59.37,
+    "total_pnl": -47.81,
+    "day_pnl": -58.66,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 30.69,
-        "pl": 0.1,
-        "plpc": 0.34,
+        "current": 30.6,
+        "pl": 0.01,
+        "plpc": 0.05,
         "thesis": ""
       },
       {
@@ -130,9 +130,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 72.01,
-        "pl": -42.8,
-        "plpc": -5.61,
+        "current": 72.09,
+        "pl": -42,
+        "plpc": -5.5,
         "thesis": ""
       }
     ],
@@ -923,7 +923,7 @@
       "size_note": "10 sh held — the single 3x core, ~76% of sleeve, $68.50 GTC stop",
       "plan_usd": 726,
       "horizon": 0.3,
-      "updated": "2026-07-13T18:39:00-04:00",
+      "updated": "2026-07-13T19:09:00-04:00",
       "stop": 68.5,
       "hold_reason": "This is our main position — a 3x-Nasdaq ETF we bought as the market's core engine when QQQ reclaimed its 20-day and chips were leading. We're 10 shares in at $76.29 and still holding because the wide $68.50 stop caps the damage and I don't want to dump a leveraged fund at the low the night before CPI. But the honest truth: QQQ just closed under both its 20- and 50-day, so the uptrend that justifies a 3x long is broken — if CPI runs hot or the market stays under its 50-day tomorrow, I cut it at the open instead of waiting for the stop.",
       "price": 72.36,
@@ -1022,7 +1022,7 @@
       "size_note": "1 sh held — ~3% of sleeve, $29.50 GTC stop",
       "plan_usd": 31,
       "horizon": 0.3,
-      "updated": "2026-07-13T18:39:00-04:00",
+      "updated": "2026-07-13T19:09:00-04:00",
       "trigger": 30.56,
       "stop": 29.5,
       "hold_reason": "This is a tiny 2x-NVDA position (1 share) left from an earlier entry — we kept it because it was the lone green name and NVDA had relative strength. We're still holding only because it's basically flat to our entry and the $29.50 stop locks it, but the edge has thinned now that NVDA closed under its own 50-day. It's small enough it's really just a placeholder; I'd rather clean it up and redeploy into a confirmed post-CPI trend than nurse 2x semis in a broken tape.",
@@ -1368,7 +1368,7 @@
       "size_note": "10 sh held — ~19% of sleeve, $17.60 GTC stop",
       "plan_usd": 181,
       "horizon": 0.4,
-      "updated": "2026-07-13T18:39:00-04:00",
+      "updated": "2026-07-13T19:09:00-04:00",
       "trigger": null,
       "stop": 17.6,
       "hold_reason": "We own SoFi as a high-beta fintech with a real catalyst stack — Goldman's $21 target, ARK buying, the Composer AI-trading buy and a new SMB-loan product, heading into 7/29 earnings. We're 10 shares in at $18.76 and still holding because the story's intact and the $17.60 stop is right below the recent higher-low. What's bugging me is price isn't confirming — it's opened green and faded to its low three days running, so if it doesn't reassert after CPI it's the first name I rotate out of.",
@@ -1652,6 +1652,14 @@
     }
   ],
   "feed": [
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-13T19:09:00-04:00",
+      "symbol": "TQQQ",
+      "reaction": "hold",
+      "text": "7:09pm — quiet after-hours check, held everything, nothing to approve. Re-pulled charts + news: no new catalyst in our names, picture unchanged (TQQQ $72.4, QQQ $711 under both its lines, SoFi $18.14, NVDL $30.70). All three stops live GTC (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50), both books reconciled, no new fills since 7/10. Plan holds into 8:30am CPI + bank earnings."
+    },
     {
       "type": "note",
       "account": "live",
@@ -1957,17 +1965,15 @@
       "ts": "2026-07-10T15:15:00-04:00",
       "symbol": "NVDA",
       "text": "3:15pm — easy **hold** on your account, nothing to do. Same narrow, Nvidia-led tape: **NVDA** +3.8% at ~$210 (China cleared its top H200 chips for ByteDance, Alibaba and Tencent) is dragging the Nasdaq to fresh highs (**QQQ $725.7**), while chips as a group, quantum, nuclear and space stay red. Your book's **up ~$10 (+1%)** and fully protected — the 3x-Nasdaq core, the 2x-Nvidia sliver (+7%) and SoFi all green/flat, all three live exits re-checked (core $65, Nvidia $27, SoFi $16.80). ~99% invested with ~$9 cash, so no room to add and nothing cleaner worth making — semis still lag their trend (no 3x-semis flip) and I won't short a market at new highs."
-    },
-    {
-      "type": "trade",
-      "account": "paper",
-      "ts": "2026-07-10T15:15:00-04:00",
-      "symbol": "NVDA",
-      "text": "Put the **idle practice cash to work** — the test account had drifted to ~90% cash, exactly the sitting-on-your-hands failure we're trying to avoid. Bought the leader **Nvidia (130 sh, ~$27k, hard exit $186)** on the live H200 catalyst and **added to the 3x-Nasdaq core (now 282 sh, exit $65)**, both protected GTC. That takes the testbed from ~9% to ~55% deployed; the rest goes to work into the next clean setups. Your real account is unchanged."
     }
   ],
-  "latest_recap": "Mon 7/13 ~6:39pm (after-hours, CLOSED; next open 7/14 9:30am). HELD both books — no changes. Reconcile clean live+paper: recorded positions match the broker (get_all_positions/get_orders); no new trade-placed/failed since 7/10 (web-approvals empty). No fresh actionable catalyst since the 6:09pm run — get_news + web-search show only the DRAM/memory bear-market recap (MU/SK Hynix/Sandisk) and unrelated after-hours movers (Pfizer +1.3%, Circle +5% on a trust-bank approval); nothing in our universe. Final tape: S&P -0.79% (7,515), Nasdaq -1.55% (25,873), chips -4.77%, oil +~10%. Prices pinned to the close: TQQQ $72.36, QQQ $710.9 (below BOTH 20-day ~$722 & 50-day ~$715 → regime still broken), SoFi $18.14, NVDL $30.70, NVDA $203.5 (under its 50-day); PLTR $130.06 (+2.6%) & CEG $257.57 (+2.5%) the lone green / post-CPI rotation picks. Live equity $955.53 (AH mark, -5.5% vs last_equity $1010.85). All 3 live stops verified GTC & clear (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7) — no trail (closed, flat AH, no new higher-low); the stops ride any overnight gap. DECISION: hold overnight; pre-committed post-CPI open plan unchanged — hot core / QQQ still broken → cut the 3x at the open (engine de-risks, no Adam babysitting); cool + QQQ reclaims ~$715 → keep the core. NOT staging a blind directional pre-arm into a binary CPI (whipsaw trap), and $19.59 BP can't fund one anyway. Paper $96.3k, ~99% deployed, 7 legs GTC-stopped. pending_tickets []; did NOT write site/data.json; no git.",
+  "latest_recap": "Mon 7/13 ~7:09pm (after-hours, market CLOSED; next open 7/14 9:30am). HELD both books — no changes. Reconcile clean live+paper: recorded positions match the broker (get_all_positions: TQQQ 10 / SoFi 10 / NVDL 1; the NVDA 0.05 dust flushed at this morning's open, already booked filled); no new trade-placed/failed since 7/10 (.web-approvals-seen empty). Fresh pull this run: get_stock_snapshot + get_market_movers + 3 web-searches — no new actionable catalyst in our universe after the bell (movers are micro-cap junk; only macro is the confirmed setup for tomorrow). Prices ~flat to the close: TQQQ $72.36 AH (RTH close $72.73, day -5.7%), QQQ $710.9 (RTH close $711.74 — below BOTH its 20-day 722.3 & 50-day ~717.2, computed off daily bars → the leverage regime is broken on a closing basis), SoFi $18.14, NVDL $30.70, NVDA $203.5 (under its own 50-day). Live equity ~$951.6 (AH mark, -5.9% vs last_equity $1010.85; first sub-$1k close). Movement test PASS (-$59 today = genuinely deployed, ~98%). All 3 live stops re-verified GTC & clear (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7) — no trail (closed, flat AH, no new higher-low; won't tighten into the CPI binary). DECISION: hold overnight; pre-committed post-CPI open plan unchanged — hot core / QQQ still broken → the next run cuts the 3x at the open (engine de-risks, no Adam babysitting); cool + QQQ reclaims ~$715 → keep the core. NOT staging a blind directional pre-arm into a two-sided CPI + 5 big-bank prints (whipsaw trap), and $19.59 BP can't fund one anyway; not flipping to a +15% inverse the night before a print the Street sees cooling. Tomorrow AM: June CPI 8:30 (~3.9% headline / ~2.9% core), JPM/GS/C/BAC/WFC before the open, Warsh testimony. Paper ~$96.3k, ~99% deployed, 7 legs GTC-stopped. pending_tickets []; did NOT write site/data.json; no git.",
   "activity": [
+    {
+      "ts": "2026-07-13T19:09:00-04:00",
+      "kind": "engine",
+      "title": "Mon 7/13 ~7:09pm (after-hours, market CLOSED; next open 7/14 9:30am). HELD both books — no changes. Reconcile clean live+paper: recorded positions match the broker (get_all_positions: TQQQ 10 / SoFi 10 / NVDL 1; the NVDA 0.05 dust flushed at this morning's open, already booked filled); no new trade-placed/failed since 7/10 (.web-approvals-seen empty). Fresh pull this run: get_stock_snapshot + get_market_movers + 3 web-searches — no new actionable catalyst in our universe after the bell (movers are micro-cap junk; only macro is the confirmed setup for tomorrow). Prices ~flat to the close: TQQQ $72.36 AH (RTH close $72.73, day -5.7%), QQQ $710.9 (RTH close $711.74 — below BOTH its 20-day 722.3 & 50-day ~717.2, computed off daily bars → the leverage regime is broken on a closing basis), SoFi $18.14, NVDL $30.70, NVDA $203.5 (under its own 50-day). Live equity ~$951.6 (AH mark, -5.9% vs last_equity $1010.85; first sub-$1k close). Movement test PASS (-$59 today = genuinely deployed, ~98%). All 3 live stops re-verified GTC & clear (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7) — no trail (closed, flat AH, no new higher-low; won't tighten into the CPI binary). DECISION: hold overnight; pre-committed post-CPI open plan unchanged — hot core / QQQ still broken → the next run cuts the 3x at the open (engine de-risks, no Adam babysitting); cool + QQQ reclaims ~$715 → keep the core. NOT staging a blind directional pre-arm into a two-sided CPI + 5 big-bank prints (whipsaw trap), and $19.59 BP can't fund one anyway; not flipping to a +15% inverse the night before a print the Street sees cooling. Tomorrow AM: June CPI 8:30 (~3.9% headline / ~2.9% core), JPM/GS/C/BAC/WFC before the open, Warsh testimony. Paper ~$96.3k, ~99% deployed, 7 legs GTC-stopped. pending_tickets []; did NOT write site/data.json; no git."
+    },
     {
       "ts": "2026-07-13T18:39:00-04:00",
       "kind": "engine",
@@ -2106,6 +2112,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-13T19:09:00-04:00",
+      "text": "7:09pm — held the whole book, nothing to approve. Re-pulled charts and searched the news again: no new after-hours catalyst in our names, and the setup is unchanged from an hour ago — TQQQ $72.4, QQQ $711 (still below BOTH its 20-day ~$722 and 50-day ~$717, so the uptrend behind the 3x core is still broken), SoFi $18.14, NVDL $30.70. Tomorrow decides it: 8:30am June CPI (Street sees a soft ~3.9% headline on -10% gasoline but sticky ~2.9% core), then JPM/Goldman/Citi/BofA/Wells earnings before the open and Warsh's testimony. All three stops live GTC and clear (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50); both books reconciled, no new fills since 7/10. Same plan into the open: hot core / QQQ still broken → I cut the 3x; cool + QQQ reclaims ~$715 → I keep it.",
+      "hype": "Nothing new after the bell, so I just held it all — it's all on tomorrow's 8:30 CPI plus the big banks reporting. Hot number and I cut the leverage at the open; cool one and I keep it."
+    },
+    {
       "ts": "2026-07-13T18:09:00-04:00",
       "text": "6:09pm — one fresh thing since my last check: US Central Command kicked off a 3rd straight night of strikes on Iran in the Strait of Hormuz at ~4:45pm, which keeps oil bid near $80 and futures jumpy overnight (Trump also floated 'a deal is possible'). It doesn't change what I can actually do — the book's ~98% long and leveraged into tomorrow's 8:30am CPI, I've got ~$20 spare cash, and I'm not flipping bearish or chasing a +15% inverse blind into a binary print. Held everything; all three stops live GTC (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50) and they ride through any overnight gap. Same open plan: hot core / QQQ still broken → I cut the 3x at the open; cool + QQQ reclaims ~$715 → the core stays.",
       "hype": "Only new thing tonight: US started a 3rd night of strikes on Iran, so oil's bid and futures are jumpy — but I'm already all-in long with stops set, so nothing to do but let tomorrow's CPI decide. Hot number I cut the leverage at the open, cool one I hold."
@@ -2174,14 +2185,6 @@
       "ts": "2026-07-13T11:11:00-04:00",
       "text": "11:11am — still **holding**, and the tape firmed a hair: chips are soft (Samsung miss + a report DeepSeek's building its own AI chip) but QQQ crept back off its morning low to sit right on its **50-day**, so the 3x core steadied ~$74.4 and the book clawed a few dollars back (equity **~$981**, -$29/-2.9% today). Re-checked all three stops live at the broker (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50), each well below. Nothing to do — no spare cash, adds are blocked, and I'm not getting cute the day before **CPI** + the bank earnings.",
       "hype": "Chips still getting shoved around, but the Nasdaq crawled back to its line and we clawed a few bucks back — down about thirty on the day, nothing actually broke. Stops are all set, so I'm sitting on my hands the day before the inflation print."
-    },
-    {
-      "ts": "2026-07-13T10:47:00-04:00",
-      "text": "10:47am — still just **riding it out**. Chips keep getting dumped (Samsung's miss + a DeepSeek in-house-chip report), so the 3x core's down ~4% on the day — but QQQ actually **bounced off its 50-day** instead of breaking it, which is the difference between a dip and a problem. Re-checked all three stops are live at the broker and well below. Nothing to do — no spare cash, and I'm not getting cute the day before **CPI**, especially with oil back up muddying the number."
-    },
-    {
-      "ts": "2026-07-13T10:14:00-04:00",
-      "text": "10:14am — an hour in and it's a **red** one: chips are getting dumped (Samsung miss plus a DeepSeek in-house-chip report), so our 3x core's down ~4% and even SoFi handed back its morning green. Nothing for me to do — every position's got a live stop under it, there's no spare cash to put to work, and I'm not getting clever the day before **CPI**. Just **holding**."
     }
   ],
   "benchmark": {
@@ -2201,7 +2204,7 @@
     },
     {
       "session": "Evening",
-      "text": "Held AH — quiet, all on 8:30am CPI"
+      "text": "Held AH — CPI + bank earnings on deck"
     }
   ],
   "equity_history": {
