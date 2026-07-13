@@ -283,12 +283,22 @@
       thBlurb = stripMd((c && c.thesis) || top.thesis || (DATA && DATA.latest_recap) || '');
     }
 
+    // the live book is the source of truth — used to self-correct any stale "pending" trade card
+    const heldSet = {}; positions.forEach(function (p){ heldSet[p.t] = true; });
+
     const trades = arr(DATA && DATA.feed)
       .filter(function (f){ return f.type === 'trade' && f.account === 'live'; })
       .slice().sort(function (a, b){ return new Date(b.ts) - new Date(a.ts); })
       .map(function (f){
         const side = (f.side ? String(f.side) : inferSide(f.text)).toUpperCase();
-        const st = (f.status ? String(f.status) : inferStatus(f.text)).toUpperCase();
+        let st = (f.status ? String(f.status) : inferStatus(f.text)).toUpperCase();
+        // Self-correct a stale "pending": the fast-lane fills within ~60s of the open, so nothing
+        // legitimately lingers as pending. Reconcile against the live positions we already hold.
+        if (st === 'PENDING' || st === 'QUEUED') {
+          const held = !!heldSet[f.symbol];
+          if (side === 'SELL' || side === 'SHORT') { if (!held) st = 'FILLED'; }   // sell/flatten done — position is gone
+          else if (held) st = 'FILLED';                                            // buy done — position now shows in the book
+        }
         return { time: hmm(f.ts), side: side, kind: side.toLowerCase(), tk: f.symbol, detail: inferDetail(f), status: st, ok: st === 'FILLED', text: f.text || '', ts: f.ts };
       });
 
