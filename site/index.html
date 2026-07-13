@@ -129,6 +129,8 @@
 <script>
 (function () {
   "use strict";
+  // Set the render-resolution multiplier BEFORE any WebGL component boots (they read window.__hiDPR).
+  window.__hiDPR = Math.max(1, (window.innerWidth / 1080) * 0.9);
 
   /* ─────────────────────────── palettes (verbatim from the .dc.html renderVals) ─────────────────────────── */
   const palA = { activeBg:'rgba(52,211,153,0.14)', activeFg:'#6ee7b7', activeBorder:'rgba(52,211,153,0.4)', idleFg:'rgba(255,255,255,0.45)', upBg:'rgba(52,211,153,0.15)', upFg:'#6ee7b7', upBorder:'rgba(52,211,153,0.4)', dnBg:'rgba(248,113,113,0.15)', dnFg:'#fca5a5', dnBorder:'rgba(248,113,113,0.4)', okFg:'#6ee7b7', failFg:'#fca5a5' };
@@ -629,11 +631,14 @@
   }
 
   /* ─────────────────────────── scale the 1080-wide root to viewport width ─────────────────────────── */
+  const SHRINK = 0.9;   // scale everything down ~10% so it isn't oversized on a big 4K screen
   function applyScale(){
     const stage = document.getElementById('stage'), scaler = document.getElementById('scaler');
     if (!stage || !scaler) return;
-    const s = window.innerWidth / 1080;
-    stage.style.transform = 'scale(' + s + ')';
+    const s = (window.innerWidth / 1080) * SHRINK;
+    window.__hiDPR = Math.max(1, s);   // tell the WebGL renderers how much the stage is CSS-upscaled → they render crisp
+    const offX = Math.max(0, (window.innerWidth - 1080 * s) / 2);   // center horizontally
+    stage.style.transform = 'translateX(' + offX + 'px) scale(' + s + ')';
     const natH = currentRoot ? currentRoot.offsetHeight : 1920;
     scaler.style.height = (natH * s) + 'px';
   }
