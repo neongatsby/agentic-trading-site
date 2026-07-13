@@ -1,55 +1,55 @@
 {
-  "generated_at": "2026-07-13T12:27:06.111Z",
+  "generated_at": "2026-07-13T12:28:15.872Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 98783.67,
+    "equity": 98767.33,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 97783.67,
-    "day_pnl": -1253.41,
+    "total_pnl": 97767.33,
+    "day_pnl": -1269.75,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 207.92,
-        "pl": -304.2,
-        "plpc": -1.11,
+        "current": 207.87,
+        "pl": -311.35,
+        "plpc": -1.14,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.07,
-        "pl": 115.8,
-        "plpc": 4.73,
+        "current": 32.05,
+        "pl": 114.26,
+        "plpc": 4.66,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 19.32,
-        "pl": -38,
-        "plpc": -0.97,
+        "current": 19.36,
+        "pl": -30.14,
+        "plpc": -0.77,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 74.42,
-        "pl": -752.31,
-        "plpc": -3.46,
+        "current": 74.38,
+        "pl": -763.62,
+        "plpc": -3.51,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 403.5,
-        "pl": -237.6,
-        "plpc": -1.61,
+        "current": 403.38,
+        "pl": -241.8,
+        "plpc": -1.64,
         "thesis": ""
       }
     ],
@@ -85,45 +85,45 @@
     ]
   },
   "live": {
-    "equity": 989.03,
+    "equity": 989,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -10.97,
-    "day_pnl": -21.82,
+    "total_pnl": -11,
+    "day_pnl": -21.85,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 207.92,
+        "current": 207.87,
         "pl": 0.69,
-        "plpc": 6.91,
+        "plpc": 6.88,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.07,
-        "pl": 1.48,
-        "plpc": 4.85,
+        "current": 32.05,
+        "pl": 1.46,
+        "plpc": 4.79,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 19.32,
-        "pl": 5.6,
-        "plpc": 2.99,
+        "current": 19.36,
+        "pl": 6,
+        "plpc": 3.2,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 74.42,
-        "pl": -18.7,
-        "plpc": -2.45,
+        "current": 74.38,
+        "pl": -19.1,
+        "plpc": -2.5,
         "thesis": ""
       }
     ],
@@ -392,8 +392,8 @@
       "horizon": 0.3,
       "updated": "2026-07-13T08:12:00-04:00",
       "stop": 65,
-      "price": 74.82,
-      "chg_pct": -1.89,
+      "price": 74.38,
+      "chg_pct": -2.47,
       "spark": [
         78.76,
         75.17,
@@ -424,7 +424,7 @@
         74.21,
         73.35,
         74.79,
-        74.82
+        74.38
       ]
     },
     {
@@ -441,8 +441,8 @@
       "horizon": 0.2,
       "updated": "2026-07-13T08:12:00-04:00",
       "trigger": "SOXX > 600 close",
-      "price": 173.7,
-      "chg_pct": -9.62,
+      "price": 173.33,
+      "chg_pct": -9.81,
       "spark": [
         186.17,
         164.2,
@@ -473,7 +473,7 @@
         230.82,
         229.99,
         252.93,
-        173.7
+        173.33
       ]
     },
     {
@@ -1522,8 +1522,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 74.82,
-    "tqqq_pct": -2.7
+    "tqqq": 74.38,
+    "tqqq_pct": -3.28
   },
   "status": [
     {
