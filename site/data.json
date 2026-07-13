@@ -1,46 +1,46 @@
 {
-  "generated_at": "2026-07-13T08:45:21.517Z",
+  "generated_at": "2026-07-13T08:46:28.733Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 98702.22,
+    "equity": 98709.08,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 97702.22,
-    "day_pnl": -1334.86,
+    "total_pnl": 97709.08,
+    "day_pnl": -1328,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 207.32,
-        "pl": -382.2,
-        "plpc": -1.4,
+        "current": 207.26,
+        "pl": -390,
+        "plpc": -1.43,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 31.91,
-        "pl": 103.06,
-        "plpc": 4.21,
+        "current": 31.87,
+        "pl": 100.08,
+        "plpc": 4.08,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 19.18,
-        "pl": -66,
-        "plpc": -1.69,
+        "current": 19.24,
+        "pl": -54,
+        "plpc": -1.38,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 74.68,
-        "pl": -679.02,
-        "plpc": -3.12,
+        "current": 74.7,
+        "pl": -673.38,
+        "plpc": -3.1,
         "thesis": ""
       },
       {
@@ -85,45 +85,45 @@
     ]
   },
   "live": {
-    "equity": 990.04,
+    "equity": 990.8,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -9.96,
-    "day_pnl": -20.81,
+    "total_pnl": -9.2,
+    "day_pnl": -20.05,
     "positions": [
       {
         "symbol": "NVDA",
         "qty": "0.0514",
         "entry": 194.48,
-        "current": 207.32,
+        "current": 207.26,
         "pl": 0.66,
-        "plpc": 6.6,
+        "plpc": 6.57,
         "thesis": "$10 pipe test (approved Fri) — filled at Mon open. Not a thesis trade; proves the live order path works."
       },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 31.91,
-        "pl": 1.32,
-        "plpc": 4.33,
+        "current": 31.87,
+        "pl": 1.29,
+        "plpc": 4.21,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 19.18,
-        "pl": 4.2,
-        "plpc": 2.24,
+        "current": 19.24,
+        "pl": 4.8,
+        "plpc": 2.56,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 74.68,
-        "pl": -16.1,
-        "plpc": -2.11,
+        "current": 74.7,
+        "pl": -15.9,
+        "plpc": -2.08,
         "thesis": ""
       }
     ],
@@ -214,7 +214,7 @@
       "size_note": "10 sh held — the single 3x core, ~76% of sleeve, $65 GTC stop",
       "plan_usd": 743,
       "horizon": 0.3,
-      "updated": "Jul 13 4:12am",
+      "updated": "2026-07-13T04:40:00-04:00",
       "stop": 65,
       "price": 77.16,
       "chg_pct": 1.18,
@@ -312,7 +312,7 @@
       "size_note": "1 sh legacy starter — 2x-NVDA, $27 GTC stop; add wash-blocked",
       "plan_usd": 32,
       "horizon": 0.3,
-      "updated": "Jul 13 4:12am",
+      "updated": "2026-07-13T04:40:00-04:00",
       "trigger": 30.56,
       "stop": 27,
       "price": 33.01,
@@ -357,12 +357,12 @@
       "verdict": "buy",
       "verdict_label": "Leader — off record; dust live, 130 sh on paper",
       "thesis": "**Leader cooling from its record — ~$206.6 overnight (−2.1% off Fri's $211).** Still ~$5T cap; the AI-hardware bid is intact (Micron $250B US plan, Apple–Broadcom $30B, $430B combined chip free-cash-flow) and a widely-cited falling-wedge points higher, but it drops with the risk-off tape into CPI. We own it 2x via NVDL and inside the 3x TQQQ core; the **~$10.6** direct sliver is unstoppable fractional dust — folds into a real NVDA share once BP clears one ($206 > $9 cash). Held outright on the practice book (130 sh, stop $186).",
-      "size": "$11",
-      "size_pct": 1,
-      "size_note": "0.05 sh dust live (unstoppable, flagged to flatten); 130 sh on paper w/ $186 stop",
+      "size": "$0 (dust sold)",
+      "size_pct": 0,
+      "size_note": "0.05sh unstoppable dust — FLATTENED this run (market-sell queued for the open); NVDL is the live NVDA vehicle.",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "Jul 13 4:12am",
+      "updated": "2026-07-13T04:40:00-04:00",
       "price": 210.99,
       "chg_pct": 4.09,
       "spark": [
@@ -656,7 +656,7 @@
       "size_note": "10 sh held — rate-independent fintech satellite, $16.80 GTC stop",
       "plan_usd": 186,
       "horizon": 0.4,
-      "updated": "Jul 13 4:12am",
+      "updated": "2026-07-13T04:40:00-04:00",
       "trigger": null,
       "stop": 16.8,
       "price": 18.8,
@@ -891,6 +891,23 @@
     }
   ],
   "feed": [
+    {
+      "type": "trade",
+      "account": "live",
+      "ts": "2026-07-13T04:40:00-04:00",
+      "symbol": "NVDA",
+      "side": "sell",
+      "status": "pending",
+      "reaction": "hold",
+      "text": "Queued the tiny **NVDA 0.05-share** leftover (~$10) to sell at the open — it can't hold a stop, so it's housekeeping, not a call. Frees ~$10 back to cash and leaves every remaining position protected."
+    },
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-13T04:40:00-04:00",
+      "symbol": "TQQQ",
+      "text": "4:40am — held the book into **CPI Tuesday**. Overnight still soft: TQQQ ~$74.5 (−3.3% vs Fri $77.11), NVDL ~$31.7 (−3.9%), NVDA ~$206.8 (−2%), SoFi ~$18.6, on Strait-of-Hormuz tension + pre-print jitters (consensus ~3.9% y/y, seen cooling from 4.2%; Fed Chair **Warsh** testifies). Re-verified all 3 GTC stops live at the broker (**TQQQ $65=2947c9be / NVDL $27=c2fbeac9 / SoFi $16.80=bf2f2983**), each well below. ~99% invested, ~$9 cash → no buy to fund, and I won't flip to inverse against a CPI the Street expects to cool — wide stops are the brake. Flattened the NVDA dust (queued for open)."
+    },
     {
       "type": "note",
       "account": "live",
@@ -1156,24 +1173,15 @@
       "ts": "2026-07-10T04:08:00-04:00",
       "symbol": "SOXX",
       "text": "The chip story got **louder** overnight: US semiconductor ETFs pulled a **record $7.1B of new money in a single day** ('buy the AI-chip dip'), on top of Micron's $250B US plan and SK Hynix's 7x-oversubscribed listing. Chips are clearly the leadership. The one thing still missing is confirmation on the trend line — the chip index is ~3% under its 20-day — so I'm keeping the 3x-Nasdaq core for now and I'll rotate it into the 3x-chip fund the moment that line is reclaimed. Nothing for you to do."
-    },
-    {
-      "type": "note",
-      "account": "live",
-      "ts": "2026-07-09T21:35:00-04:00",
-      "symbol": "TQQQ",
-      "text": "Evening deep-check — the core's fine and both safety exits are re-confirmed at the broker. I recomputed the trend lines fresh tonight: the Nasdaq's reclaim is **real but thin** (only ~2 points above its 20-day line), and chips still haven't taken back their own 20-day, so I'm **not chasing more leverage** into a shaky bounce after hours. I'm holding ~$196 (~20%) as a buffer — honestly at the edge of what I like to sit on — and it deploys at tomorrow's open the moment chips confirm, or by rotating the core into the 3x-semis fund for more punch. One fresh tailwind for tomorrow: Washington is **issuing licenses again for NVIDIA's H20 chips into China**. Nothing for you to do."
-    },
-    {
-      "type": "note",
-      "account": "live",
-      "ts": "2026-07-09T16:40:00-04:00",
-      "symbol": "TQQQ",
-      "text": "Quick after-close check: we're **long and steady**. The Nasdaq held its reclaim into after-hours (~723) and the TQQQ core sat right around our entry — both safety exits confirmed live at the broker again. One thing I'm watching honestly, not asking you to do anything about: the **US-Iran flare-up escalated** today (US airstrikes, Iran retaliating). The market shrugged it off and oil actually fell, but it's the overnight wildcard — and if it gaps us down, the $65 stop is the pre-set floor. Nothing for you to do."
     }
   ],
-  "latest_recap": "Mon 7/13 ~4:12am pre-market (MARKET CLOSED; next live fill window Mon 09:30 ET). LIVE: NO book change — HOLD all four into CPI Tuesday. Overnight risk-off gap: TQQQ ~$74.1 (−3.8% vs Fri $77.03, now ~3.8% below its ~$77.0 20-day), NVDL ~$31.66 (−4.1%), NVDA ~$206.63 (−2.1% off Fri's $211 record), SoFi holding $18.62 (−0.9%). Cause: Nasdaq futures leading losses on Strait-of-Hormuz tension + jitters before Tuesday's CPI (consensus ~3.9% y/y, seen cooling from 4.2%) and Fed Chair Warsh's first semiannual testimony. ACCOUNT: equity ~$981.38 (−$29.5/−2.9% vs last_equity $1,010.85; −1.9% vs $1,000 start), cash $8.88 → ~99% deployed. Positions: TQQQ 10sh @ $76.29 (mark ~$74.34, −2.6%), SOFI 10sh @ $18.76 (~flat), NVDL 1sh @ $30.59 (+3.5%), NVDA 0.05sh dust ~$10.6. STOPS: all three GTC verified live at broker & well clear — TQQQ $65 (2947c9be), NVDL $27 (c2fbeac9), SOFI $16.80 (bf2f2983). No trail (pullback, no new higher-low). DECISION: no new ticket — fully deployed with $8.88 BP (can't fund a buy), and trimming/flipping-to-inverse the day before a CPI that consensus expects to COOL is the timid failure mode the charter rejects; wide stops are the brake and ride any hot-print gap. NVDA 0.05sh unstoppable dust (~$10.6) still flagged to fold into a real NVDA share when BP allows. PAPER testbed (equity ~$98.4k, −1.6% overnight): FNGU 520sh (limit $29.20, stop $24.30) + UPRO 95sh (limit $148.50, stop $124) OTO buys still resting → fill at today's open, taking paper back to ~99%; all 5 paper GTC stops live (NVDA $186, TQQQ $65, SOFI $16.80, NVDL $27, TSLA $348). Movement test PASSED: book moved ~$29 overnight — genuinely deployed, not the pennies-a-day under-deployment failure.",
+  "latest_recap": "Mon 7/13 ~4:40am pre-market (MARKET CLOSED; next live fill window Mon 09:30 ET). LIVE: HOLD the core into CPI Tuesday; one book change this run — FLATTENED the NVDA 0.05sh dust (~$10, unstoppable fractional) via a market-sell queued for the open, per the charter's dust-cleanup rule. Overnight still risk-off vs Fri closes: TQQQ ~$74.5 (−3.3% vs $77.11, ~3% under its ~$77 20-day), NVDL ~$31.7 (−3.9%), NVDA ~$206.8 (−2% off Fri's $211 record), SoFi ~$18.6. Cause: Nasdaq futures soft on Strait-of-Hormuz tension + jitters before Tue June CPI (consensus ~3.9% y/y, seen cooling from 4.2%) and Fed Chair Warsh's first semiannual testimony; PPI Wed, TSMC/Netflix Thu. ACCOUNT: equity ~$981–987 on the overnight mark (~−2.5% vs last_equity $1,010.85; roughly flat at Fri's real SIP closes), cash $8.88 → ~99% deployed. Positions: TQQQ 10sh @ $76.29, SOFI 10sh @ $18.76 (~flat), NVDL 1sh @ $30.59 (+8% at Fri close). STOPS: all three GTC verified live at broker & well clear — TQQQ $65 (2947c9be), NVDL $27 (c2fbeac9), SOFI $16.80 (bf2f2983). No trail (overnight pullback, no new higher-low). DECISION: no new ticket — fully deployed with $8.88 BP (can't fund a buy), and trimming or flipping-to-inverse the day before a CPI consensus expects to COOL is the timid failure mode the charter rejects; the wide stops are the brake and ride any hot-print gap. PAPER testbed (equity ~$98.7k, ~flat at Fri closes): 5 longs (NVDA 130 / NVDL 80 / SOFI 200 / TQQQ 282 / TSLA 36) all GTC-stopped, plus ~$29.8k earmarked in two resting dip-buy limits (UPRO 95sh @ $148.50, FNGU 520sh @ $29.20) staged below market to fill on a CPI dip — a coherent barbell, not idle cash; leave through the print, revisit post-CPI.",
   "activity": [
+    {
+      "ts": "2026-07-13T04:40:00-04:00",
+      "kind": "engine",
+      "title": "4:40am pre-market (MARKET CLOSED; next open Mon 7/13 09:30 ET). LIVE: HOLD core into CPI Tue; FLATTENED NVDA 0.05sh dust (~$10, market-sell queued for open). Overnight soft — TQQQ ~$74.5/−3.3%, NVDL ~$31.7/−3.9%, NVDA ~$206.8/−2%, SoFi ~$18.6 on Hormuz tension + CPI jitters (consensus ~3.9%, cooling). All 3 GTC stops verified live (TQQQ $65 / NVDL $27 / SoFi $16.80), well clear. Equity ~$981–987, $8.88 cash → ~99% deployed; no new ticket (no BP; won't flip inverse vs a CPI seen cooling). PAPER: 5 longs all stopped + UPRO/FNGU dip-limits resting to fill on a CPI dip."
+    },
     {
       "ts": "2026-07-13T04:12:00-04:00",
       "kind": "engine",
@@ -1347,6 +1355,10 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-13T04:40:00-04:00",
+      "text": "Swept the last **$10 of NVDA dust** off the table so everything left is protected, then left the leveraged book alone — still **holding** into tomorrow's inflation print. All three stops sit live and miles below; nothing for you to tap."
+    },
+    {
       "ts": "2026-07-13T04:12:00-04:00",
       "text": "4am Monday and the tape's **soft** into tomorrow's inflation number — Nasdaq futures leading the slide on Mideast headlines, so our leveraged core opens down a few percent. I'm not touching it: **~99% invested**, all three stops (**TQQQ $65 / NVDL $27 / SoFi $16.80**) sit live and miles below, and I'd rather ride a CPI that's *expected to cool* than get cute the day before it."
     },
@@ -1401,10 +1413,6 @@
     {
       "ts": "2026-07-10T14:40:00-04:00",
       "text": "2:40pm — still an easy **hold**, nothing for you to do. Quiet, narrow Friday: **Nvidia** holds +3% and drags the Nasdaq to fresh highs while quantum, nuclear and space stay red — so our 3x-Nasdaq **core**, the 2x-Nvidia sliver (+7%) and SoFi are all green and protected, book **up ~$9**. Fully invested with ~$9 cash and no cleaner trade worth making (semis still lag their trend, won't short new highs), so I'm just letting the winners run."
-    },
-    {
-      "ts": "2026-07-10T14:10:00-04:00",
-      "text": "2:10pm — still an easy **hold**, nothing to do. Nvidia ticked back a touch off its high, so we're **up ~$11** now instead of ~$13 — but the 3x-Nasdaq **core**, our 2x-Nvidia piece (+7%) and SoFi are all green and protected. ~99% invested with ~$9 cash, nothing clean to add, so I'm just letting the winners run."
     }
   ],
   "benchmark": {
@@ -1416,7 +1424,7 @@
   "status": [
     {
       "session": "Morning",
-      "text": "Pre-CPI dip — holding, all stopped"
+      "text": "Holding into CPI, dust cleared"
     }
   ],
   "equity_history": {
