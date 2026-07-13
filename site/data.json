@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-13T20:47:04.875Z",
+  "generated_at": "2026-07-13T20:48:15.400Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 96253.7,
+    "equity": 96245.26,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 95253.7,
-    "day_pnl": -3783.38,
+    "total_pnl": 95245.26,
+    "day_pnl": -3791.82,
     "positions": [
       {
         "symbol": "FNGU",
@@ -20,9 +20,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 203.59,
-        "pl": -867.75,
-        "plpc": -3.17,
+        "current": 203.56,
+        "pl": -870.79,
+        "plpc": -3.19,
         "thesis": ""
       },
       {
@@ -30,7 +30,7 @@
         "qty": "80.0000",
         "entry": 30.62,
         "current": 30.73,
-        "pl": 8.56,
+        "pl": 8.66,
         "plpc": 0.35,
         "thesis": ""
       },
@@ -38,27 +38,27 @@
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.12,
-        "pl": -278,
-        "plpc": -7.12,
+        "current": 18.13,
+        "pl": -276,
+        "plpc": -7.07,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 72.37,
-        "pl": -1330.72,
-        "plpc": -6.12,
+        "current": 72.35,
+        "pl": -1336.08,
+        "plpc": -6.15,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 393.5,
-        "pl": -597.61,
-        "plpc": -4.05,
+        "current": 393.44,
+        "pl": -599.76,
+        "plpc": -4.06,
         "thesis": ""
       },
       {
@@ -103,10 +103,10 @@
     ]
   },
   "live": {
-    "equity": 955.21,
+    "equity": 955.12,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -44.79,
-    "day_pnl": -55.64,
+    "total_pnl": -44.88,
+    "day_pnl": -55.73,
     "positions": [
       {
         "symbol": "NVDL",
@@ -121,18 +121,18 @@
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.12,
-        "pl": -6.4,
-        "plpc": -3.41,
+        "current": 18.13,
+        "pl": -6.3,
+        "plpc": -3.36,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 72.37,
-        "pl": -39.21,
-        "plpc": -5.14,
+        "current": 72.35,
+        "pl": -39.4,
+        "plpc": -5.16,
         "thesis": ""
       }
     ],
@@ -1826,13 +1826,6 @@
       "ts": "2026-07-10T14:10:00-04:00",
       "symbol": "NVDA",
       "text": "2:10pm — quiet **hold**, everything's protected and nothing needs you. Half an hour on and the tape eased a hair: **Nvidia** slipped back off its high (still +3.6% on the day), so the book gave back a couple bucks to **~$11 up**. Nothing changed under the hood — our 2x-Nvidia sliver is still the standout (+7%), **SoFi**'s green, and the 3x-Nasdaq **core** rides the trend near its highs. All six safety exits re-checked at the broker (core $65, Nvidia $27, SoFi $16.80, plus the practice account's three). We're ~99% invested with ~$9 cash, so there's no room to add and no cleaner trade worth making — semis still lag their trend (no 3x-semis flip) and I won't short a market sitting at new highs. I'd only move if the core loses its trend or a real new setup shows up."
-    },
-    {
-      "type": "note",
-      "account": "live",
-      "ts": "2026-07-10T13:12:00-04:00",
-      "symbol": "NVDA",
-      "text": "1:12pm — quiet **hold**, everything protected, nothing for you to do. Half an hour on and almost nothing's moved: **Nvidia** slipped a touch off its $210.56 high to ~$209.6 (still +3.4% on the China H200 chip clearance) and it's still carrying a narrow tape — quantum, nuclear, space and Palantir remain red, Bloom's soft. Our **2x-Nvidia** sliver is still the book's best (+7%), **SoFi**'s green, and the 3x-Nasdaq **core** rides the trend. Book's **up ~$9**. All three live exits re-verified at the broker (core $65, Nvidia $27, SoFi $16.80) and the practice account's three are GTC too. ~99% invested with ~$9 cash — no room to add and no cleaner trade worth making (semis still lag their trend, so no 3x-semis flip; not shorting a green tape; a whole Nvidia share is more than the spare cash). I'd only move if the core loses its trend or a real new setup shows up."
     }
   ],
   "latest_recap": "Mon 7/13 ~4:39pm (after-hours, market CLOSED; next open 7/14 9:30am). HELD both books — no changes, reconcile clean on live AND paper: recorded positions match the broker (get_all_positions/get_orders), no unhandled queue fills since 7/10 (web-approvals empty). Housekeeping: flipped the stuck NVDA 0.05sh dust-sell feed card pending->filled — it flushed at this morning's 9:30 open (positions confirm no NVDA; cash $19.59). Live equity ~$955.79 (AH mark, -5.4% vs last_equity $1010.85) — essentially the $957 close. After-hours DEAD QUIET: TQQQ $72.6, QQQ $711.5 (still below BOTH 20-day ~$722 & 50-day ~$715), SoFi $18.14, NVDL $30.70 — all pinned to the close; PLTR $130.06 (+2.6%) & CEG $257.57 (+2.5%) the lone green / post-CPI rotation picks. No fresh after-close catalyst in the universe and no notable pre-open earnings tomorrow — the tape is parked on June CPI (Tue 8:30am; Street sees headline cooling ~3.8-3.9% on -10% gasoline, core sticky ~2.9-3.2% — a cool-headline/hot-core trap) + Warsh testimony + bank earnings (JPM/GS/WFC/C/BAC). Book ~98% deployed: TQQQ (-4.7% entry), SoFi (-3.3%), NVDL (~flat). All 3 live stops verified GTC & clear (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7) — no trail (market closed, flat AH, no new higher-low). DECISION: hold overnight; pre-committed plan for the post-CPI pre-market run unchanged — hot core / QQQ still broken -> de-risk the 3x at the open (tighten the stop or stage a flatten, no Adam babysitting); cool print + QQQ reclaims ~$715 -> keep the core. No new ticket ($19.59 BP; same-symbol adds wash-blocked; won't chase a +15% inverse or flip the core blind into a binary). Paper $96.3k, ~99% deployed, all 7 legs GTC-stopped (FNGU $24.30 / NVDA $186 / NVDL $29.50 / SOFI $16.80 / TQQQ $68.50 / TSLA $348 / UPRO $124). pending_tickets []; did NOT write site/data.json; no git.",
@@ -1956,21 +1949,6 @@
       "ts": "2026-07-13T04:40:00-04:00",
       "kind": "engine",
       "title": "4:40am pre-market (MARKET CLOSED; next open Mon 7/13 09:30 ET). LIVE: HOLD core into CPI Tue; FLATTENED NVDA 0.05sh dust (~$10, market-sell queued for open). Overnight soft — TQQQ ~$74.5/−3.3%, NVDL ~$31.7/−3.9%, NVDA ~$206.8/−2%, SoFi ~$18.6 on Hormuz tension + CPI jitters (consensus ~3.9%, cooling). All 3 GTC stops verified live (TQQQ $65 / NVDL $27 / SoFi $16.80), well clear. Equity ~$981–987, $8.88 cash → ~99% deployed; no new ticket (no BP; won't flip inverse vs a CPI seen cooling). PAPER: 5 longs all stopped + UPRO/FNGU dip-limits resting to fill on a CPI dip."
-    },
-    {
-      "ts": "2026-07-13T04:12:00-04:00",
-      "kind": "engine",
-      "title": "4:12am pre-market (MARKET CLOSED; next open Mon 7/13 09:30 ET). LIVE: HOLD all four; overnight risk-off gap — TQQQ ~$74.1/−3.8%, NVDL ~$31.7/−4.1%, NVDA ~$206.6/−2.1%, SOFI $18.62/−0.9% on Hormuz tension + CPI-Tuesday jitters (consensus ~3.9%, cooling). 3 GTC stops verified live (TQQQ $65=2947c9be / NVDL $27=c2fbeac9 / SOFI $16.80=bf2f2983), all well clear. Equity ~$981 (−$29/−2.9% overnight), $8.88 cash → ~99% deployed; no new ticket (no BP + no setup that beats holding into a CPI expected to cool; won't flip to inverse against the base case). NVDA 0.05sh dust (~$10) flagged. PAPER: FNGU 520 + UPRO 95 OTO buys still resting to fill at the open → back to ~99%; all 5 paper GTC stops live."
-    },
-    {
-      "ts": "2026-07-10T20:40:00-04:00",
-      "kind": "engine",
-      "title": "8:40pm weekend re-check — MARKET CLOSED (next open Mon 7/13 09:30). LIVE: NO change, HOLD all four; three GTC stops verified live (TQQQ $65=2947c9be / NVDL $27=c2fbeac9 / SOFI $16.80=bf2f2983); NVDA 0.05sh unstoppable dust (~$11) flagged to flatten. Equity $1,013.15 (+$12.28, +1.23% vs last_equity $1,000.87), cash $8.88 -> ~99% deployed. Fresh snapshots+news re-pulled: unchanged vs Fri close; catalyst = NVDA H200 China-export approval report (Alibaba/ByteDance/DeepSeek) + record $7.1B semi-ETF inflows keep semis/Nasdaq leading -> core aligned. Universe both ways: spec/satellites still faded (BE $245, PLTR $127, IONQ $43, RKLB $81, OKLO $49) -> no clean long; SOXX <20d -> semi gate UNMET, won't short record index highs -> no bear setup. PAPER testbed: ~70% held + ~$29.3k UPRO/FNGU limit buys staged for Mon open -> ~99% when filled; all paper stops GTC. Queue reconciled: nothing new since trade-placed -10-3. No cash to add + book aligned -> no new ticket. Hold into CPI Tue 7/14."
-    },
-    {
-      "ts": "2026-07-10T20:10:00-04:00",
-      "kind": "engine",
-      "title": "8:10pm re-check — MARKET CLOSED (next open Mon 7/13 09:30). LIVE: NO change, HOLD all four; three GTC stops confirmed live (TQQQ $65=2947c9be / NVDL $27=c2fbeac9 / SOFI $16.80=bf2f2983); NVDA 0.05sh unstoppable dust (~$11). Equity $1,013.15 (+$12.28, +1.23% vs last_equity $1,000.87), cash $8.88 -> ~99% deployed. Fresh snapshots: TQQQ $77.16, NVDL $33.01, SOFI $18.80, NVDA $210.99. News: only a Tesla/Grok item (paper-only), nothing on the book. Universe both ways: satellites still faded (BE $245, PLTR $127, IONQ $43, RKLB $81, OKLO $49), SOXX <20d -> semi gate UNMET, won't short record highs -> no rotation. Queue reconciled: nothing new since -10-3. No cash to add, no ticket. Hold into CPI Tuesday."
     }
   ],
   "pulse": [
@@ -2044,10 +2022,6 @@
     {
       "ts": "2026-07-13T09:13:00-04:00",
       "text": "9:13am — soft open coming: **semis** still lead the tape down and our 3x core opens near **$74.7**, but **SoFi's green** again (+2.5%), the one bright spot. Held the whole book behind the stops; the only auto-move is the tiny NVDA dust selling itself at 9:30, and there's nothing to tap with ~$9 cash. Not front-running tomorrow's **CPI**."
-    },
-    {
-      "ts": "2026-07-13T08:42:00-04:00",
-      "text": "8:42am — same story heading into the open: **semis** are still the weak spot, so our 3x core is set to open around **$74** — but **SoFi's actually green** (+3%) while everything else bleeds, which is the tell I like. Held the whole book behind the stops; the one auto-move is the tiny **NVDA** dust selling itself at 9:30. Nothing to tap — $9 in cash and I'm not front-running tomorrow's **CPI**."
     }
   ],
   "benchmark": {
