@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-13T20:45:58.685Z",
+  "generated_at": "2026-07-13T20:47:04.875Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 96261.33,
+    "equity": 96253.7,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 95261.33,
-    "day_pnl": -3775.75,
+    "total_pnl": 95253.7,
+    "day_pnl": -3783.38,
     "positions": [
       {
         "symbol": "FNGU",
@@ -20,9 +20,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 203.56,
-        "pl": -870.82,
-        "plpc": -3.19,
+        "current": 203.59,
+        "pl": -867.75,
+        "plpc": -3.17,
         "thesis": ""
       },
       {
@@ -38,18 +38,18 @@
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.13,
-        "pl": -276,
-        "plpc": -7.07,
+        "current": 18.12,
+        "pl": -278,
+        "plpc": -7.12,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 72.39,
-        "pl": -1324.88,
-        "plpc": -6.09,
+        "current": 72.37,
+        "pl": -1330.72,
+        "plpc": -6.12,
         "thesis": ""
       },
       {
@@ -57,7 +57,7 @@
         "qty": "36.0000",
         "entry": 410.1,
         "current": 393.5,
-        "pl": -597.6,
+        "pl": -597.61,
         "plpc": -4.05,
         "thesis": ""
       },
@@ -65,9 +65,9 @@
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 142.24,
-        "pl": -298.3,
-        "plpc": -2.16,
+        "current": 142.21,
+        "pl": -301.15,
+        "plpc": -2.18,
         "thesis": ""
       }
     ],
@@ -103,10 +103,10 @@
     ]
   },
   "live": {
-    "equity": 955.52,
+    "equity": 955.21,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -44.48,
-    "day_pnl": -55.33,
+    "total_pnl": -44.79,
+    "day_pnl": -55.64,
     "positions": [
       {
         "symbol": "NVDL",
@@ -121,18 +121,18 @@
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.13,
-        "pl": -6.3,
-        "plpc": -3.36,
+        "current": 18.12,
+        "pl": -6.4,
+        "plpc": -3.41,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 72.39,
-        "pl": -39,
-        "plpc": -5.11,
+        "current": 72.37,
+        "pl": -39.21,
+        "plpc": -5.14,
         "thesis": ""
       }
     ],
@@ -806,8 +806,8 @@
       "updated": "2026-07-13T16:39:00-04:00",
       "stop": 68.5,
       "hold_reason": "This is our main position — a 3x-Nasdaq ETF we bought as the market's core engine when QQQ reclaimed its 20-day and chips were leading. We're 10 shares in at $76.29 and still holding because the wide $68.50 stop caps the damage and I don't want to dump a leveraged fund at the low the night before CPI. But the honest truth: QQQ just closed under both its 20- and 50-day, so the uptrend that justifies a 3x long is broken — if CPI runs hot or the market stays under its 50-day tomorrow, I cut it at the open instead of waiting for the stop.",
-      "price": 72.6,
-      "chg_pct": -5.85,
+      "price": 72.36,
+      "chg_pct": -6.16,
       "spark": [
         78.76,
         75.17,
@@ -838,7 +838,7 @@
         74.21,
         73.35,
         74.79,
-        72.6
+        72.36
       ]
     },
     {
@@ -1838,6 +1838,11 @@
   "latest_recap": "Mon 7/13 ~4:39pm (after-hours, market CLOSED; next open 7/14 9:30am). HELD both books — no changes, reconcile clean on live AND paper: recorded positions match the broker (get_all_positions/get_orders), no unhandled queue fills since 7/10 (web-approvals empty). Housekeeping: flipped the stuck NVDA 0.05sh dust-sell feed card pending->filled — it flushed at this morning's 9:30 open (positions confirm no NVDA; cash $19.59). Live equity ~$955.79 (AH mark, -5.4% vs last_equity $1010.85) — essentially the $957 close. After-hours DEAD QUIET: TQQQ $72.6, QQQ $711.5 (still below BOTH 20-day ~$722 & 50-day ~$715), SoFi $18.14, NVDL $30.70 — all pinned to the close; PLTR $130.06 (+2.6%) & CEG $257.57 (+2.5%) the lone green / post-CPI rotation picks. No fresh after-close catalyst in the universe and no notable pre-open earnings tomorrow — the tape is parked on June CPI (Tue 8:30am; Street sees headline cooling ~3.8-3.9% on -10% gasoline, core sticky ~2.9-3.2% — a cool-headline/hot-core trap) + Warsh testimony + bank earnings (JPM/GS/WFC/C/BAC). Book ~98% deployed: TQQQ (-4.7% entry), SoFi (-3.3%), NVDL (~flat). All 3 live stops verified GTC & clear (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7) — no trail (market closed, flat AH, no new higher-low). DECISION: hold overnight; pre-committed plan for the post-CPI pre-market run unchanged — hot core / QQQ still broken -> de-risk the 3x at the open (tighten the stop or stage a flatten, no Adam babysitting); cool print + QQQ reclaims ~$715 -> keep the core. No new ticket ($19.59 BP; same-symbol adds wash-blocked; won't chase a +15% inverse or flip the core blind into a binary). Paper $96.3k, ~99% deployed, all 7 legs GTC-stopped (FNGU $24.30 / NVDA $186 / NVDL $29.50 / SOFI $16.80 / TQQQ $68.50 / TSLA $348 / UPRO $124). pending_tickets []; did NOT write site/data.json; no git.",
   "activity": [
     {
+      "ts": "2026-07-13T16:39:00-04:00",
+      "kind": "engine",
+      "title": "Mon 7/13 ~4:39pm (after-hours, CLOSED; next open 7/14 9:30am). HELD both books — no changes. Reconcile clean on live AND paper: positions match the broker, no new trade-placed/failed since 7/10 (web-approvals empty). Housekeeping: flipped the stuck NVDA 0.05sh dust-sell feed card pending->filled (flushed at this morning's open; no NVDA in the book, cash $19.59). Live equity ~$955.79 (AH mark, ~the $957 close). After-hours dead quiet — TQQQ $72.6, QQQ $711.5 (below BOTH 20-day ~$722 & 50-day ~$715), SoFi $18.14, NVDL $30.70, all pinned to the close; PLTR $130.06 (+2.6%) & CEG $257.57 (+2.5%) lone green / post-CPI rotation picks. No fresh after-close catalyst, no notable pre-open earnings tomorrow — tape parked on June CPI (Tue 8:30am; headline seen cooling ~3.8-3.9% on -10% gasoline, core sticky ~2.9-3.2%) + Warsh + banks. All 3 stops re-verified live GTC & clear (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7) — no trail (closed, flat AH). DECISION: hold overnight; post-CPI pre-market plan unchanged — hot core / QQQ still broken -> de-risk the 3x at the open; cool print + QQQ reclaims ~$715 -> keep it. No ticket ($19.59 BP; adds wash-blocked; won't chase a +15% inverse or flip the core blind into a binary). Paper $96.3k, ~99% deployed, all 7 legs GTC-stopped. pending_tickets []; did NOT write site/data.json; no git."
+    },
+    {
       "ts": "2026-07-13T15:41:00-04:00",
       "kind": "engine",
       "title": "Mon 7/13 ~3:41pm (RTH, into the close). HELD the whole live book — no changes. Reconcile clean; nothing to book. REGIME BREAK confirmed on the close: QQQ closed $710.3, below BOTH its 20-day (~$722) & 50-day (~$715) and near its low; NVDA $203.7 closed under its own 50-day — the uptrend behind the 3x core is no longer intact. Equity $952.74 (-$58/-5.8% today, first close under $1k). Book ~98% deployed: TQQQ $72.17 (-5.4% entry, day -6.4%), SoFi $18.06 (-3.8%, closed at its low), NVDL $30.74 (+0.5%, lone green). All 3 stops live GTC & clear (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7) — no trail on a lower-low close. Core on notice: hot CPI + QQQ still broken tomorrow = cut the 3x, don't wait for the stop. No ticket ($19.59 BP; adds wash-blocked; won't cut the low or chase a +15% inverse the night before CPI). PLTR $128.24 (+1.2%) & CEG $257.3 (+2.4%) lone green / post-CPI rotation picks. Paper ~$96.5k, ~99% deployed (long MV $95.4k), 7 legs GTC-stopped. pending_tickets []; did NOT write site/data.json; no git."
@@ -2048,8 +2053,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 72.6,
-    "tqqq_pct": -5.59
+    "tqqq": 72.36,
+    "tqqq_pct": -5.9
   },
   "status": [
     {
