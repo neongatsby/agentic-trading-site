@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-13T20:44:52.966Z",
+  "generated_at": "2026-07-13T20:45:58.685Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 96258.42,
+    "equity": 96261.33,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 95258.42,
-    "day_pnl": -3778.66,
+    "total_pnl": 95261.33,
+    "day_pnl": -3775.75,
     "positions": [
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 27.72,
-        "pl": -384.8,
-        "plpc": -2.6,
+        "current": 27.73,
+        "pl": -379.6,
+        "plpc": -2.56,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 203.6,
-        "pl": -865.8,
-        "plpc": -3.17,
+        "current": 203.56,
+        "pl": -870.82,
+        "plpc": -3.19,
         "thesis": ""
       },
       {
@@ -47,9 +47,9 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 72.38,
-        "pl": -1327.62,
-        "plpc": -6.11,
+        "current": 72.39,
+        "pl": -1324.88,
+        "plpc": -6.09,
         "thesis": ""
       },
       {
@@ -103,10 +103,10 @@
     ]
   },
   "live": {
-    "equity": 955.42,
+    "equity": 955.52,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -44.58,
-    "day_pnl": -55.43,
+    "total_pnl": -44.48,
+    "day_pnl": -55.33,
     "positions": [
       {
         "symbol": "NVDL",
@@ -130,9 +130,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 72.38,
-        "pl": -39.1,
-        "plpc": -5.13,
+        "current": 72.39,
+        "pl": -39,
+        "plpc": -5.11,
         "thesis": ""
       }
     ],
@@ -782,6 +782,10 @@
       {
         "t": 1783975200000,
         "v": 955.92
+      },
+      {
+        "t": 1783975500000,
+        "v": 955.45
       }
     ]
   },
@@ -1831,7 +1835,7 @@
       "text": "1:12pm — quiet **hold**, everything protected, nothing for you to do. Half an hour on and almost nothing's moved: **Nvidia** slipped a touch off its $210.56 high to ~$209.6 (still +3.4% on the China H200 chip clearance) and it's still carrying a narrow tape — quantum, nuclear, space and Palantir remain red, Bloom's soft. Our **2x-Nvidia** sliver is still the book's best (+7%), **SoFi**'s green, and the 3x-Nasdaq **core** rides the trend. Book's **up ~$9**. All three live exits re-verified at the broker (core $65, Nvidia $27, SoFi $16.80) and the practice account's three are GTC too. ~99% invested with ~$9 cash — no room to add and no cleaner trade worth making (semis still lag their trend, so no 3x-semis flip; not shorting a green tape; a whole Nvidia share is more than the spare cash). I'd only move if the core loses its trend or a real new setup shows up."
     }
   ],
-  "latest_recap": "Mon 7/13 ~4:12pm (after the close). HELD both books — no changes, reconcile clean on live AND paper (recorded positions match the broker exactly; no unhandled queue fills). Live equity $957.44 (-$53.40 / -5.3% today) — first close under $1k, on a 2nd straight chip-rout day (SK Hynix -15% Korea profit-miss report dragging Micron/Sandisk/Seagate; oil +5% on US-Iran tension). REGIME BREAK confirmed on the close: QQQ $711.9 below BOTH its 20-day (~$722) & 50-day (~$715); NVDA $203.5 under its own 50-day — the uptrend behind the 3x core is no longer intact. Book ~98% deployed: TQQQ $72.73 (-4.7% entry, day -5.8%), SoFi $18.14 (-3.3%, closed at its low), NVDL $30.70 (+0.4%, lone green). All 3 live stops verified GTC & clear (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7) — no trail on a lower-low close. DECISION: hold overnight rather than sell the low or chase a +15% inverse blind the night before CPI (Tue 8:30am; Street sees headline ~3.9% cooling on gasoline, core sticky ~2.9%; futures price ~65% Fed hold, even a Sept-hike lean). Pre-committed plan for the post-CPI pre-market run: hot core / QQQ still broken -> de-risk the 3x at the open (raise the stop tight or stage a flatten — no Adam babysitting); cool print + QQQ reclaims ~$715 -> keep the core. No new ticket ($19.59 BP; same-symbol adds wash-blocked; no clean blind setup into a binary). Paper $96.3k (-3.7% today), ~99% deployed, all 7 legs GTC-stopped (FNGU $24.30 / NVDA $186 / NVDL $29.50 / SOFI $16.80 / TQQQ $68.50 / TSLA $348 / UPRO $124) — same hold-into-CPI discipline. pending_tickets []; did NOT write site/data.json; no git.",
+  "latest_recap": "Mon 7/13 ~4:39pm (after-hours, market CLOSED; next open 7/14 9:30am). HELD both books — no changes, reconcile clean on live AND paper: recorded positions match the broker (get_all_positions/get_orders), no unhandled queue fills since 7/10 (web-approvals empty). Housekeeping: flipped the stuck NVDA 0.05sh dust-sell feed card pending->filled — it flushed at this morning's 9:30 open (positions confirm no NVDA; cash $19.59). Live equity ~$955.79 (AH mark, -5.4% vs last_equity $1010.85) — essentially the $957 close. After-hours DEAD QUIET: TQQQ $72.6, QQQ $711.5 (still below BOTH 20-day ~$722 & 50-day ~$715), SoFi $18.14, NVDL $30.70 — all pinned to the close; PLTR $130.06 (+2.6%) & CEG $257.57 (+2.5%) the lone green / post-CPI rotation picks. No fresh after-close catalyst in the universe and no notable pre-open earnings tomorrow — the tape is parked on June CPI (Tue 8:30am; Street sees headline cooling ~3.8-3.9% on -10% gasoline, core sticky ~2.9-3.2% — a cool-headline/hot-core trap) + Warsh testimony + bank earnings (JPM/GS/WFC/C/BAC). Book ~98% deployed: TQQQ (-4.7% entry), SoFi (-3.3%), NVDL (~flat). All 3 live stops verified GTC & clear (TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7) — no trail (market closed, flat AH, no new higher-low). DECISION: hold overnight; pre-committed plan for the post-CPI pre-market run unchanged — hot core / QQQ still broken -> de-risk the 3x at the open (tighten the stop or stage a flatten, no Adam babysitting); cool print + QQQ reclaims ~$715 -> keep the core. No new ticket ($19.59 BP; same-symbol adds wash-blocked; won't chase a +15% inverse or flip the core blind into a binary). Paper $96.3k, ~99% deployed, all 7 legs GTC-stopped (FNGU $24.30 / NVDA $186 / NVDL $29.50 / SOFI $16.80 / TQQQ $68.50 / TSLA $348 / UPRO $124). pending_tickets []; did NOT write site/data.json; no git.",
   "activity": [
     {
       "ts": "2026-07-13T15:41:00-04:00",
