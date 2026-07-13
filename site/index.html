@@ -270,7 +270,7 @@
     const positions = arr(L.positions).map(function (p){
       const qty = parseFloat(p.qty) || 0, cur = num(p.current), mv = qty * cur, plpc = num(p.plpc);
       const c = covBy(p.symbol);
-      return { t: p.symbol, name: c ? c.name : p.symbol, sh: fmtShares(qty), val: '$' + money(mv), mv: mv, up: plpc >= 0, pct: pct1(plpc), thesis: p.thesis || '', entry: num(p.entry), current: cur, pl: num(p.pl) };
+      return { t: p.symbol, name: c ? c.name : p.symbol, sh: fmtShares(qty), val: '$' + money(mv), mv: mv, up: plpc >= 0, pct: pct1(plpc), thesis: p.thesis || (c && (c.hold_reason || c.thesis)) || '', entry: num(p.entry), current: cur, pl: num(p.pl) };
     });
 
     // top holding = live position with largest market value
