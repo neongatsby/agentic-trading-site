@@ -127,7 +127,7 @@
         const font = await ensureThree();
         this._font = font;
         const r = new THREE.WebGLRenderer({ canvas: this._canvas, antialias: true, alpha: true });
-        r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+        r.setPixelRatio(Math.min((window.devicePixelRatio || 1) * (window.__hiDPR || 1), 3));  // account for CSS-upscale of the stage → crisp on 4K
         r.outputEncoding = THREE.sRGBEncoding;
         r.toneMapping = THREE.ACESFilmicToneMapping;
         r.toneMappingExposure = 1.0;
@@ -543,7 +543,7 @@
     }
     _draw() {
       if (!this._pts) return;
-      const c = this._canvas, dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const c = this._canvas, dpr = Math.min((window.devicePixelRatio || 1) * (window.__hiDPR || 1), 3);
       const w = this.clientWidth || 300, h = this.clientHeight || 150;
       if (c.width !== w * dpr || c.height !== h * dpr) { c.width = w * dpr; c.height = h * dpr; this._static = null; }
       if (!this._static) this._drawStatic(w, h, dpr);
@@ -631,9 +631,11 @@
       this._ro = new ResizeObserver(() => this._reset());
       this._ro.observe(this);
       this._reset();
-      // re-scatter once the equity chart has laid out, so dust emits from the curve
-      setTimeout(() => { if (this._init) { this._chartEl = undefined; this._reset(); } }, 1800);
-      setTimeout(() => { if (this._init) { this._chartEl = undefined; this._reset(); } }, 4500);
+      // re-locate the emitter once the equity chart has laid out — WITHOUT a full re-scatter
+      // (a _reset() here caused the visible "pop/glitch"; just clear the cached chart so new
+      // particles naturally start emitting from the curve as they respawn).
+      setTimeout(() => { if (this._init) this._chartEl = undefined; }, 1800);
+      setTimeout(() => { if (this._init) this._chartEl = undefined; }, 4500);
       const loop = () => {
         this._raf = requestAnimationFrame(loop);
         this._pvc = ((this._pvc || 0) + 1) % 30;
@@ -922,7 +924,7 @@
       try {
         await ensureThree();
         const r = new THREE.WebGLRenderer({ canvas: this._canvas, antialias: true, alpha: true });
-        r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.25));
+        r.setPixelRatio(Math.min((window.devicePixelRatio || 1) * (window.__hiDPR || 1), 3));  // crisp on CSS-upscaled stage
         r.outputEncoding = THREE.sRGBEncoding;
         r.toneMapping = THREE.ACESFilmicToneMapping;
         this._renderer = r;
@@ -1099,7 +1101,7 @@
         await ensureThree();
         const bgHex = this.getAttribute('bg') || '#0c081c';
         const r = new THREE.WebGLRenderer({ canvas: this._canvas, antialias: true, alpha: true });
-        r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+        r.setPixelRatio(Math.min((window.devicePixelRatio || 1) * (window.__hiDPR || 1), 3));  // account for CSS-upscale of the stage → crisp on 4K
         r.outputEncoding = THREE.sRGBEncoding;
         r.toneMapping = THREE.ACESFilmicToneMapping;
         this._renderer = r;
