@@ -863,6 +863,7 @@
       saved: arr(a.saved).map(function (s){ return { note:stripMd(s.note || ''), delta:s.delta || '' }; }),
       best: a.best ? { name:a.best.name || '', note:stripMd(a.best.note || ''), delta:a.best.delta || '' } : null,
       worst: a.worst ? { name:a.worst.name || '', note:stripMd(a.worst.note || ''), delta:a.worst.delta || '' } : null,
+      capture: a.capture ? { bestName:a.capture.bestName || '', bestPct:a.capture.bestPct || '', capturedPct:a.capture.capturedPct || '', rate:a.capture.rate || '' } : null,
       adjust: stripMd(a.adjust || '') };
   }
   function renderAccountability(){
@@ -875,6 +876,13 @@
     let html = '<div style="display:flex;align-items:center;gap:22px;border-radius:18px;border:1px solid ' + hexA(gc, 0.22) + ';background:radial-gradient(120% 150% at 0% 0%, ' + hexA(gc, 0.14) + ', rgba(255,255,255,0.01) 60%);padding:22px 28px;margin-bottom:18px">'
       + '<div style="font:600 82px/0.9 \'Outfit\',system-ui,sans-serif;color:' + gc + ';filter:drop-shadow(0 4px 18px ' + hexA(gc, 0.35) + ');flex:none">' + escapeHtml(a.grade) + '</div>'
       + '<div style="display:flex;flex-direction:column;gap:9px"><div>' + chip((a.final ? 'FINAL' : 'RUNNING') + (a.date ? (' · ' + a.date) : ''), gc) + '</div><div style="font:400 17px/1.45 system-ui,sans-serif;color:rgba(255,255,255,0.85)">' + escapeHtml(a.headline) + '</div></div></div>';
+    if (a.capture){
+      const rn = Math.max(0, Math.min(100, parseFloat(String(a.capture.rate)) || 0)), rc = rn >= 80 ? '#34d399' : rn >= 50 ? '#e6b45a' : '#f87171';
+      html += '<div style="border-radius:14px;border:1px solid ' + hexA(rc, 0.22) + ';background:rgba(255,255,255,0.022);padding:18px 20px;margin-bottom:18px">'
+        + '<div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px"><div style="font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:2px;color:rgba(255,255,255,0.5)">CAPTURE RATE — did you own the best mover you were watching?</div><div style="font:700 22px/1 \'Outfit\',system-ui,sans-serif;color:' + rc + '">' + escapeHtml(a.capture.rate) + '</div></div>'
+        + '<div style="height:12px;border-radius:999px;background:rgba(255,255,255,0.06);overflow:hidden;margin-bottom:12px"><div style="width:' + Math.max(2, rn) + '%;height:100%;border-radius:999px;background:' + rc + ';box-shadow:0 0 14px ' + hexA(rc, 0.5) + '"></div></div>'
+        + '<div style="display:flex;gap:24px;flex-wrap:wrap;font:400 13px/1.4 system-ui,sans-serif;color:rgba(255,255,255,0.6)"><span>Best on your watchlist: <b style="color:#6ee7b7">' + escapeHtml(a.capture.bestName) + ' ' + escapeHtml(a.capture.bestPct) + '</b></span><span>You captured: <b style="color:#fff">' + escapeHtml(a.capture.capturedPct) + '</b></span></div></div>';
+    }
     if (a.missed.length) html += '<div style="margin-bottom:16px"><div style="font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:2px;color:#f8a5a5;margin-bottom:2px">WHAT I LEFT ON THE TABLE</div>' + a.missed.map(function (m){ return row('#f87171', (m.from && m.to ? ('<b style="color:#fff">' + escapeHtml(m.from) + ' → ' + escapeHtml(m.to) + '</b> — ') : '') + escapeHtml(m.note), m.delta); }).join('') + '</div>';
     if (a.saved.length) html += '<div style="margin-bottom:16px"><div style="font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:2px;color:' + P.head + ';margin-bottom:2px">WHAT DISCIPLINE SAVED</div>' + a.saved.map(function (s){ return row(P.accent, escapeHtml(s.note), s.delta); }).join('') + '</div>';
     if (a.best || a.worst) html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px">'
