@@ -724,7 +724,7 @@
     const cov = arr(DATA && DATA.coverage), covBy = function (s){ return cov.find(function (c){ return c.ticker === s; }); };
     const invested = positions.reduce(function (a, p){ return a + (parseFloat(p.qty) || 0) * num(p.current); }, 0);
     const freeCash = Math.max(0, equity - invested), deployedPct = equity ? Math.min(100, Math.round(invested / equity * 100)) : 0;
-    const thoughts = arr(DATA && DATA.pulse).slice(0, 6).map(function (p){ return stripMd(p.hype || p.text || ''); }).filter(Boolean);
+    const thoughts = arr(DATA && DATA.pulse).slice(0, 6).map(function (p){ var s = splitSent(stripMd(p.hype || p.text || ''))[0] || ''; if (s.length > 66) s = s.slice(0, 64).replace(/[\s,;:—-]+\S*$/, '') + '…'; return s; }).filter(Boolean);   // short, readable bubble lines
     const nodes = [], edges = [], heldStops = [], armedTrigs = []; let hotId = null, hotProx = Infinity;
     const px = function (n){ return '$' + num(n).toFixed(2); };
     positions.forEach(function (p){
