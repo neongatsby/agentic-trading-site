@@ -1,64 +1,64 @@
 {
-  "generated_at": "2026-07-14T17:33:35.807Z",
+  "generated_at": "2026-07-14T17:34:43.330Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99292.55,
+    "equity": 99265.47,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98292.55,
-    "day_pnl": 2786.71,
+    "total_pnl": 98265.47,
+    "day_pnl": 2759.63,
     "positions": [
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 29.04,
-        "pl": 301.6,
-        "plpc": 2.04,
+        "current": 29.02,
+        "pl": 288.6,
+        "plpc": 1.95,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.75,
-        "pl": 63.05,
-        "plpc": 0.23,
+        "current": 210.69,
+        "pl": 55.97,
+        "plpc": 0.21,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.86,
-        "pl": 179.06,
-        "plpc": 7.31,
+        "current": 32.85,
+        "pl": 178.26,
+        "plpc": 7.28,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.69,
-        "pl": -163.26,
-        "plpc": -4.18,
+        "current": 18.68,
+        "pl": -165,
+        "plpc": -4.23,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 75.44,
-        "pl": -464.7,
-        "plpc": -2.14,
+        "current": 75.41,
+        "pl": -474.57,
+        "plpc": -2.18,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 395.13,
-        "pl": -538.92,
-        "plpc": -3.65,
+        "current": 395.29,
+        "pl": -533.16,
+        "plpc": -3.61,
         "thesis": ""
       },
       {
@@ -103,36 +103,36 @@
     ]
   },
   "live": {
-    "equity": 993.79,
+    "equity": 993.34,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -6.21,
-    "day_pnl": 35.8,
+    "total_pnl": -6.66,
+    "day_pnl": 35.35,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.86,
-        "pl": 2.27,
-        "plpc": 7.43,
+        "current": 32.85,
+        "pl": 2.26,
+        "plpc": 7.4,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.69,
-        "pl": -0.68,
-        "plpc": -0.36,
+        "current": 18.68,
+        "pl": -0.75,
+        "plpc": -0.4,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.44,
-        "pl": -8.5,
-        "plpc": -1.11,
+        "current": 75.41,
+        "pl": -8.85,
+        "plpc": -1.16,
         "thesis": ""
       }
     ],
@@ -703,8 +703,8 @@
       "horizon": 0.2,
       "updated": "2026-07-14T13:14:00-04:00",
       "trigger": "SOXX > 600 close",
-      "price": 179.21,
-      "chg_pct": 8.39,
+      "price": 179.3,
+      "chg_pct": 8.45,
       "spark": [
         164.2,
         151.66,
@@ -735,7 +735,7 @@
         229.99,
         252.93,
         215,
-        179.21
+        179.3
       ]
     },
     {
@@ -754,8 +754,8 @@
       "trigger": 30.56,
       "stop": 29.5,
       "hold_reason": "A small 2x-NVDA position we hold as a leveraged bet on Nvidia's AI-chip demand. We're 1 share in at $30.59 and it's our best performer today (+7.9%) as NVDA rips back to its day-high on the cool inflation print. Keeping it behind a wide $29.50 stop - it's a $33 satellite and 2x-volatile, so I don't tighten into noise. What I'm watching: if NVDA builds a confirmed higher low and NVDL keeps running, I trail the stop up.",
-      "price": 32.9,
-      "chg_pct": 7.18,
+      "price": 32.85,
+      "chg_pct": 7.02,
       "spark": [
         39.13,
         38.1,
@@ -786,7 +786,7 @@
         29.67,
         28.76,
         27.53,
-        32.9
+        32.85
       ]
     },
     {
@@ -803,8 +803,8 @@
       "horizon": 0.3,
       "updated": "2026-07-14T13:14:00-04:00",
       "stop": null,
-      "price": 210.74,
-      "chg_pct": 3.57,
+      "price": 210.7,
+      "chg_pct": 3.55,
       "spark": [
         225.04,
         222.09,
@@ -835,7 +835,7 @@
         198.94,
         195.89,
         191.97,
-        210.74
+        210.7
       ]
     },
     {
@@ -900,8 +900,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "2026-07-14T11:45:00-04:00",
-      "price": 303.46,
-      "chg_pct": -0.76,
+      "price": 303.38,
+      "chg_pct": -0.78,
       "spark": [
         370.87,
         339.63,
@@ -932,7 +932,7 @@
         316.26,
         325.41,
         303.46,
-        303.46
+        303.38
       ]
     },
     {
@@ -949,8 +949,8 @@
       "horizon": 0.3,
       "updated": "2026-07-14T11:45:00-04:00",
       "stop": 348,
-      "price": 395.1,
-      "chg_pct": 0.06,
+      "price": 395.28,
+      "chg_pct": 0.11,
       "spark": [
         422.27,
         409.97,
@@ -981,7 +981,7 @@
         375.36,
         375.12,
         379,
-        395.1
+        395.28
       ]
     },
     {
@@ -999,8 +999,8 @@
       "updated": "2026-07-14T11:45:00-04:00",
       "trigger": 29.2,
       "stop": 24.3,
-      "price": 29.03,
-      "chg_pct": 4.2,
+      "price": 29.01,
+      "chg_pct": 4.13,
       "spark": [
         28.97,
         28.23,
@@ -1031,7 +1031,7 @@
         24.41,
         23.68,
         23.87,
-        29.03
+        29.01
       ]
     },
     {
@@ -1100,8 +1100,8 @@
       "trigger": null,
       "stop": 17.6,
       "hold_reason": "A fintech name we bought for its own story — Goldman's $21 target, ARK buying, a small-business-loan push and the Composer AI deal, all heading into July 29 earnings. We're 10 shares in at $18.76, a hair underwater but it's been building today (+2.6%) and lower yields from the cool CPI help a rate-sensitive lender. Keeping it behind a $17.60 stop. What I'm watching: it needs to hold its ~$18.70 breakout; if it rolls back under, the stop takes us out.",
-      "price": 18.7,
-      "chg_pct": 3.06,
+      "price": 18.69,
+      "chg_pct": 3.03,
       "spark": [
         15.59,
         15.7,
@@ -1132,7 +1132,7 @@
         17.32,
         17.29,
         17.86,
-        18.7
+        18.69
       ]
     },
     {
@@ -1148,8 +1148,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "2026-07-14T13:14:00-04:00",
-      "price": 134.39,
-      "chg_pct": 3.33,
+      "price": 134.04,
+      "chg_pct": 3.06,
       "spark": [
         133.97,
         135.11,
@@ -1180,7 +1180,7 @@
         113.5,
         107.3,
         112.82,
-        134.39
+        134.04
       ]
     },
     {
@@ -1246,8 +1246,8 @@
       "horizon": 0.3,
       "updated": "2026-07-14T13:14:00-04:00",
       "stop": 74.5,
-      "price": 79.84,
-      "chg_pct": 4,
+      "price": 79.86,
+      "chg_pct": 4.03,
       "spark": [
         124.68,
         131.23,
@@ -1278,7 +1278,7 @@
         85.4,
         80.68,
         84.57,
-        79.84
+        79.86
       ]
     },
     {
