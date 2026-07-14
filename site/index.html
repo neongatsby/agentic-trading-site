@@ -328,10 +328,13 @@
 
     const notes = arr(DATA && DATA.pulse).map(function (p){ return { time: hmm(p.ts), text: stripMd(p.hype || p.text || '') }; });
 
-    let news;
-    if (Array.isArray(DATA && DATA.headlines) && DATA.headlines.length) news = DATA.headlines.join(SEP) + SEP;
-    else if (cov.length) news = cov.map(function (c){ return c.ticker + ' ' + pct1(num(c.chg_pct)) + ' · ' + (c.theme || ''); }).join(SEP) + SEP;
-    else { const rec = String((DATA && DATA.latest_recap) || ''); news = rec.split(/[.;]\s+/).map(function (s){ return s.trim(); }).filter(Boolean).join(SEP) + SEP; }
+    let newsItems;
+    if (Array.isArray(DATA && DATA.headlines) && DATA.headlines.length) newsItems = DATA.headlines.map(function (h){ const mm = String(h).match(/([+-]\d+(?:\.\d+)?)%/); return { text: String(h), dir: mm ? (parseFloat(mm[1]) >= 0 ? 'up' : 'down') : null }; });
+    else if (cov.length) newsItems = cov.map(function (c){ const p = num(c.chg_pct); return { text: c.ticker + ' ' + pct1(p) + ' · ' + (c.theme || ''), dir: p >= 0 ? 'up' : 'down' }; });
+    else { const rec = String((DATA && DATA.latest_recap) || ''); newsItems = rec.split(/[.;]\s+/).map(function (s){ return s.trim(); }).filter(Boolean).map(function (s){ return { text: s, dir: null }; }); }
+    const tArrow = function (d){ return d === 'up' ? '<span style="color:#4ade80;font-weight:600">▲</span> ' : d === 'down' ? '<span style="color:#f87171;font-weight:600">▼</span> ' : '<span style="opacity:.45">◇</span> '; };
+    const tGap = '<span style="display:inline-block;width:2.6em"></span>';
+    const news = newsItems.map(function (it){ return tArrow(it.dir) + escapeHtml(it.text); }).join(tGap) + tGap;   // directional arrows (green ▲ / red ▼) instead of diamonds
 
     return { equity: equity, dayPnl: dayPnl, allTimePct: allTimePct, status: status, positions: positions, thHead: thHead, thBlurb: thBlurb, trades: trades, notes: notes, news: news };
   }
@@ -564,7 +567,7 @@
     renderApprovals(root);            /* F1: re-render on every mount + poll */
     setText(root, '[data-role=status]', m.status);
     const at = root.querySelector('[data-role=alltime]'); if (at) at.textContent = pct1(m.allTimePct);
-    root.querySelectorAll('[data-role=news]').forEach(function (n){ n.textContent = m.news; });
+    root.querySelectorAll('[data-role=news]').forEach(function (n){ n.innerHTML = m.news; });
     renderPositions(root, m.positions);
     renderTrades(root, m.trades);
     renderNotes(root, m.notes);
@@ -939,9 +942,9 @@
 
         '<div style="display:flex;align-items:center;margin:0 -44px;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);padding-left:44px">' +
           '<div style="flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%);mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%)">' +
-            '<div style="display:flex;width:max-content;animation:tickerX 75s linear infinite">' +
-              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(255,255,255,0.6);padding:12px 0"></span>' +
-              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(255,255,255,0.6);padding:12px 0"></span>' +
+            '<div style="display:flex;width:max-content;animation:tickerX 110s linear infinite">' +
+              '<span data-role="news" style="white-space:nowrap;font:200 15px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(255,255,255,0.6);padding:12px 0"></span>' +
+              '<span data-role="news" style="white-space:nowrap;font:200 15px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(255,255,255,0.6);padding:12px 0"></span>' +
             '</div>' +
           '</div>' +
         '</div>' +
@@ -1012,9 +1015,9 @@
 
         '<div style="display:flex;align-items:center;margin:0 -44px;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);padding-left:44px">' +
           '<div style="flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%);mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%)">' +
-            '<div style="display:flex;width:max-content;animation:tickerX 75s linear infinite">' +
-              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(241,238,252,0.6);padding:12px 0"></span>' +
-              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(241,238,252,0.6);padding:12px 0"></span>' +
+            '<div style="display:flex;width:max-content;animation:tickerX 110s linear infinite">' +
+              '<span data-role="news" style="white-space:nowrap;font:200 15px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(241,238,252,0.6);padding:12px 0"></span>' +
+              '<span data-role="news" style="white-space:nowrap;font:200 15px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(241,238,252,0.6);padding:12px 0"></span>' +
             '</div>' +
           '</div>' +
         '</div>' +
@@ -1096,9 +1099,9 @@
 
         '<div style="display:flex;align-items:center;margin:0 -44px;border-top:1px solid rgba(255,210,122,0.14);border-bottom:1px solid rgba(255,210,122,0.14);padding-left:44px">' +
           '<div style="flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%);mask-image:linear-gradient(90deg, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%)">' +
-            '<div style="display:flex;width:max-content;animation:tickerX 75s linear infinite">' +
-              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(247,239,223,0.6);padding:12px 0"></span>' +
-              '<span data-role="news" style="white-space:nowrap;font:200 18px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(247,239,223,0.6);padding:12px 0"></span>' +
+            '<div style="display:flex;width:max-content;animation:tickerX 110s linear infinite">' +
+              '<span data-role="news" style="white-space:nowrap;font:200 15px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(247,239,223,0.6);padding:12px 0"></span>' +
+              '<span data-role="news" style="white-space:nowrap;font:200 15px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(247,239,223,0.6);padding:12px 0"></span>' +
             '</div>' +
           '</div>' +
         '</div>' +
