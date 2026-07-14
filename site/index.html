@@ -865,6 +865,7 @@
       worst: a.worst ? { name:a.worst.name || '', note:stripMd(a.worst.note || ''), delta:a.worst.delta || '' } : null,
       capture: a.capture ? { bestName:a.capture.bestName || '', bestPct:a.capture.bestPct || '', capturedPct:a.capture.capturedPct || '', rate:a.capture.rate || '' } : null,
       avoided: a.avoided ? { worstName:a.avoided.worstName || '', worstPct:a.avoided.worstPct || '', note:stripMd(a.avoided.note || ''), amount:a.avoided.amount || '', rate:a.avoided.rate || '' } : null,
+      applying: stripMd(a.applying || ''),
       adjust: stripMd(a.adjust || '') };
   }
   function renderAccountability(){
@@ -877,6 +878,7 @@
     let html = '<div style="display:flex;align-items:center;gap:22px;border-radius:18px;border:1px solid ' + hexA(gc, 0.22) + ';background:radial-gradient(120% 150% at 0% 0%, ' + hexA(gc, 0.14) + ', rgba(255,255,255,0.01) 60%);padding:22px 28px;margin-bottom:18px">'
       + '<div style="font:600 82px/0.9 \'Outfit\',system-ui,sans-serif;color:' + gc + ';filter:drop-shadow(0 4px 18px ' + hexA(gc, 0.35) + ');flex:none">' + escapeHtml(a.grade) + '</div>'
       + '<div style="display:flex;flex-direction:column;gap:9px"><div>' + chip((a.final ? 'FINAL' : 'RUNNING') + (a.date ? (' · ' + a.date) : ''), gc) + '</div><div style="font:400 17px/1.45 system-ui,sans-serif;color:rgba(255,255,255,0.85)">' + escapeHtml(a.headline) + '</div></div></div>';
+    if (a.applying) html += '<div style="display:flex;align-items:center;gap:12px;border-radius:12px;border:1px solid ' + hexA(P.accent, 0.3) + ';background:' + hexA(P.accent, 0.07) + ';padding:12px 16px;margin-bottom:18px"><span style="font:700 10px/1 ui-monospace,Menlo,monospace;letter-spacing:1.5px;color:' + P.head + ';flex:none">APPLYING&nbsp;NOW</span><span style="font:500 14px/1.4 system-ui,sans-serif;color:rgba(255,255,255,0.85)">' + escapeHtml(a.applying) + '</span></div>';
     if (a.capture){
       const rn = Math.max(0, Math.min(100, parseFloat(String(a.capture.rate)) || 0)), rc = rn >= 80 ? '#34d399' : rn >= 50 ? '#e6b45a' : '#f87171';
       html += '<div style="border-radius:14px;border:1px solid ' + hexA(rc, 0.22) + ';background:rgba(255,255,255,0.022);padding:18px 20px;margin-bottom:18px">'
