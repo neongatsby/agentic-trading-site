@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-14T08:15:48.639Z",
+  "generated_at": "2026-07-14T08:16:54.624Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 96852.68,
+    "equity": 96870.6,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 95852.68,
-    "day_pnl": 346.84,
+    "total_pnl": 95870.6,
+    "day_pnl": 364.76,
     "positions": [
       {
         "symbol": "FNGU",
@@ -20,9 +20,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 205.09,
-        "pl": -672.1,
-        "plpc": -2.46,
+        "current": 205.05,
+        "pl": -677.3,
+        "plpc": -2.48,
         "thesis": ""
       },
       {
@@ -38,27 +38,27 @@
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.22,
-        "pl": -258,
-        "plpc": -6.61,
+        "current": 18.23,
+        "pl": -256,
+        "plpc": -6.56,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 73.61,
-        "pl": -980.76,
-        "plpc": -4.51,
+        "current": 73.69,
+        "pl": -958.2,
+        "plpc": -4.41,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 395.26,
-        "pl": -534.24,
-        "plpc": -3.62,
+        "current": 395.22,
+        "pl": -535.68,
+        "plpc": -3.63,
         "thesis": ""
       },
       {
@@ -103,10 +103,10 @@
     ]
   },
   "live": {
-    "equity": 968.97,
+    "equity": 969.87,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -31.03,
-    "day_pnl": 10.98,
+    "total_pnl": -30.13,
+    "day_pnl": 11.88,
     "positions": [
       {
         "symbol": "NVDL",
@@ -121,18 +121,18 @@
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.22,
-        "pl": -5.4,
-        "plpc": -2.88,
+        "current": 18.23,
+        "pl": -5.3,
+        "plpc": -2.82,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 73.61,
-        "pl": -26.8,
-        "plpc": -3.51,
+        "current": 73.69,
+        "pl": -26,
+        "plpc": -3.41,
         "thesis": ""
       }
     ],
@@ -935,6 +935,14 @@
     {
       "type": "note",
       "account": "live",
+      "ts": "2026-07-14T04:15:00-04:00",
+      "symbol": "TQQQ",
+      "reaction": "hold",
+      "text": "4:15am pre-market — held both books, nothing to approve. CPI at 8:30am is the decider so no guessing ahead of it. Overnight: futures ~-0.3%, Iran still bidding oil, and NVDA reportedly cut over half its Asian AI-chip customers on China export screening (leans on the broken semis trade). QQQ still under both its 20- and 50-day, no pre-market prints yet. All three stops live GTC (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50), both books reconciled clean, no new fills since 7/10. Same plan: hot core / QQQ still broken → cut the 3x at the open, cool + reclaim ~$715 → keep it."
+    },
+    {
+      "type": "note",
+      "account": "live",
       "ts": "2026-07-13T20:39:00-04:00",
       "symbol": "TQQQ",
       "reaction": "hold",
@@ -1251,6 +1259,11 @@
   ],
   "latest_recap": "Mon 7/13 ~8:39pm (after-hours ENDED 8pm, market fully closed; next open 7/14 9:30am). Final check of the night — HELD both books, nothing to approve/stage. Reconcile clean both ways: live matches broker (get_all_positions: TQQQ 10 / SoFi 10 / NVDL 1; all 3 GTC stops re-verified via get_orders: TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7, all status 'new', clear of price), no new trade-placed/failed since 7/10. Paper reconciles clean: $96.4k equity (-3.6% day), ~99% deployed across 7 names (FNGU 520 / NVDA 130 / NVDL 80 / SOFI 200 / TQQQ 282 / TSLA 36 / UPRO 95), ~$1.2k cash, no drift. Fresh pull this run: get_stock_snapshot (11 names both directions) + get_news (7 held names) — prices dead-pinned to the close, zero new after-hours catalyst in our universe. TQQQ $72.36 AH (RTH close $72.73, day -5.7%), QQQ $710.9 (below 20-day ~722 & 50-day ~715 -> leverage regime still broken on a closing basis), NVDL $30.70 (-7%), SoFi $18.14 (-3.5%), NVDA $203.5 (under 50-day); inverses still the day's winners (SQQQ $40.05, SOXS $4.68 +15%), PLTR $130 the lone large-cap green. Live equity ~$957.7 (portfolio_value; -5.3% vs last_equity $1010.85; book -$53 today). Movement test PASS (genuinely deployed ~98%). No stop trail (market closed, positions underwater, no new higher-low; won't tighten into a two-sided CPI). DECISION: hold overnight. NOT staging a blind directional pre-arm into CPI + 5 big-bank prints, and $19.59 BP can't fund one. Pre-committed morning plan unchanged: hot CPI / QQQ still broken -> de-risk the 3x at the open; cool + QQQ reclaims ~$715 -> keep it. CPI consensus: headline -0.1% m/m -> ~3.9% y/y, core sticky ~2.9%.",
   "activity": [
+    {
+      "ts": "2026-07-14T04:15:00-04:00",
+      "kind": "engine",
+      "title": "Tue 7/14 ~4:15am pre-market (CLOSED; next open 9:30am ET). HELD both books — nothing to approve/stage. Reconcile clean both ways: live matches broker (get_all_positions: TQQQ 10 / SoFi 10 / NVDL 1; all 3 GTC stops re-verified via get_orders: TQQQ $68.50=43aac143 / SoFi $17.60=42f0ac56 / NVDL $29.50=ca2bc9e7, status 'new', clear), NVDA dust already flushed/booked, no new trade-placed/failed since 7/10. Paper reconciles clean: 7 legs all GTC-stopped (FNGU 520/$24.30 / NVDA 130/$186 / NVDL 80/$29.50 / SOFI 200/$16.80 / TQQQ 282/$68.50 / TSLA 36/$348 / UPRO 95/$124), long MV ~$95.7k, ~99% deployed, no drift. Fresh pull: get_stock_snapshot (11 names) + get_news + 2 web-searches — no pre-market prints yet (last trades = Mon AH close). Regime still broken on the close: QQQ $711.7 < 20-day $722.3 < 50-day $716.2 (computed off 90 daily bars); NVDA $203.5 under its 50-day. Overnight inputs: Nasdaq-100 futures ~-0.3%, S&P ~-0.2%; 3rd night of US-Iran strikes keeps oil ~$80; NVDA reportedly cut >half its Asian AI-chip customers on tighter China export screening (fresh semis negative); CNN Fear & Greed still 'Fear'. Live equity ~$966.35 (mark; roughly flat overnight vs ~$957 Mon close). No trail (closed, positions underwater, no new higher-low; won't tighten into a two-sided CPI). No ticket ($19.59 BP can't fund one; not staging a blind directional pre-arm into CPI + 5 big-bank prints + Warsh — the whipsaw trap). DECISION: hold into the open. Pre-committed plan unchanged: hot CPI / QQQ still broken → morning run de-risks the 3x at the open; cool + QQQ reclaims ~$715 → keep it. CPI consensus: headline -0.1% m/m → ~3.9% y/y, core sticky ~2.9%. pending_tickets []; did NOT write site/data.json; no git."
+    },
     {
       "ts": "2026-07-13T20:39:00-04:00",
       "kind": "engine",
