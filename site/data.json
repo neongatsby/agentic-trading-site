@@ -1,73 +1,73 @@
 {
-  "generated_at": "2026-07-14T14:12:33.751Z",
+  "generated_at": "2026-07-14T14:13:41.644Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 97463.3,
+    "equity": 97379.62,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 96463.3,
-    "day_pnl": 957.46,
+    "total_pnl": 96379.62,
+    "day_pnl": 873.78,
     "positions": [
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 27.98,
-        "pl": -249.6,
-        "plpc": -1.69,
+        "current": 27.94,
+        "pl": -270.4,
+        "plpc": -1.83,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 204.65,
-        "pl": -729.95,
-        "plpc": -2.67,
+        "current": 204.51,
+        "pl": -747.5,
+        "plpc": -2.73,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 31.04,
-        "pl": 33.06,
-        "plpc": 1.35,
+        "current": 30.97,
+        "pl": 27.92,
+        "plpc": 1.14,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.65,
-        "pl": -172.2,
-        "plpc": -4.41,
+        "current": 18.64,
+        "pl": -175,
+        "plpc": -4.49,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 74.19,
-        "pl": -815.79,
-        "plpc": -3.75,
+        "current": 74.08,
+        "pl": -848.19,
+        "plpc": -3.9,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 398.51,
-        "pl": -417.24,
-        "plpc": -2.83,
+        "current": 398.63,
+        "pl": -412.92,
+        "plpc": -2.8,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 143.44,
-        "pl": -184.3,
-        "plpc": -1.33,
+        "current": 143.31,
+        "pl": -196.18,
+        "plpc": -1.42,
         "thesis": ""
       }
     ],
@@ -103,36 +103,36 @@
     ]
   },
   "live": {
-    "equity": 979.12,
+    "equity": 977.71,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -20.88,
-    "day_pnl": 21.13,
+    "total_pnl": -22.29,
+    "day_pnl": 19.72,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 31.04,
-        "pl": 0.45,
-        "plpc": 1.47,
+        "current": 30.97,
+        "pl": 0.39,
+        "plpc": 1.26,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.65,
-        "pl": -1.11,
-        "plpc": -0.59,
+        "current": 18.64,
+        "pl": -1.25,
+        "plpc": -0.66,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 74.2,
-        "pl": -20.9,
-        "plpc": -2.74,
+        "current": 74.08,
+        "pl": -22.1,
+        "plpc": -2.9,
         "thesis": ""
       }
     ],
@@ -494,8 +494,8 @@
       "updated": "2026-07-14T09:40:00-04:00",
       "stop": 68.5,
       "hold_reason": "This is our main position — a 3x-Nasdaq ETF we ride as the market's core engine. It got scary Monday when QQQ closed under both its 20- and 50-day, but I didn't panic-sell the low the night before CPI — and that paid off: the CPI came in cool and QQQ reclaimed its 50-day and the $715 line, so the 3x bounced back near our entry. We're 10 shares in at $76.29 behind a wide $68.50 stop, and I'm keeping it because the uptrend is repairing. What I'm watching: the reclaim holding — the open popped then faded a bit, which is normal, so I keep the stop wide and trail it up once we get a real higher low; if QQQ slips back under its 50-day I revisit.",
-      "price": 74.22,
-      "chg_pct": 2.06,
+      "price": 74.12,
+      "chg_pct": 1.91,
       "spark": [
         75.17,
         74.11,
@@ -526,7 +526,7 @@
         73.35,
         74.79,
         71.6,
-        74.22
+        74.12
       ]
     },
     {
@@ -543,8 +543,8 @@
       "horizon": 0.2,
       "updated": "2026-07-14T09:40:00-04:00",
       "trigger": "SOXX > 600 close",
-      "price": 174.26,
-      "chg_pct": 5.4,
+      "price": 174.86,
+      "chg_pct": 5.76,
       "spark": [
         164.2,
         151.66,
@@ -575,7 +575,7 @@
         229.99,
         252.93,
         215,
-        174.26
+        174.86
       ]
     },
     {
@@ -594,8 +594,8 @@
       "trigger": 30.56,
       "stop": 29.5,
       "hold_reason": "A small 2x-NVDA position we hold as a leveraged bet on Nvidia's AI-chip demand. We're 1 share in at $30.59 and it's slightly green as NVDA holds up on today's cool inflation print. Keeping it behind a $29.50 stop because the AI-capex story is intact and the tape turned risk-on. What I'm watching: NVDA held above its recent lows but faded off a strong open — if the bounce sticks and builds a higher low I trail the stop up.",
-      "price": 31.05,
-      "chg_pct": 1.16,
+      "price": 30.99,
+      "chg_pct": 0.96,
       "spark": [
         39.13,
         38.1,
@@ -626,7 +626,7 @@
         29.67,
         28.76,
         27.53,
-        31.05
+        30.99
       ]
     },
     {
@@ -643,8 +643,8 @@
       "horizon": 0.3,
       "updated": "2026-07-14T09:40:00-04:00",
       "stop": null,
-      "price": 204.65,
-      "chg_pct": 0.57,
+      "price": 204.5,
+      "chg_pct": 0.5,
       "spark": [
         225.04,
         222.09,
@@ -675,7 +675,7 @@
         198.94,
         195.89,
         191.97,
-        204.65
+        204.5
       ]
     },
     {
@@ -692,8 +692,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.3,
       "updated": "2026-07-14T09:40:00-04:00",
-      "price": 262.23,
-      "chg_pct": 1.81,
+      "price": 262.64,
+      "chg_pct": 1.97,
       "spark": [
         267.1,
         262.03,
@@ -724,7 +724,7 @@
         268.01,
         268.8,
         264.14,
-        262.23
+        262.64
       ]
     },
     {
@@ -740,8 +740,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "2026-07-13T16:39:00-04:00",
-      "price": 303.06,
-      "chg_pct": -0.89,
+      "price": 303.44,
+      "chg_pct": -0.76,
       "spark": [
         370.87,
         339.63,
@@ -772,7 +772,7 @@
         316.26,
         325.41,
         303.46,
-        303.06
+        303.44
       ]
     },
     {
@@ -789,8 +789,8 @@
       "horizon": 0.3,
       "updated": "2026-07-13T16:39:00-04:00",
       "stop": 348,
-      "price": 398.63,
-      "chg_pct": 0.96,
+      "price": 398.81,
+      "chg_pct": 1,
       "spark": [
         422.27,
         409.97,
@@ -821,7 +821,7 @@
         375.36,
         375.12,
         379,
-        398.63
+        398.81
       ]
     },
     {
@@ -839,8 +839,8 @@
       "updated": "2026-07-13T16:39:00-04:00",
       "trigger": 29.2,
       "stop": 24.3,
-      "price": 27.98,
-      "chg_pct": 0.43,
+      "price": 27.96,
+      "chg_pct": 0.38,
       "spark": [
         28.97,
         28.23,
@@ -871,7 +871,7 @@
         24.41,
         23.68,
         23.87,
-        27.98
+        27.96
       ]
     },
     {
@@ -940,8 +940,8 @@
       "trigger": null,
       "stop": 17.6,
       "hold_reason": "A fintech name we bought for its own story — Goldman's $21 target, ARK buying, a small-business-loan push and the Composer AI deal, all heading into July 29 earnings. We're 10 shares in at $18.76, still a hair underwater but it's the one name building today (+2%) instead of fading, and lower yields help a rate-sensitive lender. Keeping it behind a fairly tight $17.60 stop. What I'm watching: it needs to reclaim and hold its ~$18.70 breakout; if it rolls back over, the stop takes us out.",
-      "price": 18.65,
-      "chg_pct": 2.81,
+      "price": 18.64,
+      "chg_pct": 2.76,
       "spark": [
         15.59,
         15.7,
@@ -972,7 +972,7 @@
         17.32,
         17.29,
         17.86,
-        18.65
+        18.64
       ]
     },
     {
@@ -988,8 +988,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "2026-07-14T09:40:00-04:00",
-      "price": 131.42,
-      "chg_pct": 1.05,
+      "price": 131.62,
+      "chg_pct": 1.2,
       "spark": [
         133.97,
         135.11,
@@ -1020,7 +1020,7 @@
         113.5,
         107.3,
         112.82,
-        131.42
+        131.62
       ]
     },
     {
@@ -1037,8 +1037,8 @@
       "card": "/research/be.html",
       "horizon": 0.2,
       "updated": "2026-07-13T16:39:00-04:00",
-      "price": 244.25,
-      "chg_pct": 4.69,
+      "price": 244.23,
+      "chg_pct": 4.68,
       "spark": [
         276.29,
         259.04,
@@ -1069,7 +1069,7 @@
         325.42,
         308.97,
         253.24,
-        244.25
+        244.23
       ]
     },
     {
@@ -1086,8 +1086,8 @@
       "horizon": 0.3,
       "updated": "2026-07-13T16:39:00-04:00",
       "stop": 74.5,
-      "price": 80.15,
-      "chg_pct": 4.4,
+      "price": 80.05,
+      "chg_pct": 4.27,
       "spark": [
         124.68,
         131.23,
@@ -1118,7 +1118,7 @@
         85.4,
         80.68,
         84.57,
-        80.15
+        80.05
       ]
     },
     {
@@ -1783,8 +1783,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 74.22,
-    "tqqq_pct": -3.49
+    "tqqq": 74.12,
+    "tqqq_pct": -3.62
   },
   "status": [
     {
