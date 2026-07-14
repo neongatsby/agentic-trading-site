@@ -1,73 +1,73 @@
 {
-  "generated_at": "2026-07-14T13:29:24.423Z",
-  "market_note": "Market closed — numbers update at next open.",
+  "generated_at": "2026-07-14T13:30:36.904Z",
+  "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 98029.97,
+    "equity": 97634.63,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 97029.97,
-    "day_pnl": 1524.13,
+    "total_pnl": 96634.63,
+    "day_pnl": 1128.79,
     "positions": [
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 27.64,
-        "pl": -426.4,
-        "plpc": -2.88,
+        "current": 27.5,
+        "pl": -499.2,
+        "plpc": -3.37,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 208.01,
-        "pl": -292.5,
-        "plpc": -1.07,
+        "current": 206.75,
+        "pl": -456.95,
+        "plpc": -1.67,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.04,
-        "pl": 113.46,
-        "plpc": 4.63,
+        "current": 31.66,
+        "pl": 83.06,
+        "plpc": 3.39,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.21,
-        "pl": -260,
-        "plpc": -6.66,
+        "current": 18.27,
+        "pl": -247.84,
+        "plpc": -6.35,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 75.09,
-        "pl": -563.4,
-        "plpc": -2.59,
+        "current": 74.85,
+        "pl": -631.08,
+        "plpc": -2.9,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 398.99,
-        "pl": -399.96,
-        "plpc": -2.71,
+        "current": 398.18,
+        "pl": -429.12,
+        "plpc": -2.91,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 143.88,
-        "pl": -142.5,
-        "plpc": -1.03,
+        "current": 143.35,
+        "pl": -192.85,
+        "plpc": -1.4,
         "thesis": ""
       }
     ],
@@ -103,36 +103,36 @@
     ]
   },
   "live": {
-    "equity": 984.63,
+    "equity": 982.45,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -15.37,
-    "day_pnl": 26.64,
+    "total_pnl": -17.55,
+    "day_pnl": 24.46,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.04,
-        "pl": 1.45,
-        "plpc": 4.75,
+        "current": 31.66,
+        "pl": 1.07,
+        "plpc": 3.51,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.21,
-        "pl": -5.5,
-        "plpc": -2.93,
+        "current": 18.27,
+        "pl": -4.9,
+        "plpc": -2.61,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.09,
-        "pl": -12,
-        "plpc": -1.57,
+        "current": 74.83,
+        "pl": -14.6,
+        "plpc": -1.91,
         "thesis": ""
       }
     ],
@@ -438,6 +438,10 @@
       {
         "t": 1784035500000,
         "v": 985.39
+      },
+      {
+        "t": 1784035800000,
+        "v": 985.99
       }
     ]
   },
@@ -458,8 +462,8 @@
       "updated": "2026-07-14T09:09:00-04:00",
       "stop": 68.5,
       "hold_reason": "This is our main position — a 3x-Nasdaq ETF we ride as the market's core engine. It got scary Monday when QQQ closed under both its 20- and 50-day, but I didn't panic-sell the low the night before CPI — and that's paying off: this morning's CPI came in cool (even better than expected) and QQQ reclaimed its 50-day and the $715 line, so the 3x is bouncing back near our entry. We're 10 shares in at $76.29 behind a wide $68.50 stop, and I'm keeping it because the uptrend is repairing. What I'm watching: the reclaim has to hold through the open — if it does I trail the stop up; if QQQ slips back under its 50-day I revisit.",
-      "price": 75.06,
-      "chg_pct": -2.66,
+      "price": 74.8,
+      "chg_pct": -3,
       "spark": [
         75.17,
         74.11,
@@ -490,7 +494,7 @@
         73.35,
         74.79,
         71.6,
-        75.06
+        74.8
       ]
     },
     {
@@ -507,8 +511,8 @@
       "horizon": 0.2,
       "updated": "2026-07-13T16:39:00-04:00",
       "trigger": "SOXX > 600 close",
-      "price": 188.14,
-      "chg_pct": -2.11,
+      "price": 184.83,
+      "chg_pct": -3.83,
       "spark": [
         164.2,
         151.66,
@@ -539,7 +543,7 @@
         229.99,
         252.93,
         215,
-        188.14
+        184.83
       ]
     },
     {
@@ -558,8 +562,8 @@
       "trigger": 30.56,
       "stop": 29.5,
       "hold_reason": "A small 2x-NVDA position we hold as a leveraged bet on Nvidia's AI-chip demand. We're 1 share in at $30.59 and it's our best performer, green ~+4% as NVDA bounces on today's cool inflation print. Keeping it behind a $29.50 stop because the AI-capex story is intact and the tape turned risk-on. What I'm watching: NVDA holding above its recent lows — if the bounce sticks I trail the stop up.",
-      "price": 31.72,
-      "chg_pct": -3.91,
+      "price": 31.66,
+      "chg_pct": -4.09,
       "spark": [
         39.13,
         38.1,
@@ -590,7 +594,7 @@
         29.67,
         28.76,
         27.53,
-        31.72
+        31.66
       ]
     },
     {
@@ -607,8 +611,8 @@
       "horizon": 0.3,
       "updated": "2026-07-14T09:09:00-04:00",
       "stop": null,
-      "price": 207.35,
-      "chg_pct": -1.73,
+      "price": 206.66,
+      "chg_pct": -2.05,
       "spark": [
         225.04,
         222.09,
@@ -639,7 +643,7 @@
         198.94,
         195.89,
         191.97,
-        207.35
+        206.66
       ]
     },
     {
@@ -656,8 +660,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.3,
       "updated": "2026-07-13T18:39:00-04:00",
-      "price": 257.57,
-      "chg_pct": 2.48,
+      "price": 261.97,
+      "chg_pct": 4.23,
       "spark": [
         267.1,
         262.03,
@@ -688,7 +692,7 @@
         268.01,
         268.8,
         264.14,
-        257.57
+        261.97
       ]
     },
     {
@@ -704,8 +708,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "2026-07-13T16:39:00-04:00",
-      "price": 316.5,
-      "chg_pct": -0.73,
+      "price": 316.85,
+      "chg_pct": -0.62,
       "spark": [
         370.87,
         339.63,
@@ -736,7 +740,7 @@
         316.26,
         325.41,
         303.46,
-        316.5
+        316.85
       ]
     },
     {
@@ -753,8 +757,8 @@
       "horizon": 0.3,
       "updated": "2026-07-13T16:39:00-04:00",
       "stop": 348,
-      "price": 400.18,
-      "chg_pct": -1.86,
+      "price": 398.09,
+      "chg_pct": -2.37,
       "spark": [
         422.27,
         409.97,
@@ -785,7 +789,7 @@
         375.36,
         375.12,
         379,
-        400.18
+        398.09
       ]
     },
     {
@@ -803,8 +807,8 @@
       "updated": "2026-07-13T16:39:00-04:00",
       "trigger": 29.2,
       "stop": 24.3,
-      "price": 27.86,
-      "chg_pct": -2.67,
+      "price": 27.48,
+      "chg_pct": -4,
       "spark": [
         28.97,
         28.23,
@@ -835,7 +839,7 @@
         24.41,
         23.68,
         23.87,
-        27.86
+        27.48
       ]
     },
     {
@@ -853,8 +857,8 @@
       "updated": "2026-07-13T16:39:00-04:00",
       "trigger": 148.5,
       "stop": 124,
-      "price": 142.76,
-      "chg_pct": -2.21,
+      "price": 143.53,
+      "chg_pct": -1.69,
       "spark": [
         139.42,
         139.11,
@@ -885,7 +889,7 @@
         134.76,
         134.8,
         132.11,
-        142.76
+        143.53
       ]
     },
     {
@@ -904,8 +908,8 @@
       "trigger": null,
       "stop": 17.6,
       "hold_reason": "A fintech name we bought for its own story — Goldman's $21 target, ARK buying, a small-business-loan push and the Composer AI deal, all heading into July 29 earnings. We're 10 shares in at $18.76 and it's underwater ~2% after fading Monday, but the thesis is intact and today's cool inflation print plus lower yields helps a rate-sensitive lender. Keeping it behind a fairly tight $17.60 stop. What I'm watching: it needs to reclaim its ~$18.70 breakout; if it keeps bleeding, the stop takes us out.",
-      "price": 18.14,
-      "chg_pct": -3.48,
+      "price": 18.29,
+      "chg_pct": -2.69,
       "spark": [
         15.59,
         15.7,
@@ -936,7 +940,7 @@
         17.32,
         17.29,
         17.86,
-        18.14
+        18.29
       ]
     },
     {
@@ -952,8 +956,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "2026-07-14T08:42:00-04:00",
-      "price": 123.12,
-      "chg_pct": -2.86,
+      "price": 123.8,
+      "chg_pct": -2.33,
       "spark": [
         133.97,
         135.11,
@@ -984,7 +988,7 @@
         113.5,
         107.3,
         112.82,
-        123.12
+        123.8
       ]
     },
     {
@@ -1001,8 +1005,8 @@
       "card": "/research/be.html",
       "horizon": 0.2,
       "updated": "2026-07-13T16:39:00-04:00",
-      "price": 244.36,
-      "chg_pct": -0.13,
+      "price": 246.68,
+      "chg_pct": 0.82,
       "spark": [
         276.29,
         259.04,
@@ -1033,7 +1037,7 @@
         325.42,
         308.97,
         253.24,
-        244.36
+        246.68
       ]
     },
     {
@@ -1050,8 +1054,8 @@
       "horizon": 0.3,
       "updated": "2026-07-13T16:39:00-04:00",
       "stop": 74.5,
-      "price": 77.5,
-      "chg_pct": -4.32,
+      "price": 79.06,
+      "chg_pct": -2.4,
       "spark": [
         124.68,
         131.23,
@@ -1082,7 +1086,7 @@
         85.4,
         80.68,
         84.57,
-        77.5
+        79.06
       ]
     },
     {
@@ -1099,8 +1103,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.3,
       "updated": "2026-07-13T16:39:00-04:00",
-      "price": 46.76,
-      "chg_pct": -4.2,
+      "price": 46.98,
+      "chg_pct": -3.75,
       "spark": [
         62.23,
         58.59,
@@ -1131,7 +1135,7 @@
         54.06,
         50.99,
         50.03,
-        46.76
+        46.98
       ]
     },
     {
@@ -1147,8 +1151,8 @@
       "thesis": "**Validated the call to NOT chase it.** It was +15% Monday at the fear peak; I flagged that buying a 3x inverse already up 15% the night before a CPI the Street saw cooling was the whipsaw trap — and that's exactly what happened: the cool print sent semis ripping (SOXL +~13%), so SOXS got rug-pulled. No position, no regret. A short only makes sense on fresh downside confirmation, not off a relief-rally morning.",
       "horizon": 0.2,
       "updated": "2026-07-14T08:42:00-04:00",
-      "price": 3.96,
-      "chg_pct": -2.82,
+      "price": 4.07,
+      "chg_pct": -0.12,
       "spark": [
         9.15,
         9.85,
@@ -1179,7 +1183,7 @@
         4.07,
         3.62,
         4.24,
-        3.96
+        4.07
       ]
     }
   ],
@@ -1734,8 +1738,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 75.06,
-    "tqqq_pct": -2.39
+    "tqqq": 74.8,
+    "tqqq_pct": -2.73
   },
   "status": [
     {
@@ -1746,351 +1750,11 @@
   "equity_history": {
     "1D": [
       [
-        1783949400000,
-        987.05
-      ],
-      [
-        1783949700000,
-        983.19
-      ],
-      [
-        1783950000000,
-        981.35
-      ],
-      [
-        1783950300000,
-        975.9
-      ],
-      [
-        1783950600000,
-        972.96
-      ],
-      [
-        1783950900000,
-        968.09
-      ],
-      [
-        1783951200000,
-        975.61
-      ],
-      [
-        1783951500000,
-        972.64
-      ],
-      [
-        1783951800000,
-        975.74
-      ],
-      [
-        1783952100000,
-        978.12
-      ],
-      [
-        1783952400000,
-        972.57
-      ],
-      [
-        1783952700000,
-        979.18
-      ],
-      [
-        1783953000000,
-        982.45
-      ],
-      [
-        1783953300000,
-        982.59
-      ],
-      [
-        1783953600000,
-        980.85
-      ],
-      [
-        1783953900000,
-        975.89
-      ],
-      [
-        1783954200000,
-        980.21
-      ],
-      [
-        1783954500000,
-        976.38
-      ],
-      [
-        1783954800000,
-        982.73
-      ],
-      [
-        1783955100000,
-        981.6
-      ],
-      [
-        1783955400000,
-        980.84
-      ],
-      [
-        1783955700000,
-        978.99
-      ],
-      [
-        1783956000000,
-        980.11
-      ],
-      [
-        1783956300000,
-        981.85
-      ],
-      [
-        1783956600000,
-        980.69
-      ],
-      [
-        1783956900000,
-        979.5
-      ],
-      [
-        1783957200000,
-        978.24
-      ],
-      [
-        1783957500000,
-        976.4
-      ],
-      [
-        1783957800000,
-        974.63
-      ],
-      [
-        1783958100000,
-        973.64
-      ],
-      [
-        1783958400000,
-        972.33
-      ],
-      [
-        1783958700000,
-        970.69
-      ],
-      [
-        1783959000000,
-        972.67
-      ],
-      [
-        1783959300000,
-        972.38
-      ],
-      [
-        1783959600000,
-        969.6
-      ],
-      [
-        1783959900000,
-        967.55
-      ],
-      [
-        1783960200000,
-        967.01
-      ],
-      [
-        1783960500000,
-        962.72
-      ],
-      [
-        1783960800000,
-        963.51
-      ],
-      [
-        1783961100000,
-        965.13
-      ],
-      [
-        1783961400000,
-        962.76
-      ],
-      [
-        1783961700000,
-        962.05
-      ],
-      [
-        1783962000000,
-        963.97
-      ],
-      [
-        1783962300000,
-        965.3
-      ],
-      [
-        1783962600000,
-        967.74
-      ],
-      [
-        1783962900000,
-        965.94
-      ],
-      [
-        1783963200000,
-        965.41
-      ],
-      [
-        1783963500000,
-        962.83
-      ],
-      [
-        1783963800000,
-        962.79
-      ],
-      [
-        1783964100000,
-        963.45
-      ],
-      [
-        1783964400000,
-        961.33
-      ],
-      [
-        1783964700000,
-        962.49
-      ],
-      [
-        1783965000000,
-        960.47
-      ],
-      [
-        1783965300000,
-        959.66
-      ],
-      [
-        1783965600000,
-        958.8
-      ],
-      [
-        1783965900000,
-        962.23
-      ],
-      [
-        1783966200000,
-        962.05
-      ],
-      [
-        1783966500000,
-        962.6
-      ],
-      [
-        1783966800000,
-        959.77
-      ],
-      [
-        1783967100000,
-        961.71
-      ],
-      [
-        1783967400000,
-        958.77
-      ],
-      [
-        1783967700000,
-        958.99
-      ],
-      [
-        1783968000000,
-        960.92
-      ],
-      [
-        1783968300000,
-        961.3
-      ],
-      [
-        1783968600000,
-        962.34
-      ],
-      [
-        1783968900000,
-        961.93
-      ],
-      [
-        1783969200000,
-        960.39
-      ],
-      [
-        1783969500000,
-        962.84
-      ],
-      [
-        1783969800000,
-        959.47
-      ],
-      [
-        1783970100000,
-        958.03
-      ],
-      [
-        1783970400000,
-        957.62
-      ],
-      [
-        1783970700000,
-        955.65
-      ],
-      [
-        1783971000000,
-        954.27
-      ],
-      [
-        1783971300000,
-        956.01
-      ],
-      [
-        1783971600000,
-        952.79
-      ],
-      [
-        1783971900000,
-        956.57
-      ],
-      [
-        1783972200000,
-        957.37
-      ],
-      [
-        1783972500000,
-        958.21
-      ],
-      [
-        1783972800000,
-        957.95
+        1784035800000,
+        985.99
       ]
     ],
     "1W": [
-      [
-        1783431000000,
-        999.88
-      ],
-      [
-        1783434600000,
-        999.86
-      ],
-      [
-        1783438200000,
-        999.92
-      ],
-      [
-        1783441800000,
-        1000.14
-      ],
-      [
-        1783445400000,
-        1000.14
-      ],
-      [
-        1783449000000,
-        1000.13
-      ],
-      [
-        1783452600000,
-        1000.08
-      ],
       [
         1783517400000,
         1000.02
@@ -2202,6 +1866,10 @@
       [
         1783971000000,
         954.27
+      ],
+      [
+        1784035800000,
+        985.99
       ]
     ],
     "1M": [],
