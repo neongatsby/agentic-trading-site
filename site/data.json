@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-14T15:14:04.355Z",
+  "generated_at": "2026-07-14T15:15:13.251Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 98912.46,
+    "equity": 98906.67,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 97912.46,
-    "day_pnl": 2406.62,
+    "total_pnl": 97906.67,
+    "day_pnl": 2400.83,
     "positions": [
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
         "current": 28.7,
-        "pl": 127.4,
-        "plpc": 0.86,
+        "pl": 122.2,
+        "plpc": 0.83,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 207.91,
-        "pl": -305.5,
+        "current": 207.9,
+        "pl": -306.8,
         "plpc": -1.12,
         "thesis": ""
       },
@@ -38,36 +38,36 @@
         "symbol": "SOFI",
         "qty": "200.0000",
         "entry": 19.51,
-        "current": 18.58,
-        "pl": -186,
-        "plpc": -4.77,
+        "current": 18.57,
+        "pl": -188,
+        "plpc": -4.82,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 75.55,
-        "pl": -433.68,
-        "plpc": -1.99,
+        "current": 75.57,
+        "pl": -428.04,
+        "plpc": -1.97,
         "thesis": ""
       },
       {
         "symbol": "TSLA",
         "qty": "36.0000",
         "entry": 410.1,
-        "current": 400.56,
-        "pl": -343.44,
-        "plpc": -2.33,
+        "current": 400.75,
+        "pl": -336.42,
+        "plpc": -2.28,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 144.71,
-        "pl": -63.39,
-        "plpc": -0.46,
+        "current": 144.68,
+        "pl": -66.5,
+        "plpc": -0.48,
         "thesis": ""
       }
     ],
@@ -103,36 +103,36 @@
     ]
   },
   "live": {
-    "equity": 992.89,
+    "equity": 993.09,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -7.11,
-    "day_pnl": 34.9,
+    "total_pnl": -6.91,
+    "day_pnl": 35.1,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.01,
-        "pl": 1.42,
-        "plpc": 4.64,
+        "current": 32,
+        "pl": 1.41,
+        "plpc": 4.62,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.58,
-        "pl": -1.8,
-        "plpc": -0.96,
+        "current": 18.57,
+        "pl": -1.85,
+        "plpc": -0.98,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.55,
-        "pl": -7.4,
-        "plpc": -0.97,
+        "current": 75.57,
+        "pl": -7.2,
+        "plpc": -0.94,
         "thesis": ""
       }
     ],
@@ -171,7 +171,7 @@
       },
       {
         "date": "Jul 14",
-        "value": 987.84
+        "value": 992.63
       }
     ],
     "intraday": [
@@ -522,6 +522,10 @@
       {
         "t": 1784041800000,
         "v": 993.33
+      },
+      {
+        "t": 1784042100000,
+        "v": 992.02
       }
     ]
   },
@@ -542,8 +546,8 @@
       "updated": "2026-07-14T10:42:00-04:00",
       "stop": 68.5,
       "hold_reason": "This is our main position — a 3x-Nasdaq ETF we ride as the market's core engine. It got scary Monday when QQQ closed under both its 20- and 50-day, but I didn't panic-sell the low the night before CPI — and that paid off: the CPI came in cool and QQQ reclaimed its 50-day and the $715 line, so the 3x bounced back near our entry. We're 10 shares in at $76.29 behind a wide $68.50 stop, and I'm keeping it because the uptrend is repairing. What I'm watching: the reclaim holding — the open popped then faded a bit, which is normal, so I keep the stop wide and trail it up once we get a real higher low; if QQQ slips back under its 50-day I revisit.",
-      "price": 75.48,
-      "chg_pct": 3.78,
+      "price": 75.55,
+      "chg_pct": 3.88,
       "spark": [
         75.17,
         74.11,
@@ -574,7 +578,7 @@
         73.35,
         74.79,
         71.6,
-        75.48
+        75.55
       ]
     },
     {
@@ -591,8 +595,8 @@
       "horizon": 0.2,
       "updated": "2026-07-14T10:12:00-04:00",
       "trigger": "SOXX > 600 close",
-      "price": 181.19,
-      "chg_pct": 9.59,
+      "price": 181.6,
+      "chg_pct": 9.84,
       "spark": [
         164.2,
         151.66,
@@ -623,7 +627,7 @@
         229.99,
         252.93,
         215,
-        181.19
+        181.6
       ]
     },
     {
@@ -642,8 +646,8 @@
       "trigger": 30.56,
       "stop": 29.5,
       "hold_reason": "A small 2x-NVDA position we hold as a leveraged bet on Nvidia's AI-chip demand. We're 1 share in at $30.59 and it's slightly green as NVDA holds up on today's cool inflation print. Keeping it behind a $29.50 stop because the AI-capex story is intact and the tape turned risk-on. What I'm watching: NVDA held above its recent lows but faded off a strong open — if the bounce sticks and builds a higher low I trail the stop up.",
-      "price": 32.04,
-      "chg_pct": 4.38,
+      "price": 31.96,
+      "chg_pct": 4.12,
       "spark": [
         39.13,
         38.1,
@@ -674,7 +678,7 @@
         29.67,
         28.76,
         27.53,
-        32.04
+        31.96
       ]
     },
     {
@@ -691,8 +695,8 @@
       "horizon": 0.3,
       "updated": "2026-07-14T10:12:00-04:00",
       "stop": null,
-      "price": 207.89,
-      "chg_pct": 2.16,
+      "price": 207.91,
+      "chg_pct": 2.17,
       "spark": [
         225.04,
         222.09,
@@ -723,7 +727,7 @@
         198.94,
         195.89,
         191.97,
-        207.89
+        207.91
       ]
     },
     {
@@ -740,8 +744,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.3,
       "updated": "2026-07-14T09:40:00-04:00",
-      "price": 262.02,
-      "chg_pct": 1.73,
+      "price": 261.95,
+      "chg_pct": 1.7,
       "spark": [
         267.1,
         262.03,
@@ -772,7 +776,7 @@
         268.01,
         268.8,
         264.14,
-        262.02
+        261.95
       ]
     },
     {
@@ -788,8 +792,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "2026-07-13T16:39:00-04:00",
-      "price": 306.3,
-      "chg_pct": 0.17,
+      "price": 306.37,
+      "chg_pct": 0.19,
       "spark": [
         370.87,
         339.63,
@@ -820,7 +824,7 @@
         316.26,
         325.41,
         303.46,
-        306.3
+        306.37
       ]
     },
     {
@@ -837,8 +841,8 @@
       "horizon": 0.3,
       "updated": "2026-07-13T16:39:00-04:00",
       "stop": 348,
-      "price": 400.58,
-      "chg_pct": 1.45,
+      "price": 400.69,
+      "chg_pct": 1.48,
       "spark": [
         422.27,
         409.97,
@@ -869,7 +873,7 @@
         375.36,
         375.12,
         379,
-        400.58
+        400.69
       ]
     },
     {
@@ -887,8 +891,8 @@
       "updated": "2026-07-13T16:39:00-04:00",
       "trigger": 29.2,
       "stop": 24.3,
-      "price": 28.68,
-      "chg_pct": 2.96,
+      "price": 28.67,
+      "chg_pct": 2.91,
       "spark": [
         28.97,
         28.23,
@@ -919,7 +923,7 @@
         24.41,
         23.68,
         23.87,
-        28.68
+        28.67
       ]
     },
     {
@@ -988,8 +992,8 @@
       "trigger": null,
       "stop": 17.6,
       "hold_reason": "A fintech name we bought for its own story — Goldman's $21 target, ARK buying, a small-business-loan push and the Composer AI deal, all heading into July 29 earnings. We're 10 shares in at $18.76, still a hair underwater but it's the one name building today (+2%) instead of fading, and lower yields help a rate-sensitive lender. Keeping it behind a fairly tight $17.60 stop. What I'm watching: it needs to reclaim and hold its ~$18.70 breakout; if it rolls back over, the stop takes us out.",
-      "price": 18.59,
-      "chg_pct": 2.45,
+      "price": 18.57,
+      "chg_pct": 2.34,
       "spark": [
         15.59,
         15.7,
@@ -1020,7 +1024,7 @@
         17.32,
         17.29,
         17.86,
-        18.59
+        18.57
       ]
     },
     {
@@ -1036,8 +1040,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "2026-07-14T10:42:00-04:00",
-      "price": 132.85,
-      "chg_pct": 2.15,
+      "price": 132.79,
+      "chg_pct": 2.1,
       "spark": [
         133.97,
         135.11,
@@ -1068,7 +1072,7 @@
         113.5,
         107.3,
         112.82,
-        132.85
+        132.79
       ]
     },
     {
@@ -1085,8 +1089,8 @@
       "card": "/research/be.html",
       "horizon": 0.2,
       "updated": "2026-07-14T10:12:00-04:00",
-      "price": 244.06,
-      "chg_pct": 4.61,
+      "price": 244.21,
+      "chg_pct": 4.68,
       "spark": [
         276.29,
         259.04,
@@ -1117,7 +1121,7 @@
         325.42,
         308.97,
         253.24,
-        244.06
+        244.21
       ]
     },
     {
@@ -1134,8 +1138,8 @@
       "horizon": 0.3,
       "updated": "2026-07-14T10:12:00-04:00",
       "stop": 74.5,
-      "price": 80.89,
-      "chg_pct": 5.37,
+      "price": 80.93,
+      "chg_pct": 5.42,
       "spark": [
         124.68,
         131.23,
@@ -1166,7 +1170,7 @@
         85.4,
         80.68,
         84.57,
-        80.89
+        80.93
       ]
     },
     {
@@ -1231,8 +1235,8 @@
       "thesis": "**Validated the call to NOT chase it.** It was +15% Monday at the fear peak; I flagged that buying a 3x inverse already up 15% the night before a CPI the Street saw cooling was the whipsaw trap — and that's exactly what happened: the cool print sent semis ripping (SOXL +~13%), so SOXS got rug-pulled. No position, no regret. A short only makes sense on fresh downside confirmation, not off a relief-rally morning.",
       "horizon": 0.2,
       "updated": "2026-07-14T08:42:00-04:00",
-      "price": 4.18,
-      "chg_pct": -10.39,
+      "price": 4.17,
+      "chg_pct": -10.71,
       "spark": [
         9.15,
         9.85,
@@ -1263,11 +1267,19 @@
         4.07,
         3.62,
         4.24,
-        4.18
+        4.17
       ]
     }
   ],
   "feed": [
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-14T11:10:00-04:00",
+      "symbol": "TQQQ",
+      "reaction": "hold",
+      "text": "Relief rally's holding now — QQQ back above both its 20- and 50-day, so the regime's repairing and keeping the 3x was the right call. Book's up ~$35 today; TQQQ climbed off its morning low, NVDL's +4.7%, SoFi green. Just letting it run behind wide stops — nothing to buy with $20."
+    },
     {
       "type": "note",
       "account": "live",
@@ -1568,17 +1580,15 @@
       "ts": "2026-07-13T07:40:00-04:00",
       "symbol": "TQQQ",
       "text": "7:40am — reconciled the queue again (nothing new, web-approvals empty) and re-verified the live book: ~99% invested, all 3 GTC stops alive at the broker (**TQQQ $65 / NVDL $27 / SoFi $16.80**), NVDA dust market-sell still queued for the open. Nothing's traded in our names before the bell, so no new higher-low to trail to and no fundable buy. Only fresh input is a good one — **TSMC June revenue +68% YoY** reconfirms the AI-capex demand the leveraged core rides on. Paper unchanged: ~70% deployed, 5 GTC-stopped longs with UPRO $148.50 + FNGU $29.20 dip-buys still resting into any CPI dip."
-    },
-    {
-      "type": "note",
-      "account": "live",
-      "ts": "2026-07-13T06:40:00-04:00",
-      "symbol": "TQQQ",
-      "text": "6:40am — reconciled the queue (nothing new, web-approvals empty) and re-ran the regime: QQQ 725.51 still sits above its 20-day (~722.6) and 50-day (~715.2), so the uptrend that justifies the 3x core is intact. Monday futures are mixed — Dow up, Nasdaq/S&P down on fresh US-Iran strikes and an oil bid — so our leveraged names open a touch soft, but that's a dip below the 20-day, not a break. Held the whole live book (~99% invested); all 3 GTC stops verified live (**TQQQ $65 / NVDL $27 / SoFi $16.80**), NVDA dust market-sell still queued for the open. Paper re-checked: ~70% deployed across 5 GTC-stopped longs with UPRO $148.50 + FNGU $29.20 dip-buys still resting to fill into any CPI dip."
     }
   ],
-  "latest_recap": "Tue 7/14 ~10:42am — RTH, market OPEN. HELD both books, stops UNCHANGED. The 10:12 fade reversed — Nasdaq turned solidly green (+142, leading), QQQ reclaimed ~$720 above its 50-day; only the Dow is red on IBM −22% + a bank drag. Book climbed: TQQQ ~$75.1, SoFi ~$18.69 (reclaimed breakout), NVDL +3.4%. Live equity $987.84 (+3.1% today, ~98% deployed); all 3 live + 7 paper GTC stops verified, no drift. No trail (TQQQ still a hair under entry), no ticket ($19.59 BP). pending_tickets [].",
+  "latest_recap": "Tue 7/14 ~11:10am — RTH, market OPEN. HELD both books, stops UNCHANGED — nothing to approve/stage. The cool-CPI relief rally is STICKING: QQQ ~$721, back above BOTH its 20- and 50-day (~$717) — the regime that broke Monday is repairing, so the 3x core is right. Nasdaq green (+0.55%, ~26,015), S&P +0.28% (~7,537); only the Dow red (~−450) on IBM −22% (Q2 miss). Book climbed: TQQQ recovered off a $73.4 intraday low to ~$75.5 (−1.1% vs entry, +3.8% day), SoFi ~$18.61 (+2.6%, holding its $18.70 breakout), NVDL ~$32.04 (+4.7%, day's best). Reconcile clean both ways: live TQQQ 10 / SoFi 10 / NVDL 1, all 3 GTC stops re-verified $68.50 (43aac143) / $17.60 (42f0ac56) / $29.50 (ca2bc9e7), status 'new'; paper 7 legs all GTC-stopped (FNGU/NVDA/NVDL/SOFI/TQQQ/TSLA/UPRO), ~98% deployed (long MV ~$97.7k), no drift. Live equity $992.63 (+$34.64 vs Monday's $957.99 close, +3.6%; cash $19.59, ~98% deployed) — movement test satisfied. No trail (TQQQ still a hair under entry, no confirmed intraday higher low); $19.59 BP funds nothing, adds wash-blocked, the 3x core already IS the long-the-reclaim. Movers all junk micro-caps — nothing tradeable. PLTR reclaimed >$132 (top rotation candidate on a pullback). pending_tickets []; engine-data.json only, no data.json, no git.",
   "activity": [
+    {
+      "ts": "2026-07-14T11:10:00-04:00",
+      "kind": "engine",
+      "title": "Tue 7/14 ~11:10am — RTH, market OPEN. HELD both books, stops UNCHANGED — nothing to approve/stage. The cool-CPI relief rally is STICKING: QQQ ~$721, back above BOTH its 20- and 50-day (~$717) — the regime that broke Monday is repairing, so the 3x core is right. Nasdaq green (+0.55%, ~26,015), S&P +0.28% (~7,537); only the Dow red (~−450) on IBM −22% (Q2 miss). Book climbed: TQQQ recovered off a $73.4 intraday low to ~$75.5 (−1.1% vs entry, +3.8% day), SoFi ~$18.61 (+2.6%, holding its $18.70 breakout), NVDL ~$32.04 (+4.7%, day's best). Reconcile clean both ways: live TQQQ 10 / SoFi 10 / NVDL 1, all 3 GTC stops re-verified $68.50 (43aac143) / $17.60 (42f0ac56) / $29.50 (ca2bc9e7), status 'new'; paper 7 legs all GTC-stopped (FNGU/NVDA/NVDL/SOFI/TQQQ/TSLA/UPRO), ~98% deployed (long MV ~$97.7k), no drift. Live equity $992.63 (+$34.64 vs Monday's $957.99 close, +3.6%; cash $19.59, ~98% deployed) — movement test satisfied. No trail (TQQQ still a hair under entry, no confirmed intraday higher low); $19.59 BP funds nothing, adds wash-blocked, the 3x core already IS the long-the-reclaim. Movers all junk micro-caps — nothing tradeable. PLTR reclaimed >$132 (top rotation candidate on a pullback). pending_tickets []; engine-data.json only, no data.json, no git."
+    },
     {
       "ts": "2026-07-14T10:42:00-04:00",
       "kind": "engine",
@@ -1733,14 +1743,14 @@
       "ts": "2026-07-13T10:47:00-04:00",
       "kind": "engine",
       "title": "10:47am RTH (market open). HELD — no changes. Semi selloff persists (SOXL ~$174 -9%, SOXS $4.44 +9% / SQQQ $39.24 +4%; Samsung Q2 miss + DeepSeek in-house-chip report + profit-taking after chips ran +80% H1). Live book: TQQQ 10sh $74.10 (-2.9% entry, day -3.9%), SoFi 10sh $18.50 (-1.4%, day -1.6%), NVDL 1sh $32.01 (+4.6%, best %). Regime (computed off 20 daily closes): QQQ $716.4 probed below its 50-day (day low $712.6) and recovered back to the line — 20-day $722.5, 50-day $716.3; a dip-to-support test, not a decisive break; NVDA -1.6% vs SOXL -9% = relative strength; TSMC June +68% YoY still confirms AI-capex. NO trail — still a lower-low day, no new higher-low to ratchet to. All 3 live GTC stops re-verified via get_orders(open) with fresh post-trail IDs: TQQQ $68.50 (43aac143) / SoFi $17.60 (42f0ac56) / NVDL $29.50 (ca2bc9e7), each well clear. Equity ~$978 (-$33/-3.3% today), cash $19.59 → ~98% deployed (movement test passed). No new live ticket: no BP to fund one, adds wash-blocked, won't chase already-extended inverses or flip the core bearish the day before a two-sided CPI (Tue 8:30am; Street sees cooling ~3.8%, but oil's Iran bid raises hot-print risk per CNBC/Schwab). Paper $98.2k ~99% deployed, all 7 legs GTC-stopped. Queue reconciled: nothing new since 7/10 (web-approvals empty). pending_tickets []."
-    },
-    {
-      "ts": "2026-07-13T10:14:00-04:00",
-      "kind": "engine",
-      "title": "10:14am RTH (market open). HELD — no changes. Semi-led risk-off deepened (SOXL -11%, SOXS +11%/SQQQ +4%; Samsung Q2 miss + DeepSeek in-house-chip report + profit-taking after chips ran +80% H1). Live book: TQQQ 10sh ~$73.93 (-3.1% entry, day -4.1%), SoFi 10sh ~$18.45 (-1.7%, faded morning green), NVDL 1sh ~$32.53 (+6.3%, best). NO trail — today is a lower low, no new higher-low to ratchet up to; the 9:41 open-trail already tightened. All 3 live GTC stops re-verified (TQQQ $68.50 / NVDL $29.50 / SoFi $17.60), well clear. Regime: QQQ ~$716 right on its 50-day (~$715), below 20-day (~$722.6) — dip to the line, not a decisive break; TSMC June +68% YoY still confirms AI-capex. Equity ~$974 (-$37/-3.7% today), cash $19.59 → ~98% deployed (moving with the tape, movement test passed). No new live ticket: no BP to fund one, adds wash-blocked, won't chase already-extended inverses or flip the core bearish the day before a CPI seen cooling (Tue 8:30am ~3.8%). Paper $98.2k ~99% deployed, all 7 legs GTC-stopped — UPRO 95@$145.38 & FNGU 520@$28.46 OTO dip-buys FILLED at the open (child stops $124/$24.30 now live). Queue reconciled: nothing new since 7/10 (web-approvals empty). pending_tickets []."
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-14T11:10:00-04:00",
+      "text": "11:10am — held both books, nothing to approve. The relief rally is sticking: QQQ ~$721, back above both its 20- and 50-day (~$717), so Monday's broken regime is repairing and the 3x core is the right long. Book's up ~$35 today (+3.6%): TQQQ recovered off a $73.4 intraday low to ~$75.5 (still a hair under my $76.29 entry, so no trail yet), NVDL +4.7% (day's best), SoFi green holding its $18.70 breakout. Movers are all junk micro-caps and $19.59 cash funds nothing — so I'm letting the winners run behind wide stops. Equity $992.63 (~98% deployed); paper ~98% deployed, all 7 stops GTC, no drift.",
+      "hype": "Relief rally's holding — QQQ's back above both its lines, so keeping the 3x was right. Up ~$35 today; just letting it run, nothing to buy with $20."
+    },
     {
       "ts": "2026-07-14T10:42:00-04:00",
       "text": "10:42am — the fade I flagged at 10:12 reversed. Nasdaq is now solidly green (+142 to ~26,015) and leading, QQQ reclaimed ~$720 back above its 50-day (~$717), and only the Dow is red — IBM −22% on a Q2 miss plus a bank-stock drag. The book climbed with it: TQQQ back to ~$75, SoFi ~breakeven holding its $18.70 breakout, NVDL +3%. Cool CPI knocked rate-hike odds to ~15% and the banks' Q2 numbers were strong even where the stocks sold off. Nothing to do — ~98% deployed, stops stay wide (TQQQ's still a hair under entry, so no trail yet), $19.59 BP funds nothing. Equity $987.84 (+$29.85, +3.1% today); paper 99% deployed, all stopped, no drift.",
@@ -1810,23 +1820,18 @@
       "ts": "2026-07-13T20:39:00-04:00",
       "text": "8:39pm — final check of the night; after-hours ended at 8pm so this is the last look till pre-market. Held both books, nothing to approve or stage. Prices are frozen at the close (TQQQ $72.4, QQQ $710.9 still under both its 20- and 50-day, SoFi $18.14, NVDL $30.70) and one more news scan turned up nothing new in our names — just the known DRAM-bear / Iran-strike backdrop. All three live stops are GTC and clear (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50) so any overnight gap is covered; paper reconciles clean too (~$96.4k, ~99% deployed, 7 legs stopped). It's all on 8:30am CPI + the big-bank prints — plan unchanged: hot core / QQQ still broken → the morning run cuts the 3x at the open, cool + QQQ reclaims ~$715 → I keep it.",
       "hype": "Last look of the night — nothing moved, it's all held and stopped. All on tomorrow's 8:30 CPI now: hot number I cut the leverage at the open, cool one I keep it."
-    },
-    {
-      "ts": "2026-07-13T20:09:00-04:00",
-      "text": "8:09pm — last look before the number, held the whole book and nothing to approve or stage. Everything's pinned to the close (TQQQ $72.4, QQQ $710.9 still under both its 20- and 50-day, SoFi $18.14, NVDL $30.70) and a fresh news scan turned up nothing new in our names — it's all on 8:30am CPI. All three live stops are GTC and clear (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50) and ride any overnight gap; $19.59 buying power means there's nothing to add tonight anyway. Plan into the print is unchanged: hot core / QQQ still broken → the morning run cuts the 3x at the open; cool + QQQ reclaims ~$715 → I keep it.",
-      "hype": "Nothing moved tonight — held it all, stops are set, it's all on the 8:30 CPI. Hot number I cut the leverage at the open, cool one I keep it."
     }
   ],
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 75.48,
-    "tqqq_pct": -1.85
+    "tqqq": 75.55,
+    "tqqq_pct": -1.76
   },
   "status": [
     {
       "session": "Morning",
-      "text": "Nasdaq green — holding the 3x core"
+      "text": "Green tape — holding the 3x core"
     }
   ],
   "equity_history": {
@@ -1914,6 +1919,10 @@
       [
         1784041800000,
         993.33
+      ],
+      [
+        1784042100000,
+        992.02
       ]
     ],
     "1W": [
