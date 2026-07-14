@@ -699,6 +699,142 @@
     });
   }
 
+  /* ═══════════════════════ DEPTH LAYER (page 2) — BRAIN · WATCHLIST · SCOREBOARD ═══════════════════════ */
+  const DEPTH_PAL = {
+    glass: { accent:'#34d399', down:'#f87171', idle:'rgba(200,210,225,0.5)', metal:'#cfe0ea', rims:'#34d399,#ffffff,#2dd4bf,#e6b45a', head:'rgba(110,231,183,0.78)', bar:'linear-gradient(90deg,#34d399,#6ee7b7)', barGlow:'rgba(52,211,153,0.5)', ret:'linear-gradient(180deg,#f2fffa 0%,#93f0cd 40%,#34d399 63%,#0f9968 100%)', retShadow:'rgba(52,211,153,0.35)', spark:'#34d399', scoreBorder:'rgba(52,211,153,0.22)', scoreBg:'radial-gradient(120% 150% at 6% 0%, rgba(52,211,153,0.15), rgba(52,211,153,0.02) 58%)' },
+    neon:  { accent:'#22d3ee', down:'#fb7185', idle:'rgba(200,210,225,0.5)', metal:'#cfd8ff', rims:'#a855f7,#f472b6,#2dd4bf,#22d3ee', head:'rgba(103,232,249,0.82)', bar:'linear-gradient(90deg,#22d3ee,#e879f9)', barGlow:'rgba(34,211,238,0.5)', ret:'linear-gradient(180deg,#ecfeff 0%,#a5f3fc 40%,#22d3ee 63%,#0e7490 100%)', retShadow:'rgba(34,211,238,0.35)', spark:'#22d3ee', scoreBorder:'rgba(34,211,238,0.22)', scoreBg:'radial-gradient(120% 150% at 6% 0%, rgba(34,211,238,0.15), rgba(34,211,238,0.02) 58%)' },
+    gold:  { accent:'#ffd27a', down:'#ff5e7a', idle:'rgba(220,210,190,0.5)', metal:'#ffe6ad', rims:'#ffd27a,#ff5e7a,#ffffff,#f0b64a', head:'rgba(255,233,176,0.82)', bar:'linear-gradient(90deg,#d99a2b,#ffe9b0)', barGlow:'rgba(255,210,122,0.5)', ret:'linear-gradient(180deg,#fffaf0 0%,#ffe9b0 40%,#ffd27a 63%,#b8860b 100%)', retShadow:'rgba(255,210,122,0.35)', spark:'#ffd27a', scoreBorder:'rgba(255,210,122,0.22)', scoreBg:'radial-gradient(120% 150% at 6% 0%, rgba(255,210,122,0.15), rgba(255,210,122,0.02) 58%)' }
+  };
+  function hexA(hex, a){ const n = parseInt(String(hex).slice(1), 16); return 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')'; }
+  function splitSent(s){ return (String(s || '').match(/[^.!?]+[.!?]+|\S[^.!?]*$/g) || []).map(function (x){ return x.trim(); }).filter(Boolean); }
+  function verdictInfo(v){ const m = { held:{label:'HELD',c:'#cfe0ea'}, buy:{label:'BUY',c:'#34d399'}, short:{label:'SHORT',c:'#f87171'}, watch:{label:'WATCH',c:'#e6b45a'}, avoid:{label:'AVOID',c:'#8fa0b5'} }; return m[v] || m.watch; }
+  function holdWhyArr(c, p){ const hr = c && c.hold_reason; if (hr) return splitSent(hr).slice(0, 3); const th = stripMd((c && c.thesis) || (p && p.thesis) || ''); return th ? splitSent(th).slice(0, 2) : []; }
+  function marketOpenNow(){ try { const parts = new Intl.DateTimeFormat('en-US', { timeZone:'America/New_York', weekday:'short', hour:'2-digit', minute:'2-digit', hour12:false }).formatToParts(new Date()); const wd = parts.find(function (p){ return p.type==='weekday'; }).value; const hh = +parts.find(function (p){ return p.type==='hour'; }).value; const mm = +parts.find(function (p){ return p.type==='minute'; }).value; if (['Sat','Sun'].indexOf(wd) >= 0) return false; const t = hh*60+mm; return t >= 570 && t < 960; } catch (e){ return true; } }
+
+  function computeFlowModel(){
+    const L = live(), equity = num(L.equity), positions = arr(L.positions);
+    const cov = arr(DATA && DATA.coverage), covBy = function (s){ return cov.find(function (c){ return c.ticker === s; }); };
+    const invested = positions.reduce(function (a, p){ return a + (parseFloat(p.qty) || 0) * num(p.current); }, 0);
+    const deployedPct = equity ? Math.min(100, Math.round(invested / equity * 100)) : 0;
+    const thoughts = arr(DATA && DATA.pulse).slice(0, 6).map(function (p){ return stripMd(p.hype || p.text || ''); }).filter(Boolean);
+    const nodes = [], edges = []; let hotId = null, hotProx = Infinity;
+    positions.forEach(function (p){
+      const c = covBy(p.symbol), id = String(p.symbol).toLowerCase(), stop = c && c.stop ? c.stop : null, cur = num(p.current);
+      nodes.push({ id:id, col:2, kind:'held', label:p.symbol, sub:(c && c.size) ? c.size : (fmtShares(parseFloat(p.qty)||0) + ' sh'), name:(c && c.name) || p.symbol, verdict:'held', size:(c && c.size) || '', level: stop ? ('stop $' + stop) : '', why: holdWhyArr(c, p) });
+      if (stop){ edges.push({ from:id, to:'trail', kind:'up', cond:'holds > $' + stop + ' → trail' }); edges.push({ from:id, to:'stop', kind:'stop', cond:'breaks $' + stop + ' → flat' }); const prox = cur ? (cur - num(stop)) / cur : Infinity; if (prox >= 0 && prox < hotProx){ hotProx = prox; hotId = id; } }
+      else edges.push({ from:id, to:'trail', kind:'up', cond:'holds → trail' });
+    });
+    cov.forEach(function (c){
+      if (positions.some(function (p){ return p.symbol === c.ticker; })) return;
+      const trig = c.trigger; if (!((c.verdict === 'buy' || c.verdict === 'short') && trig)) return;
+      const id = String(c.ticker).toLowerCase();
+      nodes.push({ id:id, col:2, kind:'armed', label:c.ticker, sub:'waiting · ' + (c.size || ''), name:c.name, verdict:c.verdict, size:(c.plan_usd ? ('would deploy $' + c.plan_usd) : (c.size || '')), level:'trigger $' + trig, why: holdWhyArr(c) });
+      edges.push({ from:id, to:(c.verdict === 'short' ? 'stop' : 'buy'), kind:'up', cond:'crosses $' + trig + ' → ' + (c.verdict === 'short' ? 'SHORT' : 'BUY') + (c.plan_usd ? (' $' + c.plan_usd) : '') });
+      edges.push({ from:id, to:'cash', kind:'idle', cond:'no trigger → cash' });
+    });
+    const hot = edges.find(function (e){ return e.from === hotId && e.kind === 'up'; }) || edges.find(function (e){ return e.kind === 'up'; }); if (hot) hot.hot = true;
+    return { root:{ label:'$' + money(equity), sub: deployedPct + '% deployed' }, marketOpen: marketOpenNow(), thoughts: thoughts,
+      nodes: nodes, edges: edges, terminals: [
+        { id:'buy',   kind:'up',   label:'NEW HIGH / add', detail:['A fresh high confirms strength — the engine adds to the winner and ratchets the trailing stop up behind it.'] },
+        { id:'trail', kind:'up',   label:'keep trailing',  detail:['Holding above its stop — let it run; the stop ratchets up under the rising price, locking gains in.'] },
+        { id:'stop',  kind:'stop', label:'STOPPED OUT',    detail:['Price broke the line — the position closes flat, automatically, no debate.'] },
+        { id:'cash',  kind:'idle', label:'SITTING CASH',   detail:['No trigger hit — capital stays in cash rather than force a trade. Dry powder is a position.'] }
+      ] };
+  }
+
+  function computeCoverageTiles(){
+    const cov = arr(DATA && DATA.coverage), heldSet = {}; arr(live().positions).forEach(function (p){ heldSet[p.symbol] = true; });
+    const deep = { BE:'research/be.html', CEG:'research/ceg.html', OKLO:'research/oklo.html' };
+    return cov.map(function (c){
+      const why = holdWhyArr(c), level = c.trigger ? ('trigger $' + c.trigger) : (c.stop ? ('stop $' + c.stop) : '');
+      return { tk:c.ticker, name:c.name || c.ticker, theme:String(c.theme || '').toUpperCase(), verdict: heldSet[c.ticker] ? 'held' : (c.verdict || 'watch'),
+        size:c.size || c.size_note || '', level:level, thesisLine: splitSent(stripMd(c.thesis || ''))[0] || why[0] || '', why:why, deep:deep[c.ticker] };
+    });
+  }
+
+  function computeScore(){
+    const L = live(), equity = num(L.equity), totalPnl = num(L.total_pnl), eh = (DATA && DATA.equity_history) || {}, sc = (DATA && DATA.score) || {};
+    let series = arr(eh['1M']).length > 1 ? eh['1M'] : (arr(eh['1W']).length > 1 ? eh['1W'] : arr(eh['1D']));
+    const eq = arr(series).map(function (p){ return Array.isArray(p) ? p[1] : (p && p.v); }).filter(function (n){ return typeof n === 'number' && isFinite(n); });
+    const mn = eq.length ? Math.min.apply(null, eq) : 0, mx = eq.length ? Math.max.apply(null, eq) : 1;
+    const spark = eq.length > 1 ? eq.map(function (v, i){ return (i / (eq.length - 1) * 200).toFixed(1) + ',' + (58 - (v - mn) / ((mx - mn) || 1) * 52).toFixed(1); }).join(' ') : '';
+    let peak = -Infinity, dd = 0; eq.forEach(function (v){ if (v > peak) peak = v; if (peak > 0) dd = Math.min(dd, (v - peak) / peak); });
+    const start = new Date('2026-07-02T00:00:00-04:00'), day = Math.max(1, Math.min(30, Math.ceil((Date.now() - start.getTime()) / 86400000)));
+    const sells = arr(DATA && DATA.feed).filter(function (f){ return f.type === 'trade' && f.account === 'live' && /sell|short/i.test(f.side || f.text || ''); });
+    const wins = sells.filter(function (f){ return /win|newhigh/.test(f.reaction || ''); }).length;
+    return { value:'$' + money(equity), returnPct:(totalPnl >= 0 ? '+' : '−') + Math.abs(totalPnl / 1000 * 100).toFixed(1) + '%',
+      alphaPts: sc.alphaPts || '—', benchmark: sc.benchmark || '—', ddPct:(dd < 0 ? '−' : '') + Math.abs(dd * 100).toFixed(1) + '%',
+      winRate: sells.length ? (Math.round(wins / sells.length * 100) + '%') : (sc.winRate || '—'), tradeCount: sells.length || (sc.tradeCount || 0),
+      bestDay: sc.bestDay || '—', bestDayName: sc.bestDayName || 'best session', day:day, ofDays:30, daysLeft:30 - day, sparkPoints:spark };
+  }
+
+  function variantBtnStyle(on, P){ return 'font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:1px;padding:8px 13px;border-radius:8px;cursor:pointer;' + (on ? ('border:1px solid ' + hexA(P.accent, 0.4) + ';background:' + hexA(P.accent, 0.14) + ';color:' + P.accent) : 'border:1px solid transparent;background:transparent;color:rgba(255,255,255,0.5)'); }
+
+  function buildDepthShell(skin){
+    const P = DEPTH_PAL[skin] || DEPTH_PAL.glass;
+    const card = 'border-radius:16px;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.035);padding:22px 24px;display:flex;flex-direction:column;gap:16px';
+    const lab = 'font:600 13px/1 system-ui,sans-serif;letter-spacing:3px;color:rgba(255,255,255,0.5)';
+    const sub = 'font:400 14px/1.4 system-ui,sans-serif;color:rgba(255,255,255,0.42)';
+    return '<div style="position:relative;padding:8px 44px 60px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px">'
+      + '<div style="display:flex;align-items:center;gap:16px;padding:6px 0 2px"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.14))"></div><div style="font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:4px;color:' + P.head + '">THE&nbsp;DEPTH&nbsp;LAYER</div><div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.14),transparent)"></div></div>'
+      + '<div style="' + card + '"><div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:14px"><div style="display:flex;flex-direction:column;gap:6px"><div style="' + lab + '">BRAIN&nbsp;&middot;&nbsp;DECISION&nbsp;FLOW</div><div style="' + sub + '">the engine&rsquo;s if-this-then-that, driven by the live book &mdash; tap any node for the thesis</div></div><div style="display:inline-flex;gap:4px;padding:4px;border-radius:11px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);flex:none"><button type="button" data-variant="flow" style="' + variantBtnStyle(true, P) + '">ORGANIC</button><button type="button" data-variant="schematic" style="' + variantBtnStyle(false, P) + '">SCHEMATIC</button></div></div>'
+      + '<div style="position:relative;border-radius:20px;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.018);overflow:hidden"><decision-flow id="depth-flow" bot-model="/bot-head.glb" variant="flow" accent="' + P.accent + '" down="' + P.down + '" idle="' + P.idle + '" metal="' + P.metal + '" rims="' + P.rims + '" height="900" style="display:block;width:100%;height:900px"></decision-flow><div style="position:absolute;left:22px;bottom:18px;display:flex;gap:18px;font:600 10px/1 ui-monospace,Menlo,monospace;letter-spacing:1px;pointer-events:none"><span style="color:' + P.accent + '">&mdash;&nbsp;upside path</span><span style="color:' + P.down + '">&mdash;&nbsp;stop path</span><span style="color:rgba(200,210,225,0.6)">&mdash;&nbsp;idle / cash</span></div></div></div>'
+      + '<div style="' + card + '"><div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:16px"><div style="display:flex;flex-direction:column;gap:6px"><div style="' + lab + '">WATCHLIST&nbsp;&middot;&nbsp;<span id="depth-watch-count">14</span>&nbsp;NAMES</div><div style="' + sub + '">coverage &amp; verdicts &mdash; swipe through, tap a card for its thesis</div></div><div style="display:flex;gap:8px;flex:none"><button type="button" id="depth-watch-left" style="width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.75);font:400 22px/1 system-ui;cursor:pointer">&lsaquo;</button><button type="button" id="depth-watch-right" style="width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.75);font:400 22px/1 system-ui;cursor:pointer">&rsaquo;</button></div></div><div id="depth-watch" style="display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 22px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 20px,#000 calc(100% - 20px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 20px,#000 calc(100% - 20px),transparent 100%)"></div></div>'
+      + '<div style="' + card + '"><div style="display:flex;flex-direction:column;gap:6px"><div style="' + lab + '">SCOREBOARD&nbsp;&middot;&nbsp;THE&nbsp;30-DAY&nbsp;GAME</div><div style="' + sub + '">$1,000 stake &mdash; can the engine beat buy-and-hold TQQQ?</div></div><div id="depth-score"></div></div>'
+      + '</div>';
+  }
+
+  function renderWatchTiles(){
+    const box = document.getElementById('depth-watch'); if (!box) return;
+    const tiles = computeCoverageTiles(), P = DEPTH_PAL[currentSkin] || DEPTH_PAL.glass;
+    const cnt = document.getElementById('depth-watch-count'); if (cnt) cnt.textContent = tiles.length;
+    box.innerHTML = tiles.map(function (c){
+      const v = verdictInfo(c.verdict);
+      const vStyle = 'font:700 11px ui-monospace,Menlo,monospace;letter-spacing:1.5px;padding:6px 11px;border-radius:999px;white-space:nowrap;color:' + v.c + ';background:' + hexA(v.c, 0.14) + ';border:1px solid ' + hexA(v.c, 0.42);
+      const levelChip = c.level ? '<div style="display:inline-block;margin-top:4px;font:600 11px ui-monospace,Menlo,monospace;letter-spacing:1px;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:6px 10px;border-radius:7px">' + escapeHtml(c.level) + '</div>' : '';
+      const whyHtml = (c.why || []).map(function (p){ return '<div style="font:400 13px/1.55 system-ui,sans-serif;color:rgba(255,255,255,0.55);margin-bottom:2px">' + escapeHtml(p) + '</div>'; }).join('');
+      return '<div style="scroll-snap-align:start;flex:0 0 258px;border-radius:16px;border:1px solid rgba(255,255,255,0.09);background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.016));padding:22px 20px;display:flex;flex-direction:column;gap:12px;box-sizing:border-box">'
+        + '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div style="font:700 30px/1 \'Avenir Next Condensed\',\'Avenir Next\',system-ui,sans-serif;letter-spacing:0.5px;color:#f3f8fb">' + escapeHtml(c.tk) + '</div><div style="' + vStyle + '">' + v.label + '</div></div>'
+        + '<div style="font:500 13px/1.3 system-ui,sans-serif;color:rgba(255,255,255,0.5)">' + escapeHtml(c.name) + '</div>'
+        + '<div style="font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:1px;color:' + hexA(P.accent, 0.7) + '">' + escapeHtml(c.theme) + '</div>'
+        + '<div style="flex:1;display:flex;flex-direction:column;gap:10px"><div style="font:400 14px/1.55 system-ui,sans-serif;color:rgba(255,255,255,0.66)">' + escapeHtml(c.thesisLine) + '</div>' + whyHtml + levelChip + '</div>'
+        + '<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.07);padding-top:12px"><span style="font:500 12px/1 system-ui,sans-serif;color:rgba(255,255,255,0.4)">' + escapeHtml(c.size || '') + '</span><span style="font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:1px;color:' + hexA(P.accent, 0.55) + '">' + escapeHtml(c.tk) + '</span></div>'
+        + '</div>';
+    }).join('');
+  }
+
+  function renderScore(){
+    const box = document.getElementById('depth-score'); if (!box) return;
+    const s = computeScore(), P = DEPTH_PAL[currentSkin] || DEPTH_PAL.glass;
+    const green = P.ret, red = 'linear-gradient(180deg,#fff2f2,#fca5a5 46%,#df5559 100%)', white = 'linear-gradient(180deg,#ffffff,#d6e2ea 44%,#93a4b8 100%)';
+    const clip = ';-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent';
+    const stat = function (label, val, grad, note){ return '<div style="border-radius:16px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.022);padding:20px 22px;display:flex;flex-direction:column"><div style="font:600 10.5px/1 ui-monospace,Menlo,monospace;letter-spacing:1.5px;color:rgba(255,255,255,0.45)">' + label + '</div><div style="font:600 46px/1 \'Outfit\',system-ui,sans-serif;margin-top:10px;background:' + grad + clip + '">' + escapeHtml(val) + '</div><div style="font:400 12px/1.3 system-ui,sans-serif;color:rgba(255,255,255,0.38);margin-top:9px">' + note + '</div></div>'; };
+    box.innerHTML =
+      '<div style="position:relative;overflow:hidden;border-radius:18px;border:1px solid ' + P.scoreBorder + ';background:' + P.scoreBg + ';padding:30px 32px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:18px"><div style="position:relative;z-index:1"><div style="font:600 12px/1 ui-monospace,Menlo,monospace;letter-spacing:2px;color:' + P.head + '">RETURN SINCE INCEPTION</div><div style="font:600 90px/0.9 \'Outfit\',system-ui,sans-serif;margin-top:14px;background:' + green + clip + ';filter:drop-shadow(0 6px 22px ' + P.retShadow + ')">' + escapeHtml(s.returnPct) + '</div><div style="display:flex;align-items:baseline;gap:12px;margin-top:14px"><span style="font:500 32px/1 \'Outfit\',system-ui,sans-serif;background:' + white + clip + '">' + escapeHtml(s.value) + '</span><span style="font:400 14px/1 system-ui,sans-serif;color:rgba(255,255,255,0.4)">net liquidation</span></div></div>'
+      + (s.sparkPoints ? '<svg viewBox="0 0 200 66" preserveAspectRatio="none" style="position:relative;z-index:1;width:246px;height:78px;overflow:visible;flex:none"><polyline points="' + s.sparkPoints + '" fill="none" stroke="' + P.spark + '" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" style="filter:drop-shadow(0 0 6px ' + hexA(P.spark, 0.7) + ')"></polyline></svg>' : '') + '</div>'
+      + '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:18px">' + stat('ALPHA vs TQQQ', s.alphaPts, green, 'TQQQ ' + escapeHtml(s.benchmark)) + stat('MAX DRAWDOWN', s.ddPct, red, 'deepest peak-to-trough') + stat('WIN RATE', s.winRate, white, s.tradeCount + ' closed trades') + stat('BEST DAY', s.bestDay, green, escapeHtml(s.bestDayName)) + '</div>'
+      + '<div style="border-radius:16px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.022);padding:20px 24px"><div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px"><div style="font:600 12px/1 ui-monospace,Menlo,monospace;letter-spacing:2px;color:rgba(255,255,255,0.55)">DAY&nbsp;' + s.day + '&nbsp;OF&nbsp;30</div><div style="font:500 13px/1 system-ui,sans-serif;color:rgba(255,255,255,0.4)">' + s.daysLeft + ' days left in the game</div></div><div style="height:12px;border-radius:999px;background:rgba(255,255,255,0.06);overflow:hidden"><div style="width:' + Math.round(s.day / s.ofDays * 100) + '%;height:100%;border-radius:999px;background:' + P.bar + ';box-shadow:0 0 16px ' + P.barGlow + '"></div></div></div>';
+  }
+
+  function feedFlow(tries){ const el = document.getElementById('depth-flow'); if (el && el.setModel){ try { el.setModel(computeFlowModel()); } catch (e){} return; } if ((tries || 0) < 60) setTimeout(function (){ feedFlow((tries || 0) + 1); }, 120); }
+
+  function renderDepthData(){ if (!DATA) return; renderWatchTiles(); renderScore(); feedFlow(0); }
+
+  function mountDepth(skin){
+    const host = document.getElementById('depth-root'); if (!host) return;
+    host.innerHTML = buildDepthShell(skin);
+    host.querySelectorAll('button[data-variant]').forEach(function (b){
+      b.addEventListener('click', function (){
+        const el = document.getElementById('depth-flow'); if (el) el.setAttribute('variant', b.getAttribute('data-variant'));
+        host.querySelectorAll('button[data-variant]').forEach(function (x){ x.style.cssText = variantBtnStyle(x === b, DEPTH_PAL[currentSkin] || DEPTH_PAL.glass); });
+      });
+    });
+    const sc = document.getElementById('depth-watch'), wl = document.getElementById('depth-watch-left'), wr = document.getElementById('depth-watch-right');
+    if (wl && sc) wl.addEventListener('click', function (){ sc.scrollBy({ left:-276, behavior:'smooth' }); });
+    if (wr && sc) wr.addEventListener('click', function (){ sc.scrollBy({ left:276, behavior:'smooth' }); });
+    renderDepthData();
+  }
+
   /* ─────────────────────────── boot ─────────────────────────── */
   function boot(){
     wireToggle();
