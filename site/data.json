@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-07-14T18:19:59.964Z",
+  "generated_at": "2026-07-14T18:21:06.709Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 99466.35,
+    "equity": 99497.03,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98466.35,
-    "day_pnl": 2960.51,
+    "total_pnl": 98497.03,
+    "day_pnl": 2991.19,
     "positions": [
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 29.09,
-        "pl": 325,
-        "plpc": 2.2,
+        "current": 29.13,
+        "pl": 348.4,
+        "plpc": 2.35,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 211.96,
-        "pl": 221,
-        "plpc": 0.81,
+        "current": 211.92,
+        "pl": 215.8,
+        "plpc": 0.79,
         "thesis": ""
       },
       {
@@ -38,26 +38,26 @@
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 33.22,
-        "pl": 207.86,
-        "plpc": 8.48,
+        "current": 33.21,
+        "pl": 207.07,
+        "plpc": 8.45,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 135.03,
-        "pl": -9.5,
-        "plpc": -0.14,
+        "current": 135.28,
+        "pl": 3,
+        "plpc": 0.04,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 75.62,
-        "pl": -413.91,
+        "current": 75.63,
+        "pl": -412.53,
         "plpc": -1.9,
         "thesis": ""
       },
@@ -65,9 +65,9 @@
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 144.7,
-        "pl": -64.59,
-        "plpc": -0.47,
+        "current": 144.68,
+        "pl": -66.5,
+        "plpc": -0.48,
         "thesis": ""
       }
     ],
@@ -103,36 +103,36 @@
     ]
   },
   "live": {
-    "equity": 995.21,
+    "equity": 995.1,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -4.79,
-    "day_pnl": 37.22,
+    "total_pnl": -4.9,
+    "day_pnl": 37.11,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 33.22,
-        "pl": 2.63,
-        "plpc": 8.61,
+        "current": 33.21,
+        "pl": 2.62,
+        "plpc": 8.58,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.62,
-        "pl": -1.4,
-        "plpc": -0.74,
+        "current": 18.61,
+        "pl": -1.55,
+        "plpc": -0.83,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.62,
-        "pl": -6.7,
-        "plpc": -0.88,
+        "current": 75.63,
+        "pl": -6.65,
+        "plpc": -0.87,
         "thesis": ""
       }
     ],
@@ -670,6 +670,10 @@
       {
         "t": 1784052900000,
         "v": 995.45
+      },
+      {
+        "t": 1784053200000,
+        "v": 995.23
       }
     ]
   },
@@ -680,14 +684,14 @@
       "name": "ProShares 3x Nasdaq-100",
       "theme": "Leveraged core",
       "verdict": "buy",
-      "verdict_label": "LIVE - core KEPT, chip rally holding, still just under entry (no trail), $68.50 GTC stop ✓",
-      "thesis": "**The 3x core - kept, the reclaim's holding.** 10 sh @ $76.29; ~**$75.47 (-1.1% vs entry, +3.9% today)**. Cool June CPI has QQQ back above its 50-day and pressing its 20-day - Monday's broken regime is repairing on the semi snapback. TQQQ reclaimed off a $73.41 intraday low (a higher low vs Monday's $72.09) but is still a hair under my $76.29 entry, so **no trail yet**, and it sits well above the **$68.50 GTC stop** (below the 7/8 $69.57 spike low). Trails up once it clears entry with a confirmed higher low; if QQQ loses its 50-day again the core gets de-risked.",
+      "verdict_label": "LIVE - core KEPT, chip rally holding, still a hair under entry (no trail), $68.50 GTC stop ✓",
+      "thesis": "**The 3x core - kept, the reclaim's holding.** 10 sh @ $76.29; ~**$75.57 (-0.9% vs entry, +3.9% today)**. Cool June CPI has QQQ back above its 50-day and pressing its 20-day as semis lead the snapback. TQQQ is riding higher lows off Monday's $72 washout but still just under my $76.29 entry, so **no trail yet**; it sits well above the wide **$68.50 GTC stop** (below the 7/8 spike low). Trails up once it clears entry on a confirmed higher low; if QQQ loses its 50-day the core gets de-risked.",
       "size": "$755",
       "size_pct": 76,
       "size_note": "10 sh held - the single 3x core, ~76% of sleeve, $68.50 GTC stop",
       "plan_usd": 755,
       "horizon": 0.3,
-      "updated": "2026-07-14T13:44:00-04:00",
+      "updated": "2026-07-14T14:17:00-04:00",
       "stop": 68.5,
       "hold_reason": "This is our main position — a 3x-Nasdaq ETF we ride as the market's core engine. It got scary Monday when QQQ closed under both its 20- and 50-day, but I didn't panic-sell the low the night before CPI — and that paid off: the CPI came in cool, QQQ reclaimed both its lines, and the 3x bounced back near our entry. We're 10 shares in at $76.29 behind a wide $68.50 stop, and I'm holding because the uptrend is repairing. What I'm watching: the reclaim holding and TQQQ clearing our entry with a real higher low — then I trail the stop up; if QQQ slips back under its 50-day I revisit.",
       "price": 75.62,
@@ -739,8 +743,8 @@
       "horizon": 0.2,
       "updated": "2026-07-14T13:44:00-04:00",
       "trigger": "SOXX > 600 close",
-      "price": 181.5,
-      "chg_pct": 9.78,
+      "price": 181.34,
+      "chg_pct": 9.68,
       "spark": [
         164.2,
         151.66,
@@ -771,7 +775,7 @@
         229.99,
         252.93,
         215,
-        181.5
+        181.34
       ]
     },
     {
@@ -779,19 +783,19 @@
       "name": "GraniteShares 2x NVDA",
       "theme": "Leveraged core",
       "verdict": "buy",
-      "verdict_label": "LIVE - day's best (1 sh), +7.4%, stop trailed 29.50->30.00 GTC ✓",
-      "thesis": "**Day's best - 2x NVDA riding the chip snapback.** 1 sh @ $30.59; ~**$32.86 (+7.4% vs entry, +7.1% today)**. NVDA +3.5% (~$211) as hedge funds pile back into semis. It's now clear of entry with higher lows (7/13 $30.65, 7/14 $30.78), so I **trailed the stop 29.50->30.00 GTC** to lock the gain - still ~8.7% of room below recent structure, wide enough for 2x noise on a $33 satellite. Trails further if NVDA keeps building higher lows.",
+      "verdict_label": "LIVE - day's best (1 sh), +8.2%, stop trailed again 30.00->31.30 GTC ✓",
+      "thesis": "**Day's best - 2x NVDA riding the chip lead.** 1 sh @ $30.59; ~**$33.11 (+8.2% vs entry, +7.9% today)**. NVDA finally leads the sector (+3.9% to ~$212, at day highs) after being the YTD laggard - hedge funds piling back into semis + Blackwell ramping H2. Clear of entry on rising higher lows (7/13 $30.65, 7/14 $30.78), so I **trailed the stop 30.00->31.30 GTC** to bank more of the gain (~5.5% room below now). A $33 satellite - it rides while NVDA leads; only sells if the intraday move actually reverses.",
       "size": "$33",
       "size_pct": 3,
       "size_note": "1 sh held - ~$33, stop trailed to $30.00 GTC",
       "plan_usd": 33,
       "horizon": 0.3,
-      "updated": "2026-07-14T13:44:00-04:00",
+      "updated": "2026-07-14T14:17:00-04:00",
       "trigger": null,
-      "stop": 30,
-      "hold_reason": "A small 2x-NVDA position we hold as a leveraged bet on Nvidia's AI-chip demand. We're 1 share in at $30.59 and it's our best performer today (+7.4%) as NVDA rips back toward its day-high on the cool inflation print and the semi snapback. It's now above our entry and making higher lows, so I trailed the stop up to $30.00 to lock in the gain while keeping room for 2x noise. What I'm watching: as long as NVDA keeps building higher lows I trail the stop up further; if it rolls over, $30 takes us out near breakeven-plus.",
-      "price": 33.22,
-      "chg_pct": 8.23,
+      "stop": 31.3,
+      "hold_reason": "This is our 2x-NVDA satellite, riding the single strongest engine in the market right now. We bought it on NVDA's support-reclaim and it's the book's best position, +8% since entry. NVDA had lagged the whole chip rally this year and is only now breaking out, with Blackwell volume coming in H2 - so there's room. We've trailed the stop up to $31.30 to lock in most of the gain; it keeps riding unless NVDA rolls over hard.",
+      "price": 33.21,
+      "chg_pct": 8.19,
       "spark": [
         39.13,
         38.1,
@@ -822,7 +826,7 @@
         29.67,
         28.76,
         27.53,
-        33.22
+        33.21
       ]
     },
     {
@@ -839,7 +843,7 @@
       "horizon": 0.3,
       "updated": "2026-07-14T13:44:00-04:00",
       "stop": null,
-      "price": 211.96,
+      "price": 211.95,
       "chg_pct": 4.16,
       "spark": [
         225.04,
@@ -871,7 +875,7 @@
         198.94,
         195.89,
         191.97,
-        211.96
+        211.95
       ]
     },
     {
@@ -888,8 +892,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.3,
       "updated": "2026-07-14T13:14:00-04:00",
-      "price": 257.18,
-      "chg_pct": -0.15,
+      "price": 256.96,
+      "chg_pct": -0.24,
       "spark": [
         267.1,
         262.03,
@@ -920,7 +924,7 @@
         268.01,
         268.8,
         264.14,
-        257.18
+        256.96
       ]
     },
     {
@@ -975,15 +979,15 @@
       "ticker": "TSLA",
       "name": "Tesla",
       "theme": "High-beta bench",
-      "verdict": "buy",
-      "verdict_label": "PAPER — 36 sh held, stop $348 GTC ✓",
-      "thesis": "**On the practice book — 36 sh @ $410.10, ~$391.9 (-3.9% today, -4.4% entry).** Q2 deliveries (480,126, a beat) already out — no imminent earnings landmine. Behind the **$348 GTC stop** (-15%, below the $394 reclaim). A clean non-chip name diversifying the paper book off its NVDA/semis tilt. LIVE: no position — a whole share (~$392) needs a core sale to fund the ~$1k sleeve; re-engage on a clear >$415 push.",
+      "verdict": "avoid",
+      "verdict_label": "PAPER - SOLD 36 @ $396.23 (flat laggard, cut to fund chip rotation)",
+      "thesis": "**Cut it (paper).** Flat all day (+0.4%), faded from $404, no fresh catalyst and not part of the chip move - the definition of a laggard while semis rip. Sold the paper 36 sh @ $396.23 (small realized loss vs $410 entry) to redeploy into NVDA calls + PLTR. Back on the bench until it shows its own reason to move; no live position.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "PAPER 36 sh @ $410.10, $348 GTC stop; no live position",
+      "size_note": "SOLD from paper this run - laggard, capital rotated into chip leadership.",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "2026-07-14T11:45:00-04:00",
+      "updated": "2026-07-14T14:17:00-04:00",
       "stop": 348,
       "price": 396.46,
       "chg_pct": 0.41,
@@ -1125,19 +1129,19 @@
       "name": "SoFi",
       "theme": "High-beta bench",
       "verdict": "buy",
-      "verdict_label": "LIVE - held, green but lagging the chip theme, $17.60 GTC stop ✓",
-      "thesis": "**The lone non-chip long - green but trailing the tape.** 10 sh @ $18.76; ~**$18.70 (-0.3% vs entry, +3.1% today)**. Bounced off an $18.14 dip back to ~$18.70 while semis led; holds above its recent ~$18.05 floor and the **$17.60 GTC stop**. Lower yields from the cool CPI help a rate-sensitive lender into 7/29 earnings (Goldman target $21). On a short leash: if it rolls under its floor or clearly lags into weakness, it's the first rotation into semi strength.",
+      "verdict_label": "LIVE - held, green but lagging the chip theme, $17.60 GTC stop ✓ (rotation-watch)",
+      "thesis": "**The lone non-chip long - green but trailing the tape.** 10 sh @ $18.76; ~**$18.66 (-0.5% vs entry, +2.9% today)**. Bounced off an $18.14 dip while semis led; holds above its ~$18.05 floor and the **$17.60 GTC stop**. Lower yields from the cool CPI help a rate-sensitive lender into 7/29 earnings (Goldman $21 target). On a short leash: it's the first live rotation into semi strength if it rolls under its floor or clearly lags into weakness. (Note: cut the *paper* SOFI this run to fund the chip rotation - live held for its own catalyst + no clean funding path.)",
       "size": "$187",
       "size_pct": 19,
       "size_note": "10 sh held - ~19% of sleeve, $17.60 GTC stop",
       "plan_usd": 187,
       "horizon": 0.4,
-      "updated": "2026-07-14T13:44:00-04:00",
+      "updated": "2026-07-14T14:17:00-04:00",
       "trigger": null,
       "stop": 17.6,
       "hold_reason": "A fintech name we bought for its own story — Goldman's $21 target, ARK buying, a small-business-loan push and the Composer AI deal, all heading into July 29 earnings. We're 10 shares in at $18.76, a hair underwater but it's been building today (+2.6%) and lower yields from the cool CPI help a rate-sensitive lender. Keeping it behind a $17.60 stop. What I'm watching: it needs to hold its ~$18.70 breakout; if it rolls back under, the stop takes us out.",
       "price": 18.61,
-      "chg_pct": 2.62,
+      "chg_pct": 2.56,
       "spark": [
         15.59,
         15.7,
@@ -1175,17 +1179,17 @@
       "ticker": "PLTR",
       "name": "Palantir",
       "theme": "High-beta bench",
-      "verdict": "watch",
-      "verdict_label": "WATCH - reversed a dip to green ~$134 (+3.6%); rich but bid",
-      "thesis": "**The reversal held.** Gapped to $122.7 at the open, reclaimed to a $134 high and holding **~$133 (+2.5% today)** - one of the day's strongest reversals, back to relative-strength leadership. Top rotation candidate if capital frees up, but it's well off the low - want a pullback that holds >$130, not a chase. No live BP to act anyway.",
+      "verdict": "buy",
+      "verdict_label": "PAPER - bought 50 @ $135.22 on the breakout, $121.50 stop; live still no BP",
+      "thesis": "**Bought the breakout (paper).** Reclaimed from a $122.7 open low to a $135.7 high and holding **~$135 (+4.0% today)** - one of the day's strongest reversals, back to relative-strength leadership. Took 50 sh in the paper moonshot lab @ $135.22 with a **$121.50 stop** (below today's low) as a fresh momentum leg funded by the TSLA/SOFI cut. Live: no BP to act, so it stays a live watch.",
       "size": "$0",
       "size_pct": 0,
-      "size_note": "reversed green, holding ~$132; rotation candidate on a pullback, not a chase",
+      "size_note": "PAPER: 50 sh @ $135.22, $121.50 stop. Live: rotation watch, no BP.",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "2026-07-14T13:44:00-04:00",
-      "price": 135.03,
-      "chg_pct": 3.82,
+      "updated": "2026-07-14T14:17:00-04:00",
+      "price": 135.28,
+      "chg_pct": 4.01,
       "spark": [
         133.97,
         135.11,
@@ -1216,7 +1220,7 @@
         113.5,
         107.3,
         112.82,
-        135.03
+        135.28
       ]
     },
     {
@@ -1233,8 +1237,8 @@
       "card": "/research/be.html",
       "horizon": 0.2,
       "updated": "2026-07-14T13:44:00-04:00",
-      "price": 237.94,
-      "chg_pct": 1.99,
+      "price": 237.64,
+      "chg_pct": 1.86,
       "spark": [
         276.29,
         259.04,
@@ -1265,7 +1269,7 @@
         325.42,
         308.97,
         253.24,
-        237.94
+        237.64
       ]
     },
     {
@@ -1282,8 +1286,8 @@
       "horizon": 0.3,
       "updated": "2026-07-14T13:44:00-04:00",
       "stop": 74.5,
-      "price": 79.75,
-      "chg_pct": 3.88,
+      "price": 79.67,
+      "chg_pct": 3.78,
       "spark": [
         124.68,
         131.23,
@@ -1314,7 +1318,7 @@
         85.4,
         80.68,
         84.57,
-        79.75
+        79.67
       ]
     },
     {
@@ -1331,8 +1335,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.3,
       "updated": "2026-07-14T11:45:00-04:00",
-      "price": 46.25,
-      "chg_pct": 0.85,
+      "price": 46.15,
+      "chg_pct": 0.63,
       "spark": [
         62.23,
         58.59,
@@ -1363,7 +1367,7 @@
         54.06,
         50.99,
         50.03,
-        46.25
+        46.15
       ]
     },
     {
@@ -1379,8 +1383,8 @@
       "thesis": "**Validated the call to NOT chase it.** It was +15% Monday at the fear peak; I flagged that buying a 3x inverse already up 15% the night before a CPI the Street saw cooling was the whipsaw trap — and that's exactly what happened: the cool print sent semis ripping (SOXL +~13%), so SOXS got rug-pulled. No position, no regret. A short only makes sense on fresh downside confirmation, not off a relief-rally morning.",
       "horizon": 0.2,
       "updated": "2026-07-14T11:45:00-04:00",
-      "price": 4.17,
-      "chg_pct": -10.71,
+      "price": 4.18,
+      "chg_pct": -10.49,
       "spark": [
         9.15,
         9.85,
@@ -1411,7 +1415,7 @@
         4.07,
         3.62,
         4.24,
-        4.17
+        4.18
       ]
     }
   ],
@@ -2230,6 +2234,10 @@
       [
         1784052900000,
         995.45
+      ],
+      [
+        1784053200000,
+        995.23
       ]
     ],
     "1W": [
