@@ -707,6 +707,7 @@
   };
   function hexA(hex, a){ const n = parseInt(String(hex).slice(1), 16); return 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')'; }
   function splitSent(s){ return (String(s || '').match(/[^.!?]+[.!?]+|\S[^.!?]*$/g) || []).map(function (x){ return x.trim(); }).filter(Boolean); }
+  function trigNum(t){ if (t == null || t === '') return null; const s = String(t).trim(); if (!/^\$?[\d.,]+$/.test(s)) return null; const n = parseFloat(s.replace(/[$,]/g, '')); return isFinite(n) ? n : null; }
   function verdictInfo(v){ const m = { held:{label:'HELD',c:'#cfe0ea'}, buy:{label:'BUY',c:'#34d399'}, short:{label:'SHORT',c:'#f87171'}, watch:{label:'WATCH',c:'#e6b45a'}, avoid:{label:'AVOID',c:'#8fa0b5'} }; return m[v] || m.watch; }
   function holdWhyArr(c, p){ const hr = c && c.hold_reason; if (hr) return splitSent(hr).slice(0, 3); const th = stripMd((c && c.thesis) || (p && p.thesis) || ''); return th ? splitSent(th).slice(0, 2) : []; }
   function marketOpenNow(){ try { const parts = new Intl.DateTimeFormat('en-US', { timeZone:'America/New_York', weekday:'short', hour:'2-digit', minute:'2-digit', hour12:false }).formatToParts(new Date()); const wd = parts.find(function (p){ return p.type==='weekday'; }).value; const hh = +parts.find(function (p){ return p.type==='hour'; }).value; const mm = +parts.find(function (p){ return p.type==='minute'; }).value; if (['Sat','Sun'].indexOf(wd) >= 0) return false; const t = hh*60+mm; return t >= 570 && t < 960; } catch (e){ return true; } }
@@ -726,10 +727,10 @@
     });
     cov.forEach(function (c){
       if (positions.some(function (p){ return p.symbol === c.ticker; })) return;
-      const trig = c.trigger; if (!((c.verdict === 'buy' || c.verdict === 'short') && trig)) return;
+      const tn = trigNum(c.trigger); if (!((c.verdict === 'buy' || c.verdict === 'short') && tn != null)) return;
       const id = String(c.ticker).toLowerCase();
-      nodes.push({ id:id, col:2, kind:'armed', label:c.ticker, sub:'waiting · ' + (c.size || ''), name:c.name, verdict:c.verdict, size:(c.plan_usd ? ('would deploy $' + c.plan_usd) : (c.size || '')), level:'trigger $' + trig, why: holdWhyArr(c) });
-      edges.push({ from:id, to:(c.verdict === 'short' ? 'stop' : 'buy'), kind:'up', cond:'crosses $' + trig + ' → ' + (c.verdict === 'short' ? 'SHORT' : 'BUY') + (c.plan_usd ? (' $' + c.plan_usd) : '') });
+      nodes.push({ id:id, col:2, kind:'armed', label:c.ticker, sub:'waiting · ' + (c.size || ''), name:c.name, verdict:c.verdict, size:(c.plan_usd ? ('would deploy $' + c.plan_usd) : (c.size || '')), level:'trigger $' + tn, why: holdWhyArr(c) });
+      edges.push({ from:id, to:(c.verdict === 'short' ? 'stop' : 'buy'), kind:'up', cond:'crosses $' + tn + ' → ' + (c.verdict === 'short' ? 'SHORT' : 'BUY') + (c.plan_usd ? (' $' + c.plan_usd) : '') });
       edges.push({ from:id, to:'cash', kind:'idle', cond:'no trigger → cash' });
     });
     const hot = edges.find(function (e){ return e.from === hotId && e.kind === 'up'; }) || edges.find(function (e){ return e.kind === 'up'; }); if (hot) hot.hot = true;
@@ -746,9 +747,11 @@
     const cov = arr(DATA && DATA.coverage), heldSet = {}; arr(live().positions).forEach(function (p){ heldSet[p.symbol] = true; });
     const deep = { BE:'research/be.html', CEG:'research/ceg.html', OKLO:'research/oklo.html' };
     return cov.map(function (c){
-      const why = holdWhyArr(c), level = c.trigger ? ('trigger $' + c.trigger) : (c.stop ? ('stop $' + c.stop) : '');
+      const why = holdWhyArr(c), tn = trigNum(c.trigger);
+      const level = (c.trigger != null && c.trigger !== '') ? (tn != null ? ('trigger $' + tn) : ('trigger ' + String(c.trigger))) : (c.stop ? ('stop $' + c.stop) : '');
+      let size = c.size || c.size_note || ''; if (/^\$?0$/.test(String(size).trim())) size = '';
       return { tk:c.ticker, name:c.name || c.ticker, theme:String(c.theme || '').toUpperCase(), verdict: heldSet[c.ticker] ? 'held' : (c.verdict || 'watch'),
-        size:c.size || c.size_note || '', level:level, thesisLine: splitSent(stripMd(c.thesis || ''))[0] || why[0] || '', why:why, deep:deep[c.ticker] };
+        size:size, level:level, thesisLine: splitSent(stripMd(c.thesis || ''))[0] || why[0] || '', why:why, deep:deep[c.ticker] };
     });
   }
 
