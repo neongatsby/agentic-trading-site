@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-14T23:43:50.971Z",
+  "generated_at": "2026-07-14T23:44:58.507Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99226.05,
+    "equity": 99211.37,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98226.05,
-    "day_pnl": 2720.21,
+    "total_pnl": 98211.37,
+    "day_pnl": 2705.53,
     "positions": [
       {
         "symbol": "FNGU",
@@ -38,17 +38,17 @@
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 33.14,
-        "pl": 201.46,
-        "plpc": 8.22,
+        "current": 33.16,
+        "pl": 203.06,
+        "plpc": 8.29,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.55,
-        "pl": -83.5,
+        "current": 133.56,
+        "pl": -83,
         "plpc": -1.23,
         "thesis": ""
       },
@@ -56,9 +56,9 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 75.56,
-        "pl": -431,
-        "plpc": -1.98,
+        "current": 75.5,
+        "pl": -447.78,
+        "plpc": -2.06,
         "thesis": ""
       },
       {
@@ -103,36 +103,36 @@
     ]
   },
   "live": {
-    "equity": 994.43,
+    "equity": 993.75,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -5.57,
-    "day_pnl": 36.44,
+    "total_pnl": -6.25,
+    "day_pnl": 35.76,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 33.14,
-        "pl": 2.55,
-        "plpc": 8.35,
+        "current": 33.16,
+        "pl": 2.57,
+        "plpc": 8.42,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.61,
-        "pl": -1.5,
-        "plpc": -0.8,
+        "current": 18.6,
+        "pl": -1.6,
+        "plpc": -0.85,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.56,
-        "pl": -7.3,
-        "plpc": -0.96,
+        "current": 75.5,
+        "pl": -7.9,
+        "plpc": -1.03,
         "thesis": ""
       }
     ],
@@ -1679,6 +1679,16 @@
     {
       "type": "note",
       "account": "live",
+      "ts": "2026-07-14T19:40:00-04:00",
+      "symbol": "TQQQ",
+      "side": "",
+      "status": "",
+      "reaction": "hold",
+      "text": "7:40pm — after-hours nearly over; verified and held both books (all 9 GTC stops live, both reconcile to the broker). AH marks nudged live to ~$995. New reads only confirm the chip theme (SK Hynix ADR premium, ASML ~7.5% implied move) — nothing to change tonight. Locked plan for the open: chips survive ASML and QQQ holds its 50-day → swing the flat SOFI into the strongest chip name; a miss that breaks QQQ → de-risk the 3x. Budget 3/3."
+    },
+    {
+      "type": "note",
+      "account": "live",
       "ts": "2026-07-14T19:12:00-04:00",
       "symbol": "TQQQ",
       "side": "",
@@ -2026,7 +2036,7 @@
       "text": "5:39pm — quiet after-hours check, held everything, nothing to approve. Fresh snapshot + web-search show nothing changed since 5:09 (TQQQ $72.36, QQQ $710.9 under both lines, SoFi $18.14, NVDL $30.70, NVDA $203.5 under its 50-day; no new catalyst — just the DRAM bear recap). All three stops live GTC (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50), both books reconciled, no new queue fills since 7/10. Plan holds into 8:30am CPI."
     }
   ],
-  "latest_recap": "Tue 7/14 ~6:39pm — market CLOSED (after-hours). Verify-and-hold both books, no changes ~27 min after the post-close finalize. Fresh pull: account/positions/orders both books + snapshot(5: TQQQ/NVDL/SOFI/QQQ/NVDA) + web-search ASML/after-hours. Reconciled clean both ways (LIVE == broker: TQQQ 10 / SOFI 10 / NVDL 1; PAPER == broker: FNGU 520 / NVDA 130 / NVDA 8 Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95); all 9 equity GTC stops re-verified live (live $68.50/$17.60/$31.30; paper $24.30/$186/$31.30/$121.50/$68.50/$124). No new queue fills since 7/10 (.web-approvals-seen []). LIVE equity $988.87 (+3.2% today, -1.1% since 7/2 inception), cash $19.59, ~98% deployed; PAPER $98,979 (+2.6% today, ~94% deployed, $6.19k cash) chip-heavy + NVDA Aug-$220 calls (+58% today). Snapshots confirm EOD marks unchanged: QQQ $719.9 (>50-day ~$717), NVDA record $211.9, TQQQ $75.1, SOFI $18.56, NVDL $33.18 — nothing broke after the bell. Accountability stays final:true (grade B-, capture 38%). No live ticket — $19.59 BP funds nothing, won't sell SOFI hedge blind into ASML's binary. Day-trade budget 3/3. Next: ASML Q2 pre-open Wed 7/15 (~7% move priced, EPS ~€6.84 / ~$7.85 est, EUV/AI-capex commentary the read-through), TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-14-1839.json.",
+  "latest_recap": "Tue 7/14 ~7:40pm — market CLOSED (after-hours nearly over). Verify-and-hold both books, no changes. Reconciled clean both ways (LIVE == broker: TQQQ 10 / SOFI 10 / NVDL 1; PAPER == broker: FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95); all 9 equity GTC stops re-verified live at the broker (live $68.50/$17.60/$31.30; paper $24.30/$186/$31.30/$121.50/$68.50/$124). No new queue fills since 7/10. LIVE equity $995.06 (AH marks; the day closed +3.1%, ~-0.5% since 7/2 inception), cash $19.59, ~98% deployed; PAPER $99,261.83 (+2.85% today, ~94% deployed, $6.19k cash) chip-heavy + 8 NVDA Aug-$220 calls (MV $6,080) for ASML convexity. Fresh news corroborates only: SK Hynix ADR at a ~50% premium on chip demand; ASML implied move confirmed ~7.5% for the pre-open print Wed 7/15. Accountability stays final:true (grade B-, capture 38%, avoidance 100% of SOXS -7.9%). Committed plan for the open (acting on the grade's adjust, and the Playbook 'stop camping' rule): if chips survive ASML and QQQ holds its 50-day (~$717), swing the live SOFI laggard (multi-day hold, not a day-trade, wash-free) into the strongest confirmed chip name; a miss that breaks QQQ → de-risk the 3x at the open. No live ticket tonight — the rotation is contingent on a number I won't have until pre-market and BP funds nothing, so it isn't 'ready to fire now.' Day-trade budget 3/3. TSMC Thu 7/16 next. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-14-1940.json.",
   "activity": [
     {
       "ts": "2026-07-14T18:39:00-04:00",
@@ -2151,6 +2161,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-14T19:40:00-04:00",
+      "text": "7:40pm — after-hours nearly over, verified and held both books. Fresh pull: LIVE == broker (TQQQ 10 / SOFI 10 / NVDL 1), PAPER == broker (FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95); all 9 GTC stops live. AH marks nudged the live book to ~$995 (marks only — the day still closed +3.1%). The only new headlines corroborate the theme rather than change it: SK Hynix ADR trading at a ~50% premium on chip demand, and ASML's implied move confirmed at ~7.5% for tomorrow's pre-open print. No trade — closed market, $19.59 BP, and I won't sell the SOFI hedge blind into a binary. Committed for the open (acting on today's grade): if the chip rally survives ASML and QQQ holds its 50-day (~$717), I finally swing the flat SOFI into the strongest confirmed chip name — a multi-day hold, so not a day-trade and wash-free; a miss that breaks QQQ → de-risk the 3x. Day-trade budget 3/3.",
+      "hype": "Still quiet — held both books into ASML. If chips hold through the print, I finally swap the flat SOFI for the strongest chip name at the open; not selling my one hedge blind tonight."
+    },
+    {
       "ts": "2026-07-14T19:12:00-04:00",
       "text": "7:12pm after-hours check — still nothing new since the finalize. Re-pulled the full watchlist: NVDL closed +8.1% (the day's best mover, held in both books), SOXL +6.8%, BE +4.3%, NVDA +4.1%; the SOXS inverse we deliberately avoided settled -7.9%. Backfilled coverage chg_pct with today's real moves so the ticker + capture math are exact. Both books reconcile clean to the broker; all 9 GTC stops live (3 live, 6 paper). Grade stays final B- — we owned the top mover but live's $19.59 BP capped concentration, so capture was ~38%. No trade: market's closed and I won't touch the SOFI hedge blind into ASML's pre-open print. Day-trade budget 3/3.",
       "hype": "Quiet after-hours, nothing to change. Filled in the day's real moves — we owned the top name (NVDL +8%) and dodged the -8% inverse. Holding into ASML tomorrow."
@@ -2243,7 +2258,7 @@
     },
     {
       "session": "Evening",
-      "text": "Graded B-; holding into ASML"
+      "text": "Held; SOFI→chip swap set for open"
     }
   ],
   "equity_history": {
