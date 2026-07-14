@@ -19,8 +19,8 @@
   #stage  { position: absolute; top: 0; left: 0; width: 1080px; transform-origin: top left; }
   #skin-root { width: 1080px; }
   /* ── agentic two-page snap scroll (cockpit ⇄ depth, magnetic) ── */
-  #pages { position: fixed; inset: 0; overflow-y: auto; overflow-x: auto; scroll-snap-type: y proximity; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
-  .page { position: relative; width: 100%; min-height: 100vh; scroll-snap-align: start; }
+  #pages { position: fixed; inset: 0; overflow-y: auto; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+  .page { position: relative; width: 100%; min-height: 100vh; }
   #depth-scaler { position: relative; width: 100%; }
   #depth-stage { position: absolute; top: 0; left: 0; width: 1080px; transform-origin: top left; }
   #depth-root { width: 1080px; }
@@ -723,30 +723,48 @@
     const L = live(), equity = num(L.equity), positions = arr(L.positions);
     const cov = arr(DATA && DATA.coverage), covBy = function (s){ return cov.find(function (c){ return c.ticker === s; }); };
     const invested = positions.reduce(function (a, p){ return a + (parseFloat(p.qty) || 0) * num(p.current); }, 0);
-    const deployedPct = equity ? Math.min(100, Math.round(invested / equity * 100)) : 0;
+    const freeCash = Math.max(0, equity - invested), deployedPct = equity ? Math.min(100, Math.round(invested / equity * 100)) : 0;
     const thoughts = arr(DATA && DATA.pulse).slice(0, 6).map(function (p){ return stripMd(p.hype || p.text || ''); }).filter(Boolean);
-    const nodes = [], edges = []; let hotId = null, hotProx = Infinity;
+    const nodes = [], edges = [], heldStops = [], armedTrigs = []; let hotId = null, hotProx = Infinity;
+    const px = function (n){ return '$' + num(n).toFixed(2); };
     positions.forEach(function (p){
-      const c = covBy(p.symbol), id = String(p.symbol).toLowerCase(), stop = c && c.stop ? c.stop : null, cur = num(p.current);
-      nodes.push({ id:id, col:2, kind:'held', label:p.symbol, sub:(c && c.size) ? c.size : (fmtShares(parseFloat(p.qty)||0) + ' sh'), name:(c && c.name) || p.symbol, verdict:'held', size:(c && c.size) || '', level: stop ? ('stop $' + stop) : '', why: holdWhyArr(c, p) });
-      if (stop){ edges.push({ from:id, to:'trail', kind:'up', cond:'holds > $' + stop + ' → trail' }); edges.push({ from:id, to:'stop', kind:'stop', cond:'breaks $' + stop + ' → flat' }); const prox = cur ? (cur - num(stop)) / cur : Infinity; if (prox >= 0 && prox < hotProx){ hotProx = prox; hotId = id; } }
+      const c = covBy(p.symbol), id = String(p.symbol).toLowerCase(), stop = c ? trigNum(c.stop) : null;
+      const entry = num(p.entry), cur = num(p.current), plpc = num(p.plpc), qty = parseFloat(p.qty) || 0;
+      // data-specific lead line so the tap-detail names the REAL numbers, then the engine's reasoning
+      let lead = 'Held';
+      if (entry) lead += ' from ' + px(entry);
+      if (cur) lead += ', now ' + px(cur);
+      if (plpc) lead += ' (' + (plpc >= 0 ? '+' : '−') + Math.abs(plpc * 100).toFixed(1) + '%)';
+      lead += '.';
+      if (stop != null && cur) lead += ' Hard stop ' + px(stop) + ' — if it breaks, we\'re out flat (~' + Math.round((cur - stop) / cur * 100) + '% below spot).';
+      else if (stop != null) lead += ' Hard stop ' + px(stop) + '.';
+      const why = [lead].concat(holdWhyArr(c, p));
+      nodes.push({ id:id, col:2, kind:'held', label:p.symbol, sub:(c && c.size) || ('$' + money(cur * qty)), name:(c && c.name) || p.symbol, verdict:'held', size:(c && c.size) || '', level: stop != null ? ('stop ' + px(stop)) : '', why: why });
+      if (stop != null){ heldStops.push(p.symbol + ' ' + px(stop)); edges.push({ from:id, to:'trail', kind:'up', cond:'holds > ' + px(stop) + ' → trail' }); edges.push({ from:id, to:'stop', kind:'stop', cond:'breaks ' + px(stop) + ' → flat' }); const prox = cur ? (cur - stop) / cur : Infinity; if (prox >= 0 && prox < hotProx){ hotProx = prox; hotId = id; } }
       else edges.push({ from:id, to:'trail', kind:'up', cond:'holds → trail' });
     });
     cov.forEach(function (c){
       if (positions.some(function (p){ return p.symbol === c.ticker; })) return;
       const tn = trigNum(c.trigger); if (!((c.verdict === 'buy' || c.verdict === 'short') && tn != null)) return;
-      const id = String(c.ticker).toLowerCase();
-      nodes.push({ id:id, col:2, kind:'armed', label:c.ticker, sub:'waiting · ' + (c.size || ''), name:c.name, verdict:c.verdict, size:(c.plan_usd ? ('would deploy $' + c.plan_usd) : (c.size || '')), level:'trigger $' + tn, why: holdWhyArr(c) });
-      edges.push({ from:id, to:(c.verdict === 'short' ? 'stop' : 'buy'), kind:'up', cond:'crosses $' + tn + ' → ' + (c.verdict === 'short' ? 'SHORT' : 'BUY') + (c.plan_usd ? (' $' + c.plan_usd) : '') });
+      const id = String(c.ticker).toLowerCase(), plan = trigNum(c.plan_usd), st = trigNum(c.stop), isShort = c.verdict === 'short';
+      armedTrigs.push(c.ticker + ' @ ' + px(tn));
+      let lead = (isShort ? 'Shorts' : 'Buys') + ' at ' + px(tn) + ' — the trigger. It only fires if price actually crosses that level';
+      lead += (plan != null && plan > 0) ? (', then deploys $' + plan) : '';
+      lead += (st != null) ? ('; a stop attaches at ' + px(st) + ' the moment it\'s on.') : '.';
+      const why = [lead].concat(holdWhyArr(c));
+      nodes.push({ id:id, col:2, kind:'armed', label:c.ticker, sub:'waiting · ' + (isShort ? 'short' : 'buy') + ' ' + px(tn), name:c.name, verdict:c.verdict, size:(plan != null && plan > 0 ? ('$' + plan) : ''), level:'trigger ' + px(tn), why: why });
+      edges.push({ from:id, to:(isShort ? 'stop' : 'buy'), kind:'up', cond:'crosses ' + px(tn) + ' → ' + (isShort ? 'SHORT' : 'BUY') + (plan != null && plan > 0 ? (' $' + plan) : '') });
       edges.push({ from:id, to:'cash', kind:'idle', cond:'no trigger → cash' });
     });
     const hot = edges.find(function (e){ return e.from === hotId && e.kind === 'up'; }) || edges.find(function (e){ return e.kind === 'up'; }); if (hot) hot.hot = true;
+    const stopsLine = heldStops.length ? ('Live stops right now: ' + heldStops.join(', ') + '.') : 'Every position rides a hard stop.';
+    const armedLine = armedTrigs.length ? ('Armed and waiting: ' + armedTrigs.join(', ') + '.') : 'Nothing armed right now.';
     return { root:{ label:'$' + money(equity), sub: deployedPct + '% deployed' }, marketOpen: marketOpenNow(), thoughts: thoughts,
       nodes: nodes, edges: edges, terminals: [
-        { id:'buy',   kind:'up',   label:'NEW HIGH / add', detail:['A fresh high confirms strength — the engine adds to the winner and ratchets the trailing stop up behind it.'] },
-        { id:'trail', kind:'up',   label:'keep trailing',  detail:['Holding above its stop — let it run; the stop ratchets up under the rising price, locking gains in.'] },
-        { id:'stop',  kind:'stop', label:'STOPPED OUT',    detail:['Price broke the line — the position closes flat, automatically, no debate.'] },
-        { id:'cash',  kind:'idle', label:'SITTING CASH',   detail:['No trigger hit — capital stays in cash rather than force a trade. Dry powder is a position.'] }
+        { id:'buy',   kind:'up',   label:'NEW HIGH / add', detail:['A fresh high confirms strength — the engine adds to the winner and ratchets the trailing stop up behind it.', armedLine] },
+        { id:'trail', kind:'up',   label:'keep trailing',  detail:['Holding above its stop — let it run; the stop ratchets up under the rising price, locking gains in.', stopsLine] },
+        { id:'stop',  kind:'stop', label:'STOPPED OUT',    detail:['Price broke the line — that position closes flat, automatically, no debate.', stopsLine] },
+        { id:'cash',  kind:'idle', label:'SITTING CASH',   detail:['No trigger hit — capital stays in cash rather than force a trade.', 'Dry powder right now: $' + money(freeCash) + ' (~' + (equity ? Math.round(freeCash / equity * 100) : 0) + '%).'] }
       ] };
   }
 
