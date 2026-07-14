@@ -18,6 +18,15 @@
   #scaler { position: relative; width: 100%; }
   #stage  { position: absolute; top: 0; left: 0; width: 1080px; transform-origin: top left; }
   #skin-root { width: 1080px; }
+  /* ── agentic two-page snap scroll (cockpit ⇄ depth, magnetic) ── */
+  #pages { position: fixed; inset: 0; overflow-y: auto; overflow-x: hidden; scroll-snap-type: y proximity; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+  .page { position: relative; width: 100%; min-height: 100vh; scroll-snap-align: start; }
+  #depth-scaler { position: relative; width: 100%; }
+  #depth-stage { position: absolute; top: 0; left: 0; width: 1080px; transform-origin: top left; }
+  #depth-root { width: 1080px; }
+  #scroll-cue { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 50; display: flex; flex-direction: column; align-items: center; gap: 5px; color: rgba(255,255,255,0.55); font: 600 10px/1 ui-monospace, Menlo, monospace; letter-spacing: 2.5px; pointer-events: none; animation: cueBob 1.9s ease-in-out infinite; }
+  #scroll-cue svg { width: 20px; height: 20px; }
+  @keyframes cueBob { 0%,100% { transform: translateX(-50%) translateY(0); opacity: .5 } 50% { transform: translateX(-50%) translateY(5px); opacity: .95 } }
 
   /* keyframes used by the skins */
   @keyframes bulbPulse { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
@@ -117,14 +126,27 @@
   </div>
 </div>
 
-<div id="scaler">
-  <div id="stage">
-    <div id="skin-root"></div>
-  </div>
+<div id="pages">
+  <section class="page" id="page-cockpit">
+    <div id="scaler">
+      <div id="stage">
+        <div id="skin-root"></div>
+      </div>
+    </div>
+    <div id="scroll-cue"><span>THE&nbsp;DEPTH&nbsp;LAYER</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+  </section>
+  <section class="page" id="page-depth">
+    <div id="depth-scaler">
+      <div id="depth-stage">
+        <div id="depth-root"></div>
+      </div>
+    </div>
+  </section>
 </div>
 
-<!-- The visual engine. Loaded ONCE; it self-registers the custom elements. -->
+<!-- The visual engines. Loaded ONCE; they self-register the custom elements. -->
 <script src="/slot-visuals.js"></script>
+<script src="/depth-visuals.js"></script>
 
 <script>
 (function () {
@@ -614,6 +636,7 @@
     if (DATA) { renderLists(root); seedValueUI(root); }
     setRange(currentRange);
     tickClock(root);
+    mountDepth(skinKey);                     /* page 2 — depth layer for this skin */
     if (window.ResizeObserver) { ro = new ResizeObserver(applyScale); ro.observe(root); }
     applyScale();
   }
@@ -643,13 +666,17 @@
 
   /* ─────────────────────────── scale the 1080-wide root to viewport width ─────────────────────────── */
   function applyScale(){
-    const stage = document.getElementById('stage'), scaler = document.getElementById('scaler');
-    if (!stage || !scaler) return;
     const s = window.innerWidth / 1080;   // stretch to fill the FULL monitor width (edge to edge, dynamic)
     window.__hiDPR = Math.max(1, s);      // WebGL renders at the true upscaled resolution → stays crisp
-    stage.style.transform = 'scale(' + s + ')';
-    const natH = currentRoot ? currentRoot.offsetHeight : 1920;
-    scaler.style.height = (natH * s) + 'px';
+    function scaleStage(stageId, scalerId, rootEl){
+      const stage = document.getElementById(stageId), scaler = document.getElementById(scalerId);
+      if (!stage || !scaler) return;
+      stage.style.transform = 'scale(' + s + ')';
+      const natH = rootEl && rootEl.offsetHeight ? rootEl.offsetHeight : 1920;
+      scaler.style.height = (natH * s) + 'px';
+    }
+    scaleStage('stage', 'scaler', currentRoot);                                    // page 1 — cockpit
+    scaleStage('depth-stage', 'depth-scaler', document.getElementById('depth-root'));  // page 2 — depth
   }
 
   /* ─────────────────────────── polling ─────────────────────────── */
@@ -667,7 +694,7 @@
   function poll(){
     return fetchData().then(function (d){
       if (d) DATA = d;
-      if (DATA && currentRoot) { renderLists(currentRoot); setRange(currentRange); liveTick(currentRoot); applyScale(); }
+      if (DATA && currentRoot) { renderLists(currentRoot); setRange(currentRange); liveTick(currentRoot); renderDepthData(); applyScale(); }
       return DATA;
     });
   }
