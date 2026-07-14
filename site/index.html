@@ -19,7 +19,7 @@
   #stage  { position: absolute; top: 0; left: 0; width: 1080px; transform-origin: top left; }
   #skin-root { width: 1080px; }
   /* ── agentic two-page snap scroll (cockpit ⇄ depth, magnetic) ── */
-  #pages { position: fixed; inset: 0; overflow-y: auto; overflow-x: hidden; scroll-snap-type: y proximity; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+  #pages { position: fixed; inset: 0; overflow-y: auto; overflow-x: auto; scroll-snap-type: y proximity; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
   .page { position: relative; width: 100%; min-height: 100vh; scroll-snap-align: start; }
   #depth-scaler { position: relative; width: 100%; }
   #depth-stage { position: absolute; top: 0; left: 0; width: 1080px; transform-origin: top left; }
@@ -213,6 +213,7 @@
   let currentSkin = 'glass';   /* default: Glass Terminal (F2) */
   let currentRange = '1D';
   let currentRoot = null;
+  let userScale = 1;                        /* Cmd +/- text/UI zoom multiplier (persisted) */
   let lastValue = null;
   let ro = null;
 
@@ -665,18 +666,24 @@
   }
 
   /* ─────────────────────────── scale the 1080-wide root to viewport width ─────────────────────────── */
+  function setZoom(m){ userScale = Math.min(2, Math.max(0.6, m)); try { localStorage.setItem('uiZoom', String(userScale)); } catch (e) {} applyScale(); }
   function applyScale(){
-    const s = window.innerWidth / 1080;   // stretch to fill the FULL monitor width (edge to edge, dynamic)
-    window.__hiDPR = Math.max(1, s);      // WebGL renders at the true upscaled resolution → stays crisp
+    const fit = window.innerWidth / 1080;              // fit the 1080-wide design to the viewport
+    const boost = window.innerWidth < 640 ? 1.12 : 1;  // mobile: a touch larger so text is legible
+    const s = fit * boost * userScale;                 // Cmd +/- scales on top of the fit
+    window.__hiDPR = Math.max(1, s);                   // WebGL renders at the true upscaled resolution → stays crisp
+    const contentW = 1080 * s, offset = Math.max(0, (window.innerWidth - contentW) / 2);
     function scaleStage(stageId, scalerId, rootEl){
       const stage = document.getElementById(stageId), scaler = document.getElementById(scalerId);
       if (!stage || !scaler) return;
       stage.style.transform = 'scale(' + s + ')';
       const natH = rootEl && rootEl.offsetHeight ? rootEl.offsetHeight : 1920;
+      scaler.style.width = contentW + 'px';            // scroll area matches the scaled content
       scaler.style.height = (natH * s) + 'px';
+      scaler.style.marginLeft = offset + 'px';         // center when ≤ viewport; left-align (pan) when larger
     }
-    scaleStage('stage', 'scaler', currentRoot);                                    // page 1 — cockpit
-    scaleStage('depth-stage', 'depth-scaler', document.getElementById('depth-root'));  // page 2 — depth
+    scaleStage('stage', 'scaler', currentRoot);                                       // page 1 — cockpit
+    scaleStage('depth-stage', 'depth-scaler', document.getElementById('depth-root')); // page 2 — depth
   }
 
   /* ─────────────────────────── polling ─────────────────────────── */
@@ -842,6 +849,14 @@
   function boot(){
     wireToggle();
     window.addEventListener('resize', applyScale);
+    try { const z = parseFloat(localStorage.getItem('uiZoom')); if (isFinite(z) && z > 0) userScale = Math.min(2, Math.max(0.6, z)); } catch (e) {}
+    window.addEventListener('keydown', function (e){
+      if (!(e.metaKey || e.ctrlKey)) return;
+      const k = e.key;
+      if (k === '=' || k === '+') { e.preventDefault(); setZoom(userScale * 1.1); }
+      else if (k === '-' || k === '_') { e.preventDefault(); setZoom(userScale / 1.1); }
+      else if (k === '0') { e.preventDefault(); setZoom(1); }
+    });
     try { const saved = localStorage.getItem('skin'); if (saved && SKINS[saved]) currentSkin = saved; } catch (e) {}
     if (!SKINS[currentSkin]) currentSkin = 'glass';   /* default: Glass Terminal (F2) */
     mount(currentSkin);
