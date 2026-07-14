@@ -127,7 +127,7 @@
         const font = await ensureThree();
         this._font = font;
         const r = new THREE.WebGLRenderer({ canvas: this._canvas, antialias: true, alpha: true });
-        r.setPixelRatio(Math.min((window.devicePixelRatio || 1) * (window.__hiDPR || 1), 3));  // account for CSS-upscale of the stage → crisp on 4K
+        r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
         r.outputEncoding = THREE.sRGBEncoding;
         r.toneMapping = THREE.ACESFilmicToneMapping;
         r.toneMappingExposure = 1.0;
@@ -543,7 +543,7 @@
     }
     _draw() {
       if (!this._pts) return;
-      const c = this._canvas, dpr = Math.min((window.devicePixelRatio || 1) * (window.__hiDPR || 1), 3);
+      const c = this._canvas, dpr = Math.min(window.devicePixelRatio || 1, 2);
       const w = this.clientWidth || 300, h = this.clientHeight || 150;
       if (c.width !== w * dpr || c.height !== h * dpr) { c.width = w * dpr; c.height = h * dpr; this._static = null; }
       if (!this._static) this._drawStatic(w, h, dpr);
@@ -631,17 +631,16 @@
       this._ro = new ResizeObserver(() => this._reset());
       this._ro.observe(this);
       this._reset();
-      // re-locate the emitter once the equity chart has laid out — WITHOUT a full re-scatter
-      // (a _reset() here caused the visible "pop/glitch"; just clear the cached chart so new
-      // particles naturally start emitting from the curve as they respawn).
-      setTimeout(() => { if (this._init) this._chartEl = undefined; }, 1800);
-      setTimeout(() => { if (this._init) this._chartEl = undefined; }, 4500);
+      // re-scatter + re-lock to the curve once the equity chart has laid out
+      setTimeout(() => { if (this._init) { this._chartEl = undefined; this._reset(); } }, 1800);
+      setTimeout(() => { if (this._init) { this._chartEl = undefined; this._reset(); } }, 4500);
       const loop = () => {
         this._raf = requestAnimationFrame(loop);
         this._pvc = ((this._pvc || 0) + 1) % 30;
         if (this._pvc === 1) {
           const rct = this.getBoundingClientRect();
           this._visible = rct.bottom > -120 && rct.top < innerHeight + 120 && rct.width > 0;
+          if (!this._up) this._sampleCurve(); // keep the snow line locked to the graph as layout settles
         }
         if (this._visible) this._step();
       };
@@ -655,47 +654,115 @@
       this._canvas.width = w * dpr; this._canvas.height = h * dpr;
       const mode = this.getAttribute('mode') || 'up';
       const density = parseFloat(this.getAttribute('density') || '1');
-      const count = Math.round((w * h) / 70000 * density);
       const up = mode === 'up';
-      const colors = up ? ['#34d399', '#6ee7b7', '#a7f3d0', '#10b981'] : ['#f87171', '#dc2626', '#b91c1c', '#fca5a5'];
-      this._sprites = colors.map(c => sprite(c, 8));
       this._up = up;
+      // green day → motes drift UP out of the curve; red day → ash FALLS and piles on the line
+      const count = up
+        ? Math.round((w * h) / 70000 * density)
+        : Math.max(46, Math.round((w * h) / 34000 * density));
+      const colors = up ? ['#34d399', '#6ee7b7', '#a7f3d0', '#10b981'] : ['#f87171', '#dc2626', '#ef4444', '#b91c1c'];
+      this._sprites = colors.map(c => sprite(c, 8));
+      // settled-snow sprites: frostier, lighter reds so the pile reads as accumulation, not more ash
+      this._snowSprites = ['#fecaca', '#fca5a5', '#fda4af', '#fecdd3'].map(c => sprite(c, 8));
+      // snow accumulation buckets across the width + the flakes resting on them
+      this._nb = Math.max(24, Math.round(w / 14));
+      this._pile = new Float32Array(this._nb);
+      this._settled = [];
+      this._chartEl = undefined;
       this._ps = Array.from({ length: count }, () => { const p = {}; this._spawn(p, true); return p; });
+      this._sampleCurve();
     }
     _chart() {
-      if (!this._chartEl) {
+      if (this._chartEl === undefined) {
         const scope = this.closest('[data-hero-scope]') || this.parentElement || document;
         this._chartEl = scope.querySelector('equity-chart') || null;
       }
       return this._chartEl;
     }
-    // spawn on the equity curve so particles emerge from behind the graph line
-    _spawn(p, initial) {
-      const rnd = Math.random, w = this._w, h = this._h, up = this._up;
-      let sx = rnd() * w, sy = up ? h * (0.35 + rnd() * 0.4) : h * 0.3;
+    // build a field-local polyline of the equity curve, so the snow knows where the line is
+    _sampleCurve() {
       const chart = this._chart();
-      if (chart && chart.curveLocal) {
-        const lp = chart.curveLocal(rnd());
-        if (lp) {
-          // convert chart-local → field-local, correcting for canvas zoom on the rects
-          const cr = chart.getBoundingClientRect(), fr = this.getBoundingClientRect();
-          const scale = (fr.width / (this.clientWidth || 1)) || 1;
-          sx = (cr.left - fr.left) / scale + lp.x;
-          sy = (cr.top - fr.top) / scale + lp.y;
+      if (!chart || !chart.curveLocal) { this._curve = null; return; }
+      const cr = chart.getBoundingClientRect(), fr = this.getBoundingClientRect();
+      if (!cr.width || !fr.width) { this._curve = null; return; }
+      const scale = (fr.width / (this.clientWidth || 1)) || 1;
+      const ox = (cr.left - fr.left) / scale, oy = (cr.top - fr.top) / scale;
+      const N = 96, curve = new Array(N);
+      for (let i = 0; i < N; i++) {
+        const lp = chart.curveLocal(i / (N - 1));
+        if (!lp) { this._curve = null; return; }
+        curve[i] = { x: ox + lp.x, y: oy + lp.y };
+      }
+      this._curve = curve;
+      this._cx0 = curve[0].x; this._cx1 = curve[N - 1].x;
+    }
+    // field-local y of the equity line at field-local x (clamped to the curve span)
+    _curveYAt(x) {
+      const c = this._curve; if (!c) return this._h * 0.62;
+      const n = c.length;
+      if (x <= this._cx0) return c[0].y;
+      if (x >= this._cx1) return c[n - 1].y;
+      const f = (x - this._cx0) / (this._cx1 - this._cx0) * (n - 1);
+      const i0 = f | 0, i1 = Math.min(i0 + 1, n - 1), fr = f - i0;
+      return c[i0].y + (c[i1].y - c[i0].y) * fr;
+    }
+    _bucket(x) { return Math.max(0, Math.min(this._nb - 1, (x / this._w * this._nb) | 0)); }
+    _pileAt(x) {
+      // blend neighbouring buckets so the snow surface is smooth, not stepped
+      const b = this._bucket(x), p = this._pile;
+      return (p[b] * 2 + p[Math.max(0, b - 1)] + p[Math.min(this._nb - 1, b + 1)]) / 4;
+    }
+    _spawn(p, initial) {
+      const rnd = Math.random, w = this._w, h = this._h;
+      if (this._up) {
+        // emerge from the equity curve, drift upward (unchanged behaviour)
+        let sx = rnd() * w, sy = h * (0.35 + rnd() * 0.4);
+        const chart = this._chart();
+        if (chart && chart.curveLocal) {
+          const lp = chart.curveLocal(rnd());
+          if (lp) {
+            const cr = chart.getBoundingClientRect(), fr = this.getBoundingClientRect();
+            const scale = (fr.width / (this.clientWidth || 1)) || 1;
+            sx = (cr.left - fr.left) / scale + lp.x;
+            sy = (cr.top - fr.top) / scale + lp.y;
+          }
         }
+        p.x = sx; p.y = sy - 2;
+        if (initial) p.y -= rnd() * Math.max(0, p.y);
+        p.r = 0.8 + rnd() * 1.4;
+        p.vy = -(0.08 + rnd() * 0.2);
+        p.wob = rnd() * Math.PI * 2; p.wobSp = 0.002 + rnd() * 0.006;
+        p.drift = (rnd() - 0.5) * 0.14;
+        p.a = 0.35 + rnd() * 0.5;
+        p.s = (rnd() * this._sprites.length) | 0;
+        p.fl = rnd() * Math.PI * 2;
+      } else {
+        // fall from above the line, gently swaying
+        p.x = rnd() * w;
+        const surf = this._curveYAt(p.x) - this._pileAt(p.x);
+        p.y = initial ? rnd() * Math.max(10, surf - 6) : -8 - rnd() * 46;
+        p.r = 1 + rnd() * 1.7;
+        p.vy = 1.0 + rnd() * 1.1;
+        p.wob = rnd() * Math.PI * 2; p.wobSp = 0.008 + rnd() * 0.02;
+        p.sway = 0.28 + rnd() * 0.5;
+        p.a = 0.5 + rnd() * 0.42;
+        p.s = (rnd() * this._sprites.length) | 0;
       }
-      p.x = sx; p.y = sy + (up ? -2 : 4);
-      if (initial) {
-        if (up) p.y -= rnd() * Math.max(0, p.y);
-        else p.y += rnd() * Math.max(0, h - p.y);
-      }
-      p.r = up ? 0.8 + rnd() * 1.4 : 1 + rnd() * 1.8;
-      p.vy = (up ? -1 : 1) * (0.08 + rnd() * 0.2);
-      p.wob = rnd() * Math.PI * 2; p.wobSp = 0.002 + rnd() * 0.006;
-      p.drift = (rnd() - 0.5) * 0.14;
-      p.a = 0.35 + rnd() * 0.5;
-      p.s = (rnd() * this._sprites.length) | 0;
-      p.fl = rnd() * Math.PI * 2;
+    }
+    // a falling flake reaches the snow surface: raise the pile and drop a resting flake
+    _deposit(x, surfaceY) {
+      const b = this._bucket(x);
+      const maxPile = Math.min(60, this._h * 0.14);
+      const th = 1.6 + Math.random() * 1.4;
+      if (this._pile[b] < maxPile) this._pile[b] += th;
+      this._settled.push({
+        x, y: surfaceY - Math.random() * 2, b, th,
+        r: 1.2 + Math.random() * 1.8,
+        s: (Math.random() * this._snowSprites.length) | 0,
+        born: performance.now(),
+        life: 4200 + Math.random() * 4200, // rest, then slowly melt — pile recedes as flakes age out
+      });
+      if (this._settled.length > 640) { const o = this._settled.shift(); this._pile[o.b] = Math.max(0, this._pile[o.b] - o.th); }
     }
     _step() {
       this._fc = (this._fc || 0) + 1;
@@ -704,23 +771,77 @@
       const { _w: w, _h: h, _dpr: dpr } = this;
       g.setTransform(dpr, 0, 0, dpr, 0, 0);
       g.clearRect(0, 0, w, h);
-      g.globalCompositeOperation = this._up ? 'lighter' : 'source-over';
+      if (this._up) this._stepUp(g); else this._stepDown(g);
+    }
+    _stepUp(g) {
+      const { _w: w } = this;
+      g.globalCompositeOperation = 'lighter';
       for (const p of this._ps) {
         p.y += p.vy;
         p.wob += p.wobSp;
-        p.x += Math.sin(p.wob) * (this._up ? 0.16 : 0.28) + p.drift;
+        p.x += Math.sin(p.wob) * 0.16 + p.drift;
         p.fl += 0.03;
-        if (this._up && p.y < -10) this._spawn(p, false);
-        if (!this._up && p.y > h + 10) this._spawn(p, false);
+        if (p.y < -10) this._spawn(p, false);
         if (p.x < -20) p.x = w + 20; if (p.x > w + 20) p.x = -20;
-        const alpha = p.a * (this._up ? 1 : 0.75 + Math.sin(p.fl) * 0.25);
         const spr = this._sprites[p.s], d = p.r * 4;
-        // bloom halo + core
-        g.globalAlpha = alpha * 0.35;
+        g.globalAlpha = p.a * 0.35;
         g.drawImage(spr, p.x - d * 1.6, p.y - d * 1.6, d * 3.2, d * 3.2);
-        g.globalAlpha = alpha;
+        g.globalAlpha = p.a;
         g.drawImage(spr, p.x - d / 2, p.y - d / 2, d, d);
       }
+      g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+    }
+    _stepDown(g) {
+      const { _w: w, _h: h } = this;
+      const now = performance.now();
+      // 1) falling ash
+      g.globalCompositeOperation = 'source-over';
+      for (const p of this._ps) {
+        p.vy = Math.min(4.0, p.vy + 0.025); // gentle acceleration
+        p.y += p.vy;
+        p.wob += p.wobSp;
+        p.x += Math.sin(p.wob) * p.sway;
+        if (p.x < 0) p.x = 0; else if (p.x > w) p.x = w;
+        // land only once the curve is known; before that, fall off-screen and respawn
+        const surf = this._curve ? this._curveYAt(p.x) - this._pileAt(p.x) : (h + 20);
+        if (p.y >= surf) { this._deposit(p.x, surf); this._spawn(p, false); continue; }
+        if (p.y > h + 10) { this._spawn(p, false); continue; }
+        const spr = this._sprites[p.s], d = p.r * 4, a = p.a * (0.78 + Math.sin(p.wob) * 0.22);
+        g.globalAlpha = a * 0.3;
+        g.drawImage(spr, p.x - d, p.y - d, d * 2, d * 2);
+        g.globalAlpha = a;
+        g.drawImage(spr, p.x - d / 2, p.y - d / 2, d, d);
+      }
+      // 2) snow CRUST hugging the line — a frosty band from (line − pile) down to the line,
+      //    so it visibly collects where ash has landed and recedes as flakes melt
+      if (this._curve) {
+        const step = Math.max(4, w / 120), top = [];
+        for (let x = 0; x <= w; x += step) top.push([x, this._curveYAt(x) - this._pileAt(x)]);
+        g.globalCompositeOperation = 'source-over';
+        g.beginPath();
+        g.moveTo(top[0][0], top[0][1]);
+        for (let i = 1; i < top.length; i++) g.lineTo(top[i][0], top[i][1]);
+        for (let x = w; x >= 0; x -= step) g.lineTo(x, this._curveYAt(x)); // back along the line → 0-height where no snow
+        g.closePath();
+        g.save();
+        g.shadowColor = 'rgba(255,205,210,0.55)'; g.shadowBlur = 9;
+        g.fillStyle = 'rgba(255,232,235,0.5)';
+        g.fill();
+        g.restore();
+      }
+      // 3) sparkle: the individual settled flakes on the crust, additive, fading with age
+      g.globalCompositeOperation = 'lighter';
+      const keep = [];
+      for (const f of this._settled) {
+        const age = now - f.born;
+        if (age > f.life) { this._pile[f.b] = Math.max(0, this._pile[f.b] - f.th); continue; }
+        keep.push(f);
+        const fade = age < f.life * 0.65 ? 1 : 1 - (age - f.life * 0.65) / (f.life * 0.35);
+        const spr = this._snowSprites[f.s], d = f.r * 4;
+        g.globalAlpha = 0.6 * fade;
+        g.drawImage(spr, f.x - d / 2, f.y - d / 2, d, d);
+      }
+      this._settled = keep;
       g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
     }
     disconnectedCallback() {
@@ -924,7 +1045,7 @@
       try {
         await ensureThree();
         const r = new THREE.WebGLRenderer({ canvas: this._canvas, antialias: true, alpha: true });
-        r.setPixelRatio(Math.min((window.devicePixelRatio || 1) * (window.__hiDPR || 1), 3));  // crisp on CSS-upscaled stage
+        r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.25));
         r.outputEncoding = THREE.sRGBEncoding;
         r.toneMapping = THREE.ACESFilmicToneMapping;
         this._renderer = r;
@@ -1031,7 +1152,10 @@
     connectedCallback() {
       if (this._init) return; this._init = true;
       this.style.display = 'block';
-      this.style.position = 'relative';
+      // Respect an author-set position. The finals overlay this ridge BEHIND the 2D chart
+      // with position:absolute; forcing 'relative' here is what made a live/direct-mount port
+      // drop it into normal flow and STACK the ridge above the line instead of overlaying.
+      if (!this.style.position) this.style.position = 'relative';
       if (this.getAttribute('height')) this.style.height = this.getAttribute('height') + 'px';
       this._canvas = document.createElement('canvas');
       Object.assign(this._canvas.style, { width: '100%', height: '100%', display: 'block' });
@@ -1101,7 +1225,7 @@
         await ensureThree();
         const bgHex = this.getAttribute('bg') || '#0c081c';
         const r = new THREE.WebGLRenderer({ canvas: this._canvas, antialias: true, alpha: true });
-        r.setPixelRatio(Math.min((window.devicePixelRatio || 1) * (window.__hiDPR || 1), 3));  // account for CSS-upscale of the stage → crisp on 4K
+        r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
         r.outputEncoding = THREE.sRGBEncoding;
         r.toneMapping = THREE.ACESFilmicToneMapping;
         this._renderer = r;
