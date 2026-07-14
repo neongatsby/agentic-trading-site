@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-14T23:12:13.362Z",
+  "generated_at": "2026-07-14T23:13:20.897Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 98890.62,
+    "equity": 98893.46,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 97890.62,
-    "day_pnl": 2384.78,
+    "total_pnl": 97893.46,
+    "day_pnl": 2387.62,
     "positions": [
       {
         "symbol": "FNGU",
@@ -20,9 +20,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 211.4,
-        "pl": 148.2,
-        "plpc": 0.54,
+        "current": 211.38,
+        "pl": 145.68,
+        "plpc": 0.53,
         "thesis": ""
       },
       {
@@ -47,27 +47,27 @@
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.37,
-        "pl": -92.61,
-        "plpc": -1.37,
+        "current": 133.33,
+        "pl": -94.5,
+        "plpc": -1.4,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 75.03,
-        "pl": -580.04,
-        "plpc": -2.67,
+        "current": 75.05,
+        "pl": -574.68,
+        "plpc": -2.64,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 144.37,
-        "pl": -95.95,
-        "plpc": -0.69,
+        "current": 144.39,
+        "pl": -94.05,
+        "plpc": -0.68,
         "thesis": ""
       }
     ],
@@ -103,10 +103,10 @@
     ]
   },
   "live": {
-    "equity": 988.75,
+    "equity": 988.84,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -11.25,
-    "day_pnl": 30.76,
+    "total_pnl": -11.16,
+    "day_pnl": 30.85,
     "positions": [
       {
         "symbol": "NVDL",
@@ -121,18 +121,18 @@
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.58,
-        "pl": -1.8,
-        "plpc": -0.96,
+        "current": 18.57,
+        "pl": -1.9,
+        "plpc": -1.01,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.03,
-        "pl": -12.59,
-        "plpc": -1.65,
+        "current": 75.05,
+        "pl": -12.4,
+        "plpc": -1.63,
         "thesis": ""
       }
     ],
@@ -171,7 +171,7 @@
       },
       {
         "date": "Jul 14",
-        "value": 987.77
+        "value": 988.51
       }
     ],
     "intraday": [
@@ -923,11 +923,11 @@
       "size_note": "10 sh held — the single 3x core, ~76% of sleeve, $68.50 GTC stop",
       "plan_usd": 751,
       "horizon": 0.3,
-      "updated": "2026-07-14T17:40:00-04:00",
+      "updated": "2026-07-14T19:12:00-04:00",
       "stop": 68.5,
       "hold_reason": "This is our main position — a 3x-Nasdaq ETF we ride as the market's core engine. It got scary Monday when QQQ closed under both its 20- and 50-day, but I didn't panic-sell the low the night before CPI — and that paid off: the CPI came in cool, QQQ reclaimed both its lines, and the 3x bounced back near our entry. We're 10 shares in at $76.29 behind a wide $68.50 stop, and I'm holding because the uptrend is repairing. What I'm watching: the reclaim holding and TQQQ clearing our entry with a real higher low — then I trail the stop up; if QQQ slips back under its 50-day I revisit.",
-      "price": 75.12,
       "chg_pct": 3.29,
+      "price": 75.12,
       "spark": [
         75.17,
         74.11,
@@ -973,10 +973,10 @@
       "size_note": "gap-faded a +14% open to ~+7% — too whippy to chase",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "2026-07-14T17:40:00-04:00",
+      "updated": "2026-07-14T19:12:00-04:00",
       "trigger": "SOXX > 600 close",
-      "price": 177.16,
       "chg_pct": 7.15,
+      "price": 177.16,
       "spark": [
         164.2,
         151.66,
@@ -1022,12 +1022,12 @@
       "size_note": "1 sh held — ~$33, stop $31.30 GTC (protects the gain)",
       "plan_usd": 33,
       "horizon": 0.3,
-      "updated": "2026-07-14T17:40:00-04:00",
+      "updated": "2026-07-14T19:12:00-04:00",
       "trigger": null,
       "stop": 31.3,
       "hold_reason": "This is our 2x-NVDA satellite, riding the single strongest engine in the market right now. We bought it on NVDA's support-reclaim and it's the book's best position, +8% since entry. NVDA had lagged the whole chip rally this year and is only now breaking out, with Blackwell volume coming in H2 - so there's room. We've trailed the stop to $31.30, which protects most of the gain; it keeps riding unless NVDA rolls over hard, and ASML's print tomorrow is the next test.",
-      "price": 33.18,
       "chg_pct": 8.1,
+      "price": 33.18,
       "spark": [
         39.13,
         38.1,
@@ -1073,10 +1073,10 @@
       "size_note": "~$211.6 (+4%), record high; expressed via NVDL",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "2026-07-14T17:40:00-04:00",
+      "updated": "2026-07-14T19:12:00-04:00",
       "stop": null,
-      "price": 211.86,
       "chg_pct": 4.12,
+      "price": 211.86,
       "spark": [
         225.04,
         222.09,
@@ -1123,9 +1123,9 @@
       "plan_usd": 0,
       "card": "/research/ceg.html",
       "horizon": 0.3,
-      "updated": "2026-07-14T17:40:00-04:00",
-      "price": 256.41,
+      "updated": "2026-07-14T19:12:00-04:00",
       "chg_pct": -0.45,
+      "price": 256.41,
       "spark": [
         267.1,
         262.03,
@@ -1171,9 +1171,9 @@
       "size_note": "watch — ~$304 (-4.5%), trades with CEG",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "2026-07-14T17:40:00-04:00",
-      "price": 303.67,
+      "updated": "2026-07-14T19:12:00-04:00",
       "chg_pct": -0.69,
+      "price": 303.67,
       "spark": [
         370.87,
         339.63,
@@ -1219,10 +1219,10 @@
       "size_note": "SOLD from paper this run - laggard, capital rotated into chip leadership.",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "2026-07-14T17:40:00-04:00",
+      "updated": "2026-07-14T19:12:00-04:00",
       "stop": 348,
-      "price": 396.17,
       "chg_pct": 0.33,
+      "price": 396.17,
       "spark": [
         422.27,
         409.97,
@@ -1268,11 +1268,11 @@
       "size_note": "PAPER 520 sh @ $28.46 (~$28.87), $24.30 GTC stop live ✓",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "2026-07-14T17:40:00-04:00",
+      "updated": "2026-07-14T19:12:00-04:00",
       "trigger": 29.2,
       "stop": 24.3,
-      "price": 28.88,
       "chg_pct": 3.66,
+      "price": 28.88,
       "spark": [
         28.97,
         28.23,
@@ -1318,11 +1318,11 @@
       "size_note": "PAPER 95 sh @ $145.38 (~$144.29), $124 GTC stop live ✓",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "2026-07-14T17:40:00-04:00",
+      "updated": "2026-07-14T19:12:00-04:00",
       "trigger": 148.5,
       "stop": 124,
-      "price": 144.38,
       "chg_pct": 1.13,
+      "price": 144.38,
       "spark": [
         139.42,
         139.11,
@@ -1368,12 +1368,12 @@
       "size_note": "10 sh held — ~19% of sleeve, $17.60 GTC stop",
       "plan_usd": 185,
       "horizon": 0.4,
-      "updated": "2026-07-14T17:40:00-04:00",
+      "updated": "2026-07-14T19:12:00-04:00",
       "trigger": null,
       "stop": 17.6,
       "hold_reason": "This is our one non-chip position - a fintech we bought on a dip-reclaim near $18.75. It's the book's laggard right now: up only ~2% today while semis rip, and slightly red versus our entry. We're still holding behind the wide $17.60 stop, but it's the first thing I'll rotate into a cleaner chip setup - and since we bought it days ago, selling it isn't a day-trade, so that swap is free whenever a better name sets up.",
-      "price": 18.55,
       "chg_pct": 2.29,
+      "price": 18.55,
       "spark": [
         15.59,
         15.7,
@@ -1419,9 +1419,9 @@
       "size_note": "PAPER: 50 sh @ $135.22 (~$133.4), $121.50 stop. Live: rotation watch, no BP.",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "2026-07-14T17:40:00-04:00",
-      "price": 133.66,
+      "updated": "2026-07-14T19:12:00-04:00",
       "chg_pct": 2.77,
+      "price": 133.66,
       "spark": [
         133.97,
         135.11,
@@ -1468,9 +1468,9 @@
       "plan_usd": 0,
       "card": "/research/be.html",
       "horizon": 0.2,
-      "updated": "2026-07-14T17:40:00-04:00",
-      "price": 243.43,
+      "updated": "2026-07-14T19:12:00-04:00",
       "chg_pct": 4.34,
+      "price": 243.43,
       "spark": [
         276.29,
         259.04,
@@ -1516,10 +1516,10 @@
       "size_note": "running +3.7% (~$79.6); re-ticket on a hold >$82, not a chase",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "2026-07-14T17:40:00-04:00",
+      "updated": "2026-07-14T19:12:00-04:00",
       "stop": 74.5,
-      "price": 78.85,
       "chg_pct": 2.71,
+      "price": 78.85,
       "spark": [
         124.68,
         131.23,
@@ -1566,9 +1566,9 @@
       "plan_usd": 0,
       "card": "/research/oklo.html",
       "horizon": 0.3,
-      "updated": "2026-07-14T17:40:00-04:00",
-      "price": 46.49,
+      "updated": "2026-07-14T19:12:00-04:00",
       "chg_pct": 1.37,
+      "price": 46.49,
       "spark": [
         62.23,
         58.59,
@@ -1614,9 +1614,9 @@
       "plan_usd": 0,
       "thesis": "**Validated the call to NOT chase it.** It was +15% Monday at the fear peak; I flagged that buying a 3x inverse already up 15% the night before a CPI the Street saw cooling was the whipsaw trap — and that's exactly what happened: the cool print sent semis ripping (SOXL +~13%), so SOXS got rug-pulled. No position, no regret. A short only makes sense on fresh downside confirmation, not off a relief-rally morning.",
       "horizon": 0.2,
-      "updated": "2026-07-14T17:40:00-04:00",
-      "price": 4.28,
+      "updated": "2026-07-14T19:12:00-04:00",
       "chg_pct": -8.35,
+      "price": 4.28,
       "spark": [
         9.15,
         9.85,
@@ -1652,6 +1652,16 @@
     }
   ],
   "feed": [
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-14T19:12:00-04:00",
+      "symbol": "TQQQ",
+      "side": "",
+      "status": "",
+      "reaction": "hold",
+      "text": "7:12pm — after-hours quiet, held both books. Backfilled the board with today's real day-moves (NVDL +8.1% top mover, SOXL +6.8%, BE +4.3%, SOXS -7.9% dodged). All 9 GTC stops verified, both books reconcile clean to the broker. Nothing to change into ASML's pre-open print — I act on the number at the open, not a guess tonight."
+    },
     {
       "type": "note",
       "account": "live",
@@ -1990,14 +2000,6 @@
       "symbol": "TQQQ",
       "reaction": "hold",
       "text": "5:39pm — quiet after-hours check, held everything, nothing to approve. Fresh snapshot + web-search show nothing changed since 5:09 (TQQQ $72.36, QQQ $710.9 under both lines, SoFi $18.14, NVDL $30.70, NVDA $203.5 under its 50-day; no new catalyst — just the DRAM bear recap). All three stops live GTC (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50), both books reconciled, no new queue fills since 7/10. Plan holds into 8:30am CPI."
-    },
-    {
-      "type": "note",
-      "account": "live",
-      "ts": "2026-07-13T17:09:00-04:00",
-      "symbol": "TQQQ",
-      "reaction": "hold",
-      "text": "5:09pm after-hours — still dead quiet, held everything, nothing to approve. Prices pinned to the close (TQQQ $72.4, QQQ $711 under both lines, SoFi $18.14); no fresh catalyst after the bell. Confirmed tomorrow: 8:30am June CPI (~3.9% headline / ~2.9% core), then big-bank earnings + Warsh. Stops live GTC (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50). Plan holds: hot core / QQQ still broken → cut the 3x at the open; cool + QQQ reclaims ~$715 → keep it."
     }
   ],
   "latest_recap": "Tue 7/14 ~6:39pm — market CLOSED (after-hours). Verify-and-hold both books, no changes ~27 min after the post-close finalize. Fresh pull: account/positions/orders both books + snapshot(5: TQQQ/NVDL/SOFI/QQQ/NVDA) + web-search ASML/after-hours. Reconciled clean both ways (LIVE == broker: TQQQ 10 / SOFI 10 / NVDL 1; PAPER == broker: FNGU 520 / NVDA 130 / NVDA 8 Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95); all 9 equity GTC stops re-verified live (live $68.50/$17.60/$31.30; paper $24.30/$186/$31.30/$121.50/$68.50/$124). No new queue fills since 7/10 (.web-approvals-seen []). LIVE equity $988.87 (+3.2% today, -1.1% since 7/2 inception), cash $19.59, ~98% deployed; PAPER $98,979 (+2.6% today, ~94% deployed, $6.19k cash) chip-heavy + NVDA Aug-$220 calls (+58% today). Snapshots confirm EOD marks unchanged: QQQ $719.9 (>50-day ~$717), NVDA record $211.9, TQQQ $75.1, SOFI $18.56, NVDL $33.18 — nothing broke after the bell. Accountability stays final:true (grade B-, capture 38%). No live ticket — $19.59 BP funds nothing, won't sell SOFI hedge blind into ASML's binary. Day-trade budget 3/3. Next: ASML Q2 pre-open Wed 7/15 (~7% move priced, EPS ~€6.84 / ~$7.85 est, EUV/AI-capex commentary the read-through), TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-14-1839.json.",
@@ -2125,6 +2127,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-14T19:12:00-04:00",
+      "text": "7:12pm after-hours check — still nothing new since the finalize. Re-pulled the full watchlist: NVDL closed +8.1% (the day's best mover, held in both books), SOXL +6.8%, BE +4.3%, NVDA +4.1%; the SOXS inverse we deliberately avoided settled -7.9%. Backfilled coverage chg_pct with today's real moves so the ticker + capture math are exact. Both books reconcile clean to the broker; all 9 GTC stops live (3 live, 6 paper). Grade stays final B- — we owned the top mover but live's $19.59 BP capped concentration, so capture was ~38%. No trade: market's closed and I won't touch the SOFI hedge blind into ASML's pre-open print. Day-trade budget 3/3.",
+      "hype": "Quiet after-hours, nothing to change. Filled in the day's real moves — we owned the top name (NVDL +8%) and dodged the -8% inverse. Holding into ASML tomorrow."
+    },
+    {
       "ts": "2026-07-14T18:39:00-04:00",
       "text": "6:39pm, after-hours monitoring — nothing changed since the 6:12 finalize. Re-pulled snapshots + news: no fresh headline on any held name, QQQ closed $719.7 (holding its 50-day ~$717), NVDA a record $211.8. Both books reconcile clean to the broker; all 9 GTC stops live (3 live, 6 paper). ASML prints pre-open tomorrow with a ~7% move priced (analysts see AI-driven strength, revenue ~+31% y/y) — I act on the number at the open: beat + QQQ holds its 50-day → trail the 3x up and let it run; miss + QQQ breaks → de-risk the 3x. No live ticket — $19.59 BP funds nothing and I won't sell the SOFI hedge blind into a binary. Day-trade budget 3/3.",
       "hype": "Still dead quiet after-hours — holding into ASML, nothing to change. Beat and I let the 3x run; miss and I de-risk at the open."
@@ -2193,16 +2200,6 @@
       "ts": "2026-07-14T12:15:00-04:00",
       "text": "12:15pm — held everything, nothing to approve. The cool-CPI chip rally is holding but cooling off its highs: QQQ came off its $722 open to ~$719, still above its 50-day (~$717) and reclaiming — the regime's repairing, not fully confirmed. Book's up ~$27 today (+2.8%, equity $985), down a touch from the +$33 midday high as TQQQ eased to ~$74.64 (still under my $76.29 entry, so no trail) while NVDL holds the day's best at +5%. Fully deployed (~98%); $19.59 cash funds nothing, adds are wash-blocked, and SOXL/RKLB/BE are all extended intraday — chases, not setups — so I'm letting the winners run behind wide stops. All 3 live stops GTC-verified; paper 7 legs ~99% deployed, no drift.",
       "hype": "Chip pop's holding but off its highs — up ~$27 today. Just letting the 3x core run behind stops; nothing worth chasing with $20 cash."
-    },
-    {
-      "ts": "2026-07-14T11:45:00-04:00",
-      "text": "11:45am — the cool-CPI print (headline 3.5% vs 3.8% exp, core flat vs +2.9% est) lit a broad chip rally: AMD +5%, Intel +4%, AMAT +4%, SOXL +9.5%, NVDA +2.6%. QQQ ~$721, holding above BOTH its 20- and 50-day (~$717), so Monday's broken regime keeps repairing — exactly the tape the 3x core + NVDL are built for. Book +$33 today (+3.4%, equity $990.79): NVDL +5.3% (day's best), TQQQ +3.9% (still a touch under my $76.29 entry, so no trail yet), SoFi +1.3% and lagging the chip theme. Fully deployed (~98%), $19.59 cash funds nothing and adds are wash-blocked — so I'm letting winners run behind wide stops, not chasing an already-extended SOXL (+14% open round-tripped to +9.5%). All stops GTC and verified; paper 7 legs ~99% deployed, no drift.",
-      "hype": "Cool CPI set off a chip rip — AMD +5%, semis leading — and the 3x core's riding it. Up ~$33 today; letting winners run behind stops, not chasing the extended stuff with $20 cash."
-    },
-    {
-      "ts": "2026-07-14T11:10:00-04:00",
-      "text": "11:10am — held both books, nothing to approve. The relief rally is sticking: QQQ ~$721, back above both its 20- and 50-day (~$717), so Monday's broken regime is repairing and the 3x core is the right long. Book's up ~$35 today (+3.6%): TQQQ recovered off a $73.4 intraday low to ~$75.5 (still a hair under my $76.29 entry, so no trail yet), NVDL +4.7% (day's best), SoFi green holding its $18.70 breakout. Movers are all junk micro-caps and $19.59 cash funds nothing — so I'm letting the winners run behind wide stops. Equity $992.63 (~98% deployed); paper ~98% deployed, all 7 stops GTC, no drift.",
-      "hype": "Relief rally's holding — QQQ's back above both its lines, so keeping the 3x was right. Up ~$35 today; just letting it run, nothing to buy with $20."
     }
   ],
   "benchmark": {
@@ -2222,7 +2219,7 @@
     },
     {
       "session": "Evening",
-      "text": "Day graded B-; held into ASML"
+      "text": "Graded B-; holding into ASML"
     }
   ],
   "equity_history": {
