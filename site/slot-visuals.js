@@ -628,12 +628,16 @@
       Object.assign(this._canvas.style, { width: '100%', height: '100%', display: 'block' });
       this.appendChild(this._canvas);
       this._visible = true;
-      this._ro = new ResizeObserver(() => this._reset());
+      this._ro = new ResizeObserver(() => {
+        const w = this.clientWidth || 300, h = this.clientHeight || 300;
+        if (Math.abs(w - (this._w || 0)) < 4 && Math.abs(h - (this._h || 0)) < 4) return;   // ignore no-op / sub-pixel resizes → no re-scatter pop
+        clearTimeout(this._rt); this._rt = setTimeout(() => { if (this._init) this._reset(); }, 220);
+      });
       this._ro.observe(this);
       this._reset();
-      // re-scatter + re-lock to the curve once the equity chart has laid out
-      setTimeout(() => { if (this._init) { this._chartEl = undefined; this._reset(); } }, 1800);
-      setTimeout(() => { if (this._init) { this._chartEl = undefined; this._reset(); } }, 4500);
+      // re-lock to the curve once the equity chart has laid out — re-aim only, DON'T re-scatter (that was the pop)
+      setTimeout(() => { if (this._init) this._chartEl = undefined; }, 1800);
+      setTimeout(() => { if (this._init) this._chartEl = undefined; }, 4500);
       const loop = () => {
         this._raf = requestAnimationFrame(loop);
         this._pvc = ((this._pvc || 0) + 1) % 30;
@@ -646,7 +650,7 @@
       };
       loop();
     }
-    attributeChangedCallback() { if (this._init) this._reset(); }
+    attributeChangedCallback(name, oldV, newV) { if (this._init && oldV !== newV) this._reset(); }   // only re-scatter on a REAL up/down (or density) change, not on same-value re-sets every poll
     _reset() {
       const w = this.clientWidth || 300, h = this.clientHeight || 300;
       const dpr = Math.min(window.devicePixelRatio || 1, 1);
