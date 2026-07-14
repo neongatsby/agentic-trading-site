@@ -623,6 +623,12 @@
     lastValue = eq;
   }
 
+  /* full-viewport background per skin — lives BEHIND both pages so it's continuous and fills the screen at any zoom */
+  const SKIN_BG = {
+    glass: 'radial-gradient(120% 60% at 50% 0%, #10131d 0%, #0b0e15 55%, #080a10 100%)',
+    neon:  'radial-gradient(140% 55% at 50% -5%, #221448 0%, #150d2e 45%, #0c081c 100%)',
+    gold:  'radial-gradient(130% 55% at 50% -5%, #241505 0%, #140d05 45%, #0b0805 100%)'
+  };
   /* ─────────────────────────── mount / switch (ONE skin's WebGL live at a time) ─────────────────────────── */
   function mount(skinKey){
     const host = document.getElementById('skin-root');
@@ -631,6 +637,7 @@
     const root = SKINS[skinKey].build();     /* fresh DOM → hero-3d / chart-ribbon boot their own contexts */
     host.appendChild(root);
     currentRoot = root;
+    try { document.body.style.background = SKIN_BG[skinKey] || SKIN_BG.glass; root.style.background = 'transparent'; } catch (e) {}   /* bg lives on the full viewport → continuous across pages, fills at any zoom */
     lastValue = null;
     renderRanges(root);
     updateToggleActive();
@@ -734,7 +741,7 @@
       let lead = 'Held';
       if (entry) lead += ' from ' + px(entry);
       if (cur) lead += ', now ' + px(cur);
-      if (plpc) lead += ' (' + (plpc >= 0 ? '+' : '−') + Math.abs(plpc * 100).toFixed(1) + '%)';
+      if (plpc) lead += ' (' + pct1(plpc) + ')';
       lead += '.';
       if (stop != null && cur) lead += ' Hard stop ' + px(stop) + ' — if it breaks, we\'re out flat (~' + Math.round((cur - stop) / cur * 100) + '% below spot).';
       else if (stop != null) lead += ' Hard stop ' + px(stop) + '.';
