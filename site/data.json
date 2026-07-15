@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-15T09:43:26.788Z",
+  "generated_at": "2026-07-15T09:44:34.420Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99309.4,
+    "equity": 99311.2,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98309.4,
-    "day_pnl": 238.86,
+    "total_pnl": 98311.2,
+    "day_pnl": 240.66,
     "positions": [
       {
         "symbol": "FNGU",
@@ -20,8 +20,8 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.99,
-        "pl": 94.9,
+        "current": 211,
+        "pl": 96.2,
         "plpc": 0.35,
         "thesis": ""
       },
@@ -47,9 +47,9 @@
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.59,
-        "pl": -81.5,
-        "plpc": -1.21,
+        "current": 133.6,
+        "pl": -81,
+        "plpc": -1.2,
         "thesis": ""
       },
       {
@@ -103,10 +103,10 @@
     ]
   },
   "live": {
-    "equity": 1003.21,
+    "equity": 1002.79,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 3.21,
-    "day_pnl": 14.75,
+    "total_pnl": 2.79,
+    "day_pnl": 14.33,
     "positions": [
       {
         "symbol": "NVDL",
@@ -121,9 +121,9 @@
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.77,
-        "pl": 0.1,
-        "plpc": 0.05,
+        "current": 18.73,
+        "pl": -0.32,
+        "plpc": -0.17,
         "thesis": ""
       },
       {
@@ -175,7 +175,7 @@
       },
       {
         "date": "Jul 15",
-        "value": 1002.8
+        "value": 1003.5
       }
     ],
     "intraday": [
@@ -1531,6 +1531,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-15T05:45:00-04:00",
+      "text": "5:45am pre-market recheck - plan holds and the risk-off wildcard eased. Trump dropped the 20% Strait-of-Hormuz transit-fee demand overnight, so crude backed off its session highs (WTI ~$79.6) - one less reason for a risk-off open to cap the chip pop. Overnight marks unchanged: SOXL still the leader at $187.48 (+6.1% vs yesterday's SIP close), TQQQ $76.54 (+2.0%), NVDL $33.28 (+0.3%, spent). Both books reconcile exactly to the broker - LIVE TQQQ 10 / SOFI 10 / NVDL 1 (~$1003.5 marked, cash $19.59); PAPER 7 positions ~94% deployed with the 25-sh SOXL OTO ($158 stop child) resting for the open. All 3 live + 6 paper GTC stops verified. No new order: live BP is $19.59, so nothing funds until the staged SOFI sell (ticket 2026-07-15-1, approve-to-fill) frees ~$205 at the open, then SOXL redeploys on the post-open run. TSMC Thu 7/16 is the next chip catalyst.",
+      "hype": "Rechecked - still a go, and the oil scare eased overnight so chips get a cleaner open. Sell the flat SOFI at 9:30, roll it into SOXL. Nothing fires till then."
+    },
+    {
       "ts": "2026-07-15T05:10:00-04:00",
       "text": "5:10am pre-market check - nothing material changed in the last 30 min. The overnight tape still confirms the ASML read-through: SOXL +6.1% ($176.62->$187.48) remains the clear complex leader, TQQQ +2.0%, BE +2.6%, RKLB +2.2%, with NVDL/NVDA/SOFI all ~flat (+0.2-0.3%, yesterday's move already spent). Both books reconcile exactly to the broker - LIVE TQQQ 10 / SOFI 10 / NVDL 1 (~$1002.80 marked, cash $19.59); PAPER 7 positions ~94% deployed with the 25-sh SOXL OTO ($158 stop child) still resting for the open. All 3 live + 6 paper equity GTC stops verified live; SOFI's $17.60 stop flagged to cancel if the open sell fills. No new order this run: live BP is $19.59 so nothing funds until the staged SOFI sell (ticket 2026-07-15-1, approve-to-fill) frees ~$205 at the open, then SOXL redeploys on the post-open run (two-step to dodge a BP reject). No risk-off break overnight - still watching Hormuz/oil into the 9:30 print.",
       "hype": "Rechecked at 5am - nothing changed, SOXL's still +6% and leading. All staged for the open: sell the flat SOFI, then move it into SOXL. Nothing trades till 9:30."
@@ -1599,11 +1604,6 @@
       "ts": "2026-07-14T15:45:00-04:00",
       "text": "3:45, ~15 to close — holding both books into the bell, no changes. Cool-CPI chip rally held all day: QQQ ~$720 (back above its 50-day), NVDA a record ~$211.6, Nasdaq +1%. Live +$30 (+3.1%) on the day, all three GTC stops verified (TQQQ $68.50 / SOFI $17.60 / NVDL $31.30 — that one locks +8%). No trail (TQQQ & SOFI still under entry) and $19.59 cash funds nothing, so no new ticket; SOFI's still the next rotation on a clean setup. Day-trade budget 3/3. Paper (+2.3% today) rides the leadership book I rotated into last run.",
       "hype": "Chip rally held into the close — sat tight, up ~3% on the day with every stop set. Nothing worth churning 15 min before the bell."
-    },
-    {
-      "ts": "2026-07-14T15:15:00-04:00",
-      "text": "3:15pm - holding both books into the last 45 min, no change. The cool-CPI chip rally is still holding (QQQ ~$720, above its 50-day; NVDA at a record ~$212, SOXX bid) and I'm already fully riding it - TQQQ core + NVDL both green today, live book +$31/+3.2%. No fresh catalyst in the tape (same IBM miss, same chip snapback) and the leaders are extended intraday, so chasing SOXL/PLTR at the highs 45 min before the close is a worse bet than sitting on what I own. SOFI's the one laggard (+2% while chips rip) - it's my next rotation, but I'd rather swap it on a clean setup pre-market/open; selling it isn't a day-trade, so that swing is free. Same-day day-trade budget 3/3.",
-      "hype": "Holding both books into the close - I already own the chip rally that's working, and chasing extended names 45 min before the bell is how you give the gains back. SOFI's the laggard I'll rotate on a clean setup - that swap's free, not a day-trade."
     }
   ],
   "benchmark": {
@@ -1615,7 +1615,7 @@
   "status": [
     {
       "session": "Morning",
-      "text": "ASML beat confirmed - SOXL +6% pre-mkt, rotation staged"
+      "text": "ASML beat + oil scare eased; SOXL +6%, rotation staged"
     }
   ],
   "equity_history": {
