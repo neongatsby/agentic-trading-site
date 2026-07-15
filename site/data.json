@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-15T15:11:09.035Z",
+  "generated_at": "2026-07-15T15:12:16.597Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 97837.32,
+    "equity": 97809.72,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 96837.32,
-    "day_pnl": -1233.22,
+    "total_pnl": 96809.72,
+    "day_pnl": -1260.82,
     "positions": [
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 262.42,
-        "pl": 27.76,
-        "plpc": 0.67,
+        "current": 262.02,
+        "pl": 21.52,
+        "plpc": 0.52,
         "thesis": ""
       },
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 29.66,
-        "pl": 624,
-        "plpc": 4.22,
+        "current": 29.68,
+        "pl": 634.4,
+        "plpc": 4.29,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 209.67,
-        "pl": -76.7,
-        "plpc": -0.28,
+        "current": 209.59,
+        "pl": -87.1,
+        "plpc": -0.32,
         "thesis": ""
       },
       {
@@ -47,9 +47,9 @@
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.5,
-        "pl": 150.26,
-        "plpc": 6.13,
+        "current": 32.48,
+        "pl": 148.26,
+        "plpc": 6.05,
         "thesis": ""
       },
       {
@@ -57,7 +57,7 @@
         "qty": "50.0000",
         "entry": 135.22,
         "current": 134.69,
-        "pl": -26.25,
+        "pl": -26.5,
         "plpc": -0.39,
         "thesis": ""
       },
@@ -65,17 +65,17 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 73.9,
-        "pl": -898.98,
-        "plpc": -4.13,
+        "current": 73.83,
+        "pl": -918.72,
+        "plpc": -4.23,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 145.36,
-        "pl": -1.84,
+        "current": 145.37,
+        "pl": -0.81,
         "plpc": -0.01,
         "thesis": ""
       }
@@ -112,36 +112,36 @@
     ]
   },
   "live": {
-    "equity": 974.39,
+    "equity": 972.97,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -25.61,
-    "day_pnl": -14.07,
+    "total_pnl": -27.03,
+    "day_pnl": -15.49,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.5,
-        "pl": 1.91,
-        "plpc": 6.26,
+        "current": 32.46,
+        "pl": 1.87,
+        "plpc": 6.13,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.33,
-        "pl": -4.3,
-        "plpc": -2.29,
+        "current": 18.3,
+        "pl": -4.6,
+        "plpc": -2.45,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 73.9,
-        "pl": -23.92,
-        "plpc": -3.14,
+        "current": 73.79,
+        "pl": -25,
+        "plpc": -3.28,
         "thesis": ""
       }
     ],
@@ -555,8 +555,8 @@
       "updated": "10:48am ET",
       "stop": 68.5,
       "hold_reason": "Our 3x-Nasdaq core (10 sh @ $76.29). Bought it as the regime-on leveraged long; today the semi weight in the Nasdaq dragged it -1.7%, but it's well above its $68.50 stop and the thesis holds - JPMorgan reads the chip weakness as a crowded-position unwind, not an AI-cycle top. We sell only if it breaks the stop or QQQ decisively loses its 50-day.",
-      "chg_pct": -1.41,
-      "price": 73.95,
+      "chg_pct": -1.53,
+      "price": 73.86,
       "spark": [
         74.11,
         72.78,
@@ -587,7 +587,7 @@
         74.79,
         71.6,
         77.24,
-        73.95
+        73.86
       ]
     },
     {
@@ -604,9 +604,9 @@
       "horizon": 0.2,
       "updated": "10:48am ET",
       "trigger": 185,
-      "chg_pct": -8.39,
+      "chg_pct": -9.05,
       "stop": 158,
-      "price": 161.8,
+      "price": 160.64,
       "spark": [
         151.66,
         151.93,
@@ -637,7 +637,7 @@
         252.93,
         215,
         236.75,
-        161.8
+        160.64
       ]
     },
     {
@@ -656,8 +656,8 @@
       "trigger": null,
       "stop": 31.3,
       "hold_reason": "2x-NVDA, a single leftover share (~$33) from the BP squeeze. Bought it as NVDA-leverage and it was the best watchlist mover yesterday (+8%). Flat today with NVDA; too small to matter, protected by the $31.30 GTC stop - we hold it, no reason to touch.",
-      "chg_pct": -1.78,
-      "price": 32.59,
+      "chg_pct": -2.2,
+      "price": 32.45,
       "spark": [
         38.1,
         37.52,
@@ -688,7 +688,7 @@
         28.76,
         27.53,
         28.41,
-        32.59
+        32.45
       ]
     },
     {
@@ -705,9 +705,9 @@
       "horizon": 0.3,
       "updated": "10:48am ET",
       "stop": null,
-      "chg_pct": -1,
+      "chg_pct": -1.06,
       "hold_reason": "Not a live position beyond the 1-share NVDL stub; we watch it as the tape's bellwether. The H200 China-export news is a genuine positive but the pre-market pop already faded to flat on 'trivial' volume talk, so it's not a reason to chase today. Paper owns the NVDA upside (130 sh + 8 Aug-$220 calls); live rotates into the broader-semi SOXL instead to sidestep the NVDL wash-block.",
-      "price": 209.67,
+      "price": 209.54,
       "spark": [
         222.09,
         220.39,
@@ -738,7 +738,7 @@
         195.89,
         191.97,
         194.92,
-        209.67
+        209.54
       ]
     },
     {
@@ -804,8 +804,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "10:17am ET",
-      "chg_pct": -1.55,
-      "price": 298.96,
+      "chg_pct": -1.47,
+      "price": 299.19,
       "spark": [
         339.63,
         322.57,
@@ -836,7 +836,7 @@
         325.41,
         303.46,
         307.03,
-        298.96
+        299.19
       ]
     },
     {
@@ -853,8 +853,8 @@
       "horizon": 0.3,
       "updated": "10:48am ET",
       "stop": 348,
-      "chg_pct": 0.36,
-      "price": 397.6,
+      "chg_pct": 0.17,
+      "price": 396.84,
       "spark": [
         409.97,
         404.17,
@@ -885,7 +885,7 @@
         375.12,
         379,
         411.66,
-        397.6
+        396.84
       ]
     },
     {
@@ -1005,8 +1005,8 @@
       "trigger": null,
       "stop": 17.6,
       "hold_reason": "Fintech, no fresh catalyst - we've flagged it as the rotation candidate for days. But today it's the book's relative OUTPERFORMER (-1.3% vs the leveraged names down ~1.8%), and the tape reversed into a red semi-selloff, so selling it now to add 3x leverage would be backwards. Held and protected by the $17.60 GTC stop; the de-camp fires on a green reclaim, not into weakness - and needs the fast-lane 'close' bug fixed first (it can't sell shares the stop reserves).",
-      "chg_pct": -1.27,
-      "price": 18.32,
+      "chg_pct": -1.37,
+      "price": 18.3,
       "spark": [
         15.7,
         15.22,
@@ -1037,7 +1037,7 @@
         17.29,
         17.86,
         18.18,
-        18.32
+        18.3
       ]
     },
     {
@@ -1053,8 +1053,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "10:48am ET",
-      "chg_pct": 0.7,
-      "price": 134.67,
+      "chg_pct": 0.74,
+      "price": 134.72,
       "spark": [
         135.11,
         135.27,
@@ -1085,7 +1085,7 @@
         107.3,
         112.82,
         115.66,
-        134.67
+        134.72
       ]
     },
     {
@@ -1102,8 +1102,8 @@
       "card": "/research/be.html",
       "horizon": 0.2,
       "updated": "10:48am ET",
-      "chg_pct": -4.23,
-      "price": 233.14,
+      "chg_pct": -4.54,
+      "price": 232.37,
       "spark": [
         259.04,
         261.71,
@@ -1134,7 +1134,7 @@
         308.97,
         253.24,
         275,
-        233.14
+        232.37
       ]
     },
     {
@@ -1248,8 +1248,8 @@
       "thesis": "**Today's biggest watchlist mover - and un-ownable on live.** 3x-inverse semis ran ~+5% as the ASML pop faded. Live can't short (no margin/short), and going LONG an inverse at the open against a fundamental beat-and-raise is a coin-flip we won't claim after the fact. Noting it honestly: it's why capture looks optically thin today.",
       "horizon": 0.2,
       "updated": "10:48am ET",
-      "chg_pct": 988.14,
-      "price": 46.79,
+      "chg_pct": 993.02,
+      "price": 47,
       "spark": [
         98.52,
         98.27,
@@ -1280,7 +1280,7 @@
         36.2,
         42.4,
         37.15,
-        46.79
+        47
       ]
     }
   ],
@@ -1913,8 +1913,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 73.95,
-    "tqqq_pct": -3.84
+    "tqqq": 73.86,
+    "tqqq_pct": -3.95
   },
   "status": [
     {
@@ -2331,6 +2331,10 @@
       [
         1784128260000,
         974.6
+      ],
+      [
+        1784128320000,
+        973.73
       ]
     ],
     "1W": [
