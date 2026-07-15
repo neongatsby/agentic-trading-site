@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-15T22:12:15.880Z",
+  "generated_at": "2026-07-15T22:13:24.037Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99454.99,
+    "equity": 99431.74,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98454.99,
-    "day_pnl": 384.45,
+    "total_pnl": 98431.74,
+    "day_pnl": 361.2,
     "positions": [
       {
         "symbol": "CEG",
@@ -29,9 +29,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 212.09,
-        "pl": 237.9,
-        "plpc": 0.87,
+        "current": 212.02,
+        "pl": 228.8,
+        "plpc": 0.84,
         "thesis": ""
       },
       {
@@ -47,9 +47,9 @@
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 33.28,
-        "pl": 212.66,
-        "plpc": 8.68,
+        "current": 33.21,
+        "pl": 207.25,
+        "plpc": 8.46,
         "thesis": ""
       },
       {
@@ -65,18 +65,18 @@
         "symbol": "SOXL",
         "qty": "10.0000",
         "entry": 163.63,
-        "current": 165.09,
-        "pl": 14.59,
-        "plpc": 0.89,
+        "current": 164.78,
+        "pl": 11.48,
+        "plpc": 0.7,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 74.64,
-        "pl": -690.3,
-        "plpc": -3.17,
+        "current": 74.62,
+        "pl": -695.94,
+        "plpc": -3.2,
         "thesis": ""
       },
       {
@@ -121,27 +121,27 @@
     ]
   },
   "live": {
-    "equity": 978.67,
+    "equity": 978.4,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -21.33,
-    "day_pnl": -9.79,
+    "total_pnl": -21.6,
+    "day_pnl": -10.06,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 33.28,
-        "pl": 2.69,
-        "plpc": 8.81,
+        "current": 33.21,
+        "pl": 2.63,
+        "plpc": 8.59,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 74.64,
-        "pl": -16.5,
-        "plpc": -2.16,
+        "current": 74.62,
+        "pl": -16.7,
+        "plpc": -2.19,
         "thesis": ""
       }
     ],
@@ -1063,11 +1063,11 @@
       "chg_pct": 3.12,
       "thesis": "**The day's ONLY green leader - and the staged live redeploy.** Green all day (+3.1%) while the chip/memory complex was flushed - relative strength, not a knife. Paper holds 520 sh @ $28.46 (now $29.80, +$697), stop trailed to $29. The freed ~$199 SOFI cash is pre-armed to buy 6 sh on a $30.20 breakout at the open (confirms a strong, TSMC-validated open before buying).",
       "hold_reason": "3x FANG+ (mega-cap tech) - paper's biggest winner (520 sh, +$697) and the day's best long mover, green all day while chips unwound. It's the live redeploy target for the freed SOFI cash, staged rather than chased at today's HOD into the binary TSMC print. Pre-armed as a $30.20 buy-stop so it only fires if the open confirms strength; a $25.30 GTC stop bounds the 3x downside.",
-      "size": "$15,496 (paper) + live redeploy staged",
+      "size": "$15,527 (paper, +$728) + live redeploy APPROVED/queued",
       "size_pct": "paper",
       "size_note": "Staged redeploy for the freed ~$199 - pre-arm buy-stop trigger $30.20, fires at the open only if TSMC's reaction confirms the tape (not chased at today's HOD).",
       "plan_usd": "$179",
-      "updated": "5:42pm",
+      "updated": "6:12pm",
       "horizon": "swing",
       "projection": {
         "target_pct": 2.8,
@@ -2103,6 +2103,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-15T18:12:00-04:00",
+      "text": "6:12pm after-hours check - nothing changed, nothing to chase; re-verified BOTH books fully protected THIS run (live 2/2 GTC: NVDL $31.30, TQQQ $68.50; paper 8/8 GTC across CEG/FNGU/NVDA/NVDL/PLTR/SOXL/TQQQ/UPRO), no naked position anywhere. Fresh data confirms FNGU settled the day's best long mover +3.1% (TQQQ -0.9%, NVDL +0.6%) and TSMC's print is locked for 2am ET tomorrow - guided $39-40.2B Q2 rev at 65.5-67.5% GM, so a beat+raise is the base case on 8 straight beats. The approved FNGU pre-arm ($30.20 buy-stop, $25.30 GTC stop, ~$183 of the freed SOFI cash) stays resting and only fires if the open confirms strength after the print; extended hours is limit-only so nothing fills overnight. Next auto-action: reconcile TSMC's reaction at/after the 7/16 open and let the pre-arm work.",
+      "hype": "Quiet evening - double-checked every stop on both books, all good. TSMC reports at 2am and the FNGU buy is pre-armed to fire at the open only if it opens strong. Nothing to do but wait on the print."
+    },
+    {
       "ts": "2026-07-15T17:42:00-04:00",
       "text": "5:42pm after-hours - Adam APPROVED the FNGU redeploy (ticket 2026-07-16-1) at 5:11pm, so it's no longer just staged: the fast-lane holds it and places a $30.20 pre-arm buy-stop at tomorrow's open that fires ONLY if FNGU confirms strength after tonight's TSMC print. Reconciled clean both ways - SOFI de-camp filled @ $17.94, live = TQQQ 10 + NVDL 1 + ~$199 cash with both GTC stops verified (NVDL $31.30 / TQQQ $68.50); paper ~$99.1k, all 8 equity legs stopped. No naked positions. Nothing else to do - the plan is set into the 2am referee (TSMC beat+raise is the base case, 8 straight beats).",
       "hype": "Adam tapped yes on the FNGU swing - it's locked to buy at the open only if the tape confirms after TSMC tonight. Everything's protected; just waiting on the print."
@@ -2171,11 +2176,6 @@
       "ts": "2026-07-15T11:16:00-04:00",
       "text": "11:16am - holding the well-stopped book; the semi-unwind is intact but the book clawed back to -1.3% (from -1.8%). Today is a rotation OUT of chips (SMH -3%, SOXL -9%, BE -4.5%) INTO broad/mega-cap + power (FNGU +2.1%, CEG +1.8%, PLTR +0.7%) - a crowded-semi unwind, not a broad risk-off. No clean live rotation: cash is $19.59, QQQ is back UNDER its ~718 50-day (weak regime), and the green leaders are already extended intraday - selling stable SOFI (today's best-holding live name, -1.4%) to chase 3x FANG+ midday would be the whipsaw, not the trade. Kept the SOFI->SOXL de-camp SHELVED (SOXL faded from +4% to -9%; the approved rotation would be ~-13% now). Correction to yesterday's note: the fast-lane close is NOT buggy - it already cancels the resting stop before closing (poller L143-147); the de-camp never fired because the target faded and the ticket was correctly retired, not a code bug. All 3 live stops verified; paper (-2.0%, dragged by the NVDA Aug calls -20%) already owns the green leaders FNGU/CEG. Day-trade budget 3/3.",
       "hype": "Chips are unwinding on a crowded-trade exit (not the end of AI) while big-tech and power names run green. Not selling our steady SOFI to chase an already-extended leverage bet on a weak day - holding the stopped book. Also: that 'sell bug' from yesterday isn't real, the code's fine; the sell just stopped making sense once the target cratered."
-    },
-    {
-      "ts": "2026-07-15T10:48:00-04:00",
-      "text": "10:48am - HONEST reversal + a real bug found. The green tape at 10:17 FLIPPED red: a semi-specific selloff (SK Hynix/Samsung memory; JPMorgan calls it a crowded-position UNWIND, not an AI-cycle top) dragged SOXL -9.5%, BE -4.9%, IONQ -3.7%, while broad + mega-cap tech held GREEN (FNGU +2.4%, UPRO +1.0%, CEG +2.2%). QQQ slipped back UNDER its ~718 50-day = a neutral-weak regime. Adam APPROVED the SOFI sell but it did NOT execute: the fast-lane 'close' can't sell shares the $17.60 GTC stop reserves (qty_available=0) - it must cancel that stop FIRST. That bug, not idea quality, is why ~5 runs of 'sell SOFI' never fired. And given the reversal I am NOT chasing 3x FNGU into a red semi-wreck with QQQ under its 50-day - SOFI is actually the book's relative OUTPERFORMER today (-1.35% vs TQQQ/NVDL -1.8%). Held both books, all stops verified, no new leverage. Live -1.8% ($970), cash-locked at $19.59; paper -1.5%, well-tilted to the green leaders it already holds.",
-      "hype": "Morning rally flipped red - chips sold off on a crowded-trade unwind, not the end of AI. Your SOFI sell got approved but a bug blocked it from firing (its own stop was in the way) - and with the tape red I'm not chasing leverage anyway. Holding tight, everything's stopped."
     }
   ],
   "benchmark": {
