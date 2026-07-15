@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-15T20:20:56.021Z",
+  "generated_at": "2026-07-15T20:22:03.985Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99389.62,
+    "equity": 99383.25,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98389.62,
-    "day_pnl": 319.08,
+    "total_pnl": 98383.25,
+    "day_pnl": 312.71,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,18 +20,18 @@
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 29.77,
-        "pl": 678.65,
-        "plpc": 4.59,
+        "current": 29.76,
+        "pl": 676,
+        "plpc": 4.57,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 212.36,
-        "pl": 272.58,
-        "plpc": 1,
+        "current": 212.32,
+        "pl": 267.8,
+        "plpc": 0.98,
         "thesis": ""
       },
       {
@@ -65,18 +65,18 @@
         "symbol": "SOXL",
         "qty": "10.0000",
         "entry": 163.63,
-        "current": 165.51,
-        "pl": 18.78,
-        "plpc": 1.15,
+        "current": 165.34,
+        "pl": 17.03,
+        "plpc": 1.04,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 74.49,
-        "pl": -732.6,
-        "plpc": -3.37,
+        "current": 74.5,
+        "pl": -729.78,
+        "plpc": -3.36,
         "thesis": ""
       },
       {
@@ -121,10 +121,10 @@
     ]
   },
   "live": {
-    "equity": 977.23,
+    "equity": 977.33,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -22.77,
-    "day_pnl": -11.23,
+    "total_pnl": -22.67,
+    "day_pnl": -11.13,
     "positions": [
       {
         "symbol": "NVDL",
@@ -139,9 +139,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 74.49,
-        "pl": -18,
-        "plpc": -2.36,
+        "current": 74.5,
+        "pl": -17.9,
+        "plpc": -2.35,
         "thesis": ""
       }
     ],
@@ -180,11 +180,11 @@
       },
       {
         "date": "Jul 14",
-        "value": 997.48
+        "value": 988.46
       },
       {
         "date": "Jul 15",
-        "value": 972.44
+        "value": 977.17
       }
     ],
     "intraday": [
@@ -786,7 +786,20 @@
       }
     ]
   },
-  "pending_tickets": [],
+  "pending_tickets": [
+    {
+      "id": "2026-07-16-1",
+      "symbol": "FNGU",
+      "side": "buy",
+      "size": "$179",
+      "qty": 6,
+      "entry": 29.8,
+      "trigger": 30.2,
+      "stop": 25.3,
+      "bracket": "stop $25.30 GTC (below $27.40 support, -15%)",
+      "thesis": "Redeploy the freed SOFI cash into the confirmed leader FNGU (3x FANG+) - the day's ONLY green long mover (+3.1%). Pre-arm buy-stop at $30.20 so it fires at the open only if the tape confirms strength after tonight's TSMC print (2am ET; beat+raise is the base case, 8 straight beats). Completes the Playbook de-camp->leader swing. 6 sh x $30.60 marketable limit = $183.6 reserve < $198.99 BP."
+    }
+  ],
   "coverage": [
     {
       "ticker": "TQQQ",
@@ -795,18 +808,18 @@
       "verdict": "buy",
       "verdict_label": "HOLD",
       "chg_pct": -0.76,
-      "thesis": "**The 3x core - clawing back with the reclaim.** 10 sh @ $76.29, now $74.48 (-0.7% today). Reversed off the $72.09 intraday low as QQQ reclaimed 710→718; ~$6 above the $68.50 GTC stop.",
-      "hold_reason": "This is our 3x-Nasdaq core - 10 shares from $76.29 on 7/9, the high-conviction bet that the AI/tech uptrend keeps compounding. It's underwater today (-1.3%) because tech faded on the chip sell-the-news, but the $68.50 GTC stop bounds it and ASML's beat-and-raise says the capex thesis is intact. Holding through tomorrow's TSMC print; a clean stop break or a soft TSMC would make us cut.",
-      "size": "$739",
+      "thesis": "**The 3x-Nasdaq core - held into TSMC.** 10 sh @ $76.29, settled $74.35 (-0.9% today, -2.4% vs entry). Faded with the sell-the-news chip tape but reclaimed off the $72.09 intraday low; ~$6 above the $68.50 GTC stop.",
+      "hold_reason": "Our 3x-Nasdaq core - 10 shares from $76.29 on 7/9, the high-conviction bet the AI/tech uptrend keeps compounding. Down today because tech faded on the chip sell-the-news, but the $68.50 GTC stop bounds it and ASML's beat-and-raise says the capex thesis is intact. Holding through tonight's TSMC print; a clean stop break or a soft TSMC reaction would make us cut and rotate.",
+      "size": "$744 (10 sh live)",
       "size_pct": "76%",
       "size_note": "live core",
       "plan_usd": "held",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "swing",
       "projection": {
-        "target_pct": 1.2,
+        "target_pct": 1.6,
         "confidence": "med",
-        "basis": "3x Nasdaq; bounces if TSMC steadies the tape",
+        "basis": "3x Nasdaq core; tracks a green post-TSMC tape",
         "pop_rank": 5
       },
       "price": 74.44,
@@ -854,15 +867,15 @@
       "hold_reason": "We SOLD this today at $17.94 (3:35pm) - it was the flat laggard from 7/10 tying up ~$180 of dead capital, and freeing it broke a multi-day cash-lock. No catalyst here, so it's back to watch-only. The freed cash redeploys into the strongest confirmed mover after TSMC.",
       "size": "-",
       "size_pct": 0,
-      "size_note": "live - selling",
+      "size_note": "exited @ $17.94 (3:35pm); freed ~$199",
       "plan_usd": 0,
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "rotation",
       "projection": {
-        "target_pct": 0.5,
+        "target_pct": 0.8,
         "confidence": "low",
-        "basis": "sold today; no catalyst, watch only",
-        "pop_rank": 15
+        "basis": "exited today; no catalyst, watch for re-entry",
+        "pop_rank": 14
       },
       "price": 17.89,
       "spark": [
@@ -905,18 +918,18 @@
       "verdict": "buy",
       "verdict_label": "HOLD",
       "chg_pct": 0.6,
-      "thesis": "**2x NVDA - held, profit-stop riding.** 1 sh live @ $30.59, now $32.69 (+6.9% from entry). Hit by the chip tape (-1.4% today) but bouncing with NVDA off its $204 low and above the $31.30 stop.",
-      "hold_reason": "A single 2x-NVDA share from $30.59 - small, but our cleanest live long on the AI leader. NVDA held flat through today's entire chip unwind on its own catalysts (Kawasaki AI-shipyard deal, limited H200 China shipments) - exactly the relative strength we want into TSMC. Holding; the $31.30 stop protects it.",
-      "size": "$32",
+      "thesis": "**2x NVDA - held, well above the stop.** 1 sh live @ $30.59, settled $33.38 (+9.1% from entry, +0.6% today). Held green through the entire chip unwind on NVDA's relative strength; the $31.30 GTC stop trails the gain.",
+      "hold_reason": "A single 2x-NVDA share from $30.59 - small, but our cleanest live long on the AI leader. NVDA clawed back to +0.3% off a -3% intraday low on its own catalysts (Kawasaki AI-shipyard deal, limited H200 China shipments) - exactly the relative strength we want into TSMC. Holding; the $31.30 stop locks in a profit.",
+      "size": "$33 (1 sh live) + 80 sh paper",
       "size_pct": "3%",
       "size_note": "live (1 sh) + 80 sh paper",
       "plan_usd": "held",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "swing",
       "projection": {
-        "target_pct": 2.5,
+        "target_pct": 3.5,
         "confidence": "med",
-        "basis": "NVDA firm on own catalysts + TSMC tailwind",
+        "basis": "2x NVDA; direct TSMC read-through",
         "pop_rank": 3
       },
       "price": 33.38,
@@ -958,20 +971,20 @@
       "name": "MicroSectors FANG+ (3x)",
       "theme": "3x mega-cap tech",
       "verdict": "buy",
-      "verdict_label": "Redeploy target",
+      "verdict_label": "Redeploy target (staged)",
       "chg_pct": 3.12,
-      "thesis": "**Today's leader - and the live redeploy target.** 520 sh paper @ $28.46, now $29.81 (+$707). Green ALL day while chips unwound - it never fell, so it's relative strength, not a knife. Paper stop trailed $28.80→$29.00 (locks +$280 above cost). Live SOFI proceeds redeploy here next run.",
-      "hold_reason": "3x FANG+ (mega-cap tech), paper's biggest winner (520 sh, +$608, +$380 today) and the day's best long mover. It led green all day while chips unwound - exactly the relative strength we want. It's the live redeploy target for the SOFI de-camp, deferred to tomorrow rather than chased at the high into the close. Stop trailed to $29 (locks the gain above the $28.46 cost).",
-      "size": "$15,371 (paper) + live target",
+      "thesis": "**The day's ONLY green leader - and the staged live redeploy.** Green all day (+3.1%) while the chip/memory complex was flushed - relative strength, not a knife. Paper holds 520 sh @ $28.46 (now $29.80, +$697), stop trailed to $29. The freed ~$199 SOFI cash is pre-armed to buy 6 sh on a $30.20 breakout at the open (confirms a strong, TSMC-validated open before buying).",
+      "hold_reason": "3x FANG+ (mega-cap tech) - paper's biggest winner (520 sh, +$697) and the day's best long mover, green all day while chips unwound. It's the live redeploy target for the freed SOFI cash, staged rather than chased at today's HOD into the binary TSMC print. Pre-armed as a $30.20 buy-stop so it only fires if the open confirms strength; a $25.30 GTC stop bounds the 3x downside.",
+      "size": "$15,496 (paper) + live redeploy staged",
       "size_pct": "paper",
-      "size_note": "Staged redeploy target for the freed ~$199 - fires at/after tomorrow's open once TSMC confirms the tape (not chased at today's HOD).",
-      "plan_usd": "$199",
-      "updated": "3:45pm",
+      "size_note": "Staged redeploy for the freed ~$199 - pre-arm buy-stop trigger $30.20, fires at the open only if TSMC's reaction confirms the tape (not chased at today's HOD).",
+      "plan_usd": "$179",
+      "updated": "4:10pm",
       "horizon": "swing",
       "projection": {
         "target_pct": 2.8,
-        "confidence": "high",
-        "basis": "relative-strength leader; mega-cap rotation continues",
+        "confidence": "med",
+        "basis": "mega-cap leader; continuation on TSMC beat+raise",
         "pop_rank": 1
       },
       "price": 29.78,
@@ -1021,12 +1034,12 @@
       "size_pct": "paper",
       "size_note": "paper reversal test",
       "plan_usd": "paper only (live avoids the 3x knife)",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "swing",
       "projection": {
-        "target_pct": 6,
+        "target_pct": 5.5,
         "confidence": "med",
-        "basis": "oversold 3x-semi; max beta if TSMC beats (binary)",
+        "basis": "oversold 3x-semi; biggest bounce IF TSMC beats (binary)",
         "pop_rank": 2
       },
       "price": 165.91,
@@ -1076,13 +1089,13 @@
       "size_pct": "paper",
       "size_note": "paper",
       "plan_usd": "paper only",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "swing",
       "projection": {
         "target_pct": 0.6,
         "confidence": "low",
-        "basis": "AI-power demand steady bid",
-        "pop_rank": 8
+        "basis": "power-for-AI; steady, low-beta",
+        "pop_rank": 9
       },
       "price": 258.17,
       "spark": [
@@ -1131,12 +1144,12 @@
       "size_pct": "paper",
       "size_note": "paper",
       "plan_usd": "paper only",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "swing",
       "projection": {
-        "target_pct": 1.5,
+        "target_pct": 2.2,
         "confidence": "med",
-        "basis": "held flat through unwind; Kawasaki/H200 catalysts",
+        "basis": "cleanest TSMC beneficiary; recovered off lows",
         "pop_rank": 4
       },
       "price": 212.4,
@@ -1186,13 +1199,13 @@
       "size_pct": "paper",
       "size_note": "paper",
       "plan_usd": "paper only",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "swing",
       "projection": {
-        "target_pct": 1,
-        "confidence": "med",
-        "basis": "bounced off dip; software bid vs chips",
-        "pop_rank": 7
+        "target_pct": 1.4,
+        "confidence": "low",
+        "basis": "reclaimed a huge intraday range; software bid holds",
+        "pop_rank": 8
       },
       "price": 133.75,
       "spark": [
@@ -1241,12 +1254,12 @@
       "size_pct": "paper",
       "size_note": "paper",
       "plan_usd": "paper only",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "swing",
       "projection": {
-        "target_pct": 0.7,
+        "target_pct": 0.9,
         "confidence": "med",
-        "basis": "3x S&P; broad market resilient/green",
+        "basis": "3x S&P; broad-tape proxy on a green TSMC read",
         "pop_rank": 6
       },
       "price": 145.74,
@@ -1295,13 +1308,13 @@
       "size_pct": "0%",
       "size_note": "live-restricted",
       "plan_usd": "n/a live",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "-",
       "projection": {
-        "target_pct": -6,
-        "confidence": "med",
-        "basis": "inverse-semi; falls if TSMC beats (ran +11% today)",
-        "pop_rank": 10
+        "target_pct": -4,
+        "confidence": "low",
+        "basis": "inverse-semi; only wins if TSMC misses",
+        "pop_rank": 15
       },
       "price": 45.84,
       "spark": [
@@ -1349,12 +1362,12 @@
       "size_pct": "0%",
       "size_note": "un-owned",
       "plan_usd": "$150 IF it reclaims $244",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "watch",
       "projection": {
-        "target_pct": 2,
+        "target_pct": 1.2,
         "confidence": "low",
-        "basis": "fuel-cell high-beta; oversold bounce candidate",
+        "basis": "fuel cells; snap-back off the flush",
         "pop_rank": 11
       },
       "price": 239.44,
@@ -1403,13 +1416,13 @@
       "size_pct": "0%",
       "size_note": "un-owned",
       "plan_usd": "avoid - low-quality bounce",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "-",
       "projection": {
-        "target_pct": 2.5,
+        "target_pct": 2,
         "confidence": "low",
-        "basis": "quantum oversold; dead-cat bounce",
-        "pop_rank": 13
+        "basis": "quantum; oversold relief only if risk-on returns",
+        "pop_rank": 12
       },
       "price": 37.5,
       "spark": [
@@ -1457,13 +1470,13 @@
       "size_pct": "0%",
       "size_note": "un-owned",
       "plan_usd": "avoid",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "-",
       "projection": {
         "target_pct": 2.5,
         "confidence": "low",
-        "basis": "quantum oversold -5.9%; bounce candidate",
-        "pop_rank": 14
+        "basis": "quantum; deepest flush, highest-beta bounce",
+        "pop_rank": 13
       },
       "price": 15.28,
       "spark": [
@@ -1511,13 +1524,13 @@
       "size_pct": "0%",
       "size_note": "un-owned",
       "plan_usd": "prefer CEG for the theme",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "watch",
       "projection": {
         "target_pct": 1.5,
         "confidence": "low",
-        "basis": "nuclear/AI-power; volatile",
-        "pop_rank": 12
+        "basis": "nuclear-for-AI; oversold bounce candidate",
+        "pop_rank": 10
       },
       "price": 45.59,
       "spark": [
@@ -1565,13 +1578,13 @@
       "size_pct": "0%",
       "size_note": "un-owned",
       "plan_usd": "$150 on a support reclaim",
-      "updated": "3:45pm",
+      "updated": "4:10pm",
       "horizon": "watch",
       "projection": {
-        "target_pct": 0.9,
+        "target_pct": 1.8,
         "confidence": "low",
-        "basis": "AI-datacenter infra; firm",
-        "pop_rank": 9
+        "basis": "AI-datacenter infra; TSMC capex halo",
+        "pop_rank": 7
       },
       "price": 304.74,
       "spark": [
@@ -1609,6 +1622,18 @@
     }
   ],
   "feed": [
+    {
+      "type": "note",
+      "ts": "2026-07-15T16:12:00-04:00",
+      "reaction": "hold",
+      "text": "4:10pm close - final grade C-. Red -1.1% while FNGU (best long mover, +3.1%) ran and we held zero live = ~0% long capture. Credits banked: dodged the -6% SOXL / -5% quantum wreck, held all stops, and finally broke the cash-lock (SOFI out @ $17.94, ~$199 freed). FNGU redeploy staged for the open, gated on tonight's TSMC print."
+    },
+    {
+      "type": "note",
+      "ts": "2026-07-15T16:12:00-04:00",
+      "reaction": "hold",
+      "text": "Data-integrity fix: 7/14's after-hours $997.48 equity mark didn't survive settlement - Alpaca's settled 7/14 close was $988.46. Grading today off the confirmed settled baseline (so 7/14's real capture was ~38%, not the 49% the evening run booked)."
+    },
     {
       "type": "trade",
       "account": "live",
@@ -1930,29 +1955,9 @@
       "status": "",
       "reaction": "hold",
       "text": "7:40pm — after-hours nearly over; verified and held both books (all 9 GTC stops live, both reconcile to the broker). AH marks nudged live to ~$995. New reads only confirm the chip theme (SK Hynix ADR premium, ASML ~7.5% implied move) — nothing to change tonight. Locked plan for the open: chips survive ASML and QQQ holds its 50-day → swing the flat SOFI into the strongest chip name; a miss that breaks QQQ → de-risk the 3x. Budget 3/3."
-    },
-    {
-      "type": "note",
-      "account": "live",
-      "ts": "2026-07-14T19:12:00-04:00",
-      "symbol": "TQQQ",
-      "side": "",
-      "status": "",
-      "reaction": "hold",
-      "text": "7:12pm — after-hours quiet, held both books. Backfilled the board with today's real day-moves (NVDL +8.1% top mover, SOXL +6.8%, BE +4.3%, SOXS -7.9% dodged). All 9 GTC stops verified, both books reconcile clean to the broker. Nothing to change into ASML's pre-open print — I act on the number at the open, not a guess tonight."
-    },
-    {
-      "type": "note",
-      "account": "live",
-      "ts": "2026-07-14T18:39:00-04:00",
-      "symbol": "TQQQ",
-      "side": "",
-      "status": "",
-      "reaction": "hold",
-      "text": "6:39pm — after-hours still dead, held everything. Re-pulled snapshots/news, no fresh catalyst on our names; QQQ closed $719.7 holding its 50-day, NVDA a record $211.8. All 9 GTC stops verified (3 live, 6 paper), both books reconcile clean. ASML pre-open tomorrow is the only decision — I act on the number at the open, not a guess tonight."
     }
   ],
-  "latest_recap": "Wed 7/15 ~3:45pm ET - market OPEN (~15 min to close). Verify-and-manage both books, fresh pull across the 15-name universe + SPY/QQQ + movers + news. FINDINGS: (1) The SOFI->cash de-camp FINALLY FILLED at 3:35pm - the fast-lane cancelled the resting $17.60 GTC stop and sold all 10 SOFI @ $17.94, freeing ~$199 and breaking the multi-day cash-lock (the 7/14 lesson's exact fix, executed). Reconciled the fill into the book + flipped the feed trade card to filled. (2) All stops LIVE and verified - 2/2 live (NVDL $31.30, TQQQ $68.50 GTC) + 8/8 paper equity GTC; NO naked position. (3) Decision on the freed cash: HOLD as dry powder this session and stage the redeploy for tomorrow's open. Reasoning: only ~15 min to close (an approve-tap fills at the open regardless), FNGU is at its HOD after +3.0%, and TSMC prints pre-market (a binary that resets the semi/tech tape + the best target). Chasing FNGU's high into that would be poor timing; the redeploy fires post-TSMC into the strongest CONFIRMED mover (FNGU base case, SOXL only on a clean semi-relief breakout), wide GTC stop. (4) Tape: ASML beat-and-RAISED again but chips SOLD the news (crowded unwind per JPMorgan, not a cycle top) - SOXL -6%, IONQ -4.7%, RGTI -5.9% - while mega-cap held (FNGU +3.0%, SPY +0.2%, QQQ -0.4%); inverse-semi SOXS ran ~+11%. Live book -1.6% ($972) = ~0% long capture (heavy TQQQ, no FNGU live), graded C- intraday and NOT inflated; real credit for dodging the whole wreck and holding every stop. No live ticket this run (no fundable fire-now setup that beats waiting for the binary TSMC print); redeploy surfaces on the post-open run tomorrow. PDT budget full (0 same-day round-trips used).",
+  "latest_recap": "Wed 7/15 ~4:10pm ET post-close finalize (market closed). FINDINGS: (1) Final grade C- - live settled -1.1% ($977.17 vs Alpaca's confirmed settled 7/14 $988.46) while the day's best long mover FNGU ran +3.1% = ~0% long capture; a red day on the wrong side (heavy 3x-Nasdaq TQQQ into a faded, chip-sell-the-news tape). (2) Genuine credits: owned NONE of the -6.3% SOXL / -5.2% RGTI / -4.6% IONQ / -3.6% SOFI wreck; held every stop (2/2 live, 8/8 paper), no naked position; finally broke the multi-day cash-lock by exiting SOFI @ $17.94 (freed ~$199); did NOT chase FNGU at its HOD into tonight's binary TSMC print. (3) Data-integrity finding: 7/14's after-hours $997.48 equity mark did NOT survive settlement - Alpaca reports settled 7/14 = $988.46 (balance_asof), so 7/14's real capture was ~38% (not the 49% the evening run booked). Durable fix: grade off settled balance_asof, treat same-evening equity as provisional; corrected the live curve (7/14 -> $988.46) and score (bestDay +3.2%, winRate 50% on 2 closed round-trips: NVDA frac +$0.75 win, SOFI -$8.17 loss). (4) PDT budget fully intact - 0 same-day round-trips today (SOFI was a 5-day hold). (5) Staged a FNGU pre-arm ticket (2026-07-16-1): 6 sh, buy-stop trigger $30.20 (confirms a TSMC-validated strong open before buying), $25.30 GTC stop - the SOFI->leader redeploy, gap-handled for the open. TSMC reports 2am ET; beat+raise is the base case.",
   "activity": [
     {
       "ts": "2026-07-15T15:14:00-04:00",
@@ -2016,6 +2021,11 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-15T16:12:00-04:00",
+      "text": "4:10pm close - final grade C-: book settled -1.1% ($977) while the day's best long mover FNGU ran +3.1% and we owned zero FNGU live = ~0% long capture, a red day on the wrong side (heavy 3x-Nasdaq TQQQ into a faded tape). Real credit though: owned NONE of the -6% SOXL / -5% quantum wreck, held every stop (2/2 live, 8/8 paper), and finally broke the multi-day cash-lock by selling SOFI @ $17.94 - freeing ~$199. Freed cash correctly NOT chased into FNGU's high ahead of tonight's binary TSMC print (2am ET); staged a FNGU redeploy for the open (pre-arm buy-stop $30.20) that only fires if the open confirms strength. Also caught a data bug: 7/14's after-hours $997.48 mark didn't survive settlement (Alpaca settled 7/14 = $988.46), so I'm grading off the confirmed settled baseline.",
+      "hype": "Rough one - down ~1% while FNGU led and we held none of it live. Still, dodged the whole chip wreck, held every stop, and finally cut dead-weight SOFI for cash; lined up a FNGU buy for the open after TSMC reports tonight."
+    },
     {
       "ts": "2026-07-15T15:45:00-04:00",
       "text": "3:45pm - the SOFI de-camp FINALLY filled: after no-op'ing all day on the resting stop, the fast-lane cancelled the $17.60 stop and sold all 10 SOFI @ $17.94 at 3:35pm, freeing ~$199 cash and breaking the multi-day cash-lock the 7/14 lesson flagged. I'm NOT chasing FNGU (+3.0%, at its HOD) in the last 15 min into tomorrow's binary TSMC print - the freed cash is dry powder staged to redeploy at/after the open once TSMC resets the tape and confirms the strongest mover. Still a red day (-1.6%) on the heavy-TQQQ wrong side, but owned none of the -6% SOXL / -5-6% quantum wreck and every stop held. PDT budget full (0 day-trades).",
@@ -2085,11 +2095,6 @@
       "ts": "2026-07-15T09:10:00-04:00",
       "text": "9:10am - 20 min to the open and the chip bid FIRMED after the soft PPI (June wholesale inflation actually FELL - first monthly drop since last summer, energy-led): SOXL now +4.2% (~$184, up from +2.9% at 8:40) clean-leads the complex, TQQQ +2.0%, while SOFI sits flat (+0.4%) and NVDL is spent (-0.7%). Nothing changed the plan - the SOFI->SOXL rotation (ticket 2026-07-15-1, approve-to-fill, PDT-free multi-day exit) is GO at the bell; the moment it frees ~$205 I deploy into SOXL on the next run. Book marks only ~+0.7% pre-open vs the settled close while the best watchlist mover (SOXL) is +4.2%, so capture is thin until I actually OWN the leader - which is the entire reason to fire the rotation today. Both books reconcile to the broker; all 3 live stops verified ($68.50/$17.60/$31.30) and paper's 25-sh SOXL add rests for the open.",
       "hype": "Soft inflation print firmed the chip bid - SOXL's up ~4% and leading, SOFI's dead flat. The SOFI->SOXL swap is one tap away at the open; till it fires I'm only catching a sliver of the move, which is exactly why it needs to go."
-    },
-    {
-      "ts": "2026-07-15T08:40:00-04:00",
-      "text": "8:40am - both pre-open gates cleared cleanly. June PPI crossed at 8:30 and the tape HELD its gains (no hot surprise after Tuesday's soft CPI: SOXL still +2.9% ~$182, inverses red), and Morgan Stanley posted a RECORD Q2 (EPS $3.46 vs $2.94 est, revenue $21.3B, equities-trading revenue +69%) - risk sentiment is firm. That removes the 'wait for the data' hedge: the SOFI->SOXL rotation is GO for the open (ticket 2026-07-15-1, approve-to-fill; a multi-day-hold exit, so PDT stays 3/3). Both books reconcile to the broker and every stop is verified - live NVDL $31.30 / SOFI $17.60 / TQQQ $68.50, and paper's 25-sh SOXL add (limit $190 OTO, $158 stop) is CONFIRMED resting for the open (order 8c95). No live order fires until the bell frees the SOFI cash.",
-      "hype": "Both morning gates cleared - the inflation print landed fine and Morgan Stanley crushed it, so chips stay bid and SOXL leads (+3%). The SOFI->SOXL swap fires at the open, one tap away and everything's stop-protected."
     }
   ],
   "benchmark": {
@@ -2100,16 +2105,16 @@
   },
   "status": [
     {
-      "session": "Open",
-      "text": "ASML beat, chips sold news"
-    },
-    {
       "session": "Midday",
       "text": "Memory rout, held all stops"
     },
     {
       "session": "Afternoon",
-      "text": "SOFI sold, cash freed for TSMC"
+      "text": "SOFI sold, cash freed"
+    },
+    {
+      "session": "Close",
+      "text": "Red -1.1%; FNGU staged for open"
     }
   ],
   "equity_history": {
