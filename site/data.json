@@ -1,82 +1,82 @@
 {
-  "generated_at": "2026-07-15T14:54:00.782Z",
+  "generated_at": "2026-07-15T14:55:08.127Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 97941.4,
+    "equity": 97836.95,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 96941.4,
-    "day_pnl": -1129.14,
+    "total_pnl": 96836.95,
+    "day_pnl": -1233.59,
     "positions": [
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 261.81,
-        "pl": 18,
-        "plpc": 0.43,
+        "current": 262.02,
+        "pl": 21.44,
+        "plpc": 0.51,
         "thesis": ""
       },
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 29.41,
-        "pl": 496.6,
-        "plpc": 3.36,
+        "current": 29.37,
+        "pl": 473.2,
+        "plpc": 3.2,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.38,
-        "pl": 14.95,
-        "plpc": 0.06,
+        "current": 210.24,
+        "pl": -2.6,
+        "plpc": -0.01,
         "thesis": ""
       },
       {
         "symbol": "NVDA260821C00220000",
         "qty": "8.0000",
         "entry": 7.8,
-        "current": 6.85,
-        "pl": -760,
-        "plpc": -12.18,
+        "current": 6.8,
+        "pl": -800,
+        "plpc": -12.82,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.72,
-        "pl": 167.86,
-        "plpc": 6.85,
+        "current": 32.68,
+        "pl": 164.66,
+        "plpc": 6.72,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.46,
-        "pl": -88.25,
-        "plpc": -1.31,
+        "current": 133.35,
+        "pl": -93.5,
+        "plpc": -1.38,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 73.73,
-        "pl": -946.92,
-        "plpc": -4.36,
+        "current": 73.7,
+        "pl": -955.38,
+        "plpc": -4.4,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 144.99,
-        "pl": -37.05,
-        "plpc": -0.27,
+        "current": 144.91,
+        "pl": -45.13,
+        "plpc": -0.33,
         "thesis": ""
       }
     ],
@@ -112,18 +112,18 @@
     ]
   },
   "live": {
-    "equity": 971.86,
+    "equity": 971.19,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -28.14,
-    "day_pnl": -16.6,
+    "total_pnl": -28.81,
+    "day_pnl": -17.27,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.72,
-        "pl": 2.13,
-        "plpc": 6.98,
+        "current": 32.68,
+        "pl": 2.09,
+        "plpc": 6.85,
         "thesis": ""
       },
       {
@@ -139,9 +139,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 73.74,
-        "pl": -25.5,
-        "plpc": -3.34,
+        "current": 73.7,
+        "pl": -25.88,
+        "plpc": -3.39,
         "thesis": ""
       }
     ],
@@ -519,6 +519,10 @@
       {
         "t": 1784127000000,
         "v": 974.33
+      },
+      {
+        "t": 1784127300000,
+        "v": 970.51
       }
     ]
   },
@@ -539,8 +543,8 @@
       "updated": "10:48am ET",
       "stop": 68.5,
       "hold_reason": "Our 3x-Nasdaq core (10 sh @ $76.29). Bought it as the regime-on leveraged long; today the semi weight in the Nasdaq dragged it -1.7%, but it's well above its $68.50 stop and the thesis holds - JPMorgan reads the chip weakness as a crowded-position unwind, not an AI-cycle top. We sell only if it breaks the stop or QQQ decisively loses its 50-day.",
-      "chg_pct": -1.73,
-      "price": 73.71,
+      "chg_pct": -1.79,
+      "price": 73.67,
       "spark": [
         74.11,
         72.78,
@@ -571,7 +575,7 @@
         74.79,
         71.6,
         77.24,
-        73.71
+        73.67
       ]
     },
     {
@@ -588,9 +592,9 @@
       "horizon": 0.2,
       "updated": "10:48am ET",
       "trigger": 185,
-      "chg_pct": -8.26,
+      "chg_pct": -8.74,
       "stop": 158,
-      "price": 162.04,
+      "price": 161.18,
       "spark": [
         151.66,
         151.93,
@@ -621,7 +625,7 @@
         252.93,
         215,
         236.75,
-        162.04
+        161.18
       ]
     },
     {
@@ -640,8 +644,8 @@
       "trigger": null,
       "stop": 31.3,
       "hold_reason": "2x-NVDA, a single leftover share (~$33) from the BP squeeze. Bought it as NVDA-leverage and it was the best watchlist mover yesterday (+8%). Flat today with NVDA; too small to matter, protected by the $31.30 GTC stop - we hold it, no reason to touch.",
-      "chg_pct": -1.45,
-      "price": 32.7,
+      "chg_pct": -1.84,
+      "price": 32.57,
       "spark": [
         38.1,
         37.52,
@@ -672,7 +676,7 @@
         28.76,
         27.53,
         28.41,
-        32.7
+        32.57
       ]
     },
     {
@@ -689,9 +693,9 @@
       "horizon": 0.3,
       "updated": "10:48am ET",
       "stop": null,
-      "chg_pct": -0.64,
+      "chg_pct": -0.73,
       "hold_reason": "Not a live position beyond the 1-share NVDL stub; we watch it as the tape's bellwether. The H200 China-export news is a genuine positive but the pre-market pop already faded to flat on 'trivial' volume talk, so it's not a reason to chase today. Paper owns the NVDA upside (130 sh + 8 Aug-$220 calls); live rotates into the broader-semi SOXL instead to sidestep the NVDL wash-block.",
-      "price": 210.43,
+      "price": 210.24,
       "spark": [
         222.09,
         220.39,
@@ -722,7 +726,7 @@
         195.89,
         191.97,
         194.92,
-        210.43
+        210.24
       ]
     },
     {
@@ -739,9 +743,9 @@
       "card": "/research/ceg.html",
       "horizon": 0.3,
       "updated": "10:48am ET",
-      "chg_pct": 2.26,
+      "chg_pct": 2.19,
       "hold_reason": "Constellation Energy - the nuclear/power name riding the AI-datacenter electricity buildout. We rotated paper into it (16 sh @ $260.68) out of the decaying 3x-semi SOXL because it's a clean single-name catalyst in a real uptrend, green +2.2% and reclaiming its range. We're watching the $250 shelf; a break of the $236 low (our stop) says the reclaim failed.",
-      "price": 262.2,
+      "price": 262.02,
       "spark": [
         262.03,
         260.67,
@@ -772,7 +776,7 @@
         268.8,
         264.14,
         259.35,
-        262.2
+        262.02
       ]
     },
     {
@@ -788,8 +792,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "10:17am ET",
-      "chg_pct": -2.06,
-      "price": 297.4,
+      "chg_pct": -1.94,
+      "price": 297.79,
       "spark": [
         339.63,
         322.57,
@@ -820,7 +824,7 @@
         325.41,
         303.46,
         307.03,
-        297.4
+        297.79
       ]
     },
     {
@@ -837,8 +841,8 @@
       "horizon": 0.3,
       "updated": "10:48am ET",
       "stop": 348,
-      "chg_pct": -0.22,
-      "price": 395.31,
+      "chg_pct": -0.15,
+      "price": 395.56,
       "spark": [
         409.97,
         404.17,
@@ -869,7 +873,7 @@
         375.12,
         379,
         411.66,
-        395.31
+        395.56
       ]
     },
     {
@@ -887,9 +891,9 @@
       "updated": "10:48am ET",
       "trigger": 29.2,
       "stop": 24.3,
-      "chg_pct": 1.85,
+      "chg_pct": 1.52,
       "hold_reason": "3x FANG+ (the ten biggest tech names) - our biggest paper winner (520 sh @ $28.46, up ~4%) and today's strongest name on the board, +3% as mega-cap tech leads on the Apple-China and AI-capex news. It's also the name the live sleeve is rotating INTO once the SOFI sell frees cash. We ride it with the $24.30 stop; we'd trim only if mega-cap leadership cracks.",
-      "price": 29.41,
+      "price": 29.32,
       "spark": [
         28.23,
         27.6,
@@ -920,7 +924,7 @@
         23.68,
         23.87,
         25.21,
-        29.41
+        29.32
       ]
     },
     {
@@ -1037,8 +1041,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "10:48am ET",
-      "chg_pct": -0.13,
-      "price": 133.55,
+      "chg_pct": -0.27,
+      "price": 133.37,
       "spark": [
         135.11,
         135.27,
@@ -1069,7 +1073,7 @@
         107.3,
         112.82,
         115.66,
-        133.55
+        133.37
       ]
     },
     {
@@ -1086,8 +1090,8 @@
       "card": "/research/be.html",
       "horizon": 0.2,
       "updated": "10:48am ET",
-      "chg_pct": -4.48,
-      "price": 232.53,
+      "chg_pct": -4.55,
+      "price": 232.37,
       "spark": [
         259.04,
         261.71,
@@ -1118,7 +1122,7 @@
         308.97,
         253.24,
         275,
-        232.53
+        232.37
       ]
     },
     {
@@ -1135,8 +1139,8 @@
       "horizon": 0.3,
       "updated": "10:48am ET",
       "stop": 74.5,
-      "chg_pct": -0.47,
-      "price": 78.45,
+      "chg_pct": -0.62,
+      "price": 78.33,
       "spark": [
         131.23,
         127.3,
@@ -1167,7 +1171,7 @@
         80.68,
         84.57,
         98.02,
-        78.45
+        78.33
       ]
     },
     {
@@ -1184,8 +1188,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.3,
       "updated": "10:48am ET",
-      "chg_pct": -0.88,
-      "price": 45.8,
+      "chg_pct": -1.08,
+      "price": 45.71,
       "spark": [
         58.59,
         55.95,
@@ -1216,7 +1220,7 @@
         50.99,
         50.03,
         52.79,
-        45.8
+        45.71
       ]
     },
     {
@@ -1897,8 +1901,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 73.71,
-    "tqqq_pct": -4.15
+    "tqqq": 73.67,
+    "tqqq_pct": -4.2
   },
   "status": [
     {
@@ -2243,6 +2247,14 @@
       [
         1784127180000,
         970.55
+      ],
+      [
+        1784127240000,
+        971.72
+      ],
+      [
+        1784127300000,
+        970.51
       ]
     ],
     "1W": [
