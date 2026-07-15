@@ -77,6 +77,17 @@
       this.style.display = 'block';
       if (this.getAttribute('height')) this.style.height = this.getAttribute('height') + 'px';
       this.style.position = 'relative';
+      this._lightTarget = { x: 0, y: 1.5 };
+      this._lastPointer = 0; this._visible = true;
+      this._watch();
+    }
+    // Build a FRESH canvas + bloom for each GL boot. A canvas that has had forceContextLoss()
+    // called on it can't reliably reacquire a WebGL context, so reusing it on scroll-away →
+    // scroll-back would fail to rebuild and fall through to the flat _fallback() number.
+    _mkCanvas() {
+      if (this._canvas && this._canvas.parentNode) this._canvas.remove();
+      if (this._bloom && this._bloom.parentNode) this._bloom.remove();
+      this.innerHTML = ''; // clear any prior flat fallback
       this._canvas = document.createElement('canvas');
       Object.assign(this._canvas.style, { width: '100%', height: '100%', display: 'block' });
       this.appendChild(this._canvas);
@@ -85,10 +96,7 @@
       const boostAmt = parseFloat(this.getAttribute('boost') || '0');
       Object.assign(this._bloom.style, { position: 'absolute', inset: '0', width: '100%', height: '100%', pointerEvents: 'none', mixBlendMode: 'plus-lighter', filter: boostAmt ? 'blur(11px) brightness(1.4) contrast(1.5)' : 'blur(8px) brightness(1.25) contrast(1.7)' });
       this.appendChild(this._bloom);
-      this._lightTarget = { x: 0, y: 1.5 };
-      this._lastPointer = 0; this._visible = true;
       this._canvas.addEventListener('webglcontextlost', (e) => { e.preventDefault(); this._releaseGL(); }, false);
-      this._watch();
     }
     // GL lifecycle: boot only when near the viewport, release after sustained off-screen time.
     // Keeps concurrent WebGL contexts under the browser cap no matter how many options stack up.
@@ -104,7 +112,7 @@
           if (!this._renderer && !this._booting) this._boot();
         } else if (this._renderer) {
           this._offN = (this._offN || 0) + 1;
-          if (this._offN > 14) this._releaseGL(); // ~7s far off-screen → free the context
+          if (this._offN > 40) this._releaseGL(); // ~20s far off-screen → free the context (reboot rebuilds a fresh canvas)
         }
       };
       check();
@@ -126,6 +134,7 @@
       try {
         const font = await ensureThree();
         this._font = font;
+        this._mkCanvas(); // always render into a fresh canvas so re-boot after release / context-loss succeeds
         const r = new THREE.WebGLRenderer({ canvas: this._canvas, antialias: true, alpha: true });
         r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
         r.outputEncoding = THREE.sRGBEncoding;
@@ -1007,6 +1016,13 @@
     connectedCallback() {
       if (this._init) return; this._init = true;
       Object.assign(this.style, { display: 'block', position: 'absolute', inset: '0', pointerEvents: 'none', zIndex: 60 });
+      this._watch();
+    }
+    // Fresh canvas per boot — a force-lost canvas can't reacquire a GL context (see hero-3d).
+    _mkCanvas() {
+      if (this._canvas && this._canvas.parentNode) this._canvas.remove();
+      if (this._bloom && this._bloom.parentNode) this._bloom.remove();
+      this.innerHTML = '';
       this._canvas = document.createElement('canvas');
       Object.assign(this._canvas.style, { width: '100%', height: '100%', display: 'block' });
       this.appendChild(this._canvas);
@@ -1014,7 +1030,6 @@
       Object.assign(this._bloom.style, { position: 'absolute', inset: '0', width: '100%', height: '100%', pointerEvents: 'none', mixBlendMode: 'plus-lighter', filter: 'blur(8px) brightness(1.25) contrast(1.7)' });
       this.appendChild(this._bloom);
       this._canvas.addEventListener('webglcontextlost', (e) => { e.preventDefault(); this._releaseGL(); }, false);
-      this._watch();
     }
     _rims() { return (this.getAttribute('rims') || '#a855f7,#f472b6,#2dd4bf').split(',').map(s => s.trim()); }
     _watch() {
@@ -1025,7 +1040,7 @@
         const rct = this.getBoundingClientRect();
         const vis = rct.bottom > -300 && rct.top < innerHeight + 300 && rct.width > 0;
         if (vis) { this._offN = 0; if (!this._renderer && !this._booting) this._boot(); }
-        else if (this._renderer) { this._offN = (this._offN || 0) + 1; if (this._offN > 14) this._releaseGL(); }
+        else if (this._renderer) { this._offN = (this._offN || 0) + 1; if (this._offN > 40) this._releaseGL(); }
       };
       check();
     }
@@ -1048,6 +1063,7 @@
       this._booting = true;
       try {
         await ensureThree();
+        this._mkCanvas(); // fresh canvas so re-boot after release / context-loss succeeds
         const r = new THREE.WebGLRenderer({ canvas: this._canvas, antialias: true, alpha: true });
         r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.25));
         r.outputEncoding = THREE.sRGBEncoding;
@@ -1161,15 +1177,21 @@
       // drop it into normal flow and STACK the ridge above the line instead of overlaying.
       if (!this.style.position) this.style.position = 'relative';
       if (this.getAttribute('height')) this.style.height = this.getAttribute('height') + 'px';
+      this._visible = true;
+      this._watch();
+    }
+    // Fresh canvas per boot — a force-lost canvas can't reacquire a GL context (see hero-3d).
+    _mkCanvas() {
+      if (this._canvas && this._canvas.parentNode) this._canvas.remove();
+      if (this._bloom && this._bloom.parentNode) this._bloom.remove();
+      this.innerHTML = '';
       this._canvas = document.createElement('canvas');
       Object.assign(this._canvas.style, { width: '100%', height: '100%', display: 'block' });
       this.appendChild(this._canvas);
       this._bloom = document.createElement('canvas');
       Object.assign(this._bloom.style, { position: 'absolute', inset: '0', width: '100%', height: '100%', pointerEvents: 'none', mixBlendMode: 'plus-lighter', filter: 'blur(10px) brightness(1.3) contrast(1.6)' });
       this.appendChild(this._bloom);
-      this._visible = true;
       this._canvas.addEventListener('webglcontextlost', (e) => { e.preventDefault(); this._releaseGL(); }, false);
-      this._watch();
     }
     _watch() {
       const check = () => {
@@ -1183,7 +1205,7 @@
           if (!this._renderer && !this._booting) this._boot();
         } else if (this._renderer) {
           this._offN = (this._offN || 0) + 1;
-          if (this._offN > 14) this._releaseGL();
+          if (this._offN > 40) this._releaseGL();
         }
       };
       check();
@@ -1227,6 +1249,7 @@
       this._booting = true;
       try {
         await ensureThree();
+        this._mkCanvas(); // fresh canvas so re-boot after release / context-loss succeeds
         const bgHex = this.getAttribute('bg') || '#0c081c';
         const r = new THREE.WebGLRenderer({ canvas: this._canvas, antialias: true, alpha: true });
         r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
