@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#080a10">
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="/m/manifest.json">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,8 +75,8 @@
   <!-- ── COCKPIT (currentRoot) — hero + live lists ── -->
   <div id="m-cockpit" style="display:flex;flex-direction:column;gap:22px">
 
-    <!-- approval card (renders from data.pending_tickets[] + PIN → /.netlify/functions/approve) -->
-    <div style="margin:0 20px;background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.24);border-radius:18px;padding:16px 18px;display:flex;flex-direction:column;gap:14px">
+    <!-- approval card (renders from data.pending_tickets[] + PIN → /.netlify/functions/approve). Hidden entirely when nothing is pending, so viewers see a clean UI. -->
+    <div id="m-approvals-card" style="display:none;margin:0 20px;background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.24);border-radius:18px;padding:16px 18px;flex-direction:column;gap:14px">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
         <div style="font:600 13px/1 system-ui, sans-serif;letter-spacing:3px;color:#6ee7b7">APPROVALS</div>
         <div style="font:700 11px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(110,231,183,0.7)">FROM&nbsp;YOUR&nbsp;PHONE</div>
@@ -119,6 +119,12 @@
       </div>
     </div>
 
+    <!-- top holding -->
+    <div style="margin:0 20px;background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.15);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px">
+      <div data-role="th-head" style="font:600 13px/1 system-ui, sans-serif;letter-spacing:2px;color:#6ee7b7">TOP&nbsp;HOLDING</div>
+      <div data-role="th-blurb" style="font:400 15px/1.6 system-ui, sans-serif;color:rgba(255,255,255,0.72)"></div>
+    </div>
+
     <!-- ── 4 · open positions (tap a row → why we hold it) ── -->
     <div style="margin:0 20px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px">
       <div style="font:600 13px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(255,255,255,0.45);margin-bottom:8px">OPEN&nbsp;POSITIONS</div>
@@ -129,18 +135,6 @@
     <div style="margin:0 20px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px">
       <div style="font:600 13px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(255,255,255,0.45);margin-bottom:8px">RECENT&nbsp;TRADES</div>
       <div data-role="trades"></div>
-    </div>
-
-    <!-- ── 6 · what the engine's thinking ── -->
-    <div style="margin:0 20px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:14px">
-      <div style="font:600 13px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(255,255,255,0.45)">WHAT&nbsp;THE&nbsp;ENGINE'S&nbsp;THINKING</div>
-      <div data-role="notes" style="display:flex;flex-direction:column;gap:2px"></div>
-    </div>
-
-    <!-- top holding -->
-    <div style="margin:0 20px;background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.15);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px">
-      <div data-role="th-head" style="font:600 13px/1 system-ui, sans-serif;letter-spacing:2px;color:#6ee7b7">TOP&nbsp;HOLDING</div>
-      <div data-role="th-blurb" style="font:400 15px/1.6 system-ui, sans-serif;color:rgba(255,255,255,0.72)"></div>
     </div>
 
   </div><!-- /#m-cockpit -->
@@ -174,15 +168,6 @@
     </div>
   </div>
 
-  <!-- WATCHLIST — horizontal-scroll coverage tiles -->
-  <div style="display:flex;flex-direction:column;gap:12px">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:0 20px">
-      <div style="font:600 13px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(255,255,255,0.5)">WATCHLIST&nbsp;·&nbsp;<span id="depth-watch-count">0</span></div>
-      <div style="font:400 12px/1 system-ui, sans-serif;color:rgba(255,255,255,0.38)">swipe ›</div>
-    </div>
-    <div id="depth-watch" class="m-hide-sb" style="display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:2px 20px 8px"></div>
-  </div>
-
   <!-- SCOREBOARD -->
   <div style="margin:0 20px;display:flex;flex-direction:column;gap:14px">
     <div style="display:flex;flex-direction:column;gap:5px">
@@ -190,6 +175,15 @@
       <div style="font:400 13px/1.4 system-ui, sans-serif;color:rgba(255,255,255,0.42)">$1,000 stake — beating buy-and-hold TQQQ?</div>
     </div>
     <div id="depth-score"></div>
+  </div>
+
+  <!-- WATCHLIST — horizontal-scroll coverage tiles -->
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:0 20px">
+      <div style="font:600 13px/1 system-ui, sans-serif;letter-spacing:3px;color:rgba(255,255,255,0.5)">WATCHLIST&nbsp;·&nbsp;<span id="depth-watch-count">0</span></div>
+      <div style="font:400 12px/1 system-ui, sans-serif;color:rgba(255,255,255,0.38)">swipe ›</div>
+    </div>
+    <div id="depth-watch" class="m-hide-sb" style="display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:2px 20px 8px"></div>
   </div>
 
   <!-- REPORT CARD -->
@@ -471,6 +465,7 @@
   function renderApprovals(root){
     const box = root.querySelector('[data-role=approvals]'); if (!box) return;
     const tickets = arr(DATA && DATA.pending_tickets).filter(function (t){ return t && t.id; });
+    const card = document.getElementById('m-approvals-card'); if (card) card.style.display = tickets.length ? 'flex' : 'none';   // whole block hides when nothing's pending
     if (!tickets.length) { box.innerHTML = ''; box.style.display = 'none'; return; }
     box.style.display = 'flex';
     const pal = SKINS[currentSkin].pal, sk = apprSkin(), closed = marketClosed();
@@ -611,10 +606,14 @@
     if (!DATA) return;
     const eq = num(live().equity);
     if (eq === lastValue) return;
-    const hero = root.querySelector('hero-3d');
-    if (hero) hero.setAttribute('value', heroText());                 /* 1. imperative hero value */
-    const pill = root.querySelector('value-pill');
     const up = num(live().day_pnl) >= 0;
+    const hero = root.querySelector('hero-3d');
+    if (hero){
+      const wantMetal = up ? '#dfe7ee' : '#eeb4bd';                    /* cool chrome when green, rose chrome when losing */
+      if (hero.getAttribute('metal') !== wantMetal) hero.setAttribute('metal', wantMetal);
+      hero.setAttribute('value', heroText());                         /* 1. imperative hero value */
+    }
+    const pill = root.querySelector('value-pill');
     const txt = pillText();
     const modeDown = pill && (pill.getAttribute('mode') || 'up') === 'down';
     if (pill && !modeDown) window.dispatchEvent(new CustomEvent('acct-tick', { detail: { up: up, text: txt } })); /* 2. pill event (fired WITH the hero value set) */

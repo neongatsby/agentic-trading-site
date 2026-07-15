@@ -787,7 +787,7 @@
         p.fl += 0.03;
         if (p.y < -10) this._spawn(p, false);
         if (p.x < -20) p.x = w + 20; if (p.x > w + 20) p.x = -20;
-        const spr = this._sprites[p.s], d = p.r * 4;
+        const spr = this._sprites[p.s], d = p.r * 2.7;
         g.globalAlpha = p.a * 0.35;
         g.drawImage(spr, p.x - d * 1.6, p.y - d * 1.6, d * 3.2, d * 3.2);
         g.globalAlpha = p.a;
@@ -810,7 +810,7 @@
         const surf = this._curve ? this._curveYAt(p.x) - this._pileAt(p.x) : (h + 20);
         if (p.y >= surf) { this._deposit(p.x, surf); this._spawn(p, false); continue; }
         if (p.y > h + 10) { this._spawn(p, false); continue; }
-        const spr = this._sprites[p.s], d = p.r * 4, a = p.a * (0.78 + Math.sin(p.wob) * 0.22);
+        const spr = this._sprites[p.s], d = p.r * 2.7, a = p.a * (0.78 + Math.sin(p.wob) * 0.22);
         g.globalAlpha = a * 0.3;
         g.drawImage(spr, p.x - d, p.y - d, d * 2, d * 2);
         g.globalAlpha = a;
