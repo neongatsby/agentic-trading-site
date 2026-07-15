@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-15T23:12:03.218Z",
+  "generated_at": "2026-07-15T23:13:12.422Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99327.59,
+    "equity": 99352.55,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98327.59,
-    "day_pnl": 257.05,
+    "total_pnl": 98352.55,
+    "day_pnl": 282.01,
     "positions": [
       {
         "symbol": "CEG",
@@ -29,9 +29,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 211.63,
-        "pl": 178.1,
-        "plpc": 0.65,
+        "current": 211.67,
+        "pl": 183.3,
+        "plpc": 0.67,
         "thesis": ""
       },
       {
@@ -65,27 +65,27 @@
         "symbol": "SOXL",
         "qty": "10.0000",
         "entry": 163.63,
-        "current": 164.42,
-        "pl": 7.88,
-        "plpc": 0.48,
+        "current": 164.69,
+        "pl": 10.58,
+        "plpc": 0.65,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 74.56,
-        "pl": -712.86,
-        "plpc": -3.28,
+        "current": 74.61,
+        "pl": -698.76,
+        "plpc": -3.21,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 145.98,
-        "pl": 57.36,
-        "plpc": 0.41,
+        "current": 146.01,
+        "pl": 60.32,
+        "plpc": 0.44,
         "thesis": ""
       }
     ],
@@ -121,10 +121,10 @@
     ]
   },
   "live": {
-    "equity": 977.75,
+    "equity": 978.25,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -22.25,
-    "day_pnl": -10.71,
+    "total_pnl": -21.75,
+    "day_pnl": -10.21,
     "positions": [
       {
         "symbol": "NVDL",
@@ -139,9 +139,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 74.56,
-        "pl": -17.3,
-        "plpc": -2.27,
+        "current": 74.61,
+        "pl": -16.8,
+        "plpc": -2.2,
         "thesis": ""
       }
     ],
@@ -1759,6 +1759,12 @@
   ],
   "feed": [
     {
+      "ts": "2026-07-15T19:10:00-04:00",
+      "type": "activity",
+      "text": "7:10pm evening monitor: both books re-verified protected (2 live + 8 paper GTC stops, none naked), FNGU pre-arm resting for the 7/16 open. TSMC prints 2am ET - beat+raise base case; NVDA firmed green after-hours as the resilient-chip tell.",
+      "reaction": "hold"
+    },
+    {
       "ts": "2026-07-15T18:42:00-04:00",
       "type": "activity",
       "text": "Evening monitor: both books protected, FNGU pre-arm resting for the 7/16 open pending TSMC's 2am print.",
@@ -2145,6 +2151,11 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-15T19:10:00-04:00",
+      "text": "7:10pm monitoring check - nothing's moved since the last look and there's nothing to chase into an illiquid after-hours tape 7 hours ahead of the binary TSMC print (2am ET). Re-verified both books fully protected THIS run: live 2/2 GTC (NVDL $31.30, TQQQ $68.50) on TQQQ 10 sh + the NVDL dust share + ~$199 freed cash; paper 8/8 GTC across CEG/FNGU/NVDA/NVDL/PLTR/SOXL/TQQQ/UPRO - no naked position anywhere. Fresh pull confirms the closes held: FNGU settled the day's best long mover +3.1%, and NVDA firmed GREEN +0.3% ($212.4 after-hours) - exactly the resilient-chip tell we want into the print - while SOXL stayed the -6.3% wreck we own zero of live. TSMC consensus reconfirmed (~$40B Q2 rev +33% YoY, 65.5-67.5% GM, $3.77-3.83 EPS, 'extremely robust' AI demand); 8 straight beats make a beat+raise the base case. The approved FNGU pre-arm ($30.20 buy-stop, $25.30 GTC stop, ~$183 of the freed cash) stays resting and fires at the open ONLY if the tape confirms strength after the print. Next auto-action: reconcile TSMC's reaction at/after the 7/16 open and let the pre-arm work.",
+      "hype": "Still nothing to do - every stop double-checked on both books, FNGU held the day's best move and NVDA even ticked green into TSMC tonight. The FNGU buy is pre-armed to fire at the open only if it opens strong."
+    },
     {
       "ts": "2026-07-15T18:42:00-04:00",
       "text": "6:42pm monitoring check, ~30 min after the last, and nothing's changed - no after-hours catalyst, nothing to chase, both books flat-to-plan and fully protected (live 2/2 GTC: NVDL $31.30, TQQQ $68.50; paper 8/8 GTC across CEG/FNGU/NVDA/NVDL/PLTR/SOXL/TQQQ/UPRO), no naked position anywhere. The whole night hinges on one thing: TSMC's 2am ET print (guided $39-40.2B Q2 rev at 65.5-67.5% GM; 8 straight beats make a beat+raise the base case). The approved FNGU pre-arm ($30.20 buy-stop, $25.30 GTC stop, ~$183 of the freed SOFI cash) stays resting and fires at the open ONLY if the tape confirms strength after the print - extended hours is limit-only so nothing fills overnight. Next auto-action: reconcile TSMC's reaction at/after the 7/16 open and let the pre-arm work.",
