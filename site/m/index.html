@@ -75,22 +75,6 @@
   <!-- ── COCKPIT (currentRoot) — hero + live lists ── -->
   <div id="m-cockpit" style="display:flex;flex-direction:column;gap:22px">
 
-    <!-- approval card (renders from data.pending_tickets[] + PIN → /.netlify/functions/approve). Hidden entirely when nothing is pending, so viewers see a clean UI. -->
-    <div id="m-approvals-card" style="display:none;margin:0 20px;background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.24);border-radius:18px;padding:16px 18px;flex-direction:column;gap:14px">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-        <div style="font:600 13px/1 system-ui, sans-serif;letter-spacing:3px;color:#6ee7b7">APPROVALS</div>
-        <div style="font:700 11px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(110,231,183,0.7)">FROM&nbsp;YOUR&nbsp;PHONE</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-        <label for="appr-pin" style="font:600 11px/1 ui-monospace, Menlo, monospace;letter-spacing:2px;color:rgba(255,255,255,0.5)">PIN</label>
-        <input id="appr-pin" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" placeholder="4-digit"
-               style="width:112px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:10px 12px;color:#eef1f6;font:600 16px/1 ui-monospace, Menlo, monospace;letter-spacing:4px;text-align:center">
-        <span style="font:400 12px/1.4 system-ui, sans-serif;color:rgba(255,255,255,0.4)">approves trades on this device</span>
-      </div>
-      <div data-role="approvals" style="display:none;flex-direction:column;gap:14px"></div>
-      <div id="appr-empty" style="font:400 13px/1.5 system-ui, sans-serif;color:rgba(255,255,255,0.42)">Nothing waiting for your OK right now. New trade tickets appear here for a one-tap Approve, Pre-arm or Skip.</div>
-    </div>
-
     <!-- ── 2 · hero + chart region (particles scoped behind) ── -->
     <div style="position:relative;padding:0 8px">
       <particle-field mode="up" density="0.6" style="position:absolute;inset:0;z-index:0"></particle-field>
@@ -119,6 +103,23 @@
       </div>
     </div>
 
+    <!-- ═══ SECTION 1 · TRADE REQUEST (approvals) — below the hero; renders from data.pending_tickets[] + PIN → /.netlify/functions/approve. Hidden entirely when nothing is pending, so viewers see a clean UI. ═══ -->
+    <div id="m-approvals-card" style="display:none;margin:0 20px;background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.24);border-radius:18px;padding:16px 18px;flex-direction:column;gap:14px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <div style="font:600 13px/1 system-ui, sans-serif;letter-spacing:3px;color:#6ee7b7">TRADE&nbsp;REQUEST</div>
+        <div style="font:700 11px/1 system-ui, sans-serif;letter-spacing:1.5px;color:rgba(110,231,183,0.7)">NEEDS&nbsp;YOUR&nbsp;OK</div>
+      </div>
+      <div data-role="approvals" style="display:none;flex-direction:column;gap:14px"></div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <label for="appr-pin" style="font:600 11px/1 ui-monospace, Menlo, monospace;letter-spacing:2px;color:rgba(255,255,255,0.5)">PIN</label>
+        <input id="appr-pin" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" placeholder="4-digit"
+               style="width:112px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:10px 12px;color:#eef1f6;font:600 16px/1 ui-monospace, Menlo, monospace;letter-spacing:4px;text-align:center">
+        <span style="font:400 12px/1.4 system-ui, sans-serif;color:rgba(255,255,255,0.4)">approves trades on this device</span>
+      </div>
+      <div id="appr-empty" style="display:none">&nbsp;</div>
+    </div>
+
+    <!-- ═══ SECTION 2 · HOLDINGS (top holding + open positions) ═══ -->
     <!-- top holding -->
     <div style="margin:0 20px;background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.15);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px">
       <div data-role="th-head" style="font:600 13px/1 system-ui, sans-serif;letter-spacing:2px;color:#6ee7b7">TOP&nbsp;HOLDING</div>
