@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-15T13:58:56.819Z",
+  "generated_at": "2026-07-15T14:00:08.784Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 98876.42,
+    "equity": 99315.16,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 97876.42,
-    "day_pnl": -194.12,
+    "total_pnl": 98315.16,
+    "day_pnl": 244.62,
     "positions": [
       {
         "symbol": "FNGU",
@@ -20,54 +20,54 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 211.32,
-        "pl": 137.8,
-        "plpc": 0.5,
+        "current": 211.97,
+        "pl": 222.3,
+        "plpc": 0.81,
         "thesis": ""
       },
       {
         "symbol": "NVDA260821C00220000",
         "qty": "8.0000",
         "entry": 7.8,
-        "current": 7.15,
-        "pl": -520,
-        "plpc": -8.33,
+        "current": 7.45,
+        "pl": -280,
+        "plpc": -4.49,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 33.03,
-        "pl": 192.66,
-        "plpc": 7.87,
+        "current": 33.22,
+        "pl": 207.73,
+        "plpc": 8.48,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.69,
-        "pl": -76.5,
-        "plpc": -1.13,
+        "current": 133.72,
+        "pl": -75,
+        "plpc": -1.11,
         "thesis": ""
       },
       {
         "symbol": "SOXL",
         "qty": "25.0000",
         "entry": 179.97,
-        "current": 174.31,
-        "pl": -141.63,
-        "plpc": -3.15,
+        "current": 176,
+        "pl": -99.25,
+        "plpc": -2.21,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 75.15,
-        "pl": -546.48,
-        "plpc": -2.51,
+        "current": 75.36,
+        "pl": -487.54,
+        "plpc": -2.24,
         "thesis": ""
       },
       {
@@ -75,7 +75,7 @@
         "qty": "95.0000",
         "entry": 145.38,
         "current": 145.8,
-        "pl": 39.72,
+        "pl": 39.9,
         "plpc": 0.29,
         "thesis": ""
       }
@@ -112,36 +112,36 @@
     ]
   },
   "live": {
-    "equity": 986.47,
+    "equity": 988.91,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -13.53,
-    "day_pnl": -1.99,
+    "total_pnl": -11.09,
+    "day_pnl": 0.45,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 33.03,
-        "pl": 2.44,
-        "plpc": 7.99,
+        "current": 33.22,
+        "pl": 2.63,
+        "plpc": 8.61,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.23,
-        "pl": -5.25,
-        "plpc": -2.8,
+        "current": 18.26,
+        "pl": -4.99,
+        "plpc": -2.66,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.15,
-        "pl": -11.4,
-        "plpc": -1.49,
+        "current": 75.35,
+        "pl": -9.4,
+        "plpc": -1.23,
         "thesis": ""
       }
     ],
@@ -475,6 +475,10 @@
       {
         "t": 1784123700000,
         "v": 985.78
+      },
+      {
+        "t": 1784124000000,
+        "v": 988.56
       }
     ]
   },
@@ -495,8 +499,8 @@
       "updated": "9:45am ET",
       "stop": 68.5,
       "hold_reason": "3x-Nasdaq, our biggest live position (10 sh @ $76.29). It's the broad-leverage core we held through the ASML print. Today it's the relative-strength winner - green +0.7% while the pure-semi names fade - so we're happy holding; we'd only trim to fund a clearly stronger setup, and the $68.50 GTC stop bounds it.",
-      "chg_pct": 0.2,
-      "price": 75.16,
+      "chg_pct": 0.43,
+      "price": 75.33,
       "spark": [
         74.11,
         72.78,
@@ -527,7 +531,7 @@
         74.79,
         71.6,
         77.24,
-        75.16
+        75.33
       ]
     },
     {
@@ -544,9 +548,9 @@
       "horizon": 0.2,
       "updated": "9:45am ET",
       "trigger": 185,
-      "chg_pct": -1.25,
+      "chg_pct": -0.71,
       "stop": 158,
-      "price": 174.41,
+      "price": 175.36,
       "spark": [
         151.66,
         151.93,
@@ -577,7 +581,7 @@
         252.93,
         215,
         236.75,
-        174.41
+        175.36
       ]
     },
     {
@@ -596,8 +600,8 @@
       "trigger": null,
       "stop": 31.3,
       "hold_reason": "2x-NVDA, a single leftover share (~$33) from the BP squeeze. Bought it as NVDA-leverage and it was the best watchlist mover yesterday (+8%). Flat today with NVDA; too small to matter, protected by the $31.30 GTC stop - we hold it, no reason to touch.",
-      "chg_pct": -0.57,
-      "price": 32.99,
+      "chg_pct": 0.12,
+      "price": 33.22,
       "spark": [
         38.1,
         37.52,
@@ -628,7 +632,7 @@
         28.76,
         27.53,
         28.41,
-        32.99
+        33.22
       ]
     },
     {
@@ -645,9 +649,9 @@
       "horizon": 0.3,
       "updated": "9:45am ET",
       "stop": null,
-      "chg_pct": -0.22,
+      "chg_pct": 0.08,
       "hold_reason": "Not a live position beyond the 1-share NVDL stub; we watch it as the tape's bellwether. The H200 China-export news is a genuine positive but the pre-market pop already faded to flat on 'trivial' volume talk, so it's not a reason to chase today. Paper owns the NVDA upside (130 sh + 8 Aug-$220 calls); live rotates into the broader-semi SOXL instead to sidestep the NVDL wash-block.",
-      "price": 211.32,
+      "price": 211.96,
       "spark": [
         222.09,
         220.39,
@@ -678,7 +682,7 @@
         195.89,
         191.97,
         194.92,
-        211.32
+        211.96
       ]
     },
     {
@@ -695,8 +699,8 @@
       "card": "/research/ceg.html",
       "horizon": 0.3,
       "updated": "2026-07-15T09:10:00-04:00",
-      "chg_pct": 2.41,
-      "price": 262.59,
+      "chg_pct": 2.34,
+      "price": 262.41,
       "spark": [
         262.03,
         260.67,
@@ -727,7 +731,7 @@
         268.8,
         264.14,
         259.35,
-        262.59
+        262.41
       ]
     },
     {
@@ -743,8 +747,8 @@
       "plan_usd": 0,
       "horizon": 0.3,
       "updated": "2026-07-15T09:10:00-04:00",
-      "chg_pct": 0,
-      "price": 303.67,
+      "chg_pct": 0.44,
+      "price": 305.01,
       "spark": [
         339.63,
         322.57,
@@ -775,7 +779,7 @@
         325.41,
         303.46,
         307.03,
-        303.67
+        305.01
       ]
     },
     {
@@ -792,8 +796,8 @@
       "horizon": 0.3,
       "updated": "2026-07-15T09:10:00-04:00",
       "stop": 348,
-      "chg_pct": 0.52,
-      "price": 398.21,
+      "chg_pct": 0.61,
+      "price": 398.56,
       "spark": [
         409.97,
         404.17,
@@ -824,7 +828,7 @@
         375.12,
         379,
         411.66,
-        398.21
+        398.56
       ]
     },
     {
@@ -943,8 +947,8 @@
       "trigger": null,
       "stop": 17.6,
       "hold_reason": "Our one non-chip live name (10 sh @ $18.76), roughly flat. The plan was to de-camp it INTO SOXL, but SOXL sold the news at the open - so the redeploy target died and we're NOT selling SOFI into cash with no clean place to put it. Holding for now (it's actually holding better than the chips today); we rotate it the moment a real leader confirms. $17.60 GTC stop.",
-      "chg_pct": -1.83,
-      "price": 18.21,
+      "chg_pct": -1.54,
+      "price": 18.27,
       "spark": [
         15.7,
         15.22,
@@ -975,7 +979,7 @@
         17.29,
         17.86,
         18.18,
-        18.21
+        18.27
       ]
     },
     {
@@ -991,8 +995,8 @@
       "plan_usd": 0,
       "horizon": 0.2,
       "updated": "9:45am ET",
-      "chg_pct": -0.07,
-      "price": 133.64,
+      "chg_pct": -0.16,
+      "price": 133.51,
       "spark": [
         135.11,
         135.27,
@@ -1023,7 +1027,7 @@
         107.3,
         112.82,
         115.66,
-        133.64
+        133.51
       ]
     },
     {
@@ -1040,8 +1044,8 @@
       "card": "/research/be.html",
       "horizon": 0.2,
       "updated": "9:45am ET",
-      "chg_pct": -2.18,
-      "price": 238.12,
+      "chg_pct": -1.59,
+      "price": 239.57,
       "spark": [
         259.04,
         261.71,
@@ -1072,7 +1076,7 @@
         308.97,
         253.24,
         275,
-        238.12
+        239.57
       ]
     },
     {
@@ -1089,8 +1093,8 @@
       "horizon": 0.3,
       "updated": "9:45am ET",
       "stop": 74.5,
-      "chg_pct": -0.88,
-      "price": 78.13,
+      "chg_pct": -0.94,
+      "price": 78.08,
       "spark": [
         131.23,
         127.3,
@@ -1121,7 +1125,7 @@
         80.68,
         84.57,
         98.02,
-        78.13
+        78.08
       ]
     },
     {
@@ -1138,8 +1142,8 @@
       "card": "/research/oklo.html",
       "horizon": 0.3,
       "updated": "9:45am ET",
-      "chg_pct": -0.24,
-      "price": 46.1,
+      "chg_pct": -0.19,
+      "price": 46.12,
       "spark": [
         58.59,
         55.95,
@@ -1170,7 +1174,7 @@
         50.99,
         50.03,
         52.79,
-        46.1
+        46.12
       ]
     },
     {
@@ -1186,8 +1190,8 @@
       "thesis": "**Today's biggest watchlist mover - and un-ownable on live.** 3x-inverse semis ran ~+5% as the ASML pop faded. Live can't short (no margin/short), and going LONG an inverse at the open against a fundamental beat-and-raise is a coin-flip we won't claim after the fact. Noting it honestly: it's why capture looks optically thin today.",
       "horizon": 0.2,
       "updated": "9:45am ET",
-      "chg_pct": 915.12,
-      "price": 43.65,
+      "chg_pct": 906.74,
+      "price": 43.29,
       "spark": [
         98.52,
         98.27,
@@ -1218,7 +1222,7 @@
         36.2,
         42.4,
         37.15,
-        43.65
+        43.29
       ]
     }
   ],
@@ -1821,8 +1825,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 75.16,
-    "tqqq_pct": -2.26
+    "tqqq": 75.33,
+    "tqqq_pct": -2.04
   },
   "status": [
     {
@@ -1855,6 +1859,10 @@
       [
         1784123700000,
         985.78
+      ],
+      [
+        1784124000000,
+        988.56
       ]
     ],
     "1W": [
