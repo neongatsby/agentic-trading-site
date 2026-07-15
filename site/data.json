@@ -1,82 +1,82 @@
 {
-  "generated_at": "2026-07-15T14:51:45.009Z",
+  "generated_at": "2026-07-15T14:52:53.849Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 97849.74,
+    "equity": 97982.53,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 96849.74,
-    "day_pnl": -1220.8,
+    "total_pnl": 96982.53,
+    "day_pnl": -1088.01,
     "positions": [
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 262.56,
-        "pl": 30.16,
-        "plpc": 0.72,
+        "current": 262.47,
+        "pl": 28.64,
+        "plpc": 0.69,
         "thesis": ""
       },
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 29.41,
-        "pl": 491.4,
-        "plpc": 3.32,
+        "current": 29.4,
+        "pl": 488.8,
+        "plpc": 3.3,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.09,
-        "pl": -21.45,
-        "plpc": -0.08,
+        "current": 210.43,
+        "pl": 21.45,
+        "plpc": 0.08,
         "thesis": ""
       },
       {
         "symbol": "NVDA260821C00220000",
         "qty": "8.0000",
         "entry": 7.8,
-        "current": 6.75,
-        "pl": -840,
-        "plpc": -13.46,
+        "current": 6.85,
+        "pl": -760,
+        "plpc": -12.18,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.64,
-        "pl": 161.46,
-        "plpc": 6.59,
+        "current": 32.74,
+        "pl": 169.45,
+        "plpc": 6.92,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.92,
-        "pl": -65,
-        "plpc": -0.96,
+        "current": 133.68,
+        "pl": -77,
+        "plpc": -1.14,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 73.64,
-        "pl": -972.3,
-        "plpc": -4.47,
+        "current": 73.74,
+        "pl": -944.13,
+        "plpc": -4.34,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 145.22,
-        "pl": -15.2,
-        "plpc": -0.11,
+        "current": 145.13,
+        "pl": -23.75,
+        "plpc": -0.17,
         "thesis": ""
       }
     ],
@@ -112,36 +112,36 @@
     ]
   },
   "live": {
-    "equity": 971.28,
+    "equity": 972.08,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -28.72,
-    "day_pnl": -17.18,
+    "total_pnl": -27.92,
+    "day_pnl": -16.38,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.64,
-        "pl": 2.05,
-        "plpc": 6.72,
+        "current": 32.74,
+        "pl": 2.15,
+        "plpc": 7.04,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.25,
-        "pl": -5.05,
-        "plpc": -2.69,
+        "current": 18.23,
+        "pl": -5.25,
+        "plpc": -2.8,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 73.65,
-        "pl": -26.4,
-        "plpc": -3.46,
+        "current": 73.74,
+        "pl": -25.5,
+        "plpc": -3.34,
         "thesis": ""
       }
     ],
@@ -184,7 +184,7 @@
       },
       {
         "date": "Jul 15",
-        "value": 991.44
+        "value": 970.3
       }
     ],
     "intraday": [
@@ -522,20 +522,7 @@
       }
     ]
   },
-  "pending_tickets": [
-    {
-      "id": "2026-07-15-2",
-      "symbol": "SOFI",
-      "side": "sell",
-      "size": "$182",
-      "qty": 10,
-      "entry": 18.24,
-      "trigger": null,
-      "stop": null,
-      "bracket": "none - sell-to-close; cancel the resting $17.60 GTC stop (42f0ac56) first, then sell. Frees ~$201 to buy FNGU next run",
-      "thesis": "De-camp the flat SOFI laggard (-1.7%, no catalyst) to fund the FANG+ leader FNGU. Multi-day exit (bought 7/10), PDT-free. Closes the 4-grade camping failure."
-    }
-  ],
+  "pending_tickets": [],
   "coverage": [
     {
       "ticker": "TQQQ",
@@ -549,11 +536,11 @@
       "size_note": "10 sh held - the 3x core, ~76% of live sleeve, $68.50 GTC stop",
       "plan_usd": 751,
       "horizon": 0.3,
-      "updated": "10:17am ET",
+      "updated": "10:48am ET",
       "stop": 68.5,
-      "hold_reason": "3x-Nasdaq, our biggest live position (10 sh @ $76.29). It's the broad-leverage core and today the relative-strength anchor - green +0.7% while semis fade and SOFI drags. Happy holding; we'd only trim to fund a clearly stronger setup, and the wide $68.50 GTC stop bounds it.",
-      "chg_pct": -1.77,
-      "price": 73.68,
+      "hold_reason": "Our 3x-Nasdaq core (10 sh @ $76.29). Bought it as the regime-on leveraged long; today the semi weight in the Nasdaq dragged it -1.7%, but it's well above its $68.50 stop and the thesis holds - JPMorgan reads the chip weakness as a crowded-position unwind, not an AI-cycle top. We sell only if it breaks the stop or QQQ decisively loses its 50-day.",
+      "chg_pct": -1.71,
+      "price": 73.73,
       "spark": [
         74.11,
         72.78,
@@ -584,7 +571,7 @@
         74.79,
         71.6,
         77.24,
-        73.68
+        73.73
       ]
     },
     {
@@ -599,11 +586,11 @@
       "size_note": "flat - rotated to CEG",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "10:17am ET",
+      "updated": "10:48am ET",
       "trigger": 185,
-      "chg_pct": -8.15,
+      "chg_pct": -8.01,
       "stop": 158,
-      "price": 162.22,
+      "price": 162.48,
       "spark": [
         151.66,
         151.93,
@@ -634,7 +621,7 @@
         252.93,
         215,
         236.75,
-        162.22
+        162.48
       ]
     },
     {
@@ -649,12 +636,12 @@
       "size_note": "1 sh held — ~$33, stop $31.30 GTC (protects the gain)",
       "plan_usd": 33,
       "horizon": 0.3,
-      "updated": "10:17am ET",
+      "updated": "10:48am ET",
       "trigger": null,
       "stop": 31.3,
       "hold_reason": "2x-NVDA, a single leftover share (~$33) from the BP squeeze. Bought it as NVDA-leverage and it was the best watchlist mover yesterday (+8%). Flat today with NVDA; too small to matter, protected by the $31.30 GTC stop - we hold it, no reason to touch.",
-      "chg_pct": -1.24,
-      "price": 32.77,
+      "chg_pct": -1.21,
+      "price": 32.78,
       "spark": [
         38.1,
         37.52,
@@ -685,7 +672,7 @@
         28.76,
         27.53,
         28.41,
-        32.77
+        32.78
       ]
     },
     {
@@ -700,11 +687,11 @@
       "size_note": "~$211.6 (+4%), record high; expressed via NVDL",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "10:17am ET",
+      "updated": "10:48am ET",
       "stop": null,
-      "chg_pct": -0.8,
+      "chg_pct": -0.65,
       "hold_reason": "Not a live position beyond the 1-share NVDL stub; we watch it as the tape's bellwether. The H200 China-export news is a genuine positive but the pre-market pop already faded to flat on 'trivial' volume talk, so it's not a reason to chase today. Paper owns the NVDA upside (130 sh + 8 Aug-$220 calls); live rotates into the broader-semi SOXL instead to sidestep the NVDL wash-block.",
-      "price": 210.09,
+      "price": 210.41,
       "spark": [
         222.09,
         220.39,
@@ -735,7 +722,7 @@
         195.89,
         191.97,
         194.92,
-        210.09
+        210.41
       ]
     },
     {
@@ -751,10 +738,10 @@
       "plan_usd": 4171,
       "card": "/research/ceg.html",
       "horizon": 0.3,
-      "updated": "10:17am ET",
-      "chg_pct": 2.38,
+      "updated": "10:48am ET",
+      "chg_pct": 2.4,
       "hold_reason": "Constellation Energy - the nuclear/power name riding the AI-datacenter electricity buildout. We rotated paper into it (16 sh @ $260.68) out of the decaying 3x-semi SOXL because it's a clean single-name catalyst in a real uptrend, green +2.2% and reclaiming its range. We're watching the $250 shelf; a break of the $236 low (our stop) says the reclaim failed.",
-      "price": 262.52,
+      "price": 262.57,
       "spark": [
         262.03,
         260.67,
@@ -785,7 +772,7 @@
         268.8,
         264.14,
         259.35,
-        262.52
+        262.57
       ]
     },
     {
@@ -848,10 +835,10 @@
       "size_note": "SOLD from paper this run - laggard, capital rotated into chip leadership.",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "10:17am ET",
+      "updated": "10:48am ET",
       "stop": 348,
       "chg_pct": -0.1,
-      "price": 395.76,
+      "price": 395.77,
       "spark": [
         409.97,
         404.17,
@@ -882,7 +869,7 @@
         375.12,
         379,
         411.66,
-        395.76
+        395.77
       ]
     },
     {
@@ -897,12 +884,12 @@
       "size_note": "PAPER 520 sh, $24.30 stop; LIVE redeploy target (~6 sh)",
       "plan_usd": 180,
       "horizon": 0.3,
-      "updated": "10:17am ET",
+      "updated": "10:48am ET",
       "trigger": 29.2,
       "stop": 24.3,
-      "chg_pct": 1.9,
+      "chg_pct": 1.82,
       "hold_reason": "3x FANG+ (the ten biggest tech names) - our biggest paper winner (520 sh @ $28.46, up ~4%) and today's strongest name on the board, +3% as mega-cap tech leads on the Apple-China and AI-capex news. It's also the name the live sleeve is rotating INTO once the SOFI sell frees cash. We ride it with the $24.30 stop; we'd trim only if mega-cap leadership cracks.",
-      "price": 29.43,
+      "price": 29.41,
       "spark": [
         28.23,
         27.6,
@@ -933,7 +920,7 @@
         23.68,
         23.87,
         25.21,
-        29.43
+        29.41
       ]
     },
     {
@@ -948,7 +935,7 @@
       "size_note": "PAPER 95 sh @ $145.38 (~$144.29), $124 GTC stop live ✓",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "10:17am ET",
+      "updated": "10:48am ET",
       "trigger": 148.5,
       "stop": 124,
       "chg_pct": 1.03,
@@ -990,20 +977,20 @@
       "ticker": "SOFI",
       "name": "SoFi",
       "theme": "High-beta bench",
-      "verdict": "sell",
-      "verdict_label": "LIVE de-camp STAGED (ticket 2026-07-15-2): SELL 10 sh ~$18.24 to fund FNGU. The 4-grade camping failure, finally moving",
+      "verdict": "hold",
+      "verdict_label": "Hold",
       "thesis": "**Executing the de-camp.** 10 sh @ $18.76, the one non-chip live name and the standing laggard - flat-to-red with no catalyst today (-1.7%) while mega-cap tech leads. Staged LIVE ticket 2026-07-15-2 to SELL (multi-day exit, PDT-free); frees ~$201 to buy the FANG+ leader FNGU (clean symbol, dodges the wash-block) next run on cash-confirm.",
       "size": "$182",
       "size_pct": 18,
       "size_note": "10 sh - SELL ticket staged; rotating to FNGU",
       "plan_usd": 182,
       "horizon": 0.4,
-      "updated": "10:17am ET",
+      "updated": "10:48am ET",
       "trigger": null,
       "stop": 17.6,
-      "hold_reason": "This is the name we keep saying we'll rotate and finally are. SoFi (10 sh @ $18.76) has been the flat live laggard for a week with no fresh catalyst; today it's red -1.7% while the broad+mega-cap tape is green. The SELL ticket is staged to free the cash for the FANG+ leader FNGU - opportunity cost is the sell signal.",
-      "chg_pct": -1.56,
-      "price": 18.27,
+      "hold_reason": "Fintech, no fresh catalyst - we've flagged it as the rotation candidate for days. But today it's the book's relative OUTPERFORMER (-1.3% vs the leveraged names down ~1.8%), and the tape reversed into a red semi-selloff, so selling it now to add 3x leverage would be backwards. Held and protected by the $17.60 GTC stop; the de-camp fires on a green reclaim, not into weakness - and needs the fast-lane 'close' bug fixed first (it can't sell shares the stop reserves).",
+      "chg_pct": -1.75,
+      "price": 18.23,
       "spark": [
         15.7,
         15.22,
@@ -1034,7 +1021,7 @@
         17.29,
         17.86,
         18.18,
-        18.27
+        18.23
       ]
     },
     {
@@ -1049,9 +1036,9 @@
       "size_note": "PAPER: 50 sh @ $135.22 (~$133.4), $121.50 stop. Live: rotation watch, no BP.",
       "plan_usd": 0,
       "horizon": 0.2,
-      "updated": "10:17am ET",
-      "chg_pct": 0.21,
-      "price": 134.01,
+      "updated": "10:48am ET",
+      "chg_pct": -0.05,
+      "price": 133.66,
       "spark": [
         135.11,
         135.27,
@@ -1082,7 +1069,7 @@
         107.3,
         112.82,
         115.66,
-        134.01
+        133.66
       ]
     },
     {
@@ -1098,9 +1085,9 @@
       "plan_usd": 0,
       "card": "/research/be.html",
       "horizon": 0.2,
-      "updated": "10:17am ET",
-      "chg_pct": -4.45,
-      "price": 232.6,
+      "updated": "10:48am ET",
+      "chg_pct": -4.53,
+      "price": 232.41,
       "spark": [
         259.04,
         261.71,
@@ -1131,7 +1118,7 @@
         308.97,
         253.24,
         275,
-        232.6
+        232.41
       ]
     },
     {
@@ -1146,10 +1133,10 @@
       "size_note": "running +3.7% (~$79.6); re-ticket on a hold >$82, not a chase",
       "plan_usd": 0,
       "horizon": 0.3,
-      "updated": "10:17am ET",
+      "updated": "10:48am ET",
       "stop": 74.5,
-      "chg_pct": -0.67,
-      "price": 78.29,
+      "chg_pct": -0.43,
+      "price": 78.48,
       "spark": [
         131.23,
         127.3,
@@ -1180,7 +1167,7 @@
         80.68,
         84.57,
         98.02,
-        78.29
+        78.48
       ]
     },
     {
@@ -1196,9 +1183,9 @@
       "plan_usd": 0,
       "card": "/research/oklo.html",
       "horizon": 0.3,
-      "updated": "10:17am ET",
-      "chg_pct": -0.63,
-      "price": 45.92,
+      "updated": "10:48am ET",
+      "chg_pct": -0.74,
+      "price": 45.87,
       "spark": [
         58.59,
         55.95,
@@ -1229,7 +1216,7 @@
         50.99,
         50.03,
         52.79,
-        45.92
+        45.87
       ]
     },
     {
@@ -1244,9 +1231,9 @@
       "plan_usd": 0,
       "thesis": "**Today's biggest watchlist mover - and un-ownable on live.** 3x-inverse semis ran ~+5% as the ASML pop faded. Live can't short (no margin/short), and going LONG an inverse at the open against a fundamental beat-and-raise is a coin-flip we won't claim after the fact. Noting it honestly: it's why capture looks optically thin today.",
       "horizon": 0.2,
-      "updated": "10:17am ET",
-      "chg_pct": 988.84,
-      "price": 46.82,
+      "updated": "10:48am ET",
+      "chg_pct": 984.65,
+      "price": 46.64,
       "spark": [
         98.52,
         98.27,
@@ -1277,21 +1264,26 @@
         36.2,
         42.4,
         37.15,
-        46.82
+        46.64
       ]
     }
   ],
   "feed": [
+    {
+      "type": "note",
+      "ts": "2026-07-15T10:48:00-04:00",
+      "text": "10:48am - GREEN->RED reversal + a real find. The 10:17 rally flipped: semis got hit (SOXL -9.5%, BE -4.9%) on a crowded-position unwind (JPMorgan: not an AI-cycle top), while broad/mega-cap held green (FNGU +2.4%, UPRO +1.0%, CEG +2.2%). QQQ back under its 50-day = weak regime, so I did NOT chase 3x FNGU into the selloff. Bigger: the approved SOFI sell can't fire because the fast-lane 'close' doesn't cancel the resting stop first - the actual reason 5 runs of 'sell SOFI' never executed. Held both books, all stops verified."
+    },
     {
       "type": "trade",
       "account": "live",
       "ts": "2026-07-15T10:17:00-04:00",
       "symbol": "SOFI",
       "side": "sell",
-      "status": "pending",
+      "status": "cancelled",
       "detail": "10 @ ~$18.24",
-      "reaction": "rotate",
-      "text": "De-camping the flat SOFI laggard - SELL ticket's on Adam's phone. Frees ~$201 to buy the FANG+ leader FNGU next run. Multi-day exit, PDT-free. Closes the 4-grade camping failure."
+      "reaction": "hold",
+      "text": "SOFI sell was APPROVED but the fast-lane couldn't execute it - its own $17.60 GTC stop reserves the shares (qty_available=0), so the 'close' action needs to cancel that stop first. And the tape flipped red anyway, so the FNGU chase is off. Holding SOFI - today's relative outperformer - still stopped at $17.60."
     },
     {
       "type": "trade",
@@ -1827,6 +1819,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-15T10:48:00-04:00",
+      "text": "10:48am - HONEST reversal + a real bug found. The green tape at 10:17 FLIPPED red: a semi-specific selloff (SK Hynix/Samsung memory; JPMorgan calls it a crowded-position UNWIND, not an AI-cycle top) dragged SOXL -9.5%, BE -4.9%, IONQ -3.7%, while broad + mega-cap tech held GREEN (FNGU +2.4%, UPRO +1.0%, CEG +2.2%). QQQ slipped back UNDER its ~718 50-day = a neutral-weak regime. Adam APPROVED the SOFI sell but it did NOT execute: the fast-lane 'close' can't sell shares the $17.60 GTC stop reserves (qty_available=0) - it must cancel that stop FIRST. That bug, not idea quality, is why ~5 runs of 'sell SOFI' never fired. And given the reversal I am NOT chasing 3x FNGU into a red semi-wreck with QQQ under its 50-day - SOFI is actually the book's relative OUTPERFORMER today (-1.35% vs TQQQ/NVDL -1.8%). Held both books, all stops verified, no new leverage. Live -1.8% ($970), cash-locked at $19.59; paper -1.5%, well-tilted to the green leaders it already holds.",
+      "hype": "Morning rally flipped red - chips sold off on a crowded-trade unwind, not the end of AI. Your SOFI sell got approved but a bug blocked it from firing (its own stop was in the way) - and with the tape red I'm not chasing leverage anyway. Holding tight, everything's stopped."
+    },
+    {
       "ts": "2026-07-15T10:17:00-04:00",
       "text": "10:17am - executing the de-camp I keep re-writing. Semis SOLD the ASML/H200 news (SOXL -2.7%, never reclaimed $177) so the redeploy pivots off SOXL to the confirmed GREEN leader FNGU (3x FANG+, +3% on the Apple-Intelligence-China clearance + soft PPI). Staged LIVE ticket 2026-07-15-2: SELL the flat SOFI laggard (-1.7%, no catalyst) - a multi-day exit, PDT-free - to free ~$201 that buys ~6 FNGU next run on cash-confirm. On paper (autonomous) I cut the chop-decaying 3x-semi SOXL @ $170.32 (-$241) and rotated into a CEG breakout @ $260.68 ($236 stop). Honest: book only +0.3% while FNGU ran +3% - capture ~10%, thin - but the fix is finally MOVING, not journaled.",
       "hype": "Finally cutting the flat SOFI to go own the actual winner - FNGU's up 3% while we sat, so the sell ticket's on your phone. Also swapped the dead semi bet for a clean power-AI name (CEG) on paper."
@@ -1895,23 +1892,18 @@
       "ts": "2026-07-14T20:39:00-04:00",
       "text": "8:39pm - final check, market fully closed (after-hours over). Corrected today's grade to the settled close: the account actually finished +4.1% ($997.48 vs $957.99), not the +3.1% the intraday marks showed - TQQQ's real SIP close was +4.35% ($75.79), not the ~$75.07 the live feed was giving me. So capture is 49% (book +4.1% vs NVDL, the day's best mover we held, +8.4%), and I nudged the grade B- -> B. Not higher, though: live's $19.59 BP meant NVDL was a single $33 share, so the weight rode the +4.3% 3x core instead of concentrating in the +8.4% leader - the same structural cash-lock. Both books reconcile clean to the broker; all 9 GTC stops live (3 live, 6 paper). No trade - nothing fills after 8pm and I won't sell the SOFI hedge blind into ASML's pre-open print. Locked plan holds for the open: chips survive ASML + QQQ holds its 50-day -> swing SOFI into the strongest chip name; a miss that breaks QQQ -> de-risk the 3x. Day-trade budget 3/3.",
       "hype": "Double-checked the close and we actually finished +4.1%, not +3% - the intraday feed was lowballing TQQQ. So the grade's a B, capture about half. Still holding into ASML; nothing trades after 8pm anyway."
-    },
-    {
-      "ts": "2026-07-14T20:10:00-04:00",
-      "text": "8:10pm - market closed, evening staging run. Reconciled both books to the broker (LIVE: TQQQ 10 / SOFI 10 / NVDL 1; PAPER: FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95) and re-verified all 9 GTC stops live. Nothing fills after 8pm, so no trade tonight. The setup that matters is ASML's Q2 before tomorrow's open (~8% move priced, EPS ~$7.98 / +75% y/y est) - the whole chip complex gaps on it. Locked plan per today's lesson: if chips survive the print and QQQ holds its 50-day (~$717), swing the flat live SOFI into the strongest confirmed chip name at the open (selling a multi-day hold isn't a day-trade, so that rotation is free); a miss that breaks QQQ de-risks the 3x instead. Won't sell the SOFI hedge blind into a binary with $19.59 BP. Day-trade budget 3/3.",
-      "hype": "Books are set and stops are live - nothing trades after 8pm anyway. The real move is ASML before tomorrow's open: chips hold, I finally swap the flat SOFI into the strongest one; it flops, I trim the 3x."
     }
   ],
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 73.68,
-    "tqqq_pct": -4.19
+    "tqqq": 73.73,
+    "tqqq_pct": -4.12
   },
   "status": [
     {
       "session": "Morning",
-      "text": "De-camped SOFI; semis faded"
+      "text": "Semis sold off; held, no chase"
     }
   ],
   "equity_history": {
@@ -2243,6 +2235,10 @@
       [
         1784127060000,
         972.4
+      ],
+      [
+        1784127120000,
+        971.3
       ]
     ],
     "1W": [
