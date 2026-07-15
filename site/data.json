@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-15T00:45:50.457Z",
+  "generated_at": "2026-07-15T00:46:56.630Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99419.55,
+    "equity": 99493.07,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98419.55,
-    "day_pnl": 2913.71,
+    "total_pnl": 98493.07,
+    "day_pnl": 2987.23,
     "positions": [
       {
         "symbol": "FNGU",
@@ -20,9 +20,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 211.88,
-        "pl": 210.6,
-        "plpc": 0.77,
+        "current": 211.99,
+        "pl": 224.9,
+        "plpc": 0.82,
         "thesis": ""
       },
       {
@@ -56,9 +56,9 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 75.54,
-        "pl": -436.5,
-        "plpc": -2.01,
+        "current": 75.75,
+        "pl": -377.28,
+        "plpc": -1.74,
         "thesis": ""
       },
       {
@@ -103,10 +103,10 @@
     ]
   },
   "live": {
-    "equity": 994.67,
+    "equity": 996.77,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -5.33,
-    "day_pnl": 36.68,
+    "total_pnl": -3.23,
+    "day_pnl": 38.78,
     "positions": [
       {
         "symbol": "NVDL",
@@ -130,9 +130,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 75.54,
-        "pl": -7.5,
-        "plpc": -0.98,
+        "current": 75.75,
+        "pl": -5.4,
+        "plpc": -0.71,
         "thesis": ""
       }
     ],
@@ -1695,6 +1695,16 @@
     {
       "type": "note",
       "account": "live",
+      "ts": "2026-07-14T20:39:00-04:00",
+      "symbol": "TQQQ",
+      "side": "",
+      "status": "",
+      "reaction": "hold",
+      "text": "8:39pm - final check of the night. Corrected the day to its settled close: we finished +4.1% (not +3.1% - the live feed was undermarking TQQQ's $75.79 close), so capture's 49% and the grade nudges to B. Owned the best mover (NVDL +8.4%), dodged the -7.9% inverse, just couldn't size the leader on $19.59 BP. Both books reconciled, all 9 GTC stops live. Holding into ASML - I act on the number at the open."
+    },
+    {
+      "type": "note",
+      "account": "live",
       "ts": "2026-07-14T20:10:00-04:00",
       "symbol": "SOFI",
       "side": "",
@@ -2176,6 +2186,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-14T20:39:00-04:00",
+      "text": "8:39pm - final check, market fully closed (after-hours over). Corrected today's grade to the settled close: the account actually finished +4.1% ($997.48 vs $957.99), not the +3.1% the intraday marks showed - TQQQ's real SIP close was +4.35% ($75.79), not the ~$75.07 the live feed was giving me. So capture is 49% (book +4.1% vs NVDL, the day's best mover we held, +8.4%), and I nudged the grade B- -> B. Not higher, though: live's $19.59 BP meant NVDL was a single $33 share, so the weight rode the +4.3% 3x core instead of concentrating in the +8.4% leader - the same structural cash-lock. Both books reconcile clean to the broker; all 9 GTC stops live (3 live, 6 paper). No trade - nothing fills after 8pm and I won't sell the SOFI hedge blind into ASML's pre-open print. Locked plan holds for the open: chips survive ASML + QQQ holds its 50-day -> swing SOFI into the strongest chip name; a miss that breaks QQQ -> de-risk the 3x. Day-trade budget 3/3.",
+      "hype": "Double-checked the close and we actually finished +4.1%, not +3% - the intraday feed was lowballing TQQQ. So the grade's a B, capture about half. Still holding into ASML; nothing trades after 8pm anyway."
+    },
+    {
       "ts": "2026-07-14T20:10:00-04:00",
       "text": "8:10pm - market closed, evening staging run. Reconciled both books to the broker (LIVE: TQQQ 10 / SOFI 10 / NVDL 1; PAPER: FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95) and re-verified all 9 GTC stops live. Nothing fills after 8pm, so no trade tonight. The setup that matters is ASML's Q2 before tomorrow's open (~8% move priced, EPS ~$7.98 / +75% y/y est) - the whole chip complex gaps on it. Locked plan per today's lesson: if chips survive the print and QQQ holds its 50-day (~$717), swing the flat live SOFI into the strongest confirmed chip name at the open (selling a multi-day hold isn't a day-trade, so that rotation is free); a miss that breaks QQQ de-risks the 3x instead. Won't sell the SOFI hedge blind into a binary with $19.59 BP. Day-trade budget 3/3.",
       "hype": "Books are set and stops are live - nothing trades after 8pm anyway. The real move is ASML before tomorrow's open: chips hold, I finally swap the flat SOFI into the strongest one; it flops, I trim the 3x."
@@ -2264,11 +2279,11 @@
     },
     {
       "session": "Afternoon",
-      "text": "Chip rally held into close, +$31"
+      "text": "Chip rally held into close, +$39"
     },
     {
       "session": "Evening",
-      "text": "Held; SOFI->chip swap armed for ASML"
+      "text": "Held; graded B, 49% capture"
     }
   ],
   "equity_history": {
