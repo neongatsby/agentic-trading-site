@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-15T18:03:54.945Z",
+  "generated_at": "2026-07-15T18:05:03.473Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 98319.75,
+    "equity": 98273.12,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 97319.75,
-    "day_pnl": -750.79,
+    "total_pnl": 97273.12,
+    "day_pnl": -797.42,
     "positions": [
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 257.14,
-        "pl": -56.64,
-        "plpc": -1.36,
+        "current": 257.21,
+        "pl": -55.44,
+        "plpc": -1.33,
         "thesis": ""
       },
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 29.71,
-        "pl": 650,
-        "plpc": 4.39,
+        "current": 29.69,
+        "pl": 639.6,
+        "plpc": 4.32,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.42,
-        "pl": 20.8,
-        "plpc": 0.08,
+        "current": 210.36,
+        "pl": 13.01,
+        "plpc": 0.05,
         "thesis": ""
       },
       {
@@ -47,45 +47,45 @@
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.74,
-        "pl": 169.46,
-        "plpc": 6.92,
+        "current": 32.72,
+        "pl": 167.86,
+        "plpc": 6.85,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.64,
-        "pl": -79,
-        "plpc": -1.17,
+        "current": 133.59,
+        "pl": -81.75,
+        "plpc": -1.21,
         "thesis": ""
       },
       {
         "symbol": "SOXL",
         "qty": "10.0000",
         "entry": 163.63,
-        "current": 164.7,
-        "pl": 10.68,
-        "plpc": 0.65,
+        "current": 164.31,
+        "pl": 6.78,
+        "plpc": 0.41,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 74.44,
-        "pl": -746.7,
-        "plpc": -3.44,
+        "current": 74.37,
+        "pl": -766.44,
+        "plpc": -3.53,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 145.72,
-        "pl": 32.08,
-        "plpc": 0.23,
+        "current": 145.73,
+        "pl": 33.25,
+        "plpc": 0.24,
         "thesis": ""
       }
     ],
@@ -121,36 +121,36 @@
     ]
   },
   "live": {
-    "equity": 977.58,
+    "equity": 976.78,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -22.42,
-    "day_pnl": -10.88,
+    "total_pnl": -23.22,
+    "day_pnl": -11.68,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.73,
-        "pl": 2.14,
-        "plpc": 7.01,
+        "current": 32.72,
+        "pl": 2.13,
+        "plpc": 6.98,
         "thesis": ""
       },
       {
         "symbol": "SOFI",
         "qty": "10.0000",
         "entry": 18.76,
-        "current": 18.09,
-        "pl": -6.75,
-        "plpc": -3.6,
+        "current": 18.08,
+        "pl": -6.83,
+        "plpc": -3.64,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 74.44,
-        "pl": -18.5,
-        "plpc": -2.43,
+        "current": 74.37,
+        "pl": -19.2,
+        "plpc": -2.52,
         "thesis": ""
       }
     ],
@@ -680,6 +680,10 @@
       {
         "t": 1784138400000,
         "v": 975.13
+      },
+      {
+        "t": 1784138700000,
+        "v": 977.57
       }
     ]
   },
@@ -704,7 +708,7 @@
       "theme": "3x Nasdaq core",
       "verdict": "hold",
       "verdict_label": "HOLD",
-      "chg_pct": -0.78,
+      "chg_pct": -0.83,
       "thesis": "**The 3x core - bouncing off the low with the reclaim.** 10 sh @ $76.29, now $73.87 (-1.5% today). Reversed off the $72.06 midday low as QQQ reclaimed 710→716; ~$5.40 above the $68.50 GTC stop.",
       "hold_reason": "It's our 3x-Nasdaq engine and the bulk of the book's beta, bought as the core index expression. Down 1.5% but bouncing off its midday low as the tape reclaims, and the broad market is fine (SPY +0.2%), so a Nasdaq-specific dip isn't a thesis break. A QQQ reclaim of 720 adds conviction; a decisive loss of the $68.50 stop is our exit.",
       "size": "$739",
@@ -719,7 +723,7 @@
         "basis": "3x Nasdaq bounces off 72 low as QQQ reclaims 716",
         "pop_rank": 4
       },
-      "price": 74.42,
+      "price": 74.39,
       "spark": [
         74.11,
         72.78,
@@ -750,7 +754,7 @@
         74.79,
         71.6,
         77.24,
-        74.42
+        74.39
       ]
     },
     {
@@ -759,7 +763,7 @@
       "theme": "Fintech / idiosyncratic",
       "verdict": "sell",
       "verdict_label": "DE-CAMP (ticket live)",
-      "chg_pct": -2.48,
+      "chg_pct": -2.56,
       "thesis": "**The flat laggard - live sell ticket sent to break the cash-lock.** 10 sh @ $18.76, now $18.10 (-2.5%). Ticket 2026-07-15-3 sells it to free ~$200 to concentrate into the confirmed leader FNGU next run. Multi-day-hold exit = PDT-free.",
       "hold_reason": "It's our fintech laggard - the dead capital that's capped live capture for days. We're finally de-camping it: the afternoon reclaim gave a real target (FNGU, the day's green leader), so the standing SOFI→leader swing is live as an approve-to-fill ticket. A tap frees the cash-lock; the $17.60 stop protects it until then.",
       "size": "$181",
@@ -774,7 +778,7 @@
         "basis": "non-catalyst laggard; being sold to fund the leader",
         "pop_rank": 9
       },
-      "price": 18.09,
+      "price": 18.08,
       "spark": [
         15.7,
         15.22,
@@ -805,7 +809,7 @@
         17.29,
         17.86,
         18.18,
-        18.09
+        18.08
       ]
     },
     {
@@ -814,7 +818,7 @@
       "theme": "2x NVDA",
       "verdict": "hold",
       "verdict_label": "HOLD",
-      "chg_pct": -1.33,
+      "chg_pct": -1.36,
       "thesis": "**2x NVDA - held, profit-stop riding.** 1 sh live @ $30.59, now $32.35 (+5.8% from entry). Hit by the chip tape (-2.5% today) but bouncing with NVDA off its $206 low and above the $31.30 stop.",
       "hold_reason": "Our leveraged NVDA proxy, bought on AI-leader momentum. Down 2.5% with the chip complex but still +5.8% from our $30.59 entry and above its $31.30 profit-locking stop, so we let the small winner ride the NVDA reclaim. A deeper chip leg simply stops us out green.",
       "size": "$32",
@@ -829,7 +833,7 @@
         "basis": "2x NVDA amplifies the NVDA reclaim off 206",
         "pop_rank": 3
       },
-      "price": 32.74,
+      "price": 32.73,
       "spark": [
         38.1,
         37.52,
@@ -860,7 +864,7 @@
         28.76,
         27.53,
         28.41,
-        32.74
+        32.73
       ]
     },
     {
@@ -869,7 +873,7 @@
       "theme": "3x mega-cap tech",
       "verdict": "buy",
       "verdict_label": "LEADER + live target",
-      "chg_pct": 2.91,
+      "chg_pct": 2.8,
       "thesis": "**Today's leader - and the live redeploy target.** 520 sh paper @ $28.46, now $29.56 (+$572). Green ALL day while chips unwound - it never fell, so it's relative strength, not a knife. Paper stop trailed $28.30→$28.80 (locks gain above cost). Live SOFI proceeds redeploy here next run.",
       "hold_reason": "Our 3x FANG+ bet on mega-cap tech leadership away from the memory/semi wreck, and it's led green all day. Holding the paper winner (stop trailed to $28.80) and making it the live de-camp target - the strongest confirmed mover is where the freed SOFI capital belongs. A break of $28.80 means the divergence closed and we're out with the gain.",
       "size": "$15,371 (paper) + live target",
@@ -884,7 +888,7 @@
         "basis": "mega-cap leads the afternoon reclaim; green all day",
         "pop_rank": 1
       },
-      "price": 29.72,
+      "price": 29.69,
       "spark": [
         28.23,
         27.6,
@@ -915,7 +919,7 @@
         23.68,
         23.87,
         25.21,
-        29.72
+        29.69
       ]
     },
     {
@@ -924,7 +928,7 @@
       "theme": "3x semiconductors",
       "verdict": "buy",
       "verdict_label": "WASHOUT REVERSAL (paper)",
-      "chg_pct": -6.78,
+      "chg_pct": -7.03,
       "thesis": "**The wreck we dodged - now a paper reversal test.** Gapped +4% on ASML (~$184), flushed to -14% ($150), reclaimed to $161 on a clean higher low. Paper bought a 10-sh starter @ $163.63, stop $148 (below the washout low), testing 'buy the reclaim off a higher low' into TSMC tomorrow. Still un-owned live.",
       "hold_reason": "The most beaten name on the board and the sharpest reversal - reclaimed $150→$161 off the flush. The paper lab took a bounded starter (stop $148 below the washout low) to test whether buying the reclaim off a higher low works, with TSMC earnings tomorrow as the catalyst. Live stays out - a 3x semi knife is a paper-only shot.",
       "size": "$1,634 (paper starter)",
@@ -939,7 +943,7 @@
         "basis": "washout reversal off 150 higher-low; TSMC catalyst tmrw",
         "pop_rank": 2
       },
-      "price": 164.64,
+      "price": 164.21,
       "spark": [
         151.66,
         151.93,
@@ -970,7 +974,7 @@
         252.93,
         215,
         236.75,
-        164.64
+        164.21
       ]
     },
     {
@@ -979,7 +983,7 @@
       "theme": "Power-for-AI",
       "verdict": "buy",
       "verdict_label": "BUY (paper)",
-      "chg_pct": 0.31,
+      "chg_pct": 0.32,
       "thesis": "**Power-for-AI relative strength.** 16 sh paper @ $260.68, now $256.97 (+0.2% today). Green-to-flat while chips bled. Paper stop $236.",
       "hold_reason": "Our AI-power/utility play - the electricity behind the data centers - and a deliberate non-semi diversifier. Green-to-flat on a red chip day, doing its job. Watching $255-262; a break below would be our tell to reassess.",
       "size": "$4,108 (paper)",
@@ -994,7 +998,7 @@
         "basis": "power/defensive bid; may fade if risk-on returns",
         "pop_rank": 7
       },
-      "price": 257.2,
+      "price": 257.24,
       "spark": [
         262.03,
         260.67,
@@ -1025,7 +1029,7 @@
         268.8,
         264.14,
         259.35,
-        257.2
+        257.24
       ]
     },
     {
@@ -1089,7 +1093,7 @@
       "theme": "AI software",
       "verdict": "buy",
       "verdict_label": "BUY (paper)",
-      "chg_pct": -0.07,
+      "chg_pct": -0.1,
       "thesis": "**Green-flat software, holding the reclaim.** 50 sh paper @ $135.22, now $133.84 (flat today). Software > semis in this unwind; holding above yesterday's $122.7 spike-low reclaim.",
       "hold_reason": "AI-software leader we bought on a breakout reclaim; a non-semi name holding flat while hardware bled. Software keeps outperforming chips in this unwind. Paper stop $121.50 protects the swing.",
       "size": "$6,678 (paper)",
@@ -1104,7 +1108,7 @@
         "basis": "software relative strength; holding reclaim",
         "pop_rank": 6
       },
-      "price": 133.63,
+      "price": 133.6,
       "spark": [
         135.11,
         135.27,
@@ -1135,7 +1139,7 @@
         107.3,
         112.82,
         115.66,
-        133.63
+        133.6
       ]
     },
     {
@@ -1199,7 +1203,7 @@
       "theme": "Inverse semis",
       "verdict": "avoid",
       "verdict_label": "UN-OWNABLE (live)",
-      "chg_pct": 971.16,
+      "chg_pct": 972.56,
       "thesis": "**Biggest watchlist mover - un-ownable live, now fading.** 3x-inverse semis ~+18% on the chip unwind (recently reverse-split, vendor % distorted), but rolling over as the semi reclaim builds (SOXL $150→$161). Live can't hold inverse leverage cleanly; capture only exists on paper.",
       "size": "$0",
       "size_pct": "0%",
@@ -1213,7 +1217,7 @@
         "basis": "inverse fades as the semi reclaim builds",
         "pop_rank": 12
       },
-      "price": 46.06,
+      "price": 46.12,
       "spark": [
         98.52,
         98.27,
@@ -1244,7 +1248,7 @@
         36.2,
         42.4,
         37.15,
-        46.06
+        46.12
       ]
     },
     {
@@ -1253,7 +1257,7 @@
       "theme": "Fuel-cell / power",
       "verdict": "watch",
       "verdict_label": "WATCH",
-      "chg_pct": -5.16,
+      "chg_pct": -5.03,
       "thesis": "**Spiked to $244 then dumped with the spec cohort.** ~$229 (-5.8%), bouncing with the tape off the flush. No position; watching a real floor to reclaim.",
       "size": "$0",
       "size_pct": "0%",
@@ -1267,7 +1271,7 @@
         "basis": "hydrogen high-beta bounces with the tape; no clean floor",
         "pop_rank": 13
       },
-      "price": 230.88,
+      "price": 231.18,
       "spark": [
         259.04,
         261.71,
@@ -1298,7 +1302,7 @@
         308.97,
         253.24,
         275,
-        230.88
+        231.18
       ]
     },
     {
@@ -1307,7 +1311,7 @@
       "theme": "Quantum",
       "verdict": "avoid",
       "verdict_label": "AVOID",
-      "chg_pct": -4.05,
+      "chg_pct": -4.16,
       "thesis": "**Quantum bleeding, low-quality bounce.** ~$37.5 (-4.6%), lifting with the reclaim but no lead. High-beta spec is a poor place to concentrate in a de-risking tape.",
       "size": "$0",
       "size_pct": "0%",
@@ -1321,7 +1325,7 @@
         "basis": "quantum high-beta bounces with the reclaim; no lead",
         "pop_rank": 11
       },
-      "price": 37.71,
+      "price": 37.66,
       "spark": [
         49.31,
         48.46,
@@ -1352,7 +1356,7 @@
         50.59,
         49.16,
         53.88,
-        37.71
+        37.66
       ]
     },
     {
@@ -1361,7 +1365,7 @@
       "theme": "Quantum",
       "verdict": "avoid",
       "verdict_label": "AVOID",
-      "chg_pct": -4.1,
+      "chg_pct": -4.37,
       "thesis": "**Worst of the spec cohort.** ~$15.2 (-5.6%). Deepest high-beta bleed; a bounce here is the lowest-quality on the board. Stay out.",
       "size": "$0",
       "size_pct": "0%",
@@ -1375,7 +1379,7 @@
         "basis": "quantum microcap; deepest bleed, low-quality bounce",
         "pop_rank": 15
       },
-      "price": 15.46,
+      "price": 15.41,
       "spark": [
         16.62,
         15.95,
@@ -1406,7 +1410,7 @@
         18.4,
         18.29,
         19.43,
-        15.46
+        15.41
       ]
     },
     {
@@ -1469,7 +1473,7 @@
       "theme": "AI data-center infra",
       "verdict": "watch",
       "verdict_label": "WATCH",
-      "chg_pct": -0.73,
+      "chg_pct": -0.71,
       "thesis": "**Data-center infra faded from $309.** ~$299 (-1.5%), bouncing with the tape. Good long-term AI-infra name but no clean entry yet.",
       "size": "$0",
       "size_pct": "0%",
@@ -1483,7 +1487,7 @@
         "basis": "AI-datacenter beta bounces with chips",
         "pop_rank": 14
       },
-      "price": 301.45,
+      "price": 301.51,
       "spark": [
         339.63,
         322.57,
@@ -1514,7 +1518,7 @@
         325.41,
         303.46,
         307.03,
-        301.45
+        301.51
       ]
     }
   ],
@@ -2009,8 +2013,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 74.42,
-    "tqqq_pct": -3.22
+    "tqqq": 74.39,
+    "tqqq_pct": -3.26
   },
   "status": [
     {
@@ -3123,6 +3127,14 @@
       [
         1784138580000,
         977.62
+      ],
+      [
+        1784138640000,
+        977.57
+      ],
+      [
+        1784138700000,
+        976.78
       ]
     ],
     "1W": [
