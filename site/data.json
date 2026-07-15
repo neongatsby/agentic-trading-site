@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-15T10:16:10.371Z",
+  "generated_at": "2026-07-15T10:17:17.670Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 99303,
+    "equity": 99301.59,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 98303,
-    "day_pnl": 232.46,
+    "total_pnl": 98301.59,
+    "day_pnl": 231.05,
     "positions": [
       {
         "symbol": "FNGU",
@@ -56,9 +56,9 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 76.2,
-        "pl": -250.38,
-        "plpc": -1.15,
+        "current": 76.19,
+        "pl": -251.79,
+        "plpc": -1.16,
         "thesis": ""
       },
       {
@@ -103,10 +103,10 @@
     ]
   },
   "live": {
-    "equity": 1001.06,
+    "equity": 1001.01,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": 1.06,
-    "day_pnl": 12.6,
+    "total_pnl": 1.01,
+    "day_pnl": 12.55,
     "positions": [
       {
         "symbol": "NVDL",
@@ -130,8 +130,8 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 76.2,
-        "pl": -0.9,
+        "current": 76.19,
+        "pl": -0.95,
         "plpc": -0.12,
         "thesis": ""
       }
@@ -175,7 +175,7 @@
       },
       {
         "date": "Jul 15",
-        "value": 1003.5
+        "value": 1000.63
       }
     ],
     "intraday": [
@@ -1053,6 +1053,16 @@
     {
       "type": "note",
       "account": "live",
+      "ts": "2026-07-15T06:12:00-04:00",
+      "symbol": "SOXL",
+      "side": "",
+      "status": "",
+      "reaction": "hold",
+      "text": "6:10am recheck: futures now confirm the overnight read - Nasdaq-100 +0.4% led by chips (ASML +7%), not a fade. Both books reconcile to the broker, all 9 GTC stops live. Plan unchanged - flat SOFI sells at the open, SOXL goes on right after."
+    },
+    {
+      "type": "note",
+      "account": "live",
       "ts": "2026-07-15T05:10:00-04:00",
       "symbol": "SOXL",
       "side": "",
@@ -1409,14 +1419,6 @@
       "symbol": "TQQQ",
       "reaction": "hold",
       "text": "5:42am — held and stopped, nothing to approve or stage. Read's unchanged: QQQ still under its 20- and 50-day, regime broken. Bank earnings pre-open + CPI 8:30 are what move today; I'm not front-running a two-sided print with a 3x long. Both books clean and fully deployed, all stops GTC (TQQQ $68.50 / SoFi $17.60 / NVDL $29.50). Plan unchanged: hot CPI / QQQ broken → cut the 3x at the open; cool + reclaim ~$715 → keep it."
-    },
-    {
-      "type": "note",
-      "account": "live",
-      "ts": "2026-07-14T05:15:00-04:00",
-      "symbol": "TQQQ",
-      "reaction": "hold",
-      "text": "5:15am — still held and stopped, nothing to approve or stage. One new read: rate-HIKE odds for July 28-29 jumped to ~43% (from ~34% Fri) even with the headline seen cooling — hawkish undertone that only makes me warier of the 3x long in a broken regime (QQQ under both its 20- and 50-day). Not front-running it: $19.59 cash funds nothing and I won't flip a 3x long to short into a two-sided print. Both books reconcile clean, all stops GTC (live TQQQ $68.50 / SoFi $17.60 / NVDL $29.50; paper 7 legs). Plan unchanged — hot core / QQQ still broken → cut the 3x at the open; cool + reclaim ~$715 → keep it."
     }
   ],
   "latest_recap": "Wed 7/15 ~4:20am - PRE-MARKET, market CLOSED (next open 09:30). ASML reported a strong beat-AND-raise before the open (Q2 EPS $8.82 vs $7.98, sales $10.84B vs $10.28B; Q3 guide EUR11-12B; FY RAISED to EUR43-45B), and QQQ closed $719.7 above its 50-day (~$717) - both legs of the pre-committed plan met. ACTED on the 7/14 lesson instead of deferring again: staged LIVE ticket 2026-07-15-1 to SELL the flat SOFI (10 sh) at the open (multi-day-hold exit = NOT a day-trade, PDT 3/3 intact), freeing ~$205 to redeploy into SOXL (clean 3x-semi) on the post-open run - two-step to avoid a BP reject. PAPER (autonomous): bought 25 SOXL (OTO limit $190 GTC + $158 stop child) queued to the open. Reconciled clean both ways (LIVE: TQQQ 10 / SOFI 10 / NVDL 1, 3 GTC stops verified; PAPER: FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95 + new SOXL order, 6 equity stops live). Live equity ~$1000.39 pre-open. Wildcard: oil / Strait-of-Hormuz risk-off could cap the open - if the tape breaks I hold the freed cash rather than buy SOXL into weakness. Next: TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-15-0420.json.",
@@ -1559,6 +1561,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-15T06:12:00-04:00",
+      "text": "6:10am pre-market recheck - futures now CONFIRM the overnight read instead of just marks: Nasdaq-100 futures +0.4% led by chips (ASML +7% at the open, Intel & Lam Research +3%), so the beat-and-raise is being bought straight into the 9:30 print, not faded, and softer June CPI keeps the backdrop risk-on. Both books reconcile exactly to the broker - LIVE TQQQ 10 / SOFI 10 / NVDL 1 ($1,000.63 marked, cash $19.59); PAPER 7 positions ~94% deployed with the 25-sh SOXL limit-$190 OTO ($158 stop child) still resting for the open. All 3 live + 6 paper equity GTC stops verified. No new order this tick: live BP is $19.59, so nothing funds until the staged SOFI sell (ticket 2026-07-15-1, approve-to-fill) frees ~$205 at the open, then SOXL redeploys on the post-open run (two-step to dodge a BP reject). Overnight % marks carry from the last Blue Ocean read - BOATS feed was subscription-blocked this tick, SIP close reconciles the book.",
+      "hype": "Futures now back it - chips leading the open, ASML +7%. Same plan: sell the flat SOFI at 9:30, roll it into SOXL. Nothing fires till then."
+    },
+    {
       "ts": "2026-07-15T05:45:00-04:00",
       "text": "5:45am pre-market recheck - plan holds and the risk-off wildcard eased. Trump dropped the 20% Strait-of-Hormuz transit-fee demand overnight, so crude backed off its session highs (WTI ~$79.6) - one less reason for a risk-off open to cap the chip pop. Overnight marks unchanged: SOXL still the leader at $187.48 (+6.1% vs yesterday's SIP close), TQQQ $76.54 (+2.0%), NVDL $33.28 (+0.3%, spent). Both books reconcile exactly to the broker - LIVE TQQQ 10 / SOFI 10 / NVDL 1 (~$1003.5 marked, cash $19.59); PAPER 7 positions ~94% deployed with the 25-sh SOXL OTO ($158 stop child) resting for the open. All 3 live + 6 paper GTC stops verified. No new order: live BP is $19.59, so nothing funds until the staged SOFI sell (ticket 2026-07-15-1, approve-to-fill) frees ~$205 at the open, then SOXL redeploys on the post-open run. TSMC Thu 7/16 is the next chip catalyst.",
       "hype": "Rechecked - still a go, and the oil scare eased overnight so chips get a cleaner open. Sell the flat SOFI at 9:30, roll it into SOXL. Nothing fires till then."
@@ -1627,11 +1634,6 @@
       "ts": "2026-07-14T16:15:00-04:00",
       "text": "4:15pm, market closed on a strong day - live +$31 (+3.2%), everything green and behind wide GTC stops. The big one is tomorrow: ASML reports before the open, the semi read-through everyone watches, and both books are already chip-heavy. Not rotating blind into that gap - holding the freshly-rotated book and acting on the number at the open. Plan: ASML good + QQQ holds its 50-day -> let it run/trail up; ASML bad + QQQ breaks -> de-risk the 3x. No live ticket ($19.59 cash funds nothing, and I won't sell SOFI - our one non-chip name - to add chip risk into a binary). Day-trade budget 3/3.",
       "hype": "Closed up ~3% with every stop set. ASML reports before the open and we're already loaded on chips, so I'm holding - not adding blind into a coin-flip gap. I act on the number at the open."
-    },
-    {
-      "ts": "2026-07-14T15:45:00-04:00",
-      "text": "3:45, ~15 to close — holding both books into the bell, no changes. Cool-CPI chip rally held all day: QQQ ~$720 (back above its 50-day), NVDA a record ~$211.6, Nasdaq +1%. Live +$30 (+3.1%) on the day, all three GTC stops verified (TQQQ $68.50 / SOFI $17.60 / NVDL $31.30 — that one locks +8%). No trail (TQQQ & SOFI still under entry) and $19.59 cash funds nothing, so no new ticket; SOFI's still the next rotation on a clean setup. Day-trade budget 3/3. Paper (+2.3% today) rides the leadership book I rotated into last run.",
-      "hype": "Chip rally held into the close — sat tight, up ~3% on the day with every stop set. Nothing worth churning 15 min before the bell."
     }
   ],
   "benchmark": {
@@ -1643,7 +1645,7 @@
   "status": [
     {
       "session": "Morning",
-      "text": "ASML beat + oil scare eased; SOXL +6%, rotation staged"
+      "text": "Chip futures green; SOFI->SOXL rotation staged"
     }
   ],
   "equity_history": {
