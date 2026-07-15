@@ -797,8 +797,57 @@
       const level = (c.trigger != null && c.trigger !== '') ? (tn != null ? ('trigger $' + tn) : ('trigger ' + String(c.trigger))) : (c.stop ? ('stop $' + c.stop) : '');
       let size = c.size || c.size_note || ''; if (/^\$?0$/.test(String(size).trim())) size = '';
       return { tk:c.ticker, name:c.name || c.ticker, theme:String(c.theme || '').toUpperCase(), verdict: heldSet[c.ticker] ? 'held' : (c.verdict || 'watch'),
-        size:size, level:level, thesisLine: splitSent(stripMd(c.thesis || ''))[0] || why[0] || '', why:why, deep:deep[c.ticker] };
+        size:size, level:level, thesisLine: splitSent(stripMd(c.thesis || ''))[0] || why[0] || '',
+        why:why, deep:deep[c.ticker], spark: arr(c.spark), proj: c.projection || null };
     });
+  }
+
+  // Draw the recent price curve (solid) + the engine's forward projection (dotted) to its target.
+  function projSpark(spark, proj, P){
+    spark = (spark || []).filter(function (n){ return typeof n === 'number' && isFinite(n); });
+    if (spark.length < 3) return '';
+    const W = 216, H = 58, padY = 7;
+    const last = spark[spark.length - 1];
+    const tp = (proj && typeof proj.target_pct === 'number') ? proj.target_pct : null;
+    const up = (tp == null) ? (last >= spark[0]) : (tp >= 0);
+    const col = up ? P.accent : (P.down || '#f87171');
+    let fwd = [];
+    if (tp != null){
+      if (proj && Array.isArray(proj.path_pct) && proj.path_pct.length){ fwd = proj.path_pct.map(function (p){ return last * (1 + p / 100); }); }
+      else { for (let i = 1; i <= 5; i++) fwd.push(last * (1 + (tp / 100) * (i / 5))); }
+    }
+    const all = spark.concat(fwd), mn = Math.min.apply(null, all), mx = Math.max.apply(null, all), rng = (mx - mn) || 1, n = all.length;
+    const X = function (i){ return (i / (n - 1)) * W; }, Y = function (v){ return padY + (H - 2 * padY) - (v - mn) / rng * (H - 2 * padY); };
+    const solid = spark.map(function (v, i){ return X(i).toFixed(1) + ',' + Y(v).toFixed(1); }).join(' ');
+    const nowX = X(spark.length - 1).toFixed(1);
+    let dots = '';
+    if (fwd.length){
+      dots = [nowX + ',' + Y(last).toFixed(1)].concat(fwd.map(function (v, i){ return X(spark.length + i).toFixed(1) + ',' + Y(v).toFixed(1); })).join(' ');
+    }
+    let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" style="width:100%;height:52px;overflow:visible;display:block">';
+    svg += '<line x1="' + nowX + '" y1="2" x2="' + nowX + '" y2="' + (H - 2) + '" stroke="rgba(255,255,255,0.13)" stroke-width="1" stroke-dasharray="2 3"></line>';
+    svg += '<polyline points="' + solid + '" fill="none" stroke="rgba(226,235,244,0.5)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"></polyline>';
+    if (dots){ svg += '<polyline points="' + dots + '" fill="none" stroke="' + col + '" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2.5 3.5" style="filter:drop-shadow(0 0 4px ' + hexA(col, 0.6) + ')"></polyline>';
+      const tx = X(n - 1).toFixed(1), ty = Y(fwd[fwd.length - 1]).toFixed(1);
+      svg += '<circle cx="' + tx + '" cy="' + ty + '" r="2.7" fill="' + col + '"></circle>'; }
+    return svg + '</svg>';
+  }
+  function projBlock(c, P){
+    const spark = (c.spark || []).filter(function (n){ return typeof n === 'number' && isFinite(n); }), proj = c.proj || null;
+    const hasProj = proj && typeof proj.target_pct === 'number';
+    if (spark.length < 3 && !hasProj) return '';
+    let row = '';
+    if (hasProj){
+      const tp = proj.target_pct, up = tp >= 0, col = up ? P.accent : (P.down || '#f87171');
+      const conf = String(proj.confidence || '').toLowerCase();
+      const confChip = conf ? '<span style="font:600 9.5px/1 ui-monospace,Menlo,monospace;letter-spacing:0.5px;color:rgba(255,255,255,0.42)">' + escapeHtml(conf) + '&nbsp;conf</span>' : '';
+      const top = proj.pop_rank === 1 ? '<span style="font:700 9px/1 ui-monospace,Menlo,monospace;letter-spacing:1px;color:' + col + ';background:' + hexA(col, 0.16) + ';border:1px solid ' + hexA(col, 0.4) + ';padding:3px 6px;border-radius:5px">TOP&nbsp;PICK</span>' : '';
+      row = '<div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:3px">'
+        + '<div style="display:flex;align-items:baseline;gap:6px"><span style="font:600 9.5px/1 ui-monospace,Menlo,monospace;letter-spacing:1px;color:rgba(255,255,255,0.4)">PROJ&nbsp;TODAY</span><span style="font:700 16px/1 \'Outfit\',system-ui,sans-serif;color:' + col + '">' + (up ? '+' : '') + tp.toFixed(1) + '%</span></div>'
+        + '<div style="display:flex;align-items:center;gap:6px">' + confChip + top + '</div></div>';
+    }
+    const basis = (proj && proj.basis) ? '<div style="font:400 11px/1.42 system-ui,sans-serif;color:rgba(255,255,255,0.4)">' + escapeHtml(stripMd(proj.basis)) + '</div>' : '';
+    return '<div style="display:flex;flex-direction:column;gap:5px;margin:4px 0 2px">' + projSpark(spark, proj, P) + row + basis + '</div>';
   }
 
   function computeScore(){
@@ -843,10 +892,15 @@
       const vStyle = 'font:700 11px ui-monospace,Menlo,monospace;letter-spacing:1.5px;padding:6px 11px;border-radius:999px;white-space:nowrap;color:' + v.c + ';background:' + hexA(v.c, 0.14) + ';border:1px solid ' + hexA(v.c, 0.42);
       const levelChip = c.level ? '<div style="display:inline-block;margin-top:4px;font:600 11px ui-monospace,Menlo,monospace;letter-spacing:1px;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:6px 10px;border-radius:7px">' + escapeHtml(c.level) + '</div>' : '';
       const whyHtml = (c.why || []).map(function (p){ return '<div style="font:400 13px/1.55 system-ui,sans-serif;color:rgba(255,255,255,0.55);margin-bottom:2px">' + escapeHtml(p) + '</div>'; }).join('');
-      return '<div style="scroll-snap-align:start;flex:0 0 258px;border-radius:16px;border:1px solid rgba(255,255,255,0.09);background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.016));padding:22px 20px;display:flex;flex-direction:column;gap:12px;box-sizing:border-box">'
+      const _top = c.proj && c.proj.pop_rank === 1 && typeof c.proj.target_pct === 'number';
+      const _tcol = (_top && c.proj.target_pct < 0) ? (P.down || '#f87171') : P.accent;
+      const _cb = _top ? hexA(_tcol, 0.5) : 'rgba(255,255,255,0.09)';
+      const _cs = _top ? ('box-shadow:0 0 0 1px ' + hexA(_tcol, 0.14) + ',0 10px 34px ' + hexA(_tcol, 0.16) + ';') : '';
+      return '<div style="scroll-snap-align:start;flex:0 0 258px;border-radius:16px;border:1px solid ' + _cb + ';background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.016));' + _cs + 'padding:22px 20px;display:flex;flex-direction:column;gap:12px;box-sizing:border-box">'
         + '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div style="font:700 30px/1 \'Avenir Next Condensed\',\'Avenir Next\',system-ui,sans-serif;letter-spacing:0.5px;color:#f3f8fb">' + escapeHtml(c.tk) + '</div><div style="' + vStyle + '">' + v.label + '</div></div>'
         + '<div style="font:500 13px/1.3 system-ui,sans-serif;color:rgba(255,255,255,0.5)">' + escapeHtml(c.name) + '</div>'
         + '<div style="font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:1px;color:' + hexA(P.accent, 0.7) + '">' + escapeHtml(c.theme) + '</div>'
+        + projBlock(c, P)
         + '<div style="flex:1;display:flex;flex-direction:column;gap:10px"><div style="font:400 14px/1.55 system-ui,sans-serif;color:rgba(255,255,255,0.66)">' + escapeHtml(c.thesisLine) + '</div>' + whyHtml + levelChip + '</div>'
         + '<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.07);padding-top:12px"><span style="font:500 12px/1 system-ui,sans-serif;color:rgba(255,255,255,0.4)">' + escapeHtml(c.size || '') + '</span><span style="font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:1px;color:' + hexA(P.accent, 0.55) + '">' + escapeHtml(c.tk) + '</span></div>'
         + '</div>';
