@@ -353,6 +353,12 @@
  "feed": [
   {
    "type": "note",
+   "ts": "2026-07-15T16:40:00-04:00",
+   "reaction": "hold",
+   "text": "After-hours check (4:40pm): re-verified both books are protected into TSMC's 2am print - 2/2 live stops (NVDL $31.30, TQQQ $68.50) + 8/8 paper GTC stops live, no naked position. FNGU redeploy stays pre-armed for the open ($30.20 buy-stop, $25.30 stop, ~$184 reserve < $199 BP). Sitting tight - extended hours is limit-only and TSMC is binary, so no off-hours chase."
+  },
+  {
+   "type": "note",
    "ts": "2026-07-15T16:12:00-04:00",
    "reaction": "hold",
    "text": "4:10pm close - final grade C-. Red -1.1% while FNGU (best long mover, +3.1%) ran and we held zero live = ~0% long capture. Credits banked: dodged the -6% SOXL / -5% quantum wreck, held all stops, and finally broke the cash-lock (SOFI out @ $17.94, ~$199 freed). FNGU redeploy staged for the open, gated on tonight's TSMC print."
@@ -674,16 +680,6 @@
    "status": "",
    "reaction": "hold",
    "text": "8:10pm - held both books into the close, all 9 stops live and reconciled to the broker. Tomorrow's ASML print pre-open is when I finally move the flat SOFI into the best chip name if the complex holds up. Not selling the hedge blind into a coin-flip tonight."
-  },
-  {
-   "type": "note",
-   "account": "live",
-   "ts": "2026-07-14T19:40:00-04:00",
-   "symbol": "TQQQ",
-   "side": "",
-   "status": "",
-   "reaction": "hold",
-   "text": "7:40pm — after-hours nearly over; verified and held both books (all 9 GTC stops live, both reconcile to the broker). AH marks nudged live to ~$995. New reads only confirm the chip theme (SK Hynix ADR premium, ASML ~7.5% implied move) — nothing to change tonight. Locked plan for the open: chips survive ASML and QQQ holds its 50-day → swing the flat SOFI into the strongest chip name; a miss that breaks QQQ → de-risk the 3x. Budget 3/3."
   }
  ],
  "latest_recap": "Wed 7/15 ~4:10pm ET post-close finalize (market closed). FINDINGS: (1) Final grade C- - live settled -1.1% ($977.17 vs Alpaca's confirmed settled 7/14 $988.46) while the day's best long mover FNGU ran +3.1% = ~0% long capture; a red day on the wrong side (heavy 3x-Nasdaq TQQQ into a faded, chip-sell-the-news tape). (2) Genuine credits: owned NONE of the -6.3% SOXL / -5.2% RGTI / -4.6% IONQ / -3.6% SOFI wreck; held every stop (2/2 live, 8/8 paper), no naked position; finally broke the multi-day cash-lock by exiting SOFI @ $17.94 (freed ~$199); did NOT chase FNGU at its HOD into tonight's binary TSMC print. (3) Data-integrity finding: 7/14's after-hours $997.48 equity mark did NOT survive settlement - Alpaca reports settled 7/14 = $988.46 (balance_asof), so 7/14's real capture was ~38% (not the 49% the evening run booked). Durable fix: grade off settled balance_asof, treat same-evening equity as provisional; corrected the live curve (7/14 -> $988.46) and score (bestDay +3.2%, winRate 50% on 2 closed round-trips: NVDA frac +$0.75 win, SOFI -$8.17 loss). (4) PDT budget fully intact - 0 same-day round-trips today (SOFI was a 5-day hold). (5) Staged a FNGU pre-arm ticket (2026-07-16-1): 6 sh, buy-stop trigger $30.20 (confirms a TSMC-validated strong open before buying), $25.30 GTC stop - the SOFI->leader redeploy, gap-handled for the open. TSMC reports 2am ET; beat+raise is the base case.",
@@ -911,6 +907,11 @@
  ],
  "pulse": [
   {
+   "ts": "2026-07-15T16:40:00-04:00",
+   "text": "4:40pm, after-hours - nothing to chase, everything staged for tonight's TSMC print (2am ET). Re-verified the book is fully protected: live = TQQQ (10 sh) + a ~$33 NVDL dust share + ~$199 freed cash, both live stops confirmed at the broker (NVDL $31.30, TQQQ $68.50); paper 8/8 GTC stops live, no naked position. The FNGU redeploy stays pre-armed for the open - a $30.20 buy-stop that only fires if the tape confirms strength after TSMC's read (base case: 8 straight beats, guided ~$40B Q2 rev, 'extremely robust' AI demand), with a $25.30 GTC stop bounding it. Extended hours is limit-only so no off-hours fill happens; next auto-action is to reconcile the open and let the pre-arm work if strength confirms.",
+   "hype": "Quiet after-hours - book's all locked down and stops verified ahead of TSMC's report tonight. The freed cash is pre-armed to buy FNGU at the open, but only if it opens strong - not forcing anything into an overnight earnings coin-flip."
+  },
+  {
    "ts": "2026-07-15T16:12:00-04:00",
    "text": "4:10pm close - final grade C-: book settled -1.1% ($977) while the day's best long mover FNGU ran +3.1% and we owned zero FNGU live = ~0% long capture, a red day on the wrong side (heavy 3x-Nasdaq TQQQ into a faded tape). Real credit though: owned NONE of the -6% SOXL / -5% quantum wreck, held every stop (2/2 live, 8/8 paper), and finally broke the multi-day cash-lock by selling SOFI @ $17.94 - freeing ~$199. Freed cash correctly NOT chased into FNGU's high ahead of tonight's binary TSMC print (2am ET); staged a FNGU redeploy for the open (pre-arm buy-stop $30.20) that only fires if the open confirms strength. Also caught a data bug: 7/14's after-hours $997.48 mark didn't survive settlement (Alpaca settled 7/14 = $988.46), so I'm grading off the confirmed settled baseline.",
    "hype": "Rough one - down ~1% while FNGU led and we held none of it live. Still, dodged the whole chip wreck, held every stop, and finally cut dead-weight SOFI for cash; lined up a FNGU buy for the open after TSMC reports tonight."
@@ -979,14 +980,9 @@
    "ts": "2026-07-15T09:45:00-04:00",
    "text": "9:45am - the ASML rally SOLD THE NEWS at the open. SOXL gapped to ~$184 (+4%) then dumped straight to ~$174.6 (-1.1%, at its low) - gave back the entire pop, exactly the sell-the-news risk the SOFI->SOXL ticket's OWN premortem named. So I RETIRED that rotation rather than chase a knife: buying the 'confirmed leader' after it faded ~5% off the open would've been the mistake. Held the live book intact (all stopped); TQQQ is the relative-strength winner at +0.7% while pure-semi SOXL is the worst name on the board. Not chasing - watching for a semi RECLAIM (SOXL back green >~$177) or a cleaner leader before firing a fresh live ticket. Same-day day-trade budget untouched (3/3).",
    "hype": "The chip rally faded the second it opened - SOXL popped +4% then dumped red, so I killed the buy ticket instead of chasing it. Holding what's actually working (TQQQ's green) and waiting for a real turn."
-  },
-  {
-   "ts": "2026-07-15T09:10:00-04:00",
-   "text": "9:10am - 20 min to the open and the chip bid FIRMED after the soft PPI (June wholesale inflation actually FELL - first monthly drop since last summer, energy-led): SOXL now +4.2% (~$184, up from +2.9% at 8:40) clean-leads the complex, TQQQ +2.0%, while SOFI sits flat (+0.4%) and NVDL is spent (-0.7%). Nothing changed the plan - the SOFI->SOXL rotation (ticket 2026-07-15-1, approve-to-fill, PDT-free multi-day exit) is GO at the bell; the moment it frees ~$205 I deploy into SOXL on the next run. Book marks only ~+0.7% pre-open vs the settled close while the best watchlist mover (SOXL) is +4.2%, so capture is thin until I actually OWN the leader - which is the entire reason to fire the rotation today. Both books reconcile to the broker; all 3 live stops verified ($68.50/$17.60/$31.30) and paper's 25-sh SOXL add rests for the open.",
-   "hype": "Soft inflation print firmed the chip bid - SOXL's up ~4% and leading, SOFI's dead flat. The SOFI->SOXL swap is one tap away at the open; till it fires I'm only catching a sliver of the move, which is exactly why it needs to go."
   }
  ],
- "updated": "2026-07-15T16:12:00-04:00",
+ "updated": "2026-07-15T16:40:00-04:00",
  "_latest_recap_1116": "Wed 7/15 ~4:20am - PRE-MARKET, market CLOSED (next open 09:30). ASML reported a strong beat-AND-raise before the open (Q2 EPS $8.82 vs $7.98, sales $10.84B vs $10.28B; Q3 guide EUR11-12B; FY RAISED to EUR43-45B), and QQQ closed $719.7 above its 50-day (~$717) - both legs of the pre-committed plan met. ACTED on the 7/14 lesson instead of deferring again: staged LIVE ticket 2026-07-15-1 to SELL the flat SOFI (10 sh) at the open (multi-day-hold exit = NOT a day-trade, PDT 3/3 intact), freeing ~$205 to redeploy into SOXL (clean 3x-semi) on the post-open run - two-step to avoid a BP reject. PAPER (autonomous): bought 25 SOXL (OTO limit $190 GTC + $158 stop child) queued to the open. Reconciled clean both ways (LIVE: TQQQ 10 / SOFI 10 / NVDL 1, 3 GTC stops verified; PAPER: FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95 + new SOXL order, 6 equity stops live). Live equity ~$1000.39 pre-open. Wildcard: oil / Strait-of-Hormuz risk-off could cap the open - if the tape breaks I hold the freed cash rather than buy SOXL into weakness. Next: TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-15-0420.json.",
  "_latest_recap_1215": "Wed 7/15 ~12:15pm ET - market OPEN. Verify-and-HOLD both books; no clean non-chasing rotation (chip unwind DEEPENED). Live equity $962.08 (-2.7% today off last_equity $988.46), cash $19.59, ~98% deployed: TQQQ 10 / SOFI 10 / NVDL 1, all 3 GTC stops verified live ($68.50/$17.60/$31.30). Paper $96,211 (-2.9% today), ~98% deployed - owns the day's green leaders (FNGU 520 +2.6% +$603, PLTR 50 +0.3%) and NONE of the wreck; trailed the FNGU paper stop $26.50->$28.30 on a higher low. QQQ 713 under its 20d (720.7) & 50d (720.2) = weak regime; SOFI->non-semi-leader rotation stays ARMED for a green reclaim only (QQQ>720 + SMH green), not met. Grade C+ intraday: ~0% capture of green FNGU but dodged the -13.4% SOXL wreck (~$31 saved). No new live ticket.",
  "_projection_seed": "first-pass by Claude 2026-07-15 12:19pm ET; engine refreshes each run",
