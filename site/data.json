@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-16T23:13:41.522Z",
+  "generated_at": "2026-07-16T23:14:49.186Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 93584.31,
+    "equity": 93583.44,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 92584.31,
-    "day_pnl": -5870.39,
+    "total_pnl": 92583.44,
+    "day_pnl": -5871.26,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,9 +20,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 206.3,
-        "pl": -514.8,
-        "plpc": -1.88,
+        "current": 206.26,
+        "pl": -520,
+        "plpc": -1.9,
         "thesis": ""
       },
       {
@@ -38,18 +38,18 @@
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 132.9,
-        "pl": -116,
-        "plpc": -1.72,
+        "current": 132.8,
+        "pl": -121,
+        "plpc": -1.79,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 70.09,
-        "pl": -1974.27,
-        "plpc": -9.08,
+        "current": 70.12,
+        "pl": -1964.94,
+        "plpc": -9.04,
         "thesis": ""
       },
       {
@@ -98,27 +98,27 @@
     ]
   },
   "live": {
-    "equity": 919.37,
+    "equity": 919.22,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -80.63,
-    "day_pnl": -57.39,
+    "total_pnl": -80.78,
+    "day_pnl": -57.54,
     "positions": [
       {
         "symbol": "FNGU",
         "qty": "6.0000",
         "entry": 29.43,
-        "current": 27.47,
-        "pl": -11.76,
-        "plpc": -6.66,
+        "current": 27.39,
+        "pl": -12.24,
+        "plpc": -6.93,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 70.09,
-        "pl": -62.03,
-        "plpc": -8.13,
+        "current": 70.12,
+        "pl": -61.7,
+        "plpc": -8.09,
         "thesis": ""
       }
     ],
@@ -1733,6 +1733,12 @@
   ],
   "feed": [
     {
+      "ts": "2026-07-16T19:12:00-04:00",
+      "type": "activity",
+      "reaction": "hold",
+      "text": "7:12pm after-hours: re-verified the broker directly — live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC) both stopped, paper 5/5 equity legs stopped, zero naked. Netflix's full Q2 print confirmed the drag (EPS $0.80 beat, revenue $12.56B miss, Q3 guide light $12.86B/$0.82) — FNGU stays pressured into 7/17. QQQ $705.9 still under its 20/50-day, Nasdaq futures soft. No after-hours action (limit-only, no stop). Plan stands for the open: trim TQQQ into any bounce, lean on trimming FNGU, no new leverage until QQQ reclaims its 20-day."
+    },
+    {
       "ts": "2026-07-16T18:41:00-04:00",
       "type": "activity",
       "reaction": "hold",
@@ -1991,7 +1997,7 @@
       "text": "4:10pm close - final grade C-. Red -1.1% while FNGU (best long mover, +3.1%) ran and we held zero live = ~0% long capture. Credits banked: dodged the -6% SOXL / -5% quantum wreck, held all stops, and finally broke the cash-lock (SOFI out @ $17.94, ~$199 freed). FNGU redeploy staged for the open, gated on tonight's TSMC print."
     }
   ],
-  "latest_recap": "6:41pm post-close maintenance: re-verified stops both books (zero naked), day booked C- final (-5.2%), QQQ still under 20/50-day, plan unchanged into 7/17 open (de-risk TQQQ/FNGU into any bounce, no new leverage until QQQ reclaims 20-day).",
+  "latest_recap": "Thu 7/16 ~7:12pm ET - market CLOSED (after-hours), evening verify-and-hold ~30 min after the 6:41 maintenance run. Fresh pull: get_clock + LIVE account/positions/orders + 20-name universe snapshot + get_news (NFLX/QQQ/NVDA/TSM). RECONCILED CLEAN: LIVE == broker (TQQQ 10 @ avg $76.29 / FNGU 6 @ avg $29.43; cash $53.68; equity $918.42 after-hours PROVISIONAL vs booked close $926.46 / settled 7/15 $976.76) with 2/2 GTC stops live at the broker (TQQQ $68.50 43aac143 / FNGU $25.30 347b799a); ZERO naked. No new queue fills since trade-placed 7/16-1 (FNGU 6 @ $29.43, reconciled into the book). Day stays booked FINAL (final:true, grade C-, ~0% long capture, 4th straight red). CATALYST: Netflix Q2 printed after the bell - EPS $0.80 beat ($0.79) but revenue $12.56B MISS ($12.587B est) + soft Q3 guide (rev $12.86B vs $13.0B, EPS $0.82 vs $0.84, FY narrowed $51.0-51.4B) => stock ~-8% AH, a fresh FANG/FNGU drag into 7/17. REGIME: QQQ closed $705.93, still under its 20-day (~$721) and 50-day (~$715) = leverage regime confirmed broken; SPY $750.87 (-0.5%, tech-specific); Nasdaq-100 futures soft. Day's watchlist closes for capture: best mover = SOXS +13.4% (inverse, uncatchable clean live) / SQQQ +4.9%; best LONG = PLTR +0.5% (flat); the wreck we owned NONE of = SOXL -13.8%, BE -13.9%, RKLB -11.6%, OKLO -8.8%, SMR -8.5%, RGTI -7.7%, IONQ -6.4%. No trade tonight - extended hours is limit-only with no stop, and the de-risk is a sell-into-strength call for the open. No live ticket surfaced (the trim/de-risk is a SELL that confirms at the open, not an overnight approve-ping). PLAN into the 7/17 open (unchanged, pre-committed): if QQQ still under both its 20- & 50-day, trim/exit TQQQ into any bounce (multi-day swing, PDT-free) + lean on trimming FNGU given the Netflix drag; no new leverage until QQQ reclaims its 20-day; let the $68.50 stop work on a gap-down rather than dump the low. PDT budget fully intact (0 same-day round-trips). applying = Hypothesis #2 (only leverage in uptrends) - de-lever the broken-regime beta at the open. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-16-1912.json.",
   "activity": [
     {
       "ts": "2026-07-16T14:48:00-04:00",
@@ -2060,6 +2066,11 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-16T19:12:00-04:00",
+      "text": "7:12pm (after-hours): quiet evening check — nothing changed the plan. Re-verified the broker directly: live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC), zero naked; the day stays booked FINAL (LIVE ~-5% close, 4th straight red, C-). Netflix's full Q2 print is now out and it's a net negative for the FANG basket: EPS $0.80 beat ($0.79) but revenue $12.56B MISSED and Q3 guidance came in light ($12.86B / $0.82 EPS vs $13.0B / $0.84), so the ~8% after-hours drop stands and FNGU (Netflix is a component) carries that drag into 7/17. QQQ closed $705.9, still under its 20-day (~$721) and 50-day (~$715) = leverage regime still broken; Nasdaq-100 futures soft. Nothing to trade tonight — extended hours is limit-only with no stop. Plan into the open unchanged: DE-RISK — trim TQQQ into any bounce (multi-day swing, PDT-free), lean harder on trimming FNGU given the Netflix drag, no new leverage until QQQ reclaims its 20-day; if it just gaps down and keeps sliding, let the $68.50 stop work rather than dump the low.",
+      "hype": "Quiet night — both positions stopped, nothing exposed. Netflix's full numbers confirm that ~8% drop (revenue light, soft guide), so trimming FNGU into any bounce tomorrow makes even more sense. No new leverage till QQQ gets back over its 20-day."
+    },
     {
       "ts": "2026-07-16T18:41:00-04:00",
       "text": "6:41pm (post-close maintenance): re-pulled fresh and re-verified the broker directly — nothing changed. Day is booked FINAL: LIVE -5.2% ($926.46 close vs 7/15 $976.76), 4th straight red, ~0% capture, graded C- (owned none of the -11% to -16% chip/space/quantum wreck, every stop held, but rode full 3x-Nasdaq into a confirmed-broken regime and added FNGU into it — not inflating that). Books reconciled BOTH ways: live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC), paper 5/5 equity legs stopped (TQQQ/UPRO/NVDA/PLTR/CEG), zero naked. QQQ closed $705.9 — still under its 20-day (~721) and 50-day (~715), so the leverage regime stays broken; SPY only -0.5% (tech-specific), Netflix -8% after hours drags FNGU into 7/17. Nothing to trade tonight (extended hours is limit-only, no stop). Plan into the open unchanged: DE-RISK — trim TQQQ into any bounce (multi-day swing, PDT-free), lean harder on trimming FNGU given the Netflix drag, no new leverage until QQQ reclaims its 20-day; let the $68.50 stop work if it just gaps down instead of dumping the low.",
