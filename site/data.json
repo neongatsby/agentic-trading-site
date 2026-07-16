@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-16T22:13:19.176Z",
+  "generated_at": "2026-07-16T22:14:25.355Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 93867.64,
+    "equity": 93814.51,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 92867.64,
-    "day_pnl": -5587.06,
+    "total_pnl": 92814.51,
+    "day_pnl": -5640.19,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,9 +20,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 206.65,
-        "pl": -469.3,
-        "plpc": -1.72,
+        "current": 206.52,
+        "pl": -486.2,
+        "plpc": -1.78,
         "thesis": ""
       },
       {
@@ -47,9 +47,9 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 70.64,
-        "pl": -1818.72,
-        "plpc": -8.37,
+        "current": 70.51,
+        "pl": -1854.96,
+        "plpc": -8.53,
         "thesis": ""
       },
       {
@@ -98,10 +98,10 @@
     ]
   },
   "live": {
-    "equity": 926.74,
+    "equity": 925.45,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -73.26,
-    "day_pnl": -50.02,
+    "total_pnl": -74.55,
+    "day_pnl": -51.31,
     "positions": [
       {
         "symbol": "FNGU",
@@ -116,9 +116,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 70.64,
-        "pl": -56.51,
-        "plpc": -7.41,
+        "current": 70.51,
+        "pl": -57.8,
+        "plpc": -7.58,
         "thesis": ""
       }
     ],
@@ -870,13 +870,13 @@
       "size_pct": "29% paper",
       "size_note": "Core AI convexity; add on a confirmed $208-209 push, cut calls only if $205 breaks.",
       "plan_usd": "-",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 2.5,
-        "confidence": "med",
-        "basis": "bellwether; leads a quality relief bounce off oversold",
-        "pop_rank": 2
+        "target_pct": 1,
+        "confidence": "low",
+        "basis": "RS chip but heavy tape/soft futures cap the open",
+        "pop_rank": 3
       },
       "price": 207.12,
       "spark": [
@@ -925,13 +925,13 @@
       "size_pct": "0%",
       "size_note": "Re-entry lever on confirmed NVDA strength, funded by trimming a laggard into a bounce.",
       "plan_usd": "$150 IF NVDA confirms >$209",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 4,
-        "confidence": "med",
-        "basis": "2x NVDA amplifies the bounce tell",
-        "pop_rank": 3
+        "target_pct": 2,
+        "confidence": "low",
+        "basis": "2x NVDA; amplifies any NVDA bounce",
+        "pop_rank": 4
       },
       "price": 31.62,
       "spark": [
@@ -980,13 +980,13 @@
       "size_pct": "0%",
       "size_note": "Highest-beta bounce lever; only on a confirmed reclaim off a real floor.",
       "plan_usd": "$150 IF a clean semi reclaim confirms",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "day/swing",
       "projection": {
-        "target_pct": 8,
+        "target_pct": 3,
         "confidence": "low",
-        "basis": "2-day chip capitulation - biggest oversold-bounce magnitude if flush is spent",
-        "pop_rank": 1
+        "basis": "day-3 oversold semis; biggest snap-back IF a real reclaim",
+        "pop_rank": 2
       },
       "price": 142.33,
       "spark": [
@@ -1035,13 +1035,13 @@
       "size_pct": "76% live",
       "size_note": "Core 3x-Nasdaq; trim into a bounce toward ~$74, or let the $68.50 stop work.",
       "plan_usd": "-",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 2,
+        "target_pct": -1,
         "confidence": "low",
-        "basis": "3x QQQ; bounces with the tape but regime broken - our de-risk-into candidate",
-        "pop_rank": 5
+        "basis": "3x QQQ; soft futures + broken regime - our de-risk-into-any-bounce name",
+        "pop_rank": 9
       },
       "price": 70.73,
       "spark": [
@@ -1090,13 +1090,13 @@
       "size_pct": "7% paper",
       "size_note": "Relative-strength AI-software hold; add over $137.",
       "plan_usd": "-",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 2,
+        "target_pct": 1.5,
         "confidence": "med",
-        "basis": "RS leader, only green long today; buy on QQQ 20d reclaim",
-        "pop_rank": 4
+        "basis": "RS leader, only green long; first to pop on any stabilize",
+        "pop_rank": 1
       },
       "price": 134.46,
       "spark": [
@@ -1145,13 +1145,13 @@
       "size_pct": "18% live",
       "size_note": "Diversified 3x mega-cap; hold with the $25.30 stop.",
       "plan_usd": "-",
-      "updated": "2026-07-16T17:45:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": -1,
+        "target_pct": -1.5,
         "confidence": "low",
-        "basis": "3x FANG; Netflix -8% AH is a fresh drag - firm trim into any bounce",
-        "pop_rank": 9
+        "basis": "3x FANG; Netflix -8% AH a fresh drag - firm trim into any bounce",
+        "pop_rank": 10
       },
       "price": 28.31,
       "spark": [
@@ -1200,12 +1200,12 @@
       "size_pct": "15% paper",
       "size_note": "Diversified 3x; the steady anchor vs 3x-Nasdaq.",
       "plan_usd": "-",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 1,
+        "target_pct": -0.5,
         "confidence": "low",
-        "basis": "3x S&P; broad tape contained, smaller bounce",
+        "basis": "3x S&P; broad tape contained but soft open",
         "pop_rank": 11
       },
       "price": 143.38,
@@ -1255,12 +1255,12 @@
       "size_pct": "4% paper",
       "size_note": "AI-power core; hold the dip with the $236 stop.",
       "plan_usd": "-",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 1,
+        "target_pct": 0,
         "confidence": "low",
-        "basis": "power/AI, tracks tech; modest bounce",
+        "basis": "AI-power tracks tech; flat-to-soft open",
         "pop_rank": 12
       },
       "price": 251.71,
@@ -1310,12 +1310,12 @@
       "size_pct": "0%",
       "size_note": "Bounce candidate once the AI-infra group bases.",
       "plan_usd": "$0 - watch",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 1.5,
+        "target_pct": 0.5,
         "confidence": "low",
-        "basis": "AI-infra capex-fear proxy; bounces with semis",
+        "basis": "AI-infra bounces only with semis",
         "pop_rank": 13
       },
       "price": 294.3,
@@ -1365,12 +1365,12 @@
       "size_pct": "0%",
       "size_note": "Inverse; only on a FRESH breakdown from a lower level, never chased at highs.",
       "plan_usd": "$0 - avoid",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "day",
       "projection": {
-        "target_pct": -6,
+        "target_pct": -3,
         "confidence": "low",
-        "basis": "2-day-extended 3x inverse - fades on a relief bounce (risk: flush continues)",
+        "basis": "2-day-extended inverse; fades on relief (risk: flush continues)",
         "pop_rank": 15
       },
       "price": 51.83,
@@ -1420,10 +1420,10 @@
       "size_pct": "0%",
       "size_note": "Off the book; watch for a catalyst-driven re-entry.",
       "plan_usd": "$0 - watch",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 1,
+        "target_pct": 0,
         "confidence": "low",
         "basis": "fintech beta, no catalyst; drifts with tape",
         "pop_rank": 14
@@ -1475,13 +1475,13 @@
       "size_pct": "0%",
       "size_note": "Avoid the knife; needs a market risk-on turn first.",
       "plan_usd": "$0 - avoid",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 4,
+        "target_pct": 3,
         "confidence": "low",
         "basis": "quantum high-beta oversold bounce candidate",
-        "pop_rank": 6
+        "pop_rank": 5
       },
       "price": 35.38,
       "spark": [
@@ -1530,13 +1530,13 @@
       "size_pct": "0%",
       "size_note": "Avoid; wait for a market risk-on turn.",
       "plan_usd": "$0 - avoid",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 4,
+        "target_pct": 3,
         "confidence": "low",
-        "basis": "quantum small-cap oversold bounce candidate",
-        "pop_rank": 10
+        "basis": "quantum micro oversold bounce candidate",
+        "pop_rank": 8
       },
       "price": 14.11,
       "spark": [
@@ -1585,13 +1585,13 @@
       "size_pct": "0%",
       "size_note": "Oversold bounce watch; needs a reclaim off a floor.",
       "plan_usd": "$0 - watch",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 4,
+        "target_pct": 3,
         "confidence": "low",
-        "basis": "fuel-cell -14% day 2; violent dead-cat-bounce risk",
-        "pop_rank": 7
+        "basis": "fuel-cell day-2 oversold; violent dead-cat risk",
+        "pop_rank": 6
       },
       "price": 206.18,
       "spark": [
@@ -1640,13 +1640,13 @@
       "size_pct": "0%",
       "size_note": "Speculative nuclear; watch for a base, don't catch the knife.",
       "plan_usd": "$0 - watch",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T18:10:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 4,
+        "target_pct": 3,
         "confidence": "low",
         "basis": "nuclear high-beta oversold bounce candidate",
-        "pop_rank": 8
+        "pop_rank": 7
       },
       "price": 41.84,
       "spark": [
@@ -1684,6 +1684,12 @@
     }
   ],
   "feed": [
+    {
+      "ts": "2026-07-16T18:10:00-04:00",
+      "type": "activity",
+      "reaction": "hold",
+      "text": "6:09pm after-hours: re-pulled fresh, plan unchanged and if anything reinforced. QQQ ~$705 (still under its 20/50-day = regime broken), Nasdaq-100 futures ~-0.9%, Netflix still ~-8% AH, macro risk-off (yields up, oil high) - tape leaning down into 7/17. Live TQQQ 10 + FNGU 6 both GTC-stopped ($68.50/$25.30), zero naked. De-risk stays a sell-into-strength at the open: trim TQQQ (lean on FNGU) into any bounce, let the $68.50 stop work if it gaps down instead, no new leverage until QQQ reclaims its 20-day."
+    },
     {
       "ts": "2026-07-16T17:45:00-04:00",
       "type": "activity",
@@ -2018,6 +2024,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-16T18:10:00-04:00",
+      "text": "6:09pm (after-hours): re-pulled fresh — nothing changed the plan, and the tape is leaning DOWN into 7/17, not bouncing. QQQ sits ~$705 (regular close $705.9, still under its 20-day ~$721 and 50-day ~$715 = leverage regime confirmed broken), Nasdaq-100 futures are ~-0.9% and Netflix is still ~-8% after its print, so the FANG/FNGU drag carries over. Macro adds risk-off: Treasury yields up and oil near highs on Gulf/Iran tension. Both live legs (TQQQ 10 @ $68.50 stop, FNGU 6 @ $25.30 stop) stay GTC-stopped — zero naked overnight. Because futures are soft, the de-risk stays a SELL-INTO-STRENGTH call: if QQQ gives an early bounce I trim TQQQ (and lean harder on trimming FNGU given the Netflix drag) to cut 3x-Nasdaq beta; if it just gaps down and keeps sliding I let the $68.50 stop work rather than dump the low. No new leverage until QQQ reclaims its 20-day. Nothing to trade tonight — extended hours is limit-only with no stop.",
+      "hype": "Nothing new tonight — both positions stopped, nothing exposed. Futures point down, so the plan holds: trim the 3x into any morning bounce, but don't dump into a gap-down low."
+    },
+    {
       "ts": "2026-07-16T17:45:00-04:00",
       "text": "5:45pm (after-hours): fresh catalyst - Netflix reported after the bell and fell ~8% (revenue a hair light on an EPS beat), which drags the FANG basket and specifically FNGU (Netflix is a component) into tomorrow. Nothing to trade tonight: market's closed, extended hours is limit-only with no stop, and the de-risk is a sell-into-strength call best made at the open. Both live legs (TQQQ 10 + FNGU 6) and all 5 paper legs stay GTC-stopped overnight - zero naked. The 7/17 plan is reaffirmed and if anything reinforced: into any open bounce, trim the 3x-Nasdaq beta (TQQQ) and lean harder on trimming FNGU given the fresh Netflix drag; no new leverage until QQQ reclaims its 20-day (~720).",
       "hype": "Netflix dropped ~8% after the bell, which tugs on FNGU tomorrow - one more reason to trim the leverage into any bounce at the open. Nothing to do tonight; stops are set."
@@ -2086,11 +2097,6 @@
       "ts": "2026-07-16T11:16:00-04:00",
       "text": "11:16am: NVDL just stopped out at $31.30 (its trailed GTC stop) - a small +$0.71 WIN that locked the last leg of the 7/8 entry, not a loss. Live book is now TQQQ 10 + FNGU 6, both GTC-stopped, ~$54 cash. Tape has slipped since 10:47: QQQ $709.5 (now under both its 20-day ~721 and 50-day ~715) and semis made fresh lows (SOXL -12%, SOXS +11.6% and MORE extended). SPY flat / Dow green, so it's still a contained 2nd-day chip valuation unwind, not a broad crash - and I own ZERO of the -9% to -12% semi/nuclear/space wreck. No clean trade here: chasing the extended inverse is -EV and dumping a 3x-long at the session low is the de-lever-at-support mistake. Holding with stops as the backstop; de-risk TQQQ into any bounce if QQQ can't reclaim ~$715. Book -3.1% (~$946).",
       "hype": "NVDL tripped its stop for a tiny win, so it's just TQQQ + FNGU now, both protected. Chips made fresh lows and the only green is a short that's already stretched - not chasing it, and not selling my longs at the lows. Own none of the -10% chip carnage."
-    },
-    {
-      "ts": "2026-07-16T10:47:00-04:00",
-      "text": "10:47am: Holding both books - nothing clearly better to rotate into right now. The 10am semi bounce faded (SOXL ran $144.50->$155.8 then back to $148), so there's no confirmed long to chase; SOXS (+9%) is the day's only green but it's extended and rolling over, and live cash is $22 - a buy means selling a 3x-long at the session low, the exact de-lever-at-support mistake. Broad tape is fine (SPY -0.1%, Dow green, QQQ holding $711 above its $707 low); the pain is a concentrated 2nd-day chip valuation unwind (SOX -3.8%, memory -7%) and I own ZERO of the -10% semi wreck. All stops live, zero naked. Trigger: SOXL reclaims and holds $155 -> I rotate the TQQQ laggard into NVDL/the confirmed semi leader (multi-day swing, PDT-free); a QQQ break under $707 -> the wide stops handle it. Book ~-2.5% (~$952).",
-      "hype": "Sitting tight - the chip bounce already fizzled and the only green name is an inverse that's rolling over, so nothing clean to jump into. Not selling my longs at the lows just to look busy; stops are set and I own zero of the -10% chip mess."
     }
   ],
   "benchmark": {
@@ -2110,7 +2116,7 @@
     },
     {
       "session": "Evening",
-      "text": "NFLX -8% AH; de-risk armed open"
+      "text": "Futures soft; trim 3x on open bounce"
     }
   ],
   "equity_history": {
