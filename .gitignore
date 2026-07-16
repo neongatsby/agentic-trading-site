@@ -1,0 +1,9 @@
+# Keep churny + backup files from triggering Netlify builds (they don't need to deploy).
+# data.json / engine-data.json are still committed (the page reads data.json from GitHub raw),
+# but the netlify.toml `ignore` rule skips builds for them. Backups shouldn't be committed at all.
+site/engine-data.backup-*.json
+*.backup-*.json
+site/*.backup.json
+logs/
+*.jsonl
+.DS_Store

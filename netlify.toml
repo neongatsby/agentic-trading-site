@@ -9,7 +9,7 @@
   # deploy, this returns non-zero and the build proceeds. That keeps rapid
   # poller commits from cancelling/skipping a genuine UI or research update.
   # `ignore` returning 0 = skip build; non-zero = build.
-  ignore = "git diff --quiet ${CACHED_COMMIT_REF:-HEAD~1} ${COMMIT_REF:-HEAD} -- . ':(exclude)site/data.json'"
+  ignore = "git diff --quiet ${CACHED_COMMIT_REF:-HEAD~1} ${COMMIT_REF:-HEAD} -- . ':(exclude)site/data.json' ':(exclude)site/engine-data.json' ':(exclude)site/engine-data.backup-*.json' ':(exclude)logs' ':(exclude)*.jsonl' ':(exclude)*.backup-*.json'"
 
 # PIN-gated in-app approval endpoint (netlify/functions/approve.js). Zero npm deps.
 [functions]
