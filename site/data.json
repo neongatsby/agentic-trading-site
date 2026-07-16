@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-16T13:00:05.392Z",
+  "generated_at": "2026-07-16T13:01:12.250Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 97555.99,
+    "equity": 97703.55,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 96555.99,
-    "day_pnl": -1898.71,
+    "total_pnl": 96703.55,
+    "day_pnl": -1751.15,
     "positions": [
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 255.5,
-        "pl": -82.88,
-        "plpc": -1.99,
+        "current": 255.56,
+        "pl": -81.92,
+        "plpc": -1.96,
         "thesis": ""
       },
       {
@@ -29,9 +29,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 209.05,
-        "pl": -157.3,
-        "plpc": -0.57,
+        "current": 209.44,
+        "pl": -106.6,
+        "plpc": -0.39,
         "thesis": ""
       },
       {
@@ -47,45 +47,45 @@
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.35,
-        "pl": 138.26,
-        "plpc": 5.64,
+        "current": 32.42,
+        "pl": 143.86,
+        "plpc": 5.87,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.61,
-        "pl": -80.5,
-        "plpc": -1.19,
+        "current": 133.4,
+        "pl": -91,
+        "plpc": -1.35,
         "thesis": ""
       },
       {
         "symbol": "SOXL",
         "qty": "10.0000",
         "entry": 175.3,
-        "current": 147.51,
-        "pl": -277.92,
-        "plpc": -15.85,
+        "current": 148.4,
+        "pl": -269.02,
+        "plpc": -15.35,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 72.1,
-        "pl": -1406.58,
-        "plpc": -6.47,
+        "current": 72.36,
+        "pl": -1333.26,
+        "plpc": -6.13,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 144.18,
-        "pl": -114.09,
-        "plpc": -0.83,
+        "current": 144.37,
+        "pl": -95.51,
+        "plpc": -0.69,
         "thesis": ""
       }
     ],
@@ -121,27 +121,27 @@
     ]
   },
   "live": {
-    "equity": 952.34,
+    "equity": 955.01,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -47.66,
-    "day_pnl": -24.42,
+    "total_pnl": -44.99,
+    "day_pnl": -21.75,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.35,
-        "pl": 1.76,
-        "plpc": 5.77,
+        "current": 32.42,
+        "pl": 1.83,
+        "plpc": 6,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 72.1,
-        "pl": -41.9,
-        "plpc": -5.49,
+        "current": 72.36,
+        "pl": -39.3,
+        "plpc": -5.15,
         "thesis": ""
       }
     ],
@@ -427,6 +427,10 @@
       {
         "t": 1784206500000,
         "v": 953.65
+      },
+      {
+        "t": 1784206800000,
+        "v": 952.34
       }
     ]
   },
@@ -951,7 +955,7 @@
       "theme": "Inverse semis",
       "verdict": "avoid",
       "verdict_label": "UN-OWNABLE (live)",
-      "chg_pct": 1078.37,
+      "chg_pct": 1074.65,
       "thesis": "**Biggest watchlist mover - un-ownable live, now fading.** 3x-inverse semis ~+18% on the chip unwind (recently reverse-split, vendor % distorted), but rolling over as the semi reclaim builds (SOXL $150→$165). Live can't hold inverse leverage cleanly; capture only exists on paper.",
       "size": "$0",
       "size_pct": "0%",
@@ -965,7 +969,7 @@
         "basis": "inverse-semi = the day's premkt mover; fade risk intraday",
         "pop_rank": 15
       },
-      "price": 50.67,
+      "price": 50.51,
       "spark": [
         98.27,
         84.28,
@@ -996,7 +1000,7 @@
         42.4,
         37.15,
         32.4,
-        50.67
+        50.51
       ]
     },
     {
@@ -1113,7 +1117,7 @@
       "theme": "Quantum",
       "verdict": "avoid",
       "verdict_label": "AVOID",
-      "chg_pct": -7.91,
+      "chg_pct": -7.79,
       "thesis": "**Worst of the spec cohort.** ~$15.4 (-4.6%). Deepest high-beta bleed; a bounce here is the lowest-quality on the board. Stay out.",
       "size": "$0",
       "size_pct": "0%",
@@ -1127,7 +1131,7 @@
         "basis": "quantum high-beta; worst-quality bounce",
         "pop_rank": 12
       },
-      "price": 14.84,
+      "price": 14.86,
       "spark": [
         15.95,
         16.87,
@@ -1158,7 +1162,7 @@
         18.29,
         19.43,
         19.32,
-        14.84
+        14.86
       ]
     },
     {
