@@ -233,6 +233,7 @@
   /* in-design trade approval (F1) */
   const APPROVE_ENDPOINT = '/.netlify/functions/approve';
   const approvedTk = {};   /* ids you acted on this session — keeps the card sticky so the next poll doesn't revert it to NEEDS-YOUR-OK before the engine reconciles */
+  const apprOpen = {};     /* ids whose Details expander is open — survives the poll re-render */
   async function doApprove(id, symbol, action, mode, cardEl){
     if(!id) return;
     let pin = localStorage.getItem('at-pin');
@@ -467,13 +468,19 @@
     return { card:'background:linear-gradient(90deg, rgba(255,210,122,0.1), rgba(255,94,122,0.06));border:1px solid rgba(255,210,122,0.4);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,233,176,0.25)', accent:'#ffe9b0', label:'#ffd27a', text:'rgba(247,239,223,0.85)', sub:'rgba(247,239,223,0.5)' };
   }
   function apprBtn(kind, pal, sk){
-    const base = 'appearance:none;cursor:pointer;font:700 15px/1 "Avenir Next", Avenir, -apple-system, system-ui, sans-serif;letter-spacing:0.3px;padding:12px 16px;border-radius:12px;';
-    if (kind === 'approve') return base + 'background:' + pal.upBg + ';color:' + pal.upFg + ';border:1px solid ' + pal.upBorder + ';';
-    if (kind === 'prearm')  return base + 'background:transparent;color:' + sk.accent + ';border:1px solid ' + pal.activeBorder + ';';
-    return base + 'background:rgba(255,255,255,0.05);color:' + sk.sub + ';border:1px solid rgba(255,255,255,0.14);';
+    // match the trade-side pill iconography (rounded, mono, uppercase) — brighter to read as action-oriented
+    const base = 'appearance:none;cursor:pointer;font:800 13px/1 ui-monospace,Menlo,monospace;letter-spacing:1px;text-transform:uppercase;padding:12px 18px;border-radius:9px;';
+    if (kind === 'approve') return base + 'background:' + pal.upBg + ';color:' + pal.upFg + ';border:1px solid ' + pal.upBorder + ';box-shadow:0 0 16px ' + hexA(pal.upFg, 0.30) + ', inset 0 0 0 1px ' + hexA(pal.upFg, 0.12) + ';';
+    if (kind === 'prearm')  return base + 'background:' + hexA(pal.upFg, 0.10) + ';color:' + pal.upFg + ';border:1px solid ' + pal.upBorder + ';';
+    return base + 'background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72);border:1px solid rgba(255,255,255,0.18);';
   }
   function renderApprovals(root){
     const box = root.querySelector('[data-role=approvals]'); if (!box) return;
+    if (!box.__moved) {   /* one-time: relocate the trade-request card to right below the hero (before the positions/trades grid) */
+      const pos = root.querySelector('[data-role=positions]');
+      const grid = pos && pos.closest('[style*="grid-template-columns"]');
+      if (grid && grid.parentNode) { grid.parentNode.insertBefore(box, grid); box.__moved = true; box.style.marginBottom = '4px'; }
+    }
     const tickets = arr(DATA && DATA.pending_tickets).filter(function (t){ return t && t.id; });
     if (!tickets.length) { box.innerHTML = ''; box.style.display = 'none'; return; }   /* F1: nothing renders when empty */
     box.style.display = 'flex';
@@ -493,7 +500,8 @@
       const size = t.size || (t.qty != null && t.qty !== '' ? fmtShares(parseFloat(t.qty) || 0) + ' sh' : '');
       const trig = (t.trigger != null && t.trigger !== '') ? t.trigger : t.entry;
       const hasTrig = (trig != null && trig !== '');
-      return '<div data-appr-card data-id="' + escapeHtml(t.id) + '" data-symbol="' + escapeHtml(t.symbol || '') + '" style="' + sk.card + ';padding:18px 20px;display:flex;flex-direction:column;gap:12px">' +
+      const isOpen = !!apprOpen[t.id];
+      return '<div data-appr-card data-id="' + escapeHtml(t.id) + '" data-symbol="' + escapeHtml(t.symbol || '') + '" style="' + sk.card + ';padding:16px 20px;display:flex;flex-direction:column;gap:13px">' +
         '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">' +
           '<div style="' + badgeStyle(kind, pal) + '">' + escapeHtml(sideLabel) + '</div>' +
           '<div style="font:700 24px/1 \'Avenir Next Condensed\',\'Avenir Next\',\'Arial Narrow\',system-ui,sans-serif;letter-spacing:0.5px;color:' + sk.accent + '">' + escapeHtml(t.symbol || '') + '</div>' +
@@ -501,20 +509,33 @@
           '<div style="flex:1"></div>' +
           '<div style="font:700 12px/1 system-ui, sans-serif;letter-spacing:2px;color:' + sk.label + '">NEEDS&nbsp;YOUR&nbsp;OK</div>' +
         '</div>' +
-        (t.thesis ? '<div style="font:400 15px/1.5 system-ui, sans-serif;color:' + sk.text + '">' + escapeHtml(stripMd(t.thesis)) + '</div>' : '') +
-        (closed ? '<div style="font:500 13px/1.4 system-ui, sans-serif;color:' + sk.sub + '">Market closed — this queues for the open.</div>' : '') +
         '<div style="display:flex;gap:10px;flex-wrap:wrap">' +
-          '<button type="button" data-action="approve" data-mode="now" style="' + apprBtn('approve', pal, sk) + '">Approve → buy now</button>' +
-          (hasTrig ? '<button type="button" data-action="approve" data-mode="prearm" style="' + apprBtn('prearm', pal, sk) + '">Pre-arm · auto @ $' + escapeHtml(String(trig)) + '</button>' : '') +
+          '<button type="button" data-action="approve" data-mode="now" style="' + apprBtn('approve', pal, sk) + '">Approve</button>' +
+          (hasTrig ? '<button type="button" data-action="approve" data-mode="prearm" style="' + apprBtn('prearm', pal, sk) + '">Pre-arm @ $' + escapeHtml(String(trig)) + '</button>' : '') +
           '<button type="button" data-action="skip" data-mode="now" style="' + apprBtn('skip', pal, sk) + '">Skip</button>' +
         '</div>' +
+        ((t.thesis || closed) ?
+          '<button type="button" data-appr-toggle style="align-self:flex-start;appearance:none;background:none;border:none;cursor:pointer;font:600 12px/1 ui-monospace,Menlo,monospace;letter-spacing:0.5px;color:' + sk.sub + ';padding:3px 0;display:inline-flex;align-items:center;gap:6px">' +
+            '<span data-appr-chev style="display:inline-block;transition:transform .18s;' + (isOpen ? 'transform:rotate(90deg);' : '') + '">&#9656;</span>Details</button>' +
+          '<div data-appr-more style="' + (isOpen ? 'display:flex;' : 'display:none;') + 'flex-direction:column;gap:8px">' +
+            (t.thesis ? '<div style="font:400 15px/1.5 system-ui, sans-serif;color:' + sk.text + '">' + escapeHtml(stripMd(t.thesis)) + '</div>' : '') +
+            (closed ? '<div style="font:500 13px/1.4 system-ui, sans-serif;color:' + sk.sub + '">Market closed — this queues for the open.</div>' : '') +
+          '</div>'
+        : '') +
         '<div class="appr-status" style="font:500 13px/1.4 ui-monospace,Menlo,monospace;color:' + sk.sub + ';min-height:16px"></div>' +
       '</div>';
     }).join('');
     box.querySelectorAll('[data-appr-card]').forEach(function (card){
       const id = card.getAttribute('data-id'), symbol = card.getAttribute('data-symbol');
-      card.querySelectorAll('button').forEach(function (b){
+      card.querySelectorAll('button[data-action]').forEach(function (b){
         b.addEventListener('click', function (){ doApprove(id, symbol, b.getAttribute('data-action'), b.getAttribute('data-mode'), card); });
+      });
+      const tog = card.querySelector('[data-appr-toggle]');
+      if (tog) tog.addEventListener('click', function (){
+        const more = card.querySelector('[data-appr-more]'), chev = card.querySelector('[data-appr-chev]');
+        apprOpen[id] = !apprOpen[id];
+        if (more) more.style.display = apprOpen[id] ? 'flex' : 'none';
+        if (chev) chev.style.transform = apprOpen[id] ? 'rotate(90deg)' : '';
       });
     });
   }
