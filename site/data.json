@@ -1,91 +1,91 @@
 {
-  "generated_at": "2026-07-16T13:28:57.139Z",
-  "market_note": "Market closed — numbers update at next open.",
+  "generated_at": "2026-07-16T13:30:13.181Z",
+  "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 97987.07,
+    "equity": 97241.03,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 96987.07,
-    "day_pnl": -1467.63,
+    "total_pnl": 96241.03,
+    "day_pnl": -2213.67,
     "positions": [
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 256.81,
-        "pl": -61.92,
-        "plpc": -1.49,
+        "current": 255.5,
+        "pl": -82.88,
+        "plpc": -1.99,
         "thesis": ""
       },
       {
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 29.4,
-        "pl": 488.8,
-        "plpc": 3.3,
+        "current": 29.39,
+        "pl": 483.6,
+        "plpc": 3.27,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 210.23,
-        "pl": -3.9,
-        "plpc": -0.01,
+        "current": 210.45,
+        "pl": 25.27,
+        "plpc": 0.09,
         "thesis": ""
       },
       {
         "symbol": "NVDA260821C00220000",
         "qty": "8.0000",
         "entry": 7.8,
-        "current": 7.7,
-        "pl": -80,
-        "plpc": -1.28,
+        "current": 6.55,
+        "pl": -1000,
+        "plpc": -16.03,
         "thesis": ""
       },
       {
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.67,
-        "pl": 163.86,
-        "plpc": 6.69,
+        "current": 32.72,
+        "pl": 167.46,
+        "plpc": 6.84,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.05,
-        "pl": -108.5,
-        "plpc": -1.6,
+        "current": 133.41,
+        "pl": -90.5,
+        "plpc": -1.34,
         "thesis": ""
       },
       {
         "symbol": "SOXL",
         "qty": "10.0000",
         "entry": 175.3,
-        "current": 149.5,
-        "pl": -258.02,
-        "plpc": -14.72,
+        "current": 151.99,
+        "pl": -233.12,
+        "plpc": -13.3,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 72.54,
-        "pl": -1282.5,
-        "plpc": -5.9,
+        "current": 72.92,
+        "pl": -1175.48,
+        "plpc": -5.41,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 144.68,
-        "pl": -66.5,
-        "plpc": -0.48,
+        "current": 144.94,
+        "pl": -41.8,
+        "plpc": -0.3,
         "thesis": ""
       }
     ],
@@ -121,27 +121,36 @@
     ]
   },
   "live": {
-    "equity": 957.06,
+    "equity": 960.38,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -42.94,
-    "day_pnl": -19.7,
+    "total_pnl": -39.62,
+    "day_pnl": -16.38,
     "positions": [
+      {
+        "symbol": "FNGU",
+        "qty": "6.0000",
+        "entry": 29.43,
+        "current": 29.4,
+        "pl": -0.18,
+        "plpc": -0.1,
+        "thesis": ""
+      },
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.67,
-        "pl": 2.08,
-        "plpc": 6.81,
+        "current": 32.62,
+        "pl": 2.03,
+        "plpc": 6.65,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 72.54,
-        "pl": -37.5,
-        "plpc": -4.92,
+        "current": 72.9,
+        "pl": -33.91,
+        "plpc": -4.45,
         "thesis": ""
       }
     ],
@@ -451,23 +460,14 @@
       {
         "t": 1784208300000,
         "v": 959.45
+      },
+      {
+        "t": 1784208600000,
+        "v": 957.73
       }
     ]
   },
-  "pending_tickets": [
-    {
-      "id": "2026-07-16-1",
-      "symbol": "FNGU",
-      "side": "buy",
-      "size": "$179",
-      "qty": 6,
-      "entry": 29.8,
-      "trigger": 30.2,
-      "stop": 25.3,
-      "bracket": "stop $25.30 GTC (below $27.40 support, -15%)",
-      "thesis": "APPROVED 5:11pm 7/15 — staged/queued for the open. Redeploy the freed SOFI cash into the confirmed leader FNGU (3x FANG+), the day's only green long mover (+3.1%) on 7/15 and again the RS holdout (-1.9% vs SOXL -10%). TSMC confirmed a record blowout beat-and-raise (N3 sold out, capex $60-64B) = bullish for FNGU's mega-cap AI names — BUT the tape is selling semis a 2nd day, so the $30.20 buy-stop confirm-gate is doing its job: it fires only on a genuine reclaim above $30.20 (FNGU ~$29.2 needs +3.4%), never on a sell-the-news open. 6 sh x $30.60 marketable = $183.6 reserve < $198.99 BP."
-    }
-  ],
+  "pending_tickets": [],
   "coverage": [
     {
       "ticker": "TQQQ",
@@ -475,7 +475,7 @@
       "theme": "3x Nasdaq core",
       "verdict": "buy",
       "verdict_label": "HOLD",
-      "chg_pct": -3.32,
+      "chg_pct": -2.8,
       "thesis": "**The 3x-Nasdaq core — the flagged laggard in a weak regime.** 10 sh @ $76.29, marked ~$72.0 on a -3% Nasdaq open; still ~$3.5 above the $68.50 GTC stop. QQQ ~$711 sits under its 20-day (~$721) and ~50-day (~$718) = leverage in the decay zone. TSMC's record capex-raise is the bullish undertone, but the tape is selling chips on a higher-prices warning + the Iran/Hormuz oil shock.",
       "hold_reason": "Our 3x-Nasdaq core — 10 shares from $76.29 on 7/9. It's the primary de-camp candidate now: QQQ is under its 20/50-day (weak regime for a 3x long), so if it bounces intraday while semis keep bleeding I rotate it into FNGU (the relative-strength leader). Not selling the gap-down open low; the $68.50 GTC stop bounds it, and TSMC's capex raise says the AI cycle is intact.",
       "size": "$744 (10 sh live)",
@@ -490,7 +490,7 @@
         "basis": "3x Nasdaq; weak regime, TSMC sold on price warning",
         "pop_rank": 4
       },
-      "price": 72.52,
+      "price": 72.91,
       "spark": [
         72.78,
         76.32,
@@ -521,7 +521,7 @@
         71.6,
         77.24,
         80.99,
-        72.52
+        72.91
       ]
     },
     {
@@ -530,7 +530,7 @@
       "theme": "Fintech / idiosyncratic",
       "verdict": "watch",
       "verdict_label": "WATCH",
-      "chg_pct": -4.5,
+      "chg_pct": -3.8,
       "thesis": "**The flat laggard, now the standing rotation candidate.** 10 sh @ $18.76, now $17.96 (-3.2% today, -4.3% vs entry). No catalyst; it's the capital the book wants concentrated in the leader. The de-camp jammed mechanically all day (resting stop reserves the shares) and is retired to a clean re-run after TSMC. Protected by the $17.60 GTC stop.",
       "hold_reason": "Sold 7/15 @ $17.94 to break the multi-day cash-lock and free ~$199 for the FNGU leader redeploy. No position now; watching for a clean re-entry only if it shows fresh relative strength - no catalyst here today.",
       "size": "-",
@@ -545,7 +545,7 @@
         "basis": "no position; fintech, watch in risk-off",
         "pop_rank": 14
       },
-      "price": 17.72,
+      "price": 17.85,
       "spark": [
         15.22,
         15.68,
@@ -576,7 +576,7 @@
         17.86,
         18.18,
         17.93,
-        17.72
+        17.85
       ]
     },
     {
@@ -585,7 +585,7 @@
       "theme": "2x NVDA",
       "verdict": "buy",
       "verdict_label": "HOLD",
-      "chg_pct": 0.6,
+      "chg_pct": -1.9,
       "thesis": "**2x NVDA — the most direct TSMC read-through, held.** 1 sh @ $30.59, marked ~$32.2 pre-market (still +5% vs entry), $31.30 GTC stop ~2.8% below. TSMC fabs NVDA's chips and its N3 node is sold out, so the demand read is clean — but on today's -3.4% pre-market the stop is close; if the flush deepens it exits for a small gain.",
       "hold_reason": "A single 2x-NVDA share from $30.59 — small, but our cleanest live long on the AI leader. Marked red pre-market with the chip complex, but still ~+5% vs entry and the $31.30 stop locks a profit if it breaks. Holding; TSMC's N3-sold-out capex raise is the bullish read if chips find a floor at the open.",
       "size": "$33 (1 sh live) + 80 sh paper",
@@ -600,7 +600,7 @@
         "basis": "2x NVDA; N3-sold-out read-through vs risk-off",
         "pop_rank": 6
       },
-      "price": 33.38,
+      "price": 32.55,
       "spark": [
         37.52,
         38.44,
@@ -631,7 +631,7 @@
         27.53,
         28.41,
         29.83,
-        33.38
+        32.55
       ]
     },
     {
@@ -640,7 +640,7 @@
       "theme": "3x mega-cap tech",
       "verdict": "buy",
       "verdict_label": "ARMED",
-      "chg_pct": 3.12,
+      "chg_pct": 1.77,
       "thesis": "**3x FANG+ — the relative-strength holdout AND the live deploy target.** Only ~-1.9% pre-market while SOXL is -10% and TQQQ -3% — mega-cap FANG again refusing to break, so this is a semi-specific flush, not a mega-cap one. The APPROVED pre-arm rests a $30.20 buy-stop into the open; FNGU (~$29.2) needs +3.4% to trip it, so a red/sell-the-news open never fills it and the freed ~$199 stays safe. A $25.30 GTC stop bounds the 3x downside if it does fire.",
       "hold_reason": "3x FANG+ (mega-cap tech) — paper's biggest winner (520 sh) and again the relative-strength leader, only ~-1.9% while chips flush -10%. It's the live redeploy target for the freed SOFI cash, staged as a $30.20 confirm-gated buy-stop rather than chased into a red tape. Fires only if the open genuinely reclaims strength; if it doesn't fire, don't camp the cash a 2nd full session — lower the gate toward a higher-low reclaim once the RTH tape steadies.",
       "size": "$15,527 (paper, +$728) + live redeploy APPROVED/queued",
@@ -660,7 +660,7 @@
           2
         ]
       },
-      "price": 29.78,
+      "price": 29.39,
       "spark": [
         27.6,
         28.73,
@@ -691,7 +691,7 @@
         23.87,
         25.21,
         25.69,
-        29.78
+        29.39
       ]
     },
     {
@@ -700,7 +700,7 @@
       "theme": "3x semiconductors",
       "verdict": "buy",
       "verdict_label": "WASHOUT REVERSAL (paper)",
-      "chg_pct": -15.29,
+      "chg_pct": -13.83,
       "thesis": "**The wreck we dodged live — the paper reversal test is failing.** Flushed DEEPER to ~$146 pre-open (-11%), back below the paper starter's $148 GTC stop, so the 10-sh @ $163.63 reversal bet stops out at the open. 'Buy the reclaim off a higher low' didn't hold as chips sold TSMC's price warning. Still un-owned live — which dodged the whole flush again.",
       "hold_reason": "3x semis — the epicenter of the sell-the-news dump, flushing harder (-11% pre-open) on TSMC's higher-prices warning. The small paper washout-reversal starter (10 sh) is stopping out at the open below its $148 stop; the reclaim didn't hold. Owned NONE in live, dodging the flush a second day.",
       "size": "$1,634 (paper starter)",
@@ -715,7 +715,7 @@
         "basis": "3x semi wreck; stops out at open, snapback risk",
         "pop_rank": 3
       },
-      "price": 149.62,
+      "price": 152.2,
       "spark": [
         151.93,
         173.38,
@@ -746,7 +746,7 @@
         215,
         236.75,
         266.71,
-        149.62
+        152.2
       ]
     },
     {
@@ -755,7 +755,7 @@
       "theme": "Power-for-AI",
       "verdict": "buy",
       "verdict_label": "BUY (paper)",
-      "chg_pct": 0.69,
+      "chg_pct": 0.05,
       "thesis": "**Power-for-AI relative strength.** 16 sh paper @ $260.68, now $257.30 (+0.3% today). Green-to-flat while chips bled. Paper stop $236.",
       "hold_reason": "Our AI-power/utility play - the electricity behind the data centers - and a deliberate non-semi diversifier. Green-to-flat on a red chip day, doing its job. Watching $255-262; a break below would be our tell to reassess.",
       "size": "$4,108 (paper)",
@@ -770,7 +770,7 @@
         "basis": "AI-power; holding better than chips",
         "pop_rank": 7
       },
-      "price": 258.17,
+      "price": 256.54,
       "spark": [
         260.67,
         281.2,
@@ -801,7 +801,7 @@
         264.14,
         259.35,
         248.32,
-        258.17
+        256.54
       ]
     },
     {
@@ -810,7 +810,7 @@
       "theme": "AI leader",
       "verdict": "hold",
       "verdict_label": "WATCH",
-      "chg_pct": -0.99,
+      "chg_pct": -0.97,
       "thesis": "**Closed GREEN off its $204 low - the resilient-chip tell.** Settled $212.5 (+0.3%) and firmed to $212.4 after-hours after clawing back from the $203.84 intraday low as the tape reversed. Paper holds 130 sh @ $210.26 (+$178) + 8x Aug $220 calls now -1.3% ($7.70 vs $7.80) - held as convexity into TSMC.",
       "hold_reason": "The core AI name - paper holds shares plus an Aug 220 call for convexity. Closed green (+0.3%) after clawing back from its $204 intraday low, and JPMorgan/Jensen/Son all frame the chip dump as a positioning unwind, not an AI-cycle top, so we hold for the rebound + tonight's TSMC print. A decisive break of $200 breaks the thesis and we cut the call.",
       "size": "$27,512 sh + call (paper)",
@@ -825,7 +825,7 @@
         "basis": "N3 sold out per TSMC; direct read-through if chips floor",
         "pop_rank": 2
       },
-      "price": 209.7,
+      "price": 209.73,
       "spark": [
         220.39,
         223.22,
@@ -856,7 +856,7 @@
         191.97,
         194.92,
         199.93,
-        209.7
+        209.73
       ]
     },
     {
@@ -865,7 +865,7 @@
       "theme": "AI software",
       "verdict": "hold",
       "verdict_label": "BUY (paper)",
-      "chg_pct": -0.05,
+      "chg_pct": -0.26,
       "thesis": "**Green-flat software, holding the reclaim.** 50 sh paper @ $135.22, now $133.97 (flat today). Software > semis in this unwind; holding above yesterday's $122.7 spike-low reclaim.",
       "hold_reason": "AI-software leader we bought on a breakout reclaim; a non-semi name holding flat while hardware bled. Software keeps outperforming chips in this unwind. Paper stop $121.50 protects the swing.",
       "size": "$6,678 (paper)",
@@ -880,7 +880,7 @@
         "basis": "software > semis; the lone green name pre-open",
         "pop_rank": 5
       },
-      "price": 133.66,
+      "price": 133.38,
       "spark": [
         135.27,
         137.15,
@@ -911,7 +911,7 @@
         112.82,
         115.66,
         116.64,
-        133.66
+        133.38
       ]
     },
     {
@@ -920,7 +920,7 @@
       "theme": "3x S&P 500",
       "verdict": "hold",
       "verdict_label": "HOLD (paper)",
-      "chg_pct": 0.94,
+      "chg_pct": 0.48,
       "thesis": "**3x broad-market ballast - the tell.** 95 sh paper @ $145.38, now $145.42 (+0.7% today). Broad S&P GREEN while the Nasdaq/chip side bled - proof this is a sector unwind, not a market break.",
       "hold_reason": "Our 3x broad-S&P position - deliberately less tech-concentrated than TQQQ, and the accountability's named 'less-fragile core.' Green, doing its ballast job on a chip-heavy red day. Paper stop $124; we hold unless the broad tape rolls over with the Nasdaq.",
       "size": "$13,780 (paper)",
@@ -935,7 +935,7 @@
         "basis": "3x S&P ballast; broad tape holding vs the chip flush",
         "pop_rank": 8
       },
-      "price": 145.74,
+      "price": 145.08,
       "spark": [
         136.35,
         140.44,
@@ -966,7 +966,7 @@
         132.11,
         139.08,
         141.89,
-        145.74
+        145.08
       ]
     },
     {
@@ -975,7 +975,7 @@
       "theme": "Inverse semis",
       "verdict": "avoid",
       "verdict_label": "UN-OWNABLE (live)",
-      "chg_pct": 1067.21,
+      "chg_pct": 1045.58,
       "thesis": "**Biggest watchlist mover - un-ownable live, now fading.** 3x-inverse semis ~+18% on the chip unwind (recently reverse-split, vendor % distorted), but rolling over as the semi reclaim builds (SOXL $150→$165). Live can't hold inverse leverage cleanly; capture only exists on paper.",
       "size": "$0",
       "size_pct": "0%",
@@ -989,7 +989,7 @@
         "basis": "inverse-semi = the day's premkt mover; fade risk intraday",
         "pop_rank": 15
       },
-      "price": 50.19,
+      "price": 49.26,
       "spark": [
         98.27,
         84.28,
@@ -1020,7 +1020,7 @@
         42.4,
         37.15,
         32.4,
-        50.19
+        49.26
       ]
     },
     {
@@ -1029,7 +1029,7 @@
       "theme": "Fuel-cell / power",
       "verdict": "watch",
       "verdict_label": "WATCH",
-      "chg_pct": -1.64,
+      "chg_pct": -5.66,
       "thesis": "**Spiked to $244 then dumped with the spec cohort.** ~$234.6 (-3.6%), bouncing with the tape off the $217.90 flush. No position; watching a real floor to reclaim.",
       "size": "$0",
       "size_pct": "0%",
@@ -1043,7 +1043,7 @@
         "basis": "fuel-cell; energy crosscurrent, no clean floor",
         "pop_rank": 9
       },
-      "price": 239.44,
+      "price": 229.65,
       "spark": [
         261.71,
         282.31,
@@ -1074,7 +1074,7 @@
         253.24,
         275,
         302.69,
-        239.44
+        229.65
       ]
     },
     {
@@ -1083,7 +1083,7 @@
       "theme": "Quantum",
       "verdict": "avoid",
       "verdict_label": "AVOID",
-      "chg_pct": -5.78,
+      "chg_pct": -5.61,
       "thesis": "**Quantum bleeding, low-quality bounce.** ~$37.8 (-3.9%), lifting with the reclaim but no lead. High-beta spec is a poor place to concentrate in a de-risking tape.",
       "size": "$0",
       "size_pct": "0%",
@@ -1097,7 +1097,7 @@
         "basis": "quantum bleeds with semis, but off premkt lows",
         "pop_rank": 11
       },
-      "price": 37.03,
+      "price": 37.09,
       "spark": [
         48.46,
         52.49,
@@ -1128,7 +1128,7 @@
         49.16,
         53.88,
         53.3,
-        37.03
+        37.09
       ]
     },
     {
@@ -1137,7 +1137,7 @@
       "theme": "Quantum",
       "verdict": "avoid",
       "verdict_label": "AVOID",
-      "chg_pct": -7.79,
+      "chg_pct": -7.73,
       "thesis": "**Worst of the spec cohort.** ~$15.4 (-4.6%). Deepest high-beta bleed; a bounce here is the lowest-quality on the board. Stay out.",
       "size": "$0",
       "size_pct": "0%",
@@ -1151,7 +1151,7 @@
         "basis": "quantum high-beta; worst-quality bounce",
         "pop_rank": 12
       },
-      "price": 14.86,
+      "price": 14.87,
       "spark": [
         15.95,
         16.87,
@@ -1182,7 +1182,7 @@
         18.29,
         19.43,
         19.32,
-        14.86
+        14.87
       ]
     },
     {
@@ -1191,7 +1191,7 @@
       "theme": "Nuclear-for-AI",
       "verdict": "watch",
       "verdict_label": "WATCH",
-      "chg_pct": -1.34,
+      "chg_pct": -4.87,
       "thesis": "**Nuclear-for-AI, holding better than the spec cohort.** ~$45.7 (-1.0%). The power-for-AI theme we like, but CEG is the cleaner, held expression.",
       "size": "$0",
       "size_pct": "0%",
@@ -1205,7 +1205,7 @@
         "basis": "nuclear holding flat vs the semi flush",
         "pop_rank": 13
       },
-      "price": 45.59,
+      "price": 43.96,
       "spark": [
         55.95,
         62.59,
@@ -1236,7 +1236,7 @@
         50.03,
         52.79,
         52.34,
-        45.59
+        43.96
       ]
     },
     {
@@ -1245,7 +1245,7 @@
       "theme": "AI data-center infra",
       "verdict": "watch",
       "verdict_label": "WATCH",
-      "chg_pct": -3.32,
+      "chg_pct": -2.31,
       "thesis": "**Data-center infra reclaimed from $290.** ~$302.4 (-0.4%), bounced with the tape off the $289.87 low. Good long-term AI-infra name but no clean entry yet.",
       "size": "$0",
       "size_pct": "0%",
@@ -1259,7 +1259,7 @@
         "basis": "AI-datacenter; needs a support reclaim",
         "pop_rank": 10
       },
-      "price": 293.58,
+      "price": 296.65,
       "spark": [
         322.57,
         315.58,
@@ -1290,7 +1290,7 @@
         303.46,
         307.03,
         334.58,
-        293.58
+        296.65
       ]
     }
   ],
@@ -1762,8 +1762,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 72.52,
-    "tqqq_pct": -5.7
+    "tqqq": 72.91,
+    "tqqq_pct": -5.19
   },
   "status": [
     {
@@ -1774,1599 +1774,11 @@
   "equity_history": {
     "1D": [
       [
-        1784122200000,
-        1003.56
-      ],
-      [
-        1784122260000,
-        1004.84
-      ],
-      [
-        1784122320000,
-        1003.1
-      ],
-      [
-        1784122380000,
-        1001.35
-      ],
-      [
-        1784122440000,
-        1001.66
-      ],
-      [
-        1784122500000,
-        1003.51
-      ],
-      [
-        1784122560000,
-        999.9
-      ],
-      [
-        1784122620000,
-        1000.67
-      ],
-      [
-        1784122680000,
-        995.97
-      ],
-      [
-        1784122740000,
-        994.67
-      ],
-      [
-        1784122800000,
-        995.04
-      ],
-      [
-        1784122860000,
-        991.93
-      ],
-      [
-        1784122920000,
-        991.28
-      ],
-      [
-        1784122980000,
-        991.88
-      ],
-      [
-        1784123040000,
-        994.11
-      ],
-      [
-        1784123100000,
-        990.46
-      ],
-      [
-        1784123160000,
-        989.19
-      ],
-      [
-        1784123220000,
-        987.17
-      ],
-      [
-        1784123280000,
-        986.42
-      ],
-      [
-        1784123340000,
-        986.34
-      ],
-      [
-        1784123400000,
-        985.13
-      ],
-      [
-        1784123460000,
-        983.81
-      ],
-      [
-        1784123520000,
-        982.72
-      ],
-      [
-        1784123580000,
-        985.37
-      ],
-      [
-        1784123640000,
-        983.03
-      ],
-      [
-        1784123700000,
-        985.78
-      ],
-      [
-        1784123760000,
-        985.59
-      ],
-      [
-        1784123820000,
-        984.51
-      ],
-      [
-        1784123880000,
-        986.31
-      ],
-      [
-        1784123940000,
-        987.26
-      ],
-      [
-        1784124000000,
-        988.56
-      ],
-      [
-        1784124060000,
-        990
-      ],
-      [
-        1784124120000,
-        990.64
-      ],
-      [
-        1784124180000,
-        989.64
-      ],
-      [
-        1784124240000,
-        990.98
-      ],
-      [
-        1784124300000,
-        989.91
-      ],
-      [
-        1784124360000,
-        988.91
-      ],
-      [
-        1784124420000,
-        993.3
-      ],
-      [
-        1784124480000,
-        993.1
-      ],
-      [
-        1784124540000,
-        992.66
-      ],
-      [
-        1784124600000,
-        991.16
-      ],
-      [
-        1784124660000,
-        991.42
-      ],
-      [
-        1784124720000,
-        990.46
-      ],
-      [
-        1784124780000,
-        991.08
-      ],
-      [
-        1784124840000,
-        989.48
-      ],
-      [
-        1784124900000,
-        986.82
-      ],
-      [
-        1784124960000,
-        986.05
-      ],
-      [
-        1784125020000,
-        986.97
-      ],
-      [
-        1784125080000,
-        987.61
-      ],
-      [
-        1784125140000,
-        985.43
-      ],
-      [
-        1784125200000,
-        985.62
-      ],
-      [
-        1784125260000,
-        982.01
-      ],
-      [
-        1784125320000,
-        982.99
-      ],
-      [
-        1784125380000,
-        981.29
-      ],
-      [
-        1784125440000,
-        977.51
-      ],
-      [
-        1784125500000,
-        974.88
-      ],
-      [
-        1784125560000,
-        974.82
-      ],
-      [
-        1784125620000,
-        974.89
-      ],
-      [
-        1784125680000,
-        976.87
-      ],
-      [
-        1784125740000,
-        977.54
-      ],
-      [
-        1784125800000,
-        980.16
-      ],
-      [
-        1784125860000,
-        979.01
-      ],
-      [
-        1784125920000,
-        975.69
-      ],
-      [
-        1784125980000,
-        976.43
-      ],
-      [
-        1784126040000,
-        979.08
-      ],
-      [
-        1784126100000,
-        978.53
-      ],
-      [
-        1784126160000,
-        977.83
-      ],
-      [
-        1784126220000,
-        972.5
-      ],
-      [
-        1784126280000,
-        971.8
-      ],
-      [
-        1784126340000,
-        971.74
-      ],
-      [
-        1784126400000,
-        971.29
-      ],
-      [
-        1784126460000,
-        971.71
-      ],
-      [
-        1784126520000,
-        971.79
-      ],
-      [
-        1784126580000,
-        966.45
-      ],
-      [
-        1784126640000,
-        968.34
-      ],
-      [
-        1784126700000,
-        970.99
-      ],
-      [
-        1784126760000,
-        968.73
-      ],
-      [
-        1784126820000,
-        970.83
-      ],
-      [
-        1784126880000,
-        972.13
-      ],
-      [
-        1784126940000,
-        973.19
-      ],
-      [
-        1784127000000,
-        974.33
-      ],
-      [
-        1784127060000,
-        972.4
-      ],
-      [
-        1784127120000,
-        971.3
-      ],
-      [
-        1784127180000,
-        970.55
-      ],
-      [
-        1784127240000,
-        971.72
-      ],
-      [
-        1784127300000,
-        970.51
-      ],
-      [
-        1784127360000,
-        970.23
-      ],
-      [
-        1784127420000,
-        972.36
-      ],
-      [
-        1784127480000,
-        971.36
-      ],
-      [
-        1784127540000,
-        970.57
-      ],
-      [
-        1784127600000,
-        973.06
-      ],
-      [
-        1784127660000,
-        971.94
-      ],
-      [
-        1784127720000,
-        970.19
-      ],
-      [
-        1784127780000,
-        971.11
-      ],
-      [
-        1784127840000,
-        970.26
-      ],
-      [
-        1784127900000,
-        969.98
-      ],
-      [
-        1784127960000,
-        971.89
-      ],
-      [
-        1784128020000,
-        972.22
-      ],
-      [
-        1784128080000,
-        973.48
-      ],
-      [
-        1784128140000,
-        974.66
-      ],
-      [
-        1784128200000,
-        975.52
-      ],
-      [
-        1784128260000,
-        974.6
-      ],
-      [
-        1784128320000,
-        973.73
-      ],
-      [
-        1784128380000,
-        972.09
-      ],
-      [
-        1784128440000,
-        972.26
-      ],
-      [
-        1784128500000,
-        970.07
-      ],
-      [
-        1784128560000,
-        968.61
-      ],
-      [
-        1784128620000,
-        966.51
-      ],
-      [
-        1784128680000,
-        968.79
-      ],
-      [
-        1784128740000,
-        970.47
-      ],
-      [
-        1784128800000,
-        971.09
-      ],
-      [
-        1784128860000,
-        970.05
-      ],
-      [
-        1784128920000,
-        968.56
-      ],
-      [
-        1784128980000,
-        966.63
-      ],
-      [
-        1784129040000,
-        966.22
-      ],
-      [
-        1784129100000,
-        968.8
-      ],
-      [
-        1784129160000,
-        969.35
-      ],
-      [
-        1784129220000,
-        969.98
-      ],
-      [
-        1784129280000,
-        970.45
-      ],
-      [
-        1784129340000,
-        972.43
-      ],
-      [
-        1784129400000,
-        973.79
-      ],
-      [
-        1784129460000,
-        972.45
-      ],
-      [
-        1784129520000,
-        972.05
-      ],
-      [
-        1784129580000,
-        974.1
-      ],
-      [
-        1784129640000,
-        973.79
-      ],
-      [
-        1784129700000,
-        973.18
-      ],
-      [
-        1784129760000,
-        970.7
-      ],
-      [
-        1784129820000,
-        973.51
-      ],
-      [
-        1784129880000,
-        973.29
-      ],
-      [
-        1784129940000,
-        973.81
-      ],
-      [
-        1784130000000,
-        973.98
-      ],
-      [
-        1784130060000,
-        973.38
-      ],
-      [
-        1784130120000,
-        973.83
-      ],
-      [
-        1784130180000,
-        973.66
-      ],
-      [
-        1784130240000,
-        971.72
-      ],
-      [
-        1784130300000,
-        971.05
-      ],
-      [
-        1784130360000,
-        969.74
-      ],
-      [
-        1784130420000,
-        969.97
-      ],
-      [
-        1784130480000,
-        968.74
-      ],
-      [
-        1784130540000,
-        969.19
-      ],
-      [
-        1784130600000,
-        969.4
-      ],
-      [
-        1784130660000,
-        967.22
-      ],
-      [
-        1784130720000,
-        967.53
-      ],
-      [
-        1784130780000,
-        967.42
-      ],
-      [
-        1784130840000,
-        968.58
-      ],
-      [
-        1784130900000,
-        968.21
-      ],
-      [
-        1784130960000,
-        967.9
-      ],
-      [
-        1784131020000,
-        967.73
-      ],
-      [
-        1784131080000,
-        966.89
-      ],
-      [
-        1784131140000,
-        968.65
-      ],
-      [
-        1784131200000,
-        968.17
-      ],
-      [
-        1784131260000,
-        968
-      ],
-      [
-        1784131320000,
-        965.45
-      ],
-      [
-        1784131380000,
-        964.71
-      ],
-      [
-        1784131440000,
-        962.8
-      ],
-      [
-        1784131500000,
-        963.87
-      ],
-      [
-        1784131560000,
-        961.06
-      ],
-      [
-        1784131620000,
-        959.97
-      ],
-      [
-        1784131680000,
-        959.46
-      ],
-      [
-        1784131740000,
-        959.63
-      ],
-      [
-        1784131800000,
-        961.98
-      ],
-      [
-        1784131860000,
-        961.95
-      ],
-      [
-        1784131920000,
-        960.24
-      ],
-      [
-        1784131980000,
-        961.48
-      ],
-      [
-        1784132040000,
-        958.99
-      ],
-      [
-        1784132100000,
-        958.24
-      ],
-      [
-        1784132160000,
-        958.92
-      ],
-      [
-        1784132220000,
-        957.79
-      ],
-      [
-        1784132280000,
-        958.64
-      ],
-      [
-        1784132340000,
-        959.58
-      ],
-      [
-        1784132400000,
-        957.56
-      ],
-      [
-        1784132460000,
-        956.75
-      ],
-      [
-        1784132520000,
-        956.48
-      ],
-      [
-        1784132580000,
-        956.63
-      ],
-      [
-        1784132640000,
-        956.84
-      ],
-      [
-        1784132700000,
-        954.29
-      ],
-      [
-        1784132760000,
-        955.32
-      ],
-      [
-        1784132820000,
-        955.72
-      ],
-      [
-        1784132880000,
-        954.92
-      ],
-      [
-        1784132940000,
-        955.33
-      ],
-      [
-        1784133000000,
-        956.75
-      ],
-      [
-        1784133060000,
-        958.02
-      ],
-      [
-        1784133120000,
-        956.27
-      ],
-      [
-        1784133180000,
-        955.95
-      ],
-      [
-        1784133240000,
-        954.98
-      ],
-      [
-        1784133300000,
-        953.16
-      ],
-      [
-        1784133360000,
-        952.36
-      ],
-      [
-        1784133420000,
-        951.28
-      ],
-      [
-        1784133480000,
-        951.65
-      ],
-      [
-        1784133540000,
-        952.19
-      ],
-      [
-        1784133600000,
-        951.82
-      ],
-      [
-        1784133660000,
-        950.85
-      ],
-      [
-        1784133720000,
-        952.4
-      ],
-      [
-        1784133780000,
-        952.59
-      ],
-      [
-        1784133840000,
-        953.21
-      ],
-      [
-        1784133900000,
-        954.52
-      ],
-      [
-        1784133960000,
-        953.47
-      ],
-      [
-        1784134020000,
-        958.39
-      ],
-      [
-        1784134080000,
-        956.2
-      ],
-      [
-        1784134140000,
-        956.3
-      ],
-      [
-        1784134200000,
-        957.16
-      ],
-      [
-        1784134260000,
-        959.21
-      ],
-      [
-        1784134320000,
-        958.62
-      ],
-      [
-        1784134380000,
-        960.51
-      ],
-      [
-        1784134440000,
-        960.57
-      ],
-      [
-        1784134500000,
-        959.03
-      ],
-      [
-        1784134560000,
-        957.57
-      ],
-      [
-        1784134620000,
-        957.14
-      ],
-      [
-        1784134680000,
-        959.13
-      ],
-      [
-        1784134740000,
-        960
-      ],
-      [
-        1784134800000,
-        960.79
-      ],
-      [
-        1784134860000,
-        962.66
-      ],
-      [
-        1784134920000,
-        962.77
-      ],
-      [
-        1784134980000,
-        962.45
-      ],
-      [
-        1784135040000,
-        963.25
-      ],
-      [
-        1784135100000,
-        962.39
-      ],
-      [
-        1784135160000,
-        962.26
-      ],
-      [
-        1784135220000,
-        963.89
-      ],
-      [
-        1784135280000,
-        964.63
-      ],
-      [
-        1784135340000,
-        964.36
-      ],
-      [
-        1784135400000,
-        964.34
-      ],
-      [
-        1784135460000,
-        964.7
-      ],
-      [
-        1784135520000,
-        963.59
-      ],
-      [
-        1784135580000,
-        965.19
-      ],
-      [
-        1784135640000,
-        964.22
-      ],
-      [
-        1784135700000,
-        962.7
-      ],
-      [
-        1784135760000,
-        963.88
-      ],
-      [
-        1784135820000,
-        963.48
-      ],
-      [
-        1784135880000,
-        965.3
-      ],
-      [
-        1784135940000,
-        966.42
-      ],
-      [
-        1784136000000,
-        966.72
-      ],
-      [
-        1784136060000,
-        966.46
-      ],
-      [
-        1784136120000,
-        965.73
-      ],
-      [
-        1784136180000,
-        967.04
-      ],
-      [
-        1784136240000,
-        966.67
-      ],
-      [
-        1784136300000,
-        967.36
-      ],
-      [
-        1784136360000,
-        967.37
-      ],
-      [
-        1784136420000,
-        967.53
-      ],
-      [
-        1784136480000,
-        967.47
-      ],
-      [
-        1784136540000,
-        966.71
-      ],
-      [
-        1784136600000,
-        969.19
-      ],
-      [
-        1784136660000,
-        969.94
-      ],
-      [
-        1784136720000,
-        969.68
-      ],
-      [
-        1784136780000,
-        970.74
-      ],
-      [
-        1784136840000,
-        970.91
-      ],
-      [
-        1784136900000,
-        970.85
-      ],
-      [
-        1784136960000,
-        970.12
-      ],
-      [
-        1784137020000,
-        970.71
-      ],
-      [
-        1784137080000,
-        971.17
-      ],
-      [
-        1784137140000,
-        971.07
-      ],
-      [
-        1784137200000,
-        971.28
-      ],
-      [
-        1784137260000,
-        971.06
-      ],
-      [
-        1784137320000,
-        971.1
-      ],
-      [
-        1784137380000,
-        970.35
-      ],
-      [
-        1784137440000,
-        971.28
-      ],
-      [
-        1784137500000,
-        971.05
-      ],
-      [
-        1784137560000,
-        971.06
-      ],
-      [
-        1784137620000,
-        973
-      ],
-      [
-        1784137680000,
-        973.72
-      ],
-      [
-        1784137740000,
-        973.94
-      ],
-      [
-        1784137800000,
-        974.61
-      ],
-      [
-        1784137860000,
-        974.2
-      ],
-      [
-        1784137920000,
-        974.31
-      ],
-      [
-        1784137980000,
-        976.25
-      ],
-      [
-        1784138040000,
-        975.77
-      ],
-      [
-        1784138100000,
-        976.64
-      ],
-      [
-        1784138160000,
-        975.99
-      ],
-      [
-        1784138220000,
-        975.5
-      ],
-      [
-        1784138280000,
-        976.33
-      ],
-      [
-        1784138340000,
-        976.37
-      ],
-      [
-        1784138400000,
-        975.13
-      ],
-      [
-        1784138460000,
-        976.1
-      ],
-      [
-        1784138520000,
-        977.36
-      ],
-      [
-        1784138580000,
-        977.62
-      ],
-      [
-        1784138640000,
-        977.57
-      ],
-      [
-        1784138700000,
-        976.78
-      ],
-      [
-        1784138760000,
-        977.51
-      ],
-      [
-        1784138820000,
-        978.39
-      ],
-      [
-        1784138880000,
-        977.68
-      ],
-      [
-        1784138940000,
-        977.58
-      ],
-      [
-        1784139000000,
-        977.84
-      ],
-      [
-        1784139060000,
-        978.44
-      ],
-      [
-        1784139120000,
-        978.73
-      ],
-      [
-        1784139180000,
-        978.13
-      ],
-      [
-        1784139240000,
-        978.53
-      ],
-      [
-        1784139300000,
-        977.83
-      ],
-      [
-        1784139360000,
-        976.61
-      ],
-      [
-        1784139420000,
-        975.78
-      ],
-      [
-        1784139480000,
-        976.3
-      ],
-      [
-        1784139540000,
-        976.22
-      ],
-      [
-        1784139600000,
-        976.89
-      ],
-      [
-        1784139660000,
-        977.65
-      ],
-      [
-        1784139720000,
-        978.95
-      ],
-      [
-        1784139780000,
-        978.98
-      ],
-      [
-        1784139840000,
-        979.59
-      ],
-      [
-        1784139900000,
-        979.32
-      ],
-      [
-        1784139960000,
-        978.89
-      ],
-      [
-        1784140020000,
-        979.08
-      ],
-      [
-        1784140080000,
-        979.27
-      ],
-      [
-        1784140140000,
-        979.1
-      ],
-      [
-        1784140200000,
-        978.34
-      ],
-      [
-        1784140260000,
-        978.04
-      ],
-      [
-        1784140320000,
-        978.82
-      ],
-      [
-        1784140380000,
-        979.29
-      ],
-      [
-        1784140440000,
-        978.55
-      ],
-      [
-        1784140500000,
-        978.17
-      ],
-      [
-        1784140560000,
-        977.18
-      ],
-      [
-        1784140620000,
-        976.41
-      ],
-      [
-        1784140680000,
-        976.7
-      ],
-      [
-        1784140740000,
-        975.89
-      ],
-      [
-        1784140800000,
-        975.24
-      ],
-      [
-        1784140860000,
-        975.57
-      ],
-      [
-        1784140920000,
-        975.74
-      ],
-      [
-        1784140980000,
-        974.25
-      ],
-      [
-        1784141040000,
-        974.01
-      ],
-      [
-        1784141100000,
-        973
-      ],
-      [
-        1784141160000,
-        972.51
-      ],
-      [
-        1784141220000,
-        971.39
-      ],
-      [
-        1784141280000,
-        972.21
-      ],
-      [
-        1784141340000,
-        972.41
-      ],
-      [
-        1784141400000,
-        971.55
-      ],
-      [
-        1784141460000,
-        971.93
-      ],
-      [
-        1784141520000,
-        969.21
-      ],
-      [
-        1784141580000,
-        969.27
-      ],
-      [
-        1784141640000,
-        968.79
-      ],
-      [
-        1784141700000,
-        969.98
-      ],
-      [
-        1784141760000,
-        970.06
-      ],
-      [
-        1784141820000,
-        968.97
-      ],
-      [
-        1784141880000,
-        969.8
-      ],
-      [
-        1784141940000,
-        967.91
-      ],
-      [
-        1784142000000,
-        968.73
-      ],
-      [
-        1784142060000,
-        968.66
-      ],
-      [
-        1784142120000,
-        969.8
-      ],
-      [
-        1784142180000,
-        971.8
-      ],
-      [
-        1784142240000,
-        971.78
-      ],
-      [
-        1784142300000,
-        972.97
-      ],
-      [
-        1784142360000,
-        972.73
-      ],
-      [
-        1784142420000,
-        973.48
-      ],
-      [
-        1784142480000,
-        972.58
-      ],
-      [
-        1784142540000,
-        971.45
-      ],
-      [
-        1784142600000,
-        971.25
-      ],
-      [
-        1784142660000,
-        972.52
-      ],
-      [
-        1784142720000,
-        970.8
-      ],
-      [
-        1784142780000,
-        971.94
-      ],
-      [
-        1784142840000,
-        971.43
-      ],
-      [
-        1784142900000,
-        971.76
-      ],
-      [
-        1784142960000,
-        971.29
-      ],
-      [
-        1784143020000,
-        971.12
-      ],
-      [
-        1784143080000,
-        970.64
-      ],
-      [
-        1784143140000,
-        970.41
-      ],
-      [
-        1784143200000,
-        969.24
-      ],
-      [
-        1784143260000,
-        967.87
-      ],
-      [
-        1784143320000,
-        967.82
-      ],
-      [
-        1784143380000,
-        967.33
-      ],
-      [
-        1784143440000,
-        967.85
-      ],
-      [
-        1784143500000,
-        967.55
-      ],
-      [
-        1784143560000,
-        967.19
-      ],
-      [
-        1784143620000,
-        968.43
-      ],
-      [
-        1784143680000,
-        969.42
-      ],
-      [
-        1784143740000,
-        970.15
-      ],
-      [
-        1784143800000,
-        970.69
-      ],
-      [
-        1784143860000,
-        972.99
-      ],
-      [
-        1784143920000,
-        973.28
-      ],
-      [
-        1784143980000,
-        969.43
-      ],
-      [
-        1784144040000,
-        970.4
-      ],
-      [
-        1784144100000,
-        970.17
-      ],
-      [
-        1784144160000,
-        970.68
-      ],
-      [
-        1784144220000,
-        971.4
-      ],
-      [
-        1784144280000,
-        971.53
-      ],
-      [
-        1784144340000,
-        971.95
-      ],
-      [
-        1784144400000,
-        972.63
-      ],
-      [
-        1784144460000,
-        973.72
-      ],
-      [
-        1784144520000,
-        974.44
-      ],
-      [
-        1784144580000,
-        974.59
-      ],
-      [
-        1784144640000,
-        974.87
-      ],
-      [
-        1784144700000,
-        974.86
-      ],
-      [
-        1784144760000,
-        973.93
-      ],
-      [
-        1784144820000,
-        973.29
-      ],
-      [
-        1784144880000,
-        972.78
-      ],
-      [
-        1784144940000,
-        972.13
-      ],
-      [
-        1784145000000,
-        972.41
-      ],
-      [
-        1784145060000,
-        973.57
-      ],
-      [
-        1784145120000,
-        974.12
-      ],
-      [
-        1784145180000,
-        974.26
-      ],
-      [
-        1784145240000,
-        974.36
-      ],
-      [
-        1784145300000,
-        974.52
-      ],
-      [
-        1784145360000,
-        976.4
-      ],
-      [
-        1784145420000,
-        976.59
-      ],
-      [
-        1784145480000,
-        976.42
-      ],
-      [
-        1784145540000,
-        976.08
-      ],
-      [
-        1784145600000,
-        976.3
+        1784208600000,
+        957.73
       ]
     ],
     "1W": [
-      [
-        1783603800000,
-        1000.99
-      ],
-      [
-        1783607400000,
-        999.51
-      ],
-      [
-        1783611000000,
-        1000.03
-      ],
-      [
-        1783614600000,
-        1000.2
-      ],
-      [
-        1783618200000,
-        1000.42
-      ],
-      [
-        1783621800000,
-        1000.65
-      ],
-      [
-        1783625400000,
-        1000.76
-      ],
       [
         1783690200000,
         992.31
@@ -3478,6 +1890,10 @@
       [
         1784143800000,
         970.69
+      ],
+      [
+        1784208600000,
+        957.73
       ]
     ],
     "1M": [],
