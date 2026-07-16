@@ -1,73 +1,73 @@
 {
-  "generated_at": "2026-07-16T15:44:23.066Z",
+  "generated_at": "2026-07-16T15:45:34.194Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 94624.69,
+    "equity": 94537.53,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 93624.69,
-    "day_pnl": -4830.01,
+    "total_pnl": 93537.53,
+    "day_pnl": -4917.17,
     "positions": [
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 253.06,
-        "pl": -121.92,
-        "plpc": -2.92,
+        "current": 253,
+        "pl": -122.88,
+        "plpc": -2.95,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 207.34,
-        "pl": -380.25,
-        "plpc": -1.39,
+        "current": 207.16,
+        "pl": -403.65,
+        "plpc": -1.48,
         "thesis": ""
       },
       {
         "symbol": "NVDA260821C00220000",
         "qty": "8.0000",
         "entry": 7.8,
-        "current": 5.55,
-        "pl": -1800,
-        "plpc": -28.85,
+        "current": 5.5,
+        "pl": -1840,
+        "plpc": -29.49,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 132.28,
-        "pl": -147.05,
-        "plpc": -2.17,
+        "current": 132.39,
+        "pl": -141.47,
+        "plpc": -2.09,
         "thesis": ""
       },
       {
         "symbol": "SOXL",
         "qty": "50.0000",
         "entry": 153.86,
-        "current": 145.64,
-        "pl": -411,
-        "plpc": -5.34,
+        "current": 145.12,
+        "pl": -437,
+        "plpc": -5.68,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 72.02,
-        "pl": -1429.14,
-        "plpc": -6.57,
+        "current": 71.97,
+        "pl": -1441.83,
+        "plpc": -6.63,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 145.17,
-        "pl": -19.81,
-        "plpc": -0.14,
+        "current": 145.28,
+        "pl": -9.5,
+        "plpc": -0.07,
         "thesis": ""
       }
     ],
@@ -103,10 +103,10 @@
     ]
   },
   "live": {
-    "equity": 947.64,
+    "equity": 947.05,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -52.36,
-    "day_pnl": -29.12,
+    "total_pnl": -52.95,
+    "day_pnl": -29.71,
     "positions": [
       {
         "symbol": "FNGU",
@@ -121,9 +121,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 72.02,
-        "pl": -42.7,
-        "plpc": -5.6,
+        "current": 71.96,
+        "pl": -43.29,
+        "plpc": -5.67,
         "thesis": ""
       }
     ],
@@ -545,6 +545,10 @@
       {
         "t": 1784216400000,
         "v": 953.6
+      },
+      {
+        "t": 1784216700000,
+        "v": 948.46
       }
     ]
   },
@@ -556,7 +560,7 @@
       "theme": "3x Nasdaq core",
       "verdict": "buy",
       "verdict_label": "HELD - de-risk into a bounce",
-      "chg_pct": -3.14,
+      "chg_pct": -3.07,
       "thesis": "**3x Nasdaq-100 core (10 sh @ $76.29), the flagged laggard, -5.8% underwater.** QQQ $709.5 has slipped under its 20-day (~721) AND 50-day (~715) - a broken regime where 3x leverage decays, exactly what the gate warns against. Sitting on its ~$71-72 shelf (the 7/13 low). Not dumping at the session low; the $68.50 GTC stop (below the shelf) is the backstop. Plan: de-risk into any bounce toward ~$74 rather than carry full 3x-Nasdaq beta into a broken regime.",
       "hold_reason": "3x Nasdaq-100, our biggest live core (10 sh @ $76.29). It's the de-risk candidate now: QQQ has lost its 20- and 50-day, so the regime that justifies 3x leverage has rolled over. We're not selling the gap-down low into a vacuum - the $68.50 GTC stop is the backstop - but if QQQ can't reclaim ~$715 we trim/exit into a bounce (a multi-day swing, PDT-free) rather than hope. Red -3.3% today.",
       "size": "$719 live (10 sh)",
@@ -571,7 +575,7 @@
         "basis": "3x QQQ bounce only on a >$715 reclaim; else de-risk",
         "pop_rank": 3
       },
-      "price": 72.01,
+      "price": 72.06,
       "spark": [
         72.78,
         76.32,
@@ -602,7 +606,7 @@
         71.6,
         77.24,
         80.99,
-        72.01
+        72.06
       ]
     },
     {
@@ -611,7 +615,7 @@
       "theme": "Fintech / idiosyncratic",
       "verdict": "watch",
       "verdict_label": "WATCH - sold 7/15",
-      "chg_pct": -1.45,
+      "chg_pct": -1.7,
       "thesis": "**The flat laggard, now the standing rotation candidate.** 10 sh @ $18.76, now $17.96 (-3.2% today, -4.3% vs entry). No catalyst; it's the capital the book wants concentrated in the leader. The de-camp jammed mechanically all day (resting stop reserves the shares) and is retired to a clean re-run after TSMC. Protected by the $17.60 GTC stop.",
       "hold_reason": "Sold 7/15 @ $17.94 to break the multi-day cash-lock and free ~$199 for the FNGU leader redeploy. No position now; watching for a clean re-entry only if it shows fresh relative strength - no catalyst here today.",
       "size": "-",
@@ -626,7 +630,7 @@
         "basis": "fintech drifting with the tape, off its lows",
         "pop_rank": 10
       },
-      "price": 17.63,
+      "price": 17.59,
       "spark": [
         15.22,
         15.68,
@@ -657,7 +661,7 @@
         17.86,
         18.18,
         17.93,
-        17.63
+        17.59
       ]
     },
     {
@@ -666,7 +670,7 @@
       "theme": "2x NVDA",
       "verdict": "watch",
       "verdict_label": "STOPPED +$0.71 - watch for bounce",
-      "chg_pct": -4.85,
+      "chg_pct": -5,
       "thesis": "**Stopped out at $31.30 (trailed GTC stop) - a small +$0.71 green exit on the last share of the 7/8 entry ($30.59).** 2x NVDA; NVDA is the RS leader (-2.9% vs semis -12%) and the bounce tell - if chips stabilize, NVDA/NVDL lead the reclaim. Back on watch as the cleanest bounce-rotation target on a confirmed semi turn; no position now.",
       "hold_reason": "Not held - the trailed stop took it green at $31.30. Watching it as the bounce tell: NVDA has the best relative strength in the complex, so a confirmed reclaim is the signal to rotate freed cash back into the leader.",
       "size": "-",
@@ -681,7 +685,7 @@
         "basis": "2x NVDA - leads the reclaim if semis turn",
         "pop_rank": 2
       },
-      "price": 31.76,
+      "price": 31.71,
       "spark": [
         37.52,
         38.44,
@@ -712,7 +716,7 @@
         27.53,
         28.41,
         29.83,
-        31.76
+        31.71
       ]
     },
     {
@@ -776,7 +780,7 @@
       "theme": "3x semiconductors",
       "verdict": "buy",
       "verdict_label": "HELD paper - deepest oversold",
-      "chg_pct": -11.96,
+      "chg_pct": -12.13,
       "thesis": "**3x semis (50 sh paper @ $153.86), the deepest-oversold beta.** Flushed to $144.50, bounced to $155.8, faded to $148 - a failed first bounce on day 2 of a valuation unwind. High risk/reward: if 'chips are cheap enough' (MU 6.8x) turns it, SOXL pops hardest; if the grind continues it bleeds. $143 GTC paper stop under the session low.",
       "hold_reason": "3x semiconductors - a paper-only bounce starter (50 sh @ $153.86). Bought it on the sharp reversal off the $144.50 low, but the bounce faded back to $148, so it's underwater and unconfirmed. Live owns none of it on purpose. Watching a reclaim of $155 to confirm the bottom; the $143 stop is under today's low if it doesn't.",
       "size": "$7,693 (paper, 50 sh @ $153.86)",
@@ -791,7 +795,7 @@
         "basis": "beaten 3x-semi - biggest bounce OR biggest fall, no confirmation",
         "pop_rank": 7
       },
-      "price": 145.71,
+      "price": 145.44,
       "spark": [
         151.93,
         173.38,
@@ -822,7 +826,7 @@
         215,
         236.75,
         266.71,
-        145.71
+        145.44
       ]
     },
     {
@@ -831,7 +835,7 @@
       "theme": "Power-for-AI",
       "verdict": "buy",
       "verdict_label": "HELD paper - power/nuclear",
-      "chg_pct": -1.93,
+      "chg_pct": -1.95,
       "thesis": "**Power-for-AI relative strength.** 16 sh paper @ $260.68, now $257.30 (+0.3% today). Green-to-flat while chips bled. Paper stop $236.",
       "hold_reason": "Constellation Energy - 16 sh paper, our power-for-AI angle. Down ~2%, holding up better than the high-beta tech in the flush - the datacenter-power thesis is a different driver than chip valuations. Watching $251 support; $236 stop underneath.",
       "size": "$4,108 (paper)",
@@ -846,7 +850,7 @@
         "basis": "power name holding up better than high-beta",
         "pop_rank": 8
       },
-      "price": 253.19,
+      "price": 253.14,
       "spark": [
         260.67,
         281.2,
@@ -877,7 +881,7 @@
         264.14,
         259.35,
         248.32,
-        253.19
+        253.14
       ]
     },
     {
@@ -886,7 +890,7 @@
       "theme": "AI leader",
       "verdict": "hold",
       "verdict_label": "HELD paper - RS leader",
-      "chg_pct": -2.43,
+      "chg_pct": -2.51,
       "thesis": "**Closed GREEN off its $204 low - the resilient-chip tell.** Settled $212.5 (+0.3%) and firmed to $212.4 after-hours after clawing back from the $203.84 intraday low as the tape reversed. Paper holds 130 sh @ $210.26 (+$178) + 8x Aug $220 calls now -1.3% ($7.70 vs $7.80) - held as convexity into TSMC.",
       "hold_reason": "Nvidia - the compute leader, held 130 sh + 8 Aug-$220 calls on paper. Down only ~2% while the memory names crater 5-10%, which is our bounce tell: money staying in NVDA hasn't left AI. Watching $207 as the line; a reclaim of $210-212 is the confirmation to press. $186 stop on the shares.",
       "size": "$27,512 sh + call (paper)",
@@ -901,7 +905,7 @@
         "basis": "RS leader / bounce tell if chips stabilize",
         "pop_rank": 1
       },
-      "price": 207.33,
+      "price": 207.16,
       "spark": [
         220.39,
         223.22,
@@ -932,7 +936,7 @@
         191.97,
         194.92,
         199.93,
-        207.33
+        207.16
       ]
     },
     {
@@ -941,7 +945,7 @@
       "theme": "AI software",
       "verdict": "hold",
       "verdict_label": "HELD paper - software > semis",
-      "chg_pct": -1.13,
+      "chg_pct": -1.01,
       "thesis": "**Green-flat software, holding the reclaim.** 50 sh paper @ $135.22, now $133.97 (flat today). Software > semis in this unwind; holding above yesterday's $122.7 spike-low reclaim.",
       "hold_reason": "Palantir - 50 sh paper from the breakout. Software is holding up much better than semis today (-1% vs -4 to -10%), the classic rotation-within-tech as money leaves chips. Watching the $132 shelf; $121.50 stop well below. No new catalyst, just riding the relative strength.",
       "size": "$6,678 (paper)",
@@ -956,7 +960,7 @@
         "basis": "RS holding up (-0.9% vs semis -12%)",
         "pop_rank": 5
       },
-      "price": 132.24,
+      "price": 132.4,
       "spark": [
         135.27,
         137.15,
@@ -987,7 +991,7 @@
         112.82,
         115.66,
         116.64,
-        132.24
+        132.4
       ]
     },
     {
@@ -1051,7 +1055,7 @@
       "theme": "Inverse semis",
       "verdict": "avoid",
       "verdict_label": "AVOID - extended inverse",
-      "chg_pct": 11.22,
+      "chg_pct": 11.58,
       "thesis": "**Biggest watchlist gainer - un-ownable live, now fading.** 3x-inverse semis +6.7% (off its +12% high) as the semi reclaim builds (SOXL $144.51->$155). Live can't hold inverse leverage cleanly; the capture only exists on paper and it's rolling over anyway.",
       "size": "$0",
       "size_pct": "0%",
@@ -1065,7 +1069,7 @@
         "basis": "inverse pops if chips keep falling - but stretched, don't chase",
         "pop_rank": 6
       },
-      "price": 51.12,
+      "price": 51.28,
       "spark": [
         98.27,
         84.28,
@@ -1096,7 +1100,7 @@
         42.4,
         37.15,
         32.4,
-        51.12
+        51.28
       ]
     },
     {
@@ -1105,7 +1109,7 @@
       "theme": "Fuel-cell / power",
       "verdict": "watch",
       "verdict_label": "WATCH - oversold knife",
-      "chg_pct": -10.52,
+      "chg_pct": -10.35,
       "thesis": "**Spiked to $244 then dumped with the spec cohort.** ~$234.6 (-3.6%), bouncing with the tape off the $217.90 flush. No position; watching a real floor to reclaim.",
       "size": "$0",
       "size_pct": "0%",
@@ -1119,7 +1123,7 @@
         "basis": "fuel-cell high-beta, -9% into the unwind",
         "pop_rank": 15
       },
-      "price": 214.25,
+      "price": 214.66,
       "spark": [
         261.71,
         282.31,
@@ -1150,7 +1154,7 @@
         253.24,
         275,
         302.69,
-        214.25
+        214.66
       ]
     },
     {
@@ -1159,7 +1163,7 @@
       "theme": "Quantum",
       "verdict": "avoid",
       "verdict_label": "AVOID - low-quality",
-      "chg_pct": -4.93,
+      "chg_pct": -5.07,
       "thesis": "**Quantum bleeding, low-quality bounce.** ~$37.8 (-3.9%), lifting with the reclaim but no lead. High-beta spec is a poor place to concentrate in a de-risking tape.",
       "size": "$0",
       "size_pct": "0%",
@@ -1173,7 +1177,7 @@
         "basis": "quantum high-beta caught in the unwind",
         "pop_rank": 11
       },
-      "price": 35.65,
+      "price": 35.6,
       "spark": [
         48.46,
         52.49,
@@ -1204,7 +1208,7 @@
         49.16,
         53.88,
         53.3,
-        35.65
+        35.6
       ]
     },
     {
@@ -1213,7 +1217,7 @@
       "theme": "Quantum",
       "verdict": "avoid",
       "verdict_label": "AVOID - weakest cohort",
-      "chg_pct": -5.53,
+      "chg_pct": -5.69,
       "thesis": "**Worst of the spec cohort.** ~$15.4 (-4.6%). Deepest high-beta bleed; a bounce here is the lowest-quality on the board. Stay out.",
       "size": "$0",
       "size_pct": "0%",
@@ -1227,7 +1231,7 @@
         "basis": "quantum high-beta, -5.6% and heavy",
         "pop_rank": 12
       },
-      "price": 14.44,
+      "price": 14.41,
       "spark": [
         15.95,
         16.87,
@@ -1258,7 +1262,7 @@
         18.29,
         19.43,
         19.32,
-        14.44
+        14.41
       ]
     },
     {
@@ -1267,7 +1271,7 @@
       "theme": "Nuclear-for-AI",
       "verdict": "watch",
       "verdict_label": "WATCH - high-beta flush",
-      "chg_pct": -8.65,
+      "chg_pct": -8.82,
       "thesis": "**Nuclear-for-AI, holding better than the spec cohort.** ~$45.7 (-1.0%). The power-for-AI theme we like, but CEG is the cleaner, held expression.",
       "size": "$0",
       "size_pct": "0%",
@@ -1281,7 +1285,7 @@
         "basis": "nuclear high-beta flushed -8.5%",
         "pop_rank": 13
       },
-      "price": 41.77,
+      "price": 41.69,
       "spark": [
         55.95,
         62.59,
@@ -1312,7 +1316,7 @@
         50.03,
         52.79,
         52.34,
-        41.77
+        41.69
       ]
     },
     {
@@ -1321,7 +1325,7 @@
       "theme": "AI data-center infra",
       "verdict": "watch",
       "verdict_label": "WATCH - AI infra",
-      "chg_pct": -3.73,
+      "chg_pct": -3.85,
       "thesis": "**Data-center infra reclaimed from $290.** ~$302.4 (-0.4%), bounced with the tape off the $289.87 low. Good long-term AI-infra name but no clean entry yet.",
       "size": "$0",
       "size_pct": "0%",
@@ -1335,7 +1339,7 @@
         "basis": "AI-infra bleeds with the chip unwind",
         "pop_rank": 9
       },
-      "price": 293.38,
+      "price": 293.01,
       "spark": [
         322.57,
         315.58,
@@ -1366,11 +1370,21 @@
         303.46,
         307.03,
         334.58,
-        293.38
+        293.01
       ]
     }
   ],
   "feed": [
+    {
+      "type": "note",
+      "account": "live",
+      "ts": "2026-07-14T18:39:00-04:00",
+      "symbol": "TQQQ",
+      "side": "",
+      "status": "",
+      "reaction": "hold",
+      "text": "6:39pm — after-hours still dead, held everything. Re-pulled snapshots/news, no fresh catalyst on our names; QQQ closed $719.7 holding its 50-day, NVDA a record $211.8. All 9 GTC stops verified (3 live, 6 paper), both books reconcile clean. ASML pre-open tomorrow is the only decision — I act on the number at the open, not a guess tonight."
+    },
     {
       "ts": "2026-07-16T11:06:00-04:00",
       "type": "trade",
@@ -1639,16 +1653,15 @@
       "symbol": "SOFI",
       "reaction": "hold",
       "text": "Reconciled Adam's 10:33am SOFI-close tap: it did NOT change the book - the resting $17.60 GTC stop reserves all 10 shares, so the close no-op'd (no fill, cash still $19.59). Since SOXL - the rotation's target - then cratered to -14%, I'm deliberately not retrying the exit at SOFI's intraday low. SOFI stays held and protected by the $17.60 stop."
-    },
-    {
-      "type": "note",
-      "ts": "2026-07-15T12:15:00-04:00",
-      "text": "12:15pm - chip unwind DEEPENED (SOXL -13.4%, BE -8.3%, IONQ -5.9%, SMH -3.7%). QQQ 713 under its 20d & 50d = weak regime, so no 3x chase. Held the well-stopped live book (-2.7%, all above stops); owning none of the wreck makes the shelved SOFI->SOXL dodge worth ~$31 now. Rotation stays ARMED for a green reclaim only.",
-      "reaction": "hold"
     }
   ],
-  "latest_recap": "11:16am ET - 2nd-day chip sell-the-news (TSMC beat a record profit but fell >4% on a capex raise) drove a concentrated high-beta unwind: SOXL -12%, RKLB -10%, BE -9%, memory -8%, while SPY held flat and the Dow was green. QQQ $709.5 slipped under its 20- and 50-day, so the leverage regime has rolled over. Live book (TQQQ 10 + FNGU 6, ~$946, -3.1%) owns zero of the semi wreck and held every stop; NVDL trailed-stopped for a +$0.71 win. The only green is the extended inverse (SOXS +11.6%) - chasing it is -EV and dumping a 3x-long at the low is the de-lever mistake, so I'm holding with stops and will de-risk TQQQ into any bounce if QQQ can't reclaim ~$715. Paper (moonshot lab) is -5.4% on its SOXL + NVDA-call exposure, all stopped. No live ticket - nothing clean to fire.",
+  "latest_recap": "Tue 7/14 ~6:39pm — market CLOSED (after-hours). Verify-and-hold both books, no changes ~27 min after the post-close finalize. Fresh pull: account/positions/orders both books + snapshot(5: TQQQ/NVDL/SOFI/QQQ/NVDA) + web-search ASML/after-hours. Reconciled clean both ways (LIVE == broker: TQQQ 10 / SOFI 10 / NVDL 1; PAPER == broker: FNGU 520 / NVDA 130 / NVDA 8 Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95); all 9 equity GTC stops re-verified live (live $68.50/$17.60/$31.30; paper $24.30/$186/$31.30/$121.50/$68.50/$124). No new queue fills since 7/10 (.web-approvals-seen []). LIVE equity $988.87 (+3.2% today, -1.1% since 7/2 inception), cash $19.59, ~98% deployed; PAPER $98,979 (+2.6% today, ~94% deployed, $6.19k cash) chip-heavy + NVDA Aug-$220 calls (+58% today). Snapshots confirm EOD marks unchanged: QQQ $719.9 (>50-day ~$717), NVDA record $211.9, TQQQ $75.1, SOFI $18.56, NVDL $33.18 — nothing broke after the bell. Accountability stays final:true (grade B-, capture 38%). No live ticket — $19.59 BP funds nothing, won't sell SOFI hedge blind into ASML's binary. Day-trade budget 3/3. Next: ASML Q2 pre-open Wed 7/15 (~7% move priced, EPS ~€6.84 / ~$7.85 est, EUV/AI-capex commentary the read-through), TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-14-1839.json.",
   "activity": [
+    {
+      "ts": "2026-07-14T18:39:00-04:00",
+      "kind": "engine",
+      "title": "Tue 7/14 ~6:39pm — market CLOSED (after-hours). Verify-and-hold both books, no changes ~27 min after the post-close finalize. Fresh pull: account/positions/orders both books + snapshot(5: TQQQ/NVDL/SOFI/QQQ/NVDA) + web-search ASML/after-hours. Reconciled clean both ways (LIVE == broker: TQQQ 10 / SOFI 10 / NVDL 1; PAPER == broker: FNGU 520 / NVDA 130 / NVDA 8 Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95); all 9 equity GTC stops re-verified live (live $68.50/$17.60/$31.30; paper $24.30/$186/$31.30/$121.50/$68.50/$124). No new queue fills since 7/10 (.web-approvals-seen []). LIVE equity $988.87 (+3.2% today, -1.1% since 7/2 inception), cash $19.59, ~98% deployed; PAPER $98,979 (+2.6% today, ~94% deployed, $6.19k cash) chip-heavy + NVDA Aug-$220 calls (+58% today). Snapshots confirm EOD marks unchanged: QQQ $719.9 (>50-day ~$717), NVDA record $211.9, TQQQ $75.1, SOFI $18.56, NVDL $33.18 — nothing broke after the bell. Accountability stays final:true (grade B-, capture 38%). No live ticket — $19.59 BP funds nothing, won't sell SOFI hedge blind into ASML's binary. Day-trade budget 3/3. Next: ASML Q2 pre-open Wed 7/15 (~7% move priced, EPS ~€6.84 / ~$7.85 est, EUV/AI-capex commentary the read-through), TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-14-1839.json."
+    },
     {
       "ts": "2026-07-15T15:14:00-04:00",
       "kind": "engine",
@@ -1711,6 +1724,11 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-14T18:39:00-04:00",
+      "text": "6:39pm, after-hours monitoring — nothing changed since the 6:12 finalize. Re-pulled snapshots + news: no fresh headline on any held name, QQQ closed $719.7 (holding its 50-day ~$717), NVDA a record $211.8. Both books reconcile clean to the broker; all 9 GTC stops live (3 live, 6 paper). ASML prints pre-open tomorrow with a ~7% move priced (analysts see AI-driven strength, revenue ~+31% y/y) — I act on the number at the open: beat + QQQ holds its 50-day → trail the 3x up and let it run; miss + QQQ breaks → de-risk the 3x. No live ticket — $19.59 BP funds nothing and I won't sell the SOFI hedge blind into a binary. Day-trade budget 3/3.",
+      "hype": "Still dead quiet after-hours — holding into ASML, nothing to change. Beat and I let the 3x run; miss and I de-risk at the open."
+    },
     {
       "ts": "2026-07-16T11:16:00-04:00",
       "text": "11:16am: NVDL just stopped out at $31.30 (its trailed GTC stop) - a small +$0.71 WIN that locked the last leg of the 7/8 entry, not a loss. Live book is now TQQQ 10 + FNGU 6, both GTC-stopped, ~$54 cash. Tape has slipped since 10:47: QQQ $709.5 (now under both its 20-day ~721 and 50-day ~715) and semis made fresh lows (SOXL -12%, SOXS +11.6% and MORE extended). SPY flat / Dow green, so it's still a contained 2nd-day chip valuation unwind, not a broad crash - and I own ZERO of the -9% to -12% semi/nuclear/space wreck. No clean trade here: chasing the extended inverse is -EV and dumping a 3x-long at the session low is the de-lever-at-support mistake. Holding with stops as the backstop; de-risk TQQQ into any bounce if QQQ can't reclaim ~$715. Book -3.1% (~$946).",
@@ -1790,8 +1808,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 72.01,
-    "tqqq_pct": -6.36
+    "tqqq": 72.06,
+    "tqqq_pct": -6.29
   },
   "status": [
     {
@@ -2340,6 +2358,10 @@
       [
         1784216640000,
         947.81
+      ],
+      [
+        1784216700000,
+        948.46
       ]
     ],
     "1W": [
