@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-16T21:46:01.612Z",
+  "generated_at": "2026-07-16T21:47:10.199Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 93839.63,
+    "equity": 93827.32,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 92839.63,
-    "day_pnl": -5615.07,
+    "total_pnl": 92827.32,
+    "day_pnl": -5627.38,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,9 +20,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 206.74,
-        "pl": -457.6,
-        "plpc": -1.67,
+        "current": 206.65,
+        "pl": -469.3,
+        "plpc": -1.72,
         "thesis": ""
       },
       {
@@ -38,9 +38,9 @@
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.54,
-        "pl": -84,
-        "plpc": -1.24,
+        "current": 133.53,
+        "pl": -84.6,
+        "plpc": -1.25,
         "thesis": ""
       },
       {
@@ -116,9 +116,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 70.59,
-        "pl": -57,
-        "plpc": -7.47,
+        "current": 70.58,
+        "pl": -57.1,
+        "plpc": -7.48,
         "thesis": ""
       }
     ],
@@ -1120,17 +1120,17 @@
       "verdict_label": "Trim the 3x-long; wide stop backstops",
       "chg_pct": -4.94,
       "thesis": "**3x-FANG+, bought live at today's open (6 sh @ $29.43), now -3.5% on the day and small red vs entry.** The open buy was funded by the freed SOFI cash to finally own a mega-cap leader live - but it opened into the flush, so it's slightly underwater. Wide $25.30 GTC stop (~12% below) bounds it; mega-cap FANG is the least-bad 3x on a semi-specific flush.",
-      "hold_reason": "3x FANG+, bought at Monday's open with the SOFI-freed cash as the mega-cap relief bet. It's the smaller, lower-conviction leverage sleeve and it closed ~-5% into a broken regime. Plan: trim it alongside TQQQ into strength, or let the wide $25.30 GTC stop work - not adding to it.",
+      "hold_reason": "It's our smaller 3x-leverage sleeve (6 sh, 3x the FANG names). We bought it at the open with the freed SOFI cash, which in hindsight was adding leverage into a regime that had already rolled over. Now Netflix just dropped ~8% after hours and it's a component, so this is the first thing we trim into any bounce at tomorrow's open; the $25.30 GTC stop backs it up if it just breaks down.",
       "size": "$173 live (6 sh)",
       "size_pct": "18% live",
       "size_note": "Diversified 3x mega-cap; hold with the $25.30 stop.",
       "plan_usd": "-",
-      "updated": "2026-07-16T16:15:00-04:00",
+      "updated": "2026-07-16T17:45:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 2,
+        "target_pct": -1,
         "confidence": "low",
-        "basis": "3x FANG; the smaller, lower-conviction leverage sleeve - trim candidate",
+        "basis": "3x FANG; Netflix -8% AH is a fresh drag - firm trim into any bounce",
         "pop_rank": 9
       },
       "price": 28.31,
@@ -1665,6 +1665,12 @@
   ],
   "feed": [
     {
+      "ts": "2026-07-16T17:45:00-04:00",
+      "type": "activity",
+      "reaction": "hold",
+      "text": "5:45pm: Netflix fell ~8% after earnings - that leans on FNGU (Netflix is in the 3x FANG basket) for tomorrow, reinforcing the plan to trim leverage into any open bounce. Stops live both books, zero naked, nothing to trade after hours."
+    },
+    {
       "ts": "2026-07-16T17:14:00-04:00",
       "type": "activity",
       "reaction": "hold",
@@ -1920,23 +1926,6 @@
       "detail": "10 @ $17.94",
       "reaction": "rotate",
       "text": "The SOFI de-camp finally cleared at 3:35pm - after no-op'ing all day on the resting stop, the fast-lane cancelled the $17.60 GTC stop and sold all 10 shares @ $17.94, freeing ~$199. Breaks the multi-day cash-lock. Redeploy is staged for after tomorrow's TSMC print - not chasing FNGU at its high into a binary catalyst."
-    },
-    {
-      "type": "note",
-      "ts": "2026-07-15T15:45:00-04:00",
-      "reaction": "hold",
-      "text": "3:45pm - the freed ~$199 is dry powder, not lazy cash: 80% of the book is still working (TQQQ + NVDL) and the redeploy fills at tomorrow's open either way, so I'm waiting for TSMC (pre-market) to confirm the strongest mover rather than buying FNGU's HOD in the last 15 min. All stops verified live + paper; nothing naked; 0 day-trades used."
-    },
-    {
-      "type": "trade",
-      "account": "live",
-      "ts": "2026-07-15T15:14:00-04:00",
-      "symbol": "SOFI",
-      "side": "sell",
-      "status": "cancelled",
-      "detail": "10 @ ~$18.00 (never filled)",
-      "reaction": "rotate",
-      "text": "Retired the SOFI->FNGU de-camp for today. It never filled - the resting $17.60 GTC stop reserves the 10 shares, so the close no-ops (fast-lane cancel-stop-before-close bug, still unfixed). And it's now too late to dump SOFI at its ~$17.90 low to chase FNGU after it already ran +2.6% into the close - that's bad execution, not a rotation. Holding SOFI protected; re-running the swap clean after TSMC prints tomorrow AM."
     }
   ],
   "latest_recap": "Post-close 7/16 (FINAL): LIVE -5.2% ($926.46), 4th straight red day, capture ~0%. Owned none of the -14% to -16% chip/space wreck, every stop held both books; honest debit = full 3x-Nasdaq into a confirmed-broken regime + added FNGU at the open. Graded C-. Fix 7/17: de-risk TQQQ into any bounce, don't add leverage.",
@@ -2009,6 +1998,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-16T17:45:00-04:00",
+      "text": "5:45pm (after-hours): fresh catalyst - Netflix reported after the bell and fell ~8% (revenue a hair light on an EPS beat), which drags the FANG basket and specifically FNGU (Netflix is a component) into tomorrow. Nothing to trade tonight: market's closed, extended hours is limit-only with no stop, and the de-risk is a sell-into-strength call best made at the open. Both live legs (TQQQ 10 + FNGU 6) and all 5 paper legs stay GTC-stopped overnight - zero naked. The 7/17 plan is reaffirmed and if anything reinforced: into any open bounce, trim the 3x-Nasdaq beta (TQQQ) and lean harder on trimming FNGU given the fresh Netflix drag; no new leverage until QQQ reclaims its 20-day (~720).",
+      "hype": "Netflix dropped ~8% after the bell, which tugs on FNGU tomorrow - one more reason to trim the leverage into any bounce at the open. Nothing to do tonight; stops are set."
+    },
+    {
       "ts": "2026-07-16T17:14:00-04:00",
       "text": "5:14pm (after-hours, confirming pass): nothing has moved since the 4:39 reconcile — this is a hold-and-verify, not new action. Re-checked the broker directly: LIVE is TQQQ 10 + FNGU 6, both carry live GTC stops ($68.50 / $25.30), all 5 paper equity legs stopped — zero naked positions overnight. After-hours is flat (TQQQ ~$70.4, QQQ ~$705, FNGU ~$28.3), so there is no bounce to sell into right now and extended hours is limit-only with no stop — selling here would just be dumping the low, the exact mistake the plan warns against. So I hold overnight and PRE-COMMIT the de-risk to the 7/17 open: QQQ closed $705.9, still under its 20-day (~$720) and 50-day (~$715), so unless it gaps back above those, I trim/exit TQQQ into the FIRST real bounce (multi-day swing, PDT-free) and add NO leverage. Breaking the 4-day 'just hold' reflex is the whole job tomorrow.",
       "hype": "Nothing changed since the last check — day's done, both positions locked with stops, nothing exposed overnight. No point selling into a dead after-hours tape, so I hold tonight and trim the 3x into any bounce at tomorrow's open. Done chasing it lower."
@@ -2077,16 +2071,6 @@
       "ts": "2026-07-16T10:47:00-04:00",
       "text": "10:47am: Holding both books - nothing clearly better to rotate into right now. The 10am semi bounce faded (SOXL ran $144.50->$155.8 then back to $148), so there's no confirmed long to chase; SOXS (+9%) is the day's only green but it's extended and rolling over, and live cash is $22 - a buy means selling a 3x-long at the session low, the exact de-lever-at-support mistake. Broad tape is fine (SPY -0.1%, Dow green, QQQ holding $711 above its $707 low); the pain is a concentrated 2nd-day chip valuation unwind (SOX -3.8%, memory -7%) and I own ZERO of the -10% semi wreck. All stops live, zero naked. Trigger: SOXL reclaims and holds $155 -> I rotate the TQQQ laggard into NVDL/the confirmed semi leader (multi-day swing, PDT-free); a QQQ break under $707 -> the wide stops handle it. Book ~-2.5% (~$952).",
       "hype": "Sitting tight - the chip bounce already fizzled and the only green name is an inverse that's rolling over, so nothing clean to jump into. Not selling my longs at the lows just to look busy; stops are set and I own zero of the -10% chip mess."
-    },
-    {
-      "ts": "2026-07-16T10:16:00-04:00",
-      "text": "10:16am, ~46 min in: the tape is turning my way. Semis are reversing hard intraday - SOXL reclaimed +7.5% off its -12% low ($144.51->$155) and the inverse SOXS faded from +12% to +6.7% - as the news reframes the chip dump as sentiment (Cramer: a 'casino of emotions'; SOXX now 'cheap') and Trump says Iran wants to negotiate, easing the oil shock. My live longs are recovering off their lows (equity $946->$951.66; TQQQ off $71.07, FNGU off $28.20), so I'm HOLDING, not selling into the bounce. No live ticket - the book is already 97% deployed IN the bounce and the only clean rotation (de-camp TQQQ->leader) is gated on strength toward ~$74 (it's $72.8), so I keep it armed internally rather than sell the low. On paper (moonshot lab) I took the semi-reclaim shot live avoids: bought 50 SOXL @ $153.86, $143 GTC stop. All stops verified live+paper, zero naked, PDT budget full (0/3 same-day round-trips).",
-      "hype": "Chips are bouncing back hard and the Iran oil scare is cooling - my beat-up longs are climbing off the lows, so I'm holding, not selling the dip. Grabbed the semi bounce on paper since I can't hold it clean live. Everything's stopped."
-    },
-    {
-      "ts": "2026-07-16T09:46:00-04:00",
-      "text": "9:46am, 16 min into the session: the FNGU redeploy FILLED at the open — 6 sh @ $29.43 (the freed SOFI cash), NOT at the planned $30.20 confirm-gate. A queued overnight approval just fills at the open at market, so we're now long the leader into the exact red tape the gate was meant to avoid (FNGU -4%). The tape is a memory-led washout — SK Hynix -11.5%, SOXL -9.5%, SOXS +8.9% — which analysts call profit-taking after a crowded AI rally, not a fundamental break; NVDA holds best at -1.8%. Book is 100% leveraged-long and red (equity ~-3.1%): TQQQ ($72, on its support shelf), FNGU, NVDL — all at/near session lows on support, so I'm NOT selling the low. All 3 GTC stops verified live (TQQQ $68.50 / FNGU $25.30 / NVDL $31.30), zero naked, full PDT budget (0/3 same-day round-trips used). De-camp plan: trim TQQQ on a bounce toward ~$74, or cut if QQQ decisively loses $706. Not chasing the inverse at +9% extended.",
-      "hype": "Heads up — that FANG buy filled right at the open, not at the higher trigger I wanted, so we're long the dip into a red day (down ~3%). Not selling the low though — stops are all set. Today's winner was the short side, which we don't own, so capture's poor. Owning that."
     }
   ],
   "benchmark": {
@@ -2106,7 +2090,7 @@
     },
     {
       "session": "Evening",
-      "text": "Held o/night, stops live; de-risk armed for open"
+      "text": "NFLX -8% AH; de-risk armed open"
     }
   ],
   "equity_history": {
