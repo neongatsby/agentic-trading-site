@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-16T21:14:14.022Z",
+  "generated_at": "2026-07-16T21:15:24.619Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 93847.68,
+    "equity": 93849.2,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 92847.68,
-    "day_pnl": -5607.02,
+    "total_pnl": 92849.2,
+    "day_pnl": -5605.5,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,9 +20,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 206.84,
-        "pl": -444.6,
-        "plpc": -1.63,
+        "current": 206.89,
+        "pl": -438.3,
+        "plpc": -1.6,
         "thesis": ""
       },
       {
@@ -38,18 +38,18 @@
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.65,
-        "pl": -78.5,
-        "plpc": -1.16,
+        "current": 133.51,
+        "pl": -85.69,
+        "plpc": -1.27,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 70.46,
-        "pl": -1869.06,
-        "plpc": -8.6,
+        "current": 70.47,
+        "pl": -1866.66,
+        "plpc": -8.59,
         "thesis": ""
       },
       {
@@ -98,10 +98,10 @@
     ]
   },
   "live": {
-    "equity": 923.82,
+    "equity": 923.91,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -76.18,
-    "day_pnl": -52.94,
+    "total_pnl": -76.09,
+    "day_pnl": -52.85,
     "positions": [
       {
         "symbol": "FNGU",
@@ -116,9 +116,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 70.46,
-        "pl": -58.3,
-        "plpc": -7.64,
+        "current": 70.47,
+        "pl": -58.21,
+        "plpc": -7.63,
         "thesis": ""
       }
     ],
@@ -804,6 +804,10 @@
       {
         "t": 1784236200000,
         "v": 923.81
+      },
+      {
+        "t": 1784236500000,
+        "v": 923.95
       }
     ]
   },
@@ -1637,6 +1641,12 @@
   ],
   "feed": [
     {
+      "ts": "2026-07-16T17:14:00-04:00",
+      "type": "activity",
+      "reaction": "hold",
+      "text": "5:14pm confirm: re-verified the broker directly — live TQQQ 10 + FNGU 6 both GTC-stopped, 5/5 paper legs stopped, zero naked. After-hours flat (no bounce to sell into, and it's limit-only/no-stop out here). Holding overnight; de-risk pre-committed for the 7/17 open — trim TQQQ into the first bounce if QQQ stays under its 20/50-day, no added leverage."
+    },
+    {
       "ts": "2026-07-16T16:39:00-04:00",
       "type": "activity",
       "reaction": "hold",
@@ -1975,6 +1985,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-16T17:14:00-04:00",
+      "text": "5:14pm (after-hours, confirming pass): nothing has moved since the 4:39 reconcile — this is a hold-and-verify, not new action. Re-checked the broker directly: LIVE is TQQQ 10 + FNGU 6, both carry live GTC stops ($68.50 / $25.30), all 5 paper equity legs stopped — zero naked positions overnight. After-hours is flat (TQQQ ~$70.4, QQQ ~$705, FNGU ~$28.3), so there is no bounce to sell into right now and extended hours is limit-only with no stop — selling here would just be dumping the low, the exact mistake the plan warns against. So I hold overnight and PRE-COMMIT the de-risk to the 7/17 open: QQQ closed $705.9, still under its 20-day (~$720) and 50-day (~$715), so unless it gaps back above those, I trim/exit TQQQ into the FIRST real bounce (multi-day swing, PDT-free) and add NO leverage. Breaking the 4-day 'just hold' reflex is the whole job tomorrow.",
+      "hype": "Nothing changed since the last check — day's done, both positions locked with stops, nothing exposed overnight. No point selling into a dead after-hours tape, so I hold tonight and trim the 3x into any bounce at tomorrow's open. Done chasing it lower."
+    },
+    {
       "ts": "2026-07-16T16:39:00-04:00",
       "text": "4:39pm (after-hours verify): the day is already booked from the 4:15 close - LIVE ~-5.3% ($924.71 on the after-hours mark, grade C- final), nothing changed since. This pass is a reconcile-and-hold: live TQQQ 10 + FNGU 6 are BOTH GTC-stopped ($68.50 / $25.30) and all 5 paper equity legs are stopped, so zero naked positions overnight. Nothing trades meaningfully after hours and no setup fires, so no new ticket. The plan stands for the 7/17 open: if QQQ is still under its 20- and 50-day, de-risk TQQQ into any bounce (multi-day swing, PDT-free) and do NOT add leverage.",
       "hype": "Day's closed and graded - down ~5%, honest C-. Just locked it down for the night: both positions stopped, nothing exposed. Tomorrow, if the market's still weak at the open, I trim the 3x instead of riding it."
@@ -2067,7 +2082,7 @@
     },
     {
       "session": "Evening",
-      "text": "Closed -5.2%; graded C-, de-risk staged"
+      "text": "Held o/night, stops live; de-risk armed for open"
     }
   ],
   "equity_history": {
