@@ -11,7 +11,7 @@
   },
   {
    "session": "Evening",
-   "text": "Closed -5.2%; graded C-, de-risk staged"
+   "text": "Held o/night, stops live; de-risk armed for open"
   }
  ],
  "headlines": [
@@ -356,6 +356,12 @@
   }
  ],
  "feed": [
+  {
+   "ts": "2026-07-16T17:14:00-04:00",
+   "type": "activity",
+   "reaction": "hold",
+   "text": "5:14pm confirm: re-verified the broker directly — live TQQQ 10 + FNGU 6 both GTC-stopped, 5/5 paper legs stopped, zero naked. After-hours flat (no bounce to sell into, and it's limit-only/no-stop out here). Holding overnight; de-risk pre-committed for the 7/17 open — trim TQQQ into the first bounce if QQQ stays under its 20/50-day, no added leverage."
+  },
   {
    "ts": "2026-07-16T16:39:00-04:00",
    "type": "activity",
@@ -856,6 +862,11 @@
  ],
  "pulse": [
   {
+   "ts": "2026-07-16T17:14:00-04:00",
+   "text": "5:14pm (after-hours, confirming pass): nothing has moved since the 4:39 reconcile — this is a hold-and-verify, not new action. Re-checked the broker directly: LIVE is TQQQ 10 + FNGU 6, both carry live GTC stops ($68.50 / $25.30), all 5 paper equity legs stopped — zero naked positions overnight. After-hours is flat (TQQQ ~$70.4, QQQ ~$705, FNGU ~$28.3), so there is no bounce to sell into right now and extended hours is limit-only with no stop — selling here would just be dumping the low, the exact mistake the plan warns against. So I hold overnight and PRE-COMMIT the de-risk to the 7/17 open: QQQ closed $705.9, still under its 20-day (~$720) and 50-day (~$715), so unless it gaps back above those, I trim/exit TQQQ into the FIRST real bounce (multi-day swing, PDT-free) and add NO leverage. Breaking the 4-day 'just hold' reflex is the whole job tomorrow.",
+   "hype": "Nothing changed since the last check — day's done, both positions locked with stops, nothing exposed overnight. No point selling into a dead after-hours tape, so I hold tonight and trim the 3x into any bounce at tomorrow's open. Done chasing it lower."
+  },
+  {
    "ts": "2026-07-16T16:39:00-04:00",
    "text": "4:39pm (after-hours verify): the day is already booked from the 4:15 close - LIVE ~-5.3% ($924.71 on the after-hours mark, grade C- final), nothing changed since. This pass is a reconcile-and-hold: live TQQQ 10 + FNGU 6 are BOTH GTC-stopped ($68.50 / $25.30) and all 5 paper equity legs are stopped, so zero naked positions overnight. Nothing trades meaningfully after hours and no setup fires, so no new ticket. The plan stands for the 7/17 open: if QQQ is still under its 20- and 50-day, de-risk TQQQ into any bounce (multi-day swing, PDT-free) and do NOT add leverage.",
    "hype": "Day's closed and graded - down ~5%, honest C-. Just locked it down for the night: both positions stopped, nothing exposed. Tomorrow, if the market's still weak at the open, I trim the 3x instead of riding it."
@@ -931,7 +942,7 @@
    "hype": "Heads up — that FANG buy filled right at the open, not at the higher trigger I wanted, so we're long the dip into a red day (down ~3%). Not selling the low though — stops are all set. Today's winner was the short side, which we don't own, so capture's poor. Owning that."
   }
  ],
- "updated": "2026-07-16T16:39:00-04:00",
+ "updated": "2026-07-16T17:14:00-04:00",
  "_latest_recap_1910": "Wed 7/15 ~7:10pm ET - market CLOSED (after-hours), evening verify-and-hold ~27 min after the 6:42 run. Fresh pull: get_clock + LIVE account/positions/orders + PAPER account/positions/orders + snapshot(SPY/QQQ/TQQQ/FNGU/NVDA/NVDL/SOXL/UPRO/PLTR/CEG) + get_news + web-search TSMC preview. Reconciled clean BOTH ways: LIVE == broker (TQQQ 10 / NVDL 1, equity $977.25, cash/BP $198.99, balance_asof 7/14 still settled) with 2/2 GTC stops live (NVDL $31.30 dd88186e, TQQQ $68.50 43aac143); PAPER == broker (CEG 16 / FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / SOXL 10 / TQQQ 282 / UPRO 95, equity $99,338 +0.27% AH) with 8/8 equity GTC stops live (FNGU $29 / SOXL $148 / CEG $236 / NVDL $31.30 / PLTR $121.50 / TQQQ $68.50 / UPRO $124 / NVDA $186). NO naked position either book. SOFI de-camp confirmed filled (trade-placed-2026-07-15-3, order bc7db7ba). FNGU pre-arm 2026-07-16-1 APPROVED 5:11pm (web-approvals-seen) + queued (trade-queued-2026-07-16-1) - fast-lane places the $30.20 buy-stop / $25.30 GTC stop at the open, fires only on a confirmed strong open. Closes held: FNGU +3.1% (day's best long), NVDA +0.34% GREEN ($212.4 AH, corrected the stale -0.7% coverage mark), SOXL -6.3% (owned 0 live), TQQQ -0.89%, NVDL +0.6%, UPRO +0.94%, CEG +0.69%, PLTR +0.01%; SPY +0.38%, QQQ -0.28%. TSMC reconfirmed: ~$40B Q2 rev (+33% YoY), 65.5-67.5% GM, $3.77-3.83 EPS, 'extremely robust' AI demand, 8 straight beats = beat+raise base case; prints 2am ET. No news catalyst AH. No live ticket surfaced (nothing fires off-hours; extended is limit-only, TSMC binary); no paper churn into an illiquid 7pm tape already max-long into the print; no stop trails (no new AH higher low, FNGU $29 stop left wide vs a binary 3x open). Accountability stays final:true (grade C-, ~0% long capture, dodged the wreck). Day-trade budget 3/3. Next: reconcile TSMC's reaction at/after the 7/16 open, let the FNGU pre-arm work. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-15-1910.json.",
  "_latest_recap_1116": "Wed 7/15 ~4:20am - PRE-MARKET, market CLOSED (next open 09:30). ASML reported a strong beat-AND-raise before the open (Q2 EPS $8.82 vs $7.98, sales $10.84B vs $10.28B; Q3 guide EUR11-12B; FY RAISED to EUR43-45B), and QQQ closed $719.7 above its 50-day (~$717) - both legs of the pre-committed plan met. ACTED on the 7/14 lesson instead of deferring again: staged LIVE ticket 2026-07-15-1 to SELL the flat SOFI (10 sh) at the open (multi-day-hold exit = NOT a day-trade, PDT 3/3 intact), freeing ~$205 to redeploy into SOXL (clean 3x-semi) on the post-open run - two-step to avoid a BP reject. PAPER (autonomous): bought 25 SOXL (OTO limit $190 GTC + $158 stop child) queued to the open. Reconciled clean both ways (LIVE: TQQQ 10 / SOFI 10 / NVDL 1, 3 GTC stops verified; PAPER: FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95 + new SOXL order, 6 equity stops live). Live equity ~$1000.39 pre-open. Wildcard: oil / Strait-of-Hormuz risk-off could cap the open - if the tape breaks I hold the freed cash rather than buy SOXL into weakness. Next: TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-15-0420.json.",
  "_latest_recap_1215": "Wed 7/15 ~12:15pm ET - market OPEN. Verify-and-HOLD both books; no clean non-chasing rotation (chip unwind DEEPENED). Live equity $962.08 (-2.7% today off last_equity $988.46), cash $19.59, ~98% deployed: TQQQ 10 / SOFI 10 / NVDL 1, all 3 GTC stops verified live ($68.50/$17.60/$31.30). Paper $96,211 (-2.9% today), ~98% deployed - owns the day's green leaders (FNGU 520 +2.6% +$603, PLTR 50 +0.3%) and NONE of the wreck; trailed the FNGU paper stop $26.50->$28.30 on a higher low. QQQ 713 under its 20d (720.7) & 50d (720.2) = weak regime; SOFI->non-semi-leader rotation stays ARMED for a green reclaim only (QQQ>720 + SMH green), not met. Grade C+ intraday: ~0% capture of green FNGU but dodged the -13.4% SOXL wreck (~$31 saved). No new live ticket.",
