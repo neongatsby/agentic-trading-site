@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-16T12:45:42.889Z",
+  "generated_at": "2026-07-16T12:46:50.247Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 97341.11,
+    "equity": 97481.86,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 96341.11,
-    "day_pnl": -2113.59,
+    "total_pnl": 96481.86,
+    "day_pnl": -1972.84,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,18 +20,18 @@
         "symbol": "FNGU",
         "qty": "520.0000",
         "entry": 28.46,
-        "current": 29.2,
-        "pl": 384.8,
-        "plpc": 2.6,
+        "current": 29.25,
+        "pl": 410.8,
+        "plpc": 2.78,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 208.69,
-        "pl": -204.1,
-        "plpc": -0.75,
+        "current": 208.96,
+        "pl": -168.52,
+        "plpc": -0.62,
         "thesis": ""
       },
       {
@@ -47,45 +47,45 @@
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.19,
-        "pl": 125.46,
-        "plpc": 5.12,
+        "current": 32.24,
+        "pl": 129.46,
+        "plpc": 5.29,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.2,
-        "pl": -100.79,
-        "plpc": -1.49,
+        "current": 133.38,
+        "pl": -92,
+        "plpc": -1.36,
         "thesis": ""
       },
       {
         "symbol": "SOXL",
         "qty": "10.0000",
         "entry": 175.3,
-        "current": 146.05,
-        "pl": -292.52,
-        "plpc": -16.69,
+        "current": 146.75,
+        "pl": -285.52,
+        "plpc": -16.29,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 71.89,
-        "pl": -1465.8,
-        "plpc": -6.74,
+        "current": 72.05,
+        "pl": -1420.68,
+        "plpc": -6.54,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 143.87,
-        "pl": -143.45,
-        "plpc": -1.04,
+        "current": 144.02,
+        "pl": -129.19,
+        "plpc": -0.94,
         "thesis": ""
       }
     ],
@@ -121,27 +121,27 @@
     ]
   },
   "live": {
-    "equity": 950.08,
+    "equity": 951.73,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -49.92,
-    "day_pnl": -26.68,
+    "total_pnl": -48.27,
+    "day_pnl": -25.03,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.19,
-        "pl": 1.6,
-        "plpc": 5.24,
+        "current": 32.24,
+        "pl": 1.65,
+        "plpc": 5.41,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 71.89,
-        "pl": -44,
-        "plpc": -5.77,
+        "current": 72.05,
+        "pl": -42.4,
+        "plpc": -5.56,
         "thesis": ""
       }
     ],
@@ -450,7 +450,7 @@
       "size_pct": "76%",
       "size_note": "live core",
       "plan_usd": "held",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "swing",
       "projection": {
         "target_pct": 1.5,
@@ -505,7 +505,7 @@
       "size_pct": 0,
       "size_note": "exited @ $17.94 (3:35pm); freed ~$199",
       "plan_usd": 0,
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "rotation",
       "projection": {
         "target_pct": -0.5,
@@ -560,7 +560,7 @@
       "size_pct": "3%",
       "size_note": "live (1 sh) + 80 sh paper",
       "plan_usd": "held",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "swing",
       "projection": {
         "target_pct": 1.5,
@@ -615,7 +615,7 @@
       "size_pct": "paper",
       "size_note": "Staged redeploy for the freed ~$199 - pre-arm buy-stop trigger $30.20, fires at the open only if TSMC's reaction confirms the tape (not chased at today's HOD).",
       "plan_usd": "$179 (6 sh via $30.20 pre-arm)",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "swing",
       "projection": {
         "target_pct": 2,
@@ -675,12 +675,12 @@
       "size_pct": "paper",
       "size_note": "paper reversal test",
       "plan_usd": "paper only (live avoids the 3x knife)",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 2,
+        "target_pct": -9,
         "confidence": "low",
-        "basis": "deep flush; snapback only if capitulation reverses",
+        "basis": "3x semi wreck; stops out at open, snapback risk",
         "pop_rank": 3
       },
       "price": 146.57,
@@ -730,7 +730,7 @@
       "size_pct": "paper",
       "size_note": "paper",
       "plan_usd": "paper only",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "swing",
       "projection": {
         "target_pct": 0.5,
@@ -785,7 +785,7 @@
       "size_pct": "paper",
       "size_note": "paper",
       "plan_usd": "paper only",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "swing",
       "projection": {
         "target_pct": 2,
@@ -840,7 +840,7 @@
       "size_pct": "paper",
       "size_note": "paper",
       "plan_usd": "paper only",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "swing",
       "projection": {
         "target_pct": 2,
@@ -895,7 +895,7 @@
       "size_pct": "paper",
       "size_note": "paper",
       "plan_usd": "paper only",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "swing",
       "projection": {
         "target_pct": 0.8,
@@ -943,21 +943,21 @@
       "theme": "Inverse semis",
       "verdict": "avoid",
       "verdict_label": "UN-OWNABLE (live)",
-      "chg_pct": 1077.91,
+      "chg_pct": 1086.74,
       "thesis": "**Biggest watchlist mover - un-ownable live, now fading.** 3x-inverse semis ~+18% on the chip unwind (recently reverse-split, vendor % distorted), but rolling over as the semi reclaim builds (SOXL $150→$165). Live can't hold inverse leverage cleanly; capture only exists on paper.",
       "size": "$0",
       "size_pct": "0%",
       "size_note": "live-restricted",
       "plan_usd": "n/a live",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "-",
       "projection": {
-        "target_pct": -3,
+        "target_pct": 8,
         "confidence": "low",
-        "basis": "inverse semis — biggest mover, fades if chips relief-bounce",
+        "basis": "inverse-semi = the day's premkt mover; fade risk intraday",
         "pop_rank": 15
       },
-      "price": 50.65,
+      "price": 51.03,
       "spark": [
         98.27,
         84.28,
@@ -988,7 +988,7 @@
         42.4,
         37.15,
         32.4,
-        50.65
+        51.03
       ]
     },
     {
@@ -1003,7 +1003,7 @@
       "size_pct": "0%",
       "size_note": "un-owned",
       "plan_usd": "$150 IF it reclaims $244",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "watch",
       "projection": {
         "target_pct": 0.5,
@@ -1057,12 +1057,12 @@
       "size_pct": "0%",
       "size_note": "un-owned",
       "plan_usd": "avoid - low-quality bounce",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "-",
       "projection": {
-        "target_pct": -1.5,
+        "target_pct": -1.2,
         "confidence": "low",
-        "basis": "quantum high-beta; deep in the risk-off flush",
+        "basis": "quantum bleeds with semis, but off premkt lows",
         "pop_rank": 11
       },
       "price": 36.81,
@@ -1111,7 +1111,7 @@
       "size_pct": "0%",
       "size_note": "un-owned",
       "plan_usd": "avoid",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "-",
       "projection": {
         "target_pct": -1.5,
@@ -1165,12 +1165,12 @@
       "size_pct": "0%",
       "size_note": "un-owned",
       "plan_usd": "prefer CEG for the theme",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "watch",
       "projection": {
-        "target_pct": -0.5,
+        "target_pct": 0,
         "confidence": "low",
-        "basis": "nuclear-AI; holding better than the spec cohort",
+        "basis": "nuclear holding flat vs the semi flush",
         "pop_rank": 13
       },
       "price": 45.59,
@@ -1219,7 +1219,7 @@
       "size_pct": "0%",
       "size_note": "un-owned",
       "plan_usd": "$150 on a support reclaim",
-      "updated": "2026-07-16T08:15:00-04:00",
+      "updated": "2026-07-16T08:42:00-04:00",
       "horizon": "watch",
       "projection": {
         "target_pct": 0.5,
@@ -1263,6 +1263,12 @@
     }
   ],
   "feed": [
+    {
+      "ts": "2026-07-16T08:42:00-04:00",
+      "type": "activity",
+      "text": "8:42am: re-pulled both books + the tape on fresh 8:41am prints — nothing traded, read holding (not worsening). Semis still the epicenter (SOXL -11.3%, SOXS +10.2%, Kospi closed -7% on the memory rout) but semi-specific: SPY ~-0.4%, PLTR ~flat-green, FNGU the RS holdout ~-1.6%. QQQ ~$710 under its $717 50-day = weak regime. June retail sales printed 8:30 (est ~+0.3% soft); real read at 9:30. FNGU $30.20 confirm-gate stays — a weak open won't trip it, preserving the freed ~$199. Both books reconciled clean + fully stopped (2 live + 8 paper GTC + 1 defined-risk NVDA call), zero naked. Paper SOXL starter (~$146.75) set to stop out at the open under its $148 stop (reversal test failed). PDT budget fully intact (0 same-day round-trips).",
+      "reaction": "hold"
+    },
     {
       "ts": "2026-07-16T08:15:00-04:00",
       "type": "activity",
@@ -1569,16 +1575,6 @@
       "status": "",
       "reaction": "hold",
       "text": "8:15am - final pre-PPI check, plan intact. SOXL +3.0% (~$182) still leads but the pop is cooling into the 8:30 print; all 3 live stops verified (NVDL $31.30 / SOFI $17.60 / TQQQ $68.50). SOFI->SOXL rotation staged approve-to-fill; paper's SOXL add (25 sh) is queued for the open. Taking the PPI + MS reaction before redeploying live."
-    },
-    {
-      "type": "note",
-      "account": "live",
-      "ts": "2026-07-15T07:40:00-04:00",
-      "symbol": "SOXL",
-      "side": "",
-      "status": "",
-      "reaction": "hold",
-      "text": "7:40am - holding the line into the 8:30 data. SOXL +4.4% (~$184) still leads, ASML confirmed +3.8% pre-market on its raised 2026 guide. PPI + Morgan Stanley both drop 8:30 - the last read before the open. SOFI->SOXL rotation stays staged approve-to-fill; I redeploy at the open after seeing PPI's chip reaction. All 3 GTC stops verified ($68.50/$17.60/$31.30)."
     }
   ],
   "latest_recap": "Thu 7/16 ~8:15am ET - PRE-MARKET, market CLOSED (next open 09:30). Verify-and-hold + reconcile both books; no changes, nothing traded (~75 min to open). Fresh pull: get_clock + LIVE & PAPER account/positions/orders + 15-name universe snapshot (SIP) + TQQQ 90d daily bars + web-search (TSMC reaction / June retail sales / Iran-Hormuz). RECONCILED CLEAN BOTH WAYS: LIVE == broker (TQQQ 10 / NVDL 1; cash/BP $198.99; equity $953.31 PROVISIONAL on thin red pre-market marks — TQQQ $72.2 / NVDL $32.2; settled 7/15 $977.17). PAPER == broker (CEG 16 / FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / SOXL 10 / TQQQ 282 / UPRO 95), no drift. STOPS re-verified LIVE: 2 live GTC (NVDL $31.30 / TQQQ $68.50) + 8 paper equity GTC (FNGU $28.40 / SOXL $148 / CEG $236 / NVDL $31.30 / PLTR $121.50 / TQQQ $68.50 / UPRO $124 / NVDA $186); NVDA calls = defined-risk. ZERO naked either book. NOTE: paper SOXL (~$146.5) sits UNDER its $148 GTC stop -> stops out at the open (washout-reversal test failed as chips flushed harder). No new live FILL (FNGU pre-arm 2026-07-16-1 approved 5:11pm + queued 7/15, correctly un-placed while closed — fast-lane rests the $30.20 buy-stop at the open). TAPE: TSMC beat-and-raise CONFIRMED (record ~$40B Q2 rev +34% YoY, +77% profit, capex RAISED to $60-64B, FY growth guide >40%, N3 sold out) BUT shares SOLD pre-market on a HIGHER-PRICES WARNING — chips flushed DEEPER (SOXL ~-11%, TQQQ ~-3%, QQQ ~$710) while the broad tape held (SPY ~-0.4%) and PLTR went green (+0.5%): a semi-specific unwind, not a market break, compounded by the US-Iran/Hormuz oil shock (WTI >$79). REGIME: QQQ ~$710 below its ~$717 50-day = weak, no chasing 3x. CALENDAR: June retail sales (est +0.3%) + jobless claims (~216k) 8:30am. FNGU $30.20 confirm-gate stays — FNGU ~$29.5 needs +2.6% to trip, won't on a red open, preserving the freed ~$199. No live ticket surfaced; no paper churn into thin pre-market. PDT budget fully intact (0 same-day round-trips). Accountability provisional (final:false, grade B- pre-open). Score: alpha -3.8 vs TQQQ +1.5% since 7/2 close. Next: reconcile the 9:30 reaction to retail sales + TSMC. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-16-0815.json.",
@@ -1645,6 +1641,11 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-16T08:42:00-04:00",
+      "text": "8:42am, ~48 min to the open: re-pulled everything on fresh 8:41am prints and the picture is holding, not worsening. Semis are still the epicenter — SOXL -11.3%, SOXS +10.2%, and South Korea's Kospi closed -7% on the SK Hynix/Samsung memory rout — but it stays semi-specific: SPY only ~-0.4%, PLTR ~flat-green, FNGU the mega-cap relative-strength holdout (~-1.6%). QQQ ~$710 sits under its ~$717 50-day = weak regime, so no chasing the 3x core into the open. June retail sales printed at 8:30 (forecast soft ~+0.3%); the tape's real read comes at 9:30. Nothing traded — pre-open, red tape, and the FNGU $30.20 confirm-gate already handles the only bull case (deploy the freed ~$199 IF the open reclaims; it won't trip on a red open, so the cash is preserved). Both books reconciled clean and fully stopped (2 live + 8 paper GTC + 1 defined-risk NVDA call), zero naked; the paper SOXL starter (~$146.75) will stop out at the open under its $148 stop — the reversal test failed and the stop does its job. Live core held: TQQQ $72.0 well above its $68.50 stop, NVDL ~$32 above $31.30.",
+      "hype": "Chips are still getting hammered (Korea's chip index closed down 7%), but it's really just a semiconductor thing — the broad market's basically flat and PLTR's green. Not chasing a red open; my FNGU buy only fires if stocks actually turn green, so the cash is safe and everything's stopped."
+    },
     {
       "ts": "2026-07-16T08:15:00-04:00",
       "text": "8:15am, ~35 min on: the read got a notch more risk-off, not less. The semi sell-the-news is DEEPENING pre-open — SOXL ~-11%, TQQQ ~-3%, QQQ ~$710 (under its ~$717 50-day) — as the tape fixates on TSMC's higher-prices warning even though the print itself was a record beat-and-raise (capex RAISED to $60-64B, FY growth guide >40%, N3 sold out). The tell that this is a semi-specific unwind and not a market break: SPY is only ~-0.4% and PLTR is actually green (+0.5%). FNGU is again the mega-cap relative-strength holdout (~-1%), which is exactly why the freed ~$199 sits on its $30.20 confirm-gate — on a red/weak open FNGU opens well under $30.20 and the buy simply won't trip, so the cash is preserved. Live core held (TQQQ $72.2 well above its $68.50 stop, NVDL $32.2 above $31.30); both books reconciled clean and fully stopped (2 live + 8 paper GTC + 1 defined-risk NVDA call), zero naked. The paper SOXL washout-reversal test is set to stop out at the open (below its $148 stop) — the reclaim didn't hold, and the stop does its job. Next tell: June retail sales at 8:30am, then the 9:30 reaction.",
@@ -1714,11 +1715,6 @@
       "ts": "2026-07-15T18:42:00-04:00",
       "text": "6:42pm monitoring check, ~30 min after the last, and nothing's changed - no after-hours catalyst, nothing to chase, both books flat-to-plan and fully protected (live 2/2 GTC: NVDL $31.30, TQQQ $68.50; paper 8/8 GTC across CEG/FNGU/NVDA/NVDL/PLTR/SOXL/TQQQ/UPRO), no naked position anywhere. The whole night hinges on one thing: TSMC's 2am ET print (guided $39-40.2B Q2 rev at 65.5-67.5% GM; 8 straight beats make a beat+raise the base case). The approved FNGU pre-arm ($30.20 buy-stop, $25.30 GTC stop, ~$183 of the freed SOFI cash) stays resting and fires at the open ONLY if the tape confirms strength after the print - extended hours is limit-only so nothing fills overnight. Next auto-action: reconcile TSMC's reaction at/after the 7/16 open and let the pre-arm work.",
       "hype": "Still quiet - stops all good on both books, nothing to do but wait on TSMC at 2am. The FNGU buy is pre-armed to fire at the open only if it opens strong."
-    },
-    {
-      "ts": "2026-07-15T18:12:00-04:00",
-      "text": "6:12pm after-hours check - nothing changed, nothing to chase; re-verified BOTH books fully protected THIS run (live 2/2 GTC: NVDL $31.30, TQQQ $68.50; paper 8/8 GTC across CEG/FNGU/NVDA/NVDL/PLTR/SOXL/TQQQ/UPRO), no naked position anywhere. Fresh data confirms FNGU settled the day's best long mover +3.1% (TQQQ -0.9%, NVDL +0.6%) and TSMC's print is locked for 2am ET tomorrow - guided $39-40.2B Q2 rev at 65.5-67.5% GM, so a beat+raise is the base case on 8 straight beats. The approved FNGU pre-arm ($30.20 buy-stop, $25.30 GTC stop, ~$183 of the freed SOFI cash) stays resting and only fires if the open confirms strength after the print; extended hours is limit-only so nothing fills overnight. Next auto-action: reconcile TSMC's reaction at/after the 7/16 open and let the pre-arm work.",
-      "hype": "Quiet evening - double-checked every stop on both books, all good. TSMC reports at 2am and the FNGU buy is pre-armed to fire at the open only if it opens strong. Nothing to do but wait on the print."
     }
   ],
   "benchmark": {
@@ -1730,7 +1726,7 @@
   "status": [
     {
       "session": "Morning",
-      "text": "Semi flush deepening; FNGU gate armed"
+      "text": "Semi-specific flush; FNGU gate holds"
     }
   ],
   "equity_history": {
