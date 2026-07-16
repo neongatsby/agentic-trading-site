@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-16T10:43:53.471Z",
+  "generated_at": "2026-07-16T10:45:00.952Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 98458.41,
+    "equity": 98463.91,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 97458.41,
-    "day_pnl": -996.29,
+    "total_pnl": 97463.91,
+    "day_pnl": -990.79,
     "positions": [
       {
         "symbol": "CEG",
@@ -29,9 +29,9 @@
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 209.83,
-        "pl": -55.39,
-        "plpc": -0.2,
+        "current": 209.94,
+        "pl": -42.25,
+        "plpc": -0.15,
         "thesis": ""
       },
       {
@@ -47,9 +47,9 @@
         "symbol": "NVDL",
         "qty": "80.0000",
         "entry": 30.62,
-        "current": 32.52,
-        "pl": 151.86,
-        "plpc": 6.2,
+        "current": 32.53,
+        "pl": 152.66,
+        "plpc": 6.23,
         "thesis": ""
       },
       {
@@ -65,18 +65,18 @@
         "symbol": "SOXL",
         "qty": "10.0000",
         "entry": 175.3,
-        "current": 152.28,
-        "pl": -230.22,
-        "plpc": -13.13,
+        "current": 152,
+        "pl": -233.02,
+        "plpc": -13.29,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 73.06,
-        "pl": -1135.86,
-        "plpc": -5.22,
+        "current": 73.04,
+        "pl": -1141.5,
+        "plpc": -5.25,
         "thesis": ""
       },
       {
@@ -121,27 +121,27 @@
     ]
   },
   "live": {
-    "equity": 962.11,
+    "equity": 961.92,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -37.89,
-    "day_pnl": -14.65,
+    "total_pnl": -38.08,
+    "day_pnl": -14.84,
     "positions": [
       {
         "symbol": "NVDL",
         "qty": "1.0000",
         "entry": 30.59,
-        "current": 32.52,
-        "pl": 1.93,
-        "plpc": 6.32,
+        "current": 32.53,
+        "pl": 1.94,
+        "plpc": 6.36,
         "thesis": ""
       },
       {
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 73.06,
-        "pl": -32.3,
-        "plpc": -4.23,
+        "current": 73.04,
+        "pl": -32.5,
+        "plpc": -4.26,
         "thesis": ""
       }
     ],
@@ -1538,6 +1538,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-16T06:40:00-04:00",
+      "text": "6:40am, ~30 min on: nothing changed and nothing traded. TSMC's beat-and-raise is still being SOLD ahead of the open on the Hormuz oil shock - NQ futures ~-0.9%, WTI >$80. So the freed ~$199 stays on the FNGU $30.20 confirm-gated buy-stop: it fires ONLY if the open actually reclaims strength, never on a sell-the-news gap. Next real tell is June retail sales at 8:30am (est +0.2%), then the 9:30 reaction. Both books fully stopped, zero naked - not catching a knife into the print.",
+      "hype": "Nothing's moved - TSMC crushed it but the oil shock has tech red pre-open, so I'm sitting tight with the cash. FNGU only auto-buys if it actually pops at the open; retail sales at 8:30 is the next tell."
+    },
+    {
       "ts": "2026-07-16T06:10:00-04:00",
       "text": "6:10am, ~30 min on and the setup is unchanged: TSMC's beat-and-raise is still being sold pre-open on the oil shock - an active US-Iran/Strait-of-Hormuz conflict has crude over $80 (+11% in three sessions) with Nasdaq futures ~-0.6%, while the more defensive Dow sits flat - the classic risk-off rotation out of high-beta tech. There's nothing new to trade before the 9:30 open, and that's the correct call rather than passivity: the freed ~$199 is already committed to the approved FNGU $30.20 pre-arm, which only fills if the open actually reclaims (a red/sell-the-news open never trips it, so the cash is preserved). Re-verified both books at the broker this run - 2 live GTC stops (TQQQ $68.50, NVDL $31.30) + 8 paper GTC + 1 defined-risk NVDA call, zero naked, no drift. Holding into June retail sales at 8:30am and the open.",
       "hype": "Same story - TSMC crushed it but the oil spike has chips red into the open. Nothing to do yet: the FNGU buy is already teed up and only fires if the open turns green. Everything's stopped; waiting on retail sales at 8:30 and the bell."
@@ -1606,16 +1611,6 @@
       "ts": "2026-07-15T16:40:00-04:00",
       "text": "4:40pm, after-hours - nothing to chase, everything staged for tonight's TSMC print (2am ET). Re-verified the book is fully protected: live = TQQQ (10 sh) + a ~$33 NVDL dust share + ~$199 freed cash, both live stops confirmed at the broker (NVDL $31.30, TQQQ $68.50); paper 8/8 GTC stops live, no naked position. The FNGU redeploy stays pre-armed for the open - a $30.20 buy-stop that only fires if the tape confirms strength after TSMC's read (base case: 8 straight beats, guided ~$40B Q2 rev, 'extremely robust' AI demand), with a $25.30 GTC stop bounding it. Extended hours is limit-only so no off-hours fill happens; next auto-action is to reconcile the open and let the pre-arm work if strength confirms.",
       "hype": "Quiet after-hours - book's all locked down and stops verified ahead of TSMC's report tonight. The freed cash is pre-armed to buy FNGU at the open, but only if it opens strong - not forcing anything into an overnight earnings coin-flip."
-    },
-    {
-      "ts": "2026-07-15T16:12:00-04:00",
-      "text": "4:10pm close - final grade C-: book settled -1.1% ($977) while the day's best long mover FNGU ran +3.1% and we owned zero FNGU live = ~0% long capture, a red day on the wrong side (heavy 3x-Nasdaq TQQQ into a faded tape). Real credit though: owned NONE of the -6% SOXL / -5% quantum wreck, held every stop (2/2 live, 8/8 paper), and finally broke the multi-day cash-lock by selling SOFI @ $17.94 - freeing ~$199. Freed cash correctly NOT chased into FNGU's high ahead of tonight's binary TSMC print (2am ET); staged a FNGU redeploy for the open (pre-arm buy-stop $30.20) that only fires if the open confirms strength. Also caught a data bug: 7/14's after-hours $997.48 mark didn't survive settlement (Alpaca settled 7/14 = $988.46), so I'm grading off the confirmed settled baseline.",
-      "hype": "Rough one - down ~1% while FNGU led and we held none of it live. Still, dodged the whole chip wreck, held every stop, and finally cut dead-weight SOFI for cash; lined up a FNGU buy for the open after TSMC reports tonight."
-    },
-    {
-      "ts": "2026-07-15T15:45:00-04:00",
-      "text": "3:45pm - the SOFI de-camp FINALLY filled: after no-op'ing all day on the resting stop, the fast-lane cancelled the $17.60 stop and sold all 10 SOFI @ $17.94 at 3:35pm, freeing ~$199 cash and breaking the multi-day cash-lock the 7/14 lesson flagged. I'm NOT chasing FNGU (+3.0%, at its HOD) in the last 15 min into tomorrow's binary TSMC print - the freed cash is dry powder staged to redeploy at/after the open once TSMC resets the tape and confirms the strongest mover. Still a red day (-1.6%) on the heavy-TQQQ wrong side, but owned none of the -6% SOXL / -5-6% quantum wreck and every stop held. PDT budget full (0 day-trades).",
-      "hype": "The SOFI swap that was jammed all day finally went through - sold at $17.94, so ~$200 is free now. Not chasing FNGU at its high into TSMC's report tomorrow; I'll put that cash to work at the open once TSMC sets the tape."
     }
   ],
   "benchmark": {
@@ -1627,7 +1622,7 @@
   "status": [
     {
       "session": "Morning",
-      "text": "TSMC beat sold on oil shock; holding"
+      "text": "Risk-off open; holding, FNGU gate armed"
     }
   ],
   "equity_history": {
