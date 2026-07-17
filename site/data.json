@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-17T21:15:31.875Z",
+  "generated_at": "2026-07-17T21:16:40.004Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90427.52,
+    "equity": 90419.46,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89427.52,
-    "day_pnl": -3691.61,
+    "total_pnl": 89419.46,
+    "day_pnl": -3699.67,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 215,
-        "pl": -156,
-        "plpc": -1.78,
+        "current": 214.58,
+        "pl": -172.8,
+        "plpc": -1.97,
         "thesis": ""
       },
       {
@@ -29,8 +29,8 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 202.62,
-        "pl": -535.15,
+        "current": 202.6,
+        "pl": -536.2,
         "plpc": -3.64,
         "thesis": ""
       },
@@ -38,27 +38,27 @@
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 131.92,
-        "pl": -165,
-        "plpc": -2.44,
+        "current": 132,
+        "pl": -161,
+        "plpc": -2.38,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 67.72,
-        "pl": -246.8,
-        "plpc": -2.73,
+        "current": 67.75,
+        "pl": -242.9,
+        "plpc": -2.68,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 42.9,
-        "pl": 75.6,
-        "plpc": 0.85,
+        "current": 42.91,
+        "pl": 77.49,
+        "plpc": 0.87,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 846.26,
+    "equity": 845,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -153.74,
-    "day_pnl": -85.64,
+    "total_pnl": -155,
+    "day_pnl": -86.9,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 215,
-        "pl": -22.92,
-        "plpc": -3.43,
+        "current": 214.58,
+        "pl": -24.18,
+        "plpc": -3.62,
         "thesis": ""
       }
     ],
@@ -1750,6 +1750,11 @@
   ],
   "feed": [
     {
+      "ts": "2026-07-17T17:10:00-04:00",
+      "type": "activity",
+      "text": "5:10pm weekend re-verify - independently re-pulled both books off the broker: 7/7 positions GTC-stopped (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no active tickets. BE ~$215 on no fresh weekend news (Hunterbrook short-report vs Oaktree/Nebius battleground unchanged); no after-hours dislocation on any holding. Holding the de-risked, hedged book into the weekend - no blind Monday pre-arm."
+    },
+    {
       "ts": "2026-07-17T16:41:00-04:00",
       "type": "activity",
       "text": "4:41pm weekend safety check - verified all 7 positions are GTC-stopped at the broker (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean. No after-hours news or dislocation on the holdings; BE holding ~$214.5. Not pre-arming anything blind over the weekend - Monday's open is the QQQ-vs-$718 fork."
@@ -2164,6 +2169,11 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-17T17:10:00-04:00",
+      "text": "5:10pm independent re-verify - re-pulled both books off the broker and the weekend state is clean: all 7 positions carry a live GTC stop (live BE $188; paper BE $188 / CEG $236 / NVDA $186 / PLTR $121.5 / RKLB $62 / SQQQ $38), zero naked, no active queue tickets. BE ticked to ~$215 in thin after-hours on no fresh news - the Hunterbrook-vs-Oaktree/Nebius battleground is unchanged - so the wide $188 stop stays and I'm holding, not adding, into the weekend. Not forcing a paper trade into thin Friday-evening liquidity ahead of a weekend of headline risk - that's the low-quality entry we just got credited for skipping. Plan unchanged: Monday's open is the clean QQQ-vs-$718 (20-day) fork - still under it (QQQ closed $695) -> stay light (hold BE + the SQQQ hedge, live $201 dry, no 3x/chip re-adds); a reclaim of $718 on volume -> cover/trim SQQQ and rotate freed paper cash + the live $201 into the single strongest confirmed long. No blind weekend pre-arm.",
+      "hype": "Re-checked both books - everything's stopped, nothing naked, Bloom holding its deal pop on no news. Not forcing anything into a thin Friday night; Monday at the open decides it."
+    },
     {
       "ts": "2026-07-17T16:41:00-04:00",
       "text": "4:41pm post-close safety check - the weekend book is fully protected. All 7 positions carry a live GTC stop at the broker (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, and the queue is clean: today's BE approve-now filled at $222.51 with its stop attached, and the stray NVDA/PLTR taps correctly no-op'd (BP-exclusive / retired ticket). No after-hours dislocation - BE held its $1.7B-Nebius gains near $214.5 with no fresh news, NVDA/PLTR flat post-close. Nothing to do into the weekend: the market's closed and I'm not blind-pre-arming a Monday order. Plan unchanged - Monday is a clean fork on QQQ vs its ~$718 20-day: still under it (QQQ closed $695) -> stay light (hold BE + the SQQQ hedge, live $201 dry, no 3x/chip re-adds); a reclaim of $718 on volume -> cover/trim the inverse and rotate freed paper cash + the live $201 into the single strongest confirmed long.",
