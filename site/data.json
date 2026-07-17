@@ -1,73 +1,73 @@
 {
-  "generated_at": "2026-07-17T17:10:46.627Z",
+  "generated_at": "2026-07-17T17:11:55.177Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 92350.41,
+    "equity": 92354.09,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 91350.41,
-    "day_pnl": -1768.72,
+    "total_pnl": 91354.09,
+    "day_pnl": -1765.04,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 222.61,
-        "pl": 148.4,
-        "plpc": 1.7,
+        "current": 223.44,
+        "pl": 181.6,
+        "plpc": 2.07,
         "thesis": ""
       },
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 253.78,
-        "pl": -110.4,
-        "plpc": -2.65,
+        "current": 253.86,
+        "pl": -109.12,
+        "plpc": -2.62,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "130.0000",
         "entry": 210.26,
-        "current": 206.53,
-        "pl": -484.95,
-        "plpc": -1.77,
+        "current": 206.41,
+        "pl": -500.5,
+        "plpc": -1.83,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.5,
-        "pl": -86,
-        "plpc": -1.27,
+        "current": 133.79,
+        "pl": -71.5,
+        "plpc": -1.06,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "70.0000",
         "entry": 69.54,
-        "current": 70.5,
-        "pl": 67.2,
-        "plpc": 1.38,
+        "current": 70.48,
+        "pl": 65.8,
+        "plpc": 1.35,
         "thesis": ""
       },
       {
         "symbol": "SOXL",
         "qty": "80.0000",
         "entry": 138.75,
-        "current": 144.1,
-        "pl": 428.2,
-        "plpc": 3.86,
+        "current": 143.64,
+        "pl": 391.4,
+        "plpc": 3.53,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 141.2,
-        "pl": -397.1,
-        "plpc": -2.88,
+        "current": 141.31,
+        "pl": -386.65,
+        "plpc": -2.8,
         "thesis": ""
       }
     ],
@@ -111,18 +111,18 @@
     ]
   },
   "live": {
-    "equity": 869.09,
+    "equity": 871.58,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -130.91,
-    "day_pnl": -62.81,
+    "total_pnl": -128.42,
+    "day_pnl": -60.32,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 222.61,
-        "pl": -0.09,
-        "plpc": -0.01,
+        "current": 223.25,
+        "pl": 1.83,
+        "plpc": 0.27,
         "thesis": ""
       }
     ],
@@ -625,6 +625,18 @@
   },
   "pending_tickets": [
     {
+      "id": "2026-07-17-2",
+      "symbol": "BE",
+      "side": "buy",
+      "size": "$660",
+      "qty": 3,
+      "entry": "approve-now ~$218 (marketable limit $223)",
+      "trigger": null,
+      "stop": 188,
+      "bracket": "stop $188 GTC (below the $195 intraday low, -14.5%)",
+      "thesis": "Own the day's #1 catalyst leader (+5.6% on the $1.7B Oaktree/IDF fuel-cell-for-AI deal; Strong Buy, tgt $281, Q2 earn 7/28) instead of re-levering 3x into a broken QQQ. Bolder/higher-variance: fresh short-seller overhang. Multi-day swing, PDT-free."
+    },
+    {
       "id": "2026-07-17-3",
       "symbol": "NVDA",
       "side": "buy",
@@ -644,7 +656,7 @@
       "theme": "Energy-for-AI / fuel cells",
       "verdict": "buy",
       "verdict_label": "Buy — bold/armed",
-      "chg_pct": 7.92,
+      "chg_pct": 8.21,
       "thesis": "**The day's catalyst leader (+6.8%) on a $1.7B fuel-cell-for-AI-datacenter deal.** Energy-for-AI theme, Strong Buy (avg target $281), Q2 earnings 7/28. Live ticket -2 (approve-now ~$220, stop $188) — but it carries FRESH short-seller allegations, so it's the bolder / higher-variance shot vs the cleaner NVDA -3.",
       "hold_reason": "Not held — armed via live ticket -2. Up +6.8% today as the tape sides with the $1.7B deal over short-seller FUD. Honest risk: a follow-up short report could gap it through the $188 stop; the wide stop bounds normal moves, not a gap. Offered alongside the cleaner NVDA -3.",
       "size": "$8.8k paper (40 sh) + live 3-sh ticket armed",
@@ -664,7 +676,7 @@
           6.5
         ]
       },
-      "price": 222.51,
+      "price": 223.1,
       "spark": [
         261.71,
         282.31,
@@ -695,7 +707,7 @@
         253.24,
         275,
         302.69,
-        222.51
+        223.1
       ]
     },
     {
@@ -704,7 +716,7 @@
       "theme": "Space / launch + Iridium deal",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 4.65,
+      "chg_pct": 4.66,
       "thesis": "**Space/rockets — a strong oversold bouncer (+3.6%).** Snapped back from yesterday's -11.6% flush along with the other deepest-hit names. Not a live vehicle today (I'm using NVDA/BE); watch whether it can build a base above $67 rather than round-trip the bounce.",
       "hold_reason": "Rocket Lab fell 12% yesterday because one analyst went Neutral on its pending $8B Iridium deal, but the deal and its NASA launch wins are very much intact and targets sit $110-130. We bought the reclaim in paper (70 sh @ $69.54) as it made the day's highs - a beaten-down name bouncing on relative strength, not a knife-catch. We ride it toward the $74-80 gap it fell from; the $60 stop is our line.",
       "size": "$4.9k paper (70 sh)",
@@ -719,7 +731,7 @@
         "basis": "space momentum leader, +2.8% off the flush",
         "pop_rank": 4
       },
-      "price": 70.47,
+      "price": 70.48,
       "spark": [
         127.3,
         134.15,
@@ -750,7 +762,7 @@
         84.57,
         98.02,
         101.58,
-        70.47
+        70.48
       ]
     },
     {
@@ -759,7 +771,7 @@
       "theme": "Leveraged semis",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 1.02,
+      "chg_pct": 0.57,
       "thesis": "**3x semis — the washout epicenter.** Crashed to $116.58 (-18%) at the open then ripped +20% to $140. Can't add 3x live in a broken regime, but it's the max-torque bounce vehicle; paper has a resting pullback buy at $133 (stop $114) to add on weakness, not chase the midday high.",
       "hold_reason": "SOXL is the 3x semiconductor ETF - the most violent thing on the board, down to capitulation this morning then ripping 19% off the low. A concurrent read added 80 sh in paper (stop $125) and armed a live buy-stop at $143 that only fires if it reclaims green, so it's a confirmation bounce, not a knife-catch. We're honest it's counter-regime (QQQ still under its 20-day), so it stays starter-sized behind a wide stop; a weekend chip or Iran headline is the risk.",
       "size": "$11.1k paper (80 sh) + live pre-arm",
@@ -774,7 +786,7 @@
         "basis": "3x-semi snapback if the SOX reclaim holds",
         "pop_rank": 3
       },
-      "price": 144.13,
+      "price": 143.5,
       "spark": [
         151.93,
         173.38,
@@ -805,7 +817,7 @@
         215,
         236.75,
         266.71,
-        144.13
+        143.5
       ]
     },
     {
@@ -814,7 +826,7 @@
       "theme": "Quantum",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 3.01,
+      "chg_pct": 2.98,
       "thesis": "**Quantum, +1.1% and green - a speculative bounce off the $13.4 low.** Small, volatile, momentum-only with no fresh catalyst today. Watch, don't chase.",
       "hold_reason": "",
       "size": "-",
@@ -829,7 +841,7 @@
         "basis": "quantum small-cap bouncing with risk appetite",
         "pop_rank": 6
       },
-      "price": 14.54,
+      "price": 14.53,
       "spark": [
         15.95,
         16.87,
@@ -860,7 +872,7 @@
         18.29,
         19.43,
         19.32,
-        14.54
+        14.53
       ]
     },
     {
@@ -924,7 +936,7 @@
       "theme": "Quantum",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 1.96,
+      "chg_pct": 1.99,
       "thesis": "**Quantum, roughly flat (-0.2%) after bouncing off its $33.3 low.** Speculative, no catalyst today. Watch for a quantum-sector momentum day.",
       "hold_reason": "",
       "size": "-",
@@ -939,7 +951,7 @@
         "basis": "quantum bounce candidate, still slightly red",
         "pop_rank": 8
       },
-      "price": 35.81,
+      "price": 35.82,
       "spark": [
         48.46,
         52.49,
@@ -970,7 +982,7 @@
         49.16,
         53.88,
         53.3,
-        35.81
+        35.82
       ]
     },
     {
@@ -979,7 +991,7 @@
       "theme": "AI leader / selloff epicenter",
       "verdict": "buy",
       "verdict_label": "Buy — armed",
-      "chg_pct": -0.44,
+      "chg_pct": -0.48,
       "thesis": "**Buy the AI bellwether on a confirmed washout reversal.** The worst chip month since 2008 was a mechanical leverage unwind, not a fundamentals break — TSMC +34% growth, 'estimates intact, only the multiple broke.' NVDA is the relative-strength tell (-1.1% vs a wrecked complex, coiling under the $206.20 high).",
       "hold_reason": "Not held — armed via live ticket -3 (the cleaner of two bounce tickets). It only fires if NVDA breaks $206.60, confirming the reversal has afternoon legs, so it never knife-catches. We'd ride toward its $215-220 range or exit on the $190.50 stop.",
       "size": "$26.5k paper (130 sh)",
@@ -994,7 +1006,7 @@
         "basis": "RS bellwether coiling under the $206.60 breakout",
         "pop_rank": 2
       },
-      "price": 206.54,
+      "price": 206.47,
       "spark": [
         220.39,
         223.22,
@@ -1025,7 +1037,7 @@
         191.97,
         194.92,
         199.93,
-        206.54
+        206.47
       ]
     },
     {
@@ -1034,7 +1046,7 @@
       "theme": "Data-center cooling/power",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 0.73,
+      "chg_pct": 0.63,
       "thesis": "**Vertiv (data-center cooling/power), +0.2% but with a huge range (bounced from $273 to $295).** Data-center-infra theme; watch for a clean reclaim to signal the group turning.",
       "hold_reason": "",
       "size": "-",
@@ -1049,7 +1061,7 @@
         "basis": "AI-datacenter infra, flat, tracks the tape",
         "pop_rank": 7
       },
-      "price": 296.45,
+      "price": 296.14,
       "spark": [
         322.57,
         315.58,
@@ -1080,7 +1092,7 @@
         303.46,
         307.03,
         334.58,
-        296.45
+        296.14
       ]
     },
     {
@@ -1089,7 +1101,7 @@
       "theme": "Fintech",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 0.78,
+      "chg_pct": 0.84,
       "thesis": "**Fintech, -0.8% - drifting with the tape after bouncing off $16.5.** We exited it live on 7/15; no reason to re-own without a catalyst.",
       "hold_reason": "",
       "size": "-",
@@ -1104,7 +1116,7 @@
         "basis": "fintech flat, low beta today",
         "pop_rank": 12
       },
-      "price": 17.46,
+      "price": 17.48,
       "spark": [
         15.22,
         15.68,
@@ -1135,7 +1147,7 @@
         17.86,
         18.18,
         17.93,
-        17.46
+        17.48
       ]
     },
     {
@@ -1199,7 +1211,7 @@
       "theme": "Nuclear-for-AI",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 1.93,
+      "chg_pct": 2.07,
       "thesis": "**Nuclear-for-AI, flat (-0.1%) after bouncing off $39.6.** Same energy-for-AI theme as CEG/BE but no fresh catalyst today. Watch.",
       "hold_reason": "",
       "size": "-",
@@ -1214,7 +1226,7 @@
         "basis": "SMR nuclear, flat, high-beta reversal optionality",
         "pop_rank": 10
       },
-      "price": 42.5,
+      "price": 42.56,
       "spark": [
         55.95,
         62.59,
@@ -1245,7 +1257,7 @@
         50.03,
         52.79,
         52.34,
-        42.5
+        42.56
       ]
     },
     {
@@ -1309,7 +1321,7 @@
       "theme": "AI software / high-beta",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": -0.74,
+      "chg_pct": -0.53,
       "thesis": "**AI-software — the laggard of the bounce (-2.1%).** Retired its live reclaim-ticket today: it never came near the $134.8 trigger while the rest of the complex bounced. Relative weakness; watch for a real base before re-arming.",
       "hold_reason": "Palantir is a high-beta software name with no news today - it's just bleeding with the risk-off tape. We hold 50 sh in paper (stop $121.5), but it's a laggard, and if $129-130 breaks we'd rotate that capital into something with an actual catalyst. For now the stop does the work.",
       "size": "$6.6k paper (50 sh)",
@@ -1324,7 +1336,7 @@
         "basis": "AI-software laggard testing shelf; no reclaim yet",
         "pop_rank": 13
       },
-      "price": 133.47,
+      "price": 133.75,
       "spark": [
         135.27,
         137.15,
@@ -1355,7 +1367,7 @@
         112.82,
         115.66,
         116.64,
-        133.47
+        133.75
       ]
     },
     {
@@ -1419,7 +1431,7 @@
       "theme": "Leveraged mega-cap tech",
       "verdict": "avoid",
       "verdict_label": "Avoid",
-      "chg_pct": -3.14,
+      "chg_pct": -3.6,
       "thesis": "**3x FANG+ — stopped out at $25.29 near the low today.** NFLX -8% and Alphabet's Gemini delay are fresh FANG drags. Lowest-conviction 3x; stay out until FANG stabilizes and the regime turns.",
       "hold_reason": "",
       "size": "-",
@@ -1434,7 +1446,7 @@
         "basis": "3x-FANG; deep red, avoid",
         "pop_rank": 15
       },
-      "price": 27.42,
+      "price": 27.29,
       "spark": [
         27.6,
         28.73,
@@ -1465,7 +1477,7 @@
         23.87,
         25.21,
         25.69,
-        27.42
+        27.29
       ]
     },
     {
@@ -1474,7 +1486,7 @@
       "theme": "Inverse / bear",
       "verdict": "avoid",
       "verdict_label": "Avoid",
-      "chg_pct": -1.3,
+      "chg_pct": -0.96,
       "thesis": "**Inverse semis — the trade is DONE post-reversal.** Spiked +18% at the open when semis crashed, then collapsed to +2% as they V-bounced. Chasing a fading inverse into a washout-bounce is the wrong side; avoid.",
       "hold_reason": "",
       "size": "-",
@@ -1489,7 +1501,7 @@
         "basis": "3x-inverse-semi; fades if the semi reclaim holds",
         "pop_rank": 16
       },
-      "price": 51.43,
+      "price": 51.6,
       "spark": [
         98.27,
         84.28,
@@ -1520,7 +1532,7 @@
         42.4,
         37.15,
         32.4,
-        51.43
+        51.6
       ]
     }
   ],
@@ -2897,6 +2909,10 @@
       [
         1784308200000,
         869.22
+      ],
+      [
+        1784308260000,
+        870.84
       ]
     ],
     "1W": [
