@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-17T23:46:03.865Z",
+  "generated_at": "2026-07-17T23:47:11.055Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90512.91,
+    "equity": 90506.44,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89512.91,
-    "day_pnl": -3606.22,
+    "total_pnl": 89506.44,
+    "day_pnl": -3612.69,
     "positions": [
       {
         "symbol": "BE",
@@ -29,18 +29,18 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 202.48,
-        "pl": -544.6,
-        "plpc": -3.7,
+        "current": 202.45,
+        "pl": -546.59,
+        "plpc": -3.71,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 131.7,
-        "pl": -176,
-        "plpc": -2.6,
+        "current": 131.65,
+        "pl": -178.38,
+        "plpc": -2.64,
         "thesis": ""
       },
       {
@@ -56,9 +56,9 @@
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 42.99,
-        "pl": 94.5,
-        "plpc": 1.06,
+        "current": 42.98,
+        "pl": 92.4,
+        "plpc": 1.03,
         "thesis": ""
       }
     ],
@@ -1870,6 +1870,11 @@
   ],
   "feed": [
     {
+      "ts": "2026-07-17T19:40:00-04:00",
+      "type": "activity",
+      "text": "7:40pm weekend re-verify - independently re-pulled both books off the broker: all 7 positions still GTC-stopped (live BE $188; paper BE $188/CEG $236/NVDA $186/PLTR $121.5/RKLB $62/SQQQ $38), zero naked, queue clean, no open tickets. After-hours confirmed Friday's close (QQQ -3.2% under its $718 20-day; BE +4.0%; inverses the only green) - nothing dislocated, grade stays final C-."
+    },
+    {
       "ts": "2026-07-17T19:13:00-04:00",
       "type": "activity",
       "text": "7:13pm weekend re-verify - independently re-pulled both books off the broker: all 7 positions GTC-stopped (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no open tickets. Confirmed the weekend catalysts unchanged: BE's $1.7B Nebius fuel-cell deal is real but contested, and the chip derate is a Moonshot-AI/Iran risk-off (SPY only -1%), not a broad breakdown. Holding the QQQ-$718 fork into Monday; no blind weekend pre-arm."
@@ -2183,15 +2188,9 @@
       "type": "activity",
       "reaction": "hold",
       "text": "5:42am pre-market: new trading day, plan set. Broker re-verified - live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC) stopped, paper legs stopped, zero naked. QQQ $705.94 still under its 20-day ($719.70) & 50-day ($718.73) = leverage regime broken; SPY holds above its MAs (tech-specific, not broad). TSMC capex fear + Netflix -8% + Alphabet Gemini delay keep tech heavy. No pre-market action (extended hours is limit-only, no stop). Open plan: trim TQQQ into any bounce, lean on trimming FNGU, no new leverage until QQQ reclaims ~$720."
-    },
-    {
-      "ts": "2026-07-17T06:58:00-04:00",
-      "type": "activity",
-      "reaction": "hold",
-      "text": "Friday pre-market: futures -1.9%, chips and FANG both getting hit again (Netflix -8.6%, Google -4%). We're carrying two 3x-longs into it - both stopped, nothing naked, nothing filled overnight. De-risking into the open: trim the leverage on any bounce, no new leverage till QQQ reclaims its 20-day (~720)."
     }
   ],
-  "latest_recap": "Fri 7/17 ~7:13pm ET - market CLOSED till Mon 9:30, evening re-verify/heartbeat. Nothing dislocated since 6:41: both books re-pulled off the broker, all 7 positions GTC-stopped (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no open tickets. Weekend news confirmed, not acted on: BE's $1.7B IDF/Oaktree Nebius fuel-cell deal is real but contested (priced-for-perfection short case; Fri's $223.6 spike reversed to $214.5); the chip rout = China Moonshot-AI competitive fear + US-Iran risk-off, a tech-specific derate (QQQ -3.2% under its $718 20-day, day 3) while SPY is only -1%. Next real tell = Alphabet + hyperscaler earnings NEXT week. Monday = the QQQ-vs-$718 fork: stay LIGHT (hold BE catalyst + SQQQ paper hedge, live $201 dry, no 3x/chip re-adds) while under; on a $718 reclaim on volume, cover/trim SQQQ and rotate freed paper cash + the live $201 into the single strongest CONFIRMED long via a clean same-session ticket. No blind weekend pre-arm. Accountability stays final:true (C-, ~0% capture, 3rd red day).",
+  "latest_recap": "Fri 7/17 ~7:40pm ET - market CLOSED till Mon 9:30, evening heartbeat. Nothing dislocated since the 7:13 check: both books re-pulled off the broker, all 7 positions GTC-stopped (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no open tickets. After-hours re-confirmed the close (no re-grade): QQQ $695.33 sits ~3.2% under its $718 20-day (leverage regime broken, day 3) while SPY is only -1.0% = a tech-specific derate; BE +4.0% on its real-but-contested $1.7B IDF/Oaktree Nebius fuel-cell deal (Fri's $223.6 spike faded to $214.5); inverses SOXS +5.5% / SQQQ +4.6% the only green. Next real tell = Alphabet + hyperscaler earnings NEXT week. Monday = the QQQ-vs-$718 fork: stay LIGHT (hold BE catalyst + SQQQ paper hedge, live $201 dry, no 3x/chip re-adds) while under; on a $718 reclaim on volume, cover/trim SQQQ and rotate freed paper cash + the live $201 into the single strongest CONFIRMED long via a clean same-session ticket. No blind weekend pre-arm. Accountability stays final:true (C-, ~0% capture, 3rd red day).",
   "activity": [
     {
       "ts": "2026-07-17T18:13:00-04:00",
@@ -2286,6 +2285,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-17T19:40:00-04:00",
+      "text": "7:40pm ET heartbeat, market closed till Monday 9:30 - nothing moved since the 7:13 check. Re-pulled both books off the broker: LIVE = BE 3 sh behind its $188 GTC stop + $201.26 dry (~$848 provisional); PAPER = 6 names (BE/CEG/NVDA/PLTR/RKLB/SQQQ) all GTC-stopped - zero naked either book, queue clean, no open tickets. After-hours re-confirmed the close, no re-grade: QQQ $695 sits ~3.2% under its $718 20-day (leverage regime broken, day 3), BE closed +4.0% on its $1.7B Nebius fuel-cell deal, and the inverses (SOXS +5.5% / SQQQ +4.6%) were the only green. Grade stays final:true (C-, ~0% capture, 3rd red day). Monday = the QQQ-vs-$718 fork: light while under, redeploy only on a confirmed reclaim. No weekend pre-arm.",
+      "hype": "Still nothing to do - everything's stopped and the market's shut till Monday. After-hours just confirmed the read: chip drop is a China-AI + Iran scare, not earnings; holding BE + cash and letting Monday's open make the call."
+    },
+    {
       "ts": "2026-07-17T19:13:00-04:00",
       "text": "7:13pm ET re-verify, market closed till Monday 9:30 - nothing dislocated since the 6:41 check. Re-pulled both books off the broker: LIVE = BE 3 sh behind its $188 GTC stop + $201.26 dry (~$848 provisional); PAPER = 6 names (BE/CEG/NVDA/PLTR/RKLB/SQQQ) all GTC-stopped - zero naked either book, queue clean, no open tickets. Weekend read is hold-don't-chase: QQQ's $695 close is ~3.2% under its 20-day ($718), but the driver is a chip-specific Moonshot-AI/Iran risk-off (SPY only -1%), and the real tell is Alphabet + hyperscaler earnings NEXT week. BE's $1.7B Nebius deal is confirmed but contested (priced-for-perfection short case) - that's why Friday's spike to $223.6 gave back to $214.5. Monday is the QQQ-vs-$718 fork; no blind weekend pre-arm.",
       "hype": "Quiet Friday night - books locked, all stops on, nothing to do. The chip drop is a China-AI + Iran scare (S&P's fine); real test is Google's earnings next week, so I'm holding BE + cash into Monday, no weekend bets."
@@ -2354,11 +2358,6 @@
       "ts": "2026-07-17T12:52:00-04:00",
       "text": "Verify-and-hold pass at 12:52pm: re-pulled both books against the broker — live is still flat and 100% cash ($869.18) after this morning's two 3x stop-outs, paper is unchanged (7 names, every one GTC-stopped, zero naked). Refreshed the watchlist on live prices and made BE the top pick (pop_rank 1) — it's the day's biggest mover (+5.6%) on the confirmed $1.7B fuel-cell-for-AI deal and it's the approve-now ticket, so our #1 call is the one we're proposing to actually own. The cleaner NVDA $206.60 breakout pre-arm rests alongside it; both expire at the 4pm close. The priority is getting the flat live sleeve working via one tap — not manufacturing a fresh idea for its own sake.",
       "hype": "Nothing traded — live's still in cash, paper's steady and fully stopped. BE's the one I want (real $1.7B deal, +5.6%); it's one tap away and rests till the close."
-    },
-    {
-      "ts": "2026-07-17T12:48:00-04:00",
-      "text": "Verify-and-hold pass ~12:48pm: re-pulled both books vs the broker, nothing traded, zero naked. Live is flat and 100% cash ($869.18) after both 3x stops filled at the open (TQQQ $66.38 / FNGU $25.29). Paper holds the reversal shot (BE 40 / RKLB 70 / SOXL 80) + core (NVDA 130 / PLTR 50 / CEG 16 / UPRO 95), all 7 legs GTC-stopped. QQQ ~$700 is still ~3% under its 20-day ($719.70), so the read is unchanged: no re-lever and no chasing the extended midday V-bounce into the weekend. Re-engage live only on a confirmed QQQ 20-day reclaim (~$719); PDT budget full (0/3).",
-      "hype": "Still all cash on the real account - nothing changed, the Nasdaq hasn't reclaimed its trend line yet, so I'm not forcing anything into the weekend."
     }
   ],
   "benchmark": {
