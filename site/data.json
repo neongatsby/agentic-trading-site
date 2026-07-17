@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-17T20:32:37.678Z",
+  "generated_at": "2026-07-17T20:33:45.164Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90348.61,
+    "equity": 90353.15,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89348.61,
-    "day_pnl": -3770.52,
+    "total_pnl": 89353.15,
+    "day_pnl": -3765.98,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 214,
-        "pl": -196,
-        "plpc": -2.24,
+        "current": 213.97,
+        "pl": -197.2,
+        "plpc": -2.25,
         "thesis": ""
       },
       {
@@ -29,8 +29,8 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 202.54,
-        "pl": -540.56,
+        "current": 202.55,
+        "pl": -539.7,
         "plpc": -3.67,
         "thesis": ""
       },
@@ -38,18 +38,18 @@
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 131.9,
-        "pl": -166,
-        "plpc": -2.46,
+        "current": 131.8,
+        "pl": -171,
+        "plpc": -2.53,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 67.62,
-        "pl": -259.8,
-        "plpc": -2.87,
+        "current": 67.7,
+        "pl": -249.4,
+        "plpc": -2.76,
         "thesis": ""
       },
       {
@@ -57,7 +57,7 @@
         "qty": "210.0000",
         "entry": 42.54,
         "current": 42.81,
-        "pl": 57.23,
+        "pl": 56.7,
         "plpc": 0.64,
         "thesis": ""
       }
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 843.26,
+    "equity": 843.17,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -156.74,
-    "day_pnl": -88.64,
+    "total_pnl": -156.83,
+    "day_pnl": -88.73,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 214,
-        "pl": -25.92,
-        "plpc": -3.88,
+        "current": 213.97,
+        "pl": -26.01,
+        "plpc": -3.89,
         "thesis": ""
       }
     ],
@@ -837,7 +837,7 @@
       "theme": "3x inverse Nasdaq / regime hedge",
       "verdict": "short",
       "verdict_label": "Held - trend hedge / top-3 pick",
-      "chg_pct": 4.77,
+      "chg_pct": 4.72,
       "thesis": "**Our trend-aligned inverse and today's top pick (pop_rank 1).** Hold 210 @ $42.54 (paper, ~10%) with a wide $38 GTC stop. QQQ $695 is deeply under its 20- and 50-day and rolling on China's Kimi K3 'AI shock' into a risk-off weekend, so the lab leans short. We didn't add into the intraday fade (SQQQ already +4.7% off its low) - instead we cut the offside chip weight (NVDA trim) so the standing SQQQ carries a bigger share of a lighter book. The $38 stop exits if QQQ reclaims and the flush is over.",
       "hold_reason": "We hold SQQQ because the leverage-long regime is broken (QQQ under its 20- and 50-day) and on down days the only green on our watchlist is the inverse. It's deliberately a starter with a wide stop: if Monday gaps up on a 'buy-the-reset' bounce, the $38 stop caps it; if the flush continues, we own some of the green. We chose to trim longs rather than pile more into the inverse after its intraday run.",
       "size": "$9.0k paper (210 sh)",
@@ -852,7 +852,7 @@
         "basis": "regime-aligned inverse, QQQ under its 20-day; oversold-bounce risk caps it",
         "pop_rank": 2
       },
-      "price": 42.84,
+      "price": 42.82,
       "spark": [
         43.68,
         41.57,
@@ -883,7 +883,7 @@
         41.31,
         38.18,
         36.3,
-        42.84
+        42.82
       ]
     },
     {
@@ -892,7 +892,7 @@
       "theme": "3x inverse semis / sharpest hedge",
       "verdict": "watch",
       "verdict_label": "Watch - day's best mover (+4.8%)",
-      "chg_pct": 5.79,
+      "chg_pct": 5.69,
       "thesis": "**The day's single best watchlist mover (+4.8%, peaked +5.9%) - the sharpest expression of the chip rout, and we did NOT own it.** SOXS is the 3x-inverse of the semis leading the whole tape lower (SOXX gauge -20% from its record on AI-capex fears). We hold the milder SQQQ (3x-inverse Nasdaq) instead, so we captured the direction but not the sharpest amplitude - that gap is the honest miss on a down day. Extended after a multi-day run, so chasing it into the Friday close would have been the low-quality entry we avoided; it's a Monday-breakdown re-entry candidate, not a chase.",
       "hold_reason": "We don't own SOXS - we track it as the sharpest inverse and today's best mover. If Monday confirms more downside (QQQ can't reclaim ~$718, semis break again), SOXS is the highest-amplitude way to own the green; if the tape bounces off oversold it fades fast, so it's an on-confirmation trade only, not a hold-through-a-bounce.",
       "size": "-",
@@ -907,7 +907,7 @@
         "basis": "sharper semi inverse if the SOX bear-market breakdown extends",
         "pop_rank": 3
       },
-      "price": 55.12,
+      "price": 55.07,
       "spark": [
         98.27,
         84.28,
@@ -938,7 +938,7 @@
         42.4,
         37.15,
         32.4,
-        55.12
+        55.07
       ]
     },
     {
