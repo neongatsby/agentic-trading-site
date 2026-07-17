@@ -1,64 +1,64 @@
 {
-  "generated_at": "2026-07-17T20:00:59.578Z",
+  "generated_at": "2026-07-17T20:02:08.196Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90422.09,
+    "equity": 90448.23,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89422.09,
-    "day_pnl": -3697.04,
+    "total_pnl": 89448.23,
+    "day_pnl": -3670.9,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 214.5,
-        "pl": -176,
-        "plpc": -2.01,
+        "current": 215.47,
+        "pl": -137.2,
+        "plpc": -1.57,
         "thesis": ""
       },
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 252.39,
-        "pl": -132.64,
-        "plpc": -3.18,
+        "current": 252.49,
+        "pl": -131.04,
+        "plpc": -3.14,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 202.73,
-        "pl": -527.16,
-        "plpc": -3.58,
+        "current": 202.62,
+        "pl": -534.8,
+        "plpc": -3.63,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 132.47,
-        "pl": -137.5,
-        "plpc": -2.03,
+        "current": 132.35,
+        "pl": -143.5,
+        "plpc": -2.12,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 67.6,
-        "pl": -262.4,
-        "plpc": -2.9,
+        "current": 67.64,
+        "pl": -257.77,
+        "plpc": -2.85,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 42.89,
-        "pl": 73.5,
-        "plpc": 0.82,
+        "current": 42.85,
+        "pl": 66.15,
+        "plpc": 0.74,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 844.76,
+    "equity": 847.67,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -155.24,
-    "day_pnl": -87.14,
+    "total_pnl": -152.33,
+    "day_pnl": -84.23,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 214.5,
-        "pl": -24.42,
-        "plpc": -3.66,
+        "current": 215.47,
+        "pl": -21.51,
+        "plpc": -3.22,
         "thesis": ""
       }
     ],
@@ -813,7 +813,7 @@
       "theme": "3x inverse Nasdaq / regime hedge",
       "verdict": "short",
       "verdict_label": "Held - trend hedge / top-3 pick",
-      "chg_pct": 4.6,
+      "chg_pct": 4.77,
       "thesis": "**Our trend-aligned inverse and today's top pick (pop_rank 1).** Hold 210 @ $42.54 (paper, ~10%) with a wide $38 GTC stop. QQQ $695 is deeply under its 20- and 50-day and rolling on China's Kimi K3 'AI shock' into a risk-off weekend, so the lab leans short. We didn't add into the intraday fade (SQQQ already +4.7% off its low) - instead we cut the offside chip weight (NVDA trim) so the standing SQQQ carries a bigger share of a lighter book. The $38 stop exits if QQQ reclaims and the flush is over.",
       "hold_reason": "We hold SQQQ because the leverage-long regime is broken (QQQ under its 20- and 50-day) and on down days the only green on our watchlist is the inverse. It's deliberately a starter with a wide stop: if Monday gaps up on a 'buy-the-reset' bounce, the $38 stop caps it; if the flush continues, we own some of the green. We chose to trim longs rather than pile more into the inverse after its intraday run.",
       "size": "$9.0k paper (210 sh)",
@@ -828,7 +828,7 @@
         "basis": "regime-aligned inverse, QQQ under its 20-day; bounce risk caps it",
         "pop_rank": 3
       },
-      "price": 42.77,
+      "price": 42.84,
       "spark": [
         43.68,
         41.57,
@@ -859,7 +859,7 @@
         41.31,
         38.18,
         36.3,
-        42.77
+        42.84
       ]
     },
     {
@@ -1473,7 +1473,7 @@
       "theme": "Leveraged semis",
       "verdict": "watch",
       "verdict_label": "Exited today",
-      "chg_pct": -5.31,
+      "chg_pct": -5.14,
       "thesis": "**Cut today - rotated out of the fragile 3x-semi long.** We sold the paper 80 sh @ ~$136.1 and moved the proceeds into the SQQQ inverse. SOXL is 3x daily semiconductors: in a confirmed-broken regime (QQQ under its 20/50-day) and the chips' worst month since 2008, holding a 3x-long-semi is exactly the decay/whipsaw risk the week's #1 lesson says to shed. It ripped $116->$144 intraday off the open capitulation, then faded - classic momentum-unwind chop. Back on the watchlist as a re-entry candidate only when semis base and QQQ reclaims its 20-day.",
       "hold_reason": "We no longer hold SOXL - cut it this afternoon. It's the most fragile leverage on the book in a broken regime, and it was fading toward its $133 stop into a risk-off weekend, so we took the ~-1.9% exit at $136 rather than wait for the stop and freed the capital for the trend-aligned SQQQ inverse. We'd look at SOXL again only on a real semi base + a QQQ 20-day reclaim.",
       "size": "-",
@@ -1488,7 +1488,7 @@
         "basis": "3x semi, most fragile leg of the rout",
         "pop_rank": 16
       },
-      "price": 135.11,
+      "price": 135.34,
       "spark": [
         151.93,
         173.38,
@@ -1519,7 +1519,7 @@
         215,
         236.75,
         266.71,
-        135.11
+        135.34
       ]
     },
     {
