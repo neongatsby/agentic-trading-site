@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-17T00:12:49.875Z",
+  "generated_at": "2026-07-17T00:13:57.581Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 93335.2,
+    "equity": 93289.04,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 92335.2,
-    "day_pnl": -6119.5,
+    "total_pnl": 92289.04,
+    "day_pnl": -6165.66,
     "positions": [
       {
         "symbol": "CEG",
@@ -47,18 +47,18 @@
         "symbol": "TQQQ",
         "qty": "282.0000",
         "entry": 77.09,
-        "current": 69.58,
-        "pl": -2117.22,
-        "plpc": -9.74,
+        "current": 69.45,
+        "pl": -2153.88,
+        "plpc": -9.91,
         "thesis": ""
       },
       {
         "symbol": "UPRO",
         "qty": "95.0000",
         "entry": 145.38,
-        "current": 142.4,
-        "pl": -283.1,
-        "plpc": -2.05,
+        "current": 142.3,
+        "pl": -292.6,
+        "plpc": -2.12,
         "thesis": ""
       }
     ],
@@ -98,10 +98,10 @@
     ]
   },
   "live": {
-    "equity": 914.18,
+    "equity": 912.88,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -85.82,
-    "day_pnl": -62.58,
+    "total_pnl": -87.12,
+    "day_pnl": -63.88,
     "positions": [
       {
         "symbol": "FNGU",
@@ -116,9 +116,9 @@
         "symbol": "TQQQ",
         "qty": "10.0000",
         "entry": 76.29,
-        "current": 69.58,
-        "pl": -67.1,
-        "plpc": -8.79,
+        "current": 69.45,
+        "pl": -68.4,
+        "plpc": -8.97,
         "thesis": ""
       }
     ],
@@ -1773,6 +1773,12 @@
   ],
   "feed": [
     {
+      "ts": "2026-07-16T20:10:00-04:00",
+      "type": "activity",
+      "reaction": "hold",
+      "text": "8:10pm after-hours: re-verified the broker directly — live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC) both stopped, paper 5/5 equity legs stopped, zero naked; FNGU open fill reconciled. Day stays FINAL (LIVE ~-5% close, 4th red, C-). Netflix -8% AH + Alphabet Gemini delay keep FANG soft — FNGU likely gaps down not bounces; open plan unchanged: trim TQQQ into any bounce, no new leverage until QQQ reclaims its 20-day."
+    },
+    {
       "ts": "2026-07-16T19:42:00-04:00",
       "type": "activity",
       "reaction": "hold",
@@ -2023,24 +2029,6 @@
       "detail": "6 @ $30.20 buy-stop (pre-arm)",
       "reaction": "rotate",
       "text": "Adam approved the FNGU redeploy at 5:11pm - the fast-lane now holds it and places the $30.20 pre-arm buy-stop at tomorrow's open. Fires only if FNGU breaks today's $29.87 high after TSMC; a weak open never trips it and the ~$199 cash is preserved. Completes the SOFI de-camp -> confirmed-leader swing."
-    },
-    {
-      "type": "note",
-      "ts": "2026-07-15T17:42:00-04:00",
-      "reaction": "hold",
-      "text": "5:42pm re-verify: nothing moved after-hours, both books fully protected into TSMC's 2am print. Preview confirmed - ~$39.3B Q2 revenue (+30% YoY), 65.5-67.5% gross margin, 8 straight beats; a beat+raise extends the mega-cap-tech leadership FNGU rides."
-    },
-    {
-      "type": "note",
-      "ts": "2026-07-15T16:40:00-04:00",
-      "reaction": "hold",
-      "text": "After-hours check (4:40pm): re-verified both books are protected into TSMC's 2am print - 2/2 live stops (NVDL $31.30, TQQQ $68.50) + 8/8 paper GTC stops live, no naked position. FNGU redeploy stays pre-armed for the open ($30.20 buy-stop, $25.30 stop, ~$184 reserve < $199 BP). Sitting tight - extended hours is limit-only and TSMC is binary, so no off-hours chase."
-    },
-    {
-      "type": "note",
-      "ts": "2026-07-15T16:12:00-04:00",
-      "reaction": "hold",
-      "text": "4:10pm close - final grade C-. Red -1.1% while FNGU (best long mover, +3.1%) ran and we held zero live = ~0% long capture. Credits banked: dodged the -6% SOXL / -5% quantum wreck, held all stops, and finally broke the cash-lock (SOFI out @ $17.94, ~$199 freed). FNGU redeploy staged for the open, gated on tonight's TSMC print."
     }
   ],
   "latest_recap": "Thu 7/16 ~7:12pm ET - market CLOSED (after-hours), evening verify-and-hold ~30 min after the 6:41 maintenance run. Fresh pull: get_clock + LIVE account/positions/orders + 20-name universe snapshot + get_news (NFLX/QQQ/NVDA/TSM). RECONCILED CLEAN: LIVE == broker (TQQQ 10 @ avg $76.29 / FNGU 6 @ avg $29.43; cash $53.68; equity $918.42 after-hours PROVISIONAL vs booked close $926.46 / settled 7/15 $976.76) with 2/2 GTC stops live at the broker (TQQQ $68.50 43aac143 / FNGU $25.30 347b799a); ZERO naked. No new queue fills since trade-placed 7/16-1 (FNGU 6 @ $29.43, reconciled into the book). Day stays booked FINAL (final:true, grade C-, ~0% long capture, 4th straight red). CATALYST: Netflix Q2 printed after the bell - EPS $0.80 beat ($0.79) but revenue $12.56B MISS ($12.587B est) + soft Q3 guide (rev $12.86B vs $13.0B, EPS $0.82 vs $0.84, FY narrowed $51.0-51.4B) => stock ~-8% AH, a fresh FANG/FNGU drag into 7/17. REGIME: QQQ closed $705.93, still under its 20-day (~$721) and 50-day (~$715) = leverage regime confirmed broken; SPY $750.87 (-0.5%, tech-specific); Nasdaq-100 futures soft. Day's watchlist closes for capture: best mover = SOXS +13.4% (inverse, uncatchable clean live) / SQQQ +4.9%; best LONG = PLTR +0.5% (flat); the wreck we owned NONE of = SOXL -13.8%, BE -13.9%, RKLB -11.6%, OKLO -8.8%, SMR -8.5%, RGTI -7.7%, IONQ -6.4%. No trade tonight - extended hours is limit-only with no stop, and the de-risk is a sell-into-strength call for the open. No live ticket surfaced (the trim/de-risk is a SELL that confirms at the open, not an overnight approve-ping). PLAN into the 7/17 open (unchanged, pre-committed): if QQQ still under both its 20- & 50-day, trim/exit TQQQ into any bounce (multi-day swing, PDT-free) + lean on trimming FNGU given the Netflix drag; no new leverage until QQQ reclaims its 20-day; let the $68.50 stop work on a gap-down rather than dump the low. PDT budget fully intact (0 same-day round-trips). applying = Hypothesis #2 (only leverage in uptrends) - de-lever the broken-regime beta at the open. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-16-1912.json.",
@@ -2113,6 +2101,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-16T20:10:00-04:00",
+      "text": "8:10pm after-hours maintenance: quiet pass, plan unchanged. Re-verified the broker directly — live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC) both stopped, paper 5/5 equity legs stopped, zero naked; FNGU open fill reconciled (6 @ $29.43, order 2f075b8f). Day stays booked FINAL: LIVE ~-5% close ($926.46 vs 7/15 $976.76), 4th straight red, ~0% capture, C- — after-hours is marking a touch softer (~$915) but that's provisional; grade off the settled close. Overnight tone stays mildly risk-off for FANG: Netflix -8% AH + Alphabet's Gemini 3.5 delay = double drag on FNGU (3x FANG), Nasdaq-100 futures ~flat — so FNGU likely GAPS DOWN, not bounces, tomorrow. Plan for the open holds: if QQQ is still under its 20- & 50-day, DE-RISK — trim TQQQ into any bounce (multi-day swing, PDT-free), let FNGU's wide $25.30 stop work, add NO new leverage until QQQ reclaims its 20-day. No ticket tonight (nothing fires after-hours; won't surface a live approve-ticket overnight).",
+      "hype": "Quiet night check, nothing changed — everything's stopped, nothing exposed. Netflix and Google news keep tech heavy overnight, so tomorrow I trim the 3x into any bounce instead of adding."
+    },
+    {
       "ts": "2026-07-16T19:42:00-04:00",
       "text": "7:42pm (after-hours maintenance): quiet pass, nothing changed the plan. Re-verified the broker directly — live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC) both stopped, paper 5/5 equity legs stopped, zero naked. One fresh catalyst since the last check: Alphabet reportedly delaying its Gemini 3.5 Pro flagship model, closed ~-4% — a SECOND FANG-specific drag alongside Netflix (-8% AH), both weigh on FNGU into 7/17. But overnight index futures have stabilized to roughly FLAT (not deteriorating), so the tape is leaning sideways, not gapping down. Day stays booked FINAL (LIVE -5.2% $926.46, 4th straight red, C-). Plan for the open unchanged and disciplined: trim TQQQ into any bounce (PDT-free swing), lean on trimming FNGU first, NO new leverage until QQQ reclaims its 20-day. No after-hours action taken — correct, since adding leverage into a broken regime is the exact mistake today's grade called out.",
       "hype": "Quiet night — nothing naked, nothing to trade after-hours. New drag: Alphabet's delaying Gemini and Netflix fell 8%, both hit our FANG lever, so FNGU's first to trim at the open — still no new leverage."
@@ -2181,11 +2174,6 @@
       "ts": "2026-07-16T13:12:00-04:00",
       "text": "1:12pm: 25 min on and the read holds - a contained 2nd-day chip flush (Dow green on UNH +7.8%, S&P -0.3%, Nasdaq -1.0%) on TSMC's capex-raise sell-the-news. QQQ printed a double-bottom at ~707 (the open low + a 12:15 retest) and ticked back to $709, so the live book firmed slightly ($940 -> $943, now -3.45% vs the 7/15 $976.76 close). Still own ZERO of the -9% to -14% AI/semi/nuclear/space wreck (SOXL -14%, BE -12.4%, RKLB -11.9%, OKLO -9.1%); TQQQ 10 + FNGU 6 both GTC-stopped ($68.50/$25.30), zero naked, PDT 0/3. No trade: NVDA $207.5 is still under the $209 reclaim trigger, and the only green is the extended inverse (SOXS +13%) - not chasing it this late, not selling 3x at a twice-held floor. Triggers armed: add on NVDA >$209 into a firming tape; de-risk TQQQ only if QQQ loses $705.",
       "hype": "Chips still soft but the $707 floor held twice and my longs firmed a touch - own none of the -12% wreck and stops are on. Not chasing the +13% inverse this late; waiting for NVDA to clear $209 before I press."
-    },
-    {
-      "ts": "2026-07-16T12:47:00-04:00",
-      "text": "12:47pm: re-pulled the tape and it's unchanged from 12:18 - a contained 2nd-day chip flush (Dow +0.1% / S&P -0.4% / Nasdaq -0.8%), SOXL still near lows -13.7%, SOXS +13.2% and extended. Live book -3.74% ($940 vs 7/15 $976.76), holding TQQQ 10 + FNGU 6, both GTC-stopped, zero naked, PDT 0/3. No trade: NVDA reclaimed $207 but it's a mid-range teeter, not a confirmed strong reclaim, and funding an NVDL entry would mean selling the TQQQ range-support low - the exact vacuum mistake. Triggers armed: fire NVDL on NVDA >$209 into a firming tape; de-risk TQQQ only if QQQ loses $705.",
-      "hype": "Same red chip tape as an hour ago - held everything, stops on, own none of the -13% wreck. Not selling the low or chasing the +13% inverse; waiting for NVDA to actually push through $209 before I add."
     }
   ],
   "benchmark": {
@@ -2205,7 +2193,7 @@
     },
     {
       "session": "Evening",
-      "text": "Futures flat; trim 3x on bounce"
+      "text": "FANG soft AH; trim 3x on bounce"
     }
   ],
   "equity_history": {
