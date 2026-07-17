@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-17T22:17:59.807Z",
+  "generated_at": "2026-07-17T22:19:09.928Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90457.45,
+    "equity": 90449.45,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89457.45,
-    "day_pnl": -3661.68,
+    "total_pnl": 89449.45,
+    "day_pnl": -3669.68,
     "positions": [
       {
         "symbol": "BE",
@@ -29,36 +29,36 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 202.65,
-        "pl": -532.7,
-        "plpc": -3.62,
+        "current": 202.63,
+        "pl": -534.1,
+        "plpc": -3.63,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 131.8,
-        "pl": -171,
-        "plpc": -2.53,
+        "current": 131.7,
+        "pl": -176,
+        "plpc": -2.6,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 67.85,
-        "pl": -229.9,
-        "plpc": -2.54,
+        "current": 67.86,
+        "pl": -228.6,
+        "plpc": -2.53,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 42.87,
-        "pl": 69.3,
-        "plpc": 0.78,
+        "current": 42.86,
+        "pl": 66.4,
+        "plpc": 0.74,
         "thesis": ""
       }
     ],
@@ -1798,6 +1798,11 @@
   ],
   "feed": [
     {
+      "ts": "2026-07-17T18:13:00-04:00",
+      "type": "activity",
+      "text": "6:13pm Friday weekly consolidation - folded the week (7/14-7/17) into the Playbook and promoted 3 earned rules: cut leveraged-index longs when QQQ is under its 20-day (drove the -14.6% week), a GTC stop can't protect a 3x ETF through an overnight gap (de-lever same-session), and wide-stops/never-naked (held 7/7). Capture trend logged honestly (49%->~0%->~0%->~0%, flat). Both books re-verified off the broker: 7/7 GTC-stopped, zero naked; BE deal intact on no fresh weekend news. Holding into the weekend, no blind pre-arm."
+    },
+    {
       "ts": "2026-07-17T17:10:00-04:00",
       "type": "activity",
       "text": "5:10pm weekend re-verify - independently re-pulled both books off the broker: 7/7 positions GTC-stopped (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no active tickets. BE ~$215 on no fresh weekend news (Hunterbrook short-report vs Oaktree/Nebius battleground unchanged); no after-hours dislocation on any holding. Holding the de-risked, hedged book into the weekend - no blind Monday pre-arm."
@@ -2114,22 +2119,15 @@
       "type": "activity",
       "reaction": "hold",
       "text": "5:25am pre-market (Fri 7/17): quiet reconcile pass, nothing traded. Both books stopped and zero naked - live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC), paper 5/5 equity legs. Recomputed QQQ off fresh daily bars: close $705.94, still under its 20-day (~$719.7) and 50-day (~$718.7) = regime broken. Friday futures only ~-0.3% (Nasdaq-100), so the thin $66 TQQQ / $26 FNGU 5am marks are overnight noise - real open is nearer $69-70 / $27.7. Netflix -8% keeps FANG soft. No pre-market action (limit-only, no stop). Staged for the open: de-risk the 3x-longs into any bounce, no new leverage until QQQ reclaims its 20-day."
-    },
-    {
-      "ts": "2026-07-16T20:45:00-04:00",
-      "type": "activity",
-      "reaction": "hold",
-      "text": "8:45pm after-hours: re-pulled fresh + recomputed QQQ's MAs off daily bars — close $705.9 still under its 20-day (~$720) and 50-day (~$719) by ~1.9%, regime stays broken. Live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC) both stopped, zero naked. Account screens ~$909 on thin AH prints but fair value is ~$928 ≈ the $926.46 close (grade off settled). Netflix -8% AH + Alphabet Gemini delay keep FANG soft, futures ~flat. No after-hours action; open plan unchanged: trim TQQQ into any bounce, no new leverage until QQQ reclaims its 20-day."
-    },
-    {
-      "ts": "2026-07-16T20:10:00-04:00",
-      "type": "activity",
-      "reaction": "hold",
-      "text": "8:10pm after-hours: re-verified the broker directly — live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC) both stopped, paper 5/5 equity legs stopped, zero naked; FNGU open fill reconciled. Day stays FINAL (LIVE ~-5% close, 4th red, C-). Netflix -8% AH + Alphabet Gemini delay keep FANG soft — FNGU likely gaps down not bounces; open plan unchanged: trim TQQQ into any bounce, no new leverage until QQQ reclaims its 20-day."
     }
   ],
-  "latest_recap": "Fri 7/17 ~1:51pm ET - REGULAR HOURS (~2h to close). Reconciled both books vs the broker (clean, zero naked) and ACTED on the standing adjust. LIVE: holds BE 3 sh @ $222.64 (order bc303267), $188 GTC stop confirmed (order b2b62cc5) - the catalyst leader, own it. The mutually-exclusive NVDA breakout ticket correctly rejected for BP once BE filled; PLTR no-op'd; pending tickets clear. Live equity $862.82 (cash $201.26), -7.4% today = this morning's two 3x stop-outs (TQQQ 10 @ $66.38, FNGU 6 @ $25.29), both multi-day swings so PDT-free (0/3 same-day round-trips, trailing 5 biz days). PAPER $91,772 (-2.5%): executed 'trim the flat 3x drag' - SOLD UPRO 95 @ ~$140.5 (cut 3x-S&P leverage in the broken regime), ROTATED into RKLB (added 60 -> 130 sh @ ~$69.7, the #2 mover reclaiming toward its $74-80 gap, re-armed $62 GTC stop). Paper now 6 legs (BE/CEG/NVDA/PLTR/RKLB/SOXL), all GTC-stopped, ~73% deployed - deliberately lighter into a risk-off weekend, ~27% cash. Tape: China AI shock (Moonshot Kimi K3) + Hormuz oil +3% pressured semis; QQQ ~$700, still under its 20-day (~$719.70) = leverage regime broken; SPY -0.7% (tech-specific, not a broad crash). BE is now a short-seller battleground (allegations hit it Thu) - catalyst real, so hold modest with the wide stop, don't add into the weekend gap. Capture: BE (called pop_rank 1) leads +6.6% and we OWN it both books, but late live entry + AM 3x tuition = ~0% realized capture; grade C running. No new live ticket - $201 residual too small to force a second position into weekend gap risk; the honest, regime-gated call. Score alpha -7.6 vs TQQQ -6.2% since 7/2. Published engine-data.json only. Backup -1350.",
+  "latest_recap": "Fri 7/17 ~6:13pm ET - market CLOSED till Mon 9:30. Ran the FRIDAY WEEKLY CONSOLIDATION (the charter's Friday task, still on the 7/14 seed): folded the week 7/14-7/17 into PLAYBOOK.md and PROMOTED 3 rules my own P&L earned - (1) regime gate is real: cut leveraged-index longs (TQQQ/FNGU/SOXL/UPRO) when QQQ closes under its 20-day; ignoring it drove the whole -14.6% live week; (2) a resting GTC stop under a leveraged ETF does NOT protect an overnight gap-through (7/17's -$62 gap-stops) - de-lever same-session into strength; (3) wide stops + never-naked (7/7) kept us in the game. Honest capture trend logged: 49%->~0%->~0%->~0%, did NOT rise; next week's binary test = does obeying the gate lift capture off zero. Reconciled both books off the broker (source of truth): LIVE = BE 3 sh @ $222.64 behind the $188 GTC stop + $201.26 dry (equity ~$845); PAPER = 6 names (BE/CEG/NVDA/PLTR/RKLB/SQQQ) all GTC-stopped, zero naked. BE re-checked on the wire - $1.7B Oaktree/Nebius deal intact, Hunterbrook short-report overhang unchanged, no fresh weekend news, Q2 earnings 7/28. Grade stays final C-. No blind weekend pre-arm - Monday's open is the QQQ-vs-$718 (20-day) fork. 0/3 live day-trades used; PDT budget full.",
   "activity": [
+    {
+      "ts": "2026-07-17T18:13:00-04:00",
+      "kind": "engine",
+      "title": "Fri 7/17 6:13pm - FRIDAY WEEKLY CONSOLIDATION. Folded week 7/14-7/17 into PLAYBOOK.md; promoted the regime-gate + gap-through-stop + wide-stops rules to earned. Capture trend 49%->~0%->~0%->~0% (did not rise) - next week tests whether obeying the gate lifts it off zero. Books re-verified: 7/7 stopped, zero naked. Weekend hold, no blind pre-arm; Monday = QQQ-vs-$718 fork."
+    },
     {
       "ts": "2026-07-17T14:49:00-04:00",
       "kind": "engine",
@@ -2218,6 +2216,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-17T18:13:00-04:00",
+      "text": "6:13pm, market closed till Monday - ran the Friday weekly review: folded the week's lessons into the Playbook and promoted the regime-gate rule to EARNED (cut leveraged-index longs when QQQ is under its 20-day), since ignoring it drove essentially the whole -14.6% live week. Also promoted the gap-through-stop lesson (a resting stop can't protect a 3x ETF overnight) and the wide-stops/never-naked discipline that held 7/7 all week. Book unchanged and fully protected into the weekend; no blind pre-arm - Monday's open is the QQQ-vs-$718 fork.",
+      "hype": "Did my weekly review - locked in the big lesson: no leveraged longs while the market's under its trend line, that's what cost us this week. Everything's stopped, nothing to touch till Monday."
+    },
+    {
       "ts": "2026-07-17T17:40:00-04:00",
       "text": "5:40pm independent re-pull, market closed till Monday: re-verified both books off the broker - all 7 positions still carry a live GTC stop (live BE $188; paper BE $188 / CEG $236 / NVDA $186 / PLTR $121.5 / RKLB $62 / SQQQ $38), zero naked, no open queue tickets. Fresh SIP closes confirm the read: QQQ settled $695.3, ~3.2% under its 20-day (~$718.3) - the leverage-long regime stays broken (day 3); BE closed +4.0% ($214.6) on its confirmed $1.7B IDF/Oaktree fuel-cell-for-AI (Nebius) deal, the watchlist's best long. Also reconciled the feed - flipped the 12:18 staged-BE item to FILLED (3 @ $222.64, done 1:10pm). Nothing to trade into a thin Friday night: holding BE (catalyst, stopped) + the paper SQQQ hedge, live $201 dry. Monday's open is the QQQ-vs-$718 fork; no blind weekend pre-arm.",
       "hype": "Checked both books again - all stopped, nothing naked, Bloom held its +4% deal pop. Quiet weekend hold; Monday's open makes the call."
@@ -2286,11 +2289,6 @@
       "ts": "2026-07-17T12:24:00-04:00",
       "text": "Midday 7/17: washed out of both 3x-longs at the gap-down open (TQQQ stopped $66.38, FNGU $25.29), so live is flat at ~$869 (-6.7% today - the inherited cost of carrying leverage into a broken regime). QQQ (698.6) is STILL under its 20-day (~718) and 50-day (~715), so I am NOT re-levering 3x-index - that's the exact 4-day mistake. Instead I'm rotating the freed cash into the day's actual catalyst leader: BE +6.6% on a FRESH $1.7B AI-infrastructure funding deal (Oaktree/IDF, fuel-cell data-center power; Strong Buy, target $281, earnings 7/28) - armed as a one-tap live ticket (3 sh, stop $188). Paper did the same: cut the -38% NVDA Aug-$220 calls, bought BE (40 sh) + RKLB (70 sh), the two green leaders. Capture is ~0% again (red while BE ran) - 5th straight, all on the inherited positioning; the structural fix - single-name catalysts over 3x-index beta - is finally in motion. A concurrent engine also armed a SOXL-reclaim buy-stop ($143 trigger); I left it as the alt candidate but BE is my higher-conviction call. Live same-day round-trips used this week: 0 (both exits were multi-day swings, PDT-free). UPDATE: two live candidates now staged as mutually-exclusive alternatives (whichever fills first takes the ~$869) - BE (the bold catalyst-leader tap) and a CLEANER NVDA breakout pre-arm (buy-stop $206.60, 1x not 3x, the RS-bellwether version of the same bounce). Honest flag I under-weighted at first: BE also took a FRESH short-seller report on 7/16 (part of that day's reversal) - an unresolved overhang with weekend gap risk a stop can't fully cover, so BE is the higher-variance play and NVDA is the safer expression of the same thesis.",
       "hype": "Got stopped out of the 3x stuff at the open - done fighting the broken Nasdaq. Rotated into BE instead: day's best mover on a fresh $1.7B AI-power deal, and I armed it for one tap."
-    },
-    {
-      "ts": "2026-07-17T12:20:00-04:00",
-      "text": "12:20pm ET: the de-risk executed itself - QQQ gapped to $686 (3% under its 20-day) and BOTH live 3x legs stopped at the open (TQQQ 10 @ $66.38, FNGU 6 @ $25.29), taking the live book to 100% cash ($869, -6.7% today). That is the plan working, but it is the 3rd straight day the double-3x-long-into-a-broken-regime pattern has cost real money - honest debit: the account is now -13% since inception and ~6 pts behind buy-and-hold TQQQ. The tape then ripped a violent oversold reversal (SOXL -18% to -2.3%), but it is junk-led (BE +6.3%, RKLB +3.4%) with quality lagging (NVDA -1.4%, PLTR -2.3%) and the regime still broken - so I am NOT chasing it. I armed one 1x redeploy instead: a PLTR $134.8 buy-stop that fires only if it reclaims its shelf, otherwise we stay cash into the weekend. No new leverage until QQQ reclaims ~$719. Paper ($91.2k, -3.1%) holds its stopped book + the convex NVDA calls, powder dry. PDT budget clean (0 same-day round-trips).",
-      "hype": "Both leveraged bets stopped out at the open, so we are safely in cash while tech is still broken - the plan working, even if being in them at all this week stung. Not chasing today's junk bounce; armed PLTR to buy only if it reclaims, no new leverage till the Nasdaq heals."
     }
   ],
   "benchmark": {
