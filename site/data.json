@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-07-20T12:38:49.695Z",
+  "generated_at": "2026-07-20T12:39:57.076Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90609.22,
+    "equity": 90609.48,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89609.22,
-    "day_pnl": 184.12,
+    "total_pnl": 89609.48,
+    "day_pnl": 184.38,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 213.99,
-        "pl": -196.4,
+        "current": 214,
+        "pl": -196,
         "plpc": -2.24,
         "thesis": ""
       },
@@ -29,36 +29,36 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 206.4,
-        "pl": -270.2,
-        "plpc": -1.84,
+        "current": 206.31,
+        "pl": -276.5,
+        "plpc": -1.88,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.49,
-        "pl": -236.5,
-        "plpc": -3.5,
+        "current": 130.45,
+        "pl": -238.5,
+        "plpc": -3.53,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.87,
-        "pl": 32.7,
-        "plpc": 0.36,
+        "current": 69.9,
+        "pl": 36.6,
+        "plpc": 0.4,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.55,
-        "pl": -207.96,
-        "plpc": -2.33,
+        "current": 41.57,
+        "pl": -203.7,
+        "plpc": -2.28,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 843.23,
+    "equity": 843.26,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -156.77,
-    "day_pnl": -2.91,
+    "total_pnl": -156.74,
+    "day_pnl": -2.88,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 213.99,
-        "pl": -25.95,
-        "plpc": -3.89,
+        "current": 214,
+        "pl": -25.92,
+        "plpc": -3.88,
         "thesis": ""
       }
     ],
@@ -462,7 +462,7 @@
       "theme": "3x inverse Nasdaq / regime hedge",
       "verdict": "hold",
       "verdict_label": "Held paper — 3x-inverse hedge",
-      "chg_pct": 1.69,
+      "chg_pct": 1.59,
       "thesis": "**The paper book's hedge and the reason it can own the green on a down day.** 210 sh @ $42.54, $38 GTC stop. With QQQ ~3.2% under its 20-day and a fresh oil/Iran risk-off flare, a 3x-inverse-Nasdaq sleeve is the offset that pays while the longs bleed — it was +4.6% Friday, one of only two green watchlist names. We hold it as insurance, not a naked short: it partially offsets the paper NVDA/PLTR/RKLB net-long chip drag. Live can't cleanly carry it (PDT + wash constraints), so this capture lives in paper. On a confirmed $718 reclaim on volume, this is the first thing we cover/trim to free cash for the strongest long.",
       "hold_reason": "We hold SQQQ as the paper hedge — it's 3x inverse Nasdaq, so it rises when the tech tape falls, which is what's happened four straight sessions. It's the piece that lets paper actually own a green name on a risk-off day instead of sitting fully offside. What we're watching: a QQQ reclaim of its $718 20-day on real volume is the signal to cover/trim it and rotate that cash into the strongest confirmed long — until then the hedge stays on.",
       "size": "$8.9k paper (210 sh)",
@@ -477,7 +477,7 @@
         "basis": "3x-inverse fades on a green open; held for the regime, covers first on a $718 reclaim",
         "pop_rank": 13
       },
-      "price": 41.58,
+      "price": 41.54,
       "spark": [
         41.31,
         40.85,
@@ -508,7 +508,7 @@
         36.3,
         37.89,
         39.84,
-        41.58
+        41.54
       ]
     },
     {
