@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-20T13:11:34.224Z",
+  "generated_at": "2026-07-20T13:12:42.061Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90443.84,
+    "equity": 90470.35,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89443.84,
-    "day_pnl": 18.74,
+    "total_pnl": 89470.35,
+    "day_pnl": 45.25,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 212.7,
-        "pl": -248,
-        "plpc": -2.83,
+        "current": 213.72,
+        "pl": -207.2,
+        "plpc": -2.37,
         "thesis": ""
       },
       {
@@ -29,36 +29,36 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.53,
-        "pl": -331.1,
-        "plpc": -2.25,
+        "current": 205.25,
+        "pl": -350.63,
+        "plpc": -2.38,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.21,
-        "pl": -250.5,
-        "plpc": -3.71,
+        "current": 130.3,
+        "pl": -246,
+        "plpc": -3.64,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.66,
-        "pl": 5.4,
-        "plpc": 0.06,
+        "current": 69.58,
+        "pl": -4.38,
+        "plpc": -0.05,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.5,
-        "pl": -218.42,
-        "plpc": -2.44,
+        "current": 41.55,
+        "pl": -207.9,
+        "plpc": -2.33,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 839.36,
+    "equity": 842.42,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -160.64,
-    "day_pnl": -6.78,
+    "total_pnl": -157.58,
+    "day_pnl": -3.72,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 212.7,
-        "pl": -29.82,
-        "plpc": -4.46,
+        "current": 213.72,
+        "pl": -26.76,
+        "plpc": -4.01,
         "thesis": ""
       }
     ],
@@ -485,7 +485,7 @@
       "theme": "3x inverse Nasdaq / regime hedge",
       "verdict": "hold",
       "verdict_label": "Held paper — 3x-inverse hedge",
-      "chg_pct": 1.52,
+      "chg_pct": 1.49,
       "thesis": "**The paper book's hedge and the reason it can own the green on a down day.** 210 sh @ $42.54, $38 GTC stop. With QQQ ~3.2% under its 20-day and a fresh oil/Iran risk-off flare, a 3x-inverse-Nasdaq sleeve is the offset that pays while the longs bleed — it was +4.6% Friday, one of only two green watchlist names. We hold it as insurance, not a naked short: it partially offsets the paper NVDA/PLTR/RKLB net-long chip drag. Live can't cleanly carry it (PDT + wash constraints), so this capture lives in paper. On a confirmed $718 reclaim on volume, this is the first thing we cover/trim to free cash for the strongest long.",
       "hold_reason": "We hold SQQQ as the paper hedge — it's 3x inverse Nasdaq, so it rises when the tech tape falls, which is what's happened four straight sessions. It's the piece that lets paper actually own a green name on a risk-off day instead of sitting fully offside. What we're watching: a QQQ reclaim of its $718 20-day on real volume is the signal to cover/trim it and rotate that cash into the strongest confirmed long — until then the hedge stays on.",
       "size": "$8.9k paper (210 sh)",
@@ -500,7 +500,7 @@
         "basis": "3x-inverse bleeds on the semi bounce",
         "pop_rank": 14
       },
-      "price": 41.51,
+      "price": 41.5,
       "spark": [
         41.31,
         40.85,
@@ -531,7 +531,7 @@
         36.3,
         37.89,
         39.84,
-        41.51
+        41.5
       ]
     },
     {
@@ -705,7 +705,7 @@
       "theme": "Nuclear-for-AI / SMR",
       "verdict": "watch",
       "verdict_label": "Watch — SMR-nuclear high beta",
-      "chg_pct": 2.36,
+      "chg_pct": 2.23,
       "thesis": "**Small-modular-nuclear high-beta — AI-power theme, but no ballast in a risk-off tape.** SMR rides the same data-center-power demand as CEG/BE but with far more beta and no near-term catalyst, so it fell hard last week. Avoid on the long side while QQQ is under its 20-day; a regime turn plus the AI-power bid is what puts it back in play. No position.",
       "hold_reason": "Not held — high-beta version of the AI-power theme; CEG is the way we own that theme defensively instead. Watching.",
       "size": "-",
@@ -720,7 +720,7 @@
         "basis": "nuclear-power theme bid with the bounce",
         "pop_rank": 7
       },
-      "price": 7.82,
+      "price": 7.81,
       "spark": [
         11.33,
         11.39,
@@ -751,7 +751,7 @@
         10.02,
         10.16,
         9.76,
-        7.82
+        7.81
       ]
     },
     {
