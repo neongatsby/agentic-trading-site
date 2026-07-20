@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-20T13:09:19.418Z",
+  "generated_at": "2026-07-20T13:10:26.620Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90523.36,
+    "equity": 90417.41,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89523.36,
-    "day_pnl": 98.26,
+    "total_pnl": 89417.41,
+    "day_pnl": -7.69,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 214.96,
-        "pl": -157.6,
-        "plpc": -1.8,
+        "current": 212.54,
+        "pl": -254.56,
+        "plpc": -2.91,
         "thesis": ""
       },
       {
@@ -29,36 +29,36 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.23,
-        "pl": -351.95,
-        "plpc": -2.39,
+        "current": 205.33,
+        "pl": -345.1,
+        "plpc": -2.34,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.42,
-        "pl": -240,
-        "plpc": -3.55,
+        "current": 130.26,
+        "pl": -248.2,
+        "plpc": -3.67,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.59,
-        "pl": -3.53,
-        "plpc": -0.04,
+        "current": 69.55,
+        "pl": -8.9,
+        "plpc": -0.1,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.54,
-        "pl": -210,
-        "plpc": -2.35,
+        "current": 41.53,
+        "pl": -212.29,
+        "plpc": -2.38,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 846.14,
+    "equity": 838.87,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -153.86,
-    "day_pnl": 0,
+    "total_pnl": -161.13,
+    "day_pnl": -7.27,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 214.96,
-        "pl": -23.04,
-        "plpc": -3.45,
+        "current": 212.54,
+        "pl": -30.31,
+        "plpc": -4.54,
         "thesis": ""
       }
     ],
@@ -415,6 +415,10 @@
       {
         "t": 1784552700000,
         "v": 840.68
+      },
+      {
+        "t": 1784553000000,
+        "v": 839.54
       }
     ]
   },
@@ -536,7 +540,7 @@
       "theme": "3x inverse semis / sharpest hedge",
       "verdict": "watch",
       "verdict_label": "Watch — top pop pick if chips continue",
-      "chg_pct": -3.39,
+      "chg_pct": -3.27,
       "thesis": "**Top pop pick for today — the most explosive way to be green if the chip rout continues.** 3x inverse semiconductors, and semis are the epicenter: the SOX is in a bear market (~-20% off its high) and Friday's driver (China Moonshot-AI cheap-compute fear + oil/Iran) hit chips hardest. SOXS was +5.5% Friday, the day's single best mover. We don't hold it — live can't cleanly carry an inverse, and we chose NOT to add it to paper blind pre-market: after four down days the snapback risk into an oversold open is real. It's the add-into-confirmed-open-weakness candidate for paper, not a chase at the pre-market print.",
       "hold_reason": "Not held — it's the watch/pop pick. The plan is to add it to PAPER only if the open confirms continued chip weakness (into strength, not the pre-market print); live can't cleanly hold an inverse.",
       "size": "-",
@@ -551,7 +555,7 @@
         "basis": "3x-inverse-semi bleeds hardest on the rip",
         "pop_rank": 16
       },
-      "price": 50.34,
+      "price": 50.4,
       "spark": [
         81.76,
         76.32,
@@ -582,7 +586,7 @@
         32.4,
         38.65,
         45.1,
-        50.34
+        50.4
       ]
     },
     {
@@ -976,7 +980,7 @@
       "theme": "AI leader / selloff epicenter",
       "verdict": "hold",
       "verdict_label": "Held paper — trim-into-strength candidate",
-      "chg_pct": -0.81,
+      "chg_pct": -1.05,
       "thesis": "**Held in paper (70 sh @ $210.26, $186 GTC stop) and the book's designated trim-into-strength name.** NVDA is the epicenter of the exact fear driving the tape — an AI-capex/valuation derate after the Moonshot-AI cheap-compute scare — so it's the highest-beta chip long we carry into a broken regime. We already cut it 130→70 Friday. The long-term thesis is intact but the regime gate says don't be heavy chips while QQQ is under its 20-day. If Monday bounces, this is the first long we trim toward the hedge into that strength; if it breaks, the $186 stop works. Alphabet/hyperscaler earnings this week are the read on whether the capex fear eases.",
       "hold_reason": "We still hold a half-position of NVDA in paper because it's the AI leader and we already cut it in half Friday, but it's the name most exposed to the fear driving this selloff. What we're watching: an intraday bounce is the cue to trim it further toward the SQQQ hedge (cut net-long chip risk into strength, per the week's lesson), while the wide $186 stop caps the downside if it breaks instead. Hyperscaler earnings this week decide whether the AI-capex fear eases or deepens.",
       "size": "$14.2k paper (70 sh)",
@@ -991,7 +995,7 @@
         "basis": "bellwether leads semi relief bounce; analysts call rebound",
         "pop_rank": 1
       },
-      "price": 205.78,
+      "price": 205.29,
       "spark": [
         219.21,
         215.09,
@@ -1022,7 +1026,7 @@
         199.93,
         197.54,
         194.51,
-        205.78
+        205.29
       ]
     },
     {
