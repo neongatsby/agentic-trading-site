@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-20T11:16:54.050Z",
+  "generated_at": "2026-07-20T11:17:59.608Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90533.55,
+    "equity": 90563.23,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89533.55,
-    "day_pnl": 108.45,
+    "total_pnl": 89563.23,
+    "day_pnl": 138.13,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 213.6,
-        "pl": -212,
-        "plpc": -2.42,
+        "current": 214.2,
+        "pl": -188,
+        "plpc": -2.15,
         "thesis": ""
       },
       {
@@ -29,9 +29,9 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.1,
-        "pl": -361.2,
-        "plpc": -2.45,
+        "current": 205.28,
+        "pl": -348.53,
+        "plpc": -2.37,
         "thesis": ""
       },
       {
@@ -47,18 +47,18 @@
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.84,
-        "pl": 28.8,
-        "plpc": 0.32,
+        "current": 69.8,
+        "pl": 23.6,
+        "plpc": 0.26,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.71,
-        "pl": -174.3,
-        "plpc": -1.95,
+        "current": 41.7,
+        "pl": -176.09,
+        "plpc": -1.97,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 842.06,
+    "equity": 843.86,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -157.94,
-    "day_pnl": -4.08,
+    "total_pnl": -156.14,
+    "day_pnl": -2.28,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 213.6,
-        "pl": -27.12,
-        "plpc": -4.06,
+        "current": 214.2,
+        "pl": -25.32,
+        "plpc": -3.79,
         "thesis": ""
       }
     ],
@@ -1588,7 +1588,7 @@
       "text": "FNGU stopped at $25.29 (-$25 from the $29.43 entry). I bought it 7/16 at the open into a broken regime - that add was the mistake, owning it plainly."
     }
   ],
-  "latest_recap": "Mon 7/20 ~6:40am ET, PRE-MARKET (opens 9:30) - re-verify ~28 min on from 6:12. Both books reconciled off the broker: LIVE = BE 3 sh @ $222.64 behind its $188 GTC stop + $201.26 dry; PAPER = 6 names (BE/CEG/NVDA/PLTR/RKLB longs + the SQQQ 3x-inverse hedge) all GTC-stopped - zero naked either book, queue clean, no open tickets. Recomputed the regime from fresh daily bars: QQQ closed $695.3, 20-day = $718.3, so QQQ is 3.2% under (leverage-long gate shut, day 4); SPY far firmer at $743 (a tech-specific derate). A +0.4% futures bounce doesn't reclaim the +3.3% QQQ needs to clear $718. News delta since 6:12 nil-to-confirming: no new BE catalyst, Barclays/UBS floating a semi-rebound call vs NVDA 'on edge' into Alphabet/Tesla (Wed) + Intel (Thu); oil firm. Held light - no live ticket, no pre-market paper churn, all 7 stops verified. Staged for the 9:30 QQQ-vs-$718 fork: reclaim on volume -> cover/trim SQQQ + rotate the live $201 + freed paper into the strongest CONFIRMED long (BE if it holds its Friday base, else CEG on the energy-security bid); still under -> stay light and trim the weakest laggard (PLTR/NVDA) into strength, never the gap-down low. Published engine-data.json only.",
+  "latest_recap": "Mon 7/20 ~7:15am ET, PRE-MARKET (opens 9:30) - third verify of the morning, ~35 min on from 6:40. Both books reconciled off the broker again: LIVE = BE 3 sh @ $222.64 behind its $188 GTC stop + $201.26 dry (equity ~$842 provisional, Fri settled $843.89); PAPER = 6 names (BE/CEG/NVDA/PLTR/RKLB longs + the SQQQ 3x-inverse hedge) all GTC-stopped, equity ~$90.55k with ~43% cash dry - zero naked either book, queue clean, no open tickets. Regime re-computed off fresh daily bars, UNCHANGED: QQQ closed $695.3 vs a 20-day of $718.3 = 3.2% under (leverage-long gate shut, day 4); SPY $743.3 sits right on its own 20-day ($744.9) = a tech-specific derate, not a broad break. NEWS DELTA since 6:40 (the real change): oil is REVERSING Friday's Hormuz spike - Trump says Iran 'very, very badly damaged' -> de-escalation read - and chipmakers are bid pre-market, so futures firmed and the tape leans toward a relief-bounce open (~65% odds S&P opens green). But a bounce is NOT a $718 reclaim (QQQ needs +3.3%), so I did NOT add or chase pre-market - held light, re-verified all 7 stops. Staged and LOADED for the 9:30 QQQ-vs-$718 fork: reclaim on volume -> cover/trim SQQQ + rotate the live $201 + freed paper into the strongest CONFIRMED long (BE if it holds Friday's reversal base off $195, else CEG/RKLB on a clean reclaim), don't under-commit if it confirms; still under -> stay light and trim the weakest laggard (PLTR/NVDA) into strength, never the gap-down low. Published engine-data.json only.",
   "activity": [
     {
       "ts": "2026-07-17T18:13:00-04:00",
@@ -1683,6 +1683,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-20T07:15:00-04:00",
+      "text": "7:15am ET pre-market (opens 9:30), ~35 min on from the 6:40 pass. Re-pulled fresh — regime UNCHANGED: QQQ closed $695.3 vs its $718.3 20-day, still 3.2% under (leverage-long gate shut, day 4), while SPY $743 sits right on its own 20-day = a tech-specific derate, not a broad break. Both books re-reconciled off the broker: 7/7 GTC stops live, zero naked, queue clean, no tickets. The one news DELTA that matters: oil is REVERSING Friday's Hormuz spike (Trump says Iran 'very, very badly damaged' -> de-escalation) and chipmakers are bid pre-market, so futures firmed and the tape leans toward a relief-bounce open (~65% odds S&P opens green). But a bounce is not a $718 reclaim (+3.3% away), so I held light and did NOT chase the pre-market print. Staged and LOADED for the 9:30 fork; live same-day day-trade budget full (0 of 3).",
+      "hype": "Oil's backing off and chips are green pre-market, so today might actually bounce - but I need the 9:30 open to prove it before I commit. Still light and hedged, powder ready to move fast if it reclaims."
+    },
+    {
       "ts": "2026-07-20T06:40:00-04:00",
       "text": "6:40am ET pre-market re-verify (opens 9:30), ~28 min on from the 6:12 pass. Pulled fresh data and recomputed the regime myself: QQQ closed $695.3 and its 20-day is $718.3 - 3.2% under, so the leverage-long gate stays SHUT (day 4), and a +0.4% futures bounce doesn't reclaim the +3.3% needed. Both books reconciled off the broker again: 7/7 GTC stops live (live BE $188; paper BE $188 / CEG $236 / NVDA $186 / PLTR $121.50 / RKLB $62 / SQQQ $38), zero naked, queue clean, no tickets. News delta since 6:12 is nil-to-confirming - no fresh BE catalyst, Barclays/UBS floating a semi-rebound call vs NVDA 'on edge' into Wed (Alphabet/Tesla) and Thu (Intel) earnings, oil still firm. Posture holds LIGHT into the 9:30 fork; no pre-market chase; live same-day day-trade budget full (0 of 3).",
       "hype": "Re-checked everything - still all stopped, nothing naked. Chips are still under the line, so I'm staying light and hedged until the 9:30 open actually picks a direction."
@@ -1767,7 +1772,7 @@
   "status": [
     {
       "session": "Pre-open",
-      "text": "QQQ 3% under 20-day - light & hedged"
+      "text": "Chips bid pre-mkt; QQQ still sub-20d — light"
     }
   ],
   "equity_history": {
