@@ -1,46 +1,46 @@
 {
-  "generated_at": "2026-07-20T17:21:52.885Z",
+  "generated_at": "2026-07-20T17:22:59.985Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 89500.85,
+    "equity": 89506.18,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88500.85,
-    "day_pnl": -924.25,
+    "total_pnl": 88506.18,
+    "day_pnl": -918.92,
     "positions": [
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 254.19,
-        "pl": -103.92,
-        "plpc": -2.49,
+        "current": 254.31,
+        "pl": -101.92,
+        "plpc": -2.44,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "90.0000",
         "entry": 209.23,
-        "current": 203.73,
-        "pl": -495.1,
-        "plpc": -2.63,
+        "current": 203.78,
+        "pl": -490.6,
+        "plpc": -2.6,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 134.94,
-        "pl": -14,
-        "plpc": -0.21,
+        "current": 135.04,
+        "pl": -9,
+        "plpc": -0.13,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "310.0000",
         "entry": 42.36,
-        "current": 41.89,
-        "pl": -146.45,
-        "plpc": -1.11,
+        "current": 41.87,
+        "pl": -152.62,
+        "plpc": -1.16,
         "thesis": ""
       }
     ],
@@ -83,23 +83,23 @@
       },
       {
         "date": "Jul 20",
-        "value": 89511.68
+        "value": 89489.28
       }
     ]
   },
   "live": {
-    "equity": 807.53,
+    "equity": 809.06,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -192.47,
-    "day_pnl": -38.61,
+    "total_pnl": -190.94,
+    "day_pnl": -37.08,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 202.09,
-        "pl": -61.65,
-        "plpc": -9.23,
+        "current": 202.6,
+        "pl": -60.12,
+        "plpc": -9,
         "thesis": ""
       }
     ],
@@ -154,7 +154,7 @@
       },
       {
         "date": "Jul 20",
-        "value": 806.5
+        "value": 807.88
       }
     ],
     "intraday": [
@@ -617,13 +617,13 @@
       "id": "2026-07-20-1",
       "symbol": "BE",
       "side": "sell",
-      "size": "$610",
+      "size": "$607",
       "qty": 3,
-      "entry": "~$204 market sell-to-close (approve = sell now)",
+      "entry": "~$202 market sell-to-close (approve = sell now)",
       "trigger": null,
       "stop": null,
-      "bracket": "n/a - sell-to-close; fast-lane cancels the $188 GTC stop first, then sells",
-      "thesis": "Cut the short-attacked BE - it's the whole live directional book from a bad top-tick entry, printing fresh 90-day lows (-5.7%) and can't bounce on a green semi day. Frees ~$610 to reset the live book cash-ready for the confirmed leader (NVDA/VRT) on a QQQ $716 reclaim, or a small live SQQQ if QQQ breaks $698. A $188 stop can't protect a binary 7/28 earnings gap; cutting keeps the option to re-enter with defined risk later. Paper already cut @ $196.68."
+      "bracket": "n/a - sell-to-close; the fast-lane cancels the $188 GTC stop (b2b62cc5) first, then sells",
+      "thesis": "Cut the short-attacked BE - it's the whole live directional book from a bad top-tick entry ($222.64), printing fresh 90-day lows and unable to hold a bounce ($195->$204 already failed back to $202) on a GREEN semi day. Frees ~$607 to reset the live book cash-ready for the confirmed 1x leader (PLTR/NVDA/VRT) on a QQQ $716 reclaim, or a small live SQQQ if QQQ breaks $698. A $188 stop can't protect a binary 7/28 earnings gap; cutting keeps the option to re-enter with defined risk later. Paper already cut @ $196.68. This is a multi-day exit - it does NOT burn PDT day-trade budget (0/3)."
     }
   ],
   "coverage": [
@@ -633,22 +633,22 @@
       "theme": "AI leader / 1x bellwether",
       "verdict": "buy",
       "verdict_label": "Buy",
-      "chg_pct": 0.47,
-      "thesis": "**Held in paper (70 sh @ $210.26, $186 GTC stop) - the book's gate-compliant 1x way to own the AI tape.** NVDA is holding relative strength (+1.4%, green) while the broader semi bounce fades, and it's where freed live cash + paper powder go FIRST on a confirmed QQQ $716 reclaim. Alphabet + hyperscaler earnings Wed are the read on whether the AI-capex fear that broke the tape eases. Not adding here while QQQ sits under its 20-day - the gate says own it 1x, don't lever it.",
-      "hold_reason": "NVDA is the cleanest 1x way to own the AI-compute tape and has no near-term earnings binary (late-Aug), so it's the account's redeploy magnet. We hold 90 paper shares - added 20 today from idle cash - behind a wide $186 GTC stop. We add the rest on a QQQ $716 reclaim and would trim if it loses ~$198 or the AI-capex story cracks.",
-      "size": "$18.5k paper (90 sh)",
-      "size_pct": "~21% paper",
-      "size_note": "added +20 today from idle cash",
+      "chg_pct": 0.48,
+      "thesis": "**Held in paper (90 sh @ $209.23, $186 GTC stop) - the book's gate-compliant 1x way to own the AI tape.** NVDA faded to ~flat (+0.3%) with the broader semi pop but holds relative strength above $203; it's where freed live cash + paper powder go FIRST on a confirmed QQQ $716 reclaim. Alphabet + hyperscaler earnings Wed are the AI-capex read. Not adding here under the 20-day - own it 1x, don't lever it.",
+      "hold_reason": "NVDA is the cleanest 1x way to own the AI-compute tape and has no near-term earnings binary (late-Aug), so it's the account's redeploy magnet. We hold 90 paper shares behind a wide $186 GTC stop. We add the rest on a QQQ $716 reclaim and would trim if it loses ~$198 or the AI-capex story cracks.",
+      "size": "$18.3k paper (90 sh)",
+      "size_pct": "~20% paper",
+      "size_note": "held; adds on a $716 reclaim",
       "plan_usd": "add the rest on a QQQ $716 reclaim",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 2.3,
+        "target_pct": 0.8,
         "confidence": "med",
-        "basis": "1x AI bellwether leads the relief; GOOGL/TSLA Wed the near catalyst",
-        "pop_rank": 1
+        "basis": "1x AI bellwether - RS but capped under the 20-day; GOOGL/TSLA Wed",
+        "pop_rank": 3
       },
-      "price": 203.76,
+      "price": 203.78,
       "spark": [
         219.21,
         215.09,
@@ -679,7 +679,7 @@
         199.93,
         197.54,
         194.51,
-        203.76
+        203.78
       ]
     },
     {
@@ -688,22 +688,22 @@
       "theme": "AI chips / MSFT Helios catalyst",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 3.18,
+      "chg_pct": 3.22,
       "thesis": "**Today's catalyst leader: AMD +3.6% after Microsoft said it will deploy AMD's Helios system in its data centers** - a real hyperscaler win on top of TSMC's $100B Arizona expansion. Momentum + a hard catalyst is exactly our setup, BUT it already ran (476->522) then faded to ~$513, and the gate says don't add chip beta while QQQ is under its 20-day. Watch for a pullback/reclaim rather than chasing the HOD into an Iran-capped tape.",
       "hold_reason": "",
       "size": "-",
       "size_pct": "-",
       "size_note": "Not owned - watch for a reclaim entry; don't chase the extended move under the 20-day.",
       "plan_usd": "$0 (watch)",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 4.2,
-        "confidence": "med",
-        "basis": "MSFT Helios deal, but extended off the open",
-        "pop_rank": 3
+        "target_pct": 2.7,
+        "confidence": "low",
+        "basis": "MSFT/Helios deal but extended off the +5% open",
+        "pop_rank": 5
       },
-      "price": 510.94,
+      "price": 511.12,
       "spark": [
         449.44,
         467.64,
@@ -734,7 +734,7 @@
         580.52,
         540.89,
         518.25,
-        510.94
+        511.12
       ]
     },
     {
@@ -750,13 +750,13 @@
       "size_pct": "0%",
       "size_note": "Gated 3x-long; its fade confirms the risk-off tape.",
       "plan_usd": "-",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "flat",
       "projection": {
-        "target_pct": 6.5,
+        "target_pct": 4.7,
         "confidence": "low",
         "basis": "biggest raw mover but GATED 3x under the 20-day",
-        "pop_rank": 4
+        "pop_rank": 6
       },
       "price": 142.28,
       "spark": [
@@ -805,13 +805,13 @@
       "size_pct": "0%",
       "size_note": "Redeploy shortlist on a confirmed reclaim - cleanest RS today.",
       "plan_usd": "~$400 live IF it becomes the trade",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "flat",
       "projection": {
-        "target_pct": 3.2,
+        "target_pct": 2,
         "confidence": "low",
-        "basis": "AI-power capex; reports 7/29",
-        "pop_rank": 6
+        "basis": "AI-power capex; faded from +4%, reports 7/29",
+        "pop_rank": 7
       },
       "price": 293.73,
       "spark": [
@@ -854,19 +854,19 @@
       "verdict": "hold",
       "verdict_label": "Hold",
       "chg_pct": -2.06,
-      "thesis": "**Held in paper (310 sh @ $42.36, $38 GTC stop) - the book's risk-off insurance.** It's the -2.5% drag today because QQQ held its $698 low and bounced, but the thesis is intact: QQQ is still ~2% under its 20-day and fresh Iran airstrikes + Wed's Big-Tech earnings are live downside catalysts. Holding it (not whipsawing off one bounce day) - it pays if QQQ breaks $698, and it's the trend-aligned way to own a sub-20-day tape while the gate keeps us out of 3x-longs.",
-      "hold_reason": "SQQQ is our risk-off hedge for the still-broken regime (QQQ under its 20-day) plus the live Iran airstrike risk - up on down days, down on up days like today. We hold 310 paper shares with a $38 GTC stop. We cut it fast on a QQQ $716 reclaim and let it run / add a small live sleeve if QQQ loses $698.",
+      "thesis": "**Held in paper (310 sh @ $42.36, $38 GTC stop) - the deliberate sub-20-day / Iran hedge.** It bleeds (-1.9%) while the tape is green but is recovering off its low as the chip pop fades; it's the largest single conviction position because the base case is the failed bounce rolls over into the close. Press it on a confirmed QQQ $698 break; cut it fast on a $716 reclaim.",
+      "hold_reason": "SQQQ is the intentional hedge that lets the paper book lean short while QQQ sits under its 20-day with Iran headline risk. We hold 310 paper shares behind a $38 GTC stop. It drags on green days by design; we press it if QQQ loses $698 and cut it fast on a $716 reclaim.",
       "size": "$12.8k paper (310 sh)",
       "size_pct": "15% paper",
       "size_note": "Paper; $38 GTC stop. Added 100 this run funded by the RKLB cut - pressing the fade.",
       "plan_usd": "-",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": -3,
+        "target_pct": 0.5,
         "confidence": "med",
-        "basis": "paper hedge; bleeds as QQQ grinds, pops if the fade resumes",
-        "pop_rank": 11
+        "basis": "failed chip pop fades into the close (proven ASML/TSMC pattern); held paper - IN the call",
+        "pop_rank": 1
       },
       "price": 41.89,
       "spark": [
@@ -908,22 +908,22 @@
       "theme": "Chip turnaround + earnings",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 3.98,
+      "chg_pct": 4.08,
       "thesis": "**Q2 earnings due this week + a fresh Google Cloud AI partnership** have INTC +3.9%; a turnaround-story beat could gap it, but it's a headline-risk binary, not a clean trend name.",
       "hold_reason": "",
       "size": "0 (watch)",
       "size_pct": 0,
       "size_note": "watch into earnings",
       "plan_usd": 0,
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "event",
       "projection": {
-        "target_pct": 4.8,
+        "target_pct": 4,
         "confidence": "med",
-        "basis": "Q2 earnings this week + Google Cloud AI deal",
-        "pop_rank": 5
+        "basis": "Q2 earnings this week + Google Cloud AI deal; holding its gains best",
+        "pop_rank": 4
       },
-      "price": 98.81,
+      "price": 98.91,
       "spark": [
         118.51,
         119.85,
@@ -954,7 +954,7 @@
         139.55,
         127.08,
         120.39,
-        98.81
+        98.91
       ]
     },
     {
@@ -963,22 +963,22 @@
       "theme": "AI software / app layer",
       "verdict": "hold",
       "verdict_label": "Hold",
-      "chg_pct": 1.89,
-      "thesis": "**Held in paper (50 sh @ $135.22, $121.5 GTC stop).** PLTR is ~flat (+0.4%) and holding up better than the chips - AI-software/app exposure gives it a different beta than the semi complex that's fading. A steady hold behind its stop; not a name we're adding to in a risk-off tape, but not a laggard to cut either.",
-      "hold_reason": "PLTR is our AI-software momentum hold - one of the steadier green names through the chip rout, up ~2% today. We hold 50 paper shares behind a $121.50 GTC stop. We keep it while it holds trend and would trim it to fund a stronger setup or if it loses ~$121.",
+      "chg_pct": 2.03,
+      "thesis": "**Held in paper (50 sh @ $135.22, $121.50 GTC stop) - the cleanest AI-SOFTWARE relative-strength leader.** PLTR is +1.4% and holding its highs while the chip complex fades - it isn't exposed to the semi derate that broke QQQ, so it's the RS tell and a redeploy magnet on a $716 reclaim. Wide stop below structure; add on confirmation, not into the chop.",
+      "hold_reason": "PLTR is our AI-software relative-strength anchor - it's green and holding highs while the chips fade, which is exactly the tell we watch. We hold 50 paper shares behind a wide $121.50 GTC stop. We'd add on a QQQ $716 reclaim and only sell if it loses its rising shelf.",
       "size": "$6.8k paper (50 sh)",
       "size_pct": "7% paper",
       "size_note": "Paper; $121.5 stop. Steady hold, software cushion vs the chip fade.",
       "plan_usd": "-",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 3.3,
+        "target_pct": 2.3,
         "confidence": "med",
-        "basis": "AI-software RS leader, clean shelf reclaim, holding highs as chips fade",
+        "basis": "AI-software RS leader holding its highs while chips fade; not chip-derate exposed",
         "pop_rank": 2
       },
-      "price": 134.87,
+      "price": 135.06,
       "spark": [
         137.4,
         136.84,
@@ -1009,7 +1009,7 @@
         116.64,
         125.75,
         129.18,
-        134.87
+        135.06
       ]
     },
     {
@@ -1020,18 +1020,18 @@
       "verdict_label": "Hold",
       "chg_pct": 0.7,
       "thesis": "**Held in paper (16 sh @ $260.68, $236 GTC stop).** CEG is green (+0.4%) - nuclear/independent-power is the defensive corner of the AI-energy theme and catches a bid when high-beta fades. A calm hold behind its stop; it's doing its job as ballast on a risk-off day.",
-      "hold_reason": "CEG is our AI-power play - nuclear generation feeding data-center demand, a defensive way to own the AI theme that stayed green through the chip rout. We hold 16 paper shares with a $236 GTC stop. We keep it as ballast and would trim it to fund a higher-beta leader on a confirmed risk-on reclaim.",
+      "hold_reason": "CEG is our AI-power/nuclear anchor - a lower-beta way to own the datacenter-demand theme. We hold 16 paper shares behind a $236 GTC stop. We hold it as ballast and would only sell on a clean break of that stop.",
       "size": "$4.1k paper (16 sh)",
       "size_pct": "5% paper",
       "size_note": "Paper; $236 stop. Defensive ballast, green on a red-ish tape.",
       "plan_usd": "-",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 1.2,
+        "target_pct": 1,
         "confidence": "low",
         "basis": "AI-power anchor, held paper",
-        "pop_rank": 9
+        "pop_rank": 8
       },
       "price": 254.12,
       "spark": [
@@ -1073,22 +1073,22 @@
       "theme": "3x Nasdaq / the benchmark",
       "verdict": "avoid",
       "verdict_label": "Avoid",
-      "chg_pct": 2.07,
+      "chg_pct": 2.18,
       "thesis": "**The benchmark we measure against - and a gated instrument.** TQQQ is +1.7% (faded from +3.9% at the open) as the bounce rolls. It's our buy-and-hold yardstick (down ~6.4% since 7/2) and the poster child for the gate: holding 3x-Nasdaq under the 20-day drove the week's drawdown. Off-limits until QQQ reclaims $716.",
       "hold_reason": "Not held and gated - 3x-Nasdaq long is exactly what the gate bars while QQQ is under its 20-day (it drove the week's -14% live drawdown). Also our benchmark. Re-allowed only on a confirmed reclaim.",
       "size": "0 (avoid)",
       "size_pct": "0%",
       "size_note": "Gated + the benchmark (-6.4% since 7/2).",
       "plan_usd": "-",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "flat",
       "projection": {
-        "target_pct": 3,
+        "target_pct": 1.8,
         "confidence": "low",
         "basis": "gated 3x Nasdaq",
-        "pop_rank": 8
+        "pop_rank": 9
       },
-      "price": 68.9,
+      "price": 68.97,
       "spark": [
         76.72,
         77.62,
@@ -1119,7 +1119,7 @@
         80.99,
         77.49,
         73.3,
-        68.9
+        68.97
       ]
     },
     {
@@ -1135,13 +1135,13 @@
       "size_pct": "0%",
       "size_note": "Gated 3x-long; the 7/17 gap-stop lesson.",
       "plan_usd": "-",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "flat",
       "projection": {
-        "target_pct": 3.9,
+        "target_pct": 3.7,
         "confidence": "low",
         "basis": "gated 3x FANG bounce",
-        "pop_rank": 7
+        "pop_rank": 10
       },
       "price": 27.28,
       "spark": [
@@ -1183,22 +1183,22 @@
       "theme": "3x semi inverse / sharp fade play",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": -5.86,
+      "chg_pct": -5.93,
       "thesis": "**The sharpest expression if the semi bounce fully rolls.** SOXS is -6% today as SOXL bounced, but SOXL already gave back a +9.6% pop to +3.9% and is rolling. If the faded semis turn red into the afternoon, SOXS is the biggest mover on the board - but it's a 3x inverse that decays in chop, so we express the same view via the cleaner SQQQ hedge we already hold rather than chasing this.",
       "hold_reason": "Not held - same fade view expressed via the SQQQ hedge we already own (less decay, no chase). We'd only touch SOXS on a confirmed, clean semi breakdown, not a midday lean.",
       "size": "0 (watch)",
       "size_pct": "0%",
       "size_note": "Not held - fade view expressed via SQQQ instead.",
       "plan_usd": "-",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "flat",
       "projection": {
-        "target_pct": -6.5,
+        "target_pct": -4.5,
         "confidence": "low",
-        "basis": "inverse semis, bleeding on the bounce",
+        "basis": "inverse semis - pops only if chips finally roll red",
         "pop_rank": 12
       },
-      "price": 51.77,
+      "price": 51.73,
       "spark": [
         81.76,
         76.32,
@@ -1229,7 +1229,7 @@
         32.4,
         38.65,
         45.1,
-        51.77
+        51.73
       ]
     },
     {
@@ -1238,22 +1238,22 @@
       "theme": "Quantum / high-beta",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 0.6,
+      "chg_pct": 0.72,
       "thesis": "**High-beta quantum, flat and following the tape.** IONQ is ~flat (+0.2%), neither leading nor breaking - it trades as a high-beta proxy that needs the broad tape to firm. No edge here today; watching whether it holds $34 support if the fade deepens.",
       "hold_reason": "Not held - no relative-strength edge today, just chops with the high-beta tape. We'd only engage on a clear catalyst or a broad risk-on reclaim.",
       "size": "0 (watch)",
       "size_pct": "0%",
       "size_note": "No edge today - flat high-beta.",
       "plan_usd": "-",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "flat",
       "projection": {
-        "target_pct": 1.8,
+        "target_pct": 0.7,
         "confidence": "low",
-        "basis": "quantum beta, lagging the semis today",
-        "pop_rank": 10
+        "basis": "quantum beta, lagging the semis",
+        "pop_rank": 11
       },
-      "price": 34.98,
+      "price": 35.02,
       "spark": [
         58.87,
         63.58,
@@ -1284,7 +1284,7 @@
         53.3,
         51.44,
         49.16,
-        34.98
+        35.02
       ]
     },
     {
@@ -1293,22 +1293,22 @@
       "theme": "Mega-cap / earnings Wed",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": -2.23,
+      "chg_pct": -2.21,
       "thesis": "**Lagging (-1.9%) into its own Wednesday earnings.** TSLA is red while the mega-caps are mixed - the binary catalyst (Q2 report Wed) is why it's not a clean setup either way right now. We don't take a directional shot into a name's earnings gap; watching the reaction Wed for a cleaner post-catalyst entry.",
       "hold_reason": "Not held - it's lagging AND has binary earnings Wednesday, so there's no clean pre-catalyst setup (we don't hold into an earnings gap). We watch the post-report reaction for a cleaner entry.",
       "size": "0 (watch)",
       "size_pct": "0%",
       "size_note": "Earnings Wed - no pre-catalyst shot; watch the reaction.",
       "plan_usd": "-",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "flat",
       "projection": {
-        "target_pct": -1,
+        "target_pct": -1.5,
         "confidence": "med",
         "basis": "red into Wed earnings",
         "pop_rank": 14
       },
-      "price": 372.4,
+      "price": 372.48,
       "spark": [
         417.79,
         425.95,
@@ -1339,7 +1339,7 @@
         420.37,
         425.36,
         392.82,
-        372.4
+        372.48
       ]
     },
     {
@@ -1348,22 +1348,22 @@
       "theme": "Space / defense high-beta",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": -1.19,
+      "chg_pct": -1.04,
       "thesis": "**Cut this run.** Sold the paper 130 @ $66.26 (realized -$437). RKLB was red (-1.6%) on a day the tape bounced - the weakest long in the book, lagging its space/defense peers. On a risk-off, fading-bounce tape we don't hold high-beta laggards; freed the capital into the SQQQ hedge. Re-engage on a reclaim of $70 with the tape firming, not on a pullback into a fade.",
       "hold_reason": "We cut RKLB this run - it was the weakest paper long, red (-1.6%) while the tape bounced, so it lost the relative-strength case. Rolled the proceeds into the hedge. We'd only look again on a clean reclaim of ~$70 with the broad tape firming.",
       "size": "0 (cut) - was 130 sh paper",
       "size_pct": "0%",
       "size_note": "Cut paper @ $66.26 - laggard on a bounce day; freed into SQQQ.",
       "plan_usd": "-",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "flat",
       "projection": {
-        "target_pct": 0.7,
+        "target_pct": -1,
         "confidence": "low",
-        "basis": "cut the laggard; red on a bounce day",
+        "basis": "cut the paper laggard; red on a bounce day",
         "pop_rank": 13
       },
-      "price": 66.79,
+      "price": 66.89,
       "spark": [
         125.44,
         135.74,
@@ -1394,7 +1394,7 @@
         101.58,
         100.02,
         100.5,
-        66.79
+        66.89
       ]
     },
     {
@@ -1403,22 +1403,22 @@
       "theme": "Energy-for-AI / fuel cells",
       "verdict": "sell",
       "verdict_label": "Sell",
-      "chg_pct": -5.9,
-      "thesis": "**Cutting the whole live position (3 sh, staged for the tap) - already cut in paper @ $196.68.** BE is down ~5.7% to fresh 90-day lows on a GREEN semi day - the relative-weakness tell that sellers own it despite genuinely strong fundamentals (Q1 beat $0.44 vs $0.12, guidance raised to $1.85-2.25, the $25B Brookfield AI-financing deal, sell-side targets $259-310). It bounced $195->$204 but faded back to ~$202 - a weak dead-cat, not a reclaim. The Hunterbrook scandium short is the overhang, and a $188 stop can't protect a binary 7/28 earnings gap. Cut to free capital + reset the live book; keep the option to re-enter with defined risk near the print.",
+      "chg_pct": -5.58,
+      "thesis": "**Cutting (live 3 sh @ $222.64, $188 GTC stop; sell ticket 2026-07-20-1 staged for the tap).** BE printed fresh 90-day lows ($195.22) and its $195->$204 bounce already failed back to ~$202 on a day semis were GREEN - it can't hold a bid with its group. Fundamentals are strong (Q1 blowout, $25B Brookfield deal, 7/28 earnings) but a $188 stop can't protect a binary 7/28 gap, and this is an accidental all-in from a top-tick entry, not a sized catalyst bet. Cut frees ~$607 to concentrate on confirmation; keeps the option to re-enter with defined risk near 7/28.",
       "hold_reason": "This is an accidental all-in from a bad top-tick entry ($222.64), not a sized catalyst bet - and it's the entire live directional book. We're cutting (staged) rather than camping a broken, short-attacked chart into a binary 7/28 print behind a stop a gap would jump. Fundamentals are strong and a beat could pop it, so we keep the option to re-enter with defined risk later - but freeing the capital to concentrate into the confirmed leader on a QQQ reclaim beats riding this down on stop-hope.",
       "size": "3 sh live (cutting) + 0 paper",
       "size_pct": "0%",
       "size_note": "Cut both books @ ~$196.7 - broken short-attack into 7/28 earnings; capital freed to powder.",
       "plan_usd": "-",
-      "updated": "2026-07-20T12:50:00-04:00",
+      "updated": "2026-07-20T13:15:00-04:00",
       "horizon": "flat",
       "projection": {
-        "target_pct": -5,
+        "target_pct": -5.5,
         "confidence": "high",
         "basis": "short-attacked, fresh 90-day lows, cutting the camp",
         "pop_rank": 15
       },
-      "price": 201.89,
+      "price": 202.58,
       "spark": [
         307.75,
         302.59,
@@ -1449,11 +1449,16 @@
         302.69,
         289.38,
         271.02,
-        201.89
+        202.58
       ]
     }
   ],
   "feed": [
+    {
+      "ts": "2026-07-20T13:15:00-04:00",
+      "type": "activity",
+      "text": "1:15pm reconcile: chip pop fading further (SOXL +10%->+4.7%), QQQ back near its $698 day low, still ~2.4% under its 20-day - gate ON. Held both books unchanged; did NOT short into thrice-held $698 support with SPY at record highs. BE-cut ticket still staged; 5/5 stops verified, zero naked; live $201 + paper ~$47k dry for a confirmed $698 break or $716 reclaim."
+    },
     {
       "ts": "2026-07-20T12:50:00-04:00",
       "type": "activity",
@@ -1703,20 +1708,15 @@
       "reaction": "hold",
       "detail": "rejected - insufficient BP once BE filled",
       "text": "Retired the NVDA breakout - the moment BE filled, the mutually-exclusive NVDA ticket correctly rejected for buying power (as designed), and NVDA never cleanly cleared $206.60 anyway. Right call: own the catalyst leader, not two half-bets."
-    },
-    {
-      "ts": "2026-07-17T12:26:00-04:00",
-      "type": "trade",
-      "side": "buy",
-      "symbol": "BE",
-      "status": "filled",
-      "reaction": "hold",
-      "detail": "3 sh @ $222.64, stop $188 (GTC)",
-      "text": "BE filled - Adam approved at 1:10pm and we own the day's #1 mover (+8% on the confirmed $1.7B fuel-cell-for-AI deal). Entry was late ($222 after it ran from $206.73), so small capture, but we're finally IN the leader with the $188 stop confirmed."
     }
   ],
   "latest_recap": "Mon 7/20 ~12:50pm ET, REGULAR HOURS (~3h15 to close). Fresh reconcile of BOTH books vs the broker + a regime re-pull. NO fills since Friday; the live BE-sell ticket (2026-07-20-1, 3 sh, marketable limit $190) is staged and still unapproved. REGIME: QQQ ~$702 is grinding higher lows off its $698 morning low but is still ~2.1% under its ~$717 20-day (no reclaim, gate stays SHUT); semis green but FADING from the open (SOXL +8%->+5.8%, AMD +5%->+3.2%, NVDA +0.9%) - the same 'chip pop sells by lunch' pattern as ASML/TSMC last week; SPY near record highs so the weakness stays chip-specific. DECISION: HOLD both books - no new trade. Kept the BE-cut staged (frees ~$610); did NOT whipsaw the SQQQ hedge on intraday chop (no confirmed $716 reclaim / $698 break since the posture was set); live $201 + paper ~$47k held as dry powder. 5/5 positions (BE live $188; paper NVDA $186, SQQQ $38, CEG $236, PLTR $121.50) carry a live GTC stop - zero naked. Grade C running - honest low/negative capture (BE camp + SQQQ drag on a green day), but the fade is validating the gate and the decisions are disciplined. Score alpha -13.8 vs TQQQ -5.5% since 7/2. Day-trade 0/3. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-20-1250.json.",
   "activity": [
+    {
+      "ts": "2026-07-20T13:15:00-04:00",
+      "kind": "engine",
+      "title": "Mon 7/20 ~1:15pm ET, REGULAR HOURS (~2h45 to close). Fresh reconcile of BOTH books vs the broker + a regime re-pull. NO fills since Friday; the live BE-sell ticket (2026-07-20-1, 3 sh, marketable-limit $190) is staged and still unapproved. REGIME: QQQ ~$699.8 (+0.7%) slid back toward its $698 day low, still ~2.4% under its ~$717 20-day (no reclaim, gate SHUT); the morning chip pop keeps fading (SOXL +10%->+4.7%, AMD +5%->+2.7%, NVDA +0.3%); SPY ~$744 near record highs so the weakness stays chip-specific; inverses recovering off the lows (SQQQ -1.9% from -3.5%). DECISION: HOLD both books - no new trade. Kept the BE-cut staged (frees ~$607); did NOT add short into $698 support that has held 3x today with SPY at highs (unconfirmed break = the anticipation/whipsaw trap); did NOT chase the gated 3x semis. Live $201 + paper ~$47k held as dry powder. 5/5 positions (BE live $188; paper NVDA $186, SQQQ $38, CEG $236, PLTR $121.50) carry a live GTC stop - zero naked. Grade C running - honest low/negative capture (BE camp + SQQQ drag on a green day), but the fade is validating the gate; the binary test is live this week. Projection pop_rank 1 -> SQQQ (fade-into-close, held). Score alpha -12.9 vs TQQQ -6.3% since 7/2. Day-trade 0/3. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-20-1315.json."
+    },
     {
       "ts": "2026-07-20T12:50:00-04:00",
       "kind": "engine",
@@ -1825,6 +1825,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-20T13:15:00-04:00",
+      "text": "1:15pm: The morning chip pop kept fading - SOXL round-tripped from +10% to +4.7%, AMD +5%->+2.7%, and QQQ slid back to ~$700 near its day low, still ~2.4% under its 20-day ($717), while SPY sits near record highs (so the weakness stays chip-specific). Gate stays SHUT. Held both books unchanged: the BE-cut ticket is still staged for your tap (frees ~$607), paper's 4 names + the SQQQ hedge are all stopped, and live $201 + paper ~$47k stay dry. I did NOT add to the hedge into $698 support that's held 3x today with SPY at highs - that's shorting an unconfirmed break. Waiting for a real $698 break (press the fade) or a $716 reclaim (flip long into PLTR/NVDA/VRT). 5/5 stops verified, zero naked. Live day-trade budget 0/3.",
+      "hype": "Chips faded even more and the Nasdaq slid back near its lows, but it's holding a line that SPY's record highs keep defending - so I'm not shorting into it or chasing the leveraged names. Holding steady with the hedge on, Bloom's still queued to cut, and I move the second it breaks either way."
+    },
+    {
       "ts": "2026-07-20T12:50:00-04:00",
       "text": "12:50pm: QQQ is grinding higher lows off its $698 morning low but at ~$702 it's still ~2.1% under its 20-day ($717) - a bounce, not a reclaim, so the gate stays ON. Semis are green but FADING from the open highs (SOXL +8%->+5.8%, AMD +5%->+3.2%, NVDA +0.9%) - the same 'chip pop fades under the 20-day' pattern as ASML/TSMC last week, which validates the wait. SPY sits near record highs, so the weakness stays QQQ/chip-specific. Held both books unchanged: BE-cut ticket still staged for your tap (frees ~$610), live $201 + paper ~$47k dry for a confirmed $716 reclaim. 5/5 stops verified, zero naked. Live day-trade budget 0/3.",
       "hype": "Chips are green but already fading below the trend line, so I'm still not chasing - holding both books, powder dry, and the Bloom cut is waiting on your tap. If it actually reclaims the line I pounce fast."
@@ -1893,18 +1898,13 @@
       "ts": "2026-07-20T05:40:00-04:00",
       "text": "5:40am ET pre-market re-verify (opens 9:30). Both books reconciled off the broker: all 7 GTC stops live (live BE $188; paper BE $188 / CEG $236 / NVDA $186 / PLTR $121.50 / RKLB $62 / SQQQ $38), zero naked, queue clean, no open tickets. Fresh reads CONFIRM the 5:14 lean: Nasdaq-100 futures +0.37% / S&P +0.24% green, WTI cooled to ~$82 — an oversold-snapback tilt after four red days — but QQQ is still $695, ~3% under its 20-day, so the regime gate stays shut and posture holds LIGHT into the 9:30 fork. No new BE weekend catalyst (its thin pre-market dip is just Friday's spike consolidating); minor PLTR negative — France/Germany scouting a Maven alternative. No live ticket pre-6am; staged for the QQQ-vs-$718 open.",
       "hype": "Still green futures and oil's calmed down, but we're under the line that says 'safe to press' — so I'm staying light and hedged 'til the open picks a side. Everything's stopped, nothing naked."
-    },
-    {
-      "ts": "2026-07-20T05:14:00-04:00",
-      "text": "5:14am ET pre-market re-verify (opens 9:30). Both books reconciled off the broker - all 7 GTC stops live (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no tickets. Fresh tape firms the open toward a snapback rather than continuation-down: Nasdaq-100 futures +0.37% / S&P +0.24% green, and the oil scare has COOLED - WTI back to ~$82 (-0.5%), not the ~$85 spike the overnight run flagged - so the inflation/risk-off wildcard eased. Iran strikes continue (9th night, 17 troops) but the market is shrugging (~68% odds of an up open). Regime is still broken though: QQQ $695 sits ~3.2% under its $718 20-day (day 4), and Alphabet + Tesla report Wednesday AMC - so this is a countertrend relief bounce to rent, not a trend change to chase. Staying LIGHT and letting the 9:30 open decide the fork; no live ticket before 6am. Staged: QQQ reclaims $718 on volume -> cover/trim SQQQ and rotate the live $201 + freed paper into the strongest confirmed long (BE if it holds its Friday-reversal base, else RKLB); still under -> hold light, only trim the weakest chip laggard (NVDA) toward the hedge into intraday strength, never the gap-down low. Live same-day day-trade budget: full (0 of 3 used in the trailing 5 sessions).",
-      "hype": "Futures flipped green and the oil scare cooled, so a bounce looks likelier than more downside today - but chips are still broken under $718, so I stay light and let the open decide instead of guessing."
     }
   ],
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 68.9,
-    "tqqq_pct": -10.4
+    "tqqq": 68.97,
+    "tqqq_pct": -10.31
   },
   "status": [
     {
@@ -1913,7 +1913,7 @@
     },
     {
       "session": "Afternoon",
-      "text": "Semis fade; held both books, dry"
+      "text": "Chip pop fades; held light, dry"
     }
   ],
   "equity_history": {
@@ -2845,6 +2845,10 @@
       [
         1784568060000,
         806.37
+      ],
+      [
+        1784568120000,
+        807.17
       ]
     ],
     "1W": [
