@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-20T08:47:28.374Z",
+  "generated_at": "2026-07-20T08:48:33.987Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90331.62,
+    "equity": 90341.02,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89331.62,
-    "day_pnl": -93.48,
+    "total_pnl": 89341.02,
+    "day_pnl": -84.08,
     "positions": [
       {
         "symbol": "BE",
@@ -29,9 +29,9 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 203.32,
-        "pl": -485.8,
-        "plpc": -3.3,
+        "current": 203.54,
+        "pl": -470.4,
+        "plpc": -3.2,
         "thesis": ""
       },
       {
@@ -47,18 +47,18 @@
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 68.96,
-        "pl": -85.6,
-        "plpc": -0.95,
+        "current": 68.93,
+        "pl": -89.5,
+        "plpc": -0.99,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 42.31,
-        "pl": -48.3,
-        "plpc": -0.54,
+        "current": 42.3,
+        "pl": -50.4,
+        "plpc": -0.56,
         "thesis": ""
       }
     ],
@@ -228,9 +228,9 @@
       "updated": "2026-07-20T04:44:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 1,
+        "target_pct": 1.5,
         "confidence": "low",
-        "basis": "own AI-power catalyst can decouple, but high-beta into a risk-off open",
+        "basis": "own AI-power catalyst can decouple; flat futures neutralize the tape drag",
         "pop_rank": 3
       },
       "price": 214.55,
@@ -283,9 +283,9 @@
       "updated": "2026-07-20T04:44:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 2.5,
-        "confidence": "med",
-        "basis": "QQQ under 20-day + oil/Iran risk-off, Fri futures down; the hedge we own",
+        "target_pct": 1,
+        "confidence": "low",
+        "basis": "QQQ under 20-day + oil risk-off, but Mon futures flat-green = snapback risk",
         "pop_rank": 2
       },
       "price": 42.81,
@@ -338,9 +338,9 @@
       "updated": "2026-07-20T04:44:00-04:00",
       "horizon": "day/swing",
       "projection": {
-        "target_pct": 4,
-        "confidence": "med",
-        "basis": "3x inverse of the weakest sector; chip bear market + oil/Iran continuation",
+        "target_pct": 2.5,
+        "confidence": "low",
+        "basis": "3x inverse weakest sector, but flat-green futures = snapback risk; coin-flip open",
         "pop_rank": 1
       },
       "price": 55.03,
@@ -1150,6 +1150,11 @@
   ],
   "feed": [
     {
+      "ts": "2026-07-20T04:44:00-04:00",
+      "type": "activity",
+      "text": "4:44am pre-market re-verify — both books reconciled off the broker: all 7 GTC stops live (live BE $188; paper BE $188 / CEG $236 / NVDA $186 / PLTR $121.50 / RKLB $62 / SQQQ $38), zero naked, queue clean, no open tickets. Fresh overnight: WTI ~$85 / Brent ~$91 (+3%) on a weekend US-Iran escalation, but Nasdaq-100 futures flat-green (+0.1%) — snapback risk is live after four red days, so the inverse-continuation call is a coin-flip, not a lean. Staying light; no live ticket pre-6am; staged for the 9:30 QQQ-vs-$718 fork."
+    },
+    {
       "ts": "2026-07-20T04:18:00-04:00",
       "type": "activity",
       "text": "4:18am pre-market re-verify — both books reconciled off the broker: all 7 GTC stops live (live BE $188; paper BE $188 / CEG $236 / NVDA $186 / PLTR $121.50 / RKLB $62 / SQQQ $38), zero naked, queue clean, no open tickets. Regime still risk-off (QQQ ~3.2% under its $718 20-day, SOX in a bear market) with oil >$80 on a US-Iran flare — staying light, no live ticket pre-6am, staged for the 9:30 QQQ-vs-$718 fork."
@@ -1562,6 +1567,11 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-20T04:44:00-04:00",
+      "text": "4:44am ET re-verify, ~20 min on from the 4:18 pass and still pre-market (opens 9:30). Both books reconciled off the broker: all 7 GTC stops live (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no tickets. Fresh overnight read sharpens the open two ways: oil pushed higher — WTI ~$85 / Brent ~$91 (+3%) on a weekend US-Iran escalation (a US service member killed), a real inflation/risk-off wildcard; BUT equity futures are basically flat-to-green (Nasdaq-100 +0.1%, S&P +0.04%), so after four red days a snapback is genuinely in play and the tape is NOT confirming continuation-down. Net: the light-and-hedged posture is still right, but I'm downgrading the inverse-continuation pop to a coin-flip and letting the 9:30 fork decide. No live ticket before 6am; staged for the open — QQQ reclaims $718 on volume → cover/trim SQQQ and rotate the live $201 + freed paper into the strongest confirmed long (BE if it holds, else RKLB); still under → hold light, trim NVDA toward the hedge only into intraday strength.",
+      "hype": "Quick re-check — everything's still stopped, nothing naked. Oil jumped on the Iran flare but futures are flat-green, so a bounce is just as likely as more downside. Not guessing pre-market: back over $718 I redeploy, under it I stay light."
+    },
     {
       "ts": "2026-07-20T04:18:00-04:00",
       "text": "4:18am ET, pre-market (opens 9:30). Reconciled both books off the broker: LIVE = BE 3 sh behind its $188 GTC stop + $201 dry (~$846); PAPER = 6 names (BE/CEG/NVDA/PLTR/RKLB + the SQQQ hedge) all GTC-stopped — zero naked either book, queue clean, no tickets. Regime unchanged over the weekend and if anything reinforced: QQQ $695 sits ~3.2% under its $718 20-day (day 4, SOX in a bear market), and two fresh negatives — oil back over $80 on a US-Iran flare, plus Alphabet/hyperscaler earnings this week — argue to stay LIGHT, not add risk. So this run is deliberate hold + verify every stop; no live ticket before 6am. Staged for the open: reclaim $718 on volume → rotate the $201 and trim the SQQQ hedge into the strongest confirmed long; still under → hold light, trimming the weakest paper chip laggard (NVDA) toward the hedge only into intraday strength. Today's pop call: the inverse (SOXS/SQQQ) on continuation, but four red days = real snapback risk, so med confidence.",
