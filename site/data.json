@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-20T20:48:38.050Z",
+  "generated_at": "2026-07-20T20:49:47.552Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 89488.99,
+    "equity": 89492.92,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88488.99,
-    "day_pnl": -936.11,
+    "total_pnl": 88492.92,
+    "day_pnl": -932.18,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,27 +20,27 @@
         "symbol": "NVDA",
         "qty": "90.0000",
         "entry": 209.23,
-        "current": 202.53,
-        "pl": -602.74,
-        "plpc": -3.2,
+        "current": 202.55,
+        "pl": -601.3,
+        "plpc": -3.19,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "100.0000",
         "entry": 135.75,
-        "current": 134.25,
-        "pl": -150.5,
-        "plpc": -1.11,
+        "current": 134.26,
+        "pl": -149.5,
+        "plpc": -1.1,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "310.0000",
         "entry": 42.36,
-        "current": 42.7,
-        "pl": 106.23,
-        "plpc": 0.81,
+        "current": 42.71,
+        "pl": 107.72,
+        "plpc": 0.82,
         "thesis": ""
       }
     ],
@@ -1239,13 +1239,13 @@
       "size_pct": "-",
       "size_note": "gated - sold 7/17",
       "plan_usd": "none until QQQ reclaims $716",
-      "updated": "2026-07-20T16:05:00-04:00",
+      "updated": "2026-07-20T16:41:00-04:00",
       "horizon": "tactical",
       "projection": {
         "target_pct": 0.6,
         "confidence": "low",
         "basis": "gated 3x-FANG; avoid under the gate",
-        "pop_rank": 8
+        "pop_rank": 12
       },
       "price": 27.07,
       "spark": [
@@ -1343,19 +1343,19 @@
       "verdict": "watch",
       "verdict_label": "Watch",
       "chg_pct": -2.71,
-      "thesis": "**Pulling back -1.8% from its highs.** RKLB is the space leader but it's giving back after a strong run, in line with the risk-off-the-highs afternoon. No entry into a falling knife; watch for it to base and reclaim.",
+      "thesis": "**Won a spot in the ~$17B U.S. NSSL Phase 3 Lane 1 launch pool today (with SpaceX, ULA, Blue Origin) — a real medium-term catalyst — yet still closed −2.8%, selling the news in a risk-off tape.** That fade is the tell: a huge award couldn't hold a bid with QQQ under its 20-day. The Neutron-qualification story is a genuine upgrade to the space thesis, but the price action says wait — watch for RKLB to base above ~$65 and reclaim Friday's $70.6 high before an entry, not buy the knife into midweek mega-cap earnings.",
       "hold_reason": "",
       "size": "-",
       "size_pct": "-",
-      "size_note": "watch; pulling back",
-      "plan_usd": "none - wait for a base",
-      "updated": "2026-07-20T16:05:00-04:00",
+      "size_note": "watch; won $17B NSSL launch award but faded on it",
+      "plan_usd": "none — wait for a base + reclaim over ~$70.6",
+      "updated": "2026-07-20T16:41:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": -0.6,
-        "confidence": "med",
-        "basis": "space name below support; no catalyst",
-        "pop_rank": 12
+        "target_pct": 1.5,
+        "confidence": "low",
+        "basis": "won $17B NSSL launch award but faded; watch reclaim",
+        "pop_rank": 8
       },
       "price": 65.76,
       "spark": [
@@ -1562,7 +1562,7 @@
       "theme": "Inverse semis",
       "verdict": "avoid",
       "verdict_label": "Avoid",
-      "chg_pct": -1.35,
+      "chg_pct": -1.44,
       "thesis": "**Inverse semis, -4.3% as chips net-green - correctly not owned.** SOXS is the mirror of the SOXL round-trip; it spiked +18% intraday on 7/17 then collapsed, the exact extended-inverse trap we dodge. Live can't cleanly hold an inverse anyway; the paper hedge is expressed via SQQQ.",
       "hold_reason": "",
       "size": "-",
@@ -1577,7 +1577,7 @@
         "basis": "inverse semis; only if chips roll over",
         "pop_rank": 15
       },
-      "price": 54.25,
+      "price": 54.2,
       "spark": [
         81.76,
         76.32,
@@ -1608,11 +1608,16 @@
         32.4,
         38.65,
         45.1,
-        54.25
+        54.2
       ]
     }
   ],
   "feed": [
+    {
+      "ts": "2026-07-20T16:41:00-04:00",
+      "type": "activity",
+      "text": "4:41pm after-hours verify: books still clean (live flat/cash $810, zero naked; paper 4 names all GTC-stopped). Caught a fresh catalyst the last run missed — Rocket Lab named in the ~$17B NSSL Phase 3 Lane 1 launch pool (with SpaceX/ULA/Blue Origin), but RKLB faded to close −2.8% (sold the news, sub-20-day tape) → watch, not a chase. Gate SHUT day 5 (QQQ $696 vs 20-day $716). PLTR buy staged for the 7/21 open (ticket -3). Grade stays D. Day-trade 0/3."
+    },
     {
       "ts": "2026-07-20T16:14:00-04:00",
       "type": "activity",
@@ -1879,7 +1884,7 @@
       "text": "Cut the paper NVDA long 130->70 into the afternoon bounce - it was ~29% of the book and the single biggest drag in a chip-led rout (Apple just passed Nvidia; SOXX -18% on the month, worst since 2008). Selling into strength, not the low. Freed ~$12k to Monday powder and re-armed the $186 stop on the remaining 70."
     }
   ],
-  "latest_recap": "Mon 7/20 ~4:14pm ET - market CLOSED (after-hours), POST-CLOSE VERIFY ~9 min after the 4:05 finalize. Verify-and-hold both books, no changes. Reconciled clean both ways: LIVE == broker (flat, cash $810.32, zero positions, zero open orders, nothing naked); PAPER == broker (CEG 16 / NVDA 90 / PLTR 100 / SQQQ 310, all 4 GTC-stopped: PLTR $125 / NVDA $186 / SQQQ $38 / CEG $236, zero naked, ~45% cash $40.5k). Recomputed the regime off final daily bars: QQQ closed $696.06, 20-day = $716.1 -> 2.8% under (leverage-long gate SHUT, day 5); SPY $742.15 near record highs = a chip/Iran-specific derate, not a broad break. Close confirms the read: PLTR the RS leader ($134.85, +1.9%, fresh 2-wk high, pop_rank 1), SMR +3.2% the best pure watchlist mover, the morning chip pop fully round-tripped (SOXL opened $144 -> closed $136.86). After-close news check (Alpaca + web) clean: nothing broke the plan - IREN +20% on a $2.8B AI-cloud deal is the only notable AI-infra move, not a held name. Accountability stays final:true, grade D (honest: red day ended 100% cash; the BE cut was right on the verified TD Cowen catalyst but the PLTR buy expired untapped at the 4pm close -> capture ~0%). PLTR buy re-staged for the 7/21 open (ticket 2026-07-20-3, 5 sh, $122 stop, approve-anytime -> fills at the open); the expired intraday ticket -2 is retired (inert, superseded). No live order off-hours (market closed; fills at the open). Score alpha -11.2 vs TQQQ -7.8% since 7/2. Day-trade 0/3. Published engine-data.json only (backup -1614). Next: the 7/21 open - if QQQ reclaims/holds $716 cut the paper SQQQ hedge + add gated names back; if it loses $695 let the hedge run + consider a small live SQQQ.",
+  "latest_recap": "Mon 7/20 ~4:41pm ET - market CLOSED (after-hours), verify-and-hold heartbeat ~27 min after the 4:14 post-close verify. Re-reconciled BOTH books at the broker: LIVE == broker (flat, cash $810.32, zero positions/orders, nothing naked); PAPER == broker (CEG 16 / NVDA 90 / PLTR 100 / SQQQ 310, all 4 GTC-stopped: PLTR $125 / NVDA $186 / SQQQ $38 / CEG $236, zero naked; equity ~$89.5k AH provisional, ~45% cash). Regime unchanged: QQQ closed $696.06 vs 20-day $716.1 = 2.8% under, leverage gate SHUT day 5; SPY $742 near record highs = chip/Iran-specific derate. FRESH CATALYST the 4:14 run missed: Rocket Lab (RKLB) was named in the ~$17B U.S. NSSL Phase 3 Lane 1 launch pool (with SpaceX/ULA/Blue Origin, Benzinga 2:13pm ET) - a genuine medium-term upgrade to the space thesis, but RKLB still closed -2.8%, selling the news in a sub-20-day tape -> kept verdict watch, refreshed its coverage + bumped pop_rank 12->8 (swapped with FNGU). Earnings calendar confirmed: GOOGL/TSLA/TXN Wed 7/22, INTC Thu 7/23 (TSLA closed -2.9% into its print). Ticket hygiene: removed the redundant trade-ticket-2026-07-20-2.json (already status:retired + expired; its retired- twin preserves the record); the only live ticket is 2026-07-20-3 (BUY PLTR 5 sh, $122 GTC stop, approve-anytime -> fills at the 7/21 open). Accountability stays final:true grade D (unchanged). Score alpha -11.2 vs TQQQ -7.8% since 7/2. No live order off-hours (fills at the open). Day-trade 0/3. Published engine-data.json only (backup -1641). Next: the 7/21 open fork - QQQ reclaims/holds $716 -> cut the paper SQQQ hedge + add gated names back + PLTR fires; loses $695 -> let the hedge run + consider a small live SQQQ.",
   "activity": [
     {
       "ts": "2026-07-20T13:52:00-04:00",
@@ -1998,6 +2003,11 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-20T16:41:00-04:00",
+      "text": "4:41pm / after-hours verify — re-reconciled both books at the broker (LIVE flat, clean cash $810, zero naked; PAPER's 4 names PLTR/NVDA/CEG + the SQQQ hedge all GTC-stopped) and caught one thing the 4:14 run missed: Rocket Lab was named in the ~$17B NSSL Phase 3 Lane 1 launch pool today (with SpaceX/ULA/Blue Origin) — a real catalyst, but RKLB still closed −2.8%, selling the news in a sub-20-day tape, so it's a watch not a chase (bumped it up the board). Nothing else moved: QQQ closed $696 vs its $716 20-day (gate SHUT day 5), grade stays an honest D. PLTR buy stays staged for the 7/21 open (ticket -3). The open is a clean fork — QQQ reclaims/holds $716 → cut the paper SQQQ hedge + add gated names back; loses $695 → let the hedge run + consider a small live SQQQ. Day-trade 0/3.",
+      "hype": "After-hours check — both books clean, hedge still on. Rocket Lab got a slice of a $17B launch contract but the stock sold off on it, so it's a watch, not a buy; Palantir's still teed up for tomorrow's open."
+    },
     {
       "ts": "2026-07-20T16:14:00-04:00",
       "text": "4:14pm / post-close verify (9 min after the finalize) - re-pulled the close and reconciled both books; nothing broke after the bell. LIVE flat, clean cash $810, zero naked; PAPER's 4 names (PLTR/NVDA/CEG + the SQQQ hedge) all GTC-stopped. Recomputed the gate off final daily bars: QQQ closed $696 vs a 20-day of $716.1 = 2.8% under, gate SHUT a 5th day; SPY $742 near record highs = a chip/Iran-specific derate, not a broad break. PLTR confirmed the RS leader into the close ($134.85, +1.9%, fresh 2-wk high, pop_rank 1); SMR +3.2% the day's best pure mover. Grade stays an honest D - a red day that ended cash-locked. The BE->PLTR rotation buy is re-staged for the 7/21 open (ticket 2026-07-20-3, approve anytime -> fills at the open). Nothing to trade off-hours; staged for the open. Day-trade 0/3.",
