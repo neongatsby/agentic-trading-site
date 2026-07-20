@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-20T12:26:26.457Z",
+  "generated_at": "2026-07-20T12:27:33.574Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90498.06,
+    "equity": 90533.13,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89498.06,
-    "day_pnl": 72.96,
+    "total_pnl": 89533.13,
+    "day_pnl": 108.03,
     "positions": [
       {
         "symbol": "BE",
@@ -20,45 +20,45 @@
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 253.8,
-        "pl": -110.08,
-        "plpc": -2.64,
+        "current": 254.52,
+        "pl": -98.56,
+        "plpc": -2.36,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.7,
-        "pl": -319.2,
-        "plpc": -2.17,
+        "current": 205.88,
+        "pl": -306.95,
+        "plpc": -2.09,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.82,
-        "pl": -220,
-        "plpc": -3.25,
+        "current": 130.85,
+        "pl": -218.5,
+        "plpc": -3.23,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.63,
-        "pl": 1.5,
-        "plpc": 0.02,
+        "current": 69.77,
+        "pl": 19.7,
+        "plpc": 0.22,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.67,
-        "pl": -182.7,
-        "plpc": -2.04,
+        "current": 41.63,
+        "pl": -191.1,
+        "plpc": -2.14,
         "thesis": ""
       }
     ],
@@ -454,7 +454,7 @@
       "theme": "3x inverse Nasdaq / regime hedge",
       "verdict": "hold",
       "verdict_label": "Held paper — 3x-inverse hedge",
-      "chg_pct": 2.01,
+      "chg_pct": 1.81,
       "thesis": "**The paper book's hedge and the reason it can own the green on a down day.** 210 sh @ $42.54, $38 GTC stop. With QQQ ~3.2% under its 20-day and a fresh oil/Iran risk-off flare, a 3x-inverse-Nasdaq sleeve is the offset that pays while the longs bleed — it was +4.6% Friday, one of only two green watchlist names. We hold it as insurance, not a naked short: it partially offsets the paper NVDA/PLTR/RKLB net-long chip drag. Live can't cleanly carry it (PDT + wash constraints), so this capture lives in paper. On a confirmed $718 reclaim on volume, this is the first thing we cover/trim to free cash for the strongest long.",
       "hold_reason": "We hold SQQQ as the paper hedge — it's 3x inverse Nasdaq, so it rises when the tech tape falls, which is what's happened four straight sessions. It's the piece that lets paper actually own a green name on a risk-off day instead of sitting fully offside. What we're watching: a QQQ reclaim of its $718 20-day on real volume is the signal to cover/trim it and rotate that cash into the strongest confirmed long — until then the hedge stays on.",
       "size": "$8.9k paper (210 sh)",
@@ -469,7 +469,7 @@
         "basis": "3x-inverse fades on a green open; held for the regime, covers first on a $718 reclaim",
         "pop_rank": 13
       },
-      "price": 41.71,
+      "price": 41.63,
       "spark": [
         41.31,
         40.85,
@@ -500,7 +500,7 @@
         36.3,
         37.89,
         39.84,
-        41.71
+        41.63
       ]
     },
     {
@@ -1009,7 +1009,7 @@
       "theme": "AI software / high-beta",
       "verdict": "hold",
       "verdict_label": "Held paper — high-beta software",
-      "chg_pct": -1.55,
+      "chg_pct": -2.68,
       "thesis": "**Held in paper (50 sh @ $135.22, $121.50 GTC stop).** PLTR is high-beta software, less directly chip-exposed than NVDA but it still tracks QQQ, and it was among the softer names Friday (-0.65%). No fresh company catalyst; it lives and dies with the risk-on/off tape right now. With the regime broken we hold it on its wide stop rather than add — it's the secondary trim candidate behind NVDA if we need to cut net-long exposure into strength.",
       "hold_reason": "Paper AI-software long, 50 sh @ $135.22, held as high-beta tech beta into the bounce; it sits behind a $121.50 GTC stop. Fresh minor negative: France and Germany are scouting a European alternative to Palantir's Maven — worth watching, not a sell trigger on its own. We'd trim it toward the SQQQ hedge only on a fresh QQQ breakdown, and let the winner run if the regime reclaims $718.",
       "size": "$6.6k paper (50 sh)",
@@ -1024,7 +1024,7 @@
         "basis": "Maven-rival headline caps the bounce; high beta",
         "pop_rank": 10
       },
-      "price": 132.37,
+      "price": 130.86,
       "spark": [
         137.4,
         136.84,
@@ -1055,7 +1055,7 @@
         116.64,
         125.75,
         129.18,
-        132.37
+        130.86
       ]
     },
     {
