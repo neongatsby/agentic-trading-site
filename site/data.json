@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-20T11:47:03.871Z",
+  "generated_at": "2026-07-20T11:48:10.993Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90610.8,
+    "equity": 90626.69,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89610.8,
-    "day_pnl": 185.7,
+    "total_pnl": 89626.69,
+    "day_pnl": 201.59,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 214.19,
-        "pl": -188.4,
-        "plpc": -2.15,
+        "current": 214.69,
+        "pl": -168.4,
+        "plpc": -1.92,
         "thesis": ""
       },
       {
@@ -29,36 +29,36 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 206.04,
-        "pl": -295.4,
-        "plpc": -2.01,
+        "current": 205.88,
+        "pl": -306.6,
+        "plpc": -2.08,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.9,
-        "pl": -216,
-        "plpc": -3.19,
+        "current": 130.97,
+        "pl": -212.41,
+        "plpc": -3.14,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 70.13,
-        "pl": 66.5,
-        "plpc": 0.73,
+        "current": 70.06,
+        "pl": 57.4,
+        "plpc": 0.63,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.36,
-        "pl": -247.8,
-        "plpc": -2.77,
+        "current": 41.42,
+        "pl": -235.2,
+        "plpc": -2.63,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 843.83,
+    "equity": 845.33,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -156.17,
-    "day_pnl": -2.31,
+    "total_pnl": -154.67,
+    "day_pnl": -0.81,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 214.19,
-        "pl": -25.35,
-        "plpc": -3.79,
+        "current": 214.69,
+        "pl": -23.85,
+        "plpc": -3.57,
         "thesis": ""
       }
     ],
@@ -369,17 +369,17 @@
       "size_pct": "9% paper",
       "size_note": "Own both books; $188 stop each. Add only on confirmation, not the open print.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 3,
+        "target_pct": 2,
         "confidence": "med",
-        "basis": "Fri reversal off $194.6 + $1.7B AI-power catalyst, energy-security-adjacent; own both books",
-        "pop_rank": 1,
+        "basis": "catalyst long, green-tape lift, no fresh catalyst; 7/28 earnings",
+        "pop_rank": 3,
         "path_pct": [
-          1,
-          2,
-          3
+          0.8,
+          1.5,
+          2
         ]
       },
       "price": 214.55,
@@ -429,13 +429,13 @@
       "size_pct": "10% paper",
       "size_note": "Paper hedge; $38 stop. First to cover on a $718 reclaim.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": -1.5,
+        "target_pct": -2.5,
         "confidence": "med",
-        "basis": "3x-inverse eases as oil reverses + chips bid into a green open; held for the regime, covers first on a $718 reclaim",
-        "pop_rank": 12
+        "basis": "3x-inverse fades on a green open; held for the regime, covers first on a $718 reclaim",
+        "pop_rank": 13
       },
       "price": 42.81,
       "spark": [
@@ -484,13 +484,13 @@
       "size_pct": "-",
       "size_note": "Add to paper only on a confirmed weak open, not pre-market.",
       "plan_usd": "~$5-8k paper on a confirmed weak open",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "day/swing",
       "projection": {
         "target_pct": -3,
         "confidence": "low",
-        "basis": "3x-inverse semis fades hard as chips bid + oil reverses on a green open — don't chase",
-        "pop_rank": 13
+        "basis": "3x-inverse semis fades hard as chips bid",
+        "pop_rank": 15
       },
       "price": 55.03,
       "spark": [
@@ -539,13 +539,18 @@
       "size_pct": "10% paper",
       "size_note": "Paper; $62 stop. RS leader — add candidate on a reclaim.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 2,
-        "confidence": "low",
-        "basis": "green on Fri's close but broke intraday support — a bounce inside a downtrend",
-        "pop_rank": 2
+        "target_pct": 3.5,
+        "confidence": "med",
+        "basis": "RS leader + oversold; space decoupled from chip fear; leads pre-mkt",
+        "pop_rank": 1,
+        "path_pct": [
+          1.2,
+          2.4,
+          3.5
+        ]
       },
       "price": 67.85,
       "spark": [
@@ -594,13 +599,13 @@
       "size_pct": "-",
       "size_note": "No position.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "-",
       "projection": {
-        "target_pct": 1.2,
+        "target_pct": 2,
         "confidence": "low",
-        "basis": "quantum risk-proxy bounce, low conviction",
-        "pop_rank": 8
+        "basis": "quantum risk-proxy bounce on the relief tape",
+        "pop_rank": 9
       },
       "price": 14.12,
       "spark": [
@@ -649,13 +654,13 @@
       "size_pct": "-",
       "size_note": "No position; CEG is the held proxy.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "-",
       "projection": {
-        "target_pct": 1.8,
+        "target_pct": 2.2,
         "confidence": "low",
-        "basis": "nuclear beta rides the energy-security tilt",
-        "pop_rank": 6
+        "basis": "SMR-nuclear beta lifts on a green open",
+        "pop_rank": 7
       },
       "price": 7.66,
       "spark": [
@@ -704,13 +709,13 @@
       "size_pct": "-",
       "size_note": "No position.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "-",
       "projection": {
-        "target_pct": 2,
+        "target_pct": 2.5,
         "confidence": "low",
-        "basis": "SMR-nuclear beta lifts on the energy-security bid",
-        "pop_rank": 5
+        "basis": "nuclear-AI high-beta bounce on the risk-on tilt",
+        "pop_rank": 6
       },
       "price": 40.64,
       "spark": [
@@ -759,13 +764,13 @@
       "size_pct": "-",
       "size_note": "No position.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "-",
       "projection": {
-        "target_pct": 1.2,
+        "target_pct": 2,
         "confidence": "low",
-        "basis": "high-beta quantum bounce on a green open, low conviction",
-        "pop_rank": 7
+        "basis": "quantum high-beta bounce, low conviction",
+        "pop_rank": 8
       },
       "price": 34.77,
       "spark": [
@@ -814,13 +819,13 @@
       "size_pct": "5% paper",
       "size_note": "Paper; $236 stop. Defensive ballast — a keep.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 1,
+        "target_pct": 1.2,
         "confidence": "med",
-        "basis": "defensive AI-power leg; energy-security bid eases as oil cools but AI-power demand steady — steadiest paper long",
-        "pop_rank": 3
+        "basis": "defensive AI-power, steady bid on the relief tape",
+        "pop_rank": 4
       },
       "price": 252.36,
       "spark": [
@@ -869,13 +874,13 @@
       "size_pct": "-",
       "size_note": "No position; not re-adding into risk-off.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "-",
       "projection": {
-        "target_pct": 0.5,
+        "target_pct": 0.8,
         "confidence": "low",
         "basis": "oversold fintech beta, no catalyst",
-        "pop_rank": 10
+        "pop_rank": 12
       },
       "price": 17.28,
       "spark": [
@@ -924,13 +929,13 @@
       "size_pct": "16% paper",
       "size_note": "Paper; $186 stop. Trim-into-strength candidate.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 0.8,
+        "target_pct": 2.5,
         "confidence": "low",
-        "basis": "oversold, but China-Moonshot cloud + Alphabet Wed capex read-through cap the bounce",
-        "pop_rank": 4
+        "basis": "oversold epicenter snapback on chip bid, capped by Wed capex read",
+        "pop_rank": 2
       },
       "price": 202.38,
       "spark": [
@@ -979,13 +984,13 @@
       "size_pct": "7% paper",
       "size_note": "Paper; $121.50 stop.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": -0.5,
+        "target_pct": 0.5,
         "confidence": "low",
-        "basis": "France/Germany Maven-rival headline + high beta into a heavy tape",
-        "pop_rank": 9
+        "basis": "Maven-rival headline caps the bounce; high beta",
+        "pop_rank": 10
       },
       "price": 132.37,
       "spark": [
@@ -1034,10 +1039,10 @@
       "size_pct": "-",
       "size_note": "No position.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "-",
       "projection": {
-        "target_pct": 0.5,
+        "target_pct": 1,
         "confidence": "low",
         "basis": "pre-earnings drift; Wed AMC report is the catalyst",
         "pop_rank": 11
@@ -1089,13 +1094,13 @@
       "size_pct": "-",
       "size_note": "No position; regime-gated OUT.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "-",
       "projection": {
-        "target_pct": 2.5,
+        "target_pct": 3,
         "confidence": "low",
-        "basis": "3x semis pops most in a bounce but gated out, uncapturable by design",
-        "pop_rank": 15
+        "basis": "3x semis pops most on a chip bounce but regime-gated OUT",
+        "pop_rank": 5
       },
       "price": 134.41,
       "spark": [
@@ -1144,13 +1149,13 @@
       "size_pct": "-",
       "size_note": "No position; regime-gated OUT.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "-",
       "projection": {
-        "target_pct": 1,
+        "target_pct": 1.5,
         "confidence": "low",
-        "basis": "3x S&P, gated out under the regime filter",
-        "pop_rank": 17
+        "basis": "3x S&P, least-broken long but gated out",
+        "pop_rank": 16
       },
       "price": 139.72,
       "spark": [
@@ -1199,7 +1204,7 @@
       "size_pct": "-",
       "size_note": "No position; benchmark only.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "-",
       "projection": {
         "target_pct": 2,
@@ -1254,13 +1259,13 @@
       "size_pct": "-",
       "size_note": "No position; regime-gated OUT.",
       "plan_usd": "-",
-      "updated": "2026-07-20T07:15:00-04:00",
+      "updated": "2026-07-20T07:45:00-04:00",
       "horizon": "-",
       "projection": {
         "target_pct": 2,
         "confidence": "low",
-        "basis": "3x FANG bounce but gated under the 20-day",
-        "pop_rank": 16
+        "basis": "3x FANG+ bounce but regime-gated OUT",
+        "pop_rank": 17
       },
       "price": 26.55,
       "spark": [
@@ -1707,6 +1712,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-20T07:45:00-04:00",
+      "text": "7:45am ET pre-market (opens 9:30), ~30 min on from the 7:15 pass. Pulled the REAL pre-market tape this run (overnight feed, not Friday's stale SIP): QQQ ~$699 - still ~2.7% under its $718.3 20-day, so the leverage-long gate stays SHUT (day 4). The bounce is real but MILD: NDX futures +0.6%, NVDA +0.5%, RKLB +1.5% (the RS leader), BE ~flat, oil easing back off $90 - a relief-bounce LEAN, not a $718 reclaim. Both books re-reconciled off the broker: 7/7 GTC stops live (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no tickets. No fresh BE catalyst; the Kimi-K3 chip cloud + Alphabet/Tesla (Wed) and Intel (Thu) earnings keep me off the chip longs. Holding light into the 9:30 fork - genuinely nothing to rotate into until the open confirms a direction, and a mild pre-market bounce is not that. Live same-day day-trade budget full (0 of 3).",
+      "hype": "Real pre-market's in: small green bounce and oil's calming, but it's not the breakout that'd let me press. Staying light and hedged 'til the 9:30 open picks a side - everything's stopped, nothing naked."
+    },
+    {
       "ts": "2026-07-20T07:15:00-04:00",
       "text": "7:15am ET pre-market (opens 9:30), ~35 min on from the 6:40 pass. Re-pulled fresh — regime UNCHANGED: QQQ closed $695.3 vs its $718.3 20-day, still 3.2% under (leverage-long gate shut, day 4), while SPY $743 sits right on its own 20-day = a tech-specific derate, not a broad break. Both books re-reconciled off the broker: 7/7 GTC stops live, zero naked, queue clean, no tickets. The one news DELTA that matters: oil is REVERSING Friday's Hormuz spike (Trump says Iran 'very, very badly damaged' -> de-escalation) and chipmakers are bid pre-market, so futures firmed and the tape leans toward a relief-bounce open (~65% odds S&P opens green). But a bounce is not a $718 reclaim (+3.3% away), so I held light and did NOT chase the pre-market print. Staged and LOADED for the 9:30 fork; live same-day day-trade budget full (0 of 3).",
       "hype": "Oil's backing off and chips are green pre-market, so today might actually bounce - but I need the 9:30 open to prove it before I commit. Still light and hedged, powder ready to move fast if it reclaims."
@@ -1780,11 +1790,6 @@
       "ts": "2026-07-17T16:41:00-04:00",
       "text": "4:41pm post-close safety check - the weekend book is fully protected. All 7 positions carry a live GTC stop at the broker (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, and the queue is clean: today's BE approve-now filled at $222.51 with its stop attached, and the stray NVDA/PLTR taps correctly no-op'd (BP-exclusive / retired ticket). No after-hours dislocation - BE held its $1.7B-Nebius gains near $214.5 with no fresh news, NVDA/PLTR flat post-close. Nothing to do into the weekend: the market's closed and I'm not blind-pre-arming a Monday order. Plan unchanged - Monday is a clean fork on QQQ vs its ~$718 20-day: still under it (QQQ closed $695) -> stay light (hold BE + the SQQQ hedge, live $201 dry, no 3x/chip re-adds); a reclaim of $718 on volume -> cover/trim the inverse and rotate freed paper cash + the live $201 into the single strongest confirmed long.",
       "hype": "Every position's got its stop set and BE held its deal pop - nothing to touch over the weekend. Monday's simple: QQQ back above ~718 and I redeploy, still under and I stay light."
-    },
-    {
-      "ts": "2026-07-17T16:14:00-04:00",
-      "text": "Post-close finalize (4:14pm). Grading today honestly at C-: selection was right — we owned the day's two green watchlist names (paper SQQQ inverse +5.0% and BE +3.6%, the best long, both books) and finally de-risked paper (cut UPRO+SOXL, trimmed NVDA) — but both books still closed red on a 3rd straight down day, so ~0% capture. Live finished -9.4% ($843.89), almost all of it the inherited overnight-3x gap-tuition: TQQQ+FNGU carried into Friday gapped below their stops and filled at the open (-$62) before any bounce — the exact risk the 7/16 lesson flagged. All 7 stops held, zero naked. No live ticket staged into the weekend — Monday's open is a clean fork on QQQ vs its 20-day (~$718).",
-      "hype": "Owned the two green names today and cut the shaky 3x — but the book still closed red because the overnight leverage gapped down at the open before I could sell it. Nothing forced into the weekend; Monday decides it at the open."
     }
   ],
   "benchmark": {
@@ -1796,7 +1801,7 @@
   "status": [
     {
       "session": "Pre-open",
-      "text": "Chips bid pre-mkt; QQQ still sub-20d — light"
+      "text": "Mild bounce, QQQ sub-20d - light"
     }
   ],
   "equity_history": {
