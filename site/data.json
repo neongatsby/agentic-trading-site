@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-20T13:00:16.929Z",
+  "generated_at": "2026-07-20T13:01:27.466Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90475.02,
+    "equity": 90463.42,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89475.02,
-    "day_pnl": 49.92,
+    "total_pnl": 89463.42,
+    "day_pnl": 38.32,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 212.68,
-        "pl": -248.8,
-        "plpc": -2.84,
+        "current": 212.7,
+        "pl": -248,
+        "plpc": -2.83,
         "thesis": ""
       },
       {
@@ -29,36 +29,36 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.8,
-        "pl": -312.2,
-        "plpc": -2.12,
+        "current": 205.4,
+        "pl": -340.2,
+        "plpc": -2.31,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.4,
-        "pl": -241,
-        "plpc": -3.56,
+        "current": 130.34,
+        "pl": -244,
+        "plpc": -3.61,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.67,
-        "pl": 6.7,
-        "plpc": 0.07,
+        "current": 69.7,
+        "pl": 10.6,
+        "plpc": 0.12,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.51,
-        "pl": -216.3,
-        "plpc": -2.42,
+        "current": 41.58,
+        "pl": -201.6,
+        "plpc": -2.26,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 839.3,
+    "equity": 839.36,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -160.7,
-    "day_pnl": -6.84,
+    "total_pnl": -160.64,
+    "day_pnl": -6.78,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 212.68,
-        "pl": -29.88,
-        "plpc": -4.47,
+        "current": 212.7,
+        "pl": -29.82,
+        "plpc": -4.46,
         "thesis": ""
       }
     ],
@@ -477,7 +477,7 @@
       "theme": "3x inverse Nasdaq / regime hedge",
       "verdict": "hold",
       "verdict_label": "Held paper — 3x-inverse hedge",
-      "chg_pct": 1.52,
+      "chg_pct": 1.64,
       "thesis": "**The paper book's hedge and the reason it can own the green on a down day.** 210 sh @ $42.54, $38 GTC stop. With QQQ ~3.2% under its 20-day and a fresh oil/Iran risk-off flare, a 3x-inverse-Nasdaq sleeve is the offset that pays while the longs bleed — it was +4.6% Friday, one of only two green watchlist names. We hold it as insurance, not a naked short: it partially offsets the paper NVDA/PLTR/RKLB net-long chip drag. Live can't cleanly carry it (PDT + wash constraints), so this capture lives in paper. On a confirmed $718 reclaim on volume, this is the first thing we cover/trim to free cash for the strongest long.",
       "hold_reason": "We hold SQQQ as the paper hedge — it's 3x inverse Nasdaq, so it rises when the tech tape falls, which is what's happened four straight sessions. It's the piece that lets paper actually own a green name on a risk-off day instead of sitting fully offside. What we're watching: a QQQ reclaim of its $718 20-day on real volume is the signal to cover/trim it and rotate that cash into the strongest confirmed long — until then the hedge stays on.",
       "size": "$8.9k paper (210 sh)",
@@ -492,7 +492,7 @@
         "basis": "3x-inverse bleeds on the semi bounce",
         "pop_rank": 14
       },
-      "price": 41.51,
+      "price": 41.56,
       "spark": [
         41.31,
         40.85,
@@ -523,7 +523,7 @@
         36.3,
         37.89,
         39.84,
-        41.51
+        41.56
       ]
     },
     {
@@ -532,7 +532,7 @@
       "theme": "3x inverse semis / sharpest hedge",
       "verdict": "watch",
       "verdict_label": "Watch — top pop pick if chips continue",
-      "chg_pct": -3.91,
+      "chg_pct": -3.98,
       "thesis": "**Top pop pick for today — the most explosive way to be green if the chip rout continues.** 3x inverse semiconductors, and semis are the epicenter: the SOX is in a bear market (~-20% off its high) and Friday's driver (China Moonshot-AI cheap-compute fear + oil/Iran) hit chips hardest. SOXS was +5.5% Friday, the day's single best mover. We don't hold it — live can't cleanly carry an inverse, and we chose NOT to add it to paper blind pre-market: after four down days the snapback risk into an oversold open is real. It's the add-into-confirmed-open-weakness candidate for paper, not a chase at the pre-market print.",
       "hold_reason": "Not held — it's the watch/pop pick. The plan is to add it to PAPER only if the open confirms continued chip weakness (into strength, not the pre-market print); live can't cleanly hold an inverse.",
       "size": "-",
@@ -547,7 +547,7 @@
         "basis": "3x-inverse-semi bleeds hardest on the rip",
         "pop_rank": 16
       },
-      "price": 50.07,
+      "price": 50.03,
       "spark": [
         81.76,
         76.32,
@@ -578,7 +578,7 @@
         32.4,
         38.65,
         45.1,
-        50.07
+        50.03
       ]
     },
     {
@@ -697,7 +697,7 @@
       "theme": "Nuclear-for-AI / SMR",
       "verdict": "watch",
       "verdict_label": "Watch — SMR-nuclear high beta",
-      "chg_pct": 2.09,
+      "chg_pct": 2.23,
       "thesis": "**Small-modular-nuclear high-beta — AI-power theme, but no ballast in a risk-off tape.** SMR rides the same data-center-power demand as CEG/BE but with far more beta and no near-term catalyst, so it fell hard last week. Avoid on the long side while QQQ is under its 20-day; a regime turn plus the AI-power bid is what puts it back in play. No position.",
       "hold_reason": "Not held — high-beta version of the AI-power theme; CEG is the way we own that theme defensively instead. Watching.",
       "size": "-",
@@ -712,7 +712,7 @@
         "basis": "nuclear-power theme bid with the bounce",
         "pop_rank": 7
       },
-      "price": 7.8,
+      "price": 7.81,
       "spark": [
         11.33,
         11.39,
@@ -743,7 +743,7 @@
         10.02,
         10.16,
         9.76,
-        7.8
+        7.81
       ]
     },
     {
@@ -972,7 +972,7 @@
       "theme": "AI leader / selloff epicenter",
       "verdict": "hold",
       "verdict_label": "Held paper — trim-into-strength candidate",
-      "chg_pct": -0.73,
+      "chg_pct": -0.89,
       "thesis": "**Held in paper (70 sh @ $210.26, $186 GTC stop) and the book's designated trim-into-strength name.** NVDA is the epicenter of the exact fear driving the tape — an AI-capex/valuation derate after the Moonshot-AI cheap-compute scare — so it's the highest-beta chip long we carry into a broken regime. We already cut it 130→70 Friday. The long-term thesis is intact but the regime gate says don't be heavy chips while QQQ is under its 20-day. If Monday bounces, this is the first long we trim toward the hedge into that strength; if it breaks, the $186 stop works. Alphabet/hyperscaler earnings this week are the read on whether the capex fear eases.",
       "hold_reason": "We still hold a half-position of NVDA in paper because it's the AI leader and we already cut it in half Friday, but it's the name most exposed to the fear driving this selloff. What we're watching: an intraday bounce is the cue to trim it further toward the SQQQ hedge (cut net-long chip risk into strength, per the week's lesson), while the wide $186 stop caps the downside if it breaks instead. Hyperscaler earnings this week decide whether the AI-capex fear eases or deepens.",
       "size": "$14.2k paper (70 sh)",
@@ -987,7 +987,7 @@
         "basis": "bellwether leads semi relief bounce; analysts call rebound",
         "pop_rank": 1
       },
-      "price": 205.94,
+      "price": 205.61,
       "spark": [
         219.21,
         215.09,
@@ -1018,7 +1018,7 @@
         199.93,
         197.54,
         194.51,
-        205.94
+        205.61
       ]
     },
     {
