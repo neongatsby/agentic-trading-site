@@ -1,64 +1,64 @@
 {
-  "generated_at": "2026-07-20T13:14:57.707Z",
+  "generated_at": "2026-07-20T13:16:04.771Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90442.86,
+    "equity": 90464.25,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89442.86,
-    "day_pnl": 17.76,
+    "total_pnl": 89464.25,
+    "day_pnl": 39.15,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 212.9,
-        "pl": -240,
-        "plpc": -2.74,
+        "current": 213.38,
+        "pl": -220.6,
+        "plpc": -2.52,
         "thesis": ""
       },
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 254.45,
-        "pl": -99.68,
-        "plpc": -2.39,
+        "current": 254.08,
+        "pl": -105.59,
+        "plpc": -2.53,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.16,
-        "pl": -357,
-        "plpc": -2.43,
+        "current": 205.25,
+        "pl": -350.7,
+        "plpc": -2.38,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.2,
-        "pl": -251,
-        "plpc": -3.71,
+        "current": 130.26,
+        "pl": -248,
+        "plpc": -3.67,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.6,
-        "pl": -2.4,
-        "plpc": -0.03,
+        "current": 69.57,
+        "pl": -6.3,
+        "plpc": -0.07,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.62,
-        "pl": -193.2,
-        "plpc": -2.16,
+        "current": 41.61,
+        "pl": -195.3,
+        "plpc": -2.19,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 839.96,
+    "equity": 841.42,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -160.04,
-    "day_pnl": -6.18,
+    "total_pnl": -158.58,
+    "day_pnl": -4.72,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 212.9,
-        "pl": -29.22,
-        "plpc": -4.38,
+        "current": 213.38,
+        "pl": -27.77,
+        "plpc": -4.16,
         "thesis": ""
       }
     ],
@@ -419,6 +419,10 @@
       {
         "t": 1784553000000,
         "v": 839.54
+      },
+      {
+        "t": 1784553300000,
+        "v": 839.96
       }
     ]
   },
@@ -485,7 +489,7 @@
       "theme": "3x inverse Nasdaq / regime hedge",
       "verdict": "hold",
       "verdict_label": "Held paper — 3x-inverse hedge",
-      "chg_pct": 1.49,
+      "chg_pct": 1.81,
       "thesis": "**The paper book's hedge and the reason it can own the green on a down day.** 210 sh @ $42.54, $38 GTC stop. With QQQ ~3.2% under its 20-day and a fresh oil/Iran risk-off flare, a 3x-inverse-Nasdaq sleeve is the offset that pays while the longs bleed — it was +4.6% Friday, one of only two green watchlist names. We hold it as insurance, not a naked short: it partially offsets the paper NVDA/PLTR/RKLB net-long chip drag. Live can't cleanly carry it (PDT + wash constraints), so this capture lives in paper. On a confirmed $718 reclaim on volume, this is the first thing we cover/trim to free cash for the strongest long.",
       "hold_reason": "We hold SQQQ as the paper hedge — it's 3x inverse Nasdaq, so it rises when the tech tape falls, which is what's happened four straight sessions. It's the piece that lets paper actually own a green name on a risk-off day instead of sitting fully offside. What we're watching: a QQQ reclaim of its $718 20-day on real volume is the signal to cover/trim it and rotate that cash into the strongest confirmed long — until then the hedge stays on.",
       "size": "$8.9k paper (210 sh)",
@@ -500,7 +504,7 @@
         "basis": "3x-inverse bleeds on the semi bounce",
         "pop_rank": 14
       },
-      "price": 41.5,
+      "price": 41.63,
       "spark": [
         41.31,
         40.85,
@@ -531,7 +535,7 @@
         36.3,
         37.89,
         39.84,
-        41.5
+        41.63
       ]
     },
     {
