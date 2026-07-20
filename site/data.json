@@ -1,55 +1,55 @@
 {
-  "generated_at": "2026-07-20T13:21:44.905Z",
+  "generated_at": "2026-07-20T13:22:51.194Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90527.21,
+    "equity": 90551.25,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89527.21,
-    "day_pnl": 102.11,
+    "total_pnl": 89551.25,
+    "day_pnl": 126.15,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 214,
-        "pl": -196,
-        "plpc": -2.24,
+        "current": 214.53,
+        "pl": -174.8,
+        "plpc": -2,
         "thesis": ""
       },
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 254.08,
-        "pl": -105.59,
-        "plpc": -2.53,
+        "current": 254.34,
+        "pl": -101.44,
+        "plpc": -2.43,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.35,
-        "pl": -343.7,
-        "plpc": -2.33,
+        "current": 205.4,
+        "pl": -340.2,
+        "plpc": -2.31,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.42,
-        "pl": -239.94,
-        "plpc": -3.55,
+        "current": 130.4,
+        "pl": -241.08,
+        "plpc": -3.57,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.78,
-        "pl": 20.7,
-        "plpc": 0.23,
+        "current": 69.9,
+        "pl": 36.6,
+        "plpc": 0.4,
         "thesis": ""
       },
       {
@@ -57,7 +57,7 @@
         "qty": "210.0000",
         "entry": 42.54,
         "current": 41.52,
-        "pl": -214.2,
+        "pl": -213.97,
         "plpc": -2.4,
         "thesis": ""
       }
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 843.26,
+    "equity": 844.85,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -156.74,
-    "day_pnl": -2.88,
+    "total_pnl": -155.15,
+    "day_pnl": -1.29,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 214,
-        "pl": -25.92,
-        "plpc": -3.88,
+        "current": 214.53,
+        "pl": -24.33,
+        "plpc": -3.64,
         "thesis": ""
       }
     ],
@@ -493,7 +493,7 @@
       "theme": "3x inverse Nasdaq / regime hedge",
       "verdict": "hold",
       "verdict_label": "Held paper — 3x-inverse hedge",
-      "chg_pct": 1.54,
+      "chg_pct": 1.57,
       "thesis": "**The paper book's hedge and the reason it can own the green on a down day.** 210 sh @ $42.54, $38 GTC stop. With QQQ ~3.2% under its 20-day and a fresh oil/Iran risk-off flare, a 3x-inverse-Nasdaq sleeve is the offset that pays while the longs bleed — it was +4.6% Friday, one of only two green watchlist names. We hold it as insurance, not a naked short: it partially offsets the paper NVDA/PLTR/RKLB net-long chip drag. Live can't cleanly carry it (PDT + wash constraints), so this capture lives in paper. On a confirmed $718 reclaim on volume, this is the first thing we cover/trim to free cash for the strongest long.",
       "hold_reason": "We hold SQQQ as the paper hedge — it's 3x inverse Nasdaq, so it rises when the tech tape falls, which is what's happened four straight sessions. It's the piece that lets paper actually own a green name on a risk-off day instead of sitting fully offside. What we're watching: a QQQ reclaim of its $718 20-day on real volume is the signal to cover/trim it and rotate that cash into the strongest confirmed long — until then the hedge stays on.",
       "size": "$8.9k paper (210 sh)",
@@ -508,7 +508,7 @@
         "basis": "3x-inverse bleeds on the semi bounce",
         "pop_rank": 16
       },
-      "price": 41.52,
+      "price": 41.53,
       "spark": [
         41.31,
         40.85,
@@ -539,7 +539,7 @@
         36.3,
         37.89,
         39.84,
-        41.52
+        41.53
       ]
     },
     {
@@ -718,7 +718,7 @@
       "theme": "Nuclear-for-AI / SMR",
       "verdict": "watch",
       "verdict_label": "Watch — SMR-nuclear high beta",
-      "chg_pct": 1.7,
+      "chg_pct": 1.83,
       "thesis": "**Small-modular-nuclear high-beta — AI-power theme, but no ballast in a risk-off tape.** SMR rides the same data-center-power demand as CEG/BE but with far more beta and no near-term catalyst, so it fell hard last week. Avoid on the long side while QQQ is under its 20-day; a regime turn plus the AI-power bid is what puts it back in play. No position.",
       "hold_reason": "Not held — high-beta version of the AI-power theme; CEG is the way we own that theme defensively instead. Watching.",
       "size": "-",
@@ -733,7 +733,7 @@
         "basis": "nuclear-for-AI beta bounce",
         "pop_rank": 8
       },
-      "price": 7.77,
+      "price": 7.78,
       "spark": [
         11.33,
         11.39,
@@ -764,7 +764,7 @@
         10.02,
         10.16,
         9.76,
-        7.77
+        7.78
       ]
     },
     {
@@ -1268,7 +1268,7 @@
       "theme": "Leveraged Nasdaq",
       "verdict": "avoid",
       "verdict_label": "Avoid — benchmark, regime-gated (3x)",
-      "chg_pct": -2.11,
+      "chg_pct": -1.78,
       "thesis": "**3x-long Nasdaq — our benchmark, and the poster child of the mistake we stopped making.** Holding TQQQ into a QQQ-sub-20-day regime drove essentially the whole live drawdown last week and gapped through its stop 7/17. It's the benchmark we measure alpha against (down ~8% since inception), and a hard avoid on the long side until QQQ reclaims its 20-day. No position.",
       "hold_reason": "Not held — it's the benchmark. Regime gate forbids the 3x-Nasdaq long while QQQ is under its 20-day.",
       "size": "-",
@@ -1283,7 +1283,7 @@
         "basis": "3x-Nasdaq benchmark rides the bounce",
         "pop_rank": 11
       },
-      "price": 69.24,
+      "price": 69.47,
       "spark": [
         76.72,
         77.62,
@@ -1314,7 +1314,7 @@
         80.99,
         77.49,
         73.3,
-        69.24
+        69.47
       ]
     },
     {
@@ -1830,8 +1830,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 69.24,
-    "tqqq_pct": -9.96
+    "tqqq": 69.47,
+    "tqqq_pct": -9.66
   },
   "status": [
     {
