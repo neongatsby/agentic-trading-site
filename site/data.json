@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-20T20:14:57.334Z",
+  "generated_at": "2026-07-20T20:16:04.407Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 89530.8,
+    "equity": 89530.98,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88530.8,
-    "day_pnl": -894.3,
+    "total_pnl": 88530.98,
+    "day_pnl": -894.12,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,9 +20,9 @@
         "symbol": "NVDA",
         "qty": "90.0000",
         "entry": 209.23,
-        "current": 202.71,
-        "pl": -586.78,
-        "plpc": -3.12,
+        "current": 202.61,
+        "pl": -595.9,
+        "plpc": -3.16,
         "thesis": ""
       },
       {
@@ -38,9 +38,9 @@
         "symbol": "SQQQ",
         "qty": "310.0000",
         "entry": 42.36,
-        "current": 42.74,
-        "pl": 117.08,
-        "plpc": 0.89,
+        "current": 42.77,
+        "pl": 126.38,
+        "plpc": 0.96,
         "thesis": ""
       }
     ],
@@ -735,6 +735,10 @@
       {
         "t": 1784578200000,
         "v": 810.36
+      },
+      {
+        "t": 1784578500000,
+        "v": 810.36
       }
     ]
   },
@@ -1094,7 +1098,7 @@
       "theme": "3x QQQ (GATED)",
       "verdict": "avoid",
       "verdict_label": "Avoid (gated)",
-      "chg_pct": 0.31,
+      "chg_pct": 0,
       "thesis": "**The benchmark, and gated.** TQQQ +1.3% but QQQ is ~2.5% under its 20-day, so no 3x-index longs - this is the exact leverage that drove the -14.6% week. The buy-and-hold-TQQQ line is what we measure alpha against; we re-lever only on a confirmed $716 reclaim.",
       "hold_reason": "",
       "size": "-",
@@ -1109,7 +1113,7 @@
         "basis": "gated 3x-Nasdaq; sub-20-day = avoid",
         "pop_rank": 10
       },
-      "price": 67.71,
+      "price": 67.5,
       "spark": [
         76.72,
         77.62,
@@ -1140,7 +1144,7 @@
         80.99,
         77.49,
         73.3,
-        67.71
+        67.5
       ]
     },
     {
@@ -2074,8 +2078,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 67.71,
-    "tqqq_pct": -11.95
+    "tqqq": 67.5,
+    "tqqq_pct": -12.22
   },
   "status": [
     {
