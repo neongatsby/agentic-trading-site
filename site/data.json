@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-20T12:22:02.061Z",
+  "generated_at": "2026-07-20T12:23:08.003Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90515.1,
+    "equity": 90504.66,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89515.1,
-    "day_pnl": 90,
+    "total_pnl": 89504.66,
+    "day_pnl": 79.56,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 213.12,
-        "pl": -231.2,
-        "plpc": -2.64,
+        "current": 212.24,
+        "pl": -266.36,
+        "plpc": -3.04,
         "thesis": ""
       },
       {
@@ -29,36 +29,36 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.62,
-        "pl": -324.46,
-        "plpc": -2.21,
+        "current": 205.75,
+        "pl": -315.7,
+        "plpc": -2.15,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.82,
-        "pl": -220,
-        "plpc": -3.25,
+        "current": 130.78,
+        "pl": -222,
+        "plpc": -3.28,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.55,
-        "pl": -8.9,
-        "plpc": -0.1,
+        "current": 69.63,
+        "pl": 1.08,
+        "plpc": 0.01,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.7,
-        "pl": -176.4,
-        "plpc": -1.98,
+        "current": 41.73,
+        "pl": -170.1,
+        "plpc": -1.9,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 840.62,
+    "equity": 837.98,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -159.38,
-    "day_pnl": -5.52,
+    "total_pnl": -162.02,
+    "day_pnl": -8.16,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 213.12,
-        "pl": -28.56,
-        "plpc": -4.28,
+        "current": 212.24,
+        "pl": -31.2,
+        "plpc": -4.67,
         "thesis": ""
       }
     ],
@@ -1225,7 +1225,7 @@
       "theme": "Leveraged Nasdaq",
       "verdict": "avoid",
       "verdict_label": "Avoid — benchmark, regime-gated (3x)",
-      "chg_pct": -2.11,
+      "chg_pct": -2.15,
       "thesis": "**3x-long Nasdaq — our benchmark, and the poster child of the mistake we stopped making.** Holding TQQQ into a QQQ-sub-20-day regime drove essentially the whole live drawdown last week and gapped through its stop 7/17. It's the benchmark we measure alpha against (down ~8% since inception), and a hard avoid on the long side until QQQ reclaims its 20-day. No position.",
       "hold_reason": "Not held — it's the benchmark. Regime gate forbids the 3x-Nasdaq long while QQQ is under its 20-day.",
       "size": "-",
@@ -1240,7 +1240,7 @@
         "basis": "would bounce but regime-gated: QQQ under its 20-day",
         "pop_rank": 14
       },
-      "price": 69.24,
+      "price": 69.21,
       "spark": [
         76.72,
         77.62,
@@ -1271,7 +1271,7 @@
         80.99,
         77.49,
         73.3,
-        69.24
+        69.21
       ]
     },
     {
@@ -1823,8 +1823,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 69.24,
-    "tqqq_pct": -9.96
+    "tqqq": 69.21,
+    "tqqq_pct": -10
   },
   "status": [
     {
