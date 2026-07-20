@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-20T22:51:51.848Z",
+  "generated_at": "2026-07-20T22:52:59.145Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 89544.11,
+    "equity": 89559.9,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88544.11,
-    "day_pnl": -880.99,
+    "total_pnl": 88559.9,
+    "day_pnl": -865.2,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,27 +20,27 @@
         "symbol": "NVDA",
         "qty": "90.0000",
         "entry": 209.23,
-        "current": 202.34,
-        "pl": -620.29,
-        "plpc": -3.29,
+        "current": 202.39,
+        "pl": -615.7,
+        "plpc": -3.27,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "100.0000",
         "entry": 135.75,
-        "current": 134.05,
-        "pl": -170.5,
-        "plpc": -1.26,
+        "current": 134.1,
+        "pl": -165.5,
+        "plpc": -1.22,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "310.0000",
         "entry": 42.36,
-        "current": 42.99,
-        "pl": 194.58,
-        "plpc": 1.48,
+        "current": 43.01,
+        "pl": 200.78,
+        "plpc": 1.53,
         "thesis": ""
       }
     ],
@@ -866,7 +866,20 @@
       }
     ]
   },
-  "pending_tickets": [],
+  "pending_tickets": [
+    {
+      "id": "2026-07-20-3",
+      "symbol": "PLTR",
+      "side": "buy",
+      "size": "$680",
+      "qty": 5,
+      "entry": "~$135 marketable at the 7/21 open — approve anytime, fills at the open",
+      "trigger": null,
+      "stop": 122,
+      "bracket": "stop $122 GTC (below the $129-131 base, -10%)",
+      "thesis": "The funded BE->PLTR rotation, re-staged for the OPEN after today's ticket expired untapped. Fire the freed $810 into the confirmed 1x RS leader — PLTR closed +2.1% at a fresh 2-wk high while chips round-tripped and software cracked. 1x = no gate issue; wide $122 stop. Finally gets LIVE out of cash and into the pop_rank-1 leader."
+    }
+  ],
   "coverage": [
     {
       "ticker": "PLTR",
@@ -1211,10 +1224,10 @@
       "verdict_label": "Avoid (gated)",
       "chg_pct": -0.03,
       "thesis": "**The benchmark, and gated.** TQQQ +1.3% but QQQ is ~2.5% under its 20-day, so no 3x-index longs - this is the exact leverage that drove the -14.6% week. The buy-and-hold-TQQQ line is what we measure alpha against; we re-lever only on a confirmed $716 reclaim.",
-      "hold_reason": "Our 3x-Nasdaq core, and now the #1 de-risk candidate. QQQ has closed under both its 20- and 50-day, so the momentum regime that justified it is broken. Plan for the 7/17 open: trim/exit into any bounce (a multi-day swing sale, so PDT-free) rather than ride full 3x into the decay zone; if it just gaps below $68.50 the GTC stop does the job. We only re-lever once QQQ reclaims its 20-day.",
+      "hold_reason": "",
       "size": "-",
       "size_pct": "-",
-      "size_note": "Core 3x-Nasdaq; trim into any open bounce toward ~$71-72, or let the $68.50 stop work.",
+      "size_note": "gated benchmark",
       "plan_usd": "none until QQQ reclaims $716",
       "updated": "2026-07-20T18:41:00-04:00",
       "horizon": "tactical",
@@ -1321,10 +1334,10 @@
       "verdict_label": "Avoid (gated)",
       "chg_pct": 1.94,
       "thesis": "**3x FANG, gated.** FNGU +2.1% but it's leveraged mega-cap into a sub-20-day tape - we sold ours 7/17 after the overnight gap-through taught the lesson. No 3x longs until the regime flips.",
-      "hold_reason": "Our smaller 3x-leverage sleeve (6 sh of 3x FANG). We bought it at Thursday's open with freed cash - adding leverage into a regime that had already rolled over, which the grade flagged. Netflix is still ~-8% and it's a component, so this is the first thing we trim into any bounce at the 7/17 open; the wide $25.30 GTC stop backs it up if it just gaps down.",
+      "hold_reason": "",
       "size": "-",
       "size_pct": "-",
-      "size_note": "Diversified 3x mega-cap; firm trim into any open bounce; $25.30 stop backstops.",
+      "size_note": "gated - sold 7/17",
       "plan_usd": "none until QQQ reclaims $716",
       "updated": "2026-07-20T18:41:00-04:00",
       "horizon": "tactical",
@@ -1706,12 +1719,6 @@
       "text": "6:41pm after-hours: quiet — book unchanged, both clean (LIVE flat/cash $810 zero-naked; PAPER 4 names all GTC-stopped). Fresh news only incremental (AMD AI event, IREN AI-cloud deal, ORCL soft). PLTR still the leader so the open buy stands; paper holds into the QQQ $716/$695 fork."
     },
     {
-      "ts": "2026-07-17T05:25:00-04:00",
-      "type": "activity",
-      "reaction": "hold",
-      "text": "5:25am pre-market (Fri 7/17): quiet reconcile pass, nothing traded. Both books stopped and zero naked - live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC), paper 5/5 equity legs. Recomputed QQQ off fresh daily bars: close $705.94, still under its 20-day (~$719.7) and 50-day (~$718.7) = regime broken. Friday futures only ~-0.3% (Nasdaq-100), so the thin $66 TQQQ / $26 FNGU 5am marks are overnight noise - real open is nearer $69-70 / $27.7. Netflix -8% keeps FANG soft. No pre-market action (limit-only, no stop). Staged for the open: de-risk the 3x-longs into any bounce, no new leverage until QQQ reclaims its 20-day."
-    },
-    {
       "ts": "2026-07-20T17:39:00-04:00",
       "type": "activity",
       "text": "5:39pm after-hours: still quiet. Recomputed the gate (QQQ $696 vs 20-day $716.1, shut day 5) and PLTR held ~$135 after the bell, so the live open-buy stands. Paper's 4 names all GTC-stopped, holding into tomorrow's QQQ fork — not chasing a blind open gap into earnings week."
@@ -1950,6 +1957,11 @@
       "ts": "2026-07-17T19:13:00-04:00",
       "type": "activity",
       "text": "7:13pm weekend re-verify - independently re-pulled both books off the broker: all 7 positions GTC-stopped (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no open tickets. Confirmed the weekend catalysts unchanged: BE's $1.7B Nebius fuel-cell deal is real but contested, and the chip derate is a Moonshot-AI/Iran risk-off (SPY only -1%), not a broad breakdown. Holding the QQQ-$718 fork into Monday; no blind weekend pre-arm."
+    },
+    {
+      "ts": "2026-07-17T18:41:00-04:00",
+      "type": "activity",
+      "text": "6:41pm weekend re-verify - independently re-pulled both books off the broker: live BE (3 sh, $188 GTC stop) + $201 cash, paper's 6 names (BE/CEG/NVDA/PLTR/RKLB/SQQQ) all GTC-stopped, zero naked, queue clean, no active tickets. No after-hours dislocation: QQQ closed $695 (still ~3% under its 20-day), BE steady ~$214.5 on no fresh news. Holding the de-risked, hedged book into the weekend - Monday's open is the QQQ-vs-$718 fork; no blind pre-arm."
     }
   ],
   "latest_recap": "Mon 7/20 ~6:41pm ET — market CLOSED (after-hours), verify-and-hold heartbeat ~30 min on from the 6:10 check. Book unchanged, both reconciled == broker: LIVE flat (cash $810.32, zero positions/orders, nothing naked); PAPER (CEG 16 / NVDA 90 / PLTR 100 / SQQQ 310, all 4 GTC-stopped: PLTR $125 / NVDA $186 / SQQQ $38 / CEG $236), equity ~$89.5k, ~46% powder. Regime unchanged: QQQ closed $696.06 vs 20-day $716.12 = 2.8% under, leverage gate SHUT day 5; SPY $742 near records = a chip-specific derate, not a broad crash. Fresh-news scan this pull added only incremental color — AMD's 'Advancing AI' event this week (6 analyst target-raises), IREN +20% on a $2.8B AI-cloud deal, ORCL soft on AI-capex/debt — none touching our book; the Iran-strike risk-off overhang persists into a heavy earnings week (TXN Tue, GOOGL/TSLA Wed, INTC Thu). Plan unchanged: PLTR is the 1x RS leader (closed +1.9% at a 2-wk high, catalyst stack intact), so the funded BE→PLTR rotation (ticket 2026-07-20-3, 5 sh, $122 stop, approve-anytime → fills at the 7/21 open) STANDS; paper HOLDS into tomorrow's QQQ-vs-$716/$695 fork. PDT budget fully open (0/3). Today's grade final: D.",
@@ -2077,11 +2089,6 @@
       "text": "6:41pm / after-hours heartbeat, ~30 min on from the 6:10 check. Book unchanged and both reconcile == broker: LIVE flat (cash $810.32, zero positions/orders, nothing naked); PAPER holds CEG 16 / NVDA 90 / PLTR 100 + the SQQQ 310 hedge, all 4 GTC-stopped ($236/$186/$125/$38), ~$41.5k (~46%) powder for the open fork. Regime unchanged — QQQ closed $696.06 vs a 20-day of $716.12 (2.8% under, leverage gate SHUT a 5th day) while SPY sits near records ($742), so it's a chip-specific derate, not broad risk-off. Fresh-news scan added only incremental color — AMD's 'Advancing AI' event this week (6 analyst target-raises), IREN +20% on a $2.8B AI-cloud deal, ORCL still soft on AI-capex/debt — nothing that touches our book; the Iran-strike overhang persists into a heavy earnings week (TXN Tue, GOOGL/TSLA Wed, INTC Thu). Plan stands: PLTR ticket 2026-07-20-3 (5 sh, $122 stop, approve-anytime → fills at the 7/21 open) is the funded BE→PLTR rotation; paper holds into tomorrow's QQQ-vs-$716/$695 fork. PDT budget fully open (0/3). Grade final: D."
     },
     {
-      "ts": "2026-07-17T05:25:00-04:00",
-      "text": "5:25am pre-market (Fri 7/17): reconciled both books clean - live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC), paper 5/5 equity legs stopped, zero naked. Recomputed QQQ off fresh daily bars: close $705.94 vs 20-day ~$719.7 & 50-day ~$718.7 - still under BOTH, so the leverage regime stays broken. The account screen marks TQQQ $66.60 / FNGU $26 on thin 5am prints, but Nasdaq-100 futures are only ~-0.3%, so the real open is nearer TQQQ $69-70 / FNGU $27.7 - I grade off the settled close, not the thin tick (7/15 lesson). Netflix still ~-8% keeps FANG/FNGU heavy; AM AI headlines are mixed-positive (Intel adopts Gemini, Jensen's Japan AI factory). Nothing to trade pre-market (limit-only, no stop; won't surface a live ticket pre-6am). Plan staged for the open: de-risk the 3x-longs into any bounce (PDT-free swing), trim FNGU first, no new leverage until QQQ reclaims its 20-day.",
-      "hype": "Quiet pre-market - everything's stopped, nothing exposed. Futures are only a touch red, so those scary $66 TQQQ marks are just thin overnight noise; plan holds - trim the 3x into any morning bounce, no new leverage till QQQ's back over its 20-day."
-    },
-    {
       "ts": "2026-07-20T18:10:00-04:00",
       "text": "6:10pm / after-hours heartbeat — book unchanged since the 5:39 check, both still clean (LIVE flat cash $810 with the PLTR open-buy staged; PAPER's 4 names all GTC-stopped, SQQQ hedge on). One fresh input this pull: the U.S. ran another round of airstrikes on Iran (a 2nd service-member death reported) and oil is wavering — a real risk-off overhang into the open that reinforces starting light. It doesn't change the plan: PLTR is 1x and clean (no gate issue), so the funded BE→PLTR rotation (ticket 2026-07-20-3, $122 stop, approve-anytime → fills at the open) still stands, and the paper SQQQ hedge earns its keep if the Iran headlines hit the tape. Gate SHUT day 5 (QQQ $696 vs 20-day $716.1); day-trade budget 0/3. Open plan unchanged: QQQ reclaims $716 → cover the hedge + add the leader; loses $695 → let it run.",
       "hype": "Quiet after the bell, nothing changed in the book. One new thing — fresh U.S. strikes on Iran and oil's twitchy, so I'm glad we start light with the hedge on; Palantir's still teed up for the open."
@@ -2145,6 +2152,11 @@
       "ts": "2026-07-20T12:20:00-04:00",
       "text": "12:20pm: QQQ bounced to ~$704 off its $698 low but is still ~1.9% under its 20-day (~$717) and short of the $716 reclaim - a chop, so the regime gate stays ON. Semis ripped (SOXL +8.1%, AMD +4.5% on the MSFT Helios deal, INTC +4.3%) but those are the gated 3x or an extended midday chase I won't buy here. Both books red on a green tape again: live is stuck in the broken BE camp (cut staged for your tap, ~$610 freed) and paper's SQQQ hedge is the deliberate Iran/sub-20-day insurance drag. I did deploy idle paper cash into +20 NVDA (-> 90 sh, the gate-compliant magnet) and re-armed its $186 stop. Live day-trade budget 0/3. Next auto-action: fire freed live cash + paper powder into NVDA/VRT the instant QQQ reclaims $716; let the hedge run + arm a small live SQQQ if it loses $698.",
       "hype": "Market's green but it's all leveraged semi stuff I can't chase under the trend line, so both books lag today. Nudged a bit more NVDA into the sandbox and BE's queued to cut - waiting for a clean break over QQQ 716 to really lean in."
+    },
+    {
+      "ts": "2026-07-20T11:45:00-04:00",
+      "text": "11:45am: BE bounced off its $195 low back to ~$202, trimming the live day to -3.9% (was -6.2% at the open low) - but it's still down ~5.7% to fresh 90-day lows on a GREEN semi day (SOXL +5.8%, AMD +3.6% on the MSFT Helios deal), the relative-weakness tell that keeps the cut staged for your tap (frees ~$610). No new fills to reconcile; all 5 positions (live BE + 4 paper) carry live GTC stops, zero naked. Holding the paper book - NVDA/PLTR/CEG green, the SQQQ hedge the ~-1% drag - into a coin-flip tape: QQQ round-tripped to 701, still ~2% under its 20-day (716), held its $698 morning low but faded from the highs as fresh Iran airstrikes + Wed's GOOGL/TSLA earnings cap the bounce. Not chasing the gated semis or forcing a redeploy into the chop - powder armed for a $716 reclaim (-> NVDA/VRT) or a $698 break (-> let the hedge run, arm small live SQQQ). Day-trade budget 0/3.",
+      "hype": "Bloom bounced a little but it's still making new lows while chips are green - that's the tell, so the cut's still teed up for your tap. Holding the steady names + the hedge on cash; the tape's a coin flip with Iran flaring, so I'm waiting for a clean break before I move."
     }
   ],
   "benchmark": {
@@ -2156,7 +2168,15 @@
   "status": [
     {
       "session": "Morning",
-      "text": "Pre-market soft; de-risk staged"
+      "text": "QQQ under 20-day; gate SHUT"
+    },
+    {
+      "session": "Afternoon",
+      "text": "BE cut filled @ $203; freed $810 cash"
+    },
+    {
+      "session": "Evening",
+      "text": "Book clean; PLTR staged for open"
     }
   ],
   "equity_history": {
