@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-20T20:11:38.009Z",
+  "generated_at": "2026-07-20T20:12:43.559Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 89502.23,
+    "equity": 89523.99,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88502.23,
-    "day_pnl": -922.87,
+    "total_pnl": 88523.99,
+    "day_pnl": -901.11,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,27 +20,27 @@
         "symbol": "NVDA",
         "qty": "90.0000",
         "entry": 209.23,
-        "current": 202.76,
-        "pl": -582.31,
-        "plpc": -3.09,
+        "current": 202.78,
+        "pl": -580.6,
+        "plpc": -3.08,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "100.0000",
         "entry": 135.75,
-        "current": 134.1,
-        "pl": -165.5,
-        "plpc": -1.22,
+        "current": 134.36,
+        "pl": -139.5,
+        "plpc": -1.03,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "310.0000",
         "entry": 42.36,
-        "current": 42.73,
-        "pl": 114.04,
-        "plpc": 0.87,
+        "current": 42.71,
+        "pl": 108.09,
+        "plpc": 0.82,
         "thesis": ""
       }
     ],
@@ -83,7 +83,7 @@
       },
       {
         "date": "Jul 20",
-        "value": 89640.44
+        "value": 89684.99
       }
     ]
   },
@@ -144,7 +144,7 @@
       },
       {
         "date": "Jul 20",
-        "value": 810.89
+        "value": 810.32
       }
     ],
     "intraday": [
@@ -1369,7 +1369,7 @@
       "theme": "Inverse hedge (paper)",
       "verdict": "hold",
       "verdict_label": "Hold (hedge)",
-      "chg_pct": -0.28,
+      "chg_pct": -0.12,
       "thesis": "**The regime hedge, and today's deliberate drag.** SQQQ (paper, 310 sh, $38 stop) is our short-QQQ expression while QQQ sits under its 20-day - it costs on a green bounce day like today but pays if $698 breaks. We keep it until QQQ resolves: cut it on a $716 reclaim, press it on a clean $698 break.",
       "hold_reason": "SQQQ is the paper book's regime hedge - we hold it because QQQ is still under its 20-day and sitting on $698 support, the exact spot where a break would pay. It's a drag on a bounce day, accepted. We cut it fast on a QQQ $716 reclaim; we add on a confirmed $698 break.",
       "size": "$13.1k paper (310 sh)",
@@ -1384,7 +1384,7 @@
         "basis": "the hedge — pays if QQQ loses $695 into earnings week",
         "pop_rank": 2
       },
-      "price": 42.65,
+      "price": 42.72,
       "spark": [
         41.31,
         40.85,
@@ -1415,7 +1415,7 @@
         36.3,
         37.89,
         39.84,
-        42.65
+        42.72
       ]
     },
     {
@@ -1534,7 +1534,7 @@
       "theme": "Inverse semis",
       "verdict": "avoid",
       "verdict_label": "Avoid",
-      "chg_pct": -1.25,
+      "chg_pct": -1.24,
       "thesis": "**Inverse semis, -4.3% as chips net-green - correctly not owned.** SOXS is the mirror of the SOXL round-trip; it spiked +18% intraday on 7/17 then collapsed, the exact extended-inverse trap we dodge. Live can't cleanly hold an inverse anyway; the paper hedge is expressed via SQQQ.",
       "hold_reason": "",
       "size": "-",
@@ -1549,7 +1549,7 @@
         "basis": "inverse semis; only if chips roll over",
         "pop_rank": 15
       },
-      "price": 54.3,
+      "price": 54.31,
       "spark": [
         81.76,
         76.32,
@@ -1580,7 +1580,7 @@
         32.4,
         38.65,
         45.1,
-        54.3
+        54.31
       ]
     }
   ],
