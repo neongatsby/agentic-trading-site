@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-20T12:19:45.778Z",
+  "generated_at": "2026-07-20T12:20:56.418Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90510.9,
+    "equity": 90473.3,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89510.9,
-    "day_pnl": 85.8,
+    "total_pnl": 89473.3,
+    "day_pnl": 48.2,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 213.01,
-        "pl": -235.6,
-        "plpc": -2.69,
+        "current": 212.25,
+        "pl": -266,
+        "plpc": -3.04,
         "thesis": ""
       },
       {
@@ -29,36 +29,36 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.7,
-        "pl": -319.2,
-        "plpc": -2.17,
+        "current": 205.77,
+        "pl": -314.3,
+        "plpc": -2.14,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.95,
-        "pl": -213.5,
-        "plpc": -3.16,
+        "current": 130.82,
+        "pl": -220,
+        "plpc": -3.25,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.51,
-        "pl": -14.1,
-        "plpc": -0.16,
+        "current": 69.4,
+        "pl": -28.18,
+        "plpc": -0.31,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.67,
-        "pl": -182.76,
-        "plpc": -2.05,
+        "current": 41.71,
+        "pl": -174.28,
+        "plpc": -1.95,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 840.29,
+    "equity": 838.01,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -159.71,
-    "day_pnl": -5.85,
+    "total_pnl": -161.99,
+    "day_pnl": -8.13,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 213.01,
-        "pl": -28.89,
-        "plpc": -4.32,
+        "current": 212.25,
+        "pl": -31.17,
+        "plpc": -4.67,
         "thesis": ""
       }
     ],
@@ -375,6 +375,10 @@
       {
         "t": 1784549700000,
         "v": 837.41
+      },
+      {
+        "t": 1784550000000,
+        "v": 840.29
       }
     ]
   },
@@ -501,7 +505,7 @@
       "theme": "3x inverse semis / sharpest hedge",
       "verdict": "watch",
       "verdict_label": "Watch — top pop pick if chips continue",
-      "chg_pct": -2.29,
+      "chg_pct": -2.1,
       "thesis": "**Top pop pick for today — the most explosive way to be green if the chip rout continues.** 3x inverse semiconductors, and semis are the epicenter: the SOX is in a bear market (~-20% off its high) and Friday's driver (China Moonshot-AI cheap-compute fear + oil/Iran) hit chips hardest. SOXS was +5.5% Friday, the day's single best mover. We don't hold it — live can't cleanly carry an inverse, and we chose NOT to add it to paper blind pre-market: after four down days the snapback risk into an oversold open is real. It's the add-into-confirmed-open-weakness candidate for paper, not a chase at the pre-market print.",
       "hold_reason": "Not held — it's the watch/pop pick. The plan is to add it to PAPER only if the open confirms continued chip weakness (into strength, not the pre-market print); live can't cleanly hold an inverse.",
       "size": "-",
@@ -516,7 +520,7 @@
         "basis": "3x-inverse semis fades hard as chips bid",
         "pop_rank": 15
       },
-      "price": 50.91,
+      "price": 51.01,
       "spark": [
         81.76,
         76.32,
@@ -547,7 +551,7 @@
         32.4,
         38.65,
         45.1,
-        50.91
+        51.01
       ]
     },
     {
@@ -1327,6 +1331,11 @@
     }
   ],
   "feed": [
+    {
+      "ts": "2026-07-20T08:17:00-04:00",
+      "type": "activity",
+      "text": "8:17am pre-market re-verify #5 - pulled fresh 8:00 marks: QQQ ~$699 still ~2.6% under its $718 20-day (gate shut, day 4), SPY $745 on its own 20-day = a tech-specific derate. Delta vs 7:45: oil clearly COOLED (WTI $82.35, Brent $88.5 - off $90 despite a weekend US-Iran strike) and the mild bounce is HOLDING into 8am (NDX futures +0.6%, RKLB +1.5% RS leader, NVDA +0.5%, BE flat, the SQQQ/SOXS inverses fading) - slightly more risk-on, but a +0.7% bounce is not the +2.7% reclaim QQQ needs. Both books 7/7 GTC-stopped, zero naked, queue clean, no tickets, no new fills since Friday. Holding light into the 9:30 fork; live day-trade budget full (0 of 3)."
+    },
     {
       "ts": "2026-07-20T07:45:00-04:00",
       "type": "activity",
