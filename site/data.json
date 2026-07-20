@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-20T15:47:47.782Z",
+  "generated_at": "2026-07-20T15:48:55.513Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 89515.73,
+    "equity": 89500.24,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88515.73,
-    "day_pnl": -909.37,
+    "total_pnl": 88500.24,
+    "day_pnl": -924.86,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,27 +20,27 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.33,
-        "pl": -345.1,
-        "plpc": -2.34,
+        "current": 204.91,
+        "pl": -374.49,
+        "plpc": -2.54,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 133.5,
-        "pl": -86,
-        "plpc": -1.27,
+        "current": 133.28,
+        "pl": -97.25,
+        "plpc": -1.44,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "310.0000",
         "entry": 42.36,
-        "current": 41.73,
-        "pl": -196.02,
-        "plpc": -1.49,
+        "current": 41.81,
+        "pl": -171.22,
+        "plpc": -1.3,
         "thesis": ""
       }
     ],
@@ -88,18 +88,18 @@
     ]
   },
   "live": {
-    "equity": 811.94,
+    "equity": 811.6,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -188.06,
-    "day_pnl": -34.2,
+    "total_pnl": -188.4,
+    "day_pnl": -34.54,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 203.56,
-        "pl": -57.24,
-        "plpc": -8.57,
+        "current": 203.45,
+        "pl": -57.58,
+        "plpc": -8.62,
         "thesis": ""
       }
     ],
@@ -557,7 +557,7 @@
       "theme": "Downside hedge / 3x inverse Nasdaq",
       "verdict": "hold",
       "verdict_label": "Held + ADDED - the fade hedge (310 sh paper)",
-      "chg_pct": -2.57,
+      "chg_pct": -2.34,
       "thesis": "**The book's hedge, pressed today.** Added 100 @ $41.99 (paper) to 310 sh @ $42.36 avg behind a $38 GTC stop, funded by cutting the RKLB laggard. SQQQ is red (-2.1%) because QQQ bounced +0.6%, but the bounce is FADING (QQQ round-tripped from +1.3% to its day low, still ~2% under its 20-day) and every relief pop this week sold by lunch. This is the trend-aligned way to own a risk-off tape while the gate keeps us out of 3x-longs. It works if QQQ keeps rolling; the $38 stop caps it if the bounce turns real.",
       "hold_reason": "SQQQ is our downside hedge and today's top pick - we added to it (now 310 sh, $38 stop) as the morning chip bounce faded and QQQ slid back to its day low. It's the clean, trend-aligned way to be positioned for more downside while the gate keeps us out of leveraged longs. We'd trim it fast if QQQ reclaims its 20-day ($716) on volume - the signal the fade is over.",
       "size": "$13.0k paper (310 sh)",
@@ -572,7 +572,7 @@
         "basis": "failed bounce - QQQ back at day lows, chip pops selling by midday",
         "pop_rank": 1
       },
-      "price": 41.67,
+      "price": 41.77,
       "spark": [
         41.31,
         40.85,
@@ -603,7 +603,7 @@
         36.3,
         37.89,
         39.84,
-        41.67
+        41.77
       ]
     },
     {
@@ -612,7 +612,7 @@
       "theme": "3x semi inverse / sharp fade play",
       "verdict": "watch",
       "verdict_label": "Watch - sharpest semi-fade play (not held)",
-      "chg_pct": -6.38,
+      "chg_pct": -5.96,
       "thesis": "**The sharpest expression if the semi bounce fully rolls.** SOXS is -6% today as SOXL bounced, but SOXL already gave back a +9.6% pop to +3.9% and is rolling. If the faded semis turn red into the afternoon, SOXS is the biggest mover on the board - but it's a 3x inverse that decays in chop, so we express the same view via the cleaner SQQQ hedge we already hold rather than chasing this.",
       "hold_reason": "Not held - same fade view expressed via the SQQQ hedge we already own (less decay, no chase). We'd only touch SOXS on a confirmed, clean semi breakdown, not a midday lean.",
       "size": "0 (watch)",
@@ -627,7 +627,7 @@
         "basis": "3x semi-inverse rips if the faded SOXL rolls red",
         "pop_rank": 2
       },
-      "price": 51.48,
+      "price": 51.71,
       "spark": [
         81.76,
         76.32,
@@ -658,7 +658,7 @@
         32.4,
         38.65,
         45.1,
-        51.48
+        51.71
       ]
     },
     {
@@ -667,7 +667,7 @@
       "theme": "AI leader / 1x bellwether",
       "verdict": "hold",
       "verdict_label": "Held paper (70 sh) - 1x leader, but the bounce is fading",
-      "chg_pct": 1.24,
+      "chg_pct": 1.05,
       "thesis": "**Held in paper (70 sh @ $210.26, $186 GTC stop) - the book's 1x way to own the AI tape.** NVDA led the relief rally (+2.2% early) but is fading with it to +1.5% as the semi bounce rolls over. It's the epicenter of the AI-capex/valuation fear that broke the tape; we already cut it 130->70 Friday. Long-term thesis intact, but the gate says don't be heavy chips while QQQ is under its 20-day. Alphabet + hyperscaler earnings Wed are the read on whether the capex fear eases - freed live cash goes here first on a confirmed $716 reclaim.",
       "hold_reason": "NVDA is our steadiest hold and the redeploy magnet - a 1x chip mega-cap (not the gated 3x) that's GREEN and holding relative strength while the broader semi bounce fades, behind a $186 stop. It's where freed live cash + paper powder go FIRST on a confirmed QQQ reclaim of $716 - the gate-compliant way to own the tape if the bounce turns real.",
       "size": "$14.4k paper (70 sh)",
@@ -682,7 +682,7 @@
         "basis": "1x RS leader; extends only on a QQQ $716 reclaim",
         "pop_rank": 3
       },
-      "price": 205.32,
+      "price": 204.93,
       "spark": [
         219.21,
         215.09,
@@ -713,7 +713,7 @@
         199.93,
         197.54,
         194.51,
-        205.32
+        204.93
       ]
     },
     {
@@ -722,7 +722,7 @@
       "theme": "AI datacenter power / cooling",
       "verdict": "watch",
       "verdict_label": "Watch - AI-power RS leader holding up",
-      "chg_pct": 1.53,
+      "chg_pct": 1.42,
       "thesis": "**The relative-strength standout as chips fade.** VRT is +1.9% and holding near session highs while the semi bounce rolls over - datacenter power/cooling is the pick-and-shovel AI theme with its own demand story. Not held, but it's a prime candidate (with NVDA) for freed capital if the tape confirms a reclaim. Watching for a clean base breakout rather than chasing an extended day.",
       "hold_reason": "Not held - it's on the shortlist for redeployment. VRT has the cleanest relative strength on the board (green while chips fade), so if QQQ reclaims $716 it's a top candidate alongside NVDA. We'd want a base/breakout entry, not a chase into a fading tape.",
       "size": "0 (watch)",
@@ -737,7 +737,7 @@
         "basis": "AI-power RS leader, green as chips fade",
         "pop_rank": 4
       },
-      "price": 293.87,
+      "price": 293.55,
       "spark": [
         323.34,
         327.43,
@@ -768,7 +768,7 @@
         334.58,
         311.34,
         300.5,
-        293.87
+        293.55
       ]
     },
     {
@@ -777,7 +777,7 @@
       "theme": "2x NVDA / leveraged bellwether",
       "verdict": "watch",
       "verdict_label": "Watch - 2x NVDA, green but gated leverage",
-      "chg_pct": 2.71,
+      "chg_pct": 2.31,
       "thesis": "**2x NVDA, the day's cleaner leveraged mover (+3%).** Tracks NVDA's relief bounce at 2x. It's green but it's leverage into a QQQ-sub-20-day regime, so the gate keeps us in 1x NVDA instead. Would graduate here only once QQQ reclaims its 20-day and the AI tape confirms.",
       "hold_reason": "Not held - it's 2x leverage and the regime gate keeps us in 1x NVDA while QQQ is under its 20-day. We'd consider it only on a confirmed reclaim when leverage is allowed again.",
       "size": "0 (watch)",
@@ -792,7 +792,7 @@
         "basis": "2x NVDA; green but gated leverage into a fading bounce",
         "pop_rank": 5
       },
-      "price": 31.13,
+      "price": 31.01,
       "spark": [
         37.07,
         35.6,
@@ -823,7 +823,7 @@
         29.83,
         29.16,
         28.2,
-        31.13
+        31.01
       ]
     },
     {
@@ -832,7 +832,7 @@
       "theme": "3x semis / gated leverage",
       "verdict": "avoid",
       "verdict_label": "Avoid - faded +9.6% -> +3.9%, gated + rolling",
-      "chg_pct": 5.66,
+      "chg_pct": 5.55,
       "thesis": "**The tell that the bounce is fading.** SOXL ripped +9.6% at the open and has given back most of it to +3.9% by midday - the exact 'chip pop sells by lunch' pattern that's held all week (ASML 7/15, TSMC 7/16). It's a gated 3x-long (QQQ under its 20-day) so we don't touch it; its fade is the signal that pays our SQQQ hedge.",
       "hold_reason": "Not held and gated - a 3x semi long the regime gate bars while QQQ is under its 20-day. Its fade off a +9.6% open is our confirmation the bounce is rolling; we're positioned the other way via SQQQ.",
       "size": "0 (avoid)",
@@ -847,7 +847,7 @@
         "basis": "3x semis; faded +9.6% -> +3.9%, gated + rolling",
         "pop_rank": 6
       },
-      "price": 142.76,
+      "price": 142.61,
       "spark": [
         178.17,
         190.41,
@@ -878,7 +878,7 @@
         266.71,
         217.7,
         181.54,
-        142.76
+        142.61
       ]
     },
     {
@@ -887,7 +887,7 @@
       "theme": "Quantum / high-beta",
       "verdict": "watch",
       "verdict_label": "Watch - quantum high-beta, chopping flat",
-      "chg_pct": -0.1,
+      "chg_pct": -0.29,
       "thesis": "**High-beta quantum, flat and following the tape.** IONQ is ~flat (+0.2%), neither leading nor breaking - it trades as a high-beta proxy that needs the broad tape to firm. No edge here today; watching whether it holds $34 support if the fade deepens.",
       "hold_reason": "Not held - no relative-strength edge today, just chops with the high-beta tape. We'd only engage on a clear catalyst or a broad risk-on reclaim.",
       "size": "0 (watch)",
@@ -902,7 +902,7 @@
         "basis": "high-beta quantum; flat, needs the tape to firm",
         "pop_rank": 7
       },
-      "price": 34.73,
+      "price": 34.67,
       "spark": [
         58.87,
         63.58,
@@ -933,7 +933,7 @@
         53.3,
         51.44,
         49.16,
-        34.73
+        34.67
       ]
     },
     {
@@ -942,7 +942,7 @@
       "theme": "3x Nasdaq / the benchmark",
       "verdict": "avoid",
       "verdict_label": "Avoid - gated 3x-long + our benchmark",
-      "chg_pct": 2.41,
+      "chg_pct": 2.27,
       "thesis": "**The benchmark we measure against - and a gated instrument.** TQQQ is +1.7% (faded from +3.9% at the open) as the bounce rolls. It's our buy-and-hold yardstick (down ~6.4% since 7/2) and the poster child for the gate: holding 3x-Nasdaq under the 20-day drove the week's drawdown. Off-limits until QQQ reclaims $716.",
       "hold_reason": "Not held and gated - 3x-Nasdaq long is exactly what the gate bars while QQQ is under its 20-day (it drove the week's -14% live drawdown). Also our benchmark. Re-allowed only on a confirmed reclaim.",
       "size": "0 (avoid)",
@@ -957,7 +957,7 @@
         "basis": "3x Nasdaq; gated, bounce fading",
         "pop_rank": 8
       },
-      "price": 69.13,
+      "price": 69.03,
       "spark": [
         76.72,
         77.62,
@@ -988,7 +988,7 @@
         80.99,
         77.49,
         73.3,
-        69.13
+        69.03
       ]
     },
     {
@@ -997,7 +997,7 @@
       "theme": "AI software / app layer",
       "verdict": "hold",
       "verdict_label": "Held paper (50 sh) - steady, software cushion",
-      "chg_pct": 0.95,
+      "chg_pct": 0.71,
       "thesis": "**Held in paper (50 sh @ $135.22, $121.5 GTC stop).** PLTR is ~flat (+0.4%) and holding up better than the chips - AI-software/app exposure gives it a different beta than the semi complex that's fading. A steady hold behind its stop; not a name we're adding to in a risk-off tape, but not a laggard to cut either.",
       "hold_reason": "PLTR is a steady paper hold - AI-software exposure that holds up (+0.4%) while the semi bounce fades, behind a $121.5 stop. It's not leading enough to add to in risk-off, but it's not the laggard to cut. We hold unless it breaks structure toward the stop.",
       "size": "$6.6k paper (50 sh)",
@@ -1012,7 +1012,7 @@
         "basis": "software beta holds up better than chips in the fade",
         "pop_rank": 9
       },
-      "price": 133.63,
+      "price": 133.31,
       "spark": [
         137.4,
         136.84,
@@ -1043,7 +1043,7 @@
         116.64,
         125.75,
         129.18,
-        133.63
+        133.31
       ]
     },
     {
@@ -1052,7 +1052,7 @@
       "theme": "Nuclear / power-for-AI (defensive)",
       "verdict": "hold",
       "verdict_label": "Held paper (16 sh) - defensive power bid",
-      "chg_pct": 0.38,
+      "chg_pct": 0.39,
       "thesis": "**Held in paper (16 sh @ $260.68, $236 GTC stop).** CEG is green (+0.4%) - nuclear/independent-power is the defensive corner of the AI-energy theme and catches a bid when high-beta fades. A calm hold behind its stop; it's doing its job as ballast on a risk-off day.",
       "hold_reason": "CEG is our defensive ballast - a power/nuclear name that stays green (+0.4%) and bid when the high-beta tape fades, behind a $236 stop. We hold it as the calm anchor of the paper book in a risk-off regime; no reason to touch it unless it breaks its stop.",
       "size": "$4.1k paper (16 sh)",
@@ -1067,7 +1067,7 @@
         "basis": "defensive power; bid when high-beta fades",
         "pop_rank": 10
       },
-      "price": 253.33,
+      "price": 253.35,
       "spark": [
         285.79,
         294,
@@ -1098,7 +1098,7 @@
         248.32,
         236.56,
         239.2,
-        253.33
+        253.35
       ]
     },
     {
@@ -1162,7 +1162,7 @@
       "theme": "Fintech / risk-appetite beta",
       "verdict": "watch",
       "verdict_label": "Watch - fintech, red with the tape",
-      "chg_pct": -0.58,
+      "chg_pct": -0.67,
       "thesis": "**Fintech beta, mildly red (-0.8%).** SOFI follows risk appetite; we cut it live 7/15 to free capital and haven't re-engaged. No catalyst edge today - it chops with the tape. Watching $17 support.",
       "hold_reason": "Not held - we sold it 7/15 to break a cash-lock and there's no re-entry edge today (mildly red, no catalyst). We'd only look again on a clear risk-on turn or a SOFI-specific catalyst.",
       "size": "0 (watch)",
@@ -1177,7 +1177,7 @@
         "basis": "fintech beta; drifts red with the tape",
         "pop_rank": 12
       },
-      "price": 17.18,
+      "price": 17.16,
       "spark": [
         15.66,
         15.63,
@@ -1208,7 +1208,7 @@
         17.93,
         18.43,
         18.26,
-        17.18
+        17.16
       ]
     },
     {
@@ -1217,7 +1217,7 @@
       "theme": "Space / defense high-beta",
       "verdict": "avoid",
       "verdict_label": "CUT paper - laggard on a bounce day",
-      "chg_pct": -1.95,
+      "chg_pct": -2.2,
       "thesis": "**Cut this run.** Sold the paper 130 @ $66.26 (realized -$437). RKLB was red (-1.6%) on a day the tape bounced - the weakest long in the book, lagging its space/defense peers. On a risk-off, fading-bounce tape we don't hold high-beta laggards; freed the capital into the SQQQ hedge. Re-engage on a reclaim of $70 with the tape firming, not on a pullback into a fade.",
       "hold_reason": "We cut RKLB this run - it was the weakest paper long, red (-1.6%) while the tape bounced, so it lost the relative-strength case. Rolled the proceeds into the hedge. We'd only look again on a clean reclaim of ~$70 with the broad tape firming.",
       "size": "0 (cut) - was 130 sh paper",
@@ -1232,7 +1232,7 @@
         "basis": "space laggard, red on a bounce day; cut",
         "pop_rank": 13
       },
-      "price": 66.28,
+      "price": 66.11,
       "spark": [
         125.44,
         135.74,
@@ -1263,7 +1263,7 @@
         101.58,
         100.02,
         100.5,
-        66.28
+        66.11
       ]
     },
     {
@@ -1272,7 +1272,7 @@
       "theme": "Mega-cap / earnings Wed",
       "verdict": "watch",
       "verdict_label": "Watch - lagging into Wed earnings",
-      "chg_pct": -2.34,
+      "chg_pct": -2.38,
       "thesis": "**Lagging (-1.9%) into its own Wednesday earnings.** TSLA is red while the mega-caps are mixed - the binary catalyst (Q2 report Wed) is why it's not a clean setup either way right now. We don't take a directional shot into a name's earnings gap; watching the reaction Wed for a cleaner post-catalyst entry.",
       "hold_reason": "Not held - it's lagging AND has binary earnings Wednesday, so there's no clean pre-catalyst setup (we don't hold into an earnings gap). We watch the post-report reaction for a cleaner entry.",
       "size": "0 (watch)",
@@ -1287,7 +1287,7 @@
         "basis": "lagging mega-cap; binary earnings Wed",
         "pop_rank": 14
       },
-      "price": 371.98,
+      "price": 371.84,
       "spark": [
         417.79,
         425.95,
@@ -1318,7 +1318,7 @@
         420.37,
         425.36,
         392.82,
-        371.98
+        371.84
       ]
     },
     {
@@ -1327,7 +1327,7 @@
       "theme": "Energy-for-AI / fuel cells",
       "verdict": "avoid",
       "verdict_label": "CUT both books - broken short-attack",
-      "chg_pct": -5.12,
+      "chg_pct": -5.19,
       "thesis": "**Cut - the drag, now removed.** Sold paper 40 @ $196.68 (realized ~-$889); live 3-sh sell ticket staged. BE puked to NEW 90-day lows (~$197, -8.2%) on a GREEN semi open - when a name can't bounce while chips rip, the sellers own it. The Hunterbrook short is a specific physical-supply thesis (1GW->5GW needs ~220 of the world's ~240 tons/yr of scandium oxide) that a rebuttal + the $1.7B Oaktree/Nebius financing + the $25B Brookfield narrative haven't offset - and the rebuttal bounce has since FAILED to new lows. Binary Q2 earnings 7/28 ahead - not a chart to hold into a gap behind a $188 stop. Re-entry only on a clean reclaim above ~$210 with the overhang lifting.",
       "hold_reason": "We cut BE - it made new 90-day lows on a green semi day, the rebuttal bounce failed, and an unresolved short-seller physical-supply thesis (scandium) plus binary 7/28 earnings make it a battleground, not a hold. Freed the capital to concentrate into a confirmed leader. We'd only look again on a clean reclaim back above ~$210 with the short overhang lifting - not on this knife into the print.",
       "size": "0 (cut) - was 3 sh live + 40 sh paper",
@@ -1342,7 +1342,7 @@
         "basis": "broken short-attack, new 90-day lows into 7/28 earnings; being cut",
         "pop_rank": 15
       },
-      "price": 203.57,
+      "price": 203.43,
       "spark": [
         307.75,
         302.59,
@@ -1373,7 +1373,7 @@
         302.69,
         289.38,
         271.02,
-        203.57
+        203.43
       ]
     }
   ],
@@ -1833,8 +1833,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 69.13,
-    "tqqq_pct": -10.1
+    "tqqq": 69.03,
+    "tqqq_pct": -10.23
   },
   "status": [
     {
@@ -2395,6 +2395,10 @@
       [
         1784562420000,
         812.41
+      ],
+      [
+        1784562480000,
+        811.96
       ]
     ],
     "1W": [
