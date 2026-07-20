@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-20T12:50:11.383Z",
+  "generated_at": "2026-07-20T12:51:17.016Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90531.18,
+    "equity": 90525.87,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89531.18,
-    "day_pnl": 106.08,
+    "total_pnl": 89525.87,
+    "day_pnl": 100.77,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 213.4,
-        "pl": -220,
-        "plpc": -2.51,
+        "current": 212.95,
+        "pl": -238,
+        "plpc": -2.72,
         "thesis": ""
       },
       {
@@ -29,36 +29,36 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 206.04,
-        "pl": -295.4,
-        "plpc": -2.01,
+        "current": 206.12,
+        "pl": -290.12,
+        "plpc": -1.97,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.48,
-        "pl": -237,
-        "plpc": -3.5,
+        "current": 130.3,
+        "pl": -246,
+        "plpc": -3.64,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.7,
-        "pl": 10.6,
-        "plpc": 0.12,
+        "current": 69.81,
+        "pl": 24.9,
+        "plpc": 0.27,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.56,
-        "pl": -205.8,
-        "plpc": -2.3,
+        "current": 41.57,
+        "pl": -203.7,
+        "plpc": -2.28,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 841.46,
+    "equity": 840.11,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -158.54,
-    "day_pnl": -4.68,
+    "total_pnl": -159.89,
+    "day_pnl": -6.03,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 213.4,
-        "pl": -27.72,
-        "plpc": -4.15,
+        "current": 212.95,
+        "pl": -29.07,
+        "plpc": -4.35,
         "thesis": ""
       }
     ],
@@ -469,7 +469,7 @@
       "theme": "3x inverse Nasdaq / regime hedge",
       "verdict": "hold",
       "verdict_label": "Held paper — 3x-inverse hedge",
-      "chg_pct": 2.01,
+      "chg_pct": 1.69,
       "thesis": "**The paper book's hedge and the reason it can own the green on a down day.** 210 sh @ $42.54, $38 GTC stop. With QQQ ~3.2% under its 20-day and a fresh oil/Iran risk-off flare, a 3x-inverse-Nasdaq sleeve is the offset that pays while the longs bleed — it was +4.6% Friday, one of only two green watchlist names. We hold it as insurance, not a naked short: it partially offsets the paper NVDA/PLTR/RKLB net-long chip drag. Live can't cleanly carry it (PDT + wash constraints), so this capture lives in paper. On a confirmed $718 reclaim on volume, this is the first thing we cover/trim to free cash for the strongest long.",
       "hold_reason": "We hold SQQQ as the paper hedge — it's 3x inverse Nasdaq, so it rises when the tech tape falls, which is what's happened four straight sessions. It's the piece that lets paper actually own a green name on a risk-off day instead of sitting fully offside. What we're watching: a QQQ reclaim of its $718 20-day on real volume is the signal to cover/trim it and rotate that cash into the strongest confirmed long — until then the hedge stays on.",
       "size": "$8.9k paper (210 sh)",
@@ -484,7 +484,7 @@
         "basis": "3x-inverse bleeds on the semi bounce",
         "pop_rank": 14
       },
-      "price": 41.71,
+      "price": 41.58,
       "spark": [
         41.31,
         40.85,
@@ -515,7 +515,7 @@
         36.3,
         37.89,
         39.84,
-        41.71
+        41.58
       ]
     },
     {
@@ -1129,7 +1129,7 @@
       "theme": "Leveraged semis",
       "verdict": "avoid",
       "verdict_label": "Avoid — regime-gated (3x semi long)",
-      "chg_pct": 1.25,
+      "chg_pct": 1.7,
       "thesis": "**3x-long semis into a chip bear market — the textbook name the regime gate forbids.** With the SOX ~20% off its high and QQQ under its 20-day, a 3x-long semi ETF is exactly the decay/gap-through trap the week's #1 lesson was written about (its inverse SOXS is instead our pop pick). Hard avoid until QQQ reclaims its 20-day on volume. No position.",
       "hold_reason": "Not held — 3x-long the weakest sector in a bear market. Hard regime-gated OUT; SOXS is the side we'd take.",
       "size": "-",
@@ -1144,7 +1144,7 @@
         "basis": "3x-semi rips - but gate: no leveraged longs under 20-day",
         "pop_rank": 10
       },
-      "price": 144.46,
+      "price": 145.11,
       "spark": [
         178.17,
         190.41,
@@ -1175,7 +1175,7 @@
         266.71,
         217.7,
         181.54,
-        144.46
+        145.11
       ]
     },
     {
