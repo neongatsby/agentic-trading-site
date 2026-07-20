@@ -1,64 +1,64 @@
 {
-  "generated_at": "2026-07-20T13:29:36.003Z",
-  "market_note": "Market closed — numbers update at next open.",
+  "generated_at": "2026-07-20T13:30:45.092Z",
+  "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 90429.98,
+    "equity": 90645.95,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89429.98,
-    "day_pnl": 4.88,
+    "total_pnl": 89645.95,
+    "day_pnl": 220.85,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 214.35,
-        "pl": -181.92,
-        "plpc": -2.08,
+        "current": 215.79,
+        "pl": -124.2,
+        "plpc": -1.42,
         "thesis": ""
       },
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 254.34,
-        "pl": -101.44,
-        "plpc": -2.43,
+        "current": 256.04,
+        "pl": -74.24,
+        "plpc": -1.78,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.27,
-        "pl": -349.3,
-        "plpc": -2.37,
+        "current": 205.69,
+        "pl": -319.9,
+        "plpc": -2.17,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 131.48,
-        "pl": -187,
-        "plpc": -2.77,
+        "current": 132.48,
+        "pl": -137,
+        "plpc": -2.03,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 68.5,
-        "pl": -145.4,
-        "plpc": -1.61,
+        "current": 69.16,
+        "pl": -59.6,
+        "plpc": -0.66,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.63,
-        "pl": -191.1,
-        "plpc": -2.14,
+        "current": 41.49,
+        "pl": -219.45,
+        "plpc": -2.46,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 844.32,
+    "equity": 848.65,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -155.68,
-    "day_pnl": -1.82,
+    "total_pnl": -151.35,
+    "day_pnl": 2.51,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 214.35,
-        "pl": -24.86,
-        "plpc": -3.72,
+        "current": 215.79,
+        "pl": -20.54,
+        "plpc": -3.07,
         "thesis": ""
       }
     ],
@@ -431,6 +431,10 @@
       {
         "t": 1784553900000,
         "v": 850.52
+      },
+      {
+        "t": 1784554200000,
+        "v": 843.77
       }
     ]
   },
@@ -442,7 +446,7 @@
       "theme": "Energy-for-AI / fuel cells",
       "verdict": "hold",
       "verdict_label": "Held both books — catalyst long",
-      "chg_pct": 4.06,
+      "chg_pct": 4.72,
       "thesis": "**Our one live catalyst long, held into the QQQ-vs-$718 fork.** Live 3 sh @ $222.64 (a late/top-tick entry, ~-3% underwater), paper 40 sh @ $218.90; $188 GTC stop confirmed on each. The catalyst is real and specific: a $1.7B Oaktree/IDF financing to deploy Bloom fuel cells for Nebius' AI data-center power — an energy-for-AI theme decoupled from the chip-capex fear crushing the rest of tech, which is exactly why BE was the watchlist's best long Friday (+4.0%) on a red tape. But it's a battleground: it faded from a $223.6 spike to $214.5 and a 'priced-for-perfection' short case is live. Q2 earnings 7/28 is the next real catalyst. A catalyst swing on a wide stop, not a trend — hold, don't add into a risk-off open.",
       "hold_reason": "We own BE as the clearest catalyst name on the list - a $1.7B Oaktree/Nebius deal to power AI data centers, running into 7/28 earnings, and it decoupled from the chip selloff last week. Our live entry was late (top-tick $222.64) so we've caught little of the move, but the multi-day swing thesis is intact and the $188 stop is wide below structure. Pre-market it's ~flat with no fresh catalyst; what we're watching: if the open confirms a green tape we'd let it lift, and only add the dry $201 on real strength (not the open print) - a failure back below ~$205 lets the $188 stop work.",
       "size": "$645 live (3 sh) + $8.6k paper (40 sh)",
@@ -457,7 +461,7 @@
         "basis": "AI-power catalyst intact; 7/28 earnings ahead",
         "pop_rank": 6
       },
-      "price": 214.55,
+      "price": 215.91,
       "spark": [
         307.75,
         302.59,
@@ -488,7 +492,7 @@
         302.69,
         289.38,
         271.02,
-        214.55
+        215.91
       ]
     },
     {
@@ -497,7 +501,7 @@
       "theme": "3x inverse Nasdaq / regime hedge",
       "verdict": "hold",
       "verdict_label": "Held paper — 3x-inverse hedge",
-      "chg_pct": 1.81,
+      "chg_pct": 1.49,
       "thesis": "**The paper book's hedge and the reason it can own the green on a down day.** 210 sh @ $42.54, $38 GTC stop. With QQQ ~3.2% under its 20-day and a fresh oil/Iran risk-off flare, a 3x-inverse-Nasdaq sleeve is the offset that pays while the longs bleed — it was +4.6% Friday, one of only two green watchlist names. We hold it as insurance, not a naked short: it partially offsets the paper NVDA/PLTR/RKLB net-long chip drag. Live can't cleanly carry it (PDT + wash constraints), so this capture lives in paper. On a confirmed $718 reclaim on volume, this is the first thing we cover/trim to free cash for the strongest long.",
       "hold_reason": "We hold SQQQ as the paper hedge — it's 3x inverse Nasdaq, so it rises when the tech tape falls, which is what's happened four straight sessions. It's the piece that lets paper actually own a green name on a risk-off day instead of sitting fully offside. What we're watching: a QQQ reclaim of its $718 20-day on real volume is the signal to cover/trim it and rotate that cash into the strongest confirmed long — until then the hedge stays on.",
       "size": "$8.9k paper (210 sh)",
@@ -512,7 +516,7 @@
         "basis": "3x-inverse bleeds on the semi bounce",
         "pop_rank": 16
       },
-      "price": 41.63,
+      "price": 41.5,
       "spark": [
         41.31,
         40.85,
@@ -543,7 +547,7 @@
         36.3,
         37.89,
         39.84,
-        41.63
+        41.5
       ]
     },
     {
@@ -607,7 +611,7 @@
       "theme": "Space / launch + Iridium deal",
       "verdict": "hold",
       "verdict_label": "Held paper - today's TOP PICK (RS + oversold bounce)",
-      "chg_pct": 3.48,
+      "chg_pct": 2.34,
       "thesis": "**Held in paper (130 sh @ $69.62, $62 GTC stop) and the book's relative-strength standout.** RKLB firmed Friday (+1.9% intraday) while chips bled — space/defense is its own theme, less tied to the AI-capex fear. That relative strength is why it's the paper long we're most inclined to KEEP through the risk-off: on a QQQ reclaim it's a candidate to add to, not trim. Wide $62 stop below structure; no fresh catalyst, but the RS is the tell.",
       "hold_reason": "We hold RKLB in paper (130 sh @ $69.62, $62 stop) and it's today's TOP pick to pop - it's the relative-strength leader, up ~3% pre-market and leading the names we own, with space/defense as its own theme away from the chip fear driving the selloff, and it's oversold after breaking support Friday. Why it can pop: relief bounces lift oversold RS names hardest. What we're watching: a clean reclaim of Friday's ~$70.6 high on volume confirms it - that's the level where we'd deploy the live $201 into it as a multi-day swing (not a chase of the open print); the wide $62 stop is the line if the whole tape rolls back over.",
       "size": "$9.0k paper (130 sh)",
@@ -627,7 +631,7 @@
           4
         ]
       },
-      "price": 69.69,
+      "price": 68.92,
       "spark": [
         125.44,
         135.74,
@@ -658,7 +662,7 @@
         101.58,
         100.02,
         100.5,
-        69.69
+        68.92
       ]
     },
     {
@@ -667,7 +671,7 @@
       "theme": "Quantum",
       "verdict": "watch",
       "verdict_label": "Watch — quantum, risk-off casualty",
-      "chg_pct": 0.07,
+      "chg_pct": 2.27,
       "thesis": "**Quantum high-beta — a risk-off casualty, not a buy here.** RGTI trades as a pure risk-appetite proxy and sits adjacent to the AI/compute fear that started the rout. In a broken regime with oil spiking it's a name to avoid on the long side; only interesting if the tape flips risk-on. No position.",
       "hold_reason": "Not held — pure risk-appetite proxy; wrong side of a risk-off tape. Watching for a flip.",
       "size": "-",
@@ -682,7 +686,7 @@
         "basis": "quantum high-beta snapback",
         "pop_rank": 9
       },
-      "price": 14.12,
+      "price": 14.43,
       "spark": [
         22.04,
         26.41,
@@ -713,7 +717,7 @@
         19.32,
         18.68,
         17.96,
-        14.12
+        14.43
       ]
     },
     {
@@ -722,7 +726,7 @@
       "theme": "Nuclear-for-AI / SMR",
       "verdict": "watch",
       "verdict_label": "Watch — SMR-nuclear high beta",
-      "chg_pct": 1.57,
+      "chg_pct": 2.23,
       "thesis": "**Small-modular-nuclear high-beta — AI-power theme, but no ballast in a risk-off tape.** SMR rides the same data-center-power demand as CEG/BE but with far more beta and no near-term catalyst, so it fell hard last week. Avoid on the long side while QQQ is under its 20-day; a regime turn plus the AI-power bid is what puts it back in play. No position.",
       "hold_reason": "Not held — high-beta version of the AI-power theme; CEG is the way we own that theme defensively instead. Watching.",
       "size": "-",
@@ -737,7 +741,7 @@
         "basis": "nuclear-for-AI beta bounce",
         "pop_rank": 8
       },
-      "price": 7.76,
+      "price": 7.81,
       "spark": [
         11.33,
         11.39,
@@ -768,7 +772,7 @@
         10.02,
         10.16,
         9.76,
-        7.76
+        7.81
       ]
     },
     {
@@ -777,7 +781,7 @@
       "theme": "Nuclear-for-AI",
       "verdict": "watch",
       "verdict_label": "Watch — SMR-nuclear high beta",
-      "chg_pct": -2.53,
+      "chg_pct": -0.47,
       "thesis": "**AI-power / SMR nuclear with big beta — same story as SMR.** OKLO is a high-momentum data-center-power name that gets sold in risk-off; it lost ground last week with the group. Not a long here into a broken regime + oil spike; watch for a regime turn to bring the AI-power bid back. No position.",
       "hold_reason": "Not held — high-beta AI-power name, sold off in risk-off. Watching for a regime turn.",
       "size": "-",
@@ -792,7 +796,7 @@
         "basis": "nuclear-for-AI beta, tracks SMR",
         "pop_rank": 10
       },
-      "price": 40.64,
+      "price": 41.5,
       "spark": [
         65.1,
         65.82,
@@ -823,7 +827,7 @@
         52.34,
         52.53,
         52.43,
-        40.64
+        41.5
       ]
     },
     {
@@ -832,7 +836,7 @@
       "theme": "Quantum",
       "verdict": "watch",
       "verdict_label": "Watch — quantum, epicenter-adjacent",
-      "chg_pct": 2.14,
+      "chg_pct": 0.87,
       "thesis": "**Quantum high-beta, adjacent to the cheap-compute fear.** IONQ swings hard with risk appetite and sits close to the AI/compute narrative that cracked last week. Avoid long into the risk-off; only compelling on a confirmed tape flip. No position.",
       "hold_reason": "Not held — high-beta and adjacent to the exact fear driving the selloff. Watching only.",
       "size": "-",
@@ -847,7 +851,7 @@
         "basis": "high-beta quantum snapback on the rip",
         "pop_rank": 3
       },
-      "price": 35.87,
+      "price": 35.42,
       "spark": [
         58.87,
         63.58,
@@ -878,7 +882,7 @@
         53.3,
         51.44,
         49.16,
-        35.87
+        35.42
       ]
     },
     {
@@ -997,7 +1001,7 @@
       "theme": "AI leader / selloff epicenter",
       "verdict": "hold",
       "verdict_label": "Held paper — trim-into-strength candidate",
-      "chg_pct": -0.65,
+      "chg_pct": -0.85,
       "thesis": "**Held in paper (70 sh @ $210.26, $186 GTC stop) and the book's designated trim-into-strength name.** NVDA is the epicenter of the exact fear driving the tape — an AI-capex/valuation derate after the Moonshot-AI cheap-compute scare — so it's the highest-beta chip long we carry into a broken regime. We already cut it 130→70 Friday. The long-term thesis is intact but the regime gate says don't be heavy chips while QQQ is under its 20-day. If Monday bounces, this is the first long we trim toward the hedge into that strength; if it breaks, the $186 stop works. Alphabet/hyperscaler earnings this week are the read on whether the capex fear eases.",
       "hold_reason": "We still hold a half-position of NVDA in paper because it's the AI leader and we already cut it in half Friday, but it's the name most exposed to the fear driving this selloff. What we're watching: an intraday bounce is the cue to trim it further toward the SQQQ hedge (cut net-long chip risk into strength, per the week's lesson), while the wide $186 stop caps the downside if it breaks instead. Hyperscaler earnings this week decide whether the AI-capex fear eases or deepens.",
       "size": "$14.2k paper (70 sh)",
@@ -1012,7 +1016,7 @@
         "basis": "bellwether leads semi relief; futures +0.7%",
         "pop_rank": 2
       },
-      "price": 206.12,
+      "price": 205.69,
       "spark": [
         219.21,
         215.09,
@@ -1043,7 +1047,7 @@
         199.93,
         197.54,
         194.51,
-        206.12
+        205.69
       ]
     },
     {
@@ -1052,7 +1056,7 @@
       "theme": "AI software / high-beta",
       "verdict": "hold",
       "verdict_label": "Held paper — high-beta software",
-      "chg_pct": -2.68,
+      "chg_pct": -1.38,
       "thesis": "**Held in paper (50 sh @ $135.22, $121.50 GTC stop).** PLTR is high-beta software, less directly chip-exposed than NVDA but it still tracks QQQ, and it was among the softer names Friday (-0.65%). No fresh company catalyst; it lives and dies with the risk-on/off tape right now. With the regime broken we hold it on its wide stop rather than add — it's the secondary trim candidate behind NVDA if we need to cut net-long exposure into strength.",
       "hold_reason": "Paper AI-software long, 50 sh @ $135.22, held as high-beta tech beta into the bounce; it sits behind a $121.50 GTC stop. Fresh minor negative: France and Germany are scouting a European alternative to Palantir's Maven — worth watching, not a sell trigger on its own. We'd trim it toward the SQQQ hedge only on a fresh QQQ breakdown, and let the winner run if the regime reclaims $718.",
       "size": "$6.6k paper (50 sh)",
@@ -1067,7 +1071,7 @@
         "basis": "France/Germany Maven overhang; red pre-market",
         "pop_rank": 15
       },
-      "price": 130.86,
+      "price": 132.61,
       "spark": [
         137.4,
         136.84,
@@ -1098,7 +1102,7 @@
         116.64,
         125.75,
         129.18,
-        130.86
+        132.61
       ]
     },
     {
@@ -1107,7 +1111,7 @@
       "theme": "High-beta mega-cap",
       "verdict": "watch",
       "verdict_label": "Watch — high-beta, mixed cross-currents",
-      "chg_pct": -1.57,
+      "chg_pct": -1.78,
       "thesis": "**High-beta mega-cap with mixed cross-currents.** TSLA carries big beta into the risk-off, though an oil spike is a marginal relative positive for the EV narrative; net it tracks the tape with no fresh catalyst. Watch, no position — not a place to add risk into a broken regime.",
       "hold_reason": "Not held — no catalyst and high beta into a risk-off open. Watching only.",
       "size": "-",
@@ -1122,7 +1126,7 @@
         "basis": "bounce beta into Wed earnings",
         "pop_rank": 4
       },
-      "price": 384.9,
+      "price": 384.08,
       "spark": [
         417.79,
         425.95,
@@ -1153,7 +1157,7 @@
         420.37,
         425.36,
         392.82,
-        384.9
+        384.08
       ]
     },
     {
@@ -1162,7 +1166,7 @@
       "theme": "Leveraged semis",
       "verdict": "avoid",
       "verdict_label": "Avoid — regime-gated (3x semi long)",
-      "chg_pct": 0.69,
+      "chg_pct": 1.33,
       "thesis": "**3x-long semis into a chip bear market — the textbook name the regime gate forbids.** With the SOX ~20% off its high and QQQ under its 20-day, a 3x-long semi ETF is exactly the decay/gap-through trap the week's #1 lesson was written about (its inverse SOXS is instead our pop pick). Hard avoid until QQQ reclaims its 20-day on volume. No position.",
       "hold_reason": "Not held — 3x-long the weakest sector in a bear market. Hard regime-gated OUT; SOXS is the side we'd take.",
       "size": "-",
@@ -1177,7 +1181,7 @@
         "basis": "3x-semi rips - but regime-gated OUT",
         "pop_rank": 5
       },
-      "price": 143.67,
+      "price": 144.58,
       "spark": [
         178.17,
         190.41,
@@ -1208,7 +1212,7 @@
         266.71,
         217.7,
         181.54,
-        143.67
+        144.58
       ]
     },
     {
@@ -1217,7 +1221,7 @@
       "theme": "Leveraged S&P",
       "verdict": "avoid",
       "verdict_label": "Avoid — regime-gated (3x long)",
-      "chg_pct": -2.55,
+      "chg_pct": -1.49,
       "thesis": "**3x-long S&P — the least-bad leveraged long, still gated OUT.** SPY was only -1.6% on the week vs Nasdaq -2.9%, so UPRO is the least-broken 3x long, but the rule is unambiguous: no 3x longs while QQQ is under its 20-day. We cut it in paper on 7/17. No position; revisit only on a confirmed reclaim.",
       "hold_reason": "Not held — cut 7/17. Regime gate forbids 3x longs while QQQ is under its 20-day.",
       "size": "-",
@@ -1232,7 +1236,7 @@
         "basis": "3x-S&P; broad tape only mild",
         "pop_rank": 14
       },
-      "price": 139.72,
+      "price": 141.25,
       "spark": [
         141.28,
         142.99,
@@ -1263,7 +1267,7 @@
         141.89,
         141.41,
         140.72,
-        139.72
+        141.25
       ]
     },
     {
@@ -1272,7 +1276,7 @@
       "theme": "Leveraged Nasdaq",
       "verdict": "avoid",
       "verdict_label": "Avoid — benchmark, regime-gated (3x)",
-      "chg_pct": -1.78,
+      "chg_pct": -1.72,
       "thesis": "**3x-long Nasdaq — our benchmark, and the poster child of the mistake we stopped making.** Holding TQQQ into a QQQ-sub-20-day regime drove essentially the whole live drawdown last week and gapped through its stop 7/17. It's the benchmark we measure alpha against (down ~8% since inception), and a hard avoid on the long side until QQQ reclaims its 20-day. No position.",
       "hold_reason": "Not held — it's the benchmark. Regime gate forbids the 3x-Nasdaq long while QQQ is under its 20-day.",
       "size": "-",
@@ -1287,7 +1291,7 @@
         "basis": "3x-Nasdaq benchmark rides the bounce",
         "pop_rank": 11
       },
-      "price": 69.47,
+      "price": 69.51,
       "spark": [
         76.72,
         77.62,
@@ -1318,7 +1322,7 @@
         80.99,
         77.49,
         73.3,
-        69.47
+        69.51
       ]
     },
     {
@@ -1327,7 +1331,7 @@
       "theme": "Leveraged mega-cap tech",
       "verdict": "avoid",
       "verdict_label": "Avoid — regime-gated (3x long)",
-      "chg_pct": -6.2,
+      "chg_pct": -4.57,
       "thesis": "**3x-long FANG+ — the gap-through that stopped us out 7/17.** FNGU gapped below its $25.30 stop at Friday's open for a realized loss; a 3x-long megacap-tech basket is precisely what the regime gate keeps us out of while QQQ is under its 20-day. No position; revisit only on a confirmed reclaim.",
       "hold_reason": "Not held — gapped through its stop 7/17. Regime gate forbids 3x longs here.",
       "size": "-",
@@ -1342,7 +1346,7 @@
         "basis": "3x FANG+ bounce; regime-gated",
         "pop_rank": 13
       },
-      "price": 26.55,
+      "price": 27.02,
       "spark": [
         29.27,
         28.69,
@@ -1373,7 +1377,7 @@
         25.69,
         26.66,
         26.47,
-        26.55
+        27.02
       ]
     }
   ],
@@ -1834,8 +1838,8 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 69.47,
-    "tqqq_pct": -9.66
+    "tqqq": 69.51,
+    "tqqq_pct": -9.61
   },
   "status": [
     {
@@ -1846,1627 +1850,11 @@
   "equity_history": {
     "1D": [
       [
-        1784295000000,
-        872.04
-      ],
-      [
-        1784295060000,
-        872.01
-      ],
-      [
-        1784295120000,
-        873.06
-      ],
-      [
-        1784295180000,
-        872.25
-      ],
-      [
-        1784295240000,
-        871.68
-      ],
-      [
-        1784295300000,
-        871.2
-      ],
-      [
-        1784295360000,
-        870.06
-      ],
-      [
-        1784295420000,
-        870.24
-      ],
-      [
-        1784295480000,
-        869.73
-      ],
-      [
-        1784295540000,
-        870.24
-      ],
-      [
-        1784295600000,
-        869.94
-      ],
-      [
-        1784295660000,
-        870
-      ],
-      [
-        1784295720000,
-        869.64
-      ],
-      [
-        1784295780000,
-        869.22
-      ],
-      [
-        1784295840000,
-        869.22
-      ],
-      [
-        1784295900000,
-        869.22
-      ],
-      [
-        1784295960000,
-        869.22
-      ],
-      [
-        1784296020000,
-        869.22
-      ],
-      [
-        1784296080000,
-        869.22
-      ],
-      [
-        1784296140000,
-        869.22
-      ],
-      [
-        1784296200000,
-        869.22
-      ],
-      [
-        1784296260000,
-        869.22
-      ],
-      [
-        1784296320000,
-        869.22
-      ],
-      [
-        1784296380000,
-        869.22
-      ],
-      [
-        1784296440000,
-        869.22
-      ],
-      [
-        1784296500000,
-        869.22
-      ],
-      [
-        1784296560000,
-        869.22
-      ],
-      [
-        1784296620000,
-        869.22
-      ],
-      [
-        1784296680000,
-        869.22
-      ],
-      [
-        1784296740000,
-        869.22
-      ],
-      [
-        1784296800000,
-        869.22
-      ],
-      [
-        1784296860000,
-        869.22
-      ],
-      [
-        1784296920000,
-        869.22
-      ],
-      [
-        1784296980000,
-        869.22
-      ],
-      [
-        1784297040000,
-        869.22
-      ],
-      [
-        1784297100000,
-        869.22
-      ],
-      [
-        1784297160000,
-        869.22
-      ],
-      [
-        1784297220000,
-        869.22
-      ],
-      [
-        1784297280000,
-        869.22
-      ],
-      [
-        1784297340000,
-        869.22
-      ],
-      [
-        1784297400000,
-        869.22
-      ],
-      [
-        1784297460000,
-        869.22
-      ],
-      [
-        1784297520000,
-        869.22
-      ],
-      [
-        1784297580000,
-        869.22
-      ],
-      [
-        1784297640000,
-        869.22
-      ],
-      [
-        1784297700000,
-        869.22
-      ],
-      [
-        1784297760000,
-        869.22
-      ],
-      [
-        1784297820000,
-        869.22
-      ],
-      [
-        1784297880000,
-        869.22
-      ],
-      [
-        1784297940000,
-        869.22
-      ],
-      [
-        1784298000000,
-        869.22
-      ],
-      [
-        1784298060000,
-        869.22
-      ],
-      [
-        1784298120000,
-        869.22
-      ],
-      [
-        1784298180000,
-        869.22
-      ],
-      [
-        1784298240000,
-        869.22
-      ],
-      [
-        1784298300000,
-        869.22
-      ],
-      [
-        1784298360000,
-        869.22
-      ],
-      [
-        1784298420000,
-        869.22
-      ],
-      [
-        1784298480000,
-        869.22
-      ],
-      [
-        1784298540000,
-        869.22
-      ],
-      [
-        1784298600000,
-        869.22
-      ],
-      [
-        1784298660000,
-        869.22
-      ],
-      [
-        1784298720000,
-        869.22
-      ],
-      [
-        1784298780000,
-        869.22
-      ],
-      [
-        1784298840000,
-        869.22
-      ],
-      [
-        1784298900000,
-        869.22
-      ],
-      [
-        1784298960000,
-        869.22
-      ],
-      [
-        1784299020000,
-        869.22
-      ],
-      [
-        1784299080000,
-        869.22
-      ],
-      [
-        1784299140000,
-        869.22
-      ],
-      [
-        1784299200000,
-        869.22
-      ],
-      [
-        1784299260000,
-        869.22
-      ],
-      [
-        1784299320000,
-        869.22
-      ],
-      [
-        1784299380000,
-        869.22
-      ],
-      [
-        1784299440000,
-        869.22
-      ],
-      [
-        1784299500000,
-        869.22
-      ],
-      [
-        1784299560000,
-        869.22
-      ],
-      [
-        1784299620000,
-        869.22
-      ],
-      [
-        1784299680000,
-        869.22
-      ],
-      [
-        1784299740000,
-        869.22
-      ],
-      [
-        1784299800000,
-        869.22
-      ],
-      [
-        1784299860000,
-        869.22
-      ],
-      [
-        1784299920000,
-        869.22
-      ],
-      [
-        1784299980000,
-        869.22
-      ],
-      [
-        1784300040000,
-        869.22
-      ],
-      [
-        1784300100000,
-        869.22
-      ],
-      [
-        1784300160000,
-        869.22
-      ],
-      [
-        1784300220000,
-        869.22
-      ],
-      [
-        1784300280000,
-        869.22
-      ],
-      [
-        1784300340000,
-        869.22
-      ],
-      [
-        1784300400000,
-        869.22
-      ],
-      [
-        1784300460000,
-        869.22
-      ],
-      [
-        1784300520000,
-        869.22
-      ],
-      [
-        1784300580000,
-        869.22
-      ],
-      [
-        1784300640000,
-        869.22
-      ],
-      [
-        1784300700000,
-        869.22
-      ],
-      [
-        1784300760000,
-        869.22
-      ],
-      [
-        1784300820000,
-        869.22
-      ],
-      [
-        1784300880000,
-        869.22
-      ],
-      [
-        1784300940000,
-        869.22
-      ],
-      [
-        1784301000000,
-        869.22
-      ],
-      [
-        1784301060000,
-        869.22
-      ],
-      [
-        1784301120000,
-        869.22
-      ],
-      [
-        1784301180000,
-        869.22
-      ],
-      [
-        1784301240000,
-        869.22
-      ],
-      [
-        1784301300000,
-        869.22
-      ],
-      [
-        1784301360000,
-        869.22
-      ],
-      [
-        1784301420000,
-        869.22
-      ],
-      [
-        1784301480000,
-        869.22
-      ],
-      [
-        1784301540000,
-        869.22
-      ],
-      [
-        1784301600000,
-        869.22
-      ],
-      [
-        1784301660000,
-        869.22
-      ],
-      [
-        1784301720000,
-        869.22
-      ],
-      [
-        1784301780000,
-        869.22
-      ],
-      [
-        1784301840000,
-        869.22
-      ],
-      [
-        1784301900000,
-        869.22
-      ],
-      [
-        1784301960000,
-        869.22
-      ],
-      [
-        1784302020000,
-        869.22
-      ],
-      [
-        1784302080000,
-        869.22
-      ],
-      [
-        1784302140000,
-        869.22
-      ],
-      [
-        1784302200000,
-        869.22
-      ],
-      [
-        1784302260000,
-        869.22
-      ],
-      [
-        1784302320000,
-        869.22
-      ],
-      [
-        1784302380000,
-        869.22
-      ],
-      [
-        1784302440000,
-        869.22
-      ],
-      [
-        1784302500000,
-        869.22
-      ],
-      [
-        1784302560000,
-        869.22
-      ],
-      [
-        1784302620000,
-        869.22
-      ],
-      [
-        1784302680000,
-        869.22
-      ],
-      [
-        1784302740000,
-        869.22
-      ],
-      [
-        1784302800000,
-        869.22
-      ],
-      [
-        1784302860000,
-        869.22
-      ],
-      [
-        1784302920000,
-        869.22
-      ],
-      [
-        1784302980000,
-        869.22
-      ],
-      [
-        1784303040000,
-        869.22
-      ],
-      [
-        1784303100000,
-        869.22
-      ],
-      [
-        1784303160000,
-        869.22
-      ],
-      [
-        1784303220000,
-        869.22
-      ],
-      [
-        1784303280000,
-        869.22
-      ],
-      [
-        1784303340000,
-        869.22
-      ],
-      [
-        1784303400000,
-        869.22
-      ],
-      [
-        1784303460000,
-        869.22
-      ],
-      [
-        1784303520000,
-        869.22
-      ],
-      [
-        1784303580000,
-        869.22
-      ],
-      [
-        1784303640000,
-        869.22
-      ],
-      [
-        1784303700000,
-        869.22
-      ],
-      [
-        1784303760000,
-        869.22
-      ],
-      [
-        1784303820000,
-        869.22
-      ],
-      [
-        1784303880000,
-        869.22
-      ],
-      [
-        1784303940000,
-        869.22
-      ],
-      [
-        1784304000000,
-        869.22
-      ],
-      [
-        1784304060000,
-        869.22
-      ],
-      [
-        1784304120000,
-        869.22
-      ],
-      [
-        1784304180000,
-        869.22
-      ],
-      [
-        1784304240000,
-        869.22
-      ],
-      [
-        1784304300000,
-        869.22
-      ],
-      [
-        1784304360000,
-        869.22
-      ],
-      [
-        1784304420000,
-        869.22
-      ],
-      [
-        1784304480000,
-        869.22
-      ],
-      [
-        1784304540000,
-        869.22
-      ],
-      [
-        1784304600000,
-        869.22
-      ],
-      [
-        1784304660000,
-        869.22
-      ],
-      [
-        1784304720000,
-        869.22
-      ],
-      [
-        1784304780000,
-        869.22
-      ],
-      [
-        1784304840000,
-        869.22
-      ],
-      [
-        1784304900000,
-        869.22
-      ],
-      [
-        1784304960000,
-        869.22
-      ],
-      [
-        1784305020000,
-        869.22
-      ],
-      [
-        1784305080000,
-        869.22
-      ],
-      [
-        1784305140000,
-        869.22
-      ],
-      [
-        1784305200000,
-        869.22
-      ],
-      [
-        1784305260000,
-        869.22
-      ],
-      [
-        1784305320000,
-        869.22
-      ],
-      [
-        1784305380000,
-        869.22
-      ],
-      [
-        1784305440000,
-        869.22
-      ],
-      [
-        1784305500000,
-        869.22
-      ],
-      [
-        1784305560000,
-        869.22
-      ],
-      [
-        1784305620000,
-        869.22
-      ],
-      [
-        1784305680000,
-        869.22
-      ],
-      [
-        1784305740000,
-        869.22
-      ],
-      [
-        1784305800000,
-        869.22
-      ],
-      [
-        1784305860000,
-        869.22
-      ],
-      [
-        1784305920000,
-        869.22
-      ],
-      [
-        1784305980000,
-        869.22
-      ],
-      [
-        1784306040000,
-        869.22
-      ],
-      [
-        1784306100000,
-        869.22
-      ],
-      [
-        1784306160000,
-        869.22
-      ],
-      [
-        1784306220000,
-        869.22
-      ],
-      [
-        1784306280000,
-        869.22
-      ],
-      [
-        1784306340000,
-        869.22
-      ],
-      [
-        1784306400000,
-        869.22
-      ],
-      [
-        1784306460000,
-        869.22
-      ],
-      [
-        1784306520000,
-        869.22
-      ],
-      [
-        1784306580000,
-        869.22
-      ],
-      [
-        1784306640000,
-        869.22
-      ],
-      [
-        1784306700000,
-        869.22
-      ],
-      [
-        1784306760000,
-        869.22
-      ],
-      [
-        1784306820000,
-        869.22
-      ],
-      [
-        1784306880000,
-        869.22
-      ],
-      [
-        1784306940000,
-        869.22
-      ],
-      [
-        1784307000000,
-        869.22
-      ],
-      [
-        1784307060000,
-        869.22
-      ],
-      [
-        1784307120000,
-        869.22
-      ],
-      [
-        1784307180000,
-        869.22
-      ],
-      [
-        1784307240000,
-        869.22
-      ],
-      [
-        1784307300000,
-        869.22
-      ],
-      [
-        1784307360000,
-        869.22
-      ],
-      [
-        1784307420000,
-        869.22
-      ],
-      [
-        1784307480000,
-        869.22
-      ],
-      [
-        1784307540000,
-        869.22
-      ],
-      [
-        1784307600000,
-        869.22
-      ],
-      [
-        1784307660000,
-        869.22
-      ],
-      [
-        1784307720000,
-        869.22
-      ],
-      [
-        1784307780000,
-        869.22
-      ],
-      [
-        1784307840000,
-        869.22
-      ],
-      [
-        1784307900000,
-        869.22
-      ],
-      [
-        1784307960000,
-        869.22
-      ],
-      [
-        1784308020000,
-        869.22
-      ],
-      [
-        1784308080000,
-        869.22
-      ],
-      [
-        1784308140000,
-        869.22
-      ],
-      [
-        1784308200000,
-        869.22
-      ],
-      [
-        1784308260000,
-        870.84
-      ],
-      [
-        1784308320000,
-        870.24
-      ],
-      [
-        1784308380000,
-        872.04
-      ],
-      [
-        1784308440000,
-        870.57
-      ],
-      [
-        1784308500000,
-        868.56
-      ],
-      [
-        1784308560000,
-        869.85
-      ],
-      [
-        1784308620000,
-        870.48
-      ],
-      [
-        1784308680000,
-        870.45
-      ],
-      [
-        1784308740000,
-        870.12
-      ],
-      [
-        1784308800000,
-        868.8
-      ],
-      [
-        1784308860000,
-        867.12
-      ],
-      [
-        1784308920000,
-        867.02
-      ],
-      [
-        1784308980000,
-        867.78
-      ],
-      [
-        1784309040000,
-        867.78
-      ],
-      [
-        1784309100000,
-        867.75
-      ],
-      [
-        1784309160000,
-        867.78
-      ],
-      [
-        1784309220000,
-        869.51
-      ],
-      [
-        1784309280000,
-        869.16
-      ],
-      [
-        1784309340000,
-        866.46
-      ],
-      [
-        1784309400000,
-        868.01
-      ],
-      [
-        1784309460000,
-        870.45
-      ],
-      [
-        1784309520000,
-        870.18
-      ],
-      [
-        1784309580000,
-        869.61
-      ],
-      [
-        1784309640000,
-        869.07
-      ],
-      [
-        1784309700000,
-        866.46
-      ],
-      [
-        1784309760000,
-        864.72
-      ],
-      [
-        1784309820000,
-        862.68
-      ],
-      [
-        1784309880000,
-        861.72
-      ],
-      [
-        1784309940000,
-        861.71
-      ],
-      [
-        1784310000000,
-        863.7
-      ],
-      [
-        1784310060000,
-        861.69
-      ],
-      [
-        1784310120000,
-        860.37
-      ],
-      [
-        1784310180000,
-        860.55
-      ],
-      [
-        1784310240000,
-        860.91
-      ],
-      [
-        1784310300000,
-        860.67
-      ],
-      [
-        1784310360000,
-        861.08
-      ],
-      [
-        1784310420000,
-        860.1
-      ],
-      [
-        1784310480000,
-        860.91
-      ],
-      [
-        1784310540000,
-        862.62
-      ],
-      [
-        1784310600000,
-        863.76
-      ],
-      [
-        1784310660000,
-        863.75
-      ],
-      [
-        1784310720000,
-        864.02
-      ],
-      [
-        1784310780000,
-        862.38
-      ],
-      [
-        1784310840000,
-        860.99
-      ],
-      [
-        1784310900000,
-        861.42
-      ],
-      [
-        1784310960000,
-        859.88
-      ],
-      [
-        1784311020000,
-        857.34
-      ],
-      [
-        1784311080000,
-        861.15
-      ],
-      [
-        1784311140000,
-        859.62
-      ],
-      [
-        1784311200000,
-        858.03
-      ],
-      [
-        1784311260000,
-        856.98
-      ],
-      [
-        1784311320000,
-        857.13
-      ],
-      [
-        1784311380000,
-        858.48
-      ],
-      [
-        1784311440000,
-        860.03
-      ],
-      [
-        1784311500000,
-        859.68
-      ],
-      [
-        1784311560000,
-        858.09
-      ],
-      [
-        1784311620000,
-        856.43
-      ],
-      [
-        1784311680000,
-        857.28
-      ],
-      [
-        1784311740000,
-        856.08
-      ],
-      [
-        1784311800000,
-        855.3
-      ],
-      [
-        1784311860000,
-        854.76
-      ],
-      [
-        1784311920000,
-        853.86
-      ],
-      [
-        1784311980000,
-        853.77
-      ],
-      [
-        1784312040000,
-        855.36
-      ],
-      [
-        1784312100000,
-        854.78
-      ],
-      [
-        1784312160000,
-        853.82
-      ],
-      [
-        1784312220000,
-        853.44
-      ],
-      [
-        1784312280000,
-        852.33
-      ],
-      [
-        1784312340000,
-        853.09
-      ],
-      [
-        1784312400000,
-        853.37
-      ],
-      [
-        1784312460000,
-        851.46
-      ],
-      [
-        1784312520000,
-        849.72
-      ],
-      [
-        1784312580000,
-        850.17
-      ],
-      [
-        1784312640000,
-        850.88
-      ],
-      [
-        1784312700000,
-        850.25
-      ],
-      [
-        1784312760000,
-        849.24
-      ],
-      [
-        1784312820000,
-        850.31
-      ],
-      [
-        1784312880000,
-        848.79
-      ],
-      [
-        1784312940000,
-        850.17
-      ],
-      [
-        1784313000000,
-        849.93
-      ],
-      [
-        1784313060000,
-        852.39
-      ],
-      [
-        1784313120000,
-        852.24
-      ],
-      [
-        1784313180000,
-        849.71
-      ],
-      [
-        1784313240000,
-        848.75
-      ],
-      [
-        1784313300000,
-        850.47
-      ],
-      [
-        1784313360000,
-        850.98
-      ],
-      [
-        1784313420000,
-        851.25
-      ],
-      [
-        1784313480000,
-        847.7
-      ],
-      [
-        1784313540000,
-        848.1
-      ],
-      [
-        1784313600000,
-        847.95
-      ],
-      [
-        1784313660000,
-        847.65
-      ],
-      [
-        1784313720000,
-        846.48
-      ],
-      [
-        1784313780000,
-        845.65
-      ],
-      [
-        1784313840000,
-        846.06
-      ],
-      [
-        1784313900000,
-        846.68
-      ],
-      [
-        1784313960000,
-        845.86
-      ],
-      [
-        1784314020000,
-        847.8
-      ],
-      [
-        1784314080000,
-        848.94
-      ],
-      [
-        1784314140000,
-        848.73
-      ],
-      [
-        1784314200000,
-        847.95
-      ],
-      [
-        1784314260000,
-        846.84
-      ],
-      [
-        1784314320000,
-        846.96
-      ],
-      [
-        1784314380000,
-        846.68
-      ],
-      [
-        1784314440000,
-        846.84
-      ],
-      [
-        1784314500000,
-        848.34
-      ],
-      [
-        1784314560000,
-        846.81
-      ],
-      [
-        1784314620000,
-        844.89
-      ],
-      [
-        1784314680000,
-        846.44
-      ],
-      [
-        1784314740000,
-        847.64
-      ],
-      [
-        1784314800000,
-        846.57
-      ],
-      [
-        1784314860000,
-        845.82
-      ],
-      [
-        1784314920000,
-        846.72
-      ],
-      [
-        1784314980000,
-        844.71
-      ],
-      [
-        1784315040000,
-        843.63
-      ],
-      [
-        1784315100000,
-        845.13
-      ],
-      [
-        1784315160000,
-        844.73
-      ],
-      [
-        1784315220000,
-        841.98
-      ],
-      [
-        1784315280000,
-        842.24
-      ],
-      [
-        1784315340000,
-        842.4
-      ],
-      [
-        1784315400000,
-        842.57
-      ],
-      [
-        1784315460000,
-        843.24
-      ],
-      [
-        1784315520000,
-        841.31
-      ],
-      [
-        1784315580000,
-        838.95
-      ],
-      [
-        1784315640000,
-        837.66
-      ],
-      [
-        1784315700000,
-        837.48
-      ],
-      [
-        1784315760000,
-        838.47
-      ],
-      [
-        1784315820000,
-        837.9
-      ],
-      [
-        1784315880000,
-        838.65
-      ],
-      [
-        1784315940000,
-        841.11
-      ],
-      [
-        1784316000000,
-        840.6
-      ],
-      [
-        1784316060000,
-        840.11
-      ],
-      [
-        1784316120000,
-        840.15
-      ],
-      [
-        1784316180000,
-        839.9
-      ],
-      [
-        1784316240000,
-        839.97
-      ],
-      [
-        1784316300000,
-        838.82
-      ],
-      [
-        1784316360000,
-        837.53
-      ],
-      [
-        1784316420000,
-        838.05
-      ],
-      [
-        1784316480000,
-        839.82
-      ],
-      [
-        1784316540000,
-        842.07
-      ],
-      [
-        1784316600000,
-        843
-      ],
-      [
-        1784316660000,
-        845.12
-      ],
-      [
-        1784316720000,
-        845.07
-      ],
-      [
-        1784316780000,
-        843.96
-      ],
-      [
-        1784316840000,
-        842.13
-      ],
-      [
-        1784316900000,
-        841.14
-      ],
-      [
-        1784316960000,
-        840.89
-      ],
-      [
-        1784317020000,
-        842.66
-      ],
-      [
-        1784317080000,
-        842.84
-      ],
-      [
-        1784317140000,
-        841.31
-      ],
-      [
-        1784317200000,
-        841.5
-      ],
-      [
-        1784317260000,
-        839.61
-      ],
-      [
-        1784317320000,
-        841.02
-      ],
-      [
-        1784317380000,
-        838.35
-      ],
-      [
-        1784317440000,
-        833.94
-      ],
-      [
-        1784317500000,
-        836.16
-      ],
-      [
-        1784317560000,
-        835.31
-      ],
-      [
-        1784317620000,
-        835.62
-      ],
-      [
-        1784317680000,
-        836.67
-      ],
-      [
-        1784317740000,
-        839.04
-      ],
-      [
-        1784317800000,
-        840.32
-      ],
-      [
-        1784317860000,
-        836.02
-      ],
-      [
-        1784317920000,
-        838.83
-      ],
-      [
-        1784317980000,
-        839.64
-      ],
-      [
-        1784318040000,
-        838.68
-      ],
-      [
-        1784318100000,
-        839.81
-      ],
-      [
-        1784318160000,
-        839.07
-      ],
-      [
-        1784318220000,
-        837.11
-      ],
-      [
-        1784318280000,
-        836.95
-      ],
-      [
-        1784318340000,
-        843.03
-      ],
-      [
-        1784318400000,
-        845.64
+        1784554200000,
+        843.77
       ]
     ],
     "1W": [
-      [
-        1783690200000,
-        992.31
-      ],
-      [
-        1783693800000,
-        999.72
-      ],
-      [
-        1783697400000,
-        1006.46
-      ],
-      [
-        1783701000000,
-        1010.1
-      ],
-      [
-        1783704600000,
-        1011.61
-      ],
-      [
-        1783708200000,
-        1011.06
-      ],
-      [
-        1783711800000,
-        1011.63
-      ],
-      [
-        1783949400000,
-        987.05
-      ],
-      [
-        1783953000000,
-        982.45
-      ],
-      [
-        1783956600000,
-        980.69
-      ],
-      [
-        1783960200000,
-        967.01
-      ],
-      [
-        1783963800000,
-        962.79
-      ],
-      [
-        1783967400000,
-        958.77
-      ],
-      [
-        1783971000000,
-        954.27
-      ],
       [
         1784035800000,
         985.99
@@ -3578,6 +1966,10 @@
       [
         1784316600000,
         843
+      ],
+      [
+        1784554200000,
+        843.77
       ]
     ],
     "1M": [],
