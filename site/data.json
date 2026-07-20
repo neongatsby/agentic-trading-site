@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-20T12:59:08.173Z",
+  "generated_at": "2026-07-20T13:00:16.929Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90469.14,
+    "equity": 90475.02,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89469.14,
-    "day_pnl": 44.04,
+    "total_pnl": 89475.02,
+    "day_pnl": 49.92,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 212.05,
-        "pl": -273.83,
-        "plpc": -3.13,
+        "current": 212.68,
+        "pl": -248.8,
+        "plpc": -2.84,
         "thesis": ""
       },
       {
@@ -29,36 +29,36 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 205.9,
-        "pl": -304.88,
-        "plpc": -2.07,
+        "current": 205.8,
+        "pl": -312.2,
+        "plpc": -2.12,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "50.0000",
         "entry": 135.22,
-        "current": 130.33,
-        "pl": -244.26,
-        "plpc": -3.61,
+        "current": 130.4,
+        "pl": -241,
+        "plpc": -3.56,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 69.56,
-        "pl": -7.6,
-        "plpc": -0.08,
+        "current": 69.67,
+        "pl": 6.7,
+        "plpc": 0.07,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 41.65,
-        "pl": -186.9,
-        "plpc": -2.09,
+        "current": 41.51,
+        "pl": -216.3,
+        "plpc": -2.42,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 837.42,
+    "equity": 839.3,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -162.58,
-    "day_pnl": -8.72,
+    "total_pnl": -160.7,
+    "day_pnl": -6.84,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 212.05,
-        "pl": -31.76,
-        "plpc": -4.75,
+        "current": 212.68,
+        "pl": -29.88,
+        "plpc": -4.47,
         "thesis": ""
       }
     ],
@@ -407,6 +407,10 @@
       {
         "t": 1784552100000,
         "v": 840.29
+      },
+      {
+        "t": 1784552400000,
+        "v": 837.32
       }
     ]
   },
@@ -473,7 +477,7 @@
       "theme": "3x inverse Nasdaq / regime hedge",
       "verdict": "hold",
       "verdict_label": "Held paper — 3x-inverse hedge",
-      "chg_pct": 1.91,
+      "chg_pct": 1.52,
       "thesis": "**The paper book's hedge and the reason it can own the green on a down day.** 210 sh @ $42.54, $38 GTC stop. With QQQ ~3.2% under its 20-day and a fresh oil/Iran risk-off flare, a 3x-inverse-Nasdaq sleeve is the offset that pays while the longs bleed — it was +4.6% Friday, one of only two green watchlist names. We hold it as insurance, not a naked short: it partially offsets the paper NVDA/PLTR/RKLB net-long chip drag. Live can't cleanly carry it (PDT + wash constraints), so this capture lives in paper. On a confirmed $718 reclaim on volume, this is the first thing we cover/trim to free cash for the strongest long.",
       "hold_reason": "We hold SQQQ as the paper hedge — it's 3x inverse Nasdaq, so it rises when the tech tape falls, which is what's happened four straight sessions. It's the piece that lets paper actually own a green name on a risk-off day instead of sitting fully offside. What we're watching: a QQQ reclaim of its $718 20-day on real volume is the signal to cover/trim it and rotate that cash into the strongest confirmed long — until then the hedge stays on.",
       "size": "$8.9k paper (210 sh)",
@@ -488,7 +492,7 @@
         "basis": "3x-inverse bleeds on the semi bounce",
         "pop_rank": 14
       },
-      "price": 41.67,
+      "price": 41.51,
       "spark": [
         41.31,
         40.85,
@@ -519,7 +523,7 @@
         36.3,
         37.89,
         39.84,
-        41.67
+        41.51
       ]
     },
     {
@@ -528,7 +532,7 @@
       "theme": "3x inverse semis / sharpest hedge",
       "verdict": "watch",
       "verdict_label": "Watch — top pop pick if chips continue",
-      "chg_pct": -2.41,
+      "chg_pct": -3.91,
       "thesis": "**Top pop pick for today — the most explosive way to be green if the chip rout continues.** 3x inverse semiconductors, and semis are the epicenter: the SOX is in a bear market (~-20% off its high) and Friday's driver (China Moonshot-AI cheap-compute fear + oil/Iran) hit chips hardest. SOXS was +5.5% Friday, the day's single best mover. We don't hold it — live can't cleanly carry an inverse, and we chose NOT to add it to paper blind pre-market: after four down days the snapback risk into an oversold open is real. It's the add-into-confirmed-open-weakness candidate for paper, not a chase at the pre-market print.",
       "hold_reason": "Not held — it's the watch/pop pick. The plan is to add it to PAPER only if the open confirms continued chip weakness (into strength, not the pre-market print); live can't cleanly hold an inverse.",
       "size": "-",
@@ -543,7 +547,7 @@
         "basis": "3x-inverse-semi bleeds hardest on the rip",
         "pop_rank": 16
       },
-      "price": 50.85,
+      "price": 50.07,
       "spark": [
         81.76,
         76.32,
@@ -574,7 +578,7 @@
         32.4,
         38.65,
         45.1,
-        50.85
+        50.07
       ]
     },
     {
