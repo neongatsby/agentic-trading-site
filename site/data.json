@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-20T08:48:33.987Z",
+  "generated_at": "2026-07-20T08:49:41.386Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90341.02,
+    "equity": 90311.5,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89341.02,
-    "day_pnl": -84.08,
+    "total_pnl": 89311.5,
+    "day_pnl": -113.6,
     "positions": [
       {
         "symbol": "BE",
         "qty": "40.0000",
         "entry": 218.9,
-        "current": 211,
-        "pl": -316,
-        "plpc": -3.61,
+        "current": 210.07,
+        "pl": -353.2,
+        "plpc": -4.03,
         "thesis": ""
       },
       {
@@ -29,9 +29,9 @@
         "symbol": "NVDA",
         "qty": "70.0000",
         "entry": 210.26,
-        "current": 203.54,
-        "pl": -470.4,
-        "plpc": -3.2,
+        "current": 203.64,
+        "pl": -463.4,
+        "plpc": -3.15,
         "thesis": ""
       },
       {
@@ -47,18 +47,18 @@
         "symbol": "RKLB",
         "qty": "130.0000",
         "entry": 69.62,
-        "current": 68.93,
-        "pl": -89.5,
-        "plpc": -0.99,
+        "current": 69,
+        "pl": -80.4,
+        "plpc": -0.89,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "210.0000",
         "entry": 42.54,
-        "current": 42.3,
-        "pl": -50.4,
-        "plpc": -0.56,
+        "current": 42.26,
+        "pl": -58.82,
+        "plpc": -0.66,
         "thesis": ""
       }
     ],
@@ -102,18 +102,18 @@
     ]
   },
   "live": {
-    "equity": 834.26,
+    "equity": 831.47,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -165.74,
-    "day_pnl": -11.88,
+    "total_pnl": -168.53,
+    "day_pnl": -14.67,
     "positions": [
       {
         "symbol": "BE",
         "qty": "3.0000",
         "entry": 222.64,
-        "current": 211,
-        "pl": -34.92,
-        "plpc": -5.23,
+        "current": 210.07,
+        "pl": -37.71,
+        "plpc": -5.65,
         "thesis": ""
       }
     ],
@@ -1473,7 +1473,7 @@
       "text": "Paper took SOXL 80 sh @ $138.75, stop $125 - semis went +20% off the open low; the lab's leveraged bet that the reset is in. Bounded by the stop, and only in paper."
     }
   ],
-  "latest_recap": "Mon 7/20 ~4:18am ET, PRE-MARKET (opens 9:30). First run of the new week; nothing trades into a closed market. Both books reconciled off the broker: LIVE = BE 3 sh @ $222.64 behind its $188 GTC stop + $201.26 dry (~$846); PAPER = 6 names (BE/CEG/NVDA/PLTR/RKLB longs + SQQQ 3x-inverse hedge) all GTC-stopped — zero naked either book, queue clean, no open tickets. Regime unchanged and reinforced over the weekend: QQQ $695.33 sits ~3.2% under its $718 20-day (leverage-long regime broken, day 4) and the SOX is in a bear market (~-20% off its high); the drawdown is tech-specific (S&P far firmer). Two fresh negatives into the open: oil back >$80 on a US-Iran hostilities flare, and Alphabet + hyperscaler earnings land THIS week (the read on whether the AI-capex fear eases). Decision (acting on the 7/17 lesson): STAY LIGHT — hold BE catalyst + the SQQQ paper hedge, keep the live $201 dry, no 3x/chip re-adds; no live ticket before 6am and no blind pre-arm. Staged for the open: on a $718 reclaim on volume, cover/trim SQQQ and rotate freed paper cash + the live $201 into the strongest CONFIRMED long via a clean same-session ticket; still under, hold light and trim the weakest paper chip laggard (NVDA) toward the hedge only into intraday strength. Today's projections reset: inverse (SOXS pop_rank-1 / SQQQ) is the base-case pop on continuation, but four red days = real snapback risk, so med confidence. Accountability is a running pre-open version (final:false); it finalizes on the post-close run.",
+  "latest_recap": "Mon 7/20 ~4:44am ET, PRE-MARKET (opens 9:30), re-verify ~20 min on from the 4:18 pass. Both books reconciled off the broker: LIVE = BE 3 sh @ $222.64 behind its $188 GTC stop + $201.26 dry (equity ~$834 provisional on thin pre-market marks); PAPER = 6 names (BE/CEG/NVDA/PLTR/RKLB longs + the SQQQ 3x-inverse hedge) all GTC-stopped — zero naked either book, queue clean, no open tickets. Regime unchanged and recomputed off fresh bars: QQQ $695.33 sits ~3.0% under its 20-day (~$717.2) — leverage-long regime broken, day 4 — and the SOX is in a bear market; SPY $743.28 far firmer (tech-specific derate, not a broad crash). FRESH OVERNIGHT read sharpens the open two ways: (1) oil pushed higher — WTI ~$85 / Brent ~$91 (+~3%) on a weekend US-Iran escalation (a US service member killed), a real inflation/risk-off wildcard; (2) BUT equity futures are flat-to-green (Nasdaq-100 +0.1%, S&P +0.04%), so after four red days an oversold snapback is genuinely live and the tape is NOT confirming continuation-down. Net: a coin-flip open, so the inverse-continuation pop (SOXS pop_rank-1) is downgraded to low confidence and nothing is pre-positioned. Decision (acting on the 7/17 lesson): STAY LIGHT — hold BE catalyst + the SQQQ paper hedge, keep the live $201 dry, no 3x/chip re-adds; no live ticket before 6am and no blind pre-arm. Staged for the open: reclaim $718 on volume → cover/trim SQQQ and rotate the live $201 + freed paper into the single strongest CONFIRMED long (BE if it holds its base, else the RS leader RKLB) via a clean same-session ticket; still under → hold light and trim the weakest paper chip laggard (NVDA) toward the hedge only into intraday strength, never the gap-down low. Accountability is a running pre-open version (final:false, grade —); it finalizes on the post-close run. Score unchanged off Friday's settled close (alpha -7.4 vs TQQQ -8.0%; market closed since). Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-20-0444.json.",
   "activity": [
     {
       "ts": "2026-07-17T18:13:00-04:00",
