@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-21T21:12:42.451Z",
+  "generated_at": "2026-07-21T21:13:49.504Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90581.7,
+    "equity": 90605.98,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89581.7,
-    "day_pnl": 963.92,
+    "total_pnl": 89605.98,
+    "day_pnl": 988.2,
     "positions": [
       {
         "symbol": "AMD",
         "qty": "30.0000",
         "entry": 527.8,
-        "current": 546.5,
-        "pl": 560.94,
-        "plpc": 3.54,
+        "current": 546.8,
+        "pl": 569.94,
+        "plpc": 3.6,
         "thesis": ""
       },
       {
@@ -29,27 +29,27 @@
         "symbol": "NVDA",
         "qty": "140.0000",
         "entry": 208.15,
-        "current": 206.89,
-        "pl": -176.2,
-        "plpc": -0.6,
+        "current": 206.82,
+        "pl": -186,
+        "plpc": -0.64,
         "thesis": ""
       },
       {
         "symbol": "OKLO",
         "qty": "200.0000",
         "entry": 43.92,
-        "current": 46.54,
-        "pl": 524.92,
-        "plpc": 5.98,
+        "current": 46.6,
+        "pl": 536,
+        "plpc": 6.1,
         "thesis": ""
       },
       {
         "symbol": "SMR",
         "qty": "700.0000",
         "entry": 8.63,
-        "current": 8.81,
-        "pl": 129,
-        "plpc": 2.14,
+        "current": 8.83,
+        "pl": 143,
+        "plpc": 2.37,
         "thesis": ""
       },
       {
@@ -1887,7 +1887,7 @@
       "text": "Live BE cut FILLED - you tapped it at 2:57pm and the fast-lane sold all 3 shares @ $203.03, cancelling the $188 stop first. Live's out of the accidental all-in (~-$59 realized on the $222.64 top-tick entry) and sitting on clean cash to rotate into the leader. The week-long BE camp is finally closed."
     }
   ],
-  "latest_recap": "4:45p 7/21 post-close (SETTLED verify) - Real post-close run: independently reconciled both books to the broker and confirmed the day's D+ grade holds on SETTLED closes (the earlier 'final' was written off an intraday mark). LIVE flat $810.32 cash, zero naked, 6th straight cash session = 0% capture on the real money. PAPER 6 names (AMD/SMR/OKLO/VRT/CEG/NVDA) all GTC-stopped/verified at the broker, zero naked; +0.42% off official closes (the $90.4k account field is an inflated AH mark - graded off the settled close per the 7/15 data-integrity rule). Coverage %s all tie to official closes (NVDA +1.9%, AMD +8.1%, SMR +9.3%, MU +12.0%, BE +14.8%, SOXL +15.7% gated, TQQQ +5.5%). REGIME: QQQ closed $708.78 vs 20-day $714.7 = 0.8% under, leverage gate SHUT day 6 -> ~$16k 3x powder parked for a confirmed reclaim, ideally past Wed's GOOGL/TSLA after-close prints. LIVE lever: NVDA swing ticket 2026-07-21-1 (3 sh, $211 marketable limit, $186 GTC stop) staged AND already pinged to the phone (telegram msg 36) - approve anytime -> fills at the 7/22 open; the gate re-entry. No new trade this run (post-close; one-core rule; don't add fresh beta into Wed's binary). Accountability stays final:true D+. Score alpha -16.3 vs TQQQ -2.7% since 7/2 ($73.35->$71.38); live -19.0% inception. Backup engine-data.backup-2026-07-21-1645.json.",
+  "latest_recap": "5:08p 7/21 after-hours heartbeat (market closed, next open 7/22 09:30) - light verify-and-hold ~23 min on from the 4:45 SETTLED finalize; grade stays final:true D+ (not re-graded). Independently re-checked both books at the broker: LIVE flat $810.32 cash, zero positions/orders (nothing naked, 6th straight cash session); PAPER 6 names ALL GTC-stopped + verified this run (AMD $490 / SMR $7.50 / OKLO $39 / VRT $282 / CEG $236 / NVDA $186), zero naked. Pulled AH snapshots - nothing near a stop: AMD $544.6, SMR $8.74, OKLO $45.9 (+4% AH), VRT $305.5, CEG $262.6, NVDA $206.7 (holding ~$207, right at the swing entry). Tape flat after-hours (S&P/Nasdaq ~-0.05%); tonight's earnings (ALK/NLY/COF) are not watchlist names - the binary stays Wed 7/22 after-close (GOOGL + TSLA). No trade this run (post-close; one-core rule; don't add fresh beta ahead of Wed). NVDA live swing ticket 2026-07-21-1 (3 sh, $211 marketable limit, $186 GTC stop) stays armed + pinged for the 7/22 open - the gate re-entry. Backup engine-data.backup-2026-07-21-1710.json.",
   "activity": [
     {
       "ts": "2026-07-21T16:45:00-04:00",
@@ -2002,6 +2002,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-21T17:10:00-04:00",
+      "text": "5:08p after-hours heartbeat (~23 min on from the 4:45 settled finalize). Re-verified both books at the broker: all 6 paper stops live (AMD $490 / SMR $7.50 / OKLO $39 / VRT $282 / CEG $236 / NVDA $186), LIVE flat $810.32 cash - zero naked either side. AH tape quiet (S&P/Nasdaq ~-0.05%); OKLO firmed +4% AH, NVDA holding ~$207 right at the swing entry. Tonight's prints (ALK/NLY/COF) aren't ours - the binary is Wed's GOOGL+TSLA after-close. No trade (post-close, one-core, don't add beta into Wed). NVDA live swing 2026-07-21-1 stays armed for the 7/22 open. Grade stays final D+.",
+      "hype": "Quick after-hours check - every position still has its stop and live's in cash, nothing exposed. NVDA's holding ~$207 so tomorrow's swing is still on; just watching till the open."
+    },
+    {
       "ts": "2026-07-21T16:45:00-04:00",
       "text": "4:45p post-close (SETTLED verify) - Re-checked the whole day at the real close and the D+ grade holds on SETTLED prices, not an intraday mark. Independently reconciled both books to the broker: LIVE flat $810.32 cash (6th straight session, 0% capture on the real money), PAPER 6 names (AMD/SMR/OKLO/VRT/CEG/NVDA) all GTC-stopped, zero naked. Coverage %s tie to the official closes (NVDA +1.9%, AMD +8.1%, SMR +9.3%, MU +12.0%, BE +14.8%, SOXL +15.7% gated); paper's +0.42% is off official closes, not the inflated after-hours tick. QQQ closed $708.8, still ~0.8% under its $714.7 20-day, so the ~$16k 3x powder stays parked into Wed's GOOGL/TSLA prints. One live lever, untouched and ready: the NVDA swing ticket is staged AND already pinged to the phone - one tap fills it at tomorrow's open, $186 stop. That tap is the re-entry. No new trade - post-close, plan set, don't chase extension into a binary.",
       "hype": "Double-checked everything at the real close: grade holds, nothing's naked, live's still in cash. The NVDA buy is already on your phone - one tap and it's in at tomorrow's open."
@@ -2070,11 +2075,6 @@
       "ts": "2026-07-21T10:19:00-04:00",
       "text": "10:19am, one-hour-in management run - no new trades (the morning already did the rotation). Both books re-verified clean: PAPER 5/5 GTC-stopped zero-naked (AMD/PLTR/NVDA/CEG/SQQQ), LIVE flat $810 cash with the PLTR buy (ticket 2026-07-20-3, $122 stop) still staged - one tap fills it now. The open chip pop is fading on cue - SOXL +13%->+9.2%, AMD +6%->+4% (near its day low), QQQ $703 still ~1.8% under its $716 20-day (gate shut day 6) - so no 3x chase. Honest read: paper's -0.5% while the biggest movers run un-owned (BE +10.4% dead-cat, SOXL +9.2% gated, SMR +5.2% spec); AMD's the one clean ownable leader and we hold it. Powder stays dry for a QQQ $716 reclaim or a fade into Wed's GOOGL/TSLA prints. Day-trade 0/3.",
       "hype": "One hour in, nothing worth chasing - the chip pop's fading like it has all week, so no leverage; we own the one clean mover (AMD) while PLTR sits a tap from filling live."
-    },
-    {
-      "ts": "2026-07-21T09:48:00-04:00",
-      "text": "9:48am, first post-open run - the open fork resolved GREEN. NVDA confirmed the chip rally (+1.6%), breadth is broad (AMD +5%, INTC +6%, BE +9.7%) and QQQ +1.3% is holding well above Monday's $696 - so I stopped babysitting the losing SQQQ hedge (-3.5%, the book's #1 drag) and acted on the AMD pop I called pop_rank-1 all morning. PAPER: trimmed SQQQ 310->100 (~-$244 realized, keep a small hedge into Wed's earnings wall) and bought AMD 30 sh @ $527.80 into its 7/22-23 event, $458 stop. Both books zero-naked. LIVE: PLTR buy still staged for approval (1x RS leader, red = cheap; can't cleanly size a $528 AMD share in the $810 sleeve). Capture's still low intraday - SOXL +12%/BE +9.7% are gated/dead-cat un-ownables - but the book is finally IN a real mover. Day-trade budget 0/3.",
-      "hype": "Stopped babysitting the losing short and finally bought the AMD pop I've called all week - the book's in a real mover now. Kept a small hedge for Wednesday's earnings, wide stops on everything."
     }
   ],
   "benchmark": {
