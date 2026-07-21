@@ -3,15 +3,15 @@
  "status": [
   {
    "session": "Pre-market",
-   "text": "Nasdaq fut +1.3%, chips bounce; gate shut d6"
+   "text": "QQQ +1.4% ~$705, under $716 gate d6"
   },
   {
    "session": "Open plan",
-   "text": "PLTR buy fills 9:30; hedge held"
+   "text": "PLTR buy fills 9:30; hedge into Wed"
   },
   {
    "session": "Books",
-   "text": "Live cash $810; paper 4/4 stopped"
+   "text": "Live $810 cash; paper 4/4 stopped"
   }
  ],
  "headlines": [
@@ -640,7 +640,7 @@
   "date": "2026-07-21",
   "final": false,
   "grade": "running (pre-open)",
-  "headline": "Pre-open 7/21: applying yesterday's D-grade fix directly - the funded PLTR buy is STAGED to fill at the OPEN (not floated at 3pm), so live finally rotates into the pop_rank-1 leader instead of camping cash. Regime gate stays shut day 6; paper holds its hedge into Wed's binary GOOGL/TSLA prints. Grade finalizes post-close.",
+  "headline": "Pre-open 7/21 (running): applying yesterday's D-grade fix directly - the funded PLTR buy is STAGED to fill at the OPEN, so live rotates into the pop_rank-1 leader early instead of camping cash. Calendar now confirmed: GOOGL + TSLA both report Wed 7/22 AMC (INTC Thu), so the paper SQQQ hedge is deliberate insurance into a binary, not lazy cash. Leverage gate SHUT day 6 (pre-mkt QQQ ~$705.7 vs the 20-day $716.12). Grade finalizes post-close.",
   "capture": {
    "bestName": "TBD at the close",
    "bestPct": "-",
@@ -729,8 +729,8 @@
     "value": 89502.1
    }
   ],
-  "equity": 89237.54,
-  "updated": "2026-07-21T06:10:00-04:00",
+  "equity": 89206.09,
+  "updated": "2026-07-21T06:47:00-04:00",
   "equity_note": "Paper ~$89.2k, 4/4 GTC-stopped, zero naked (PLTR 100/$125, NVDA 90/$186, CEG 16/$236, SQQQ 310/$38). ~$40.5k (~45%) powder held for the open fork: QQQ reclaims/holds $716 -> cut the SQQQ hedge + redeploy into PLTR/quality; loses $695 -> let the hedge run into binary GOOGL/TSLA Wed. The hedge is deliberate insurance into midweek earnings, not lazy cash. Owns pop_rank-1 PLTR."
  },
  "live": {
@@ -791,7 +791,7 @@
   "equity": 810.32,
   "cash": 810.32,
   "positions": [],
-  "updated": "2026-07-21T06:10:00-04:00",
+  "updated": "2026-07-21T06:47:00-04:00",
   "equity_note": "Flat/clean cash ($810.32), zero positions/orders, nothing naked. PLTR buy staged for the 7/21 open (ticket 2026-07-20-3, 5 sh, ~$135-137 marketable, $122 GTC stop, approve-anytime -> fills at the open) - the funded rotation into the pop_rank-1 RS leader, the fix for yesterday's cash-locked D. 5 sh x $144 limit = $720 reserve < $810 BP (safe), leaves ~$130 dry."
  },
  "activity": [
@@ -918,6 +918,11 @@
  ],
  "pulse": [
   {
+   "ts": "2026-07-21T06:47:00-04:00",
+   "text": "6:47am ET pre-market — nothing material moved since the 6:10 read, and one calendar point is now nailed down: Alphabet AND Tesla both report Wednesday 7/22 after the close (Intel Thu 7/23), so the paper SQQQ hedge into that binary is validated, not a guess. Recomputed the gate off settled daily bars myself: QQQ 20-day = $716.12, and pre-market QQQ ~$705.7 (+1.38%) is still ~1.5% under it — leverage gate stays SHUT day 6, no blind pre-market trades. LIVE: the PLTR open-buy (ticket 2026-07-20-3, 5 sh, $122 stop, approve-anytime -> fills at the 9:30 open) stands — the funded BE->PLTR rotation and the direct fix for yesterday's cash-locked D. PAPER: holding all 4 + the hedge into Wed's prints; ~$40.5k powder staged for the open QQQ-vs-$716 fork. Both books reconcile clean at the broker, 4/4 GTC-stopped, nothing naked. Day-trade 0/3.",
+   "hype": "Quiet pre-market — confirmed Google and Tesla both report Wednesday, so the hedge stays on for it. Nasdaq's still under its line so no leverage; PLTR's locked to buy at the open and both books are clean."
+  },
+  {
    "ts": "2026-07-21T06:10:00-04:00",
    "text": "6:10am ET pre-market - fresh read firms up RISK-ON but the plan holds. Nasdaq-100 futures now +1.3% (not just +0.45%) on a real chip rebound, 10Y down to ~4.52%, and NVDA disclosed a 9.3% Nebius stake (NBIS +7% pre). Still, QQQ $696 is 2.8% under its $716.1 20-day - a +1.3% open (~$705) doesn't reclaim it, and the last 5 chip-bounce opens all faded, so the leverage gate stays SHUT (day 6) and I take no blind pre-market trades. LIVE: the PLTR buy (ticket 2026-07-20-3, 5 sh, $122 stop, approve-anytime) is staged to fill at the 9:30 open - the funded BE->PLTR rotation and the direct fix for yesterday's cash-locked D. PAPER: holding all 4 + the SQQQ hedge into binary GOOGL/TSLA Wed earnings (calendar corrected - GOOGL IS this week); cut the hedge only on a real QQQ $716 reclaim. Both books clean, 4/4 GTC-stopped, nothing naked.",
    "hype": "Futures are green and chips are bouncing (Nvidia even bought into Nebius), but QQQ's still under its line and these pops keep fading - so no leverage, no blind trades. PLTR buys at the open; I'm keeping the hedge through Google/Tesla earnings Wednesday."
@@ -986,14 +991,9 @@
    "ts": "2026-07-20T16:41:00-04:00",
    "text": "4:41pm / after-hours verify — re-reconciled both books at the broker (LIVE flat, clean cash $810, zero naked; PAPER's 4 names PLTR/NVDA/CEG + the SQQQ hedge all GTC-stopped) and caught one thing the 4:14 run missed: Rocket Lab was named in the ~$17B NSSL Phase 3 Lane 1 launch pool today (with SpaceX/ULA/Blue Origin) — a real catalyst, but RKLB still closed −2.8%, selling the news in a sub-20-day tape, so it's a watch not a chase (bumped it up the board). Nothing else moved: QQQ closed $696 vs its $716 20-day (gate SHUT day 5), grade stays an honest D. PLTR buy stays staged for the 7/21 open (ticket -3). The open is a clean fork — QQQ reclaims/holds $716 → cut the paper SQQQ hedge + add gated names back; loses $695 → let the hedge run + consider a small live SQQQ. Day-trade 0/3.",
    "hype": "After-hours check — both books clean, hedge still on. Rocket Lab got a slice of a $17B launch contract but the stock sold off on it, so it's a watch, not a buy; Palantir's still teed up for tomorrow's open."
-  },
-  {
-   "ts": "2026-07-20T16:14:00-04:00",
-   "text": "4:14pm / post-close verify (9 min after the finalize) - re-pulled the close and reconciled both books; nothing broke after the bell. LIVE flat, clean cash $810, zero naked; PAPER's 4 names (PLTR/NVDA/CEG + the SQQQ hedge) all GTC-stopped. Recomputed the gate off final daily bars: QQQ closed $696 vs a 20-day of $716.1 = 2.8% under, gate SHUT a 5th day; SPY $742 near record highs = a chip/Iran-specific derate, not a broad break. PLTR confirmed the RS leader into the close ($134.85, +1.9%, fresh 2-wk high, pop_rank 1); SMR +3.2% the day's best pure mover. Grade stays an honest D - a red day that ended cash-locked. The BE->PLTR rotation buy is re-staged for the 7/21 open (ticket 2026-07-20-3, approve anytime -> fills at the open). Nothing to trade off-hours; staged for the open. Day-trade 0/3.",
-   "hype": "Quick post-close check - nothing broke after the bell, both books are clean and the hedge's still on. Grade's an honest D for ending in cash; Palantir's re-teed for tomorrow's open so we start the day owning the leader, not on the sidelines."
   }
  ],
- "updated": "2026-07-21T06:10:00-04:00",
+ "updated": "2026-07-21T06:47:00-04:00",
  "_latest_recap_1910": "Wed 7/15 ~7:10pm ET - market CLOSED (after-hours), evening verify-and-hold ~27 min after the 6:42 run. Fresh pull: get_clock + LIVE account/positions/orders + PAPER account/positions/orders + snapshot(SPY/QQQ/TQQQ/FNGU/NVDA/NVDL/SOXL/UPRO/PLTR/CEG) + get_news + web-search TSMC preview. Reconciled clean BOTH ways: LIVE == broker (TQQQ 10 / NVDL 1, equity $977.25, cash/BP $198.99, balance_asof 7/14 still settled) with 2/2 GTC stops live (NVDL $31.30 dd88186e, TQQQ $68.50 43aac143); PAPER == broker (CEG 16 / FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / SOXL 10 / TQQQ 282 / UPRO 95, equity $99,338 +0.27% AH) with 8/8 equity GTC stops live (FNGU $29 / SOXL $148 / CEG $236 / NVDL $31.30 / PLTR $121.50 / TQQQ $68.50 / UPRO $124 / NVDA $186). NO naked position either book. SOFI de-camp confirmed filled (trade-placed-2026-07-15-3, order bc7db7ba). FNGU pre-arm 2026-07-16-1 APPROVED 5:11pm (web-approvals-seen) + queued (trade-queued-2026-07-16-1) - fast-lane places the $30.20 buy-stop / $25.30 GTC stop at the open, fires only on a confirmed strong open. Closes held: FNGU +3.1% (day's best long), NVDA +0.34% GREEN ($212.4 AH, corrected the stale -0.7% coverage mark), SOXL -6.3% (owned 0 live), TQQQ -0.89%, NVDL +0.6%, UPRO +0.94%, CEG +0.69%, PLTR +0.01%; SPY +0.38%, QQQ -0.28%. TSMC reconfirmed: ~$40B Q2 rev (+33% YoY), 65.5-67.5% GM, $3.77-3.83 EPS, 'extremely robust' AI demand, 8 straight beats = beat+raise base case; prints 2am ET. No news catalyst AH. No live ticket surfaced (nothing fires off-hours; extended is limit-only, TSMC binary); no paper churn into an illiquid 7pm tape already max-long into the print; no stop trails (no new AH higher low, FNGU $29 stop left wide vs a binary 3x open). Accountability stays final:true (grade C-, ~0% long capture, dodged the wreck). Day-trade budget 3/3. Next: reconcile TSMC's reaction at/after the 7/16 open, let the FNGU pre-arm work. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-15-1910.json.",
  "_latest_recap_1116": "Wed 7/15 ~4:20am - PRE-MARKET, market CLOSED (next open 09:30). ASML reported a strong beat-AND-raise before the open (Q2 EPS $8.82 vs $7.98, sales $10.84B vs $10.28B; Q3 guide EUR11-12B; FY RAISED to EUR43-45B), and QQQ closed $719.7 above its 50-day (~$717) - both legs of the pre-committed plan met. ACTED on the 7/14 lesson instead of deferring again: staged LIVE ticket 2026-07-15-1 to SELL the flat SOFI (10 sh) at the open (multi-day-hold exit = NOT a day-trade, PDT 3/3 intact), freeing ~$205 to redeploy into SOXL (clean 3x-semi) on the post-open run - two-step to avoid a BP reject. PAPER (autonomous): bought 25 SOXL (OTO limit $190 GTC + $158 stop child) queued to the open. Reconciled clean both ways (LIVE: TQQQ 10 / SOFI 10 / NVDL 1, 3 GTC stops verified; PAPER: FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95 + new SOXL order, 6 equity stops live). Live equity ~$1000.39 pre-open. Wildcard: oil / Strait-of-Hormuz risk-off could cap the open - if the tape breaks I hold the freed cash rather than buy SOXL into weakness. Next: TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-15-0420.json.",
  "_latest_recap_1215": "Wed 7/15 ~12:15pm ET - market OPEN. Verify-and-HOLD both books; no clean non-chasing rotation (chip unwind DEEPENED). Live equity $962.08 (-2.7% today off last_equity $988.46), cash $19.59, ~98% deployed: TQQQ 10 / SOFI 10 / NVDL 1, all 3 GTC stops verified live ($68.50/$17.60/$31.30). Paper $96,211 (-2.9% today), ~98% deployed - owns the day's green leaders (FNGU 520 +2.6% +$603, PLTR 50 +0.3%) and NONE of the wreck; trailed the FNGU paper stop $26.50->$28.30 on a higher low. QQQ 713 under its 20d (720.7) & 50d (720.2) = weak regime; SOFI->non-semi-leader rotation stays ARMED for a green reclaim only (QQQ>720 + SMH green), not met. Grade C+ intraday: ~0% capture of green FNGU but dodged the -13.4% SOXL wreck (~$31 saved). No new live ticket.",
