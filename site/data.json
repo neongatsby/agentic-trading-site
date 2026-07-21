@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-21T10:44:31.233Z",
+  "generated_at": "2026-07-21T10:45:38.181Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 89211.24,
+    "equity": 89214.34,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88211.24,
-    "day_pnl": -406.54,
+    "total_pnl": 88214.34,
+    "day_pnl": -403.44,
     "positions": [
       {
         "symbol": "CEG",
@@ -38,9 +38,9 @@
         "symbol": "SQQQ",
         "qty": "310.0000",
         "entry": 42.36,
-        "current": 40.97,
-        "pl": -431.62,
-        "plpc": -3.29,
+        "current": 40.98,
+        "pl": -428.52,
+        "plpc": -3.26,
         "thesis": ""
       }
     ],
@@ -278,6 +278,10 @@
       },
       {
         "t": 1784630400000,
+        "v": 810.32
+      },
+      {
+        "t": 1784630700000,
         "v": 810.32
       }
     ]
@@ -1505,6 +1509,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-21T06:47:00-04:00",
+      "text": "6:47am ET pre-market — nothing material moved since the 6:10 read, and one calendar point is now nailed down: Alphabet AND Tesla both report Wednesday 7/22 after the close (Intel Thu 7/23), so the paper SQQQ hedge into that binary is validated, not a guess. Recomputed the gate off settled daily bars myself: QQQ 20-day = $716.12, and pre-market QQQ ~$705.7 (+1.38%) is still ~1.5% under it — leverage gate stays SHUT day 6, no blind pre-market trades. LIVE: the PLTR open-buy (ticket 2026-07-20-3, 5 sh, $122 stop, approve-anytime -> fills at the 9:30 open) stands — the funded BE->PLTR rotation and the direct fix for yesterday's cash-locked D. PAPER: holding all 4 + the hedge into Wed's prints; ~$40.5k powder staged for the open QQQ-vs-$716 fork. Both books reconcile clean at the broker, 4/4 GTC-stopped, nothing naked. Day-trade 0/3.",
+      "hype": "Quiet pre-market — confirmed Google and Tesla both report Wednesday, so the hedge stays on for it. Nasdaq's still under its line so no leverage; PLTR's locked to buy at the open and both books are clean."
+    },
+    {
       "ts": "2026-07-21T06:10:00-04:00",
       "text": "6:10am ET pre-market - fresh read firms up RISK-ON but the plan holds. Nasdaq-100 futures now +1.3% (not just +0.45%) on a real chip rebound, 10Y down to ~4.52%, and NVDA disclosed a 9.3% Nebius stake (NBIS +7% pre). Still, QQQ $696 is 2.8% under its $716.1 20-day - a +1.3% open (~$705) doesn't reclaim it, and the last 5 chip-bounce opens all faded, so the leverage gate stays SHUT (day 6) and I take no blind pre-market trades. LIVE: the PLTR buy (ticket 2026-07-20-3, 5 sh, $122 stop, approve-anytime) is staged to fill at the 9:30 open - the funded BE->PLTR rotation and the direct fix for yesterday's cash-locked D. PAPER: holding all 4 + the SQQQ hedge into binary GOOGL/TSLA Wed earnings (calendar corrected - GOOGL IS this week); cut the hedge only on a real QQQ $716 reclaim. Both books clean, 4/4 GTC-stopped, nothing naked.",
       "hype": "Futures are green and chips are bouncing (Nvidia even bought into Nebius), but QQQ's still under its line and these pops keep fading - so no leverage, no blind trades. PLTR buys at the open; I'm keeping the hedge through Google/Tesla earnings Wednesday."
@@ -1573,11 +1582,6 @@
       "ts": "2026-07-20T16:41:00-04:00",
       "text": "4:41pm / after-hours verify — re-reconciled both books at the broker (LIVE flat, clean cash $810, zero naked; PAPER's 4 names PLTR/NVDA/CEG + the SQQQ hedge all GTC-stopped) and caught one thing the 4:14 run missed: Rocket Lab was named in the ~$17B NSSL Phase 3 Lane 1 launch pool today (with SpaceX/ULA/Blue Origin) — a real catalyst, but RKLB still closed −2.8%, selling the news in a sub-20-day tape, so it's a watch not a chase (bumped it up the board). Nothing else moved: QQQ closed $696 vs its $716 20-day (gate SHUT day 5), grade stays an honest D. PLTR buy stays staged for the 7/21 open (ticket -3). The open is a clean fork — QQQ reclaims/holds $716 → cut the paper SQQQ hedge + add gated names back; loses $695 → let the hedge run + consider a small live SQQQ. Day-trade 0/3.",
       "hype": "After-hours check — both books clean, hedge still on. Rocket Lab got a slice of a $17B launch contract but the stock sold off on it, so it's a watch, not a buy; Palantir's still teed up for tomorrow's open."
-    },
-    {
-      "ts": "2026-07-20T16:14:00-04:00",
-      "text": "4:14pm / post-close verify (9 min after the finalize) - re-pulled the close and reconciled both books; nothing broke after the bell. LIVE flat, clean cash $810, zero naked; PAPER's 4 names (PLTR/NVDA/CEG + the SQQQ hedge) all GTC-stopped. Recomputed the gate off final daily bars: QQQ closed $696 vs a 20-day of $716.1 = 2.8% under, gate SHUT a 5th day; SPY $742 near record highs = a chip/Iran-specific derate, not a broad break. PLTR confirmed the RS leader into the close ($134.85, +1.9%, fresh 2-wk high, pop_rank 1); SMR +3.2% the day's best pure mover. Grade stays an honest D - a red day that ended cash-locked. The BE->PLTR rotation buy is re-staged for the 7/21 open (ticket 2026-07-20-3, approve anytime -> fills at the open). Nothing to trade off-hours; staged for the open. Day-trade 0/3.",
-      "hype": "Quick post-close check - nothing broke after the bell, both books are clean and the hedge's still on. Grade's an honest D for ending in cash; Palantir's re-teed for tomorrow's open so we start the day owning the leader, not on the sidelines."
     }
   ],
   "benchmark": {
@@ -1589,15 +1593,15 @@
   "status": [
     {
       "session": "Pre-market",
-      "text": "Nasdaq fut +1.3%, chips bounce; gate shut d6"
+      "text": "QQQ +1.4% ~$705, under $716 gate d6"
     },
     {
       "session": "Open plan",
-      "text": "PLTR buy fills 9:30; hedge held"
+      "text": "PLTR buy fills 9:30; hedge into Wed"
     },
     {
       "session": "Books",
-      "text": "Live cash $810; paper 4/4 stopped"
+      "text": "Live $810 cash; paper 4/4 stopped"
     }
   ],
   "equity_history": {
