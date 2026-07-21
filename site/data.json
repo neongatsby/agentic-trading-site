@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-21T12:59:49.938Z",
+  "generated_at": "2026-07-21T13:00:57.296Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 89269.93,
+    "equity": 89278.54,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88269.93,
-    "day_pnl": -347.85,
+    "total_pnl": 88278.54,
+    "day_pnl": -339.24,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,27 +20,27 @@
         "symbol": "NVDA",
         "qty": "90.0000",
         "entry": 209.23,
-        "current": 206.13,
-        "pl": -279.28,
-        "plpc": -1.48,
+        "current": 206.11,
+        "pl": -280.9,
+        "plpc": -1.49,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "100.0000",
         "entry": 135.75,
-        "current": 133.66,
-        "pl": -209.5,
-        "plpc": -1.54,
+        "current": 133.7,
+        "pl": -205.5,
+        "plpc": -1.51,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "310.0000",
         "entry": 42.36,
-        "current": 40.97,
-        "pl": -431.65,
-        "plpc": -3.29,
+        "current": 40.99,
+        "pl": -425.42,
+        "plpc": -3.24,
         "thesis": ""
       }
     ],
@@ -387,6 +387,10 @@
       {
         "t": 1784638500000,
         "v": 810.32
+      },
+      {
+        "t": 1784638800000,
+        "v": 810.32
       }
     ]
   },
@@ -686,7 +690,7 @@
       "theme": "3x semis (GATED)",
       "verdict": "avoid",
       "verdict_label": "Avoid (gated)",
-      "chg_pct": 14.66,
+      "chg_pct": 14.6,
       "thesis": "**Biggest raw mover in the group but GATED - correctly skipped.** SOXL opened +10% and round-tripped to +3.7% under the 20-day, the textbook bull-trap the regime gate exists to dodge (ASML/TSMC last week). No 3x-index/semi longs while QQQ < its 20-day. Re-lever only on a $716 reclaim on volume.",
       "hold_reason": "",
       "size": "-",
@@ -701,7 +705,7 @@
         "basis": "3x semis +12% but GATED + round-tripped 5 sessions",
         "pop_rank": 4
       },
-      "price": 154.92,
+      "price": 154.83,
       "spark": [
         190.41,
         225.64,
@@ -732,7 +736,7 @@
         217.7,
         181.54,
         194.35,
-        154.92
+        154.83
       ]
     },
     {
@@ -1016,7 +1020,7 @@
       "theme": "Inverse hedge (paper)",
       "verdict": "hold",
       "verdict_label": "Hold (hedge)",
-      "chg_pct": -4.28,
+      "chg_pct": -4.19,
       "thesis": "**The regime hedge, and today's deliberate drag.** SQQQ (paper, 310 sh, $38 stop) is our short-QQQ expression while QQQ sits under its 20-day - it costs on a green bounce day like today but pays if $698 breaks. We keep it until QQQ resolves: cut it on a $716 reclaim, press it on a clean $698 break.",
       "hold_reason": "This is a hedge, not a conviction long — it's short the Nasdaq, so it pays when tech falls. We put it on because QQQ is under its 20-day with coin-flip chip earnings this week. It's a rotation candidate: if QQQ reclaims $716 at the open we cut it and redeploy; if the tape rolls over we let it run.",
       "size": "$13.1k paper (310 sh)",
@@ -1031,7 +1035,7 @@
         "basis": "inverse hedge; bleeds on the chip gap, insurance into Wed",
         "pop_rank": 15
       },
-      "price": 40.94,
+      "price": 40.98,
       "spark": [
         40.85,
         38.71,
@@ -1062,7 +1066,7 @@
         37.89,
         39.84,
         38.32,
-        40.94
+        40.98
       ]
     },
     {
@@ -1181,7 +1185,7 @@
       "theme": "Nuclear-for-AI / SMR",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 5.19,
+      "chg_pct": 5.32,
       "thesis": "**The day's best watchlist mover (+3.2%) - nuclear-for-AI momentum bucking the risk-off tape.** SMR closed $7.96 as small-modular-reactor names caught a bid on the AI-power demand theme while chips faded. A high-beta ~$8 spec name that's had a strong run, so the risk is it's extended into a weak tape ahead of heavy earnings week. Not a chase up here - watch for a continuation setup or a pullback to support, not the HOD.",
       "hold_reason": "Not held in either book - it's on the board because it was today's strongest watchlist name on the nuclear-for-AI theme. We'd only take it on a clean continuation or a pullback-to-support entry, never at the extended high into a risk-off tape. Watching whether the nuclear-AI bid holds or fades with the rest of high-beta.",
       "size": "-",
@@ -1196,7 +1200,7 @@
         "basis": "SMR nuclear beta, modest premkt",
         "pop_rank": 6
       },
-      "price": 8.11,
+      "price": 8.12,
       "spark": [
         11.39,
         12.23,
@@ -1227,7 +1231,7 @@
         10.16,
         9.76,
         9.6,
-        8.11
+        8.12
       ]
     }
   ],
