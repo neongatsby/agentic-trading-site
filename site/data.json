@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-21T22:14:36.102Z",
+  "generated_at": "2026-07-21T22:15:46.311Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 90478.04,
+    "equity": 90480.12,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89478.04,
-    "day_pnl": 860.26,
+    "total_pnl": 89480.12,
+    "day_pnl": 862.34,
     "positions": [
       {
         "symbol": "AMD",
@@ -29,27 +29,27 @@
         "symbol": "NVDA",
         "qty": "140.0000",
         "entry": 208.15,
-        "current": 206.61,
-        "pl": -215.4,
-        "plpc": -0.74,
+        "current": 206.66,
+        "pl": -208.4,
+        "plpc": -0.71,
         "thesis": ""
       },
       {
         "symbol": "OKLO",
         "qty": "200.0000",
         "entry": 43.92,
-        "current": 46.8,
-        "pl": 575.92,
-        "plpc": 6.56,
+        "current": 46.74,
+        "pl": 564,
+        "plpc": 6.42,
         "thesis": ""
       },
       {
         "symbol": "SMR",
         "qty": "700.0000",
         "entry": 8.63,
-        "current": 8.79,
-        "pl": 115,
-        "plpc": 1.91,
+        "current": 8.8,
+        "pl": 122,
+        "plpc": 2.02,
         "thesis": ""
       },
       {
@@ -857,6 +857,10 @@
       {
         "t": 1784671800000,
         "v": 810.32
+      },
+      {
+        "t": 1784672100000,
+        "v": 810.32
       }
     ]
   },
@@ -1651,6 +1655,11 @@
   "feed": [
     {
       "type": "activity",
+      "ts": "2026-07-21T18:10:00-04:00",
+      "text": "6:10pm evening heartbeat - books verified clean a 3rd time (LIVE flat $810 cash, nothing naked; PAPER 6/6 GTC-stopped, zero naked). AH news confirms the semi rip is a positioning-washout reversal - SMCI popped after-hours on a rising backlog; nothing dents the NVDA thesis. No trade (post-close, don't add beta into Wed's GOOGL/TSLA/IBM binary). NVDA swing stays armed for the 7/22 open."
+    },
+    {
+      "type": "activity",
       "ts": "2026-07-21T16:15:00-04:00",
       "text": "4:15pm FINAL - Grade D+ on the day. +8-15% memory-led rip; paper owned the right theme (AMD/SMR/OKLO/VRT/CEG/NVDA, all 6 GTC-stopped, zero naked) but mid-day entries + a 39%-of-book NVDA anchor (+1.9%) held it to +0.42%, and live sat cash a 6th straight day (0% capture). Saves: no parabolic chase, cut SQQQ/PLTR into the rip, dodged the -16% SOXS trap. Lesson: the gate has no RE-ENTRY - fix staged, NVDA swing fires at tomorrow's open, $186 stop."
     },
@@ -1935,7 +1944,7 @@
       "text": "Live BE cut FILLED - you tapped it at 2:57pm and the fast-lane sold all 3 shares @ $203.03, cancelling the $188 stop first. Live's out of the accidental all-in (~-$59 realized on the $222.64 top-tick entry) and sitting on clean cash to rotate into the leader. The week-long BE camp is finally closed."
     }
   ],
-  "latest_recap": "5:43p 7/21 after-hours heartbeat (market closed, next open 7/22 09:30) - verify-and-hold ~30 min on from the 5:08 run; grade stays final:true D+ (not re-graded). Independently re-checked both books at the broker: LIVE flat $810.32 cash, 0 positions/orders (nothing naked, 6th straight cash session); PAPER 6 names ALL GTC-stopped + verified (AMD $490 / SMR $7.50 / OKLO $39 / VRT $282 / CEG $236 / NVDA $186), zero naked, each well clear of its stop (nearest VRT ~8%). Fresh snapshots (official closes): NVDA +1.9% ($207.2, AH $207.2 - right at the swing entry), AMD +8.1% ($544.4), SMR +9.3% ($8.70), OKLO +6.3% ($44.14 - corrected from a wide AH ask), VRT +4.4% ($304.7), CEG +3.5% ($262.3); MU +12.0% ($970, +12.8% AH), BE +14.8% ($226.5), SOXL +15.7% (gated), TQQQ +5.5%; SPY record $748.2, QQQ $708.8 still ~0.8% under its $714.7 20-day (gate shut). Wed 7/22 is a binary wall: GOOGL + TSLA + IBM all report after the close (~6% implied on TSLA), and AMD's 'Advancing AI 2026' event runs Wed daytime (MI355X/MI400, possible Microsoft/Anthropic customer deals) - set as tomorrow's pop_rank-1 (owned in paper; not chased live at +8% extended). No trade this run (post-close, illiquid AH tape, one-core rule, don't add beta into the binary). NVDA live swing ticket 2026-07-21-1 (3 sh, $211 marketable limit, $186 GTC stop) stays armed + pinged for the 7/22 open - the gate re-entry. Backup engine-data.backup-2026-07-21-1743.json.",
+  "latest_recap": "6:10p 7/21 after-hours heartbeat (market CLOSED, next open 7/22 09:30) - verify-and-hold ~27 min on from the 5:43 run; grade stays final:true D+ (NOT re-graded). 3rd independent broker re-check of the evening, both books == broker: LIVE flat $810.32 cash, 0 positions/orders (nothing naked, 6th straight cash session); PAPER 6 names ALL GTC-stopped + verified (AMD $490 / SMR $7.50 / OKLO $39 / VRT $282 / CEG $236 / NVDA $186), zero naked, each clear of its stop, equity $90,465.70 (+0.95% vs prior close $89,617.78). Fresh get_news + web-search: today's +8-15% memory-led semi rebound reads as a hedge-fund-de-risking WASHOUT now reversing (MU +12.0% $970, SanDisk +14%, Roundhill DRAM ETF +12%, Nasdaq-100 +1.9% past 29,000, SMH +5.2%, S&P record $748), and SMCI jumped after-hours on a rising order backlog = theme tailwind. NO adverse NVDA news (mkt cap $5.01T; Nebius 9.3% stake + Micron HBM read-through intact). NVDA ~$207 AH = right at the swing entry. Wed 7/22 binary wall CONFIRMED: GOOGL + TSLA + IBM all report after the close (options imply ~5.9% TSLA / ~5.4% IBM) and AMD 'Advancing AI 2026' runs Wed daytime (MI355X/MI400) - AMD = tomorrow's pop_rank-1 (owned in paper; NOT chased live at +8% extended). Gate still shut: QQQ $708.8 ~0.8% under its $714.7 20-day, ~$16k 3x powder parked for a confirmed reclaim past Wed's prints. NO trade this run (post-close, illiquid AH, one-core rule, don't add beta into the binary). NVDA live swing ticket 2026-07-21-1 (3 sh, $211 marketable limit, $186 GTC stop) stays armed + pinged for the 7/22 open - the gate re-entry. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-21-1810.json.",
   "activity": [
     {
       "ts": "2026-07-21T17:43:00-04:00",
@@ -1999,6 +2008,11 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-21T18:10:00-04:00",
+      "text": "6:10p after-hours heartbeat - grade stays final D+ (not re-graded), tomorrow's plan unchanged. 3rd evening verify, both books == broker: LIVE flat $810.32 cash / 0 positions / nothing naked (6th straight session); PAPER 6 names all GTC-stopped (AMD $490 / SMR $7.50 / OKLO $39 / VRT $282 / CEG $236 / NVDA $186), zero naked, equity ~$90.5k (+0.95%). Checked the AH news: today's memory-led semi rip reads as a hedge-fund-de-risking WASHOUT now reversing (MU +12%, SanDisk +14%, DRAM ETF +12%), and SMCI popped after-hours on a rising order backlog - all theme tailwinds, nothing dents the NVDA thesis. NVDA sits ~$207 AH, right at the swing entry. No trade (post-close/illiquid, one-core rule, and I won't add beta right before Wed's GOOGL+TSLA+IBM after-close binary wall). NVDA live ticket 2026-07-21-1 stays armed for the 7/22 open - the gate re-entry.",
+      "hype": "Late check - all stops good, nothing naked, and NVDA's holding right where tomorrow's buy fires. Today's chip pop looks like real re-buying, not a head-fake, so the open swing's still on."
+    },
     {
       "ts": "2026-07-21T17:43:00-04:00",
       "text": "5:43p after-hours check (~30 min on; grade stays final D+, not re-graded). Re-verified both books at the broker: LIVE flat $810.32 cash / 0 positions / nothing naked (6th session), PAPER 6 names all GTC-stopped and each well clear of its stop. Did Wed's homework - GOOGL + TSLA + IBM all report after Wed's close (a binary wall, ~6% implied on TSLA) and AMD's 'Advancing AI 2026' event runs Wed daytime, so AMD is my pop_rank-1 for tomorrow; I own it in paper but won't chase it live at +8% extended - the live swing stays NVDA, the cheaper no-binary leader. No trade this run (post-close, illiquid, one-core, don't add beta into the binary). The NVDA live ticket (3 sh, $186 stop) stays armed for the 7/22 open - the gate re-entry, filling right where NVDA sits now (~$207).",
@@ -2068,11 +2082,6 @@
       "ts": "2026-07-21T11:18:00-04:00",
       "text": "11:18am - upgraded the LIVE ticket from the lagging PLTR to NVDA (3 sh ~$206, $186 stop, 0/3 day-trades used): today's leadership is the AI-infra/chip bid (SOX +3.7%, 2nd straight day; NVDA took a stake in neocloud Nebius) and NVDA is the NON-extended leader (+1.4% vs AMD +5.8% / INTC +7.3%), cheapest multiple in ~a decade, no earnings binary this week - a cleaner 'own the theme' entry than chasing the +6-14% names into their prints or holding red PLTR. Gate still SHUT (QQQ $708, -1.1% under its $716 20-day, day 6) so no 3x; holding the paper SQQQ hedge into Wed's GOOGL/TSLA earnings, paper otherwise unchanged (owns pop_rank-2 AMD, 5/5 stopped). Capture still ~0% with the biggest movers gated/extended, but the live setup quality is right and it's staged early, not at 3pm. Approve = NVDA fills now.",
       "hype": "Swapped the live ticket into NVDA - it's the cheap, un-extended one in the chip rally instead of the names that already ran +6-14%. Keeping the little hedge on until Google and Tesla report Wednesday."
-    },
-    {
-      "ts": "2026-07-21T10:54:00-04:00",
-      "text": "10:54am management run - refreshed the LIVE PLTR buy ticket in place (5 sh, $122 stop, ~$134 marketable) so it's current and pings fresh; it's the 1x RS leader, red today (-0.8%) = a cheaper entry, not a broken thesis, and I'd rather own it than chase INTC +6% / SOXL +12% / AMD +5% into Wed's GOOGL/TSLA and Thu's INTC prints. Gate shut day 6 (QQQ $705.6 still ~1.5% under its $716 20-day), so no 3x chase - SOXL's +12% is the exact setup that's faded 5 sessions straight. Paper holds AMD (owned the pop_rank-1 chip leader since the open) + NVDA/CEG/PLTR + the SQQQ hedge into the earnings wall; I cut the hedge and add the 1x leader only on a QQQ $716 reclaim. Honest capture risk: if the chip bid holds today, our books trail the extended names. Day-trade 0/3.",
-      "hype": "Refreshed the live PLTR ticket so it's current - the leader's red today, which is a cheaper entry, not a reason to bail. Still not chasing the chip pop that's faded 5 days running right into this week's big earnings."
     }
   ],
   "benchmark": {
