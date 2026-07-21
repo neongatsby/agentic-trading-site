@@ -2,8 +2,8 @@
  "_note": "Engine writes RESEARCH here (coverage/feed/latest_recap/pending_tickets + equity_curve). The dashboard poller merges this with live Alpaca numbers into data.json and is the sole publisher of data.json. Do NOT write data.json from the engine.",
  "status": [
   {
-   "session": "Morning",
-   "text": "Gate shut d6; positioning day"
+   "session": "Pre-market",
+   "text": "Green futures, chips bounce; gate shut d6"
   },
   {
    "session": "Open plan",
@@ -15,14 +15,14 @@
   }
  ],
  "headlines": [
-  "Regime GATED day 6: QQQ closed $696 vs its 20-day ~$716 (2.8% under) — leveraged-index longs (TQQQ/SOXL/FNGU) stay off. But SPY near records $742 = a chip-specific derate, not broad risk-off.",
-  "Futures GREEN into the open: Nasdaq +0.3%, TSLA +1% pre-market — a positioning day before the big prints.",
-  "Earnings calendar (corrected): TSLA reports Wed 7/22 after the close (~7.6% implied move, record Q2 deliveries eyed); INTC Thu 7/23. The mega-cap AI names (GOOGL/MSFT/META) are NOT this week — today's GM/Capital One prints aren't on the watchlist, so it's a positioning day.",
-  "PLTR the clean RS leader — bucked the ORCL/software crack to close +1.9% at a 2-week high; the funded live+paper rotation, teed up for the 7/21 open.",
-  "ORCL keeps sliding on AI-capex/debt + OpenAI credit-risk fears — the software crack (ORCL/NOW/ADBE) PLTR is diverging from.",
-  "AMD's 'Advancing AI' event this week draws 6 analyst PT raises (share-gain-vs-NVDA narrative) — a live catalyst on the watchlist.",
-  "AI-power/nuclear complex is the bid in the chip derate: SMR +3.2% led the watchlist Monday, CEG +0.5% / VRT +0.8% firm.",
-  "Iran overhang persists (fresh U.S. airstrikes reported), oil wavering — a mild risk-off tilt under the green-futures tape."
+  "Risk-on into the open: S&P futures +0.45%, Polymarket ~95% for a higher open; global chip bounce overnight (Asian semis +2.5%, Samsung/TSMC lead) on Iran 10-day-ceasefire hopes easing oil.",
+  "Regime GATED day 6: QQQ closed $696 vs its 20-day ~$716 (2.8% under) - leveraged-index longs (TQQQ/SOXL/FNGU) stay off. SPY near records $742 = a chip-specific derate, not broad risk-off.",
+  "Earnings wall midweek: GOOGL + TSLA + IBM report Wed 7/22 after the close; INTC Thu 7/23. Today's GM/3M prints aren't on the watchlist - a positioning day.",
+  "PLTR the clean RS leader - bucked the ORCL/software crack to close +1.9% at a 2-week high; the funded live+paper rotation, teed up for the 7/21 open.",
+  "Cramer stays bullish NVDA + INTC ('go to other sectors' for the rest); AMD's 'Advancing AI' event week draws 6 analyst PT raises - chip catalysts live on the watchlist.",
+  "AI-power/nuclear complex firm in the chip derate: SMR +3.2% led the watchlist Monday, CEG +0.5% / VRT +0.8%.",
+  "TSLA -2.9% Monday into Wed earnings - Gary Black flags the Cybercab milestone 'irrelevant' without the FSD goal; a binary print looms.",
+  "ORCL keeps sliding on AI-capex/debt + OpenAI credit-risk fears - the software crack (ORCL/NOW/ADBE) PLTR is diverging from."
  ],
  "coverage": [
   {
@@ -38,12 +38,12 @@
    "size_pct": "~15% paper",
    "size_note": "doubled in paper; live PLTR buy RE-STAGED for the 7/21 open (today's ticket expired untapped)",
    "plan_usd": "live ~$680 into PLTR — ticket 2026-07-20-3, approve anytime = buy at tomorrow's open",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "swing",
    "projection": {
     "target_pct": 1.8,
     "confidence": "med",
-    "basis": "1x RS leader, funded open buy; bucks the ORCL software crack",
+    "basis": "1x RS leader; risk-on open + chip bounce; no earnings this week",
     "pop_rank": 1,
     "path_pct": [
      0.6,
@@ -65,12 +65,12 @@
    "size_pct": "-",
    "size_note": "unheld - the honest capture miss, but a HOD chase is the known mistake",
    "plan_usd": "buy only on a pullback-reclaim, not the HOD",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "swing",
    "projection": {
     "target_pct": 2.2,
     "confidence": "med",
-    "basis": "Advancing-AI event week + 6 analyst PT raises",
+    "basis": "Advancing-AI event week + global chip bounce (Asian semis +2.5%)",
     "pop_rank": 2
    }
   },
@@ -87,12 +87,12 @@
    "size_pct": "-",
    "size_note": "watch; extended, faded",
    "plan_usd": "none - gated regime",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "swing",
    "projection": {
     "target_pct": 1.2,
     "confidence": "low",
-    "basis": "MS PT $75; drifts into Thu's binary earnings",
+    "basis": "chip bounce lifts it but drifts into Thu's binary earnings",
     "pop_rank": 8
    }
   },
@@ -109,13 +109,13 @@
    "size_pct": "~20% paper",
    "size_note": "held; #2 live redeploy candidate",
    "plan_usd": "secondary live redeploy vs PLTR",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "swing",
    "projection": {
-    "target_pct": 0.4,
-    "confidence": "low",
-    "basis": "sits at its 20-day with an AMD share-gain overhang",
-    "pop_rank": 6
+    "target_pct": 1.5,
+    "confidence": "med",
+    "basis": "global chip bounce (Asian semis +2.5%, Micron +5% Mon); owned in paper",
+    "pop_rank": 4
    }
   },
   {
@@ -131,7 +131,7 @@
    "size_pct": "-",
    "size_note": "watch into 7/29 earnings",
    "plan_usd": "none yet - gated",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "swing",
    "projection": {
     "target_pct": 1.4,
@@ -153,12 +153,12 @@
    "size_pct": "-",
    "size_note": "gated - no 3x longs under the 20-day",
    "plan_usd": "none until QQQ reclaims $716",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "tactical",
    "projection": {
-    "target_pct": 0.5,
+    "target_pct": 1.5,
     "confidence": "low",
-    "basis": "3x semi; gate shut, TXN-guide chip caution",
+    "basis": "3x semi bounce but gate shut + fades under the 20-day",
     "pop_rank": 12
    }
   },
@@ -175,10 +175,10 @@
    "size_pct": "-",
    "size_note": "gated benchmark",
    "plan_usd": "none until QQQ reclaims $716",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "tactical",
    "projection": {
-    "target_pct": 0.3,
+    "target_pct": 1.0,
     "confidence": "low",
     "basis": "3x QQQ; gate shut, QQQ under its 20-day",
     "pop_rank": 14
@@ -197,13 +197,13 @@
    "size_pct": "~5% paper",
    "size_note": "defensive ballast, held",
    "plan_usd": "hold",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "swing",
    "projection": {
     "target_pct": 0.8,
     "confidence": "med",
-    "basis": "AI-power defensive bid holds in a chip-specific risk-off",
-    "pop_rank": 5
+    "basis": "AI-power defensive bid; steady paper ballast",
+    "pop_rank": 6
    }
   },
   {
@@ -219,10 +219,10 @@
    "size_pct": "-",
    "size_note": "gated - sold 7/17",
    "plan_usd": "none until QQQ reclaims $716",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "tactical",
    "projection": {
-    "target_pct": 0.4,
+    "target_pct": 0.8,
     "confidence": "low",
     "basis": "3x FANG; gate shut under the 20-day",
     "pop_rank": 13
@@ -241,12 +241,12 @@
    "size_pct": "-",
    "size_note": "watch; no momentum",
    "plan_usd": "none",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "tactical",
    "projection": {
-    "target_pct": -0.3,
+    "target_pct": 1.0,
     "confidence": "low",
-    "basis": "quantum soft, no fresh catalyst",
+    "basis": "quantum high-beta; bounces with the risk-on tape",
     "pop_rank": 10
    }
   },
@@ -263,12 +263,12 @@
    "size_pct": "-",
    "size_note": "watch; won $17B NSSL launch award but faded on it",
    "plan_usd": "none — wait for a base + reclaim over ~$70.6",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "swing",
    "projection": {
     "target_pct": 1.0,
     "confidence": "low",
-    "basis": "NSSL Lane 1 pool; bounce candidate after selling the news",
+    "basis": "space; bounce candidate after selling the news",
     "pop_rank": 7
    }
   },
@@ -285,12 +285,12 @@
    "size_pct": "~15% paper",
    "size_note": "regime hedge; the deliberate drag today",
    "plan_usd": "cut on $716 reclaim / press on $698 break",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "tactical",
    "projection": {
-    "target_pct": -0.6,
-    "confidence": "low",
-    "basis": "hedge; bleeds on green futures unless the chip-earnings risk-off deepens",
+    "target_pct": -1.8,
+    "confidence": "med",
+    "basis": "inverse-QQQ hedge; bleeds on green futures + chip bounce",
     "pop_rank": 9
    }
   },
@@ -307,12 +307,12 @@
    "size_pct": "-",
    "size_note": "avoid into Wed earnings",
    "plan_usd": "none - binary event",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "swing",
    "projection": {
-    "target_pct": 0.8,
+    "target_pct": -0.3,
     "confidence": "low",
-    "basis": "+1% pre-market but binary into Wed earnings",
+    "basis": "pre-earnings drift + Cybercab skepticism; reports Wed",
     "pop_rank": 11
    }
   },
@@ -329,12 +329,12 @@
    "size_pct": "0%",
    "size_note": "cut all 3 live sh @ $203.03 (-$59 realized)",
    "plan_usd": "none — cut; watching only",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "exit",
    "projection": {
-    "target_pct": -1.0,
+    "target_pct": 0.5,
     "confidence": "low",
-    "basis": "thesis broken (TD Cowen delays); binary 7/28 earnings ahead",
+    "basis": "possible dead-cat after -8% TD Cowen cut; thesis broken, avoid",
     "pop_rank": 15
    }
   },
@@ -351,17 +351,22 @@
    "size_pct": "-",
    "size_note": "watch-only; not held either book",
    "plan_usd": "-",
-   "updated": "2026-07-21T04:12:00-04:00",
+   "updated": "2026-07-21T05:16:00-04:00",
    "horizon": "watch",
    "projection": {
     "target_pct": 1.8,
     "confidence": "low",
     "basis": "nuclear-for-AI; led the watchlist +3.2% Monday",
-    "pop_rank": 4
+    "pop_rank": 5
    }
   }
  ],
  "feed": [
+  {
+   "ts": "2026-07-21T05:16:00-04:00",
+   "type": "activity",
+   "text": "5:16am pre-market: risk-on building (S&P fut +0.45%, global chip bounce, Iran 10-day-ceasefire hopes) but regime still gated (QQQ $696 < 20-day $716.1, day 6). PLTR staged for the open; paper SQQQ hedge held pending the open fork. Both books clean - LIVE flat $810.32 zero-naked, PAPER 4/4 GTC-stopped (PLTR/NVDA/CEG/SQQQ)."
+  },
   {
    "ts": "2026-07-21T04:42:00-04:00",
    "type": "activity",
@@ -606,16 +611,6 @@
    "ts": "2026-07-17T20:10:00-04:00",
    "type": "activity",
    "text": "8:10pm - after-hours is closed now, so the book is locked till Monday's 9:30 open. One more broker re-verify: all 7 positions GTC-stopped (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no open tickets. Nothing dislocated after the bell - BE ~$215, the SQQQ hedge closed green (+5.2%). Grade stays final C-; Monday is the QQQ-vs-$718 fork, nothing pre-armed blind over the weekend."
-  },
-  {
-   "ts": "2026-07-17T19:40:00-04:00",
-   "type": "activity",
-   "text": "7:40pm weekend re-verify - independently re-pulled both books off the broker: all 7 positions still GTC-stopped (live BE $188; paper BE $188/CEG $236/NVDA $186/PLTR $121.5/RKLB $62/SQQQ $38), zero naked, queue clean, no open tickets. After-hours confirmed Friday's close (QQQ -3.2% under its $718 20-day; BE +4.0%; inverses the only green) - nothing dislocated, grade stays final C-."
-  },
-  {
-   "ts": "2026-07-17T19:13:00-04:00",
-   "type": "activity",
-   "text": "7:13pm weekend re-verify - independently re-pulled both books off the broker: all 7 positions GTC-stopped (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no open tickets. Confirmed the weekend catalysts unchanged: BE's $1.7B Nebius fuel-cell deal is real but contested, and the chip derate is a Moonshot-AI/Iran risk-off (SPY only -1%), not a broad breakdown. Holding the QQQ-$718 fork into Monday; no blind weekend pre-arm."
   }
  ],
  "latest_recap": "Pre-market 7/21 — gate still shut (QQQ $696 vs 20-day $716) but chip-specific with SPY near records and green futures. PLTR staged to buy at the open (the fix for Monday's cash-locked D). Live flat $810 cash; paper 4/4 GTC-stopped, ~46% powder for the open fork.",
@@ -755,7 +750,7 @@
     "value": 89502.1
    }
   ],
-  "equity": 89502.1,
+  "equity": 89228.54,
   "updated": "2026-07-21T04:12:00-04:00",
   "equity_note": "Paper ~$89.5k, 4/4 GTC-stopped, zero naked (PLTR 100/$125, NVDA 90/$186, CEG 16/$236, SQQQ 310/$38). ~$40.8k (~46%) powder held for the open fork: QQQ reclaims $716 → cut the SQQQ hedge + redeploy into PLTR/quality; loses $695 → let the hedge run. Owns the pop_rank-1 leader PLTR."
  },
@@ -944,6 +939,11 @@
  ],
  "pulse": [
   {
+   "ts": "2026-07-21T05:16:00-04:00",
+   "text": "5:16am ET pre-market - risk-on tone building: S&P futures +0.45%, Polymarket ~95% for a higher open, and a global chip bounce overnight (Asian semis +2.5%, Samsung/TSMC leading) on Iran 10-day-ceasefire hopes easing oil. But the regime is still GATED day 6: QQQ closed $696, ~2.8% under its 20-day ($716.1 computed) - one green futures morning doesn't reclaim that, so no leveraged-index longs and the paper SQQQ hedge STAYS on until QQQ actually retakes ~$716 at the open. PLTR (pop_rank 1, the 1x RS leader) is staged to fire the live cash into the open - the funded BE->PLTR rotation, applying yesterday's D-grade lesson (stage the leader-buy for the OPEN, not 3pm). Both books clean: LIVE flat $810.32 zero-naked, PAPER 4/4 GTC-stopped. No blind pre-market trades - watching the open fork before touching the hedge.",
+   "hype": "Green futures + chips bouncing overnight, but QQQ's still under its line so I'm not chasing leverage. PLTR's teed up to buy the open and the hedge stays till the tape proves it - both books clean."
+  },
+  {
    "ts": "2026-07-21T04:42:00-04:00",
    "text": "4:42am ET — independent broker reconciliation reconfirms both books CLEAN: LIVE flat ($810.32 cash, zero positions/orders, nothing naked); PAPER 4/4 GTC-stopped (PLTR 100/$125, NVDA 90/$186, CEG 16/$236, SQQQ 310/$38, zero naked). Gate still SHUT day 6 (QQQ $696 vs its ~$716 20-day; SPY $742 near records → chip-specific, not broad). Calendar correction: the mega-cap AI prints (GOOGL/MSFT/META) are NOT this week — the only watchlist catalyst is TSLA Wed 7/22 after the close (~7.6% implied), with INTC Thu; today's reporters (GM, Capital One) aren't ours, so it's a pure positioning day. PLTR open-buy (ticket 2026-07-20-3, 5 sh, $122 stop) stands to fill at the 9:30 open — yesterday's cash-lock fix. No new live ticket surfaced pre-6am (timing rule); paper holds into the QQQ $716-reclaim / $695-break fork. Day-trade 0/3.",
    "hype": "Double-checked everything against the broker — both accounts clean, nothing unprotected. Turns out big tech earnings aren't this week (just Tesla Wed), so today's quiet; PLTR's still set to buy at the open."
@@ -1012,14 +1012,9 @@
    "ts": "2026-07-20T15:16:00-04:00",
    "text": "3:16pm: DID IT - the rotation the whole week's grades have begged for is EXECUTING, not just journaled. Adam tapped the BE cut at 2:57pm and it FILLED (sold 3 sh @ $203.03, ~-$59 realized), so LIVE is now 100% clean cash ($810) instead of 100% stuck in the worst name on the board. Immediately staged the redeploy: a live approve-now ticket (2026-07-20-2) to BUY 5 sh PLTR (~$680) - the confirmed 1x RS leader, +2.6% at a fresh 2-week high while the chip pop fully round-tripped (SOXL +10%->+1.8%, AMD +5.6%->+2.5%) AND software cracks (ORCL/NOW/ADBE -4%). One tap and LIVE finally OWNS the pop we called pop_rank 1, with a wide $122 GTC stop below the base. Paper unchanged - already holds PLTR (100 sh) + the SQQQ hedge that pays if QQQ loses its $698 low into the close. QQQ $697 on its day low, still under the 20-day, gate SHUT. 4/4 paper stops GTC, live flat/clean, zero naked. Multi-day swing = 0 day-trade budget burned (0/3).",
    "hype": "Big one: you tapped the Bloom cut and it filled, so live is finally OUT of the dead name - and I've already teed up the Palantir buy. One tap and we own the leader I've been calling all week. Everything else held, hedge still on."
-  },
-  {
-   "ts": "2026-07-20T14:50:00-04:00",
-   "text": "2:50pm: Fresh pull - the morning chip pop has FULLY round-tripped (SOXL +10%->+3.7%, AMD +5.6%->+4.0%, INTC +6%->+3.3%) and QQQ is back on its $698 day-low, still ~2.5% under its 20-day ($716) with SPY flat at record highs = a chip-specific derate, gate stays SHUT. PLTR is the exception: +2.7% holding a fresh 2-wk high while software (ORCL -4%) cracks - still my pop_rank 1, owned in paper. BE faded again $206->$203 (-5.5%, the day's WORST ownable name); the dead-cat is rolling over, which only sharpens the cut - and the TD Cowen note checks out (Oracle Project Jupiter has no air permit + a stuck gas pipeline; AEP's Cheyenne site slipped 2 years). Held both books into the close: I won't chase PLTR's HOD with my last $201 (that's the exact 7/17 BE top-tick mistake) and I won't short $698 support that's held all day. BE-cut ticket still staged for your tap - frees ~$620 and the full PLTR redeploy fires next run once cash frees. 5/5 GTC stops verified, zero naked. Day-trade budget 0/3.",
-   "hype": "Chips gave back the whole morning pop and Bloom kept sliding - I re-checked the TD Cowen note and the data-center delays are real, so the cut still holds. Not chasing Palantir's high with my last $201; waiting on your tap to free the Bloom cash for it."
   }
  ],
- "updated": "2026-07-21T04:42:00-04:00",
+ "updated": "2026-07-21T05:16:00-04:00",
  "_latest_recap_1910": "Wed 7/15 ~7:10pm ET - market CLOSED (after-hours), evening verify-and-hold ~27 min after the 6:42 run. Fresh pull: get_clock + LIVE account/positions/orders + PAPER account/positions/orders + snapshot(SPY/QQQ/TQQQ/FNGU/NVDA/NVDL/SOXL/UPRO/PLTR/CEG) + get_news + web-search TSMC preview. Reconciled clean BOTH ways: LIVE == broker (TQQQ 10 / NVDL 1, equity $977.25, cash/BP $198.99, balance_asof 7/14 still settled) with 2/2 GTC stops live (NVDL $31.30 dd88186e, TQQQ $68.50 43aac143); PAPER == broker (CEG 16 / FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / SOXL 10 / TQQQ 282 / UPRO 95, equity $99,338 +0.27% AH) with 8/8 equity GTC stops live (FNGU $29 / SOXL $148 / CEG $236 / NVDL $31.30 / PLTR $121.50 / TQQQ $68.50 / UPRO $124 / NVDA $186). NO naked position either book. SOFI de-camp confirmed filled (trade-placed-2026-07-15-3, order bc7db7ba). FNGU pre-arm 2026-07-16-1 APPROVED 5:11pm (web-approvals-seen) + queued (trade-queued-2026-07-16-1) - fast-lane places the $30.20 buy-stop / $25.30 GTC stop at the open, fires only on a confirmed strong open. Closes held: FNGU +3.1% (day's best long), NVDA +0.34% GREEN ($212.4 AH, corrected the stale -0.7% coverage mark), SOXL -6.3% (owned 0 live), TQQQ -0.89%, NVDL +0.6%, UPRO +0.94%, CEG +0.69%, PLTR +0.01%; SPY +0.38%, QQQ -0.28%. TSMC reconfirmed: ~$40B Q2 rev (+33% YoY), 65.5-67.5% GM, $3.77-3.83 EPS, 'extremely robust' AI demand, 8 straight beats = beat+raise base case; prints 2am ET. No news catalyst AH. No live ticket surfaced (nothing fires off-hours; extended is limit-only, TSMC binary); no paper churn into an illiquid 7pm tape already max-long into the print; no stop trails (no new AH higher low, FNGU $29 stop left wide vs a binary 3x open). Accountability stays final:true (grade C-, ~0% long capture, dodged the wreck). Day-trade budget 3/3. Next: reconcile TSMC's reaction at/after the 7/16 open, let the FNGU pre-arm work. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-15-1910.json.",
  "_latest_recap_1116": "Wed 7/15 ~4:20am - PRE-MARKET, market CLOSED (next open 09:30). ASML reported a strong beat-AND-raise before the open (Q2 EPS $8.82 vs $7.98, sales $10.84B vs $10.28B; Q3 guide EUR11-12B; FY RAISED to EUR43-45B), and QQQ closed $719.7 above its 50-day (~$717) - both legs of the pre-committed plan met. ACTED on the 7/14 lesson instead of deferring again: staged LIVE ticket 2026-07-15-1 to SELL the flat SOFI (10 sh) at the open (multi-day-hold exit = NOT a day-trade, PDT 3/3 intact), freeing ~$205 to redeploy into SOXL (clean 3x-semi) on the post-open run - two-step to avoid a BP reject. PAPER (autonomous): bought 25 SOXL (OTO limit $190 GTC + $158 stop child) queued to the open. Reconciled clean both ways (LIVE: TQQQ 10 / SOFI 10 / NVDL 1, 3 GTC stops verified; PAPER: FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95 + new SOXL order, 6 equity stops live). Live equity ~$1000.39 pre-open. Wildcard: oil / Strait-of-Hormuz risk-off could cap the open - if the tape breaks I hold the freed cash rather than buy SOXL into weakness. Next: TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-15-0420.json.",
  "_latest_recap_1215": "Wed 7/15 ~12:15pm ET - market OPEN. Verify-and-HOLD both books; no clean non-chasing rotation (chip unwind DEEPENED). Live equity $962.08 (-2.7% today off last_equity $988.46), cash $19.59, ~98% deployed: TQQQ 10 / SOFI 10 / NVDL 1, all 3 GTC stops verified live ($68.50/$17.60/$31.30). Paper $96,211 (-2.9% today), ~98% deployed - owns the day's green leaders (FNGU 520 +2.6% +$603, PLTR 50 +0.3%) and NONE of the wreck; trailed the FNGU paper stop $26.50->$28.30 on a higher low. QQQ 713 under its 20d (720.7) & 50d (720.2) = weak regime; SOFI->non-semi-leader rotation stays ARMED for a green reclaim only (QQQ>720 + SMH green), not met. Grade C+ intraday: ~0% capture of green FNGU but dodged the -13.4% SOXL wreck (~$31 saved). No new live ticket.",
