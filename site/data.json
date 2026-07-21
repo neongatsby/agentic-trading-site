@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-21T08:20:45.590Z",
+  "generated_at": "2026-07-21T08:21:51.063Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 89252.48,
+    "equity": 89250.78,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88252.48,
-    "day_pnl": -365.3,
+    "total_pnl": 88250.78,
+    "day_pnl": -367,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,9 +20,9 @@
         "symbol": "NVDA",
         "qty": "90.0000",
         "entry": 209.23,
-        "current": 205.35,
-        "pl": -349.3,
-        "plpc": -1.85,
+        "current": 205.4,
+        "pl": -344.8,
+        "plpc": -1.83,
         "thesis": ""
       },
       {
@@ -38,9 +38,9 @@
         "symbol": "SQQQ",
         "qty": "310.0000",
         "entry": 42.36,
-        "current": 41.08,
-        "pl": -397.52,
-        "plpc": -3.03,
+        "current": 41.06,
+        "pl": -403.72,
+        "plpc": -3.07,
         "thesis": ""
       }
     ],
@@ -1269,7 +1269,128 @@
     }
   ],
   "latest_recap": "Pre-market 7/21 — gate still shut (QQQ $696 vs 20-day $716) but chip-specific with SPY near records and green futures. PLTR staged to buy at the open (the fix for Monday's cash-locked D). Live flat $810 cash; paper 4/4 GTC-stopped, ~46% powder for the open fork.",
-  "activity": "Pre-market 7/21: regime gated day 6 (QQQ $696 < 20-day $716); futures green; PLTR open-buy teed up; both books clean/stopped.",
+  "activity": [
+    {
+      "ts": "2026-07-21T04:12:00-04:00",
+      "kind": "engine",
+      "title": "Tue 7/21 ~4:12am ET, PRE-MARKET (market closed, next open 09:30). Reconciled BOTH books vs the broker + regime re-pull + PLTR ticket validation + news/earnings-calendar check. RECONCILE: LIVE == broker (flat, cash $810.32, zero positions/orders, nothing naked); PAPER == broker (CEG 16 / NVDA 90 / PLTR 100 / SQQQ 310, all 4 GTC-stopped $236/$186/$125/$38, zero naked, ~$40.8k cash). No new fills or web-approvals overnight. REGIME: QQQ closed $696.06 vs its ~$716.1 20-day = 2.8% under -> leverage gate SHUT day 6 (no TQQQ/SOXL/FNGU); but SPY near records $742 + green futures (Nasdaq +0.3%, TSLA +1%) = chip-specific, not broad. PLAN: PLTR open-buy (ticket 2026-07-20-3, 5 sh, $122 stop) stays staged to fill at the open -- kept INTERNAL, no new live ticket surfaced (1-6am rule). Paper fork staged (QQQ >$716 -> cut SQQQ + redeploy; <$695 -> hold hedge). Refreshed projections (pop_rank 1 = PLTR), headlines (GOOGL/TSLA/TXN Wed, INTC Thu), pulse, status. Accountability kept 7/20 final-D."
+    },
+    {
+      "ts": "2026-07-20T19:16:00-04:00",
+      "kind": "engine",
+      "title": "Mon 7/20 ~7:16pm ET, AFTER-HOURS (market closed, next open 7/21 09:30). Light heartbeat ~30 min after the 6:41 finalize-recovery run. Fresh reconcile of BOTH books vs the broker + regime + PLTR re-pull + news. RECONCILE: LIVE == broker (flat, cash $810.32, zero positions/orders, nothing naked); PAPER == broker (CEG 16 / NVDA 90 / PLTR 100 / SQQQ 310, all 4 GTC-stopped $236/$186/$125/$38, zero naked, ~$41.5k cash). No new fills or web-approvals since the 2:57pm BE cut. REGIME: QQQ closed $695.97 vs its ~$716 20-day = 2.8% under, leverage gate SHUT day 5; SPY $742 near record = chip-specific derate, not broad risk-off. PLTR held its +1.9% close (~$134.85 AH, bid/ask $134.16/$137.12); the funded BE→PLTR rotation stands — ticket 2026-07-20-3 (5 sh, limit $144, $122 GTC stop, approve-anytime → fills at the 7/21 open) rests in queue, verified. News scan: no fresh post-close catalyst; only a 2-day-old France/Germany 'sovereign Maven alternative' headline (PLTR closed +1.9% through it). Held both books — no after-hours action (extended = limit-only, no live stop; not chasing a blind gap into a heavy earnings week: TXN Tue, GOOGL/TSLA Wed, INTC Thu). Feed hygiene: flipped two stale BE-sell 'pending' cards → filled (the cut executed 2:57pm @ $203.03). Accountability stays final:true grade D. Score alpha -11.2 vs TQQQ -7.8% since 7/2 ($73.35→$67.66); live -19.0% inception. Day-trade budget 0/3. Next auto-action at the open: QQQ reclaims/holds $716 → cut paper SQQQ hedge + add gated names back + PLTR live buy fills; QQQ loses $695 → let the hedge run, consider small live SQQQ (the downside experiment). Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-20-1916.json."
+    },
+    {
+      "ts": "2026-07-20T13:52:00-04:00",
+      "kind": "engine",
+      "title": "Mon 7/20 ~1:52pm ET, REGULAR HOURS (~2h to close). Fresh reconcile of BOTH books vs the broker + regime re-pull + fresh news. NO fills since Friday; the live BE-sell ticket (2026-07-20-1, 3 sh, marketable-limit $190, expires 4pm) is staged in queue and still unapproved - verified the ticket file rests in movita-backend/queue. REGIME: QQQ $699.3 (+0.6%) has faded to its $698 day low, still ~2.4% under its recomputed 20-day ($716.3) - no reclaim, gate SHUT (day 5). The morning chip pop fully round-tripped (SOXL +10%->+4.2%, AMD +5.6%->+3.0%, VRT +4%->+1.4%, TQQQ +3.9%->+1.6%) - the proven 'sell-by-lunch' fade; enterprise software also cracked (ORCL -4.4%, NOW -4.2%, ADBE -4%). SPY $743.9 (+0.1%) at record highs = chip/tech-specific, not a broad break. SQQQ recovering off its low (-1.6% from -3.5%). DECISION: HOLD both books - no new trade. Did NOT add SQQQ into $698 support that has held all day (unconfirmed break = whipsaw trap); did NOT chase the gated 3x semis or the extended INTC (+3.3%, already ran). Kept the BE-cut staged (frees ~$610). Promoted PLTR to pop_rank 1 (TOP PICK) - it's the one green ownable RS leader we hold, bucking both the chip AND the software selloff. Live $201 + paper ~$47k held as dry powder. 5/5 positions (BE live $188; paper NVDA $186, SQQQ $38, CEG $236, PLTR $121.50) carry a live GTC stop - zero naked. Grade C running - honest low/negative capture (BE camp -5.2% live + SQQQ drag on a green day) but the fade is validating the gate and PLTR RS is paying. Score alpha -12.3 vs TQQQ -6.5% since 7/2 ($73.35->$68.61). Day-trade 0/3. Next auto-action: QQQ loses $698 on volume -> press the fade (paper SQQQ/SOXS; arm a small live SQQQ once BE frees cash); reclaims/holds $716 -> cut SQQQ fast + fire freed live cash + paper powder into PLTR/NVDA. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-20-1352.json."
+    },
+    {
+      "ts": "2026-07-20T13:15:00-04:00",
+      "kind": "engine",
+      "title": "Mon 7/20 ~1:15pm ET, REGULAR HOURS (~2h45 to close). Fresh reconcile of BOTH books vs the broker + a regime re-pull. NO fills since Friday; the live BE-sell ticket (2026-07-20-1, 3 sh, marketable-limit $190) is staged and still unapproved. REGIME: QQQ ~$699.8 (+0.7%) slid back toward its $698 day low, still ~2.4% under its ~$717 20-day (no reclaim, gate SHUT); the morning chip pop keeps fading (SOXL +10%->+4.7%, AMD +5%->+2.7%, NVDA +0.3%); SPY ~$744 near record highs so the weakness stays chip-specific; inverses recovering off the lows (SQQQ -1.9% from -3.5%). DECISION: HOLD both books - no new trade. Kept the BE-cut staged (frees ~$607); did NOT add short into $698 support that has held 3x today with SPY at highs (unconfirmed break = the anticipation/whipsaw trap); did NOT chase the gated 3x semis. Live $201 + paper ~$47k held as dry powder. 5/5 positions (BE live $188; paper NVDA $186, SQQQ $38, CEG $236, PLTR $121.50) carry a live GTC stop - zero naked. Grade C running - honest low/negative capture (BE camp + SQQQ drag on a green day), but the fade is validating the gate; the binary test is live this week. Projection pop_rank 1 -> SQQQ (fade-into-close, held). Score alpha -12.9 vs TQQQ -6.3% since 7/2. Day-trade 0/3. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-20-1315.json."
+    },
+    {
+      "ts": "2026-07-20T12:50:00-04:00",
+      "kind": "engine",
+      "title": "Mon 7/20 ~12:50pm ET, REGULAR HOURS (~3h15 to close). Fresh reconcile of BOTH books vs the broker + a regime re-pull. NO fills since Friday; the live BE-sell ticket (2026-07-20-1, 3 sh, marketable limit $190) is staged and still unapproved. REGIME: QQQ ~$702 is grinding higher lows off its $698 morning low but is still ~2.1% under its ~$717 20-day (no reclaim, gate stays SHUT); semis green but FADING from the open (SOXL +8%->+5.8%, AMD +5%->+3.2%, NVDA +0.9%) - the same 'chip pop sells by lunch' pattern as ASML/TSMC last week; SPY near record highs so the weakness stays chip-specific. DECISION: HOLD both books - no new trade. Kept the BE-cut staged (frees ~$610); did NOT whipsaw the SQQQ hedge on intraday chop (no confirmed $716 reclaim / $698 break since the posture was set); live $201 + paper ~$47k held as dry powder. 5/5 positions (BE live $188; paper NVDA $186, SQQQ $38, CEG $236, PLTR $121.50) carry a live GTC stop - zero naked. Grade C running - honest low/negative capture (BE camp + SQQQ drag on a green day), but the fade is validating the gate and the decisions are disciplined. Score alpha -13.8 vs TQQQ -5.5% since 7/2. Day-trade 0/3. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-20-1250.json."
+    },
+    {
+      "ts": "2026-07-20T11:15:00-04:00",
+      "kind": "engine",
+      "title": "Mon 7/20 ~11:15am ET RTH - fresh full reconcile of BOTH books vs broker + regime re-pull. Confirmed the ~10:45 run's actions landed (paper BE gone; live BE-sell ticket 2026-07-20-1 staged, unapproved) though it left no journal entry (concurrent-run drift). REGIME: relief bounce FADING - QQQ $699.5 round-tripped from +1.3% to its day low, still ~2% under its ~$718 20-day; SOXL gave back +9.6%->+3.9%; SPY faded from the open. PAPER (autonomous): cut the RKLB laggard (130 @ $66.26, -$437) and added 100 SQQQ @ $41.99 -> 310 sh, re-armed the $38 GTC stop; 4 names left (NVDA/PLTR/CEG + SQQQ hedge) all stopped, zero naked, ~57% cash. LIVE: kept the BE-sell ticket staged (frees ~$795); BE 3 sh behind its $188 stop, $201 dry; no new live order (gate shut). Grade C- running - honest negative capture (BE camp = -6.2% live) offset by the decisive cut + trimming the laggard into the hedge + no-chase discipline. Score alpha -14.3 vs TQQQ -6.4% since 7/2. Day-trade 0/3. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-20-1115.json."
+    },
+    {
+      "ts": "2026-07-20T10:45:00-04:00",
+      "kind": "engine",
+      "title": "Mon 7/20 ~10:45am ET RTH - ACTED on the BE drag. Full pull: LIVE & PAPER accounts/positions/orders + SPY/QQQ/TQQQ regime + 17-name universe + BE 90d bars + news + movers + 2 web searches. CUT BE both books: PAPER cancelled the $188 stop and SOLD 40 @ $196.68 (realized ~-$889), 5 names left all GTC-stopped, zero naked, ~53% cash; LIVE staged sell ticket 2026-07-20-1 (3 sh, limit $190) to free ~$795. Rationale: BE at new 90-day lows (-8.5%) on a GREEN semi day (Nasdaq +1%, AMD +4.5%), Hunterbrook scandium-supply short unresolved into binary 7/28 earnings = don't hold behind a gap-through stop (Rule #2). REGIME: bounce FADING, QQQ $701 rolled off $706, still ~2% under its ~$716 20-day = gate stays shut; held the SQQQ hedge, did NOT chase the faded semis (SOXL +10%->+6%). Armed: QQQ reclaims $716 -> live $795 + paper cash into NVDA; QQQ breaks $699 morning low -> small live SQQQ experiment. Grade C- running (honest negative capture, owned BE) + decisive cut. Score alpha -14.2 vs TQQQ -5.9% since 7/2. Day-trade 0/3. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-20-1045.json."
+    },
+    {
+      "ts": "2026-07-20T10:15:00-04:00",
+      "kind": "engine",
+      "title": "Mon 7/20 ~10:15am ET - REGULAR HOURS (~45 min in). Full pull: clock + LIVE & PAPER accounts/positions/orders + SPY/QQQ/TQQQ regime + 16-name universe snapshot + BE 90d bars + news + movers. Reconciled clean both ways: LIVE = BE 3 sh @ $222.64 ($188 GTC stop b2b62cc5) + $201.26 dry, equity ~$802 (~-4.9% today, all BE); PAPER = BE 40 / CEG 16 / NVDA 70 / PLTR 50 / RKLB 130 / SQQQ 210, all 6 GTC-stopped, equity ~$89.85k (-0.6%), ~44% cash. 7/7 zero naked, queue clean, no fills since Friday. REGIME: QQQ ~$700 still ~2% under its ~$716 20-day = no reclaim; the bounce is FADING (SOXL +9.6%->+4.4%, NVDA +2.2%->+1.5%) = the 'fades -> hedge pays' branch, so the 9:45 'reclaim -> NVDA' trigger did NOT fire. BE gapped to $219 and puked to ~$200 (-6.6%) on the Hunterbrook short + supply-chain overhang - held its wide $188 stop (thesis intact into 7/28 earnings), flagged #1 rotation on a bounce to ~$210. No live ticket (no reclaim for a long; won't chase the hedge off its low); no paper churn (already hedged, owns green NVDA, 44% cash). Grade C running, poor capture (BE drag) but the fade call + not-chasing-SOXL discipline paying. Armed both ways for next run: reclaim $710-716 -> live $201 into NVDA; break the morning low -> small live SQQQ hedge experiment. Score alpha -14.0 vs TQQQ -5.8% since 7/2. Day-trade budget 0/3. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-20-1015.json."
+    },
+    {
+      "ts": "2026-07-17T18:13:00-04:00",
+      "kind": "engine",
+      "title": "Fri 7/17 6:13pm - FRIDAY WEEKLY CONSOLIDATION. Folded week 7/14-7/17 into PLAYBOOK.md; promoted the regime-gate + gap-through-stop + wide-stops rules to earned. Capture trend 49%->~0%->~0%->~0% (did not rise) - next week tests whether obeying the gate lifts it off zero. Books re-verified: 7/7 stopped, zero naked. Weekend hold, no blind pre-arm; Monday = QQQ-vs-$718 fork."
+    },
+    {
+      "ts": "2026-07-17T14:49:00-04:00",
+      "kind": "engine",
+      "title": "Fri 7/17 ~2:49pm ET - REGULAR HOURS. Reconciled both books off the broker (zero naked): LIVE = BE 3 sh @ $222.64 behind the $188 GTC stop + $201 dry, equity $847 (-9.1% day, ~all AM 3x tuition); PAPER 6 names all GTC-stopped. Pulled SPY/QQQ + full watchlist snapshots + movers + news: QQQ $696.5 is -3.0% under its 20-day ($718.4) = regime BROKEN; SPY -0.2% under its = tech-specific. Afternoon bounce fading into a risk-off weekend. ACTED (paper lab): cut SOXL 80 (3x-semi, broken regime) and rotated a starter into SQQQ 210 @ $42.54 (trend-aligned inverse, $38 GTC stop) - leaning into the trend instead of camping. LIVE held: no forced ticket into a fading Friday close. 0/3 live day-trades used. Capture ~0% running (own BE +4.2% both books; live red from AM tuition), grade C. engine-data.json published."
+    },
+    {
+      "ts": "2026-07-17T13:51:00-04:00",
+      "kind": "engine",
+      "title": "Fri 7/17 ~1:51pm ET - REGULAR HOURS. Reconciled both books (zero naked) and acted on the adjust: SOLD paper UPRO 95 (cut 3x-S&P leverage in the broken regime), ROTATED into RKLB (added 60 -> 130 sh, $62 GTC stop). Held BE the catalyst leader both books; live $201 dry into a risk-off weekend. QQQ ~$700 still under its 20-day. Capture ~0% (late BE entry + AM 3x tuition), grade C running. No new live ticket."
+    },
+    {
+      "ts": "2026-07-17T12:20:00-04:00",
+      "kind": "engine",
+      "title": "Fri 7/17 ~12:20pm ET - REGULAR HOURS. Full pull: clock + LIVE & PAPER accounts/positions/orders + snapshots (SPY/QQQ/TQQQ/FNGU + snap-back/inverse/oversold universe) + market movers + QQQ 20/50d recompute + web-search (three-headed selloff). Reconciled both ways: BOTH live 3x legs STOPPED OUT at the open (TQQQ 10 @ $66.38 order 43aac143 filled 9:30; FNGU 6 @ $25.29 order 347b799a filled 9:42) - live now 100% cash $869.18, zero positions, zero naked. Paper 4 equity legs all GTC-stopped (CEG $236 / PLTR $121.50 / UPRO $124 / NVDA $186) + NVDA Aug-$220 calls, zero naked. QQQ $698 is 3.0% under its 20d ($719.70) = regime broken. Staged live ticket 2026-07-17-1 (PLTR $134.8 reclaim buy-stop, 6sh, $121.50 stop). No paper trades - holding into the junk-led bounce, powder dry. engine-data.json published."
+    },
+    {
+      "ts": "2026-07-17T05:42:00-04:00",
+      "kind": "engine",
+      "title": "Fri 7/17 ~5:42am - PRE-MARKET (market closed, next open 09:30). Full pull: get_clock + LIVE & PAPER account/positions/orders + snapshots + QQQ/SPY 50-day MAs recomputed + market movers + web-search (Netflix/TSMC/futures). Reconciled clean both ways: live TQQQ 10 (@ $68.50 GTC) + FNGU 6 (@ $25.30 GTC), paper 6 legs (5 equity GTC-stopped + NVDA Aug-$220 call), zero naked. QQQ $705.94 under its 20d ($719.70) & 50d ($718.73) = leverage regime broken; SPY above its MAs = tech-specific. 7/16 settled $931.90 (corrected from $926.46 provisional). No pre-market action (limit-only). Open plan: de-risk 3x-Nasdaq into any bounce, no new leverage until QQQ reclaims ~$720. engine-data.json published."
+    },
+    {
+      "ts": "2026-07-17T05:30:00-04:00",
+      "kind": "engine",
+      "title": "Fri 7/17 ~5:30am - market CLOSED (pre-market), research + stage for the open. Fresh pull: get_clock + LIVE account/positions/orders + PAPER positions/orders + snapshot(10-name universe) + QQQ/TQQQ 95d daily bars (recomputed MAs) + web-search + queue reconcile. RECONCILED CLEAN: LIVE == broker (TQQQ 10 @ $76.29 / FNGU 6 @ $29.43; cash $53.68) with 2/2 GTC stops live (TQQQ $68.50 43aac143 / FNGU $25.30 347b799a); PAPER == broker (NVDA 130 + 8 Aug-$220 calls / TQQQ 282 / UPRO 95 / PLTR 50 / CEG 16), all 5 equity GTC stops live; ZERO naked either book. No new queue fills since trade-placed 7/16-1. DATA-INTEGRITY: the account API marked equity $875.28 on stale prints (TQQQ $66.56 / FNGU $26.00), but the real last quotes (TQQQ $70.41/$70.45, FNGU $28.31) value the book ~$927 = the booked $926.46 close - graded off the settled close. REGIME (recomputed off fresh bars): QQQ close $705.94 vs 20-day $719.70 and 50-day $718.73 = under BOTH by ~1.8%, leverage regime confirmed broken. TAPE: Nasdaq-100 futures -0.3% (decelerating from Thu -1.6%); Netflix -8% + Alphabet Gemini-3.5 delay -4% = double FANG drag; oil up on Iran (6th day); monthly OpEx today; today's data housing starts/IP/UMich + TRV/TFC/FITB (financials). PLAN into the 7/17 open (acting on the 7/16 lesson): DE-RISK - trim/exit TQQQ into any bounce (multi-day swing, PDT-free), lean on trimming FNGU given the Netflix/Alphabet drag, add NO new leverage until QQQ reclaims its 20-day; let the $68.50 stop work if it just gaps down. Keep freed cash ready to rotate into the strongest CONFIRMED mover (a semi reclaim > SOXL), never a knife-catch. No live ticket surfaced (1-6am no-surface window; the trim is bounce-conditional - fires at/after the open). PDT budget full (0/3 same-day round-trips). Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-17-0530.json."
+    },
+    {
+      "ts": "2026-07-16T14:48:00-04:00",
+      "kind": "engine",
+      "title": "Thu 7/16 ~2:48pm - market OPEN (~72 min to close). Reconciled both books vs the broker: live TQQQ 10 + FNGU 6, both GTC-stopped ($68.50/$25.30); paper 5 equities + NVDA Aug-$220 calls, all 5 equity legs GTC-stopped - zero naked either book. Day-2 chip sell-the-news (TSMC raised capex to $60-64B) + oil/yields on Gulf tension; QQQ $706 pinned on $705, SPY -0.6% = tech-specific. Held both books: no decisive $705 break to de-risk, no $712 reclaim to buy, inverse (SOXS +14.8%) too 2-day-extended to chase this late. Live -4.7% ($930.78), capture ~0% (owns zero of the -13/-15% wreck; every stop held). engine-data.json published."
+    },
+    {
+      "ts": "2026-07-15T15:14:00-04:00",
+      "kind": "engine",
+      "title": "Wed 7/15 ~3:14pm - market OPEN (~46 min to close). Verified all stops (3 live + 8 paper, none naked). Retired the mechanically-jammed SOFI->FNGU de-camp ticket (2026-07-15-3) for today; re-running clean after TSMC tomorrow. Book -1.7% = poor long capture on the sell-the-news chip unwind; dodged the -8% SOXL wreck. Paper held (99% deployed into TSMC). No live ticket surfaced."
+    },
+    {
+      "ts": "2026-07-15T14:40:00-04:00",
+      "kind": "engine",
+      "title": "Wed 7/15 ~2:40pm - market OPEN (~80 min to close). Verify-and-hold both books; nothing material changed since 2:16. Fresh pull: get_clock + LIVE account/positions/orders + PAPER account/positions/orders + snapshot(12-name universe) + get_market_movers + TQQQ 16d bars + web-search. Reconciled clean both ways (LIVE == broker: TQQQ 10 / SOFI 10 / NVDL 1; PAPER == broker: CEG 16 / FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / SOXL 10 / TQQQ 282 / UPRO 95). All 3 live + 8 paper equity GTC stops re-verified live (LIVE $68.50/$17.60/$31.30; PAPER FNGU $29.00 / SOXL $148 / CEG $236 / NVDL $31.30 / PLTR $121.50 / TQQQ $68.50 / UPRO $124 / NVDA $186); no naked positions. No new queue fills since -10-3; ticket 2026-07-15-3 (SELL SOFI) still resting un-tapped (the earlier 15-2 'close' no-op'd, SOFI still held + $17.60 stop intact). LIVE equity $975.86 (-1.3% today), cash $19.59; PAPER $98,317 (-0.8% today, FNGU +$445 today). Tape: memory selloff (SK Hynix -10.7%, Micron -7.3%, AMD -6.4%) with money rotating INTO mega-caps (AMZN/MSFT/GOOGL +3%, AAPL +4%) - FNGU +3.0% leads, TQQQ -1.0% lags. No live trade (BP $19.59 funds nothing until SOFI frees ~$180); no paper churn into a choppy tape 80 min from close; no stop trails (live holds under entry on a red day; NVDL stop already just under today's low). Grade C intraday, poor long capture, dodged the wreck. Benchmark TQQQ +1.3% since 7/2 close, alpha -3.7. Day-trade budget 3/3. TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-15-1440.json."
+    },
+    {
+      "ts": "2026-07-15T13:52:00-04:00",
+      "kind": "engine",
+      "title": "Wed 7/15 ~1:52pm - market OPEN. Afternoon reclaim off the midday lows (SOXL $150→$161, QQQ 710→716, broad market green). Executed the standing fix: wrote live ticket 2026-07-15-3 SELL SOFI (free the $19.59 cash-lock, redeploy into FNGU next run, PDT-free multi-day exit); paper bought a SOXL washout-reversal starter (10 @ $163.63, $148 stop) into TSMC tomorrow and trailed FNGU's paper stop $28.30→$28.80. Reconciled both books to broker; all live + paper equity GTC stops verified; no naked positions. Live ~$971.64 (-1.7%), paper ~$97.4k (-1.7%)."
+    },
+    {
+      "ts": "2026-07-15T04:40:00-04:00",
+      "kind": "engine",
+      "title": "Wed 7/15 ~4:40am - market CLOSED (pre-market), research + stage follow-up to the 4:20 run. Fresh pull: get_clock + account/positions/orders both books + overnight(Blue Ocean) snapshot on the 15-name universe + web-search ASML Q2. VERIFIED + CORRECTED ASML: real print is EUR9.33B net sales (+21% y/y, ~EUR400M beat), EUR2.9B net income, 54% GM; Q3 guided EUR11-12B vs ~EUR10.37B consensus; FY26 RAISED to EUR43-45B at 54-56% GM - the 4:20 run had mis-stated it as '$8.82 EPS / $10.84B'; direction (beat-and-raise, bullish semis) unchanged. Pre-market reads vs 7/14 SIP close: SOXL +6.1% ($176.62->$187.48) LEADS, TQQQ +2.0%, BE +2.6%, RKLB +2.2%, IONQ +1.8%, RGTI +1.2%, VRT +1.1%, OKLO +1.0%, CEG +0.9%, UPRO +0.6%, FNGU +0.4%, NVDL +0.3%, SOFI +0.2%, NVDA +0.2% (spent), PLTR -0.6%. SOXL is exactly the live rotation target. Reconciled clean both ways (LIVE==broker: TQQQ 10 / SOFI 10 / NVDL 1, equity ~$1000.70, cash $19.59, ~98% deployed; PAPER==broker: FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95, ~94% deployed). Verified all 9 equity GTC stops live (LIVE $68.50/$17.60/$31.30; PAPER $24.30/$186/$31.30/$121.50/$68.50/$124). Confirmed staged orders unchanged: LIVE ticket 2026-07-15-1 (sell 10 SOFI, approve mode) and PAPER SOXL 25-sh OTO limit $190 GTC ($158 stop child) both resting for the 9:30 open. PDT budget 3/3 (last live fills all multi-day buys - NVDL 7/8, TQQQ 7/9, SOFI 7/10; SOFI exit is a multi-day sale, not a day-trade). No new live order placed (fast-lane fills the staged ticket on Adam's tap; $19.59 BP funds nothing more until SOFI sells). No new paper order (option books illiquid pre-open; reassess an options convexity leg post-open on real prices). Next: 9:30 open - if SOFI rotation approved+fills, deploy freed ~$205 into SOXL on the post-open run; grade capture on settled closes after 4pm. Wildcard Hormuz/oil risk-off. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-15-0440.json."
+    },
+    {
+      "ts": "2026-07-14T20:39:00-04:00",
+      "kind": "engine",
+      "title": "Tue 7/14 ~8:39pm - market CLOSED (after-hours over), final check of the night. Verify-and-hold both books. Fresh pull: get_clock + account/positions/orders both books + snapshot(12-name universe). SETTLED-CLOSE CORRECTION: the live account's own equity field is $997.48 vs last_equity $957.99 = +4.12% on the day (official SIP closes: TQQQ +4.35% $75.79, SOFI +2.98% $18.67, NVDL +8.44% $33.29) - the 6:12-8:10pm runs had undermarked the book to ~$988/+3.1% off the intraday IEX feed. Re-finalized accountability on real close prices: capturedPct +4.1%, bestName NVDL +8.4%, capture rate 49% (was 38%), grade B- -> B (not higher - still only half-sized the best mover on the $19.59 cash-lock); avoidance 100% of SOXS -7.9%. Score corrected: bestDay +4.1%, benchmark TQQQ +3.3% since 7/2 ($73.35->$75.79), alpha -3.6. Reconciled clean both ways (LIVE == broker: TQQQ 10 / SOFI 10 / NVDL 1; PAPER == broker: FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95); all 9 equity GTC stops re-verified live (LIVE $68.50/$17.60/$31.30; PAPER $24.30/$186/$31.30/$121.50/$68.50/$124). No new queue fills since 7/10 (.web-approvals-seen []). LIVE equity $997.48 (cash $19.59, ~98% deployed); PAPER $99,527 (~94% deployed, $6.19k cash) chip-heavy + NVDA Aug-$220 calls (+58%). Universe closes confirm nothing broke AH (SOXL +6.8%, NVDA record ~$211.8, BE +4.3%, RGTI +4.9%, RKLB +2.7%; SOXS -7.9%). No live ticket - $19.59 BP funds nothing and the SOFI->chip swing is contingent on the ASML number at the open, so not ready-to-fire tonight. Day-trade budget 3/3. Next: ASML Q2 pre-open Wed 7/15 (~8% move priced), TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-14-2039.json."
+    },
+    {
+      "ts": "2026-07-14T20:10:00-04:00",
+      "kind": "engine",
+      "title": "Tue 7/14 ~8:10pm - market CLOSED (after-hours over), evening staging run. Verify-and-hold both books. Fresh pull: get_clock + account/positions/orders both books + snapshot(12-name universe) + get_market_movers + web-search ASML. Reconciled clean both ways (LIVE == broker: TQQQ 10 / SOFI 10 / NVDL 1; PAPER == broker: FNGU 520 / NVDA 130 / 8 NVDA Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95); all 9 equity GTC stops re-verified live (LIVE $68.50/$17.60/$31.30; PAPER $24.30/$186/$31.30/$121.50/$68.50/$124). No new queue fills since 7/10. LIVE equity $997.07 (cash $19.59, ~98% deployed); PAPER $99,531 (~94% deployed, $6.19k cash) chip-heavy + NVDA Aug-$220 calls. Movers = penny/warrant junk only (NXTC +202%, IBX -50%), none in universe. Accountability stays final:true (grade B-, capture 38%, avoidance 100%); added applying = the 7/14 SOFI->chip swing lesson. No live ticket - $19.59 BP funds nothing and I won't sell the SOFI hedge blind into ASML's binary; the swing is armed for the open once the print clears. Day-trade budget 3/3. Next: ASML Q2 pre-open Wed 7/15 (~8% move priced), TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-14-2010.json."
+    },
+    {
+      "ts": "2026-07-14T18:39:00-04:00",
+      "kind": "engine",
+      "title": "Tue 7/14 ~6:39pm — market CLOSED (after-hours). Verify-and-hold both books, no changes ~27 min after the post-close finalize. Fresh pull: account/positions/orders both books + snapshot(5: TQQQ/NVDL/SOFI/QQQ/NVDA) + web-search ASML/after-hours. Reconciled clean both ways (LIVE == broker: TQQQ 10 / SOFI 10 / NVDL 1; PAPER == broker: FNGU 520 / NVDA 130 / NVDA 8 Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95); all 9 equity GTC stops re-verified live (live $68.50/$17.60/$31.30; paper $24.30/$186/$31.30/$121.50/$68.50/$124). No new queue fills since 7/10 (.web-approvals-seen []). LIVE equity $988.87 (+3.2% today, -1.1% since 7/2 inception), cash $19.59, ~98% deployed; PAPER $98,979 (+2.6% today, ~94% deployed, $6.19k cash) chip-heavy + NVDA Aug-$220 calls (+58% today). Snapshots confirm EOD marks unchanged: QQQ $719.9 (>50-day ~$717), NVDA record $211.9, TQQQ $75.1, SOFI $18.56, NVDL $33.18 — nothing broke after the bell. Accountability stays final:true (grade B-, capture 38%). No live ticket — $19.59 BP funds nothing, won't sell SOFI hedge blind into ASML's binary. Day-trade budget 3/3. Next: ASML Q2 pre-open Wed 7/15 (~7% move priced, EPS ~€6.84 / ~$7.85 est, EUV/AI-capex commentary the read-through), TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-14-1839.json."
+    },
+    {
+      "ts": "2026-07-14T18:12:00-04:00",
+      "kind": "engine",
+      "title": "Tue 7/14 ~6:12pm - market CLOSED (after-hours), POST-CLOSE FINALIZE. Verify-and-hold both books, no changes. Reconciled clean both ways (LIVE == broker: TQQQ 10 / SOFI 10 / NVDL 1; PAPER == broker: FNGU 520 / NVDA 130 / NVDA 8 Aug-$220 calls / NVDL 80 / PLTR 50 / TQQQ 282 / UPRO 95); all 9 equity GTC stops re-verified live (live $68.50/$17.60/$31.30; paper $24.30/$186/$31.30/$121.50/$68.50/$124). No new queue fills since 7/10. FINALIZED accountability (final:true), grade B-: capture 38% (equity +3.1% vs the day's best watchlist mover NVDL +8.1%, held in both books but live sized 1 share on $19.59 BP); avoidance 100% of SOXS -7.9% (inverse trap flagged Monday); best saved = kept the 3x core Monday night vs selling the CPI-eve low (~+$30). Full watchlist closes pulled for capture math (SOXL +6.8%, RGTI +4.9%, BE +4.3%, NVDA +4.1%, FNGU +3.7%, TQQQ +3.1%, PLTR +2.8%, SMR +2.8%, RKLB +2.7%, SOFI +2.3%, UPRO +1.1%, IONQ +1.1%, OKLO +0.8%, TSLA +0.3%; SOXS -7.9%, SQQQ -3.2%, VRT -0.7%, CEG -0.5%). LIVE $987.77 (+3.1% day, -1.2% since 7/2), cash $19.59, ~98% deployed; PAPER ~$98.9k (+2.5% day, ~94% deployed) chip-heavy + NVDA Aug-$220 calls (+58% today). No live ticket - $19.59 BP funds nothing, won't sell SOFI hedge blind into ASML binary; adjust logged: swing SOFI into the strongest chip name once ASML clears. Day-trade budget 3/3. Next: ASML Q2 pre-open Wed 7/15 (~8% swing), TSMC Thu 7/16. Appended dated capture lesson to STRATEGY-NOTES.md. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-14-1812.json."
+    },
+    {
+      "ts": "2026-07-14T17:40:00-04:00",
+      "kind": "engine",
+      "title": "Tue 7/14 ~5:40pm - market CLOSED (after-hours). Verify-and-hold both books, no changes. Fresh pull: account/positions/orders both books + snapshot(6) + TQQQ 14d bars + web-search ASML/after-hours. Reconciled clean both ways (LIVE TQQQ 10/SOFI 10/NVDL 1; PAPER FNGU 520/NVDA 130/NVDA 8 Aug-$220 calls/NVDL 80/PLTR 50/TQQQ 282/UPRO 95). All 9 equity GTC stops re-verified live: live $68.50/$17.60/$31.30, paper $24.30/$186/$31.30/$121.50/$68.50/$124. LIVE equity $988.99 (+3.2% day, -1.1% since 7/2), cash $19.59, ~98% deployed, no trail (TQQQ $75.12 & SOFI $18.55 under entry; NVDL stop protects +8%). No live ticket - $19.59 BP funds nothing, won't sell SOFI hedge blind into ASML binary. Day-trade budget 3/3. PAPER ~$98.9k (+2.6% day, ~94% deployed, $6.19k cash held as dry powder) chip-heavy + NVDA Aug-$220 calls for ASML convexity. Benchmark verified from TQQQ bars: 7/2 close $73.35 -> $75.02 = +2.3%; live -1.1%, alpha -3.4. Next: ASML Q2 pre-open Wed 7/15 (~8% swing), TSMC Thu 7/16. Published engine-data.json only (no data.json, no git). Backup engine-data.backup-2026-07-14-1740.json."
+    }
+  ],
   "pulse": [
     {
       "ts": "2026-07-21T04:12:00-04:00",
