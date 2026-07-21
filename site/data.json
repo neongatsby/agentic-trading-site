@@ -1,55 +1,55 @@
 {
-  "generated_at": "2026-07-21T15:21:35.425Z",
+  "generated_at": "2026-07-21T15:22:43.895Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 89510.1,
+    "equity": 89545.76,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88510.1,
-    "day_pnl": -107.68,
+    "total_pnl": 88545.76,
+    "day_pnl": -72.02,
     "positions": [
       {
         "symbol": "AMD",
         "qty": "30.0000",
         "entry": 527.8,
-        "current": 533.72,
-        "pl": 177.54,
-        "plpc": 1.12,
+        "current": 534.13,
+        "pl": 189.69,
+        "plpc": 1.2,
         "thesis": ""
       },
       {
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 261.18,
-        "pl": 8,
-        "plpc": 0.19,
+        "current": 261.1,
+        "pl": 6.72,
+        "plpc": 0.16,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "90.0000",
         "entry": 209.23,
-        "current": 206.03,
-        "pl": -287.83,
-        "plpc": -1.53,
+        "current": 206.35,
+        "pl": -259.31,
+        "plpc": -1.38,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "100.0000",
         "entry": 135.75,
-        "current": 133.56,
-        "pl": -219,
-        "plpc": -1.61,
+        "current": 133.58,
+        "pl": -217.5,
+        "plpc": -1.6,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "100.0000",
         "entry": 42.36,
-        "current": 40.48,
-        "pl": -188.73,
-        "plpc": -4.46,
+        "current": 40.42,
+        "pl": -194.23,
+        "plpc": -4.58,
         "thesis": ""
       }
     ],
@@ -93,6 +93,10 @@
       {
         "date": "Jul 20",
         "value": 89502.1
+      },
+      {
+        "date": "Jul 21",
+        "value": 89476.02
       }
     ]
   },
@@ -153,6 +157,10 @@
       },
       {
         "date": "Jul 20",
+        "value": 810.32
+      },
+      {
+        "date": "Jul 21",
         "value": 810.32
       }
     ],
@@ -517,16 +525,16 @@
   },
   "pending_tickets": [
     {
-      "id": "2026-07-20-3",
-      "symbol": "PLTR",
+      "id": "2026-07-21-1",
+      "symbol": "NVDA",
       "side": "buy",
-      "size": "$670",
-      "qty": 5,
-      "entry": "~$134 marketable - market open, approve = fills now",
+      "size": "$620",
+      "qty": 3,
+      "entry": "~$206 marketable - market open, approve = fills now",
       "trigger": null,
-      "stop": 122,
-      "bracket": "stop $122 GTC (below the $129-131 two-week base, -9%)",
-      "thesis": "The funded live rotation into the 1x RS leader (no gate, Aug 3 earnings). PLTR -0.8% today, lagging the chip tape = a cheaper entry, not a broken thesis. Refreshed so it stays tappable; gets LIVE out of a 6th straight session of cash with a wide $122 stop. Approve anytime -> fills at market."
+      "stop": 186,
+      "bracket": "stop $186 GTC (below the late-June $192 base, -9.7%)",
+      "thesis": "Funded live rotation OUT of a 6th day of cash and INTO the leading AI-infra/chip theme via the NON-extended leader. NVDA +1.4% (lagged the +6% AMD/INTC = cheaper entry), fresh Nebius-stake catalyst, cheapest multiple in a decade, no earnings binary this week. Wide $186 stop. Approve -> fills at market now."
     }
   ],
   "coverage": [
@@ -534,24 +542,24 @@
       "ticker": "PLTR",
       "name": "Palantir",
       "theme": "AI software / RS leader",
-      "verdict": "buy",
-      "verdict_label": "Buy",
-      "chg_pct": -1.02,
-      "thesis": "**THE confirmed relative-strength leader - the one name working, and now the LIVE rotation target.** PLTR closed +1.9% at a fresh 2-week high while the morning chip pop fully round-tripped (SOXL +10%->+1.8%, AMD +5.6%->+2.5%, NVDA back to flat) AND enterprise software cracks (ORCL -4.4%, NOW -4.2%, ADBE -4%). Textbook RS: green at its highs while every neighbor fades. Catalyst-backed - FY26 rev guide RAISED to $7.66B, net-dollar-retention 150%, remaining deal value $11.8B, the July Nvidia sovereign-AI partnership + Army NGC2 Foundry win, 8 straight beats. 1x stock (no gate issue), so we own it aggressively: doubled paper to 100 sh AND, now that the BE cut freed $810 live cash, a live buy ticket (2026-07-20-3, 5 sh, $122 stop) is staged for the 7/21 open to finally put LIVE in the leader.",
-      "hold_reason": "Our clean 1x relative-strength leader - the AI-software name that kept printing 2-week highs while software peers cracked. Today it's RED (-0.8%) as money rotates into chips, but that's a cheaper entry, not a broken thesis (no gate, no earnings till Aug 3, fresh DA Davidson $175 upgrade + Burry covered). We hold 100 sh in paper and the live buy ticket is refreshed and one tap away. We'd cut it only if $129-131 base breaks (the $122/$125 stops sit just below).",
-      "size": "$13.6k paper (100 sh) + live buy re-staged for the open (5 sh)",
+      "verdict": "hold",
+      "verdict_label": "Hold - paper",
+      "chg_pct": -0.98,
+      "thesis": "**Basing but out of favor while AI-infra leads.** PLTR is red -1.1% as money rotates into chips/AI-infra; it's holding its $131-133 two-week base but not leading. We RETIRED the live buy ticket in favor of the non-extended NVDA and keep the 100-sh paper position on its $125 stop into the Aug 3 print.",
+      "hold_reason": "Our software/AI-analytics leader, but a laggard on a chip-led tape. We hold 100 sh in paper at a $125 stop; today it's the wrong theme, so we pulled the live ticket and put that idea into NVDA. We stay in the paper hold while it bases above $129-131; a break there or a failed Aug 3 print gets us out.",
+      "size": "$13.3k paper (100 sh)",
       "size_pct": "~15% paper",
-      "size_note": "paper 100 sh (stop $125); live PLTR buy still staged (ticket 2026-07-20-3, 5 sh, $122 stop) - approve anytime, fills now",
-      "plan_usd": "live ~$680 into PLTR - ticket 2026-07-20-3, approve = fills immediately (market open)",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "size_note": "paper hold; live ticket retired -> NVDA",
+      "plan_usd": "no live plan (retired)",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 1.5,
+        "target_pct": -0.5,
         "confidence": "med",
-        "basis": "RS-leader dip; cheaper live swing, not today's pop",
-        "pop_rank": 12
+        "basis": "software out of favor while AI-infra leads; basing",
+        "pop_rank": 14
       },
-      "price": 133.48,
+      "price": 133.53,
       "spark": [
         136.84,
         136.57,
@@ -582,7 +590,7 @@
         125.75,
         129.18,
         132.53,
-        133.48
+        133.53
       ]
     },
     {
@@ -591,27 +599,22 @@
       "theme": "AI semis / catalyst",
       "verdict": "buy",
       "verdict_label": "Buy",
-      "chg_pct": 6.01,
+      "chg_pct": 6.08,
       "thesis": "**Acted on the pop_rank-1 call - bought it as it confirmed post-open, no longer a premarket chase.** AMD is +5% into its 'Advancing AI 2026' event (7/22-23, San Francisco) on Microsoft's Helios rack-scale commitment - MI450/Instinct + EPYC Venice roadmap in focus. 1x = no gate issue, so it's the ownable chip leader where the 3x semis (SOXL +12%) are not. Bought 30 sh @ $527.80 in paper with a wide $458 GTC stop (below the 7/17 $460 structural low, -13%). Plan is to sell into strength if it runs into the event (buy-the-rumor risk on 7/22-23), stop does the work if the chip bid fades a 6th time.",
       "hold_reason": "Bought 30 sh @ $527.80 at the open (paper) - the pop_rank-1 call: the ownable 1x chip leader running into its 7/22-23 Advancing AI event on the Microsoft Helios rack-scale deal, plus a memory-cycle tailwind. 1x so no regime-gate issue. Wide $458 GTC stop. We watch the event + whether NVDA finally confirms the semi bid; a sell-the-event fade is the risk we're stopped against.",
       "size": "$15.9k paper (30 sh @ $527.80)",
       "size_pct": "~18% paper",
       "size_note": "held 30 sh @ $527.80 (paper); +4% but faded from the $535 open high to near its day low - $458 GTC stop; sell into a 7/22-23 event pop",
       "plan_usd": "held 30 sh paper; sell into a 7/22-23 event pop, else the $458 stop works",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "swing",
       "projection": {
         "target_pct": 5.5,
         "confidence": "med",
-        "basis": "into 7/22 AI event + MSFT Helios + memory cycle",
-        "pop_rank": 1,
-        "path_pct": [
-          4.9,
-          5.2,
-          5.5
-        ]
+        "basis": "Advancing AI event 7/22-23 + MSFT Helios; extended",
+        "pop_rank": 2
       },
-      "price": 533.72,
+      "price": 534.04,
       "spark": [
         467.64,
         503.95,
@@ -642,7 +645,7 @@
         540.89,
         518.25,
         552.25,
-        533.72
+        534.04
       ]
     },
     {
@@ -651,22 +654,22 @@
       "theme": "Semis / turnaround",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 7.2,
+      "chg_pct": 7.47,
       "thesis": "**Leading the complex +4.5% premarket on a genuine, fresh catalyst: Intel is the FIRST chipmaker to deploy ASML's High-NA EUV in production - a real foundry-credibility milestone - plus broad AI-capex sentiment.** Turnaround optionality is finally catalyst-backed, but two caveats keep it a WATCH not a live buy: it reports EARNINGS Thursday 7/23 (a notorious binary that often sells a pre-print pop), and it's a chip name popping while QQQ sits under its 20-day - the setup that's round-tripped all week.",
       "hold_reason": "",
       "size": "-",
       "size_pct": "-",
       "size_note": "watch; fresh EUV catalyst + leads chips premkt, but earnings Thu = binary overhang",
       "plan_usd": "none - earnings-Thu binary; watch the reaction, don't buy into the print",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 6.5,
-        "confidence": "med",
-        "basis": "first High-NA EUV in production; leads chips, earns Thu",
-        "pop_rank": 2
+        "target_pct": 6,
+        "confidence": "low",
+        "basis": "memory upgrade + Google AI deal, but Thu earnings + layoffs",
+        "pop_rank": 3
       },
-      "price": 104.06,
+      "price": 104.32,
       "spark": [
         119.85,
         123.51,
@@ -697,31 +700,31 @@
         127.08,
         120.39,
         122.25,
-        104.06
+        104.32
       ]
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA",
       "theme": "AI semis anchor",
-      "verdict": "hold",
-      "verdict_label": "Hold",
-      "chg_pct": 1.33,
-      "thesis": "**The AI anchor, but a laggard today (+0.5%) fading to its day low.** NVDA sits near its 20-day support after leading the group lower last week. We hold the paper position (90 sh) with a wide $186 GTC stop; it's the #2 live redeploy candidate behind PLTR if the leader gets too extended.",
-      "hold_reason": "The AI-chip bellwether — we hold 90 shares in paper as the quality anchor of the book. It's just resting on its 20-day line with an AMD share-gain story hanging over it, so it's quiet but not broken. We keep it on a wide stop; a clean break of $186 or a bad read-through from this week's chip earnings gets us out.",
-      "size": "$18.3k paper (90 sh)",
-      "size_pct": "~20% paper",
-      "size_note": "held; #2 live redeploy candidate - Nebius stake + Kimi memory read-through",
-      "plan_usd": "secondary live redeploy vs PLTR",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "verdict": "buy",
+      "verdict_label": "Buy - live",
+      "chg_pct": 1.48,
+      "thesis": "**The non-extended AI leader - now the funded LIVE pick.** While AMD/INTC ran +6-7%, NVDA is only +1.4% (it lagged = a cheaper entry in the group leader), took a stake in neocloud Nebius, and trades at its cheapest forward multiple in ~a decade. Staged a live BUY (3 sh ~$206, $186 GTC stop below the late-June $192 base) + hold 90 sh paper. No earnings binary until late Aug.",
+      "hold_reason": "The AI-chip bellwether and the theme leader that's actually bid this week. We hold 90 sh in paper and just staged a live buy - it lagged today's +6% chip pop, so we get the leader at a non-extended price with a fresh Nebius catalyst. A clean break of $186 or a bad read-through from this week's GOOGL/TSLA/INTC prints gets us out.",
+      "size": "$18.5k paper (90 sh) + live ticket 3 sh",
+      "size_pct": "~21% paper",
+      "size_note": "LIVE pick - ticket 2026-07-21-1 (3 sh, $186 stop); +90 sh paper",
+      "plan_usd": "$620 live (3 sh) on approve",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 2,
+        "target_pct": 2.8,
         "confidence": "med",
-        "basis": "Nebius stake; the muted confirm tell",
-        "pop_rank": 5
+        "basis": "non-extended AI leader; Nebius stake; room to catch up",
+        "pop_rank": 1
       },
-      "price": 206.03,
+      "price": 206.34,
       "spark": [
         215.09,
         214.53,
@@ -752,7 +755,7 @@
         197.54,
         194.51,
         195.59,
-        206.03
+        206.34
       ]
     },
     {
@@ -768,13 +771,13 @@
       "size_pct": "-",
       "size_note": "watch into 7/29 earnings",
       "plan_usd": "none yet - gated",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 3,
+        "target_pct": 3.5,
         "confidence": "med",
-        "basis": "AI data-center power/cooling bid",
-        "pop_rank": 8
+        "basis": "AI-power / datacenter-cooling bid",
+        "pop_rank": 7
       },
       "price": 301.35,
       "spark": [
@@ -816,22 +819,22 @@
       "theme": "3x semis (GATED)",
       "verdict": "avoid",
       "verdict_label": "Avoid (gated)",
-      "chg_pct": 14.84,
+      "chg_pct": 15.19,
       "thesis": "**Biggest raw mover in the group but GATED - correctly skipped.** SOXL opened +10% and round-tripped to +3.7% under the 20-day, the textbook bull-trap the regime gate exists to dodge (ASML/TSMC last week). No 3x-index/semi longs while QQQ < its 20-day. Re-lever only on a $716 reclaim on volume.",
       "hold_reason": "",
       "size": "-",
       "size_pct": "-",
       "size_note": "gated - no 3x longs under the 20-day",
       "plan_usd": "none until QQQ reclaims $716",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "tactical",
       "projection": {
-        "target_pct": 9,
+        "target_pct": 11,
         "confidence": "low",
-        "basis": "3x semis rips but gated + faded 5 sessions",
-        "pop_rank": 3
+        "basis": "3x semis ripping but gated + fade-prone",
+        "pop_rank": 5
       },
-      "price": 157.17,
+      "price": 157.65,
       "spark": [
         190.41,
         225.64,
@@ -862,7 +865,7 @@
         217.7,
         181.54,
         194.35,
-        157.17
+        157.65
       ]
     },
     {
@@ -871,22 +874,22 @@
       "theme": "3x QQQ (GATED)",
       "verdict": "avoid",
       "verdict_label": "Avoid (gated)",
-      "chg_pct": 5.25,
+      "chg_pct": 5.3,
       "thesis": "**The benchmark, and gated.** TQQQ +1.3% but QQQ is ~2.5% under its 20-day, so no 3x-index longs - this is the exact leverage that drove the -14.6% week. The buy-and-hold-TQQQ line is what we measure alpha against; we re-lever only on a confirmed $716 reclaim.",
       "hold_reason": "",
       "size": "-",
       "size_pct": "-",
       "size_note": "gated benchmark",
       "plan_usd": "none until QQQ reclaims $716",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "tactical",
       "projection": {
-        "target_pct": 3.5,
+        "target_pct": 4.5,
         "confidence": "low",
-        "basis": "3x QQQ gated under the 20-day",
-        "pop_rank": 7
+        "basis": "3x Nasdaq, gated under the 20-day",
+        "pop_rank": 9
       },
-      "price": 71.18,
+      "price": 71.22,
       "spark": [
         77.62,
         81.77,
@@ -917,7 +920,7 @@
         77.49,
         73.3,
         76.25,
-        71.18
+        71.22
       ]
     },
     {
@@ -926,22 +929,22 @@
       "theme": "Nuclear power / defensive",
       "verdict": "hold",
       "verdict_label": "Hold",
-      "chg_pct": 3.02,
+      "chg_pct": 2.96,
       "thesis": "**The steady defensive - +0.4%, doing its job.** CEG is the power/nuclear ballast (paper, 16 sh, $236 stop): low-beta, positive on a fady tech day, part of the AI-power demand story without the chip whipsaw. We hold it as the book's stabilizer.",
       "hold_reason": "Constellation is our AI-power play — the nuclear/utility names powering data centers have been the steady bid while chips get sold. Small position, held green through the risk-off. We keep it as defensive ballast and would only cut it if the power-demand theme cracks or it loses its stop.",
       "size": "$4.1k paper (16 sh)",
       "size_pct": "~5% paper",
       "size_note": "defensive ballast, held",
       "plan_usd": "hold",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "swing",
       "projection": {
         "target_pct": 2.5,
         "confidence": "med",
-        "basis": "nuclear/defensive, owned in paper",
-        "pop_rank": 13
+        "basis": "AI-power utility, steady bid",
+        "pop_rank": 10
       },
-      "price": 261.17,
+      "price": 261.02,
       "spark": [
         294,
         301.41,
@@ -972,7 +975,7 @@
         236.56,
         239.2,
         245.9,
-        261.17
+        261.02
       ]
     },
     {
@@ -981,22 +984,22 @@
       "theme": "3x mega-cap (GATED)",
       "verdict": "avoid",
       "verdict_label": "Avoid (gated)",
-      "chg_pct": 2.25,
+      "chg_pct": 2.51,
       "thesis": "**3x FANG, gated.** FNGU +2.1% but it's leveraged mega-cap into a sub-20-day tape - we sold ours 7/17 after the overnight gap-through taught the lesson. No 3x longs until the regime flips.",
       "hold_reason": "",
       "size": "-",
       "size_pct": "-",
       "size_note": "gated - sold 7/17",
       "plan_usd": "none until QQQ reclaims $716",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "tactical",
       "projection": {
         "target_pct": 3,
         "confidence": "low",
-        "basis": "3x mega-cap gated under the 20-day",
-        "pop_rank": 14
+        "basis": "3x FANG+, gated; mega-cap lagging the chip rip",
+        "pop_rank": 13
       },
-      "price": 27.68,
+      "price": 27.75,
       "spark": [
         28.69,
         31.13,
@@ -1027,7 +1030,7 @@
         26.66,
         26.47,
         27.36,
-        27.68
+        27.75
       ]
     },
     {
@@ -1036,22 +1039,22 @@
       "theme": "Quantum",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 4.21,
+      "chg_pct": 4.15,
       "thesis": "**Quantum, flat today (+0.1%).** IONQ is a high-beta speculative name that's gone quiet - no momentum, no catalyst here. Watch only; the quantum trade needs the whole risk-on tape to turn.",
       "hold_reason": "",
       "size": "-",
       "size_pct": "-",
       "size_note": "watch; no momentum",
       "plan_usd": "none",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "tactical",
       "projection": {
-        "target_pct": 3.5,
+        "target_pct": 4,
         "confidence": "low",
-        "basis": "quantum spec riding risk-on",
-        "pop_rank": 9
+        "basis": "quantum beta rides the risk-on tape",
+        "pop_rank": 8
       },
-      "price": 35.68,
+      "price": 35.66,
       "spark": [
         63.58,
         63.59,
@@ -1082,7 +1085,7 @@
         51.44,
         49.16,
         48.89,
-        35.68
+        35.66
       ]
     },
     {
@@ -1091,22 +1094,22 @@
       "theme": "Space / launch",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 4.75,
+      "chg_pct": 4.88,
       "thesis": "**Won a spot in the ~$17B U.S. NSSL Phase 3 Lane 1 launch pool today (with SpaceX, ULA, Blue Origin) — a real medium-term catalyst — yet still closed −2.8%, selling the news in a risk-off tape.** That fade is the tell: a huge award couldn't hold a bid with QQQ under its 20-day. The Neutron-qualification story is a genuine upgrade to the space thesis, but the price action says wait — watch for RKLB to base above ~$65 and reclaim Friday's $70.6 high before an entry, not buy the knife into midweek mega-cap earnings.",
       "hold_reason": "",
       "size": "-",
       "size_pct": "-",
       "size_note": "watch; won $17B NSSL launch award but faded on it",
       "plan_usd": "none — wait for a base + reclaim over ~$70.6",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 3,
-        "confidence": "low",
-        "basis": "space momentum, steady",
-        "pop_rank": 10
+        "target_pct": 4,
+        "confidence": "med",
+        "basis": "space/defense momentum reclaiming its range",
+        "pop_rank": 6
       },
-      "price": 68.89,
+      "price": 68.97,
       "spark": [
         135.74,
         143.24,
@@ -1137,7 +1140,7 @@
         100.02,
         100.5,
         93.14,
-        68.89
+        68.97
       ]
     },
     {
@@ -1146,22 +1149,22 @@
       "theme": "Inverse hedge (paper)",
       "verdict": "hold",
       "verdict_label": "Hold (hedge)",
-      "chg_pct": -5.22,
+      "chg_pct": -5.29,
       "thesis": "**The losing hedge, trimmed hard - it was the book's single biggest drag on a green tape.** SQQQ (-3.5% today, 3x inverse Nasdaq) bled every green session this week while QQQ ground up. Cut 210 of 310 sh @ ~$41.18 (~-$244 realized) and kept 100 sh as a reduced hedge into Wed's GOOGL/TSLA/INTC earnings wall - the regime gate is still shut (QQQ under its 20-day) so a small short stays as insurance, but camping the full size while the market rose was lazy money. $38 GTC stop on the residual.",
       "hold_reason": "This is our downside insurance - it goes up when the Nasdaq falls. It's been losing money all week because the market kept grinding higher, so we cut most of it today and kept a small piece into Wednesday's big earnings (Google, Tesla, Intel). If the market keeps ripping the $38 stop takes us out; if those prints disappoint, the residual pays off.",
       "size": "$4.1k paper (100 sh, trimmed from 310)",
       "size_pct": "~5% paper",
       "size_note": "residual 100 sh (trimmed from 310); -3% today, the book's biggest day drag; $38 GTC stop; cut fully on a QQQ $716 reclaim",
       "plan_usd": "residual 100 sh hedge into Wed's earnings wall; cut fully if QQQ reclaims $716",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "tactical",
       "projection": {
-        "target_pct": -3.5,
-        "confidence": "low",
-        "basis": "inverse hedge; pops only if chips fade",
+        "target_pct": -5,
+        "confidence": "med",
+        "basis": "inverse bleeds on green tape; held as Wed-earnings hedge",
         "pop_rank": 15
       },
-      "price": 40.46,
+      "price": 40.43,
       "spark": [
         40.85,
         38.71,
@@ -1192,7 +1195,7 @@
         37.89,
         39.84,
         38.32,
-        40.46
+        40.43
       ]
     },
     {
@@ -1201,22 +1204,22 @@
       "theme": "High-beta / earnings",
       "verdict": "avoid",
       "verdict_label": "Avoid",
-      "chg_pct": 3.36,
+      "chg_pct": 3.31,
       "thesis": "**Weak into Wednesday's print, -2.6% and losing $380.** TSLA is the softest mega-cap today, rolling over ahead of earnings - a binary event we don't want to be long or short into without an edge. Avoid; revisit after the report.",
       "hold_reason": "",
       "size": "-",
       "size_pct": "-",
       "size_note": "avoid into Wed earnings",
       "plan_usd": "none - binary event",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "swing",
       "projection": {
-        "target_pct": 2.5,
+        "target_pct": 3.5,
         "confidence": "low",
-        "basis": "bounce into Wed earnings (binary)",
+        "basis": "up into Wed earnings - binary tomorrow",
         "pop_rank": 11
       },
-      "price": 382.08,
+      "price": 381.88,
       "spark": [
         425.95,
         433.53,
@@ -1247,7 +1250,7 @@
         425.36,
         392.82,
         419.79,
-        382.08
+        381.88
       ]
     },
     {
@@ -1256,22 +1259,22 @@
       "theme": "Fuel cells / data-center power",
       "verdict": "avoid",
       "verdict_label": "Cut",
-      "chg_pct": 12.23,
+      "chg_pct": 12.45,
       "thesis": "**CUT - the week-long live camp is closed.** Adam tapped the sell at 2:57pm and it FILLED (3 sh @ $203.03, ~-$59 realized on the $222.64 top-tick entry). The exit was on a broken chart AND a fresh, verified fundamental crack: TD Cowen (Osborne, Hold, $235 PT) flagged meaningful delays at BE's two largest data-center projects (Oracle Project Jupiter's air permit + FERC-stuck pipeline; AEP Cheyenne slipped 2yrs) - hitting the exact growth story that was the only reason to hold into 7/28. BE -5.4% to fresh 90-day lows while FuelCell rallied. Freed $810 is rotating into PLTR.",
       "hold_reason": "We're OUT — cut all 3 live shares @ $203.03 on the TD Cowen data-center-delay note (Oracle Jupiter permit stuck + AEP Cheyenne slipped 2yrs); ~-$59 realized. No longer held. Watching only: broken thesis into 7/28 earnings — it would need a real base plus a catalyst reversal to look at again.",
       "size": "flat (cut today)",
       "size_pct": "0%",
       "size_note": "cut all 3 live sh @ $203.03 (-$59 realized)",
       "plan_usd": "none — cut; watching only",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "exit",
       "projection": {
-        "target_pct": 9,
+        "target_pct": 8,
         "confidence": "low",
-        "basis": "dead-cat bounce off TD Cowen flush, no upgrade",
-        "pop_rank": 6
+        "basis": "dead-cat bounce off the TD Cowen flush; we cut it",
+        "pop_rank": 12
       },
-      "price": 221.4,
+      "price": 221.85,
       "spark": [
         302.59,
         302.14,
@@ -1302,7 +1305,7 @@
         289.38,
         271.02,
         294.97,
-        221.4
+        221.85
       ]
     },
     {
@@ -1311,22 +1314,22 @@
       "theme": "Nuclear-for-AI / SMR",
       "verdict": "watch",
       "verdict_label": "Watch",
-      "chg_pct": 6.97,
+      "chg_pct": 6.66,
       "thesis": "**The day's best watchlist mover (+3.2%) - nuclear-for-AI momentum bucking the risk-off tape.** SMR closed $7.96 as small-modular-reactor names caught a bid on the AI-power demand theme while chips faded. A high-beta ~$8 spec name that's had a strong run, so the risk is it's extended into a weak tape ahead of heavy earnings week. Not a chase up here - watch for a continuation setup or a pullback to support, not the HOD.",
       "hold_reason": "Not held in either book - it's on the board because it was today's strongest watchlist name on the nuclear-for-AI theme. We'd only take it on a clean continuation or a pullback-to-support entry, never at the extended high into a risk-off tape. Watching whether the nuclear-AI bid holds or fades with the rest of high-beta.",
       "size": "-",
       "size_pct": "-",
       "size_note": "watch-only; not held either book",
       "plan_usd": "-",
-      "updated": "2026-07-21T10:54:00-04:00",
+      "updated": "2026-07-21T11:18:00-04:00",
       "horizon": "watch",
       "projection": {
         "target_pct": 6,
         "confidence": "low",
-        "basis": "nuclear-for-AI spec, extended",
+        "basis": "nuclear/SMR momentum on the AI-power bid; thin float",
         "pop_rank": 4
       },
-      "price": 8.52,
+      "price": 8.49,
       "spark": [
         11.39,
         12.23,
@@ -1357,11 +1360,26 @@
         10.16,
         9.76,
         9.6,
-        8.52
+        8.49
       ]
     }
   ],
   "feed": [
+    {
+      "ts": "2026-07-21T11:18:00-04:00",
+      "type": "trade",
+      "side": "buy",
+      "status": "pending",
+      "symbol": "NVDA",
+      "detail": "3 @ ~$206",
+      "reaction": "rotate",
+      "text": "Staged a LIVE buy on NVDA (3 sh, $186 stop) - the non-extended AI leader (+1.4% vs the +6-14% AMD/INTC/SOXL that are gated or extended into earnings). Approve = fills now; gets live out of a 6th day of cash into the theme that's running."
+    },
+    {
+      "ts": "2026-07-21T11:17:00-04:00",
+      "type": "activity",
+      "text": "Retired the live PLTR buy ticket (2026-07-20-3): PLTR is red -1.1% while the AI-infra/chip bid runs - lagging the theme, not leading it. Rotated the live idea into NVDA, the non-extended leader of the group that's bid."
+    },
     {
       "ts": "2026-07-21T10:54:00-04:00",
       "type": "activity",
@@ -1616,20 +1634,15 @@
       "ts": "2026-07-20T10:45:00-04:00",
       "type": "activity",
       "text": "10:45am RTH - CUT BE both books (paper sold 40 @ $196.68; live 3-sh sell ticket 2026-07-20-1 staged). It puked to new 90-day lows (-8.5%) on a GREEN semi day - the Hunterbrook scandium short + supply-chain overhang isn't a dip to buy into binary 7/28 earnings. Relief bounce fading (QQQ $701, rolled off $706, still under its 20-day) - held the 5 other paper names + SQQQ hedge, all GTC-stopped, zero naked. ~$795 live + ~53% paper cash dry, armed for a $716 reclaim (->NVDA) or a break of $699 (->small live SQQQ). Day-trade 0/3."
-    },
-    {
-      "ts": "2026-07-20T10:15:00-04:00",
-      "type": "activity",
-      "text": "10:15am RTH - the 9:45 fork is resolving toward FADE: semis have given back half their pop (SOXL +9.6%->+4.4%, NVDA +2.2%->+1.5%), QQQ ~$700 never pressed its ~$716 20-day, so the 'reclaim -> buy NVDA' trigger did NOT fire. Held both books light; the paper SQQQ hedge is recovering (-3.8%->-1.9%) as the bounce fades. BE is the drag - gapped to $219, puked to ~$200 (-6.6%) on the short overhang; held its wide $188 stop, flagged #1 rotation on a bounce. 7/7 GTC stops live, zero naked, queue clean, no fills since Friday, no tickets. $201 live + ~44% paper cash dry, armed both ways. Day-trade budget 0/3."
-    },
-    {
-      "ts": "2026-07-20T09:45:00-04:00",
-      "type": "activity",
-      "text": "9:45am post-open reconcile — held both books into a HOT, semi-led open (SOXL +9.6%, AMD +5.1%, NVDA +2.2%, SPY +0.7%). QQQ ~$704 is still ~2% under its $718 20-day = a strong bounce, not the reclaim, so per the gate I did NOT chase chips or cut the SQQQ hedge 14 min in. Both books reconciled off the broker: 7/7 GTC stops live (live BE $188; paper BE/CEG/NVDA/PLTR/RKLB/SQQQ), zero naked, queue clean, no fills since Friday, no tickets. Live $201 + ~43% paper cash dry, armed to deploy on a confirmed reclaim. Day-trade budget 0/3."
     }
   ],
-  "latest_recap": "Pre-open 7/21 (~15 min to bell) - chip pop holding (SOXL +13%, INTC +5.3%, AMD +3.8%) but gate still SHUT (QQQ ~$705 vs $716 20-day, NVDA only +1.4%), so no 3x chase. Funded PLTR live buy staged for the open (Monday's cash-locked-D fix). Live flat $810 cash; paper 4/4 GTC-stopped, ~45% powder for the open fork.",
+  "latest_recap": "11:18am 7/21 - Upgraded the LIVE ticket PLTR->NVDA (3 sh ~$206, $186 stop): the AI-infra/chip bid is the day's leadership (SOX +3.7%, NVDA-Nebius stake) and NVDA is the non-extended leader vs the +6-14% AMD/INTC/SOXL that are gated or extended into earnings. Gate shut day 6 (QQQ $708 < $716). Paper unchanged, 5/5 stopped, owns pop_rank-2 AMD + the SQQQ hedge into Wed GOOGL/TSLA. Live flat $810 cash awaiting the NVDA tap.",
   "activity": [
+    {
+      "ts": "2026-07-21T11:18:00-04:00",
+      "kind": "engine",
+      "title": "Tue 7/21 ~11:18am ET (RTH, market open). Upgraded the LIVE ticket PLTR->NVDA (3 sh ~$206, $186 GTC stop) - the non-extended AI leader in a 2nd-day chip rally (SOX +3.7%), vs chasing the gated 3x (SOXL +14.6%) or the earnings-extended INTC +7.3%/AMD +5.8%. Gate shut day 6 (QQQ $708 < $716 20-day). Paper unchanged, 5/5 GTC-stopped ($89.48k); live flat $810 cash awaiting the tap. Both books zero-naked."
+    },
     {
       "ts": "2026-07-21T08:19:00-04:00",
       "kind": "engine",
@@ -1753,6 +1766,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-21T11:18:00-04:00",
+      "text": "11:18am - upgraded the LIVE ticket from the lagging PLTR to NVDA (3 sh ~$206, $186 stop, 0/3 day-trades used): today's leadership is the AI-infra/chip bid (SOX +3.7%, 2nd straight day; NVDA took a stake in neocloud Nebius) and NVDA is the NON-extended leader (+1.4% vs AMD +5.8% / INTC +7.3%), cheapest multiple in ~a decade, no earnings binary this week - a cleaner 'own the theme' entry than chasing the +6-14% names into their prints or holding red PLTR. Gate still SHUT (QQQ $708, -1.1% under its $716 20-day, day 6) so no 3x; holding the paper SQQQ hedge into Wed's GOOGL/TSLA earnings, paper otherwise unchanged (owns pop_rank-2 AMD, 5/5 stopped). Capture still ~0% with the biggest movers gated/extended, but the live setup quality is right and it's staged early, not at 3pm. Approve = NVDA fills now.",
+      "hype": "Swapped the live ticket into NVDA - it's the cheap, un-extended one in the chip rally instead of the names that already ran +6-14%. Keeping the little hedge on until Google and Tesla report Wednesday."
+    },
+    {
       "ts": "2026-07-21T10:54:00-04:00",
       "text": "10:54am management run - refreshed the LIVE PLTR buy ticket in place (5 sh, $122 stop, ~$134 marketable) so it's current and pings fresh; it's the 1x RS leader, red today (-0.8%) = a cheaper entry, not a broken thesis, and I'd rather own it than chase INTC +6% / SOXL +12% / AMD +5% into Wed's GOOGL/TSLA and Thu's INTC prints. Gate shut day 6 (QQQ $705.6 still ~1.5% under its $716 20-day), so no 3x chase - SOXL's +12% is the exact setup that's faded 5 sessions straight. Paper holds AMD (owned the pop_rank-1 chip leader since the open) + NVDA/CEG/PLTR + the SQQQ hedge into the earnings wall; I cut the hedge and add the 1x leader only on a QQQ $716 reclaim. Honest capture risk: if the chip bid holds today, our books trail the extended names. Day-trade 0/3.",
       "hype": "Refreshed the live PLTR ticket so it's current - the leader's red today, which is a cheaper entry, not a reason to bail. Still not chasing the chip pop that's faded 5 days running right into this week's big earnings."
@@ -1821,27 +1839,22 @@
       "ts": "2026-07-21T04:12:00-04:00",
       "text": "4:12am ET pre-market — regime still GATED (day 6): QQQ closed $696 vs its 20-day ~$716 (2.8% under), so no leveraged-index longs (TQQQ/SOXL/FNGU stay off). It's chip-specific though — SPY sits near records $742 and futures are GREEN (Nasdaq +0.3%, TSLA +1%) into a positioning day before Wed's GOOGL/TSLA/TXN and Thu's INTC. The PLTR open-buy (ticket 2026-07-20-3, 5 sh, $122 stop) is staged to fill at the 9:30 open — the direct fix for yesterday's cash-locked D. Both books reconcile clean at the broker: LIVE flat $810 cash, PAPER 4/4 GTC-stopped (PLTR/NVDA/CEG/SQQQ), zero naked. Paper fork staged for the open: QQQ reclaims $716 → cut the SQQQ hedge + redeploy; loses $695 → let it run.",
       "hype": "Still can't touch the leveraged stuff (QQQ under its line), but futures are green and it's really just chips that are weak. PLTR's set to buy right at the open — the fix for yesterday's miss."
-    },
-    {
-      "ts": "2026-07-20T20:43:00-04:00",
-      "text": "8:43pm ET — quiet close-out, nothing material since 8:11. QQQ settled $696 at its LOW, ~2.8% under its 20-day ($716.1 computed) → leverage gate SHUT day 5, so the paper SQQQ hedge stays on and no blind off-hours adds. Both books reconcile clean at the broker: LIVE flat ($810.32 cash, nothing naked); PAPER CEG/NVDA/PLTR/SQQQ all GTC-stopped ($236/$186/$125/$38). No new after-hours catalyst on our names — NVDA's 9.3% Nebius stake is minor, and AMD's MSFT-Helios/Advancing-AI story faded intraday (+5%→+1.7%), the same fade-under-20-day pattern I'm gated against chasing. Refreshed all 15 projections for 7/21 (PLTR still pop_rank 1; AMD/INTC bumped on their catalysts). The fix for today's D is queued: the PLTR open-buy (2026-07-20-3, 5 sh, $122 stop, approve-anytime → fills at the open) puts LIVE in the RS leader EARLY. At the 9:30 open I react to the QQQ fork — reclaims/holds $716 → cut the paper hedge + redeploy the ~$41k paper powder + PLTR fills; stays under $696 → let the hedge run, weigh a small live SQQQ. Day-trade budget 0/3.",
-      "hype": "Quiet night — nothing changed, both books clean and stopped. PLTR's locked for the open so we finally own the leader early instead of chasing it late; if the Nasdaq reclaims $716 tomorrow I cut the hedge and put the paper cash back to work."
     }
   ],
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 71.18,
-    "tqqq_pct": -7.44
+    "tqqq": 71.22,
+    "tqqq_pct": -7.39
   },
   "status": [
     {
       "session": "Open",
-      "text": "Bought AMD, cut SQQQ hedge"
+      "text": "Bought AMD, trimmed SQQQ hedge"
     },
     {
-      "session": "Late morning",
-      "text": "Refreshed live PLTR buy ticket"
+      "session": "Late AM",
+      "text": "Upgraded live ticket PLTR->NVDA"
     },
     {
       "session": "Regime",
@@ -2296,6 +2309,10 @@
       ],
       [
         1784647260000,
+        810.32
+      ],
+      [
+        1784647320000,
         810.32
       ]
     ],
