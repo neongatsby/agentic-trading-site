@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-21T12:13:56.342Z",
+  "generated_at": "2026-07-21T12:15:03.247Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 89232.86,
+    "equity": 89242.42,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88232.86,
-    "day_pnl": -384.92,
+    "total_pnl": 88242.42,
+    "day_pnl": -375.36,
     "positions": [
       {
         "symbol": "CEG",
@@ -20,27 +20,27 @@
         "symbol": "NVDA",
         "qty": "90.0000",
         "entry": 209.23,
-        "current": 206.14,
-        "pl": -278.42,
-        "plpc": -1.48,
+        "current": 206.12,
+        "pl": -280,
+        "plpc": -1.49,
         "thesis": ""
       },
       {
         "symbol": "PLTR",
         "qty": "100.0000",
         "entry": 135.75,
-        "current": 133.6,
-        "pl": -215.5,
-        "plpc": -1.59,
+        "current": 133.53,
+        "pl": -222.5,
+        "plpc": -1.64,
         "thesis": ""
       },
       {
         "symbol": "SQQQ",
         "qty": "310.0000",
         "entry": 42.36,
-        "current": 40.9,
-        "pl": -452.86,
-        "plpc": -3.45,
+        "current": 40.96,
+        "pl": -434.72,
+        "plpc": -3.31,
         "thesis": ""
       }
     ],
@@ -350,6 +350,10 @@
       },
       {
         "t": 1784635800000,
+        "v": 810.32
+      },
+      {
+        "t": 1784636100000,
         "v": 810.32
       }
     ]
@@ -985,7 +989,7 @@
       "theme": "Inverse hedge (paper)",
       "verdict": "hold",
       "verdict_label": "Hold (hedge)",
-      "chg_pct": -4.28,
+      "chg_pct": -4.33,
       "thesis": "**The regime hedge, and today's deliberate drag.** SQQQ (paper, 310 sh, $38 stop) is our short-QQQ expression while QQQ sits under its 20-day - it costs on a green bounce day like today but pays if $698 breaks. We keep it until QQQ resolves: cut it on a $716 reclaim, press it on a clean $698 break.",
       "hold_reason": "This is a hedge, not a conviction long — it's short the Nasdaq, so it pays when tech falls. We put it on because QQQ is under its 20-day with coin-flip chip earnings this week. It's a rotation candidate: if QQQ reclaims $716 at the open we cut it and redeploy; if the tape rolls over we let it run.",
       "size": "$13.1k paper (310 sh)",
@@ -1000,7 +1004,7 @@
         "basis": "inverse falls on the +1.4% gap - deliberate hedge cost",
         "pop_rank": 14
       },
-      "price": 40.94,
+      "price": 40.92,
       "spark": [
         40.85,
         38.71,
@@ -1031,7 +1035,7 @@
         37.89,
         39.84,
         38.32,
-        40.94
+        40.92
       ]
     },
     {
