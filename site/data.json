@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-22T13:20:23.700Z",
+  "generated_at": "2026-07-22T13:21:29.361Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 89220.61,
+    "equity": 89173.03,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88220.61,
-    "day_pnl": -755.87,
+    "total_pnl": 88173.03,
+    "day_pnl": -803.45,
     "positions": [
       {
         "symbol": "AMD",
         "qty": "30.0000",
         "entry": 527.8,
-        "current": 530.7,
-        "pl": 86.94,
-        "plpc": 0.55,
+        "current": 530.15,
+        "pl": 70.37,
+        "plpc": 0.44,
         "thesis": ""
       },
       {
@@ -30,7 +30,7 @@
         "qty": "140.0000",
         "entry": 208.15,
         "current": 205.5,
-        "pl": -370.8,
+        "pl": -370.81,
         "plpc": -1.27,
         "thesis": ""
       },
@@ -38,18 +38,18 @@
         "symbol": "OKLO",
         "qty": "200.0000",
         "entry": 43.92,
-        "current": 45.14,
-        "pl": 244,
-        "plpc": 2.78,
+        "current": 44.95,
+        "pl": 206,
+        "plpc": 2.34,
         "thesis": ""
       },
       {
         "symbol": "SMR",
         "qty": "700.0000",
         "entry": 8.63,
-        "current": 8.72,
-        "pl": 66,
-        "plpc": 1.09,
+        "current": 8.73,
+        "pl": 73,
+        "plpc": 1.21,
         "thesis": ""
       },
       {
@@ -438,16 +438,16 @@
   },
   "pending_tickets": [
     {
-      "id": "2026-07-21-1",
-      "symbol": "NVDA",
+      "id": "2026-07-22-1",
+      "symbol": "OKLO",
       "side": "buy",
-      "size": "$633",
-      "qty": 3,
-      "entry": "~$207 - approve ANYTIME -> fills at TODAY's (7/22) open. Multi-day swing, PDT-free (0/3 day-trades used). Marketable-limit $211 gives a gap-up cushion; taps before 4pm fill immediately.",
+      "size": "$720",
+      "qty": 16,
+      "entry": "~$45 - approve ANYTIME -> fills at TODAY's (7/22) 9:30 open. Multi-day swing, PDT-free (0/3 day-trades). Marketable-limit $47 gives a gap-up cushion; a tap before 4pm fills immediately.",
       "trigger": null,
-      "stop": 186,
-      "bracket": "stop $186 GTC (below the late-June $192 base, -10.2%)",
-      "thesis": "Ends a 6th day of live cash by owning the AI-infra/semis leader via the NON-extended name. NVDA reclaimed its 20-day (~$201.7), sits mid-range, is -1% pre-mkt (cheaper entry), holds a ~$5B Nebius stake + is named in the DOE AI-energy program, and has NO own earnings binary this week (GOOGL/TSLA print tonight, NVDA doesn't). Wide $186 stop. This IS the gate re-entry - fires at the open."
+      "stop": 39,
+      "bracket": "stop $39 GTC (below this week's $40-41 base / the 7/17 $39.53 low, -13%)",
+      "thesis": "Ends the live cash camp by owning the watchlist's ACTUAL RS leader (pop_rank 1), not the laggard. OKLO is the lone green name pre-open (+2%) on a confirmed, DATED catalyst - the Trump/DOE $200M nuclear-for-AI program (OKLO + X-Energy), details possibly at a DOE AI-energy summit TODAY. Base reclaim off ~$40, no earnings until Aug 18, insulated from tonight's GOOGL/TSLA binary. Wide $39 stop."
     }
   ],
   "coverage": [
@@ -456,22 +456,22 @@
       "name": "NVIDIA",
       "theme": "AI chips",
       "verdict": "hold",
-      "verdict_label": "Hold + live buy (staged for open)",
-      "thesis": "**The group's biggest laggard on the 2-day rip (+1.9% vs MU/AMD +8-12%) - the catch-up name, -1.3% pre-open into a cheaper re-entry.** Micron's HBM blowout reads straight through to NVDA GPUs; least-extended AI leader with NO own earnings binary this week (GOOGL/TSLA print tonight, NVDA late-Aug). $186 stop under the late-June base. Also the live swing - armed to fire at today's open.",
-      "size": "$28.9k (140 sh)",
-      "size_pct": 32.2,
-      "size_note": "Largest paper position; also the live swing pick",
-      "plan_usd": "$620 live / held paper",
+      "verdict_label": "Hold - paper core (laggard)",
+      "thesis": "**The group's biggest laggard on the 2-day rip (+1.9% vs MU/AMD +8-12%), -0.9% pre-open - held in paper, no longer the live pick.** We pivoted the live swing to OKLO (the green RS leader on a dated catalyst) rather than own the laggard into tonight's GOOGL/TSLA capex binary, which NVDA reads through to. Still a solid paper core (140 sh, $186 stop); no own earnings until late Aug.",
+      "size": "$28.8k (140 sh)",
+      "size_pct": 32.3,
+      "size_note": "Largest paper position - the anchor to trim at the open",
+      "plan_usd": "held paper (trim toward the movers)",
       "chg_pct": 0.96,
       "projection": {
         "target_pct": -0.5,
         "confidence": "med",
-        "basis": "laggard re-entry; chips fading into tonight's binary",
-        "pop_rank": 4
+        "basis": "laggard; AI-capex read-through to tonight's binary",
+        "pop_rank": 5
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "swing (multi-day)",
-      "hold_reason": "Our core AI position and the group's laggard - 140 sh from ~$208 (about flat), -1.3% pre-open. The catalyst is real (SEC filing: NVDA lifted its Nebius stake to 9.3%, ~$5B; Micron's HBM blowout reads through to NVDA GPUs), so we read it as the catch-up name, not a broken one. It's also the live swing we're trying to own, armed to fill at today's open. The $186 stop is our line if the whole AI trade rolls over.",
+      "hold_reason": "Our biggest paper position and the group's laggard - 140 sh from ~$208 (about flat), -0.9% pre-open. We read it as the catch-up name (Micron's HBM blowout reads through to NVDA GPUs), but at ~32% of the paper book it is the anchor we plan to trim at the open into the nuclear movers (the 'weight to the mover, not the anchor' lesson). No longer the live pick - we moved that to OKLO. The $186 stop is our line if the whole AI trade rolls over.",
       "price": 205.28,
       "spark": [
         214.53,
@@ -522,9 +522,9 @@
         "target_pct": -1.5,
         "confidence": "low",
         "basis": "giving back 2-day rip; event digested, Aug print ahead",
-        "pop_rank": 5
+        "pop_rank": 6
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "swing (multi-day)",
       "hold_reason": "Our best-owned leader - up ~8% on the 2-day semi rip, now giving back ~2% pre-open into its Advancing AI 2026 developer event (underway 7/22-23), which is the catalyst (earnings aren't until Aug 4, so no print risk this week). We hold 30 sh from ~$528, ~flat. Keeping the stop wide ($490) to ride the event rather than get shaken out on the give-back; we'd only sell if the whole AI trade rolls over.",
       "price": 529.73,
@@ -574,12 +574,12 @@
       "plan_usd": "held paper",
       "chg_pct": 9.55,
       "projection": {
-        "target_pct": 1,
+        "target_pct": 2.5,
         "confidence": "med",
-        "basis": "nuclear sympathy; small-cap RS ~flat pre-open",
+        "basis": "nuclear-for-AI sympathy on DOE summit day",
         "pop_rank": 2
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "swing (multi-day)",
       "hold_reason": "NuScale - small modular reactors, a pure play on powering AI datacenters. We built to 700 sh (~$8.63) as it led the nuclear group +9% Tuesday; roughly flat pre-open as chips fade. Volatile small-cap so the stop's wide at $7.50; watching whether the nuclear-for-AI bid follows through today on the DOE headline.",
       "price": 8.72,
@@ -627,16 +627,16 @@
       "size_pct": 0,
       "size_note": "Not held — too extended/pricey to chase at 2pm",
       "plan_usd": "$0 — express via AMD/NVDA",
-      "chg_pct": 7.87,
+      "chg_pct": 7.99,
       "projection": {
-        "target_pct": -4,
+        "target_pct": -3.5,
         "confidence": "med",
         "basis": "giving back the +12.8% rip; extended",
-        "pop_rank": 13
+        "pop_rank": 12
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "n/a",
-      "price": 934.23,
+      "price": 935.27,
       "spark": [
         896.71,
         928.16,
@@ -667,7 +667,7 @@
         975.26,
         981.8,
         939.66,
-        934.23
+        935.27
       ]
     },
     {
@@ -686,9 +686,9 @@
         "target_pct": -3,
         "confidence": "med",
         "basis": "spent parabolic after +16%; give-back risk",
-        "pop_rank": 12
+        "pop_rank": 11
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "n/a",
       "price": 226.5,
       "spark": [
@@ -729,22 +729,22 @@
       "name": "Oklo",
       "theme": "Nuclear / AI power",
       "verdict": "hold",
-      "verdict_label": "Hold — nuclear leg",
-      "thesis": "**FRESH CATALYST holding: OKLO in the Trump/DOE $200M program to fast-track nuclear reactors for AI data centers - the lone watchlist name GREEN pre-open (+1.7%) as semis give back.** 200 sh from $43.92, +2% and RS-leading; $39 stop. pop_rank 1.",
-      "size": "$8.8k (200 sh)",
-      "size_pct": 9.8,
-      "size_note": "Fresh starter this session",
-      "plan_usd": "held paper",
+      "verdict_label": "Hold + live buy (staged for open)",
+      "thesis": "**The watchlist's RS leader and the pop we called - the lone green name pre-open (+2%) while the 2-day semi rip gives back (SOXL -8%, MU -4%, NVDA -1%).** On a CONFIRMED, DATED catalyst: the Trump/DOE $200M program to fast-track nuclear reactors for AI data centers (OKLO + X-Energy, w/ MSFT/NVDA), with details possibly announced TODAY at a DOE AI-energy summit. Clean base reclaim off ~$40 (not extended), no earnings until Aug 18, insulated from tonight's GOOGL/TSLA binary. Now the LIVE swing (16 sh, $39 stop) - staged to fire at the open.",
+      "size": "$9.0k (200 sh)",
+      "size_pct": 10.1,
+      "size_note": "Paper leg + the live swing pick",
+      "plan_usd": "$720 live / held paper",
       "chg_pct": 8.36,
       "projection": {
-        "target_pct": 3,
+        "target_pct": 4,
         "confidence": "high",
-        "basis": "DOE nuclear-for-AI leader; green as chips fade",
+        "basis": "DOE AI-energy summit TODAY + base reclaim; RS leader",
         "pop_rank": 1
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "swing (multi-day)",
-      "hold_reason": "Nuclear/AI-power name we own (200 sh from ~$43.92, +2%, $39 stop). The catalyst is live: the Trump administration/DOE tapped OKLO + X-Energy for a $200M program to speed nuclear reactors for AI data centers. It's the lone watchlist name green pre-open (+1.7%) while semis give back - the relative-strength tell. Holding to let the government-backed theme run; the $39 stop is our line if the pop fades.",
+      "hold_reason": "Nuclear/AI-power name we own in paper (200 sh from ~$43.92, +2%, $39 stop) and are now buying LIVE. The catalyst is live and dated: the Trump/DOE $200M program to speed nuclear reactors for AI data centers (OKLO + X-Energy), with details possibly announced today at a DOE AI-energy summit. It's the lone watchlist name green pre-open while semis give back - the relative-strength tell. We'd sell if the summit disappoints and it loses the $41-42 base; the $39 stop is the line.",
       "price": 44.99,
       "spark": [
         68.71,
@@ -797,7 +797,7 @@
         "basis": "quantum high-beta; sells risk-off tape",
         "pop_rank": 10
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "n/a",
       "price": 15.32,
       "spark": [
@@ -849,9 +849,9 @@
         "target_pct": -2,
         "confidence": "low",
         "basis": "data-center power giving back on risk-off open",
-        "pop_rank": 6
+        "pop_rank": 7
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "swing (multi-day)",
       "hold_reason": "Vertiv - datacenter power and cooling, the 'picks-and-shovels' of the AI-capex build. 30 sh ~$305, giving back ~3% pre-open with the risk-off tape; less extended than the chips, which is why we like it. $282 stop; watching the datacenter-capex read-through from tonight's mega-cap earnings.",
       "price": 304.65,
@@ -906,7 +906,7 @@
         "basis": "quantum high-beta; cools risk-off",
         "pop_rank": 9
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "n/a",
       "price": 35.7,
       "spark": [
@@ -955,12 +955,12 @@
       "plan_usd": "$0",
       "chg_pct": 7.33,
       "projection": {
-        "target_pct": -1.5,
-        "confidence": "low",
-        "basis": "space beta; sells with risk-off tape",
-        "pop_rank": 7
+        "target_pct": 2.5,
+        "confidence": "med",
+        "basis": "space momentum green vs a red tape",
+        "pop_rank": 4
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "n/a",
       "price": 70.58,
       "spark": [
@@ -1009,12 +1009,12 @@
       "plan_usd": "held paper",
       "chg_pct": 3.47,
       "projection": {
-        "target_pct": 0.5,
+        "target_pct": 1,
         "confidence": "med",
-        "basis": "nuclear utility bid; steady into risk-off",
+        "basis": "nuclear utility bid; steady defensive leg",
         "pop_rank": 3
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "swing (multi-day)",
       "hold_reason": "Constellation - the nuclear utility literally signing deals to power AI datacenters. Longer-term hold, 16 sh from ~$261, ~flat (-0.8% pre-open). $236 stop. The steady, defensive leg of our nuclear-for-AI book; watching the AI-power-demand narrative re-rating the group.",
       "price": 262.31,
@@ -1069,7 +1069,7 @@
         "basis": "reports after close - the move is tonight",
         "pop_rank": 8
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "n/a",
       "price": 379.47,
       "spark": [
@@ -1118,12 +1118,12 @@
       "plan_usd": "$0 while gated",
       "chg_pct": 6.61,
       "projection": {
-        "target_pct": -5.5,
+        "target_pct": -6,
         "confidence": "med",
         "basis": "3x semis unwinding the rip; gate vindicated",
         "pop_rank": 14
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "n/a",
       "price": 145.91,
       "spark": [
@@ -1172,12 +1172,12 @@
       "plan_usd": "$8–16k on a confirmed reclaim",
       "chg_pct": 2.32,
       "projection": {
-        "target_pct": -2.7,
+        "target_pct": -3,
         "confidence": "low",
         "basis": "3x Nasdaq powder; awaits 20-day reclaim",
-        "pop_rank": 11
+        "pop_rank": 13
       },
-      "updated": "2026-07-22T08:43:00-04:00",
+      "updated": "2026-07-22T09:18:00-04:00",
       "horizon": "n/a",
       "price": 69.2,
       "spark": [
@@ -1215,6 +1215,11 @@
     }
   ],
   "feed": [
+    {
+      "type": "activity",
+      "ts": "2026-07-22T09:18:00-04:00",
+      "text": "9:18a pre-market (~12 min to open). PIVOTED the live swing: retired the NVDA laggard ticket and staged OKLO 2026-07-22-1 (16 sh, marketable-limit $47, $39 GTC stop) to fire at the 9:30 open - approve anytime, PDT-free. Why: first real 7/22 prints show the 2-day semi rip giving back (SOXL -8.3%, MU -3.9%, AMD -2.7%, NVDA -0.9%) while OKLO is the lone green watchlist name (+2%) on its confirmed Trump/DOE $200M nuclear-for-AI catalyst, details possibly dropping TODAY at a DOE AI-energy summit - and it's insulated from tonight's GOOGL/TSLA Mag-7 binary. Owning the pop_rank-1 RS leader (not the laggard) is the 7/21 'weight to the mover' fix. Both books == broker, zero naked: LIVE flat $810.32 cash (0/3 day-trades); PAPER 6/6 GTC-stopped (~$89k). Paper NVDA-anchor->nuclear-mover trim executes AT the open (real prices, clean stop re-arm), not into the pre-open low."
+    },
     {
       "type": "activity",
       "ts": "2026-07-22T08:43:00-04:00",
@@ -1479,14 +1484,9 @@
       "ts": "2026-07-21T09:48:00-04:00",
       "type": "activity",
       "text": "9:48am open fork resolved GREEN: NVDA confirmed (+1.6%), breadth broad (AMD +5%, INTC +6%, BE +9.7%), QQQ +1.3% holding above Monday's $696. Rotated paper toward capture - cut the losing hedge, bought the AMD pop. Live PLTR buy still staged. 3x-index gate still shut (QQQ < $716); no SOXL/TQQQ chase. 0/3 day-trades."
-    },
-    {
-      "ts": "2026-07-21T09:14:00-04:00",
-      "type": "activity",
-      "text": "9:14am pre-open (~15 min to bell): chip pop holding - SOXL +13%, INTC +5.3% (Intel-Fortinet deal + High-NA EUV), AMD +3.8%, NVDA confirming +1.4%. But QQQ ~$705 < $716 20-day -> gate shut day 6, no 3x chase (Benzinga: momentum trade 'broke', SPMO worst month ever). PLTR live buy staged for the open; paper holds 4/4 incl. the SQQQ hedge into Wed's GOOGL/TSLA/INTC wall. Add a 1x leader (AMD/NVDA) at the open only on a confirmed hold. Both books clean, 0/3 day-trades."
     }
   ],
-  "latest_recap": "8:43a 7/22 pre-market (market CLOSED, opens 9:30) - heartbeat ~28 min on from the 8:15a run; plan unchanged. Both books re-reconciled clean at the broker: LIVE flat $810.32 cash (6th session, 0/3 day-trades) with NVDA live ticket 2026-07-21-1 (3 sh, marketable-limit $211, $186 stop) ARMED to fill at the 9:30 open - approve anytime, PDT-free swing; PAPER 6 names ALL GTC-stopped (AMD $490 / SMR $7.50 / OKLO $39 / VRT $282 / CEG $236 / NVDA $186), each clear of its stop, equity ~$89.0k ($16.4k cash). NEW THIS RUN: first real 7/22 pre-market prints are on the IEX feed (SIP block cleared) - chips giving back the 2-day rip (NVDA -1.3%, AMD -2.4%, MU -4.0%, VRT -3.2%) while OKLO +1.7% holds green on its confirmed Trump/DOE nuclear-for-AI catalyst -> chg_pct repopulated with live pre-market moves (was 0.0% at 8:15). Regime softened a touch pre-open: QQQ ~$702 = ~-1.8% under its $714.7 20-day (vs -0.8% at Tue's close) - 3x stays gated. Catalyst wall unchanged: GOOGL + TSLA + IBM + TXN + ServiceNow + AT&T after the close (Alphabet's AI-capex guide the key number). AT THE OPEN: fire NVDA live + trim the ~32%-of-book paper NVDA anchor toward the nuclear movers (OKLO/SMR/CEG) with real prices, NOT chasing the extended pop; no fresh semis into the binary. Grade running: pre-open (TBD). pop_rank 1 = OKLO.",
+  "latest_recap": "9:18a 7/22 pre-market (market CLOSED, opens 9:30). KEY ACTION: pivoted the LIVE swing from the NVDA laggard to OKLO. Fresh 7/22 prints show the 2-day semi rip giving back (SOXL -8.3%, MU -3.9%, AMD -2.7%, NVDA -0.9%, TQQQ -3.1%) while OKLO is the LONE green watchlist name (+2%) on its confirmed Trump/DOE $200M nuclear-for-AI catalyst (OKLO + X-Energy, w/ MSFT/NVDA) - and Bloomberg notes program details could be announced TODAY at a DOE AI-energy summit. Retired NVDA ticket 2026-07-21-1 (voided the queue file, archived to retired-...-superseded-by-oklo.json) and staged OKLO 2026-07-22-1 (16 sh, marketable-limit $47, $39 GTC stop, ~$720) to fill at the open - approve anytime, PDT-free swing. Rationale: own the pop_rank-1 RS leader/mover, not the safety-blanket laggard (7/21 'weight to the mover' lesson); OKLO has no own earnings until Aug 18 and is insulated from tonight's GOOGL/TSLA Mag-7 capex binary. Both books re-reconciled clean at the broker, zero naked: LIVE flat $810.32 cash (0/3 day-trades); PAPER 6/6 GTC-stopped (AMD $490 / SMR $7.50 / OKLO $39 / VRT $282 / CEG $236 / NVDA $186), equity ~$89.0k. Regime: QQQ ~$703 = ~-1.6% under its $714.7 20-day, 3x stays gated. AT THE OPEN: trim the ~32%-of-book paper NVDA anchor into the nuclear movers with clean stop re-arms (into strength, not the pre-open low); no fresh semi size into tonight's binary. Grade running: pre-open (TBD). pop_rank 1 = OKLO.",
   "activity": [
     {
       "ts": "2026-07-21T17:43:00-04:00",
@@ -1550,6 +1550,11 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-22T09:18:00-04:00",
+      "text": "9:18a pre-market (~12 min to open). Pivoted the live swing from the NVDA laggard to OKLO: fresh prints show chips giving back the 2-day rip (SOXL -8%, MU -4%, NVDA -1%) while OKLO is the ONE green name (+2%) on its confirmed Trump/DOE nuclear-for-AI catalyst - and there is a DOE AI-energy summit TODAY where the $200M program details may drop. Owning the pop_rank-1 RS leader (not the laggard) is the 7/21 'weight to the mover' fix, and it's insulated from tonight's GOOGL/TSLA binary. OKLO ticket 2026-07-22-1 (16 sh, $39 stop) staged to fill at the open - approve anytime; NVDA ticket retired. Paper: hold the 6/6-stopped book, trim the ~32% NVDA anchor into the movers AT the open (not into the pre-open low). LIVE flat $810 cash / 0 naked; PAPER ~$89k, 6/6 stopped.",
+      "hype": "Swapped the live buy from NVDA to OKLO - it's the only green name this morning, on a government nuclear-for-AI catalyst with a summit this afternoon. Owning the mover, not the laggard; one tap fills it at the open."
+    },
     {
       "ts": "2026-07-22T08:43:00-04:00",
       "text": "8:43a pre-market - heartbeat ~47 min from the open. Both books re-reconciled clean at the broker: LIVE flat $810.32 cash (6th session, 0/3 day-trades), PAPER 6/6 GTC-stopped (AMD/CEG/NVDA/OKLO/SMR/VRT), zero naked. First real 7/22 pre-market prints now on the feed confirm the risk-off open - NVDA -1.3%, AMD -2.4%, MU -4.0%, VRT -3.2% (chips giving back the 2-day rip) while OKLO +1.7% holds green on its DOE nuclear-for-AI catalyst (kept pop_rank 1). QQQ ~$702 pre-market slipped to ~-1.8% under its 20-day (was -0.8% at Tue's close), so the tape's softer into tonight's GOOGL/TSLA/IBM/TXN binary. NVDA live ticket 2026-07-21-1 (3 sh, $211 marketable-limit, $186 stop) stays armed -> fires at the 9:30 open on your tap. No pre-market execution by design; the NVDA re-entry + paper NVDA->nuclear trim run at the OPEN with real prices.",
@@ -1619,11 +1624,6 @@
       "ts": "2026-07-21T19:15:00-04:00",
       "text": "7:15p after-hours heartbeat - independently re-verified both books at the broker; nothing changed since the 6:43p check. LIVE flat $810.32 cash (6th session, nothing naked); PAPER's 6 names all green and all GTC-stopped, zero naked. Confirmed the settled close (S&P +0.89% to a record 7,509; Nasdaq +1.29%, chips led) and computed QQQ's 20-day at $714.67 - QQQ $708.97 is -0.8% under it, so 3x stays gated while the 1x NVDA swing (the gate re-entry) is justified. After-hours quiet, NVDA ~$207 right at the entry. Not adding fresh size into extended semis ahead of Wed's GOOGL+TSLA+IBM+TXN after-close binary; NVDA armed to fire at tomorrow's open. Grade stays final D+.",
       "hype": "Late check, all quiet - every stop's good, nothing's naked, and NVDA's parked right at tomorrow's buy. Not chasing the hot chips into Wed's Google + Tesla earnings; the NVDA swing's armed for the open."
-    },
-    {
-      "ts": "2026-07-21T18:43:00-04:00",
-      "text": "6:43p evening heartbeat - fresh-data reconcile, plan holds, grade stays final D+ (not re-graded). Both books == broker: LIVE flat $810.32 cash / 0 positions / nothing naked (6th straight session); PAPER 6 names all GTC-stopped (AMD $490 / SMR $7.50 / OKLO $39 / VRT $282 / CEG $236 / NVDA $186), zero naked. Pulled live AH prices: NVDA trades $207.18 - right on the swing entry - and I confirmed today's catalyst in the SEC filing: NVDA's 9.3% / ~$5B stake in neocloud Nebius (which serves MSFT/Meta), plus the memory blowout (MU +12%, SanDisk +14%) reading straight through to NVDA HBM/GPU demand. QQQ closed $708.78, still ~0.8% under its $714.7 20-day - but the re-entry conditions now line up (2 green risk-on days + within 1% of the 20-day + a real memory/AI-capex catalyst), which is exactly why the NVDA swing fires at the open. No trade tonight (post-close/illiquid, one-core, and I won't add beta right before Wed's GOOGL+TSLA+IBM after-close binary). NVDA live ticket 2026-07-21-1 stays armed for the 7/22 open - the gate re-entry.",
-      "hype": "All stops good, nothing naked, and NVDA's parked right at tomorrow's buy ($207) - its $5B Nebius stake is confirmed real. Not adding anything before Wed's Google/Tesla earnings; the open swing's still the plan."
     }
   ],
   "benchmark": {
@@ -1635,7 +1635,7 @@
   "status": [
     {
       "session": "Pre-market",
-      "text": "Risk-off open; NVDA armed"
+      "text": "OKLO armed for the open"
     }
   ],
   "equity_history": {
