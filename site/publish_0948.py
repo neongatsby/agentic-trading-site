@@ -1,136 +1,187 @@
-import json, os, datetime
+#!/usr/bin/env python3
+import json, os, tempfile
 
-SITE = "engine-data.json"
-d = json.load(open(SITE))
+SITE = os.path.dirname(os.path.abspath(__file__))
+PATH = os.path.join(SITE, "engine-data.json")
+TS = "2026-07-22T09:48:00-04:00"
 
-TS = "2026-07-21T09:48:00-04:00"
+with open(PATH) as f:
+    d = json.load(f)
+
 d["updated"] = TS
 
-# ---------- fresh day % moves (regular session, ~9:48 ET) ----------
-chg = {"PLTR":-0.5,"AMD":5.0,"INTC":6.0,"NVDA":1.6,"VRT":2.7,"SOXL":12.1,"TQQQ":3.6,
-       "CEG":1.4,"FNGU":1.2,"IONQ":1.4,"RKLB":1.3,"SQQQ":-3.5,"TSLA":1.6,"BE":9.7,"SMR":3.8}
+d["status"] = [{"session": "Morning", "text": "Trimmed NVDA anchor into OKLO/SMR"}]
 
-# ---------- fresh projections (unique pop_rank 1..15) ----------
-proj = {
- "AMD": {"target_pct":6.5,"confidence":"med","basis":"owned the pop; into 7/22-23 Advancing-AI event + MSFT Helios","pop_rank":1},
- "INTC":{"target_pct":6.5,"confidence":"med","basis":"High-NA EUV + Fortinet chip deal; earnings-Thu overhang","pop_rank":2},
- "SOXL":{"target_pct":11.0,"confidence":"low","basis":"biggest mover but gated 3x + fade-prone under 20-day","pop_rank":3},
- "NVDA":{"target_pct":3.0,"confidence":"med","basis":"confirmed the rally green; AI bellwether tell","pop_rank":4},
- "BE":  {"target_pct":8.0,"confidence":"low","basis":"dead-cat bounce off Mon TD-Cowen flush; not chasing","pop_rank":5},
- "PLTR":{"target_pct":0.5,"confidence":"med","basis":"RS leader but red on a chip-rotation day; live target","pop_rank":6},
- "VRT": {"target_pct":3.5,"confidence":"med","basis":"AI-datacenter power riding the chip bid","pop_rank":7},
- "TQQQ":{"target_pct":4.5,"confidence":"low","basis":"3x Nasdaq gated; tracks QQQ +1.3%","pop_rank":8},
- "SMR": {"target_pct":4.0,"confidence":"low","basis":"nuclear/SMR AI-power beta bouncing","pop_rank":9},
- "CEG": {"target_pct":2.5,"confidence":"med","basis":"held; nuclear-AI power, green","pop_rank":10},
- "IONQ":{"target_pct":3.0,"confidence":"low","basis":"quantum high-vol beta","pop_rank":11},
- "RKLB":{"target_pct":2.5,"confidence":"low","basis":"space beta consolidating","pop_rank":12},
- "FNGU":{"target_pct":3.0,"confidence":"low","basis":"3x gated FANG","pop_rank":13},
- "TSLA":{"target_pct":1.0,"confidence":"low","basis":"earnings Wed; lease hikes + robotaxi fears","pop_rank":14},
- "SQQQ":{"target_pct":-4.0,"confidence":"low","basis":"inverse hedge, trimmed to 100 sh","pop_rank":15},
-}
-
-for c in d["coverage"]:
-    t = c["ticker"]
-    if t in chg: c["chg_pct"] = chg[t]
-    if t in proj: c["projection"] = proj[t]
-    c["updated"] = "9:48a"
-
-# ---------- targeted coverage rewrites ----------
-def cov(t):
-    for c in d["coverage"]:
-        if c["ticker"]==t: return c
-    return None
-
-amd = cov("AMD")
-amd["verdict"]="buy"; amd["verdict_label"]="Buy"
-amd["thesis"]=("**Acted on the pop_rank-1 call - bought it as it confirmed post-open, no longer a premarket chase.** AMD is +5% into its 'Advancing AI 2026' event (7/22-23, San Francisco) on Microsoft's Helios rack-scale commitment - MI450/Instinct + EPYC Venice roadmap in focus. 1x = no gate issue, so it's the ownable chip leader where the 3x semis (SOXL +12%) are not. Bought 30 sh @ $527.80 in paper with a wide $458 GTC stop (below the 7/17 $460 structural low, -13%). Plan is to sell into strength if it runs into the event (buy-the-rumor risk on 7/22-23), stop does the work if the chip bid fades a 6th time.")
-amd["hold_reason"]=("This was our top pop-pick all morning and it held green after the open, so we bought it rather than just watching it run. It's got a real forward catalyst - its big AI event is tomorrow - plus Microsoft's Helios deal landing days before. We're in 30 shares with a wide stop; if it runs into the event we take profits, and if the whole chip bounce fades again the stop protects us.")
-amd["size"]="$15.9k paper (30 sh @ $527.80)"
-amd["size_pct"]="~18% paper"
-amd["size_note"]="bought 30 sh @ $527.80 on the post-open confirm; $458 GTC stop; live can't size a $528 share in the $810 sleeve"
-amd["plan_usd"]="held 30 sh paper; sell into a 7/22-23 event pop, else the $458 stop works"
-amd["horizon"]="swing"
-
-sqqq = cov("SQQQ")
-sqqq["thesis"]=("**The losing hedge, trimmed hard - it was the book's single biggest drag on a green tape.** SQQQ (-3.5% today, 3x inverse Nasdaq) bled every green session this week while QQQ ground up. Cut 210 of 310 sh @ ~$41.18 (~-$244 realized) and kept 100 sh as a reduced hedge into Wed's GOOGL/TSLA/INTC earnings wall - the regime gate is still shut (QQQ under its 20-day) so a small short stays as insurance, but camping the full size while the market rose was lazy money. $38 GTC stop on the residual.")
-sqqq["hold_reason"]=("This is our downside insurance - it goes up when the Nasdaq falls. It's been losing money all week because the market kept grinding higher, so we cut most of it today and kept a small piece into Wednesday's big earnings (Google, Tesla, Intel). If the market keeps ripping the $38 stop takes us out; if those prints disappoint, the residual pays off.")
-sqqq["size"]="$4.1k paper (100 sh, trimmed from 310)"
-sqqq["size_pct"]="~5% paper"
-sqqq["size_note"]="TRIMMED 310->100 sh today (~-$244 realized); $38 GTC stop on the residual"
-sqqq["plan_usd"]="residual 100 sh hedge into Wed's earnings wall; cut fully if QQQ reclaims $716"
-
-pltr = cov("PLTR")
-pltr["size_note"]="paper 100 sh (stop $125); live PLTR buy still staged (ticket 2026-07-20-3, 5 sh, $122 stop) - approve anytime, fills now"
-pltr["plan_usd"]="live ~$680 into PLTR - ticket 2026-07-20-3, approve = fills immediately (market open)"
-pltr["hold_reason"]=("It's our clean 1x relative-strength leader - the AI-software name that kept making 2-week highs while software peers cracked. Today it's red as money rotates into chips, but that's a cheaper entry, not a broken thesis (no earnings until Aug 3). Paper owns 100 shares; the live buy is staged for approval. We stay in while it holds the low-$130s; the $125/$122 stops do the work if it doesn't.")
-
-# ---------- status ----------
-d["status"]=[
- {"session":"Open","text":"Bought AMD pop, cut SQQQ hedge"},
- {"session":"Regime","text":"Gate shut: QQQ under 20-day"},
- {"session":"Books","text":"Live cash; paper 5/5 stopped"},
+d["headlines"] = [
+    "OKLO +4% leads the watchlist: Benzinga confirms it joined the Microsoft/NVIDIA-backed federal $200M nuclear-for-AI program; DOE AI-energy summit today; 12-mo analyst PT $86.50 (~96% upside)",
+    "BINARY tonight: GOOGL + TSLA report after the close (IBM, TXN too) - the first Mag-7 AI-capex test; our OKLO/SMR/CEG nuclear book is insulated from it",
+    "Chips mixed after a soft open: SOXL -2.6%, MU -1.1%, but AMD +0.6% and NVDA flat - the 2-day rip give-back is orderly, not a rout",
+    "Super Micro (SMCI) +20% on results - the day's biggest single-name mover (not held; can't chase a +20% gap)",
+    "Nuclear/power/space bid: OKLO +4%, RKLB +3%, CEG +1.7% - the fresh-catalyst pocket while the broad tape is soft (QQQ -0.6%)",
+    "QQQ ~$705 = ~-1.4% under its $714.7 20-day - 3x (SOXL/TQQQ) stays gated",
+    "VRT -2.5%, the watchlist laggard (datacenter cooling) - two-way into tonight's capex prints; kept on a short leash, stop $282"
 ]
 
-# ---------- headlines ----------
-d["headlines"]=[
- "Chip rally holds post-open and broadens: INTC +6.0%, AMD +5.0%, SOXL +12%, BE +9.7% - and NVDA finally confirms green +1.6% - on AMD's 7/22-23 Advancing AI event, Intel's High-NA EUV + Fortinet chip deal.",
- "Still gated: QQQ $705 is ~1.5% under its $716 20-day and SPY only +0.3% - a Nasdaq/chip-specific move, not broad risk-on - so the 3x-index gate holds (no SOXL/TQQQ).",
- "Engine action: trimmed the paper SQQQ hedge 310->100 sh (bleeding -3.5% on the green tape) and bought AMD 30 sh into its event - rotating the book into a real mover.",
- "Under the hood, Benzinga flags the momentum trade 'broke' (SPMO's worst month ever on the memory selloff) - why a small hedge stays on into Wed.",
- "Big Tech earnings wall: GOOGL + TSLA Wed 7/22 AMC, INTC Thu 7/23 - the residual SQQQ is insurance into it.",
- "PLTR the clean 1x RS leader (Aug-3 earnings, no gate) but -0.5% today, lagging the chip tape; the funded live buy stays staged for approval.",
- "Iran ceasefire hopes ease oil; NQ futures +1.3% on the chip bid + IREN's raised $4B AI-cloud guide.",
+d["coverage"] = [
+    {"ticker":"OKLO","name":"Oklo Inc.","theme":"Advanced nuclear for AI power","verdict":"buy","verdict_label":"Buy - live staged + paper added",
+     "thesis":"**Day's RS leader (+4%) and pop_rank 1 on a confirmed, dated catalyst** - tapped for the Trump/DOE $200M program to fast-track advanced reactors for AI data centers (with MSFT/NVDA); DOE AI-energy summit TODAY. Base reclaim off ~$40, still under its early-July $49-50 highs (not extended), no own earnings to Aug 18, insulated from tonight's Mag-7 capex binary.",
+     "hold_reason":"Small modular nuclear-reactor company; we own it for the confirmed government catalyst - it just got tapped for the Trump/DOE $200M program to build advanced reactors to power AI data centers, alongside Microsoft and NVIDIA. We're long 300 shares (blended ~$44.6) and added into strength this morning because it's the strongest name on our list and the story is playing out live, with a DOE summit today that could add detail. We'd sell if it lost the $40-41 base (stop's at $39); a sell-the-summit fade is the risk we're watching.",
+     "size":"$13.8k (300 sh paper)","size_pct":15.3,"size_note":"added +100 into strength; 3rd-largest book weight",
+     "plan_usd":"$735 live (staged, one tap) / +100 sh paper done","chg_pct":"+4.0%",
+     "projection":{"target_pct":6.5,"confidence":"high","basis":"DOE nuclear-for-AI catalyst + summit today, RS leader","pop_rank":1,"path_pct":[4,5,6.5]},
+     "updated":TS,"horizon":"swing (multi-day)"},
+    {"ticker":"RKLB","name":"Rocket Lab","theme":"Space / launch momentum","verdict":"watch","verdict_label":"Watch - momentum (pop_rank 2)",
+     "thesis":"**+3% and reclaimed $70** on space-launch momentum - the other strong green on the list today. A clean momentum name but no fresh catalyst we can point to, so it's a watch, not a chase into a soft tape.",
+     "size":"-","size_pct":0,"size_note":"not held - watch",
+     "plan_usd":"$0 - momentum watch, would want a pullback or a catalyst","chg_pct":"+3.0%",
+     "projection":{"target_pct":3.5,"confidence":"med","basis":"space momentum breakout, reclaimed $70","pop_rank":2},
+     "updated":TS,"horizon":"n/a"},
+    {"ticker":"CEG","name":"Constellation Energy","theme":"Nuclear utility / power-for-AI","verdict":"hold","verdict_label":"Hold - power for AI",
+     "thesis":"**Green (+1.7%) and insulated from tonight's binary** - the utility angle on AI power demand; owns the nuclear fleet that signs data-center power deals. Steadier way to own the AI-needs-electricity theme.",
+     "hold_reason":"Constellation Energy - the utility angle on AI power demand, since it owns the nuclear fleet that can sign data-center power deals. It's green today (+1.7%) and, as a regulated power name, insulated from tonight's tech-capex earnings. We hold 16 shares with a $236 stop; a steadier way to own the same theme as OKLO/SMR.",
+     "size":"$4.3k (16 sh paper)","size_pct":4.7,"size_note":"smallest core - steady power sleeve",
+     "plan_usd":"held paper","chg_pct":"+1.7%",
+     "projection":{"target_pct":2.5,"confidence":"med","basis":"power-for-AI bid, insulated from binary","pop_rank":3},
+     "updated":TS,"horizon":"swing (multi-day)"},
+    {"ticker":"SMR","name":"NuScale Power","theme":"Small modular reactors","verdict":"hold","verdict_label":"Hold - nuclear, added",
+     "thesis":"**Same nuclear-for-AI theme as OKLO, earlier-stage and cheaper** - added +350 sh this morning as the insulated way to press the theme without more chip exposure into tonight's binary. Hasn't run yet today (~flat), part of why we like the entry.",
+     "hold_reason":"NuScale - small modular reactors, the same nuclear-for-AI-power theme as OKLO but earlier-stage and cheaper per share. We added 350 shares (now 1050 total) this morning as the insulated way to press the theme without more chip exposure into tonight's binary. It hasn't run yet today, which is partly why we liked the entry; stop's at $7.50 under the base.",
+     "size":"$9.2k (1050 sh paper)","size_pct":10.2,"size_note":"added +350; theme catch-up candidate",
+     "plan_usd":"+350 sh paper done","chg_pct":"+0.2%",
+     "projection":{"target_pct":2.0,"confidence":"med","basis":"nuclear theme catch-up, insulated","pop_rank":4},
+     "updated":TS,"horizon":"swing (multi-day)"},
+    {"ticker":"AMD","name":"Advanced Micro Devices","theme":"AI accelerators","verdict":"hold","verdict_label":"Hold - owned chip leader",
+     "thesis":"**Green (+0.6%) after the soft open** - the AI-accelerator demand story intact, own earnings not until Aug 4. Held through tonight's Mag-7 prints with a $490 stop; exposed to the capex read but not oversized.",
+     "hold_reason":"Our other big chip position, and it's actually green today after a soft open. We own 30 shares from the CPI-rally entry; the thesis is the same AI-accelerator demand story, and its own earnings aren't until Aug 4. We're holding through tonight's Mag-7 prints with the $490 stop; we'd reconsider if the whole chip complex breaks down.",
+     "size":"$16.4k (30 sh paper)","size_pct":18.2,"size_note":"2nd-largest weight; green today",
+     "plan_usd":"held paper","chg_pct":"+0.6%",
+     "projection":{"target_pct":1.0,"confidence":"low","basis":"chip bid, but capex binary tonight caps it","pop_rank":5},
+     "updated":TS,"horizon":"swing (multi-day)"},
+    {"ticker":"IONQ","name":"IonQ","theme":"Quantum computing","verdict":"watch","verdict_label":"Watch - high-beta",
+     "thesis":"**+0.4%, tracking the tape** - high-beta quantum name with no fresh catalyst; a watch that would move on broad risk-on, not something to force here.",
+     "size":"-","size_pct":0,"size_note":"not held - watch",
+     "plan_usd":"$0","chg_pct":"+0.4%",
+     "projection":{"target_pct":0.8,"confidence":"low","basis":"quantum high-beta, tracks tape","pop_rank":6},
+     "updated":TS,"horizon":"n/a"},
+    {"ticker":"RGTI","name":"Rigetti Computing","theme":"Quantum computing","verdict":"watch","verdict_label":"Watch - high-beta",
+     "thesis":"**+0.8%, mild green** - the other quantum high-beta name; no catalyst, watch only.",
+     "size":"-","size_pct":0,"size_note":"not held - watch",
+     "plan_usd":"$0","chg_pct":"+0.8%",
+     "projection":{"target_pct":1.0,"confidence":"low","basis":"quantum high-beta","pop_rank":7},
+     "updated":TS,"horizon":"n/a"},
+    {"ticker":"NVDA","name":"NVIDIA","theme":"AI chip leader","verdict":"hold","verdict_label":"Hold - trimmed the anchor",
+     "thesis":"**Trimmed 140->90 this morning** - it was 32% of the book and flat (the exact 7/21 laggard-too-heavy miss), so we cut it to ~21% and moved the cash into the OKLO/SMR movers. Core AI-capex thesis intact (Taiwan export orders +59%, Wistron/NVDA $700M plant) but exposed to tonight's GOOGL/TSLA read.",
+     "hold_reason":"The AI-chip leader and still our biggest tech holding, but today it's the laggard - basically flat while nuclear runs. We trimmed it from 140 to 90 shares this morning to stop letting a flat mega-cap be a third of the book, and moved that money into the OKLO/SMR movers. We're keeping a core 90 shares (stop $186) because the AI-capex story is intact - but it's exposed to tonight's Google/Tesla earnings, so we didn't want it oversized into that.",
+     "size":"$18.6k (90 sh paper)","size_pct":20.7,"size_note":"trimmed from 32% -> 21% of book",
+     "plan_usd":"trimmed -50 sh paper; core held","chg_pct":"0.0%",
+     "projection":{"target_pct":0.0,"confidence":"low","basis":"range-bound laggard into Mag-7 capex binary","pop_rank":8},
+     "updated":TS,"horizon":"swing (multi-day)"},
+    {"ticker":"MU","name":"Micron","theme":"HBM / memory","verdict":"watch","verdict_label":"Watch - extended, giving back",
+     "thesis":"**-1.1%, unwinding part of its +12.8% rip** - the memory catalyst is real but it's extended; expressed via AMD/NVDA rather than chased here.",
+     "size":"-","size_pct":0,"size_note":"not held - express via AMD/NVDA",
+     "plan_usd":"$0 - extended","chg_pct":"-1.1%",
+     "projection":{"target_pct":-1.5,"confidence":"low","basis":"giving back the +12.8% rip, extended","pop_rank":9},
+     "updated":TS,"horizon":"n/a"},
+    {"ticker":"BE","name":"Bloom Energy","theme":"Fuel cells / on-site power","verdict":"watch","verdict_label":"Watch - extended, don't chase",
+     "thesis":"**-1.4%, consolidating after its run** - fuel-cell/on-site-power name we traded live last week; extended and range-bound now, no fresh reason to re-enter.",
+     "size":"-","size_pct":0,"size_note":"not held - watch",
+     "plan_usd":"$0 - no chase","chg_pct":"-1.4%",
+     "projection":{"target_pct":-1.0,"confidence":"low","basis":"fuel-cell extended, consolidating","pop_rank":10},
+     "updated":TS,"horizon":"n/a"},
+    {"ticker":"VRT","name":"Vertiv","theme":"Datacenter cooling / power","verdict":"hold","verdict_label":"Hold - laggard, rotation candidate",
+     "thesis":"**Weakest name today (-2.5%) and slipping below its range** - now a rotation candidate. Kept on a short leash: a strong GOOGL/MSFT capex print tonight would help it (it's a capex beneficiary), so we give it a little room; stop $282.",
+     "hold_reason":"Vertiv - datacenter cooling and power gear, a picks-and-shovels AI-capex play. It's our weakest name today (-2.5%) and slipping below its recent range, so it's now a rotation candidate - if it keeps breaking down we'll cut it into a stronger name. We're giving it a little room because a strong capex print from Google/Microsoft tonight would actually help it; stop's at $282.",
+     "size":"$8.9k (30 sh paper)","size_pct":9.9,"size_note":"rotation candidate if it loses $290",
+     "plan_usd":"held paper - on a short leash","chg_pct":"-2.5%",
+     "projection":{"target_pct":-2.0,"confidence":"low","basis":"datacenter laggard; two-way on tonight's capex","pop_rank":11},
+     "updated":TS,"horizon":"swing (multi-day)"},
+    {"ticker":"TSLA","name":"Tesla","theme":"EV / robotaxi / earnings tonight","verdict":"avoid","verdict_label":"Avoid - earnings tonight",
+     "thesis":"**Flat (-0.2%) into its after-close print** - a binary tonight; no pre-print position by design.",
+     "size":"-","size_pct":0,"size_note":"not held - binary tonight",
+     "plan_usd":"$0 pre-print","chg_pct":"-0.2%",
+     "projection":{"target_pct":0.0,"confidence":"low","basis":"earnings tonight = binary, avoid pre-print","pop_rank":12},
+     "updated":TS,"horizon":"n/a"},
+    {"ticker":"TQQQ","name":"ProShares 3x Nasdaq","theme":"3x leveraged (gated)","verdict":"watch","verdict_label":"Powder - awaits reclaim",
+     "thesis":"**-1.8%, gated** - 3x Nasdaq stays in the powder pile until QQQ reclaims its $714.7 20-day; the regime gate that saved the book through the 7/14-20 wreck.",
+     "size":"-","size_pct":0,"size_note":"dry powder while gated",
+     "plan_usd":"$8-16k on a confirmed QQQ 20-day reclaim","chg_pct":"-1.8%",
+     "projection":{"target_pct":-2.0,"confidence":"low","basis":"3x gated; awaits QQQ 20-day reclaim","pop_rank":13},
+     "updated":TS,"horizon":"n/a"},
+    {"ticker":"SOXL","name":"Direxion 3x Semis","theme":"3x leveraged (gated)","verdict":"avoid","verdict_label":"Gated - 3x under 20-day",
+     "thesis":"**-2.6%, gated** - 3x semis giving back the 2-day rip; stays gated while QQQ is under its 20-day. Owning none of this is the gate working.",
+     "size":"-","size_pct":0,"size_note":"gated - do not touch",
+     "plan_usd":"$0 while gated","chg_pct":"-2.6%",
+     "projection":{"target_pct":-3.0,"confidence":"med","basis":"3x under 20-day, semis soft","pop_rank":14},
+     "updated":TS,"horizon":"n/a"}
 ]
 
-# ---------- pulse (prepend, keep 15) ----------
-pulse_new = {
- "ts": TS,
- "text": ("9:48am, first post-open run - the open fork resolved GREEN. NVDA confirmed the chip rally (+1.6%), breadth is broad (AMD +5%, INTC +6%, BE +9.7%) and QQQ +1.3% is holding well above Monday's $696 - so I stopped babysitting the losing SQQQ hedge (-3.5%, the book's #1 drag) and acted on the AMD pop I called pop_rank-1 all morning. PAPER: trimmed SQQQ 310->100 (~-$244 realized, keep a small hedge into Wed's earnings wall) and bought AMD 30 sh @ $527.80 into its 7/22-23 event, $458 stop. Both books zero-naked. LIVE: PLTR buy still staged for approval (1x RS leader, red = cheap; can't cleanly size a $528 AMD share in the $810 sleeve). Capture's still low intraday - SOXL +12%/BE +9.7% are gated/dead-cat un-ownables - but the book is finally IN a real mover. Day-trade budget 0/3."),
- "hype": ("Stopped babysitting the losing short and finally bought the AMD pop I've called all week - the book's in a real mover now. Kept a small hedge for Wednesday's earnings, wide stops on everything.")
-}
-d["pulse"] = [pulse_new] + d["pulse"]
-d["pulse"] = d["pulse"][:15]
+new_pulse = {"ts":TS,
+    "text":"9:48a, ~18 min into the session. EXECUTED the planned rotation on the paper book: trimmed the NVDA anchor 140->90 (it was 32% of the book and flat - the exact 7/21 laggard-too-heavy miss) and moved the ~$10k into the nuclear movers - OKLO +100 (now 300 sh) and SMR +350 (now 1050) - both insulated from tonight's GOOGL/TSLA capex binary; all stops cleanly re-armed, zero naked (6/6). OKLO is the day's watchlist leader (+4%) on its now-Benzinga-confirmed DOE nuclear-for-AI catalyst (summit today, $86.50 analyst PT) = still pop_rank 1, and paper is now properly weighted into it. LIVE still flat $810 cash: the OKLO ticket (16 sh, $47 marketable-limit, $39 stop) is armed to fill IMMEDIATELY on your tap - that tap is the one thing that ends the 7-session cash camp and puts the real money in the mover. Held ~21% paper cash as dry powder into the binary; no fresh semi size by design.",
+    "hype":"Moved the paper money out of flat NVDA into OKLO and SMR - the nuclear names actually moving today, and they don't care about tonight's Google/Tesla earnings. The live OKLO buy's armed - one tap finally puts the real money in the mover."}
+d["pulse"] = [new_pulse] + d.get("pulse", [])[:14]
 
-# ---------- feed (prepend trade cards, keep 40) ----------
-feed_new = [
- {"ts":TS,"type":"trade","side":"buy","status":"filled","symbol":"AMD","detail":"30 sh @ $527.80",
-  "reaction":"rotate",
-  "text":"Bought AMD - 30 sh @ $527.80 (paper). Acting on the pop_rank-1 call: +5% into its 7/22-23 Advancing AI event, 1x (no gate), $458 GTC stop below the $460 structural low. The ownable chip leader where SOXL (3x) is gated."},
- {"ts":TS,"type":"trade","side":"sell","status":"filled","symbol":"SQQQ","detail":"210 sh @ ~$41.18",
-  "reaction":"rotate",
-  "text":"Trimmed the SQQQ hedge 310->100 sh (~-$244 realized). It was -3.5% and the book's biggest drag on a green tape - stopped camping the losing short, kept 100 sh as insurance into Wed's GOOGL/TSLA/INTC prints. $38 GTC stop on the residual."},
- {"ts":TS,"type":"activity",
-  "text":"9:48am open fork resolved GREEN: NVDA confirmed (+1.6%), breadth broad (AMD +5%, INTC +6%, BE +9.7%), QQQ +1.3% holding above Monday's $696. Rotated paper toward capture - cut the losing hedge, bought the AMD pop. Live PLTR buy still staged. 3x-index gate still shut (QQQ < $716); no SOXL/TQQQ chase. 0/3 day-trades."},
+new_feed = [
+    {"type":"activity","ts":TS,"text":"9:47a - EXECUTED the NVDA-anchor -> nuclear-mover rotation on paper (the 7/21 weight-to-the-mover fix), at the open with real prices and clean stop re-arms. Trimmed NVDA 140->90 (~$207.1), added OKLO +100 (~$46.00, now 300 sh) and SMR +350 (~$8.74, now 1050 sh). Book re-weighted: NVDA 32%->21%, OKLO 10%->15%. All 6 paper positions GTC-stopped, zero naked (verified at the broker). LIVE unchanged - flat $810 cash, OKLO ticket armed for a one-tap intraday fill."},
+    {"type":"trade","ts":TS,"side":"buy","symbol":"OKLO","status":"filled","detail":"+100 @ ~$46.00 (paper)","reaction":"rotate","text":"Added to the leader into strength - OKLO now 300 sh, our pop_rank-1 name on the DOE nuclear catalyst. Weighting the mover, not the laggard."},
+    {"type":"trade","ts":TS,"side":"buy","symbol":"SMR","status":"filled","detail":"+350 @ ~$8.74 (paper)","reaction":"rotate","text":"Pressed the nuclear theme via SMR (now 1050 sh) - insulated from tonight's tech-capex binary and hadn't run yet today."},
+    {"type":"trade","ts":TS,"side":"sell","symbol":"NVDA","status":"filled","detail":"-50 @ ~$207.1 (paper)","reaction":"rotate","text":"Trimmed the flat NVDA anchor from 32% to ~21% of the book - a flat mega-cap shouldn't be a third of the book while the nuclear names run. Core 90 sh held, stop $186."}
 ]
-d["feed"] = feed_new + d["feed"]
-d["feed"] = d["feed"][:40]
+d["feed"] = new_feed + d.get("feed", [])[:36]
 
-# ---------- accountability (running, intraday - HONEST) ----------
-d["accountability"]={
- "date":"2026-07-21","final":False,"grade":"running (~C, intraday)",
- "headline":("First post-open run: acted on the open fork - cut the losing SQQQ hedge (-3.5%, the book's biggest drag) and bought the AMD pop_rank-1 I called all morning (+5%, into its 7/22-23 event), so the book is finally IN a real mover. But capture is still low right now: the day's two biggest watchlist movers - SOXL +12% and BE +9.7% - are structurally un-ownable (SOXL is the gated 3x; BE a negative-catalyst dead-cat bounce off Monday's TD Cowen flush), and the residual SQQQ + red PLTR keep paper ~flat (-0.16%) while live sits in cash (0%) awaiting the PLTR tap. The rotation is right and early (the 7/20 D-fix in motion), but the un-ownable movers cap today's ceiling. Final grade at the close."),
- "capture":{"bestName":"SOXL (gated 3x) / BE (dead-cat)","bestPct":"+12.1% / +9.7%","capturedPct":"paper -0.16%, live 0%","rate":"~0% intraday - best movers un-ownable; AMD +5% now owned"},
- "missed":[
-   {"from":"paper SQQQ hedge","to":"AMD (pop_rank-1)","note":"cut the losing hedge and bought AMD on the 9:47 confirmation rather than at the 9:31 bell - gave up ~1% of AMD's open pop","delta":"~-$150 on 30 sh"}
- ],
- "saved":[
-   {"note":"Held the 3x-index gate a 6th day - did NOT chase SOXL +12%/TQQQ +3.6% under a sub-20-day QQQ (the pop that's round-tripped 5 sessions running)","delta":"discipline intact"},
-   {"note":"Trimmed the SQQQ hedge that was -3.5% and the book's single biggest drag, instead of camping it another session","delta":"stopped the bleed, freed ~$8.6k"}
- ],
- "best":{"name":"AMD (bought 30 sh @ $527.80)","note":"acted on the pop_rank-1 call - into its 7/22-23 event with momentum, 1x (no gate), wide $458 stop","delta":"+5% and owned"},
- "worst":{"name":"SQQQ hedge","note":"the week's losing bet - trimmed today at ~-$244 realized on 210 sh; arguably should've been cut a session earlier","delta":"-$244 realized"},
- "avoided":{"worstName":"gated 3x chip chase (SOXL +12% / TQQQ +3.6%)","worstPct":"TBD at close","note":"the gate kept both books out of the leveraged-index pop that's faded 5 sessions running under the 20-day","amount":"pending the close","rate":"high on any gated chase"},
- "applying":"PLAYBOOK Earned Rule #1 (regime gate - no 3x-index long under the 20-day) + the 7/20 D-fix 'rotate EARLY': cut the dead hedge and added the ownable 1x leader (AMD) in the MORNING, not at 3pm.",
- "adjust":"If the chip bid holds into the afternoon and QQQ presses $716, add a 2nd 1x leader (NVDA) with paper powder and cut the last SQQQ; if it fades back under $700, the residual hedge + wide AMD stop do the work. Watch the AMD event (7/22-23) for a sell-into-strength exit."
+d["score"] = {"alphaPts":"-14.5","benchmark":"-4.4%","bestDay":"+3.2%","bestDayName":"Jul 14 - CPI chip rally (settled)","winRate":"33%","tradeCount":6}
+
+d["accountability"] = {
+    "date":"2026-07-22","final":False,"grade":"running (intraday, ~18 min in)",
+    "headline":"EXECUTED the 7/21 fix on paper - trimmed the 32% flat-NVDA anchor into the OKLO/SMR nuclear movers so the book is finally weighted to the pop_rank-1 mover (OKLO +4%), all stops re-armed zero-naked; the one remaining gap is LIVE, still flat cash with the OKLO ticket armed for a one-tap fill.",
+    "capture":{"bestName":"OKLO (+4.0%, held both books - our pop_rank-1 call)","bestPct":"+4.0%","capturedPct":"paper +0.2% / live flat","rate":"~5% and early - the rotation just re-weighted paper toward OKLO/SMR; the point of the trim is to lift capture from here, not to have banked it 18 min in"},
+    "missed":[{"from":"watch RKLB","to":"-","note":"RKLB +3% (called pop_rank 2) ran and we don't own it - a momentum name with no catalyst we could point to, so a defensible skip, but logging it honestly","delta":"~watch"}],
+    "saved":[
+        {"note":"Executed the NVDA->nuclear rotation with zero naked window mishandled - cancelled stops, filled, re-armed all 6 GTC stops (independently re-verified at the broker)","delta":"risk bounded"},
+        {"note":"No fresh semi/3x size into tonight's GOOGL/TSLA/IBM/TXN binary; rotated INTO insulated nuclear (OKLO/SMR/CEG) instead - the gate + de-risk working together","delta":"binary hedged"}],
+    "best":{"name":"OKLO","note":"+4.0% RS leader on the confirmed DOE catalyst; now properly weighted in paper and armed live","delta":"+$525 paper intraday"},
+    "worst":{"name":"VRT","note":"-2.5% laggard slipping below its range; kept on a short leash into tonight's capex prints","delta":"-$225 paper intraday"},
+    "applying":"Weight to the MOVER, not the anchor + be IN the pop you called (7/21 lesson): EXECUTED - trimmed the 32% NVDA anchor into OKLO/SMR at the open so paper is now weighted to the pop_rank-1 mover, and the live OKLO ticket is armed to put the real money in it too.",
+    "adjust":"Close the live gap: the paper fix is done; LIVE is still flat, so keep the OKLO ticket armed and loud for the one-tap fill. Into tonight's binary - no fresh semi size, keep VRT on a short leash (cut into a stronger name if it loses $290), and finalize capture honestly at the close."
 }
 
-# score: unchanged intraday (no new LIVE close; recompute at post-close). Note TQQQ bounced +3.6% today.
-# pending_tickets: keep PLTR ticket 2026-07-20-3 (staged, ready to fire now).
+d["pending_tickets"] = [{
+    "id":"2026-07-22-1","symbol":"OKLO","side":"buy","size":"$735","qty":16,
+    "entry":"~$46 - approve ANYTIME -> fills IMMEDIATELY at the marketable-limit $47 (OKLO ~$45.9 now). Multi-day swing, PDT-free (0/3 day-trades). The 9:30 open has passed; this is a live intraday fill on your tap.",
+    "trigger":None,"stop":39.0,
+    "bracket":"stop $39 GTC (below this week's $40-41 base / the 7/17 $39.53 low, -15%)",
+    "thesis":"Ends the 7th straight session of live cash by owning the watchlist's ACTUAL RS leader (pop_rank 1), not the laggard. OKLO is the day's strongest name (+4%) on a confirmed, dated catalyst (Trump/DOE $200M nuclear-for-AI program with MSFT/NVDA; DOE summit today; $86.50 analyst PT). Base reclaim off ~$40, no earnings to Aug 18, insulated from tonight's GOOGL/TSLA binary. Wide $39 stop, ~$110 max risk."
+}]
 
-# ---------- atomic write + backup ----------
-bak = "engine-data.backup-2026-07-21-0948.json"
-with open(bak,"w") as f: json.dump(d,f,indent=1,ensure_ascii=False)
-tmp = SITE+".tmp"
-with open(tmp,"w") as f: json.dump(d,f,indent=1,ensure_ascii=False)
-os.replace(tmp, SITE)
-print("WROTE", SITE, "and", bak)
+d["live"]["equity"] = 810.32
+d["live"]["cash"] = 810.32
+d["live"]["positions"] = []
+d["live"]["updated"] = TS
+d["live"]["equity_note"] = "LIVE flat $810.32 cash / zero positions / zero naked (7th cash session). 1 staged ticket = BUY OKLO 16 sh (~$46, $47 marketable-limit, $39 stop, $735) armed to fill IMMEDIATELY on your tap - the 9:30 open has passed so a tap now fills on the spot. This is the one action that ends the cash camp and puts the real money in the pop_rank-1 mover."
+lc = d["live"].get("equity_curve", [])
+if not (lc and lc[-1].get("date") == "Jul 22"):
+    lc.append({"date":"Jul 22","value":810.32})
+d["live"]["equity_curve"] = lc
+
+d["paper"]["equity"] = 90161.19
+d["paper"]["updated"] = TS
+d["paper"]["equity_note"] = "Paper ~$90.2k (+0.2% intraday). EXECUTED the rotation: trimmed NVDA 140->90 (~21% of book, from 32%) into OKLO +100 (300 sh) and SMR +350 (1050 sh) - the nuclear movers, insulated from tonight's binary. 6/6 GTC-stopped, zero naked; ~21% cash held as dry powder into the GOOGL/TSLA prints. OKLO +4% leads; VRT -2.5% the laggard on a short leash."
+pc = d["paper"].get("equity_curve", [])
+if not (pc and pc[-1].get("date") == "Jul 22"):
+    pc.append({"date":"Jul 22","value":90161.19})
+d["paper"]["equity_curve"] = pc
+
+fd, tmp = tempfile.mkstemp(dir=SITE, suffix=".tmp")
+with os.fdopen(fd, "w") as f:
+    json.dump(d, f, indent=1, ensure_ascii=False)
+os.replace(tmp, PATH)
+
+with open(PATH) as f:
+    chk = json.load(f)
+assert chk["updated"] == TS
+assert chk["accountability"]["date"] == "2026-07-22"
+assert len(chk["pending_tickets"]) == 1 and chk["pending_tickets"][0]["id"] == "2026-07-22-1"
+assert len(chk["coverage"]) == 14 and chk["coverage"][0]["ticker"] == "OKLO"
+ranks = [c["projection"]["pop_rank"] for c in chk["coverage"]]
+assert ranks.count(1) == 1
+print("OK updated=%s pulse=%d feed=%d coverage=%d alpha=%s benchmark=%s" % (chk["updated"], len(chk["pulse"]), len(chk["feed"]), len(chk["coverage"]), chk["score"]["alphaPts"], chk["score"]["benchmark"]))
+print("pop_rank_1 =", [c["ticker"] for c in chk["coverage"] if c["projection"]["pop_rank"]==1])
