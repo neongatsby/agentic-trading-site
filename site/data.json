@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-07-22T16:19:45.764Z",
+  "generated_at": "2026-07-22T16:20:54.514Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 91111.69,
+    "equity": 91069.64,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 90111.69,
-    "day_pnl": 1135.21,
+    "total_pnl": 90069.64,
+    "day_pnl": 1093.16,
     "positions": [
       {
         "symbol": "AMD",
         "qty": "30.0000",
         "entry": 527.8,
-        "current": 556.66,
-        "pl": 865.83,
+        "current": 556.68,
+        "pl": 866.34,
         "plpc": 5.47,
         "thesis": ""
       },
@@ -20,36 +20,36 @@
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 271.37,
-        "pl": 171.04,
-        "plpc": 4.1,
+        "current": 271.68,
+        "pl": 175.93,
+        "plpc": 4.22,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "90.0000",
         "entry": 208.15,
-        "current": 214.09,
-        "pl": 535.18,
-        "plpc": 2.86,
+        "current": 214.16,
+        "pl": 540.58,
+        "plpc": 2.89,
         "thesis": ""
       },
       {
         "symbol": "OKLO",
         "qty": "300.0000",
         "entry": 44.61,
-        "current": 45.41,
-        "pl": 239.02,
-        "plpc": 1.79,
+        "current": 45.33,
+        "pl": 215.02,
+        "plpc": 1.61,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "123.0000",
         "entry": 72.68,
-        "current": 72.28,
-        "pl": -49.74,
-        "plpc": -0.56,
+        "current": 72.09,
+        "pl": -71.88,
+        "plpc": -0.8,
         "thesis": ""
       },
       {
@@ -57,8 +57,8 @@
         "qty": "1050.0000",
         "entry": 8.66,
         "current": 8.72,
-        "pl": 64.25,
-        "plpc": 0.71,
+        "pl": 58.9,
+        "plpc": 0.65,
         "thesis": ""
       }
     ],
@@ -109,7 +109,7 @@
       },
       {
         "date": "Jul 22",
-        "value": 91071.62
+        "value": 91150.79
       }
     ]
   },
@@ -581,6 +581,10 @@
       {
         "t": 1784736900000,
         "v": 810.32
+      },
+      {
+        "t": 1784737200000,
+        "v": 810.32
       }
     ]
   },
@@ -589,14 +593,13 @@
       "id": "2026-07-22-1",
       "symbol": "OKLO",
       "side": "buy",
-      "size": "$730",
+      "size": "$727",
       "qty": 16,
-      "entry": "OKLO eased from its $47.48 HOD to ~$45.6 (+3.2%), so the $48 marketable limit fills a tap NEAR THE MONEY (~$45.6) - a non-extended entry (16 sh x $48 = $768 reserve < $810 BP; ~$730 actual fill). Approve ANYTIME -> fills at <=$48; if it spikes back above $48 the limit rests and fills on a pullback, protecting from a top-tick chase. Multi-day swing, PDT-free (0/3 day-trades used).",
+      "entry": "OKLO eased from its $47.48 HOD to ~$45.4 (+3.0%), sitting near the $44.9 intraday base - so the $48 marketable limit fills a tap NEAR THE MONEY (~$45.4), a BETTER entry than the earlier spike (16 sh x $48 = $768 reserve < $810 BP; ~$727 actual fill). Approve ANYTIME -> fills at <=$48; if it spikes back above $48 the limit rests and fills on any pullback. Multi-day swing, PDT-free (0/3 day-trades used).",
       "trigger": null,
       "stop": 39,
-      "bracket": "stop $39 GTC (below the $40-41 base / 7/17 $39.53 low, ~-15% from ~$46)",
-      "thesis": "Ends a 7th straight session of live cash by owning the watchlist's ACTUAL RS leader (pop_rank 1), not a laggard. OKLO is the day's strongest name (+4.1%) on a confirmed, dated catalyst - the Trump/DOE $200M nuclear-for-AI program with MSFT/NVDA, with a DOE AI-energy summit TODAY where details may drop ($86.50 analyst PT). No own earnings to Aug 18, insulated from tonight's GOOGL/TSLA capex binary. Wide $39 stop, ~$115 max risk.",
-      "limit": 48
+      "bracket": "stop $39 GTC (below the $40-41 base / 7/17 $39.53 low, ~-14% from ~$45.4)",
+      "thesis": "Ends a 7th straight session of live cash by owning the watchlist's RS leader (pop_rank 1) on a live, dated catalyst - the Trump/DOE $200M nuclear-for-AI program (OKLO+X-Energy, MSFT/NVDA), with a DOE AI-energy summit TODAY that may drop $200M detail this afternoon. No own earnings to Aug 18, structurally insulated from tonight's GOOGL/TSLA capex binary. 25-analyst 12-mo PT $86.50 (~90% upside). Wide $39 stop under the base (~$105 max risk on ~$727). Paper already owns 300 sh, stop trailed to $43."
     }
   ],
   "coverage": [
@@ -606,27 +609,27 @@
       "theme": "Advanced nuclear for AI power",
       "verdict": "buy",
       "verdict_label": "Buy - live armed + paper held",
-      "thesis": "**Day's RS leader (+3.4%) and pop_rank 1 on a confirmed, dated catalyst** - the Trump/DOE $200M program to fast-track advanced reactors for AI data centers (OKLO+X-Energy w/ MSFT/NVDA); a DOE AI-energy summit TODAY may add detail. Spiked to $47.48, eased to ~$45.6 (normal breather), still under its early-July $49-50 highs, no own earnings to Aug 18, insulated from tonight's Mag-7 capex binary.",
-      "hold_reason": "Small-modular nuclear-reactor company and the name we're most excited about - the Trump/DOE just tapped it (with X-Energy, plus Microsoft and Nvidia) for a $200M program to power AI data centers, and a DOE energy summit today could add detail. Paper owns 300 sh from the open rotation (~$44.6) and we trailed the stop up to $43 to lock more of the gain. We'd sell if it loses the $43 base or the summit turns into a sell-the-news fade.",
+      "thesis": "**Day's RS leader and pop_rank 1 on a live, dated catalyst** - the Trump/DOE $200M program to fast-track advanced reactors for AI data centers (OKLO+X-Energy w/ MSFT/NVDA), with a DOE AI-energy summit TODAY that may drop $200M detail this afternoon. Spiked to $47.48, eased to ~$45.4 near the $44.9 intraday base (a better entry than the spike), still under its early-July $49-50 highs, no own earnings to Aug 18, insulated from tonight's Mag-7 capex binary.",
+      "hold_reason": "Small-modular nuclear-reactor company - our top conviction name. The Trump/DOE just tapped it (with X-Energy, plus Microsoft and Nvidia) for a $200M program to power AI data centers, and a DOE energy summit today could add detail. Paper owns 300 sh from the open rotation (~$44.6), stop trailed to $43 to lock gains. We'd sell if it loses the $43 base or the summit becomes a sell-the-news fade.",
       "size": "$13.7k (300 sh paper)",
       "size_pct": 15,
       "size_note": "pop_rank-1 mover; paper stop trailed $41.50->$43",
       "plan_usd": "$730 live (armed $48 limit, one tap) / 300 sh paper held",
-      "chg_pct": 2.81,
+      "chg_pct": 2.66,
       "projection": {
-        "target_pct": 6,
-        "confidence": "high",
+        "target_pct": 5.5,
+        "confidence": "med",
         "basis": "DOE AI-energy summit today may drop $200M details; RS leader",
         "pop_rank": 1,
         "path_pct": [
-          3.4,
-          4.8,
-          6
+          3,
+          4,
+          5.5
         ]
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "swing (multi-day)",
-      "price": 45.38,
+      "price": 45.31,
       "spark": [
         68.71,
         67.8,
@@ -657,7 +660,7 @@
         52.43,
         51.85,
         47.88,
-        45.38
+        45.31
       ]
     },
     {
@@ -665,28 +668,23 @@
       "name": "Rocket Lab",
       "theme": "Space / launch / defense",
       "verdict": "buy",
-      "verdict_label": "Buy - added on the contract",
-      "thesis": "**Watchlist's BIGGEST mover (+5.0%) on a fresh, dated catalyst** - won a $266M Space Force suborbital-launch contract (12 vehicles + 6 options). Rotated into it this run out of the flat VRT laggard - weighting the mover, and it's space/defense so it's insulated from tonight's chip-capex binary. New HOD; stop $65.50 under the base.",
-      "hold_reason": "Rocket Lab - space launch and defense. We rotated into it this morning (123 sh, ~$72.68) out of the VRT laggard because it's the watchlist's biggest mover today on a fresh, real catalyst: a $266M Space Force suborbital-launch contract. Stop's at $65.50 under the base, and it's insulated from tonight's chip-capex prints so it diversifies the book. We'd cut it if it loses $65.50.",
+      "verdict_label": "Buy - paper held (biggest mover)",
+      "thesis": "**The watchlist's biggest mover (+4.8%)** on a fresh $266M Space Force suborbital-launch contract. We rotated the flat VRT laggard into it at ~$72.7 - weighting the mover, and a name insulated from tonight's GOOGL/TSLA binary. Reclaimed the $69-70 area and pushing a $72.9 HOD; space is a clean, non-capex catalyst.",
+      "hold_reason": "Rocket Lab - launch + space-systems company. We bought it this morning (rotating out of the flat VRT) because it's the day's biggest watchlist mover on a real, fresh $266M government contract, and it doesn't report tonight. Wide $65.50 stop under the 7/21 base. We'd sell if it loses ~$69 and the contract pop fully fades.",
       "size": "$8.9k (123 sh paper)",
       "size_pct": 9.8,
       "size_note": "new hold; rotated in from VRT this run",
       "plan_usd": "123 sh paper (rotated from VRT)",
-      "chg_pct": 4.45,
+      "chg_pct": 4.31,
       "projection": {
-        "target_pct": 7,
-        "confidence": "high",
-        "basis": "$266M Space Force contract; biggest mover, new HOD",
-        "pop_rank": 2,
-        "path_pct": [
-          5,
-          6.2,
-          7
-        ]
+        "target_pct": 5,
+        "confidence": "med",
+        "basis": "fresh $266M Space Force contract; biggest mover holding the HOD",
+        "pop_rank": 2
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "swing (multi-day)",
-      "price": 72.24,
+      "price": 72.14,
       "spark": [
         143.24,
         150.29,
@@ -717,31 +715,31 @@
         100.5,
         93.14,
         83.41,
-        72.24
+        72.14
       ]
     },
     {
       "ticker": "CEG",
       "name": "Constellation Energy",
       "theme": "Nuclear utility / power-for-AI",
-      "verdict": "hold",
-      "verdict_label": "Hold - power for AI, new HOD",
-      "thesis": "**New-high breakout (+3.3%), watchlist #3 mover** - the power-for-AI proxy catching the same nuclear/utility-for-datacenter bid as OKLO, insulated from tonight's semi/capex binary. Trailed the stop up to $260 (~breakeven) to lock the gain.",
-      "hold_reason": "Constellation Energy - the big nuclear utility that's become an AI-power play. It broke to new highs again today as the nuclear-for-AI theme broadened off the OKLO headline. We own 16 sh from ~$260.68 and trailed the stop up to $260 (about breakeven) to protect the run. We'd let it go if it loses $260; otherwise we ride the theme.",
+      "verdict": "buy",
+      "verdict_label": "Buy - paper held (new highs)",
+      "thesis": "**New highs, +3.5%** - nuclear-for-AI power bid broadening beyond OKLO. SMCI's $60B AI-server orders + tonight's GOOGL capex reinforce the datacenter-power thesis CEG sits at the center of. Held 16 sh (~$260.7), stop $260 just under.",
+      "hold_reason": "Constellation Energy - the largest US nuclear operator, a direct AI-datacenter power play. It's making new highs as the nuclear-for-AI theme broadens. Paper holds 16 sh with the stop trailed to $260 (~breakeven). We'd sell on a break back under $260 or if the power-demand narrative cools.",
       "size": "$4.3k (16 sh paper)",
       "size_pct": 4.8,
       "size_note": "new-high breakout; stop trailed $255->$260",
       "plan_usd": "held paper",
-      "chg_pct": 3.63,
+      "chg_pct": 3.56,
       "projection": {
-        "target_pct": 4.5,
+        "target_pct": 4,
         "confidence": "med",
-        "basis": "new HOD; nuclear-for-AI bid broadening",
+        "basis": "new HOD; nuclear-for-AI bid broadening + AI-server read-through",
         "pop_rank": 3
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "swing (multi-day)",
-      "price": 271.84,
+      "price": 271.65,
       "spark": [
         301.41,
         288.66,
@@ -772,31 +770,31 @@
         239.2,
         245.9,
         239.62,
-        271.84
+        271.65
       ]
     },
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices",
       "theme": "AI accelerators",
-      "verdict": "hold",
-      "verdict_label": "Hold - Anthropic catalyst",
-      "thesis": "**+2.1%, up ~5% since entry on a FRESH catalyst** - WSJ: AMD + Anthropic signed a 2-gigawatt, tens-of-billions chip deal, AMD investing up to $5B in Anthropic; 'Advancing AI' event today. Own earnings not until Aug 4. Trailed the stop up to $515 (below today's low) to lock a chunk before tonight's semi read-through.",
-      "hold_reason": "AMD popped on a fresh WSJ report it signed a 2-gigawatt chip deal with Anthropic (investing up to $5B in them) - a real demand signal - plus its AI event today. We own 30 sh from ~$527.80, now up ~5%. We trailed the stop up to $515 (below today's low) to lock in a chunk of the gain ahead of tonight's semi read-through.",
+      "verdict": "buy",
+      "verdict_label": "Buy - paper held",
+      "thesis": "**+2.3% near a $558 HOD** on the Anthropic 2GW chip deal (AMD to invest up to $5B in Anthropic) plus today's broad AI-hardware bid (SMCI's $60B order haul). Held 30 sh (~$527.8), stop $515 under the day's $526.6 base.",
+      "hold_reason": "AMD - AI accelerators + data-center CPUs. We hold it on the multi-billion Anthropic chip partnership, and today's AI-server demand surge (SMCI) reinforces the demand story. Paper holds 30 sh, stop $515. We'd sell on a break under ~$515 or if the AI-hardware bid rolls over.",
       "size": "$16.7k (30 sh paper)",
       "size_pct": 18.3,
       "size_note": "2nd-largest weight; stop trailed $490->$515",
       "plan_usd": "held paper",
-      "chg_pct": 2.25,
+      "chg_pct": 2.22,
       "projection": {
-        "target_pct": 3.5,
+        "target_pct": 2.6,
         "confidence": "med",
-        "basis": "Anthropic 2GW deal + AI event today",
-        "pop_rank": 4
+        "basis": "Anthropic 2GW deal + AI-server demand; near HOD",
+        "pop_rank": 5
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "swing (multi-day)",
-      "price": 556.63,
+      "price": 556.44,
       "spark": [
         503.95,
         495.57,
@@ -827,31 +825,31 @@
         518.25,
         552.25,
         515.95,
-        556.63
+        556.44
       ]
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA",
       "theme": "AI chip leader",
-      "verdict": "hold",
-      "verdict_label": "Hold - core into the print",
-      "thesis": "**+2.3%, recovered from a soft open** - core AI-capex anchor (trimmed to 90 sh earlier this week to fund the nuclear movers). Directly exposed to tonight's GOOGL capex guide, so it's two-way into the close; holding the core through the print behind a wide $186 stop rather than trailing tight into a binary.",
-      "hold_reason": "Nvidia - our AI-infrastructure anchor. We trimmed it earlier this week to fund the nuclear movers but kept a 90-sh core (~$208). It's +2.3% today. Heads-up: tonight's GOOGL earnings/capex guide reads straight through to NVDA, so it's two-way into the close - we're holding the core through the print behind a wide $186 stop rather than trailing it tight into a binary.",
+      "verdict": "buy",
+      "verdict_label": "Buy - paper held",
+      "thesis": "**+2.8%, recovered with the tape** and the AI-server read-through (SMCI $60B orders). GOOGL capex tonight is the next tell - a strong print reads bullish for datacenter GPU demand. Held 90 sh (~$208.1), wide $186 stop; no own earnings until late Aug.",
+      "hold_reason": "Nvidia - the AI-chip bellwether. We hold it as the core AI-compute position; today's SMCI order haul and tonight's GOOGL capex print both feed its datacenter-demand story. Paper holds 90 sh, wide $186 stop. We'd sell on a break of the recent base or a clear AI-capex disappointment.",
       "size": "$19.1k (90 sh paper)",
       "size_pct": 21,
       "size_note": "largest weight; wide $186 stop through the print",
       "plan_usd": "held paper",
-      "chg_pct": 3.31,
+      "chg_pct": 3.33,
       "projection": {
-        "target_pct": 2.5,
+        "target_pct": 3,
         "confidence": "med",
-        "basis": "recovered with tape; GOOGL capex read tonight",
-        "pop_rank": 5
+        "basis": "AI-server read-through; GOOGL capex read tonight",
+        "pop_rank": 4
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "swing (multi-day)",
-      "price": 214.09,
+      "price": 214.14,
       "spark": [
         214.53,
         212.33,
@@ -882,7 +880,7 @@
         194.51,
         195.59,
         196.97,
-        214.09
+        214.14
       ]
     },
     {
@@ -890,21 +888,21 @@
       "name": "NuScale Power",
       "theme": "Small modular reactors",
       "verdict": "hold",
-      "verdict_label": "Hold - nuclear peer",
-      "thesis": "**Same nuclear-for-AI theme as OKLO, cheaper/earlier-stage** - +0.9%, lagging the leader but riding the same catalyst. The insulated way to press the theme without more chip exposure into tonight's binary.",
-      "hold_reason": "NuScale - another small-modular-reactor name, our second nuclear-for-AI position. We added at the open alongside OKLO (1050 sh, ~$8.66) to weight the theme. It's lagging OKLO today (+0.9%) but riding the same catalyst; stop sits at $7.50. If it keeps trailing the leader we'd rotate it into OKLO or RKLB.",
+      "verdict_label": "Hold - paper (laggard / rotation candidate)",
+      "thesis": "**The book's laggard today (+0.4%)** - a nuclear-SMR peer to OKLO/CEG that hasn't caught the summit bid yet. Same DOE/nuclear-for-AI theme, so a mild rotation candidate but not a broken thesis; could catch up if the summit lifts the group. Held 1050 sh (~$8.66), wide $7.50 stop.",
+      "hold_reason": "NuScale (SMR) - small-modular reactor developer, same nuclear-for-AI theme as OKLO/CEG. It's lagging the group today, so it's on the watch-to-rotate list, but the thesis is intact and the summit could lift it. Paper holds 1050 sh, wide $7.50 stop. We'd rotate it into a stronger name if it keeps lagging while the theme runs.",
       "size": "$9.2k (1050 sh paper)",
       "size_pct": 10.1,
       "size_note": "theme catch-up; lagging OKLO",
       "plan_usd": "held paper",
       "chg_pct": 0.29,
       "projection": {
-        "target_pct": 2,
-        "confidence": "med",
-        "basis": "nuclear peer, lagging OKLO today",
-        "pop_rank": 6
+        "target_pct": 1.8,
+        "confidence": "low",
+        "basis": "nuclear peer lagging OKLO/CEG; may catch the summit bid",
+        "pop_rank": 7
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "swing (multi-day)",
       "price": 8.72,
       "spark": [
@@ -945,22 +943,22 @@
       "name": "Direxion 3x Semis",
       "theme": "3x leveraged (gated)",
       "verdict": "avoid",
-      "verdict_label": "Gated - 3x under 20-day",
-      "thesis": "**Round-tripped from -8% at the open to ~+3%** - the exact chop the gate protects against; stays gated while QQQ is under its 20-day. Owning none of this whipsaw is the gate working.",
+      "verdict_label": "Avoid - 3x gated (whippy)",
+      "thesis": "Round-tripped **-8% -> +3.9%** intraday - exactly the 3x-semis whipsaw the regime gate keeps us out of while QQQ sits under its 20-day. Green on the screen, but holding it through that swing would've been a gut-check, not a clean capture.",
       "size": "-",
       "size_pct": 0,
       "size_note": "gated - do not touch",
       "plan_usd": "$0 while gated",
-      "chg_pct": 3.89,
+      "chg_pct": 3.81,
       "projection": {
         "target_pct": 3,
         "confidence": "low",
-        "basis": "3x semis gated; round-tripped -8%->+3%",
-        "pop_rank": 7
+        "basis": "3x semis gated; round-tripped -8%->+3.9%",
+        "pop_rank": 6
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "n/a",
-      "price": 164.48,
+      "price": 164.35,
       "spark": [
         225.64,
         217.93,
@@ -991,7 +989,7 @@
         181.54,
         194.35,
         165.45,
-        164.48
+        164.35
       ]
     },
     {
@@ -999,20 +997,20 @@
       "name": "Bloom Energy",
       "theme": "Fuel cells / on-site power",
       "verdict": "watch",
-      "verdict_label": "Watch - quiet today",
-      "thesis": "**+0.5%, quiet** - fuel-cell/on-site-power name we traded live last week; part of the power-for-AI pocket but no fresh reason to re-enter here.",
+      "verdict_label": "Watch",
+      "thesis": "Fuel-cell AI-power play, **+1.3%** and cooling after its 7/21 +14.8% rip. In the right theme (datacenter power) but extended short-term; watching for a base to form.",
       "size": "-",
       "size_pct": 0,
       "size_note": "not held - watch",
       "plan_usd": "$0 - no chase",
       "chg_pct": 1.18,
       "projection": {
-        "target_pct": 1.5,
+        "target_pct": 1.8,
         "confidence": "low",
-        "basis": "fuel-cell AI-power play, quiet today",
+        "basis": "AI-power play digesting the 7/21 +15% rip",
         "pop_rank": 8
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "n/a",
       "price": 229.17,
       "spark": [
@@ -1053,22 +1051,22 @@
       "name": "Rigetti Computing",
       "theme": "Quantum computing",
       "verdict": "watch",
-      "verdict_label": "Watch - high-beta",
-      "thesis": "**+0.9%, mild green** - quantum high-beta; no catalyst, watch only.",
+      "verdict_label": "Watch",
+      "thesis": "Quantum peer, **+1.2%** - a small bid, no fresh catalyst. Watch-only high-beta.",
       "size": "-",
       "size_pct": 0,
       "size_note": "not held - watch",
       "plan_usd": "$0",
-      "chg_pct": 1.18,
+      "chg_pct": 1.05,
       "projection": {
-        "target_pct": 1.5,
+        "target_pct": 1.3,
         "confidence": "low",
-        "basis": "quantum peer, small bid",
+        "basis": "quantum peer, small bid, no catalyst",
         "pop_rank": 9
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "n/a",
-      "price": 15.46,
+      "price": 15.44,
       "spark": [
         25.07,
         24.61,
@@ -1099,7 +1097,7 @@
         17.96,
         17.96,
         16.55,
-        15.46
+        15.44
       ]
     },
     {
@@ -1107,22 +1105,22 @@
       "name": "IonQ",
       "theme": "Quantum computing",
       "verdict": "watch",
-      "verdict_label": "Watch - high-beta",
-      "thesis": "**+0.5%, tracking the tape** - high-beta quantum name with no fresh catalyst; would move on broad risk-on, not something to force here.",
+      "verdict_label": "Watch",
+      "thesis": "Quantum, **+0.5%**, drifting with the tape. No catalyst - watch-only.",
       "size": "-",
       "size_pct": 0,
       "size_note": "not held - watch",
       "plan_usd": "$0",
-      "chg_pct": 0.51,
+      "chg_pct": 0.59,
       "projection": {
         "target_pct": 1,
         "confidence": "low",
-        "basis": "quantum, drifting with the tape",
+        "basis": "quantum drifting with the tape",
         "pop_rank": 10
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "n/a",
-      "price": 35.68,
+      "price": 35.71,
       "spark": [
         63.59,
         65.4,
@@ -1153,61 +1151,62 @@
         49.16,
         48.89,
         45.37,
-        35.68
+        35.71
       ]
     },
     {
-      "ticker": "MU",
-      "name": "Micron",
-      "theme": "HBM / memory",
+      "ticker": "SMCI",
+      "name": "Super Micro Computer",
+      "theme": "AI servers / datacenter hardware",
       "verdict": "watch",
-      "verdict_label": "Watch - extended, cooling",
-      "thesis": "**-0.1%, cooling after its +12.8% rip** - the memory catalyst is real but it's extended; expressed via AMD/NVDA rather than chased here.",
+      "verdict_label": "Watch - don't chase the +25% gap",
+      "thesis": "**+25% on a blowout preliminary Q4** - a record $60B+ in new AI-server orders and gross margin guided to 15-17% (from ~8.2-8.4%). A genuine AI-buildout demand signal that reads through bullishly to our whole AI-power/semis book (NVDA, AMD, CEG, OKLO). But a +25% midday gap on prelims is the classic top-tick chase we don't take.",
+      "hold_reason": "",
       "size": "-",
       "size_pct": 0,
-      "size_note": "not held - express via AMD/NVDA",
-      "plan_usd": "$0 - extended",
-      "chg_pct": 0.72,
+      "size_note": "not held - read-through only",
+      "plan_usd": "-",
+      "chg_pct": 26.52,
       "projection": {
-        "target_pct": 1,
-        "confidence": "low",
-        "basis": "memory/HBM, digesting the rip",
+        "target_pct": 24,
+        "confidence": "med",
+        "basis": "already popped +25% on $60B orders; not chasing the gap",
         "pop_rank": 11
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "n/a",
-      "price": 976.91,
+      "price": 32.25,
       "spark": [
-        896.71,
-        928.16,
-        923.56,
-        970.49,
-        1034.92,
-        1064.08,
-        1079.58,
-        997.7,
-        864.87,
-        948.83,
-        935.23,
-        893.27,
-        995.87,
-        981.12,
-        1088,
-        1020.11,
-        1043.79,
-        1132.42,
-        1211.19,
-        1051.26,
-        1047.76,
-        1215.27,
-        1123.66,
-        1144.82,
-        1151.98,
-        1032.48,
-        975.26,
-        981.8,
-        939.66,
-        976.91
+        37.09,
+        38.19,
+        41.32,
+        46.11,
+        46.88,
+        50.16,
+        47.42,
+        46.88,
+        41.63,
+        43.98,
+        40.62,
+        29.26,
+        31.96,
+        30.45,
+        30.86,
+        29.23,
+        27.8,
+        30.66,
+        35.47,
+        33.31,
+        32.45,
+        31.67,
+        30.64,
+        28.15,
+        29.33,
+        27.66,
+        27.22,
+        27.2,
+        26.24,
+        32.25
       ]
     },
     {
@@ -1215,22 +1214,22 @@
       "name": "ProShares 3x Nasdaq",
       "theme": "3x leveraged (gated)",
       "verdict": "watch",
-      "verdict_label": "Powder - awaits reclaim",
-      "thesis": "**-0.2%, gated** - 3x Nasdaq stays in the powder pile until QQQ reclaims its $714.7 20-day; the regime gate that saved the book through the 7/14-20 wreck. Re-entry trigger is close (QQQ within 1%) but not met - won't add 3x into tonight's binary.",
+      "verdict_label": "Watch - benchmark (gated)",
+      "thesis": "3x QQQ, **flat** and gated under its 20-day (QQQ ~$709 vs ~$714 20-day). Our buy-and-hold benchmark: -2.6% since 7/2.",
       "size": "-",
       "size_pct": 0,
       "size_note": "dry powder while gated",
       "plan_usd": "$8-16k on a confirmed QQQ 20-day reclaim (not into the binary)",
-      "chg_pct": 0.18,
+      "chg_pct": 0.04,
       "projection": {
-        "target_pct": 0.5,
+        "target_pct": 0.3,
         "confidence": "low",
         "basis": "3x QQQ gated under its 20-day",
         "pop_rank": 12
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "n/a",
-      "price": 71.51,
+      "price": 71.41,
       "spark": [
         81.77,
         81.51,
@@ -1261,7 +1260,7 @@
         73.3,
         76.25,
         72.18,
-        71.51
+        71.41
       ]
     },
     {
@@ -1269,22 +1268,22 @@
       "name": "Vertiv",
       "theme": "Datacenter cooling / power",
       "verdict": "avoid",
-      "verdict_label": "Sold - rotated into RKLB",
-      "thesis": "**SOLD this run (-1.6%, the only red name)** - the weakest held name and a capex-beneficiary that's two-way into tonight's binary. Rotated the ~$9k into RKLB, the day's biggest mover on a fresh contract - opportunity cost is a sell signal. ~-$158 realized.",
+      "verdict_label": "Avoid - sold the laggard",
+      "thesis": "Sold this morning (**-1.4%**, the flat/red laggard) to fund RKLB - capex-beta into tonight's binary, 2-way risk. Opportunity-cost rotation, logged at ~-$158 realized.",
       "size": "-",
       "size_pct": 0,
       "size_note": "sold 30 sh ~$299.5; rotated to RKLB",
       "plan_usd": "$0 - rotated out",
-      "chg_pct": -1.47,
+      "chg_pct": -1.4,
       "projection": {
-        "target_pct": -0.5,
+        "target_pct": -1.2,
         "confidence": "low",
-        "basis": "sold; laggard, 2-way into the binary",
+        "basis": "sold laggard; capex-beta soft into the binary",
         "pop_rank": 13
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "n/a",
-      "price": 300.17,
+      "price": 300.37,
       "spark": [
         323.8,
         319.69,
@@ -1315,7 +1314,7 @@
         300.5,
         318.41,
         305.63,
-        300.17
+        300.37
       ]
     },
     {
@@ -1324,21 +1323,21 @@
       "theme": "AI software / high-beta",
       "verdict": "avoid",
       "verdict_label": "Avoid - rolling over",
-      "thesis": "**Worst watchlist name (-4.7%)** - extended high-beta breaking down as money rotates out of the crowded momentum names into catalyst plays. Hold none; dodged it.",
+      "thesis": "**Watchlist's worst, -4.3%** - extended high-beta rolling over as money rotates to catalyst names. We hold none; it's the clean 'dodged' name today.",
       "size": "-",
       "size_pct": 0,
       "size_note": "not held - avoid",
       "plan_usd": "$0",
-      "chg_pct": -4.34,
+      "chg_pct": -4.55,
       "projection": {
-        "target_pct": -3,
-        "confidence": "low",
-        "basis": "extended high-beta rolling over",
+        "target_pct": -4,
+        "confidence": "med",
+        "basis": "extended high-beta rolling over, RS laggard",
         "pop_rank": 14
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "n/a",
-      "price": 126.89,
+      "price": 126.61,
       "spark": [
         136.57,
         132.47,
@@ -1369,30 +1368,30 @@
         129.18,
         132.53,
         134.37,
-        126.89
+        126.61
       ]
     },
     {
       "ticker": "TSLA",
       "name": "Tesla",
       "theme": "EV / robotaxi / earnings tonight",
-      "verdict": "avoid",
-      "verdict_label": "Avoid - earnings tonight",
-      "thesis": "**-0.4% into its after-close print** - a binary tonight (robotaxi/FSD the focus, ~7% implied swing); no pre-print position by design.",
+      "verdict": "watch",
+      "verdict_label": "Watch - earnings tonight",
+      "thesis": "**Flat into its Q2 print tonight** (~$25.6B rev, auto gross margin the key metric) - a ~7% implied swing that resolves after-hours. Not holding into a binary we can't manage overnight.",
       "size": "-",
       "size_pct": 0,
       "size_note": "not held - binary tonight",
       "plan_usd": "$0 pre-print",
-      "chg_pct": -0.22,
+      "chg_pct": -0.35,
       "projection": {
-        "target_pct": -1,
+        "target_pct": 0,
         "confidence": "low",
-        "basis": "earnings tonight, ~7% implied swing",
-        "pop_rank": 15
+        "basis": "earnings tonight, ~7% implied after-hours swing",
+        "pop_rank": 13
       },
-      "updated": "2026-07-22T11:49:00-04:00",
+      "updated": "2026-07-22T12:16:00-04:00",
       "horizon": "n/a",
-      "price": 378.08,
+      "price": 377.56,
       "spark": [
         433.53,
         440.44,
@@ -1423,11 +1422,17 @@
         392.82,
         419.79,
         403,
-        378.08
+        377.56
       ]
     }
   ],
   "feed": [
+    {
+      "type": "activity",
+      "ts": "2026-07-22T12:16:00-04:00",
+      "text": "12:16p - HOLD & MANAGE (no churn 20 min post-rotation): all 6 paper names green + GTC-stopped into tonight's GOOGL/TSLA binary - RKLB +4.8% (biggest mover, held), CEG +3.5% new highs, OKLO +3.0% on the DOE AI-energy summit today, NVDA +2.8%, AMD +2.3%. Did NOT chase SMCI's +25% ($60B AI-server orders) gap or the SOXL -8%->+4% whipsaw - both the right skips; the SMCI print is a bullish read-through for our AI-power/semis names. Kept ~21% powder as dry ammo for a post-print dip. LIVE flat a 7th session, OKLO one-tap still armed - the only gap.",
+      "reaction": "hold"
+    },
     {
       "type": "activity",
       "ts": "2026-07-22T11:49:00-04:00",
@@ -1782,6 +1787,11 @@
   ],
   "pulse": [
     {
+      "ts": "2026-07-22T12:16:00-04:00",
+      "text": "Holding the book steady into tonight's GOOGL/TSLA binary - no churn 20 min after the RKLB rotation. All 6 paper names green and GTC-stopped (RKLB +4.8% biggest mover, CEG +3.5% new highs, OKLO +3.0% on the DOE AI-energy summit today, NVDA +2.8%, AMD +2.3%, SMR +0.4%), ~21% powder held as dry ammo to buy any post-print dip. SMCI's +25% on a $60B AI-server order haul + margins guided to 15-17% (from ~8%) is a bullish read-through for our whole AI-power/semis book, but chasing a +25% midday gap is the top-tick trap we skip. Live's flat cash a 7th session - the OKLO one-tap (fills ~$45.4, $39 stop, 0/3 day-trades used) is the only gap. Next: hold through the binary, deploy the powder tomorrow on what confirms.",
+      "hype": "Paper's green across all six and we own today's biggest mover (RKLB). Just holding tight through tonight's Google/Tesla earnings - live's still one tap from finally being in the game."
+    },
+    {
       "ts": "2026-07-22T11:49:00-04:00",
       "text": "Rotated the flat VRT laggard into RKLB - it's the watchlist's biggest mover (+5%) on a fresh $266M Space Force contract, and the swap cuts capex-beta before tonight's GOOGL/TSLA binary. Trailed OKLO/CEG/AMD stops up to lock gains; all 6 paper positions stopped, ~21% powder for the post-print open. Live's still cash a 7th session - the OKLO one-tap is armed and it's the only gap. Next: hold the movers through the binary, deploy the powder tomorrow on what confirms.",
       "hype": "Swapped our one dead-weight name for RKLB, today's biggest mover on a fresh $266M contract. Live's still just sitting in cash though - that one tap is all that's missing."
@@ -1860,13 +1870,17 @@
   "benchmark": {
     "since": "Jul 2",
     "base_tqqq": 76.9,
-    "tqqq": 71.51,
-    "tqqq_pct": -7.01
+    "tqqq": 71.41,
+    "tqqq_pct": -7.14
   },
   "status": [
     {
       "session": "Morning",
       "text": "Rotated laggard into RKLB mover"
+    },
+    {
+      "session": "Afternoon",
+      "text": "Holding movers into binary"
     }
   ],
   "equity_history": {
@@ -2549,6 +2563,10 @@
       ],
       [
         1784737140000,
+        810.32
+      ],
+      [
+        1784737200000,
         810.32
       ]
     ],
