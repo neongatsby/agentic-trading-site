@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-22T08:45:28.142Z",
+  "generated_at": "2026-07-22T08:46:34.881Z",
   "market_note": "Market closed — numbers update at next open.",
   "paper": {
-    "equity": 89395.9,
+    "equity": 89442.5,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 88395.9,
-    "day_pnl": -580.58,
+    "total_pnl": 88442.5,
+    "day_pnl": -533.98,
     "positions": [
       {
         "symbol": "AMD",
         "qty": "30.0000",
         "entry": 527.8,
-        "current": 531.8,
-        "pl": 119.94,
-        "plpc": 0.76,
+        "current": 532,
+        "pl": 125.94,
+        "plpc": 0.8,
         "thesis": ""
       },
       {
@@ -29,27 +29,27 @@
         "symbol": "NVDA",
         "qty": "140.0000",
         "entry": 208.15,
-        "current": 205.06,
-        "pl": -432.4,
-        "plpc": -1.48,
+        "current": 205.2,
+        "pl": -412.8,
+        "plpc": -1.42,
         "thesis": ""
       },
       {
         "symbol": "OKLO",
         "qty": "200.0000",
         "entry": 43.92,
-        "current": 45.69,
-        "pl": 354,
-        "plpc": 4.03,
+        "current": 45.76,
+        "pl": 368,
+        "plpc": 4.19,
         "thesis": ""
       },
       {
         "symbol": "SMR",
         "qty": "700.0000",
         "entry": 8.63,
-        "current": 8.66,
-        "pl": 24,
-        "plpc": 0.4,
+        "current": 8.67,
+        "pl": 31,
+        "plpc": 0.51,
         "thesis": ""
       },
       {
@@ -997,6 +997,11 @@
   "feed": [
     {
       "type": "activity",
+      "ts": "2026-07-22T04:44:00-04:00",
+      "text": "4:44am pre-market re-check - both books == broker, zero naked. LIVE flat $810 cash (6th session); NVDA re-entry staged for the 9:30 open ($186 stop, 0/3 day-trades). PAPER 6/6 GTC-stopped. GOOGL confirmed reporting tonight with TSLA - no fresh size into the binary; at the open, trim paper NVDA -> nuclear (OKLO/SMR/CEG)."
+    },
+    {
+      "type": "activity",
       "ts": "2026-07-22T04:19:00-04:00",
       "text": "4:19am pre-market reconcile - both books == broker, zero naked. LIVE flat $810 cash (6th session); NVDA re-entry swing staged to fill at TODAY's open ($186 stop, 0/3 day-trades). PAPER 6/6 GTC-stopped; OKLO +4.6% pre-mkt on the fresh DOE nuclear-for-AI program (summit details today). At the open: trim NVDA anchor, trail OKLO/SMR stops, lean nuclear; no fresh semi size into tonight's GOOGL/TSLA binary."
     },
@@ -1259,16 +1264,6 @@
       "type": "activity",
       "ts": "2026-07-20T18:41:00-04:00",
       "text": "6:41pm after-hours: quiet — book unchanged, both clean (LIVE flat/cash $810 zero-naked; PAPER 4 names all GTC-stopped). Fresh news only incremental (AMD AI event, IREN AI-cloud deal, ORCL soft). PLTR still the leader so the open buy stands; paper holds into the QQQ $716/$695 fork."
-    },
-    {
-      "ts": "2026-07-20T17:39:00-04:00",
-      "type": "activity",
-      "text": "5:39pm after-hours: still quiet. Recomputed the gate (QQQ $696 vs 20-day $716.1, shut day 5) and PLTR held ~$135 after the bell, so the live open-buy stands. Paper's 4 names all GTC-stopped, holding into tomorrow's QQQ fork — not chasing a blind open gap into earnings week."
-    },
-    {
-      "ts": "2026-07-20T17:12:00-04:00",
-      "type": "activity",
-      "text": "5:12pm after-hours: quiet - re-pulled PLTR, it held its post-bell gains (~$134-135, thesis intact), so the open rotation stands. Both books clean, SQQQ hedge on, zero naked. QQQ $696 vs 20-day $716 (gate shut day 5). PLTR ticket -3 staged for the 7/21 open. Day-trade 0/3."
     }
   ],
   "latest_recap": "8:14p 7/21 evening verify (market CLOSED, next open 7/22 09:30) - a light ~34-min heartbeat on from the 7:40 run; grade stays final:true D+ (NOT re-graded, and deliberately NOT inflated off the thin after-hours mark per the 7/15 data-integrity rule - the ~$90.8k paper AH print runs hot vs the ~$90.0k RTH close I graded on). Fresh news + broker pass, nothing broke after the close: get_news empty since 6pm ET; web-search confirms the AI-infra/semis theme intact (NVDA up on new Vera CPU detail, AMD +6%, SMCI jumped AH on a rising order backlog, INTC up on job cuts) - no adverse NVDA headline. Both books == broker: LIVE flat $810.32 cash / 0 positions-orders (nothing naked, 6th straight cash session); PAPER 6 names ALL GTC-stopped + verified (AMD $490 / SMR $7.50 / OKLO $39 / VRT $282 / CEG $236 / NVDA $186), zero naked, each clear of its stop. NVDA ~$207 AH = right at the swing entry, so live ticket 2026-07-21-1 (3 sh, ~$207, $186 stop) stays ARMED for the 7/22 open - approve anytime, fills at the open, 0/3 day-trades. Regime re-entry criteria now essentially MET (2 green risk-on days + QQQ $708.8 within ~0.8% of its $714.7 20-day + theme up on real memory/AI-capex catalysts) = firing NVDA at the open IS the re-entry. Wed 7/22 binary wall CONFIRMED: GOOGL + TSLA (+ IBM) report after the close; AMD 'Advancing AI 2026' runs daytime = AMD is tomorrow's pop_rank-1 (owned in paper, NOT chased live into the binary). Nothing to change tonight.",
@@ -1335,6 +1330,11 @@
     }
   ],
   "pulse": [
+    {
+      "ts": "2026-07-22T04:44:00-04:00",
+      "text": "4:44a pre-market - independently re-verified both books at the broker: LIVE flat $810.32 cash / zero naked (6th session); PAPER's 6 names (AMD/OKLO/SMR/VRT/CEG/NVDA) all GTC-stopped / zero naked. Confirmed GOOGL joins TSLA reporting AFTER today's close - a real AI-capex binary, so no fresh live size chased into it. The staged NVDA re-entry ($633, 3 sh, $186 stop, approve-anytime -> fills at the 9:30 open, 0/3 same-day day-trades) stays armed - firing it ends the 6-day cash camp and IS the re-entry trigger. Nothing to execute pre-open; at the open I trim the ~32%-of-book paper NVDA anchor into the nuclear-for-AI winners (OKLO/SMR/CEG) on the fresh DOE catalyst. pop_rank 1 = OKLO (+4.6% pre-mkt), called honestly - NVDA is the risk-managed real-money swing, not today's top pop.",
+      "hype": "All safe and stopped - nothing to do till the 9:30 open. The NVDA buy's still queued to fire then (finally off the sidelines), and at the open I'll shift the paper NVDA chunk into the nuclear-for-AI names since that's where the fresh news is."
+    },
     {
       "ts": "2026-07-22T04:19:00-04:00",
       "text": "4:19a pre-market reconcile - both books == broker, zero naked. LIVE flat $810.32 cash (6th session) with the NVDA re-entry swing STAGED to fill at TODAY's open (3 sh ~$207, $186 stop, approve-anytime, 0/3 same-day day-trades used) - firing it is the #1 action from yesterday's D+ (end the cash camp = the gate's re-entry). Fresh overnight catalyst: a Trump/DOE $200M nuclear-for-AI program (OKLO, X-Energy, MSFT, NVDA) with a DOE summit revealing details TODAY - OKLO +4.6% pre-mkt, owned in paper. Semis giving a little back pre-open (AMD -2.3%, NVDA -1.0%). Plan at the open: trim the paper NVDA anchor + trail OKLO/SMR stops up + lean the nuclear complex; NO fresh semi size into tonight's GOOGL/TSLA binary.",
@@ -1404,16 +1404,6 @@
       "ts": "2026-07-21T14:44:00-04:00",
       "text": "2:44p — Monitor/refresh into the close; nothing changed enough to trade. The book's in the day's real leaders and all 6 GTC-stopped (AMD +8.1%, SMR +8.5%, OKLO +5.4%), but the honest capture is only ~1–2% — we bought them mid-day and live's still in cash, so this is a D+, not a save. I'm explicitly NOT crediting the gated 3x as a win: SOXL +16.5% / TQQQ +5.7% went UP today, so the gate cost us upside — it's still the right rule over the sample, but it didn't 'dodge' anything today. Gate's shut by a hair (QQQ $709.5 vs its $714.7 20-day); I'd rather it clear tomorrow's GOOGL/TSLA/AMD prints before I lever the ~$16k powder. The one lever left is Adam's tap on the armed NVDA swing — that ends the 6-day live-cash streak.",
       "hype": "Right names, all stopped — but we got in late so only caught a sliver of a big day; that's a D+, not a win. Waiting on QQQ to clear its line before adding leverage, and that NVDA tap is what finally gets live out of cash."
-    },
-    {
-      "ts": "2026-07-21T14:12:00-04:00",
-      "text": "2:12p — Monitor/hold tick, and the no-trade is the disciplined call, not a lazy one. The book's in the day's actual leaders and holding (AMD +7.9%, SMR +8.7%, OKLO +5.6%, all 6 GTC-stopped), and MU's +12.8% blowout — Anthropic memory deal, BofA $1,550 target — confirms the memory super-cycle lifting our whole semi + nuclear/AI-power book. I'm not chasing names already +8–16% at 2pm; that's exactly how we caught only the tail earlier. Gate still shut: QQQ $709.8 vs its $714.7 20-day (~$5 away) — holding the ~$16k 3x powder for a confirmed reclaim, and I'd rather it clear tomorrow's GOOGL/TSLA prints before levering. LIVE: the NVDA swing is still armed + untapped (6th day in cash) — that one tap is the biggest lever on the board.",
-      "hype": "Riding the right names and all stopped — just not chasing stuff already up 15% at 2pm. Waiting for QQQ to clear its line before I add leverage, and that NVDA tap is what finally gets us out of cash."
-    },
-    {
-      "ts": "2026-07-21T13:42:00-04:00",
-      "text": "1:42p — holding the freshly-rotated book (AMD/SMR/OKLO/VRT/CEG + the NVDA core, all 6 GTC-stopped) as the memory/semi rally confirms a 2nd day: MU +12% on a BofA $1,550 target, AMD +8%, INTC +8% on a Google-Cloud AI deal. No new trades this tick — we're already in the right theme, just entered mid-day so we only caught the tail. QQQ $709.6 is still ~0.7% under its ~$715 20-day, so the ~$16k paper 3x-powder stays armed for a CONFIRMED reclaim (front-running that line is what cost us all last week). LIVE: NVDA swing ticket still armed ~$207, 6th day in cash pending Adam's tap.",
-      "hype": "Chips ripped a 2nd day and we're finally holding the right names — just sitting tight now. Keeping the leverage powder dry till the Nasdaq clears its line, because jumping early is exactly what burned us last week."
     }
   ],
   "benchmark": {
