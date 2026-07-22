@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-07-22T19:33:14.582Z",
+  "generated_at": "2026-07-22T19:34:22.685Z",
   "market_note": "Market OPEN — live.",
   "paper": {
-    "equity": 90421.93,
+    "equity": 90376.7,
     "equity_note": "autonomous testbed · $5K sleeve (paper acct still $100K — reset pending)",
-    "total_pnl": 89421.93,
-    "day_pnl": 445.45,
+    "total_pnl": 89376.7,
+    "day_pnl": 400.22,
     "positions": [
       {
         "symbol": "AMD",
         "qty": "30.0000",
         "entry": 527.8,
-        "current": 560.96,
-        "pl": 994.59,
+        "current": 560.95,
+        "pl": 994.44,
         "plpc": 6.28,
         "thesis": ""
       },
@@ -20,36 +20,36 @@
         "symbol": "CEG",
         "qty": "16.0000",
         "entry": 260.68,
-        "current": 274.77,
-        "pl": 225.44,
-        "plpc": 5.41,
+        "current": 274.74,
+        "pl": 224.96,
+        "plpc": 5.39,
         "thesis": ""
       },
       {
         "symbol": "NVDA",
         "qty": "90.0000",
         "entry": 208.15,
-        "current": 212.91,
-        "pl": 428.53,
-        "plpc": 2.29,
+        "current": 212.78,
+        "pl": 416.83,
+        "plpc": 2.23,
         "thesis": ""
       },
       {
         "symbol": "OKLO",
         "qty": "300.0000",
         "entry": 44.61,
-        "current": 44.45,
-        "pl": -50.48,
-        "plpc": -0.38,
+        "current": 44.4,
+        "pl": -63.98,
+        "plpc": -0.48,
         "thesis": ""
       },
       {
         "symbol": "RKLB",
         "qty": "123.0000",
         "entry": 72.68,
-        "current": 69.85,
-        "pl": -348,
-        "plpc": -3.89,
+        "current": 69.73,
+        "pl": -362.16,
+        "plpc": -4.05,
         "thesis": ""
       },
       {
@@ -57,8 +57,8 @@
         "qty": "1050.0000",
         "entry": 8.66,
         "current": 8.55,
-        "pl": -114.25,
-        "plpc": -1.26,
+        "pl": -119.5,
+        "plpc": -1.31,
         "thesis": ""
       }
     ],
@@ -114,18 +114,18 @@
     ]
   },
   "live": {
-    "equity": 810.55,
+    "equity": 809.83,
     "equity_note": "funded $1K · NVDA pipe-test filled at the open",
-    "total_pnl": -189.45,
-    "day_pnl": 0.23,
+    "total_pnl": -190.17,
+    "day_pnl": -0.49,
     "positions": [
       {
         "symbol": "OKLO",
         "qty": "16.0000",
         "entry": 44.43,
-        "current": 44.45,
-        "pl": 0.24,
-        "plpc": 0.03,
+        "current": 44.4,
+        "pl": -0.48,
+        "plpc": -0.07,
         "thesis": ""
       }
     ],
@@ -764,7 +764,7 @@
       "size_pct": 4.8,
       "size_note": "held; stop $263 (gain locked green)",
       "plan_usd": "16 sh paper held",
-      "chg_pct": 4.75,
+      "chg_pct": 4.76,
       "projection": {
         "target_pct": 5,
         "confidence": "high",
@@ -773,7 +773,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "swing (multi-day)",
-      "price": 274.78,
+      "price": 274.8,
       "spark": [
         301.41,
         288.66,
@@ -804,7 +804,7 @@
         239.2,
         245.9,
         239.62,
-        274.78
+        274.8
       ]
     },
     {
@@ -819,7 +819,7 @@
       "size_pct": 21.3,
       "size_note": "held; stop $203",
       "plan_usd": "90 sh paper held",
-      "chg_pct": 2.74,
+      "chg_pct": 2.67,
       "projection": {
         "target_pct": 3.2,
         "confidence": "med",
@@ -828,7 +828,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "swing (multi-day)",
-      "price": 212.91,
+      "price": 212.78,
       "spark": [
         214.53,
         212.33,
@@ -859,7 +859,7 @@
         194.51,
         195.59,
         196.97,
-        212.91
+        212.78
       ]
     },
     {
@@ -874,7 +874,7 @@
       "size_pct": 15.5,
       "size_note": "LIVE 16 sh (stop $39) + paper 300 sh (stop $43)",
       "plan_usd": "16 sh live ($712, filled) / 300 sh paper held",
-      "chg_pct": 0.69,
+      "chg_pct": 0.66,
       "projection": {
         "target_pct": 0.5,
         "confidence": "med",
@@ -883,7 +883,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "swing (multi-day)",
-      "price": 44.45,
+      "price": 44.43,
       "spark": [
         68.71,
         67.8,
@@ -914,7 +914,7 @@
         52.43,
         51.85,
         47.88,
-        44.45
+        44.43
       ]
     },
     {
@@ -929,7 +929,7 @@
       "size_pct": 18.4,
       "size_note": "held; stop $525 (green)",
       "plan_usd": "30 sh paper held",
-      "chg_pct": 3.04,
+      "chg_pct": 3,
       "projection": {
         "target_pct": 2.5,
         "confidence": "med",
@@ -938,7 +938,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "swing (multi-day)",
-      "price": 560.93,
+      "price": 560.7,
       "spark": [
         503.95,
         495.57,
@@ -969,7 +969,7 @@
         518.25,
         552.25,
         515.95,
-        560.93
+        560.7
       ]
     },
     {
@@ -984,7 +984,7 @@
       "size_pct": 9.7,
       "size_note": "held; stop $65.5",
       "plan_usd": "123 sh paper held",
-      "chg_pct": 1.04,
+      "chg_pct": 0.88,
       "projection": {
         "target_pct": 1,
         "confidence": "low",
@@ -993,7 +993,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "swing (multi-day)",
-      "price": 69.88,
+      "price": 69.77,
       "spark": [
         143.24,
         150.29,
@@ -1024,7 +1024,7 @@
         100.5,
         93.14,
         83.41,
-        69.88
+        69.77
       ]
     },
     {
@@ -1039,7 +1039,7 @@
       "size_pct": 0,
       "size_note": "don't chase a +22% gap into the binary",
       "plan_usd": "watch only (no-chase; read-through for held AMD/NVDA)",
-      "chg_pct": 20.83,
+      "chg_pct": 20.75,
       "projection": {
         "target_pct": 20,
         "confidence": "low",
@@ -1048,7 +1048,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "intraday",
-      "price": 30.8,
+      "price": 30.78,
       "spark": [
         37.09,
         38.19,
@@ -1079,7 +1079,7 @@
         27.22,
         27.2,
         26.24,
-        30.8
+        30.78
       ]
     },
     {
@@ -1094,7 +1094,7 @@
       "size_pct": 10,
       "size_note": "held; stop $7.50 (the #1 funding source)",
       "plan_usd": "1,050 sh paper held",
-      "chg_pct": -1.72,
+      "chg_pct": -1.78,
       "projection": {
         "target_pct": -2,
         "confidence": "low",
@@ -1103,7 +1103,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "swing (multi-day)",
-      "price": 8.55,
+      "price": 8.54,
       "spark": [
         12.23,
         12.07,
@@ -1134,7 +1134,7 @@
         9.76,
         9.6,
         8.95,
-        8.55
+        8.54
       ]
     },
     {
@@ -1204,7 +1204,7 @@
       "size_pct": 0,
       "size_note": "no setup",
       "plan_usd": "watch only",
-      "chg_pct": -1.93,
+      "chg_pct": -1.97,
       "projection": {
         "target_pct": -1.5,
         "confidence": "low",
@@ -1213,7 +1213,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "n/a",
-      "price": 34.81,
+      "price": 34.8,
       "spark": [
         63.59,
         65.4,
@@ -1244,7 +1244,7 @@
         49.16,
         48.89,
         45.37,
-        34.81
+        34.8
       ]
     },
     {
@@ -1259,7 +1259,7 @@
       "size_pct": 0,
       "size_note": "no setup",
       "plan_usd": "watch only",
-      "chg_pct": -0.33,
+      "chg_pct": -0.46,
       "projection": {
         "target_pct": -0.7,
         "confidence": "low",
@@ -1268,7 +1268,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "n/a",
-      "price": 15.23,
+      "price": 15.21,
       "spark": [
         25.07,
         24.61,
@@ -1299,7 +1299,7 @@
         17.96,
         17.96,
         16.55,
-        15.23
+        15.21
       ]
     },
     {
@@ -1314,7 +1314,7 @@
       "size_pct": 0,
       "size_note": "binary tonight - no pre-position",
       "plan_usd": "watch (react post-print)",
-      "chg_pct": -1.05,
+      "chg_pct": -1.04,
       "projection": {
         "target_pct": -1.3,
         "confidence": "low",
@@ -1323,7 +1323,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "event",
-      "price": 374.91,
+      "price": 374.95,
       "spark": [
         433.53,
         440.44,
@@ -1354,7 +1354,7 @@
         392.82,
         419.79,
         403,
-        374.91
+        374.95
       ]
     },
     {
@@ -1369,7 +1369,7 @@
       "size_pct": 0,
       "size_note": "sold to fund RKLB; watch for re-entry",
       "plan_usd": "watch only",
-      "chg_pct": -0.52,
+      "chg_pct": -0.4,
       "projection": {
         "target_pct": -0.5,
         "confidence": "low",
@@ -1378,7 +1378,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "n/a",
-      "price": 303.07,
+      "price": 303.44,
       "spark": [
         323.8,
         319.69,
@@ -1409,7 +1409,7 @@
         300.5,
         318.41,
         305.63,
-        303.07
+        303.44
       ]
     },
     {
@@ -1424,7 +1424,7 @@
       "size_pct": 0,
       "size_note": "no setup; watch a reclaim",
       "plan_usd": "watch only",
-      "chg_pct": -1.1,
+      "chg_pct": -1.44,
       "projection": {
         "target_pct": -1.5,
         "confidence": "low",
@@ -1433,7 +1433,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "n/a",
-      "price": 224,
+      "price": 223.23,
       "spark": [
         302.14,
         293.7,
@@ -1464,7 +1464,7 @@
         271.02,
         294.97,
         269.5,
-        224
+        223.23
       ]
     },
     {
@@ -1479,7 +1479,7 @@
       "size_pct": 0,
       "size_note": "avoid; rolling over",
       "plan_usd": "none (short bias)",
-      "chg_pct": -6.17,
+      "chg_pct": -6.25,
       "projection": {
         "target_pct": -6.5,
         "confidence": "med",
@@ -1488,7 +1488,7 @@
       },
       "updated": "2026-07-22T15:20:00-04:00",
       "horizon": "n/a",
-      "price": 124.47,
+      "price": 124.36,
       "spark": [
         136.57,
         132.47,
@@ -1519,7 +1519,7 @@
         129.18,
         132.53,
         134.37,
-        124.47
+        124.36
       ]
     },
     {
@@ -1534,7 +1534,7 @@
       "size_pct": 0,
       "size_note": "avoid; no catalyst",
       "plan_usd": "none",
-      "chg_pct": -3.12,
+      "chg_pct": -3.09,
       "projection": {
         "target_pct": -3.5,
         "confidence": "low",
@@ -3462,6 +3462,10 @@
       [
         1784748780000,
         810.56
+      ],
+      [
+        1784748840000,
+        810.16
       ]
     ],
     "1W": [
